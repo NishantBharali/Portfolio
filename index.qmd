@@ -9,7 +9,7 @@ about:
   links:
     - icon: rss
       text: Blog
-      href: docs/blog.html
+      href: docs/docs/blog.html
     - icon: linkedin
       text: LinkedIn
       href: https://www.linkedin.com/in/nishant-kumar-bharali/
