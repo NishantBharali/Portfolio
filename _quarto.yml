@@ -15,7 +15,7 @@ website:
   navbar:
     right:
       - icon: rss
-        href: blog.xml
+        href: docs/blog.html
       - icon: linkedin
         href: https://www.linkedin.com/in/nishant-kumar-bharali/
         target: _blank
