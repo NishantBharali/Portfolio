@@ -1,0 +1,170 @@
+---
+title: "Curriculum Vitae"
+format:
+  html:
+    toc: false
+  pdf:
+    author: Nishant Bharali
+css: cv.css
+format-links: [pdf]
+---
+
+::: {.print-only .contact-block}
+nishantkb@vt.edu
+:::
+
+## Summary
+
+My goal is to train and lead the next generation of data scientists to integrate substantive expertise from diverse fields with machine intelligence.
+
+Through research and projects, I am constantly improving my ability to obtain, tidy, explore, transform, visualize, model, and communicate data. My preferred tools are MATLAB, Simulink, Java, JavaScript and Python, open source programming languages kept on the cutting edge by their energetic communities.
+
+In addition to their utility in common data science tasks, these languages serve as accessible interfaces to deep learning libraries like TensorFlow.
+
+I aim to leverage my background in science and engineering to help shape the future of autonomy, controls and machine vision and deliver on the promise of machine learning applications.
+
+## EDUCATION
+
+* **Virginia Polytechnic Institute and State University, Blacksburg, Virginia 24060, USA**                      
+  - Anticipated Graduation: May, 2025
+  - Master of Science in Computer Engineering
+
+
+ * **Vellore Institute of Technology, Vellore, Tamil Nadu, India**         
+    - 2018 – 2022
+    - Bachelor of Technology in Electronics and Communication Engineering			      
+    - CGPA: 3.33 / 4.00
+
+## WORK EXPERIENCE
+
+## Product Development Engineer | Mahindra & Mahindra Limited | Chennai, TN, India	 
+
+*August 2022 – July 2023*
+
+**R&D Engineer - Electrical & Electronics - CAN BUS Analysis of Electronic Control Units [Automotive Product Development]**
+
+- Projects: Worked on the infotainment and cluster software architecture for ICE & BEV vehicles; Mahindra Scorpio N Z6/Z8 variants, XUV700 & XUV400 EV, providing bench-level as well as vehicle level environmental testing and production.
+
+- Collaborated with cross-functional teams like ADAS, HMI and wiring harness to incorporate architecture changes.
+
+- Led and completed 2 core Android Auto certifications for mentioned projects with software testing on various levels - PCTS Verifier, QSuite, UX, GPS/Navigation, sensor logging and final software validation; resulting in 15% improvement in sales.
+
+- Prepared SRD (Software Requirements Definition) as a combined activity with the supplier; Improved data management processes by 12%.
+
+- Authored technical documentation, design specifications, test plans, & streamline project development; Integrated OTA updates, GPS benchmark and connectivity features for enhanced user experiences.
+
+- Experienced in writing test cases from system requirements and customer use cases.
+
+- Collaborated with tier 1 suppliers and 3PL partners Visteon and Harman International for software validation; Received green light from Google for Android Auto deployments with ~ 93.5% rectification of bugs and issues in the initial release; Efficiency improvements by 2% each cycle.
+
+- Strong foundations in CAN, Diagnostics, Android and QNX architecture; Diagnostics tools like CANalyser, CANoe, Garuda 2.0.
+
+
+## Software Engineer Intern | Oracle Cerner | Bangalore, Karnataka, India	 Jan 2022 – July 2022
+
+- Collaborated with cross-functional teams to develop and deploy healthcare software solutions.
+
+- Designed and implemented secure and scalable software components using Java (spring boot), Python, React, and JavaScript.
+
+- Conducted code reviews, debugging, and testing, reducing software defects by 20%.
+
+- Employed machine learning to cluster suppliers using medical device data, saving the team 10 work hours per week.
+
+- Gathered requirements from healthcare professionals and ensured compliance with regulations.
+
+- Actively participated in Agile methodologies with practical exposure to machine learning for client data.
+
+- Assignment of beds and nurses to patients in different units done through web application with Spring Security in backend.
+
+- 95% average unit test coverage for the mainstream application using Mockito framework and Jest/enzyme framework.
+
+- DevOps: CI/CD of the product upon Jenkins with pipeline staging scripts for automation, integration and deployment.
+
+- Efficiently reduced size of MySQL database by 7% with scripts; improving the product function by ~ 20%.
+
+
+## PROJECTS
+
+## Information Data Hiding using Steganography Techniques | OpenCV, Pillow, SciKit-Image, NumPy, Matplotlib
+
+- Presented Comparative Image analysis between the two data hiding techniques are made on the reconstructed image to conclude which Steganography method achieves better results, Least Significant Bit (LSB) or Discrete Cosine Transform (DST)
+
+- Automated the generation and evaluation of ~25,000 images, achieving an 87% pose detection accuracy from the model
+
+## Idea Repository API | Spring boot, Redux Saga, Postman API, JSON, Git, Jenkins, MySQL, Oracle Database, React Framework
+
+- An API for a full-stack web application to establish user security - authorization and authentication at the backend with Redux-based UI focus on frontend. 
+
+- Published as a technical paper - web application improved test user satisfaction ratings by 15%
+
+- Emphasis on using redux-saga middleware instead of Thunk - faster web page response; improved scrolling efficiency by 10%
+
+- GitHub: https://github.com/NishantBharali/projects
+
+## Digital Hearing Aid System using MATLAB | Simulation, MATLAB (GUI)
+
+- Designed a digital hearing aid system using MATLAB using Digital Signal Processing. The implementation of this configurable
+DHA system includes noise reduction filter, frequency shaper function and amplitude compression function.
+
+- The DHA design is designed to adapt for mild and moderate hearing loss patients since different gain can be set up to map
+different levels of hearing loss.
+
+- The code written in MATLAB, loads the input wave signal and takes the sampling frequency and the number of bits of that
+signal. Then, AWGN (Additive white Gaussian noise) and random noise are added to the signal before they are processed by
+various MATLAB functions to get an output which is audible to the hearing impaired person. 
+
+## Detection of Number Plate and Identification of Number using MATLAB | Platform Simulation, MATLAB, Simulink 
+
+- Our project focuses on developing an automated number plate recognition system, streamlining the process of plate
+detection and information storage. As vehicles enter a secure area, our system automatically captures and stores their
+number plates, replacing manual data collection for improved accuracy.
+
+- The project operates on a supervised method, utilizing a reference database for comparison. It comprises three key
+components: reference creation, plate detection, and alphabet/digit identification. 
+
+## Information Data Hiding using Steganography Techniques | OpenCV, Pillow, SciKit-Image, NumPy, Matplotlib
+
+- Presented Comparative Image analysis between the two data hiding techniques are made on the reconstructed image to
+conclude which Steganography method achieves better results, Least Significant Bit (LSB) or Discrete Cosine Transform (DST).
+
+- Automated the generation and evaluation of 35,000 images, achieving an 87% pose detection accuracy from the model.
+
+## Adaptive Traffic Light System using 8051 Microcontroller |8051 Micrcontroller (AT89C51), LEDs, 7 Segment Display, IR Sensors, Proteus Simulation
+
+- Designed an adaptive traffic light system, which allots different time frames based on the density of traffic to a certain lane.
+
+- Under current circumstances, traffic lights are set in different directions with a fixed time delay, following a particular cycle
+which will be conveyed by the LEDs with the time delay in consideration.
+
+## SKILLS
+
+* *Technical Skills*: Python, Keras, SciKit-Image (sci-kit learn), Java, MATLAB, SQL, CAN, LIN, HTML, CSS, React, CI/CD, Linux bash, RESTful API, Redux-saga, Spring Framework, Jupyter, Microcontroller 8051, Simulink, SOLIDWORKS, Verilog
+
+* *Framework and Tools*: OpenCV, Matplotlib (Pillow), Vector CANalyzer, CANoe, Wireshark, Android and QNX architecture, Postman, Git Jenkins, Microservices, ROS, Visual Studio, Gazebo, MySQL
+
+* *Other*: Agile, Scrum,JIRA, Product& Project Management, MicrosoftOffice Suite, eLMS
+
+## OTHERS AND ORGANIZATIONS
+
+- *SAE Autodrive Challenge (Fall 2023)* : Participating in the Vehicle Control and testing sub-team under working on Q23-24 cycle
+learning through training and workshops on topics like Machine Vision, ROS2 and MATLAB GUIs
+
+- *Undergraduate Teaching Assistant for the course Digital Logic Design (ECE2003), VIT Vellore (2019-2021)* : Secured Silver Rank in IoT - Domain Specialist conforming to National Skills Qualifications Framework Level 8, 2021
+
+- Assistant Web Developer at IEEE IAS, VIT Vellore, 2020
+
+- Core Committee Member, IEEE - Circuits and Systems Society, 2019-2020
+
+- Core Committee Member, IEEE Computer Society, 2019-2022
+
+## PUBLICATION(S)
+
+**Full Stack WebDevelopment of Redux-based Applications with Dynamic Microservices(Case Study - IDEA REPOSITORY), 2022-2023**
+
+- Successfully certified and published the technical research paper in a peer-reviewed journal with an acceptable impact factor
+where the synopsis of the paper was web development strategy to develop applications based on redux using redux-saga
+middleware instead of its native Thunk middleware for faster web page response and to improve scrolling efficiency by 10%.
+
+- Use of the MySQL server and spring framework was incorporated for dynamic usage of the backend while the saga
+middleware at the frontend uses the data stored in redux store dynamically and asynchronously to facilitate faster and
+responsive web page

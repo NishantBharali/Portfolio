@@ -1,0 +1,267 @@
+---
+title: Probability Theory and Random Processes
+description: "Gaining insights on weather data with Data Science and Machine Learning"
+date: 11-24-2023
+categories: [machine learning]
+image: image.jpg
+---
+
+## Gaining insights on weather data with Data Science and Machine Learning
+
+In this blog post I will discuss a few examples of [probability](https://en.wikipedia.org/wiki/Probability#:~:text=Probability%20is%20the%20branch%20of,event%20and%201%20indicates%20certainty.) in [machine learning](https://en.wikipedia.org/wiki/Machine_learning#:~:text=Machine%20learning%20(ML)%20is%20a%20field%20of%20study%20in%20artificial%20intelligence%20concerned%20with%20the%20development%20and%20study%20of%20statistical%20algorithms%20that%20can%20effectively%20generalize%20and%20thus%20perform%20tasks%20without%20explicit%20instructions.). If you are new to probability, I recommend one of great textbooks that cover the topic and are available for free online, such as [Think Bayes](https://allendowney.github.io/ThinkBayes2) by [Allen Downey](https://www.allendowney.com) and [Bayes Rules!](https://www.bayesrulesbook.com) by [Alicia A. Johnson](https://ajohns24.github.io), Miles Q. Ott, and [Mine Dogucu](https://www.minedogucu.com).
+
+[Classification](https://en.wikipedia.org/wiki/Statistical_classification) [algorithms](https://en.wikipedia.org/wiki/Algorithm) algorithms can estimate $n \times k$ class membership probabilities for each dataset, where n is the number of data points in the dataset and k is the number of classes in the [training dataset](https://en.wikipedia.org/wiki/Training,_validation,_and_test_data_sets#:~:text=training%20data%20set%2C%5B3%5D%20which%20is%20a%20set%20of%20examples%20used%20to%20fit%20the%20parameters%20(e.g.%20weights%20of%20connections%20between%20neurons%20in%20artificial%20neural%20networks)%20of%20the%20model.). Similarly, the [Gaussian Mixtures](https://scikit-learn.org/stable/modules/mixture.html) [clustering](https://scikit-learn.org/stable/modules/clustering.html) algorithm can generate $n \times k$ cluster label probabilities.
+
+Besides  a data point and the Gaussian Mixtures models can estimate cluster membership probability. point , especially [Logistic Regression](https://en.wikipedia.org/wiki/Logistic_regression) and [Naive Bayes](https://en.wikipedia.org/wiki/Naive_Bayes_classifier). Every classification algorithm can estimate probabilities of belonging to each class.
+
+$\Huge P(A\vert B)={\frac {P(B\vert A)P(A)}{P(B)}}$
+
+
+
+## Understanding Weather Forecasting with the help of Probability theory and Random Processes
+
+**Introduction**
+
+Machine learning plays a pivotal role in understanding and predicting various natural phenomena, and weather forecasting is no exception. To harness the power of machine learning for weather data analysis, it is essential to have a solid foundation in random processes and probability theory. These fundamental concepts are the building blocks that enable us to model the inherent uncertainty and variability present in weather data.
+
+Weather data, such as temperature, humidity, wind speed, and precipitation, exhibit random behavior due to the complex interplay of atmospheric processes. Random processes are mathematical models used to describe the evolution of these variables over time. These processes capture the idea that weather conditions are not deterministic but rather stochastic, influenced by a multitude of factors, including geographical location, time of year, and local phenomena.
+
+Probability theory, on the other hand, provides the framework to quantify and reason about uncertainty in weather data. It allows us to assign probabilities to different weather outcomes and make informed predictions based on observed data. For example, we can calculate the probability of rain on a given day or estimate the likelihood of extreme weather events, such as hurricanes or heatwaves, occurring in a specific region.
+
+Machine learning techniques, such as regression, classification, and time series analysis, heavily rely on probabilistic and random process models to extract meaningful insights from weather data. By incorporating these techniques, we can build predictive models that not only provide accurate weather forecasts but also account for uncertainty, enabling better decision-making in various applications like agriculture, transportation, and disaster management.
+
+In this context, the weather dataset you are using serves as a valuable source of information for exploring and applying these concepts. By understanding random processes and probability theory, you can leverage machine learning to unlock the potential hidden within weather data, improving the accuracy and reliability of weather forecasts and facilitating data-driven decision-making in various sectors that rely on weather information.
+
+**Data Loading and Basic Visualization**
+
+```{python}
+# Importing libraries
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
+from scipy import stats
+from scipy.stats import norm
+from scipy.stats import expon
+from sklearn.model_selection import train_test_split
+from sklearn.linear_model import LinearRegression
+from sklearn.metrics import mean_squared_error
+
+# Load the dataset
+weather_df = pd.read_csv('weather_data.csv')
+weather_df['Date'] = pd.to_datetime(weather_df['Date'])
+```
+
+**Exploratory Data Analysis**
+
+```{python}
+#Exploratory Data Analysis
+#Histograms and KDE (Kernel Density Estimation) plots for Temperature and Humidity.
+sns.histplot(weather_df['Temperature'], kde=True, color='blue', label='Temperature')
+sns.histplot(weather_df['Humidity'], kde=True, color='green', label='Humidity', alpha=0.5)
+plt.legend()
+plt.show()
+```
+```{python}
+# Pair Plot to visualize all variables together.
+sns.pairplot(weather_df, hue='Weather_Condition')
+plt.show()
+```
+
+
+**Probability Distributions**
+
+```{python}
+#Normal Distribution Fit for Temperature.
+sns.histplot(weather_df['Temperature'], kde=False, color='blue', label='Temperature')
+
+# Fitting a normal distribution and plotting it
+mean, std = norm.fit(weather_df['Temperature'])
+xmin, xmax = plt.xlim()
+x = np.linspace(xmin, xmax, 100)
+p = norm.pdf(x, mean, std)
+plt.plot(x, p * max(weather_df['Temperature'].value_counts()), 'k', linewidth=2)
+
+title = "Fit results: mean = %.2f,  std = %.2f" % (mean, std)
+plt.title(title)
+
+plt.show()
+```
+
+```{python}
+#Exponential Distribution Fit for Humidity.
+from scipy.stats import expon
+
+# Plotting histogram
+sns.histplot(weather_df['Humidity'], kde=False, color='green', label='Humidity')
+
+# Fitting an exponential distribution and plotting it
+params = expon.fit(weather_df['Humidity'])
+xmin, xmax = plt.xlim()
+x = np.linspace(xmin, xmax, 100)
+p = expon.pdf(x, *params)
+plt.plot(x, p * max(weather_df['Humidity'].value_counts()), 'k', linewidth=2)
+
+plt.show()
+```
+
+
+**Time Series Analysis**
+
+Temperature Trend over Time.
+ ```{python}
+ #Checking the temperature trned against time
+weather_df.set_index('Date')['Temperature'].plot()
+plt.title("Temperature Trend Over Time")
+plt.ylabel("Temperature")
+plt.show()
+```
+
+
+**Probability Theory in Action**
+
+```{python}
+#Conditional Probability: Probability of High Humidity given Rainy Weather.
+high_humidity = weather_df['Humidity'] > 80
+rainy_days = weather_df['Weather_Condition'] == 'Rainy'
+prob_high_humidity_given_rain = np.mean(high_humidity[rainy_days])
+print(f"Probability of High Humidity given Rainy Weather: {prob_high_humidity_given_rain}")
+```
+
+```{python}
+#Joint Distribution: Temperature and Humidity.
+sns.jointplot(data=weather_df, x='Temperature', y='Humidity', kind='kde', color='red')
+plt.show()
+```
+
+
+**Correlation Analysis**
+
+```{python}
+#Correlation Heatmap
+# Selecting only numerical columns for correlation analysis
+numerical_weather_df = weather_df.select_dtypes(include=[np.number])
+
+# Plotting the correlation heatmap
+sns.heatmap(numerical_weather_df.corr(), annot=True, cmap='coolwarm')
+plt.title("Correlation Heatmap")
+plt.show()
+
+```
+
+
+**Linear Regression for Temperature Prediction**
+
+```{python}
+#Model Training and Evaluation.
+# Preparing data for linear regression
+from sklearn.linear_model import LinearRegression
+from sklearn.metrics import mean_squared_error
+from sklearn.model_selection import train_test_split
+
+# Preparing data for linear regression
+X = weather_df[['Humidity']]
+y = weather_df['Temperature']
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=0)
+
+# Training the model
+model = LinearRegression()
+model.fit(X_train, y_train)
+
+# Making predictions
+y_pred = model.predict(X_test)
+
+# Plotting actual vs predicted values
+plt.scatter(X_test, y_test, color='blue', label='Actual')
+plt.scatter(X_test, y_pred, color='red', label='Predicted')
+plt.xlabel('Humidity')
+plt.ylabel('Temperature')
+plt.title('Actual vs Predicted Temperature')
+plt.legend()
+plt.show()
+
+# Model evaluation
+mse = mean_squared_error(y_test, y_pred)
+print("Mean Squared Error:", mse)
+```
+
+
+**Markov Chain for Weather Condition Transitions**
+
+```{python}
+#Let's simulate a simple Markov chain to model the transitions between different weather conditions.
+import pandas as pd
+
+# Calculating transition probabilities
+weather_conditions = weather_df['Weather_Condition'].unique()
+transition_matrix = pd.DataFrame(index=weather_conditions, columns=weather_conditions).fillna(0)
+
+for (prev, curr) in zip(weather_df['Weather_Condition'], weather_df['Weather_Condition'][1:]):
+    transition_matrix.at[prev, curr] += 1
+
+# Normalizing the rows to sum to 1
+transition_matrix = transition_matrix.div(transition_matrix.sum(axis=1), axis=0)
+
+# Display the transition matrix
+print(transition_matrix)
+```
+
+
+This code calculates the probabilities of transitioning from one weather condition to another. It's a basic form of a Markov chain.
+
+**Monte Carlo Simulation for Temperature Extremes**
+
+```{python}
+#Use Monte Carlo simulation to estimate the probability of extreme temperature events.
+np.random.seed(0)
+num_simulations = 10000
+extreme_temp_count = 0
+extreme_temp_threshold = 30  # Define what you consider as extreme temperature
+
+for _ in range(num_simulations):
+    simulated_temp = np.random.choice(weather_df['Temperature'])
+    if simulated_temp > extreme_temp_threshold:
+        extreme_temp_count += 1
+
+probability_of_extreme_temp = extreme_temp_count / num_simulations
+print(f"Probability of Extreme Temperature (> {extreme_temp_threshold}°C): {probability_of_extreme_temp}")
+
+```
+
+
+This Monte Carlo simulation randomly samples temperatures from the dataset and calculates the probability of encountering temperatures above a certain threshold.
+
+
+# Obtain the logistic function mathematically
+
+## Step 1. Write out the linear regression equation
+$\Huge y=\beta_0+\beta_1 x_1+...+\beta_n x_n$
+
+
+## Step 2. The logistic regression equation is the same as above except output is log odds
+$\Huge log(odds)=\beta_0+\beta_1 x_1+...+\beta_n x_n$
+
+
+## Step 3. Exponentiate both sides of the logistic regression equation to get odds
+$\Huge odds=e^{\beta_0+\beta_1 x_1+...+\beta_n x_n}$
+
+
+## Step 4. Write out the probability equation
+$\Huge p=\frac{odds}{1+odds}$
+
+
+## Step 5. Plug odds (from step 3) into the probability equation
+$\Huge p=\frac{e^{\beta_0+\beta_1 x_1+...+\beta_n x_n}}{1+e^{\beta_0+\beta_1 x_1+...+\beta_n x_n}}$
+
+
+## Step 6. Divide the numerator and denominator by the odds (from step 3)
+$\Huge p=\frac{1}{1+e^{-(\beta_0+\beta_1 x_1+...+\beta_n x_n)}}$
+
+
+$\Huge P(A\vert B)={\frac {P(B\vert A)P(A)}{P(B)}}$
+
+## Conclusion
+
+This analysis shows more sophisticated ways of applying probability theory and random processes to the weather dataset, providing insights into weather patterns and temperature predictions.
+
+Summarized the findings from the above analysis. Discussed the relevance of these probabilistic models in understanding weather patterns.

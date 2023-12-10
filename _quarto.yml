@@ -1,0 +1,69 @@
+project:
+  type: website
+
+website:
+  title: "Computer Engineering Bytes"
+  site-url: https://nishantbharali.github.io/Official-Blog/
+  description: "Nishant Bharali's engineering website built with Python and Quarto"
+  open-graph: true
+  cookie-consent: true
+  twitter-card: 
+    image: images/Nishant.jpg
+    card-style: summary_large_image
+    creator: "@NishantBharali"
+  navbar:
+    right:
+      - icon: rss
+        href: blog.xml
+      - icon: linkedin
+        href: https://www.linkedin.com/in/nishant-kumar-bharali/
+        target: _blank
+      - icon: file-earmark-person
+        href: cv/cv.qmd
+        target: _blank
+      - icon: github
+        href: https://github.com/NishantBharali
+        target: _blank
+      - icon: stack-overflow
+        href: https://stackoverflow.com/users/18371927/nishant
+        target: _blank
+      - icon: envelope
+        href: mailto:maptv@vt.edu
+      - text: Blog
+        href: blog.qmd
+      - text: Resources
+        menu:
+          - text: "Nishant's Resources"
+            href: resources.qmd
+          - text: Python for Data Science
+            href: https://r4ds.hadley.nz/
+            target: _blank
+      #     - text: Tidyverse
+      #       href: https://www.tidyverse.org/
+      #       target: _blank
+      #     - text: Tidymodels
+      #       href: https://www.tidymodels.org/
+      #       target: _blank
+      #     - text: Tidyverse Style Guide
+      #       href: https://style.tidyverse.org/
+      #       target: _blank
+      - text: About
+        href: about.qmd
+
+format:
+  html:
+    theme:
+      light: [flatly, theme-light.scss]
+      dark: [darkly, theme-dark.scss]
+    fontsize: 1.0em
+    code-copy: true
+    code-overflow: wrap
+
+webr: 
+  show-startup-message: false
+  show-header-message: false
+  channel-type: 'post-message'
+
+execute:
+  freeze: true
+  cache: true

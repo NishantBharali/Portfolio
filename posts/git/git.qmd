@@ -1,0 +1,179 @@
+---
+title: Git
+description: "Diving deep into the Git tool"
+date: 11-24-2023
+categories: [Tools]
+image: horst_git-hug.png
+---
+
+[Git](https://en.wikipedia.org/wiki/Git#:~:text=Git%20(/%C9%A1%C9%AAt/)%5B8%5D%20is%20a%20distributed%20version%20control%20system%5B9%5D%20that%20tracks%20changes%20in%20any%20set%20of%20computer%20files%2C%20usually%20used%20for%20coordinating%20work%20among%20programmers%20who%20are%20collaboratively%20developing%20source%20code%20during%20software%20development.) is a [version control](https://en.wikipedia.org/wiki/Version_control#:~:text=version%20control%20(also%20known%20as%20revision%20control%2C%20source%20control%2C%20or%20source%20code%20management)%20is%20a%20class%20of%20systems%20responsible%20for%20managing%20changes%20to%20computer%20programs%2C%20documents%2C%20large%20web%20sites%2C%20or%20other%20collections%20of%20information.) system created by [Linus Torvalds](https://en.wikipedia.org/wiki/Linus_Torvalds#:~:text=Linus%20Benedict%20Torvalds%20(,control%20system%20Git.)), who is also the creator of [Linux](https://en.wikipedia.org/wiki/Linux#:~:text=Linux%20(/%CB%88l%C9%AAn%CA%8Aks/%20LIN%2Duuks)%5B11%5D%20is%20a%20family%20of%20open%2Dsource%20Unix%2Dlike%20operating%20systems%20based%20on%20the%20Linux%20kernel%2C%5B12%5D%20an%20operating%20system%20kernel%20first%20released%20on%20September%2017%2C%201991%2C%20by%20Linus%20Torvalds.). Since its first release, Git has largely replaced other version control systems and is used by 93% of [software](https://en.wikipedia.org/wiki/Software#:~:text=Software%20is%20a%20set%20of%20computer%20programs%20and%20associated%20documentation%20and%20data.) developers worldwide, according to [survey results](https://stackoverflow.blog/2023/01/09/beyond-git-the-other-version-control-systems-developers-use/#:~:text=Our%20developer%20survey%20found%2093%25%20of%20developers%20use%20Git.) published by [StackOverflow](https://stackoverflow.com/tour).
+
+Thanks to Git, I can sleep💤soundly at night, reassured by the knowledge that all of my progress on all of my ongoing project is recorded. My progress is not only stored on my local computer, but also on [Git repository hosting services](https://en.wikipedia.org/wiki/Git#:~:text=Git%20repository%20services%2C%20including%20GitHub%2C%20SourceForge%2C%20Bitbucket%20and%20GitLab.%5B) such as [GitHub](https://en.wikipedia.org/wiki/GitHub#:~:text=GitHub%2C%20Inc.%20(/%CB%88%C9%A1%C9%AAth%CA%8Cb/%5Ba%5D)%20is%20a%20platform%20and%20cloud%2Dbased%20service%20for%20software%20development%20and%20version%20control%2C%20allowing%20developers%20to%20store%20and%20manage%20their%20code.) and [GitLab](https://en.wikipedia.org/wiki/GitLab).
+
+A Git [repository](https://en.wikipedia.org/wiki/Repository_(version_control)#:~:text=In%20version%20control%20systems%2C%20a%20repository%20is%20a%20data%20structure%20that%20stores%20metadata%20for%20a%20set%20of%20files%20or%20directory%20structure.) (repo) is a [directory](https://en.wikipedia.org/wiki/Directory_(computing)#:~:text=a%20directory%20is%20a%20file%20system%20cataloging%20structure%20which%20contains%20references%20to%20other%20computer%20files%2C%20and%20possibly%20other%20directories.) that tracks the changes made to its contents. For more information on GitHub, the largest Git repo host, take a look at the ["GitHub for supporting, reusing, contributing, and failing safely"](https://openscapes.org/blog/2022-05-27-github-illustrated-series/) post by [Allison Horst](https://allisonhorst.com) and [Julie Lowndes](https://jules32.github.io) on the [Openscapes](https://openscapes.org/) [blog](https://openscapes.org/blog).
+
+GitHub and GitLab do not only host repos, but also websites via [GitHub Pages](https://quarto.org/docs/publishing/github-pages.html#render-to-docs) and [GitLab Pages](https://docs.gitlab.com/ee/user/project/pages/). My personal site is hosted for free on both [GitHub Pages](https://maptv.github.io) and [GitLab Pages](https://maptv.gitlab.io).
+
+Before you can benefit from everything GitHub and/or GitLab have to offer, you will need to set up your computer so that you can work locally and/or configure a service like [GitHub Codespaces](https://github.com/features/codespaces) or [GitLab Web IDE](https://docs.gitlab.com/ee/user/project/web_ide) so you can work remotely in your [web browser](https://en.wikipedia.org/wiki/Web_browser#:~:text=A%20web%20browser%20is%20an%20application%20for%20accessing%20websites%20and%20the%20Internet.%5B). In this post, I discuss local development environment setup with the [Homebrew](https://brew.sh) [package manager](https://en.wikipedia.org/wiki/Package_manager#:~:text=A%20package%20manager%20or%20package%2Dmanagement%20system%20is%20a%20collection%20of%20software%20tools%20that%20automates%20the%20process%20of%20installing%2C%20upgrading%2C%20configuring%2C%20and%20removing%20computer%20programs%20for%20a%20computer%20in%20a%20consistent%20manner.) and repo setup with the GitHub and GitLab CLI.
+
+If you follow along to end of this post, you will have a repo called `dotfiles` that can be used for Codespaces setup.
+
+## Setup {#sec-setup}
+
+### Homebrew {#sec-setup-brew}
+
+[Linux](https://en.wikipedia.org/wiki/Linux#:~:text=Linux%20(/%CB%88l%C9%AAn%CA%8Aks/%20LIN%2Duuks)%5B11%5D%20is%20a%20family%20of%20open%2Dsource%20Unix%2Dlike%20operating%20systems), [macOS](https://en.wikipedia.org/wiki/MacOS#:~:text=macOS%20(/%CB%8Cm%C3%A6ko%CA%8A%CB%88%C9%9Bs/%3B%5B6%5D%20previously%20OS%C2%A0X%20and%20originally%20Mac%C2%A0OS%C2%A0X)%20is%20an%20operating%20system%20developed%20and%20marketed%20by%20Apple%20Inc.%20since%202001.), or [Windows Subsystem for Linux](https://en.wikipedia.org/wiki/Windows_Subsystem_for_Linux#:~:text=Windows%20Subsystem%20for%20Linux%20(WSL)%20is%20a%20feature%20of%20Windows%20that%20allows%20developers%20to%20run%20a%20Linux%20environment%20without%20the%20need%20for%20a%20separate%20virtual%20machine%20or%20dual%20booting.) (WSL) users can use Homebrew to install everything needed to work through all of the examples in this blog post. First, [install Homebrew](https://brew.sh/#install) itself with the latest [`.pkg` installer](https://github.com/Homebrew/brew/releases) for macOS or by running the @exm-brew [Unix](https://en.wikipedia.org/wiki/Unix#:~:text=Unix%20(/%CB%88ju%CB%90n%C9%AAks/%2C%20YOO%2Dniks%3B%20trademarked%20as%20UNIX)%20is%20a%20family%20of%20multitasking%2C%20multi%2Duser%20computer%20operating%20systems) [shell](https://en.wikipedia.org/wiki/Unix_shell#:~:text=A%20Unix%20shell%20is%20a%20command%2Dline%20interpreter%20or%20shell%20that%20provides%20a%20command%20line%20user%20interface%20for%20Unix%2Dlike%20operating%20systems.) code in your [terminal](https://en.wikipedia.org/wiki/Terminal_emulator#:~:text=A%20terminal%20emulator%2C%20or%20terminal%20application%2C%20is%20a%20computer%20program%20that%20emulates%20a%20video%20terminal%20within%20some%20other%20display%20architecture.).
+
+::: {#exm-brew}
+``` sh
+/bin/bash -c "$(curl -fsSL https://\
+raw.githubusercontent.com/Homebrew/\
+install/HEAD/install.sh)"
+```
+:::
+
+If you are not completely satisfied with the integrated terminal built into your preferred [source-code editor](https://en.wikipedia.org/wiki/Source-code_editor#:~:text=A%20source%2Dcode%20editor%20is%20a%20text%20editor%20program%20designed%20specifically%20for%20editing%20source%20code%20of%20computer%20programs.) or the standalone terminal that comes with your [operating system](https://en.wikipedia.org/wiki/Operating_system#:~:text=An%20operating%20system%20(OS)%20is%20system%20software%20that%20manages%20computer%20hardware%20and%20software%20resources%2C%20and%20provides%20common%20services%20for%20computer%20programs.) (OS), you can use Homebrew to install a new one. The standalone terminal I use most often is [iTerm2](https://formulae.brew.sh/cask/iterm2#default), which is only for macOS, but I also have the following multi-OS terminals: [Alacritty](https://formulae.brew.sh/cask/alacritty#default), [Hyper](https://formulae.brew.sh/cask/hyper#default), [Kitty](https://formulae.brew.sh/cask/kitty#default), and [Tabby](https://formulae.brew.sh/cask/tabby#default).
+
+After installing Homebrew, you can run `brew` `doctor` in your terminal to confirm that everything is set up correctly. If the `brew` command is not available, you need to follow the instructions provided after installation to add `brew` to your [PATH variable](https://en.wikipedia.org/wiki/PATH_(variable)#:~:text=PATH%20is%20an%20environment%20variable%20on%20Unix%2Dlike%20operating%20systems%2C%20DOS%2C%20OS/2%2C%20and%20Microsoft%20Windows%2C%20specifying%20a%20set%20of%20directories%20where%20executable%20programs%20are%20located.).
+
+Once Homebrew is ready, you can run the shell code in @exm-echo to create a file called `Brewfile` with the [`echo`](https://en.wikipedia.org/wiki/Echo_(command)#:~:text=echo%20is%20a%20command%20that%20outputs%20the%20strings%20that%20are%20passed%20to%20it%20as%20arguments.) shell command and install everything listed in this newly created [`Brewfile`](https://homebrew-file.readthedocs.io/en/latest/usage.html) with the `brew` `bundle` shell command.
+
+::: {#exm-echo}
+``` {.sh}
+echo 'brew "gh"\nbrew "git"
+brew "glab"\ncask "github"' > Brewfile
+brew bundle
+```
+:::
+
+The `Brewfile` created by the shell code in @exm-echo installs:
+
+- Git,
+- the [command line interfaces](https://en.wikipedia.org/wiki/Command-line_interface#:~:text=A%20command%2Dline%20interface%20(CLI)%20is%20a%20means%20of%20interacting%20with%20a%20computer%20program%20by%20inputting%20lines%20of%20text%20called%20command%2Dlines.) (CLIs) for
+  - [GitHub](https://cli.github.com) and
+  - [GitLab](https://docs.gitlab.com/ee/editor_extensions/gitlab_cli/), and
+- the [GitHub Desktop](https://git-scm.com/downloads/guis#:~:text=iOS-,GitHub%20Desktop,-Platforms%3A%20Mac) Git [Graphical User Interface](https://en.wikipedia.org/wiki/Graphical_user_interface#:~:text=A%20graphical%20user%20interface%2C%20or%20GUI%20(/%CB%88%C9%A1u%CB%90i/%5B1%5D%5B2%5D%20GOO%2Dee)%2C%20is%20a%20form%20of%20user%20interface%20that%20allows%20users%20to%20interact%20with%20electronic%20devices%20through%20graphical%20icons%20and%20audio%20indicators%20such%20as%20primary%20notation.) (GUI).
+
+If you are curious about how I set up my computer, you can take a look at my [`Brewfile`](https://github.com/maptv/setup/blob/main/Brewfile) and other configuration files in my `setup` repo on [GitHub](https://github.com/maptv/setup) and [GitLab](https://gitlab.com/maptv/setup). I will highlight a few configuration files in @sec-workflow.
+
+### Repository {#sec-setup-repo}
+
+Before we get started, you will need a [GitHub](https://github.com/signup) and/or [GitLab](https://gitlab.com/users/sign_up) account and a way to authenticate into your account(s).
+
+Of the many [authentication methods](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/about-authentication-to-github#about-authentication-to-github), passkeys stand out because they can function as both a password and [two-factor authentication](https://en.wikipedia.org/wiki/Multi-factor_authentication#:~:text=two%2Dfactor%20authentication%2C%20or%202FA%2C%20along%20with%20similar%20terms)%20is%20an%20electronic%20authentication%20method%20in%20which%20a%20user%20is%20granted%20access%20to%20a%20website%20or%20application%20only%20after%20successfully%20presenting%20two%20or%20more%20pieces%20of%20evidence%20(or%20factors)%20to%20an%20authentication%20mechanism.) (2FA), thus combining the two steps in the 2FA sign-in process into one. Passkeys will certaily GitHub recently announced its plan to make [2FA mandatory](https://github.blog/2023-03-09-raising-the-bar-for-software-security-github-2fa-begins-march-13) for code contributors, which will make passkeys .
+[SSH key](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account#about-addition-of-ssh-keys-to-your-account).
+
+satisfy both requirements, including  SSH keys are still the easiest way to authenticate to GitHub and GitLab in my honest opinion.
+
+You can create a repo using the web interface of <https://github.com> or <https://gitlab.com> in your browser, but the best way to start a new project is using the CLI for [GitHub](https://cli.github.com) or [GitLab](https://docs.gitlab.com/ee/editor_extensions/gitlab_cli/) in your [terminal](https://en.wikipedia.org/wiki/Terminal_emulator). First, run `gh` `auth` `login` or `glab` `auth` `login` and follow the prompts to authenticate via your web browser or with an [authentication token](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens).
+
+The GitHub CLI allows you to add an SSH key to your account during or [after authentication](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account?tool=cli#adding-a-new-ssh-key-to-your-account). The GitLab CLI does not handle SSH keys during authentication, but has a similar command for [adding an SSH key to your GitLab account](https://gitlab.com/gitlab-org/cli/-/blob/main/docs/source/ssh-key/add.md).
+
+After authentication and SSH key setup, you can run the code in either of the code chunks in @exm-git to set up your local and remote repos and create a Quarto website project in the local repo. You can create shell alias that combine all of the repo creation steps like I did in my [`.zshrc`](https://github.com/maptv/setup/blob/0bd5898908974746fa55e7e8f19a36859040b6ca/.zshrc#L630).
+
+::: {#exm-git}
+::: panel-tabset
+
+#### GitHub
+
+``` sh
+cd # start in home directory
+mkdir USERNAME
+cd USERNAME
+gh repo create REPONAME --add-readme --clone --public
+cd REPONAME
+```
+
+#### GitLab
+
+``` sh
+cd # start in home directory
+mkdir USERNAME
+cd USERNAME
+glab repo create REPONAME --readme --defaultBranch main --public
+cd REPONAME
+git pull origin main
+git branch --set-upstream-to=origin/main main
+```
+:::
+:::
+
+To make it easier to backup my repos on both GitHub and GitLab, I set up each local repo to have two `origin` remote URLs using the code as shown in @exm-remote. With this setting, running `git` `push` in my local repo updates my remote repos on both GitHub and GitLab.
+
+::: {#exm-remote}
+``` sh
+git remote add lab git@gitlab.com:maptv/maptv.gitlab.io
+git remote add hub git@github.com:maptv/maptv.github.io
+git remote set-url --add origin $(git remote get-url lab)
+```
+:::
+
+## Git workflow {#sec-workflow}
+
+When I want to add or update the content on my site, I go through the steps in the standard Git workflow shown in @fig-git. Every time I "push" a collection of changes called a [commit](https://en.wikipedia.org/wiki/Commit_(version_control)#:~:text=In%20version%20control%20systems%2C%20a%20commit%20is%20an%20operation%20which%20sends%20the%20latest%20changes%20of%20the%20source%20code%20to%20the%20repository%2C%20making%20these%20changes%20part%20of%20the%20head%20revision%20of%20the%20repository.) to my [GitHub](https://github.com/NishantBharali) repo on GitHub, a [continuous integration](https://en.wikipedia.org/wiki/Continuous_integration#:~:text=In%20software%20engineering%2C%20continuous%20integration%20(CI)%20is%20the%20practice%20of%20merging%20all%20developers%27%20working%20copies%20to%20a%20shared%20mainline%20several%20times%20a%20day.) (CI) system called [GitHub Actions](https://docs.github.com/en/actions) automatically completes the steps required to build and publish my website.
+
+```{mermaid fig-align="center"}
+%%| label: fig-git
+%%| fig-cap: Git workflow
+%%| fig-align: center
+%%| fig-width: 9
+flowchart LR
+   A[working<br/>directory]-.git<br/>add.->B{{staging<br/>area}}-.git<br/>commit.->C([local<br/>repo])-.git<br/>push.->D(remote<br/>repo)
+```
+
+### Shell aliases {#sec-workflow-alias}
+
+To make it easier to make incremental changes to my website and frequently release new content, I combined all of the `git` shell commands in @fig-git into shell [aliases](https://en.wikipedia.org/wiki/Alias_(command)#:~:text=In%20computing%2C%20alias%20is%20a%20command%20in%20various%20command%2Dline%20interpreters%20(shells)%2C%20which%20enables%20a%20replacement%20of%20a%20word%20by%20another%20string.). You can add shell aliases to a [shell configuration file](https://en.wikipedia.org/wiki/Unix_shell#:~:text=The%20%22rc%22%20suffix%20on%20some%20Unix%20configuration%20files%20(for%20example%2C%20%22.vimrc%22)%2C%20is%20a%20remnant%20of%20the%20RUNCOM%20ancestry%20of%20Unix%20shells.) like `.bashrc` or `.zshrc` on your computer to shorten one or more commands and any associated command [arguments](https://en.wikipedia.org/wiki/Command-line_interface#Arguments:~:text=A%20command%2Dline%20argument%20or%20parameter%20is%20an%20item%20of%20information%20provided%20to%20a%20program%20when%20it%20is%20started.).
+
+The `git` `commit` aliases in the `.zshrc` file in my `setup` repo on [GitHub](https://github.com/maptv/setup) and [GitLab](https://gitlab.com/maptv/setup) target different groups of files for inclusion in the next commit. For example, `cmp` targets [staged](https://git-scm.com/book/en/v2/Getting-Started-What-is-Git%3F#:~:text=Staged%20means%20that%20you%20have%20marked%20a%20modified%20file%20in%20its%20current%20version%20to%20go%20into%20your%20next%20commit%20snapshot.) files, `camp` targets [tracked](https://git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-the-Repository#:~:text=Tracked%20files%20are%20files%20that%20were%20in%20the%20last%20snapshot%2C%20as%20well%20as%20any%20newly%20staged%20files) files, `a.cmp` targets files in the current directory, and `aacmp` targets files in the repo.
+
+@exm-alias shows the `aacmp` alias as an example of the shell alias syntax. The mnemonic device for this alias is **a**dd **a**ll, **c**ommit with a **m**essage, and **p**ush.
+
+::: {#exm-alias}
+``` {.sh filename=".zshrc"}
+alias aacmp="func() { git add --all && git commit --message \
+    \"$(echo '${*:-$(echo $(git diff --name-status --cached \
+    | tr "[:space:]" " "))}')\" && git push; }; func"
+```
+:::
+
+Aliases like `aacmp` allow me to enter free-form [commit messages](https://en.wikipedia.org/wiki/Commit_(version_control)#:~:text=git%20commit%20%2Dm%20%27-,commit%20message,-%27) directly on the command line without quotes, e.g. `aacmp` `edit` `first` `post`. If you decide to try one of these aliases, please exercise extreme caution as any un-[escaped](https://en.wikipedia.org/wiki/Escape_character#:~:text=an%20escape%20character%20is%20a%20character%20that%20invokes%20an%20alternative%20interpretation%20on%20the%20following%20characters%20in%20a%20character%20sequence.) or un-quoted [metacharacters](https://en.wikipedia.org/wiki/Metacharacter#:~:text=A%20metacharacter%20is%20a%20character%20that%20has%20a%20special%20meaning%20to%20a%20computer%20program%2C%20such%20as%20a%20shell%20interpreter) may yield surprising effects instead of being included verbatim in the commit message, e.g. `*` is replaced by all of the file and directory names in the current directory!
+
+If no commit message is provided after the aliases, a generic commit message is created that includes the [change type](https://git-scm.com/docs/git-diff#Documentation/git-diff.txt---diff-filterACDMRTUXB82308203) and name of each changed file. In @sec-workflow-key, I describe how I used this generic commit message approach to further simplify the Git workflow.
+
+### Keybindings {#sec-workflow-key}
+
+An alternative to a shell alias that combines `git` commands is to use a keyboard shortcut in a [Git Graphical User Interface (GUI)](https://git-scm.com/downloads/guis#:~:text=iOS-,GitHub%20Desktop,-Platforms%3A%20Mac) such as [`GitHub Desktop`](https://desktop.github.com) or the Git interface in a [code editor](https://en.wikipedia.org/wiki/Source-code_editor#:~:text=A%20source%2Dcode%20editor%20is%20a%20text%20editor%20program%20designed%20specifically%20for%20editing%20source%20code%20of%20computer%20programs.) like VSCode, VSCodium, or RStudio. I use keyboard shortcuts in VSCode and VSCodium to send shell commands to the integrated terminal without moving my focus away from the files I am editing.
+
+I created different shortcuts to control which files are included in each commit: ⌥⇧F for the current file only, ⌥⇧S for already [staged](https://git-scm.com/book/en/v2/Getting-Started-What-is-Git%3F#:~:text=Staged%20means%20that%20you%20have%20marked%20a%20modified%20file%20in%20its%20current%20version%20to%20go%20into%20your%20next%20commit%20snapshot.) files, ⌥⇧T for all [tracked files](https://git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-the-Repository#:~:text=Tracked%20files%20are%20files%20that%20were%20in%20the%20last%20snapshot%2C%20as%20well%20as%20any%20newly%20staged%20files), and ⌥⇧U for all files including [untracked files](https://git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-the-Repository#:~:text=Untracked%20files%20are%20everything%20else%E2%80%89%E2%80%94%E2%80%89any%20files%20in%20your%20working%20directory%20that%20were%20not%20in%20your%20last%20snapshot%20and%20are%20not%20in%20your%20staging%20area.). I also have keyboard shortcuts that affect a specific directory (and all of its subdirectories): ⌥⇧D for the current file's directory, ⌥⇧. for shell's current directory, ⌥⇧C for the current working directory according to VSCode/VSCodium, ⌥⇧W for the [Workspace](https://code.visualstudio.com/docs/editor/workspaces#:~:text=A%20Visual%20Studio%20Code%20%22workspace%22%20is%20the%20collection%20of%20one%20or%20more%20folders%20that%20are%20opened%20in%20a%20VS%20Code%20window) directory.
+
+@exm-key displays the ⌥⇧F shortcut as an example of the VSCode/VSCodium shortcut syntax. This shortcut uses the [escape code](https://en.wikipedia.org/wiki/ANSI_escape_code#C0_control_codes) for the [return key](https://en.wikipedia.org/wiki/ANSI_escape_code#C0_control_codes:~:text=0x0D,Carriage%20Return) (`\u000D`) to run several `git` commands and [predefined variables](https://code.visualstudio.com/docs/editor/variables-reference#_predefined-variables) to insert the absolute (`${file}`) and relative (`${relativeFile}`) path to the currently open file.
+
+::: {#exm-key}
+``` {.json filename="keybindings.json"}
+{
+  "key": "shift+alt+f",
+  "command": "workbench.action.terminal.sendSequence", "args": { "text":
+    "git add ${file} && git commit -m \"M ${relativeFile}\" && git push\u000D" },
+  "when": "terminalIsOpen"
+}
+```
+:::
+
+If you want to set up similar shortcuts for yourself, take a look at [my keybindings.json](https://github.com/maptv/setup/blob/main/keybindings.json) in my `setup` repo on [GitHub](https://github.com/maptv/setup) and [GitLab](https://gitlab.com/maptv/setup). As you create keyboard shortcuts, please be mindful of [keybinding conflicts](https://code.visualstudio.com/docs/getstarted/keybindings#_detecting-keybinding-conflicts) that may arise.
+
+To set up a keyboard shortcut that runs a series of steps rather than a single line of shell code, I suggest you use the VSCode/VSCodium [Tasks](https://code.visualstudio.com/docs/editor/tasks) mechanism, a system designed to [automate](https://en.wikipedia.org/wiki/Build_automation#:~:text=Build%20automation%20is%20the%20process%20of%20automating%20the%20creation%20of%20a%20software%20build) [software build](https://en.wikipedia.org/wiki/Software_build#:~:text=In%20software%20development%2C%20a%20build%20is%20the%20process%20of%20converting%20source%20code%20files%20into%20standalone%20software%20artifact(s)%20that%20can%20be%20run%20on%20a%20computer%2C%20or%20the%20result%20of%20doing%20so.) tasks. The default keyboard shortcut to run all tasks in a [local](https://code.visualstudio.com/docs/editor/tasks#_global-tasks:~:text=Workspace%20or%20folder%20specific%20tasks%20are%20configured%20from%20the%20tasks.json%20file%20in%20the%20.vscode%20folder%20for%20a%20workspace.) or [global](https://code.visualstudio.com/docs/editor/tasks#_global-tasks) `task.json` file is ⌃⇧B on Linux/Windows or ⌘⇧B on Mac (mnemonic: B is for Build), but you can [bind other shortcuts to specific tasks](https://code.visualstudio.com/docs/editor/tasks#_binding-keyboard-shortcuts-to-tasks).
+
+If you use a text editor like [Vim](https://en.wikipedia.org/wiki/Vim_(text_editor)#:~:text=Vim%20(/v%C9%AAm/%3B%5B5%5D%20a%20contraction%20of%20Vi%20IMproved)%20is%20a%20free%20and%20open%2Dsource%2C%20screen%2Dbased%20text%20editor%20program.) or [Emacs](https://en.wikipedia.org/wiki/Emacs#:~:text=Emacs%20/%CB%88i%CB%90m%C3%A6ks/%2C%20originally%20named%20EMACS%20(an%20acronym%20for%20%22Editor%20Macros%22)%2C%5B1%5D%5B2%5D%5B3%5D%20is%20a%20family%20of%20text%20editors%20that%20are%20characterized%20by%20their%20extensibility.), you can create keybindings for Vim plugins like [fugitive](https://github.com/tpope/vim-fugitive) or Emacs packages like [magit](https://magit.vc/) that run through the entire Git workflow. @exm-vim shows the Vim+fugitive equivalent of my ⌥⇧F VSCode/VSCodium keybinding.
+
+::: {#exm-vim}
+```sh {filename=".vimrc"}
+nnoremap <A-S-f> :Gw<bar>G! commit -m "M "%<bar>G! push<CR>
+```
+:::
+
+The drawback of my keyboard shortcut approach for the Git workflow is that it produces generic commit messages that are no very informative. Anyone reading the messages will not be able to tell what changes were made and more importantly why the changes were made.
+
+To automatically generate commit messages based on the currently staged changes, we can use a [Large Language Model](https://en.wikipedia.org/wiki/Large_language_model#:~:text=A%20large%20language%20model%20(LLM)%20is%20a%20type%20of%20language%20model%20notable%20for%20its%20ability%20to%20achieve%20general%2Dpurpose%20language%20understanding%20and%20generation.) (LLM). [Generative artificial intelligence](https://en.wikipedia.org/wiki/Generative_artificial_intelligence#:~:text=Generative%20artificial%20intelligence%20(also%20generative%20AI%20or%20GenAI%5B1%5D)%20is%20artificial%20intelligence%20capable%20of%20generating%20text%2C%20images%2C%20or%20other%20media) models like LLMs tend to be large in size and have atypical computational requirements.
+
+I really enjoy using Git, especially with shell aliases in my terminal and keyboard shortcuts in my favorite text editors. If we ever collaborate on a project together, you can be sure that I will insist on using Git!

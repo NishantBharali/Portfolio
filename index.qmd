@@ -1,0 +1,42 @@
+---
+title: "Nishant"
+subtitle: "Bharali"
+image: ./images/Nishant.jpg
+about:
+  template: trestles
+  image-width: 5em
+  image-shape: round
+  links:
+    - icon: rss
+      text: Blog
+      href: _site/blog.html
+    - icon: linkedin
+      text: LinkedIn
+      href: https://www.linkedin.com/in/nishant-kumar-bharali/
+    - icon: github
+      text: GitHub
+      href: https://github.com/NishantBharali
+comments: false
+page-layout: full
+---
+
+Greetings! My name is Nishant Bharali. <img src="images/wave.gif" width="40px"/>
+
+I'm an engineer with experiences in software modeling, analytics, vehicle controls, and machine learning. For a living, I get to solve problems with data... **Life is good!**
+
+## Programming
+
+I use Python, Java, MATLAB and C++ to develop and deploy packages, web apps, automation pipelines, machine learning workflows, and websites (this site was built with [Quarto](https://quarto.org/)). My daily toolkit also includes Python.
+
+## Web App Development
+
+My framework of choice for web app development is Java + [Spring](https://spring.io/) + [React](https://react.dev/) + [Jenkins](https://www.jenkins.io/). With Spring, React and Jenkins, I can build enterprise-grade UIs on top of [Bootstrap 5](https://getbootstrap.com/) that can be infinitely styled with HTML, [Sass](https://sass-lang.com/), CSS, JavaScript, and more.
+
+## Data Science Communities
+
+There are a plethora of online and in-person data science communities to learn from and share your own experiences. Online communities for open-source languages and data science are incredibly welcoming and below are my favorites:
+
+- [SoCal R Users Group](https://www.meetup.com/socal-rug/ "SoCal RUG meets on a monthly basis for online and in-person events")
+- [Data Science Hangout](https://www.rstudio.com/data-science-hangout/live-calls/ "Data Science Hangout hosted by RStudio's Rachael Dempsey, Thursdays at 12pm ET")
+- [R-Ladies Global](https://rladies.org/ "R-Ladies Is A World-Wide Organization To Promote Gender Diversity In The R Community")
+- [The Ravit Show](https://theravitshow.com/ "TRS, hosted by Ravit Jain, is a community for data science & AI practitioners")
