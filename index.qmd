@@ -1,6 +1,6 @@
 ---
-title: "Nishant"
-subtitle: "Bharali"
+title: "Nishant Bharali"
+subtitle: "Persistently Evolve"
 image: ./images/Nishant.jpg
 about:
   template: trestles

@@ -26,7 +26,7 @@ website:
       - icon: envelope
         href: mailto:nishantkb@vt.edu
       - icon: file-earmark-person
-        href: https://nishantbharali.github.io/Blog/cv/cv.html
+        href: cv/cv.qmd
         target: _blank
       - text: Blog
         href: blog.qmd
