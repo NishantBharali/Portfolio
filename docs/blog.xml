@@ -10,7 +10,50 @@
 <atom:link href="https://nishantbharali.github.io/Blog/blog.xml" rel="self" type="application/rss+xml"/>
 <description>Nishant Bharali&#39;s engineering blog</description>
 <generator>quarto-1.3.450</generator>
-<lastBuildDate>Sat, 02 Dec 2023 05:00:00 GMT</lastBuildDate>
+<lastBuildDate>Sun, 31 Dec 2023 05:00:00 GMT</lastBuildDate>
+<item>
+  <title>Preparing for 2024 Goals with a Raspberry Pi</title>
+  <dc:creator>Nishant Bharali</dc:creator>
+  <link>https://nishantbharali.github.io/Blog/posts/2020-12-31-Raspberry-Pi/2020-12-31-Raspberry-Pi.html</link>
+  <description><![CDATA[ 
+
+
+
+<p>Killing a few birds with one stone and getting ready for 2021… <br><br>1) Getting better at Linux / shell commands, <br> 2) Learning Julia (see my Resources tab for some great Julia starter links!), <br> 3) Doing it all on a Raspberry Pi 😜 Happy holidays and Happy New Years to all!</p>
+<p>Below are some pics of my current progress.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://nishantbharali.github.io/Blog/posts/2020-12-31-Raspberry-Pi/images/Pi1.jpg" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Raspberry Pi 4, Model B, 8GB RAM, &amp; Super Cute Tiny Heat Sinks</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://nishantbharali.github.io/Blog/posts/2020-12-31-Raspberry-Pi/images/Pi2.jpg" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Enclosing the Pi 4 in a CanaKit case + fan</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://nishantbharali.github.io/Blog/posts/2020-12-31-Raspberry-Pi/images/Pi3.jpg" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Raspberry Pi OS, a Debian distro for the Pi</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://nishantbharali.github.io/Blog/posts/2020-12-31-Raspberry-Pi/images/Pi4.jpeg" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Jupyter Lab server on the Pi set up w/ Python, R, and Julia</figcaption>
+</figure>
+</div>
+
+
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div id="quarto-reuse" class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</a></div></div></section></div> ]]></description>
+  <category>Linux</category>
+  <guid>https://nishantbharali.github.io/Blog/posts/2020-12-31-Raspberry-Pi/2020-12-31-Raspberry-Pi.html</guid>
+  <pubDate>Sun, 31 Dec 2023 05:00:00 GMT</pubDate>
+  <media:content url="https://nishantbharali.github.io/Blog/posts/2020-12-31-Raspberry-Pi/images/Pi-banner.png" medium="image" type="image/png" height="76" width="144"/>
+</item>
 <item>
   <title>Ubuntu Update to 19.10</title>
   <dc:creator>Nishant Bharali</dc:creator>
@@ -25,7 +68,7 @@
 
 
 <div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div id="quarto-reuse" class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</a></div></div></section></div> ]]></description>
-  <category>linux</category>
+  <category>Linux</category>
   <guid>https://nishantbharali.github.io/Blog/posts/2019-12-31-Ubuntu-Update/2019-12-31-Ubuntu-Update.html</guid>
   <pubDate>Sat, 02 Dec 2023 05:00:00 GMT</pubDate>
   <media:content url="https://nishantbharali.github.io/Blog/posts/2019-12-31-Ubuntu-Update/images/Ubuntu.jpg" medium="image" type="image/jpeg"/>
@@ -46,7 +89,8 @@
 
 
 <div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div id="quarto-reuse" class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</a></div></div></section></div> ]]></description>
-  <category>machine learning</category>
+  <category>Machine Learning</category>
+  <category>Data Science</category>
   <guid>https://nishantbharali.github.io/Blog/posts/2019-12-17-Hands-On-Machine-Learning-with-R/2019-12-17-Hands-On-Machine-Learning-with-R.html</guid>
   <pubDate>Fri, 01 Dec 2023 05:00:00 GMT</pubDate>
   <media:content url="https://nishantbharali.github.io/Blog/posts/2019-12-17-Hands-On-Machine-Learning-with-R/images/HOMLR.jpg" medium="image" type="image/jpeg"/>
@@ -1121,7 +1165,7 @@ font-style: inherit;">sum</span>()</span>
 </section>
 
 <div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div id="quarto-reuse" class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</a></div></div></section></div> ]]></description>
-  <category>machine learning</category>
+  <category>Machine Learning</category>
   <guid>https://nishantbharali.github.io/Blog/posts/Anomaly-Outlier Detection/index.html</guid>
   <pubDate>Fri, 24 Nov 2023 05:00:00 GMT</pubDate>
   <media:content url="https://nishantbharali.github.io/Blog/posts/Anomaly-Outlier Detection/image2.jpg" medium="image" type="image/jpeg"/>
@@ -1138,12 +1182,12 @@ font-style: inherit;">sum</span>()</span>
 <h4 class="anchored" data-anchor-id="advanced-classification-techniques-with-model-prediction-analysis">Advanced Classification techniques with Model Prediction Analysis</h4>
 </section>
 <section id="implementing-advanced-classification-techniques-for-precise-model-prediction-analysis-to-enhance-accuracy-and-efficiency" class="level2">
-<h2 class="anchored" data-anchor-id="implementing-advanced-classification-techniques-for-precise-model-prediction-analysis-to-enhance-accuracy-and-efficiency">Implementing advanced classification techniques for precise model prediction analysis to enhance accuracy and efficiency**</h2>
+<h2 class="anchored" data-anchor-id="implementing-advanced-classification-techniques-for-precise-model-prediction-analysis-to-enhance-accuracy-and-efficiency">Implementing advanced classification techniques for precise model prediction analysis to enhance accuracy and efficiency</h2>
 <p><strong>Introduction</strong></p>
 <p>Machine learning is a fascinating field that empowers computers to learn and make predictions or decisions without being explicitly programmed. One of the fundamental tasks in machine learning is classification, where the goal is to categorize data points into predefined classes or labels. In this blog post, we dive deep into the world of classification, exploring advanced techniques and their application on a real-world dataset.</p>
 <p>The Iris dataset is a well-known benchmark in the machine learning community. It consists of measurements of four features from three different species of iris flowers. This seemingly simple dataset serves as an excellent playground for understanding and implementing classification algorithms. However, we won’t stop at the basics; we’ll explore advanced classification techniques, model tuning, and even dive into ensemble methods and neural networks.</p>
 <p><strong>Data Loading and Preliminary Analysis</strong></p>
-<div class="cell" data-execution_count="2">
+<div class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;"># Importing essential libraries</span></span>
@@ -1266,7 +1310,7 @@ None</code></pre>
 </div>
 </div>
 <p><strong>Data Preprocessing</strong></p>
-<div class="cell" data-execution_count="3">
+<div class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><span class="im" style="color: #00769E;
 background-color: null;
 font-style: inherit;">from</span> sklearn.model_selection <span class="im" style="color: #00769E;
@@ -1339,7 +1383,7 @@ background-color: null;
 font-style: inherit;">=</span> scaler.transform(X_test)</span></code></pre></div>
 </div>
 <p><strong>Exploratory Data Analysis (EDA)</strong></p>
-<div class="cell" data-execution_count="4">
+<div class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb4" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;"># Correlation heatmap</span></span>
@@ -1382,7 +1426,7 @@ font-style: inherit;">'species'</span>)</span>
 </div>
 </div>
 <p><strong>Model Building and Evaluation For Classification</strong></p>
-<div class="cell" data-execution_count="5">
+<div class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb5" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><span class="im" style="color: #00769E;
 background-color: null;
 font-style: inherit;">from</span> sklearn.metrics <span class="im" style="color: #00769E;
@@ -1576,7 +1620,7 @@ weighted avg       0.98      0.98      0.98       900
 <p>In this code, we introduce different types of classification models, including Random Forest Classifier, Gradient Boosting Classifier, Support Vector Classifier (SVC), K-Nearest Neighbors Classifier (KNN), and Logistic Regression.</p>
 <p>For each model, we train it on the training data and evaluate its performance using accuracy and a classification report that includes precision, recall, and F1-score. This allows you to compare the performance of various classification algorithms on the Iris dataset.</p>
 <p><strong>Advanced Model Tuning and Analysis</strong></p>
-<div class="cell" data-execution_count="6">
+<div class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb7" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><span class="im" style="color: #00769E;
 background-color: null;
 font-style: inherit;">from</span> sklearn.model_selection <span class="im" style="color: #00769E;
@@ -1626,8 +1670,8 @@ font-style: inherit;"># Evaluating the tuned model</span></span>
               precision    recall  f1-score   support
 
            0       1.00      1.00      1.00       289
-           1       0.99      0.99      0.99       299
-           2       0.99      0.99      0.99       312
+           1       0.99      1.00      0.99       299
+           2       1.00      0.99      1.00       312
 
     accuracy                           1.00       900
    macro avg       1.00      1.00      1.00       900
@@ -1639,7 +1683,7 @@ weighted avg       1.00      1.00      1.00       900
 </div>
 </div>
 <p><strong>Hyperparameter Tuning for the Classification Model</strong></p>
-<div class="cell" data-execution_count="7">
+<div class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb9" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><span class="im" style="color: #00769E;
 background-color: null;
 font-style: inherit;">from</span> sklearn.model_selection <span class="im" style="color: #00769E;
@@ -1750,7 +1794,7 @@ weighted avg       1.00      1.00      1.00       900
 </div>
 <p><strong>ROC Curve Analysis for Multiple Models</strong></p>
 <p>Comparing the performance of the various classification models using ROC Curve analysis, here we discuss the plots of the ROC Curve for each model. This will involve calculating the True Positive Rate (TPR) and False Positive Rate (FPR) for each model and plotting them.</p>
-<div class="cell" data-execution_count="8">
+<div class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb11" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><span class="im" style="color: #00769E;
 background-color: null;
 font-style: inherit;">from</span> sklearn.metrics <span class="im" style="color: #00769E;
@@ -1933,7 +1977,7 @@ font-style: inherit;">"lower right"</span>)</span>
 </div>
 <p>This code will generate ROC curves for each of the classifiers used, providing a visual comparison of their performance in terms of the trade-off between the True Positive Rate and False Positive Rate. The area under the curve (AUC) is also displayed as a measure of the model’s performance, with a higher AUC indicating a better model. This analysis is crucial for understanding the performance of classification models, especially in multi-class settings.</p>
 <p><strong>Dimensionality Reduction and Visualization</strong></p>
-<div class="cell" data-execution_count="9">
+<div class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb12" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><span class="im" style="color: #00769E;
 background-color: null;
 font-style: inherit;">from</span> sklearn.decomposition <span class="im" style="color: #00769E;
@@ -2019,7 +2063,7 @@ font-style: inherit;">'PCA of Iris Dataset'</span>)</span>
 <p><strong>Additional Advanced Analysis</strong></p>
 <p><strong>1. Cross-Validation</strong></p>
 <p>Cross-validation is a technique used to evaluate the generalizability of a model by training and testing it on different subsets of the dataset.</p>
-<div class="cell" data-execution_count="10">
+<div class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb13" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><span class="im" style="color: #00769E;
 background-color: null;
 font-style: inherit;">from</span> sklearn.model_selection <span class="im" style="color: #00769E;
@@ -2055,14 +2099,14 @@ font-style: inherit;">print</span>(<span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"Average Score:"</span>, np.mean(cv_scores))</span></code></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Cross-Validation Scores for RandomForestClassifier: [0.99666667 1.         0.99333333 0.99333333 1.         0.99666667
- 0.99666667 0.99666667 1.         1.        ]
+<pre><code>Cross-Validation Scores for RandomForestClassifier: [1.         1.         0.99333333 0.99333333 1.         0.99666667
+ 0.99666667 0.99333333 1.         1.        ]
 Average Score: 0.9973333333333333</code></pre>
 </div>
 </div>
 <p><strong>2. Ensemble Methods</strong></p>
 <p>Ensemble methods combine multiple models to improve the overall performance. Here, I will use an ensemble of different classifiers.</p>
-<div class="cell" data-execution_count="11">
+<div class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb15" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><span class="im" style="color: #00769E;
 background-color: null;
 font-style: inherit;">from</span> sklearn.linear_model <span class="im" style="color: #00769E;
@@ -2146,7 +2190,7 @@ weighted avg       1.00      1.00      1.00       900
 </div>
 <p><strong>PREDICTION</strong></p>
 <p><strong>Prediction: Data Preprocessing with Visualization</strong></p>
-<div class="cell" data-execution_count="12">
+<div class="cell" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb17" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><span class="im" style="color: #00769E;
 background-color: null;
 font-style: inherit;">from</span> sklearn.model_selection <span class="im" style="color: #00769E;
@@ -2291,7 +2335,7 @@ font-style: inherit;">'Pairplot of Features with Species as Hue'</span>)</span>
 </div>
 </div>
 <p><strong>Model Building, Evaluation, and Visualization for Prediction</strong></p>
-<div class="cell" data-execution_count="13">
+<div class="cell" data-execution_count="12">
 <div class="sourceCode cell-code" id="cb19" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><span class="im" style="color: #00769E;
 background-color: null;
 font-style: inherit;">from</span> sklearn.metrics <span class="im" style="color: #00769E;
@@ -2425,11 +2469,11 @@ font-style: inherit;"># Random Forest Regressor</span></span>
 Mean Squared Error: 0.047703003079178956
 R-squared (R2) Score: 0.9284946222241109
 Model: DecisionTreeRegressor
-Mean Squared Error: 0.01
-R-squared (R2) Score: 0.9850102984801183
+Mean Squared Error: 0.0077777777777777776
+R-squared (R2) Score: 0.9883413432623143
 Model: RandomForestRegressor
-Mean Squared Error: 0.006380666666666666
-R-squared (R2) Score: 0.9904355711168809</code></pre>
+Mean Squared Error: 0.006260222222222222
+R-squared (R2) Score: 0.9906161137440759</code></pre>
 </div>
 <div class="cell-output cell-output-display">
 <p><img src="https://nishantbharali.github.io/Blog/posts/Classification/index_files/figure-html/cell-13-output-2.png" width="663" height="449"></p>
@@ -2442,7 +2486,7 @@ R-squared (R2) Score: 0.9904355711168809</code></pre>
 </div>
 </div>
 <p><strong>Advanced Model Tuning and Analysis for Prediction</strong></p>
-<div class="cell" data-execution_count="14">
+<div class="cell" data-execution_count="13">
 <div class="sourceCode cell-code" id="cb21" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><span class="im" style="color: #00769E;
 background-color: null;
 font-style: inherit;">from</span> sklearn.model_selection <span class="im" style="color: #00769E;
@@ -2547,13 +2591,13 @@ background-color: null;
 font-style: inherit;">'</span>)</span></code></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Tuned Random Forest Regressor - Model Evaluation
-Mean Squared Error: 0.005469777777777778
-R-squared (R2) Score: 0.9918009663731029</code></pre>
+Mean Squared Error: 0.006044444444444445
+R-squared (R2) Score: 0.9909395581924271</code></pre>
 </div>
 </div>
 <p><strong>Feature Selection and Importance Analysis</strong></p>
 <p>Feature selection is crucial for improving model performance and reducing overfitting. Here, we use techniques like Recursive Feature Elimination (RFE) and feature importance analysis to select the most relevant features for classification or prediction.</p>
-<div class="cell" data-execution_count="15">
+<div class="cell" data-execution_count="14">
 <div class="sourceCode cell-code" id="cb23" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><span class="im" style="color: #00769E;
 background-color: null;
 font-style: inherit;">from</span> sklearn.feature_selection <span class="im" style="color: #00769E;
@@ -2608,7 +2652,7 @@ font-style: inherit;">"Selected Features:"</span>, selected_features)</span></co
 </div>
 </div>
 <p>Additionally, we can analyze feature importance for tree-based models like Random Forest or Gradient Boosting to understand which features contribute the most to predictions.</p>
-<div class="cell" data-execution_count="16">
+<div class="cell" data-execution_count="15">
 <div class="sourceCode cell-code" id="cb25" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><span class="im" style="color: #00769E;
 background-color: null;
 font-style: inherit;">from</span> sklearn.ensemble <span class="im" style="color: #00769E;
@@ -2648,7 +2692,7 @@ font-style: inherit;">"Feature Importance (Random Forest)"</span>)</span>
 </div>
 <p><strong>Handling Class Imbalance</strong></p>
 <p>In real-world datasets, class imbalance is common, where one class has significantly fewer samples than others. Techniques like oversampling, undersampling, and Synthetic Minority Over-sampling Technique (SMOTE) can be employed to address this issue.</p>
-<div class="cell" data-execution_count="17">
+<div class="cell" data-execution_count="16">
 <div class="sourceCode cell-code" id="cb26" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><span class="im" style="color: #00769E;
 background-color: null;
 font-style: inherit;">from</span> imblearn.over_sampling <span class="im" style="color: #00769E;
@@ -2680,7 +2724,7 @@ font-style: inherit;">=</span> smote.fit_resample(X_train, y_train)</span></code
 </section>
 
 <div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div id="quarto-reuse" class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</a></div></div></section></div> ]]></description>
-  <category>machine learning</category>
+  <category>Machine Learning</category>
   <guid>https://nishantbharali.github.io/Blog/posts/Classification/index.html</guid>
   <pubDate>Fri, 24 Nov 2023 05:00:00 GMT</pubDate>
   <media:content url="https://nishantbharali.github.io/Blog/posts/Classification/image1.jpg" medium="image" type="image/jpeg"/>
@@ -3414,7 +3458,7 @@ font-style: inherit;">'Silhouette Score'</span>)</span>
 </section>
 
 <div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div id="quarto-reuse" class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</a></div></div></section></div> ]]></description>
-  <category>machine learning</category>
+  <category>Machine Learning</category>
   <guid>https://nishantbharali.github.io/Blog/posts/Clustering/index.html</guid>
   <pubDate>Fri, 24 Nov 2023 05:00:00 GMT</pubDate>
   <media:content url="https://nishantbharali.github.io/Blog/posts/Clustering/image1.jpg" medium="image" type="image/jpeg"/>
@@ -3770,7 +3814,7 @@ font-style: inherit;">&gt;</span></span></code></pre></div>
 </section>
 
 <div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div id="quarto-reuse" class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</a></div></div></section></div> ]]></description>
-  <category>Tools</category>
+  <category>Tools/Packages</category>
   <guid>https://nishantbharali.github.io/Blog/posts/git/git.html</guid>
   <pubDate>Fri, 24 Nov 2023 05:00:00 GMT</pubDate>
   <media:content url="https://nishantbharali.github.io/Blog/posts/git/horst_git-hug.png" medium="image" type="image/png" height="51" width="144"/>
@@ -5472,7 +5516,7 @@ font-style: inherit;">'Support Vector Regression Residuals'</span>)</span>
 </section>
 
 <div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div id="quarto-reuse" class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</a></div></div></section></div> ]]></description>
-  <category>machine learning</category>
+  <category>Machine Learning</category>
   <guid>https://nishantbharali.github.io/Blog/posts/Linear and Non Linear Regression/index.html</guid>
   <pubDate>Fri, 24 Nov 2023 05:00:00 GMT</pubDate>
   <media:content url="https://nishantbharali.github.io/Blog/posts/Linear and Non Linear Regression/image2.jpg" medium="image" type="image/jpeg"/>
@@ -5490,7 +5534,7 @@ font-style: inherit;">'Support Vector Regression Residuals'</span>)</span>
 
 
 <div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div id="quarto-reuse" class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</a></div></div></section></div> ]]></description>
-  <category>Tools</category>
+  <category>Tools/Packages</category>
   <guid>https://nishantbharali.github.io/Blog/posts/llm/llm.html</guid>
   <pubDate>Fri, 24 Nov 2023 05:00:00 GMT</pubDate>
   <media:content url="https://nishantbharali.github.io/Blog/posts/llm/dalle_llm-guru.jpg" medium="image" type="image/jpeg"/>
@@ -5519,7 +5563,7 @@ font-style: inherit;">'Support Vector Regression Residuals'</span>)</span>
 <p>Machine learning techniques, such as regression, classification, and time series analysis, heavily rely on probabilistic and random process models to extract meaningful insights from weather data. By incorporating these techniques, we can build predictive models that not only provide accurate weather forecasts but also account for uncertainty, enabling better decision-making in various applications like agriculture, transportation, and disaster management.</p>
 <p>In this context, the weather dataset you are using serves as a valuable source of information for exploring and applying these concepts. By understanding random processes and probability theory, you can leverage machine learning to unlock the potential hidden within weather data, improving the accuracy and reliability of weather forecasts and facilitating data-driven decision-making in various sectors that rely on weather information.</p>
 <p><strong>Data Loading and Basic Visualization</strong></p>
-<div class="cell" data-execution_count="1">
+<div class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;"># Importing libraries</span></span>
@@ -5591,7 +5635,7 @@ background-color: null;
 font-style: inherit;">'Date'</span>])</span></code></pre></div>
 </div>
 <p><strong>Exploratory Data Analysis</strong></p>
-<div class="cell" data-execution_count="2">
+<div class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">#Exploratory Data Analysis</span></span>
@@ -5638,7 +5682,7 @@ font-style: inherit;">0.5</span>)</span>
 <p><img src="https://nishantbharali.github.io/Blog/posts/Random Processes/index_files/figure-html/cell-3-output-1.png" width="593" height="429"></p>
 </div>
 </div>
-<div class="cell" data-execution_count="3">
+<div class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;"># Pair Plot to visualize all variables together.</span></span>
@@ -5653,7 +5697,7 @@ font-style: inherit;">'Weather_Condition'</span>)</span>
 </div>
 </div>
 <p><strong>Probability Distributions</strong></p>
-<div class="cell" data-execution_count="4">
+<div class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb4" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">#Normal Distribution Fit for Temperature.</span></span>
@@ -5728,7 +5772,7 @@ font-style: inherit;">%</span> (mean, std)</span>
 <p><img src="https://nishantbharali.github.io/Blog/posts/Random Processes/index_files/figure-html/cell-5-output-1.png" width="593" height="449"></p>
 </div>
 </div>
-<div class="cell" data-execution_count="5">
+<div class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb5" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">#Exponential Distribution Fit for Humidity.</span></span>
@@ -5799,7 +5843,7 @@ font-style: inherit;">2</span>)</span>
 </div>
 <p><strong>Time Series Analysis</strong></p>
 <p>Temperature Trend over Time.</p>
-<div class="cell" data-execution_count="6">
+<div class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb6" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">#Checking the temperature trned against time</span></span>
@@ -5820,7 +5864,7 @@ font-style: inherit;">"Temperature"</span>)</span>
 </div>
 </div>
 <p><strong>Probability Theory in Action</strong></p>
-<div class="cell" data-execution_count="7">
+<div class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb7" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">#Conditional Probability: Probability of High Humidity given Rainy Weather.</span></span>
@@ -5860,7 +5904,7 @@ font-style: inherit;">"</span>)</span></code></pre></div>
 <pre><code>Probability of High Humidity given Rainy Weather: 0.27586206896551724</code></pre>
 </div>
 </div>
-<div class="cell" data-execution_count="8">
+<div class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb9" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">#Joint Distribution: Temperature and Humidity.</span></span>
@@ -5889,7 +5933,7 @@ font-style: inherit;">'red'</span>)</span>
 </div>
 </div>
 <p><strong>Correlation Analysis</strong></p>
-<div class="cell" data-execution_count="9">
+<div class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb10" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">#Correlation Heatmap</span></span>
@@ -5923,7 +5967,7 @@ font-style: inherit;">"Correlation Heatmap"</span>)</span>
 </div>
 </div>
 <p><strong>Linear Regression for Temperature Prediction</strong></p>
-<div class="cell" data-execution_count="10">
+<div class="cell" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb11" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">#Model Training and Evaluation.</span></span>
@@ -6038,7 +6082,7 @@ font-style: inherit;">"Mean Squared Error:"</span>, mse)</span></code></pre></di
 </div>
 </div>
 <p><strong>Markov Chain for Weather Condition Transitions</strong></p>
-<div class="cell" data-execution_count="11">
+<div class="cell" data-execution_count="12">
 <div class="sourceCode cell-code" id="cb13" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">#Let's simulate a simple Markov chain to model the transitions between different weather conditions.</span></span>
@@ -6120,7 +6164,7 @@ Rainy   0.131488  0.179931  0.211073  0.166090  0.141869  0.169550</code></pre>
 </div>
 <p>This code calculates the probabilities of transitioning from one weather condition to another. It’s a basic form of a Markov chain.</p>
 <p><strong>Monte Carlo Simulation for Temperature Extremes</strong></p>
-<div class="cell" data-execution_count="12">
+<div class="cell" data-execution_count="13">
 <div class="sourceCode cell-code" id="cb15" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">#Use Monte Carlo simulation to estimate the probability of extreme temperature events.</span></span>
@@ -6233,7 +6277,7 @@ font-style: inherit;">"</span>)</span></code></pre></div>
 </section>
 
 <div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div id="quarto-reuse" class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</a></div></div></section></div> ]]></description>
-  <category>machine learning</category>
+  <category>Machine Learning</category>
   <guid>https://nishantbharali.github.io/Blog/posts/Random Processes/index.html</guid>
   <pubDate>Fri, 24 Nov 2023 05:00:00 GMT</pubDate>
   <media:content url="https://nishantbharali.github.io/Blog/posts/Random Processes/image.jpg" medium="image" type="image/jpeg"/>
@@ -6262,8 +6306,8 @@ font-style: inherit;">"</span>)</span></code></pre></div>
 
 
 <div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div id="quarto-reuse" class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</a></div></div></section></div> ]]></description>
-  <category>rmarkdown</category>
-  <category>blogdown</category>
+  <category>Rmarkdown</category>
+  <category>Blogdown</category>
   <guid>https://nishantbharali.github.io/Blog/posts/2019-11-18-Blogdown/2019-11-18-Blogdown.html</guid>
   <pubDate>Sat, 18 Nov 2023 05:00:00 GMT</pubDate>
   <media:content url="https://nishantbharali.github.io/Blog/posts/2019-11-18-Blogdown/images/blogdown.jpg" medium="image" type="image/jpeg"/>
@@ -6283,7 +6327,7 @@ font-style: inherit;">"</span>)</span></code></pre></div>
 
 
 <div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div id="quarto-reuse" class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</a></div></div></section></div> ]]></description>
-  <category>packages</category>
+  <category>Tools/Packages</category>
   <guid>https://nishantbharali.github.io/Blog/posts/2020-09-13-R-Package-Detailed-Tutorial/2020-09-13-R-Package-Detailed-Tutorial.html</guid>
   <pubDate>Wed, 13 Sep 2023 04:00:00 GMT</pubDate>
   <media:content url="https://nishantbharali.github.io/Blog/posts/2020-09-13-R-Package-Detailed-Tutorial/images/methods_bites.png" medium="image" type="image/png" height="167" width="144"/>
@@ -6309,8 +6353,8 @@ font-style: inherit;">"</span>)</span></code></pre></div>
 
 
 <div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div id="quarto-reuse" class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</a></div></div></section></div> ]]></description>
-  <category>rmarkdown</category>
-  <category>blogdown</category>
+  <category>Rmarkdown</category>
+  <category>Blogdown</category>
   <guid>https://nishantbharali.github.io/Blog/posts/2020-04-05-DnD-Adventures/2020-04-05-DnD-Adventures.html</guid>
   <pubDate>Wed, 05 Apr 2023 04:00:00 GMT</pubDate>
   <media:content url="https://nishantbharali.github.io/Blog/posts/2020-04-05-DnD-Adventures/images/Dnd.png" medium="image" type="image/png" height="61" width="144"/>
@@ -6335,8 +6379,8 @@ font-style: inherit;">"</span>)</span></code></pre></div>
 
 
 <div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div id="quarto-reuse" class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</a></div></div></section></div> ]]></description>
-  <category>statistics</category>
-  <category>machine learning</category>
+  <category>Statistics</category>
+  <category>Machine Learning</category>
   <guid>https://nishantbharali.github.io/Blog/posts/2020-02-01-k-fold-cross-validation/2020-02-01-k-fold-cross-validation.html</guid>
   <pubDate>Wed, 01 Feb 2023 05:00:00 GMT</pubDate>
   <media:content url="https://nishantbharali.github.io/Blog/posts/2020-02-01-k-fold-cross-validation/images/kfold.jpg" medium="image" type="image/jpeg"/>
@@ -6363,8 +6407,8 @@ font-style: inherit;">"</span>)</span></code></pre></div>
 </section>
 
 <div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div id="quarto-reuse" class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</a></div></div></section></div> ]]></description>
-  <category>tidyverse</category>
-  <category>machine learning</category>
+  <category>Data Science</category>
+  <category>Machine Learning</category>
   <guid>https://nishantbharali.github.io/Blog/posts/2023-01-01-data-science-hangout/2023-01-01-data-science-hangout.html</guid>
   <pubDate>Sun, 01 Jan 2023 05:00:00 GMT</pubDate>
   <media:content url="https://nishantbharali.github.io/Blog/posts/2023-01-01-data-science-hangout/images/Posit_Data_Science_Hangout.png" medium="image" type="image/png" height="78" width="144"/>
@@ -6389,7 +6433,7 @@ font-style: inherit;">"</span>)</span></code></pre></div>
 
 
 <div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div id="quarto-reuse" class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</a></div></div></section></div> ]]></description>
-  <category>tibble</category>
+  <category>Data Science</category>
   <guid>https://nishantbharali.github.io/Blog/posts/2021-05-24-dataframe/2021-05-24-dataframe.html</guid>
   <pubDate>Mon, 24 May 2021 04:00:00 GMT</pubDate>
   <media:content url="https://nishantbharali.github.io/Blog/posts/2021-05-24-dataframe/images/dataframe.jpeg" medium="image" type="image/jpeg"/>
@@ -6416,53 +6460,10 @@ font-style: inherit;">"</span>)</span></code></pre></div>
 
 
 <div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div id="quarto-reuse" class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</a></div></div></section></div> ]]></description>
-  <category>dt</category>
+  <category>Data Science</category>
   <guid>https://nishantbharali.github.io/Blog/posts/2021-05-03-DT/2021-05-03-DT.html</guid>
   <pubDate>Mon, 03 May 2021 04:00:00 GMT</pubDate>
   <media:content url="https://nishantbharali.github.io/Blog/posts/2021-05-03-DT/images/DT_Shiny.png" medium="image" type="image/png" height="84" width="144"/>
-</item>
-<item>
-  <title>Preparing for 2021 Goals with a Raspberry Pi</title>
-  <dc:creator>Nishant Bharali</dc:creator>
-  <link>https://nishantbharali.github.io/Blog/posts/2020-12-31-Raspberry-Pi/2020-12-31-Raspberry-Pi.html</link>
-  <description><![CDATA[ 
-
-
-
-<p>Killing a few birds with one stone and getting ready for 2021… <br><br>1) Getting better at Linux / shell commands, <br> 2) Learning Julia (see my Resources tab for some great Julia starter links!), <br> 3) Doing it all on a Raspberry Pi 😜 Happy holidays and Happy New Years to all!</p>
-<p>Below are some pics of my current progress.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="https://nishantbharali.github.io/Blog/posts/2020-12-31-Raspberry-Pi/images/Pi1.jpg" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Raspberry Pi 4, Model B, 8GB RAM, &amp; Super Cute Tiny Heat Sinks</figcaption>
-</figure>
-</div>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="https://nishantbharali.github.io/Blog/posts/2020-12-31-Raspberry-Pi/images/Pi2.jpg" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Enclosing the Pi 4 in a CanaKit case + fan</figcaption>
-</figure>
-</div>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="https://nishantbharali.github.io/Blog/posts/2020-12-31-Raspberry-Pi/images/Pi3.jpg" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Raspberry Pi OS, a Debian distro for the Pi</figcaption>
-</figure>
-</div>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="https://nishantbharali.github.io/Blog/posts/2020-12-31-Raspberry-Pi/images/Pi4.jpeg" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Jupyter Lab server on the Pi set up w/ Python, R, and Julia</figcaption>
-</figure>
-</div>
-
-
-
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div id="quarto-reuse" class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</a></div></div></section></div> ]]></description>
-  <category>linux</category>
-  <guid>https://nishantbharali.github.io/Blog/posts/2020-12-31-Raspberry-Pi/2020-12-31-Raspberry-Pi.html</guid>
-  <pubDate>Thu, 31 Dec 2020 05:00:00 GMT</pubDate>
-  <media:content url="https://nishantbharali.github.io/Blog/posts/2020-12-31-Raspberry-Pi/images/Pi-banner.png" medium="image" type="image/png" height="76" width="144"/>
 </item>
 </channel>
 </rss>

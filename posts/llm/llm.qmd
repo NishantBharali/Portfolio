@@ -2,7 +2,7 @@
 title: Large Language Models (LLM)
 description: "Gaining insights on weather data with Data Science and Machine Learning"
 date: 11-24-2023
-categories: [Tools]
+categories: [Tools/Packages]
 image: dalle_llm-guru.jpg
 ---
 

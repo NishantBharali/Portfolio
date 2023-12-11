@@ -2,7 +2,7 @@
 title: Probability Theory and Random Processes
 description: "Gaining insights on weather data with Data Science and Machine Learning"
 date: 11-24-2023
-categories: [machine learning]
+categories: [Machine Learning]
 image: image.jpg
 ---
 

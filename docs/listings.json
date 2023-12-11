@@ -2,6 +2,7 @@
   {
     "listing": "/blog.html",
     "items": [
+      "/posts/2020-12-31-Raspberry-Pi/2020-12-31-Raspberry-Pi.html",
       "/posts/2019-12-31-Ubuntu-Update/2019-12-31-Ubuntu-Update.html",
       "/posts/2019-12-17-Hands-On-Machine-Learning-with-R/2019-12-17-Hands-On-Machine-Learning-with-R.html",
       "/posts/Anomaly-Outlier Detection/index.html",
@@ -17,8 +18,7 @@
       "/posts/2020-02-01-k-fold-cross-validation/2020-02-01-k-fold-cross-validation.html",
       "/posts/2023-01-01-data-science-hangout/2023-01-01-data-science-hangout.html",
       "/posts/2021-05-24-dataframe/2021-05-24-dataframe.html",
-      "/posts/2021-05-03-DT/2021-05-03-DT.html",
-      "/posts/2020-12-31-Raspberry-Pi/2020-12-31-Raspberry-Pi.html"
+      "/posts/2021-05-03-DT/2021-05-03-DT.html"
     ]
   }
 ]

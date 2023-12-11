@@ -2,7 +2,7 @@
 title: "D&D Adventures + blogdown"
 description: "It's an incredible time to be creative! I've recently been re-learning Dungeons & Dragons with a group of friends and having so much fun in the process."
 date: 04-05-2023
-categories: [rmarkdown, blogdown]
+categories: [Rmarkdown, Blogdown]
 image: images/Dnd.png
 ---
 

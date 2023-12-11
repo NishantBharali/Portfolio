@@ -2,7 +2,7 @@
 title: "Data Science Hangout"
 description: "I was recently a guest on Posit's Data Science Hangout, hosted by Rachael Dempsey, and I had a blast. This is the recording where I talked about my transition from Excel-based financial modeling to machine learning at scale with R."
 date: 01-01-2023
-categories: [tidyverse, machine learning]
+categories: [Data Science, Machine Learning]
 image: images/Posit_Data_Science_Hangout.png
 ---
 

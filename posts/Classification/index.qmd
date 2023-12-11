@@ -2,13 +2,13 @@
 title: Advanced Classification techniques with Model Prediction Analysis
 description: "Implementing advanced classification techniques for precise model prediction analysis to enhance accuracy and efficiency"
 date: 11-24-2023
-categories: [machine learning]
+categories: [Machine Learning]
 image: image1.jpg
 ---
 
 #### Advanced Classification techniques with Model Prediction Analysis
 
-## Implementing advanced classification techniques for precise model prediction analysis to enhance accuracy and efficiency**
+## Implementing advanced classification techniques for precise model prediction analysis to enhance accuracy and efficiency
 
 **Introduction**
 

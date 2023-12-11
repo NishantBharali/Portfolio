@@ -2,7 +2,7 @@
 title: "Building a Website with Blogdown"
 description: "Learn how to build and deploy a website with R, blogdown, GitHub, Hugo, and Netlify."
 date: 11-18-2023
-categories: [rmarkdown, blogdown]
+categories: [Rmarkdown, Blogdown]
 image: images/blogdown.jpg
 ---
 

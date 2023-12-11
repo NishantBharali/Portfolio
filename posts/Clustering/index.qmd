@@ -2,7 +2,7 @@
 title: Advanced Clustering and Prediction techniques
 description: "Employing sophisticated clustering techniques with retail customer data and comparing further with prediction models"
 date: 11-24-2023
-categories: [machine learning]
+categories: [Machine Learning]
 image: image1.jpg
 ---
 

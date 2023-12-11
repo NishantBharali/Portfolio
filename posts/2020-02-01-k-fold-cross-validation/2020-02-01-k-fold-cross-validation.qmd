@@ -2,7 +2,7 @@
 title: "Resampling with k-fold Cross Validation"
 description: "Click for a high-level recap of k-fold cross validation as a resampling method." 
 date: 02-01-2023
-categories: [statistics, machine learning]
+categories: [Statistics, Machine Learning]
 image: images/kfold.jpg
 ---
 
