@@ -292,7 +292,7 @@ print("Neural Network Regression MSE:", mse_nn)
 
 **Building and Evaluating the Linear Regression Model**
 
-A. Final Model Training
+**A. Final Model Training**
 
 We'll train the final models using the best parameters found from previous steps.
 ```{python}
@@ -320,7 +320,7 @@ y_pred_linear = linear_model_final.predict(X_test_prep)
 y_pred_nn = nn_model_final.predict(X_test_prep)
 ```
 
-B. Evaluation Metrics
+**B. Evaluation Metrics**
 
 Calculating and printing evaluation metrics for both models.
 We'll train the final models using the best parameters found from previous steps.
@@ -336,11 +336,11 @@ r2_nn = r2_score(y_test, y_pred_nn)
 print("Neural Network - MSE:", mse_nn, "R2:", r2_nn)
 ```
 
-C. Plotting Model Performance
+**C. Plotting Model Performance**
 
 Visualizing the performance of the models using scatter plots and residual plots.
 
-I. Scatter Plot for Predictions.
+**I. Scatter Plot for Predictions.**
 
 ```{python}
 plt.figure(figsize=(12, 6))
@@ -367,7 +367,8 @@ plt.show()
 ```
 
 
-II. Residual Plot
+
+**II. Residual Plot**
 
 ```{python}
 plt.figure(figsize=(12, 6))
@@ -395,7 +396,7 @@ plt.show()
 
 **Building and Evaluating Non-Linear Model (Support Vector Regression)**
 
-A. Training the Support Vector Regressor
+**A. Training the Support Vector Regressor**
 ```{python}
 from sklearn.svm import SVR
 
@@ -407,7 +408,7 @@ svr_model_final.fit(X_train_prep, y_train)
 y_pred_svr = svr_model_final.predict(X_test_prep)
 ```
 
-B. Evaluation Metrics for SVR
+**B. Evaluation Metrics for SVR**
 ```{python}
 # Evaluation for Support Vector Regression
 mse_svr = mean_squared_error(y_test, y_pred_svr)
@@ -415,7 +416,7 @@ r2_svr = r2_score(y_test, y_pred_svr)
 print("Support Vector Regression - MSE:", mse_svr, "R2:", r2_svr)
 ```
 
-C. Plotting Comparisons
+**C. Plotting Comparisons**
 
 Visualizing the performance of the Linear Regression, Neural Network, and Support Vector Regression models.
 ```{python}
@@ -450,7 +451,7 @@ plt.show()
 ```
 
 
-D. Residual Plot for All Models
+**D. Residual Plot for All Models**
 ```{python}
 plt.figure(figsize=(18, 6))
 

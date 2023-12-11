@@ -470,7 +470,7 @@ Dep. Variable:                  Price   R-squared:                       0.917
 Model:                            OLS   Adj. R-squared:                  0.914
 Method:                 Least Squares   F-statistic:                     283.3
 Date:                Sun, 10 Dec 2023   Prob (F-statistic):          3.91e-119
-Time:                        03:45:05   Log-Likelihood:                -2932.4
+Time:                        20:22:05   Log-Likelihood:                -2932.4
 No. Observations:                 240   AIC:                             5885.
 Df Residuals:                     230   BIC:                             5920.
 Df Model:                           9                                         
@@ -617,7 +617,7 @@ Neural Network Regression MSE: 397201687873.44415</code></pre>
 </div>
 </div>
 <p><strong>Building and Evaluating the Linear Regression Model</strong></p>
-<p>A. Final Model Training</p>
+<p><strong>A. Final Model Training</strong></p>
 <p>We’ll train the final models using the best parameters found from previous steps.</p>
 <div class="cell" data-execution_count="12">
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.linear_model <span class="im">import</span> LinearRegression</span>
@@ -643,7 +643,7 @@ Neural Network Regression MSE: 397201687873.44415</code></pre>
 <span id="cb18-21"><a href="#cb18-21" aria-hidden="true" tabindex="-1"></a>y_pred_linear <span class="op">=</span> linear_model_final.predict(X_test_prep)</span>
 <span id="cb18-22"><a href="#cb18-22" aria-hidden="true" tabindex="-1"></a>y_pred_nn <span class="op">=</span> nn_model_final.predict(X_test_prep)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>B. Evaluation Metrics</p>
+<p><strong>B. Evaluation Metrics</strong></p>
 <p>Calculating and printing evaluation metrics for both models. We’ll train the final models using the best parameters found from previous steps.</p>
 <div class="cell" data-execution_count="13">
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Evaluation for Linear Regression</span></span>
@@ -660,9 +660,9 @@ Neural Network Regression MSE: 397201687873.44415</code></pre>
 Neural Network - MSE: 397201687873.44415 R2: -12.996715964015438</code></pre>
 </div>
 </div>
-<p>C. Plotting Model Performance</p>
+<p><strong>C. Plotting Model Performance</strong></p>
 <p>Visualizing the performance of the models using scatter plots and residual plots.</p>
-<p>I. Scatter Plot for Predictions.</p>
+<p><strong>I. Scatter Plot for Predictions.</strong></p>
 <div class="cell" data-execution_count="14">
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">12</span>, <span class="dv">6</span>))</span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -688,9 +688,7 @@ Neural Network - MSE: 397201687873.44415 R2: -12.996715964015438</code></pre>
 <p><img src="index_files/figure-html/cell-14-output-1.png" width="1142" height="566"></p>
 </div>
 </div>
-<ol start="2" type="I">
-<li>Residual Plot</li>
-</ol>
+<p><strong>II. Residual Plot</strong></p>
 <div class="cell" data-execution_count="15">
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">12</span>, <span class="dv">6</span>))</span>
 <span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -717,7 +715,7 @@ Neural Network - MSE: 397201687873.44415 R2: -12.996715964015438</code></pre>
 </div>
 </div>
 <p><strong>Building and Evaluating Non-Linear Model (Support Vector Regression)</strong></p>
-<p>A. Training the Support Vector Regressor</p>
+<p><strong>A. Training the Support Vector Regressor</strong></p>
 <div class="cell" data-execution_count="16">
 <div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.svm <span class="im">import</span> SVR</span>
 <span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -728,7 +726,7 @@ Neural Network - MSE: 397201687873.44415 R2: -12.996715964015438</code></pre>
 <span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Predictions</span></span>
 <span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a>y_pred_svr <span class="op">=</span> svr_model_final.predict(X_test_prep)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>B. Evaluation Metrics for SVR</p>
+<p><strong>B. Evaluation Metrics for SVR</strong></p>
 <div class="cell" data-execution_count="17">
 <div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Evaluation for Support Vector Regression</span></span>
 <span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>mse_svr <span class="op">=</span> mean_squared_error(y_test, y_pred_svr)</span>
@@ -738,7 +736,7 @@ Neural Network - MSE: 397201687873.44415 R2: -12.996715964015438</code></pre>
 <pre><code>Support Vector Regression - MSE: 28406556463.671677 R2: -0.0009990251211158263</code></pre>
 </div>
 </div>
-<p>C. Plotting Comparisons</p>
+<p><strong>C. Plotting Comparisons</strong></p>
 <p>Visualizing the performance of the Linear Regression, Neural Network, and Support Vector Regression models.</p>
 <div class="cell" data-execution_count="18">
 <div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">18</span>, <span class="dv">6</span>))</span>
@@ -773,7 +771,7 @@ Neural Network - MSE: 397201687873.44415 R2: -12.996715964015438</code></pre>
 <p><img src="index_files/figure-html/cell-18-output-1.png" width="1718" height="566"></p>
 </div>
 </div>
-<p>D. Residual Plot for All Models</p>
+<p><strong>D. Residual Plot for All Models</strong></p>
 <div class="cell" data-execution_count="19">
 <div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">18</span>, <span class="dv">6</span>))</span>
 <span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a></span>

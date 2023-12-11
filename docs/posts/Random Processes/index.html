@@ -308,7 +308,7 @@ cookieconsent.run({
 <p>Machine learning techniques, such as regression, classification, and time series analysis, heavily rely on probabilistic and random process models to extract meaningful insights from weather data. By incorporating these techniques, we can build predictive models that not only provide accurate weather forecasts but also account for uncertainty, enabling better decision-making in various applications like agriculture, transportation, and disaster management.</p>
 <p>In this context, the weather dataset you are using serves as a valuable source of information for exploring and applying these concepts. By understanding random processes and probability theory, you can leverage machine learning to unlock the potential hidden within weather data, improving the accuracy and reliability of weather forecasts and facilitating data-driven decision-making in various sectors that rely on weather information.</p>
 <p><strong>Data Loading and Basic Visualization</strong></p>
-<div class="cell" data-execution_count="2">
+<div class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Importing libraries</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
@@ -326,7 +326,7 @@ cookieconsent.run({
 <span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>weather_df[<span class="st">'Date'</span>] <span class="op">=</span> pd.to_datetime(weather_df[<span class="st">'Date'</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><strong>Exploratory Data Analysis</strong></p>
-<div class="cell" data-execution_count="3">
+<div class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Exploratory Data Analysis</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co">#Histograms and KDE (Kernel Density Estimation) plots for Temperature and Humidity.</span></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>sns.histplot(weather_df[<span class="st">'Temperature'</span>], kde<span class="op">=</span><span class="va">True</span>, color<span class="op">=</span><span class="st">'blue'</span>, label<span class="op">=</span><span class="st">'Temperature'</span>)</span>
@@ -337,7 +337,7 @@ cookieconsent.run({
 <p><img src="index_files/figure-html/cell-3-output-1.png" width="593" height="429"></p>
 </div>
 </div>
-<div class="cell" data-execution_count="4">
+<div class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Pair Plot to visualize all variables together.</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>sns.pairplot(weather_df, hue<span class="op">=</span><span class="st">'Weather_Condition'</span>)</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -346,7 +346,7 @@ cookieconsent.run({
 </div>
 </div>
 <p><strong>Probability Distributions</strong></p>
-<div class="cell" data-execution_count="5">
+<div class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Normal Distribution Fit for Temperature.</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>sns.histplot(weather_df[<span class="st">'Temperature'</span>], kde<span class="op">=</span><span class="va">False</span>, color<span class="op">=</span><span class="st">'blue'</span>, label<span class="op">=</span><span class="st">'Temperature'</span>)</span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -365,7 +365,7 @@ cookieconsent.run({
 <p><img src="index_files/figure-html/cell-5-output-1.png" width="593" height="449"></p>
 </div>
 </div>
-<div class="cell" data-execution_count="6">
+<div class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Exponential Distribution Fit for Humidity.</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy.stats <span class="im">import</span> expon</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -386,79 +386,83 @@ cookieconsent.run({
 </div>
 <p><strong>Time Series Analysis</strong></p>
 <p>Temperature Trend over Time.</p>
-<p>#Checking the temperature trned against time weather_df.set_index(‘Date’)[‘Temperature’].plot() plt.title(“Temperature Trend Over Time”) plt.ylabel(“Temperature”) plt.show()</p>
-<pre><code>
-
-
-**Probability Theory in Action**
-
-::: {.cell execution_count=7}
-``` {.python .cell-code}
-#Conditional Probability: Probability of High Humidity given Rainy Weather.
-high_humidity = weather_df['Humidity'] &gt; 80
-rainy_days = weather_df['Weather_Condition'] == 'Rainy'
-prob_high_humidity_given_rain = np.mean(high_humidity[rainy_days])
-print(f"Probability of High Humidity given Rainy Weather: {prob_high_humidity_given_rain}")</code></pre>
+<div class="cell" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Checking the temperature trned against time</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>weather_df.set_index(<span class="st">'Date'</span>)[<span class="st">'Temperature'</span>].plot()</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">"Temperature Trend Over Time"</span>)</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">"Temperature"</span>)</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<p><img src="index_files/figure-html/cell-7-output-1.png" width="585" height="449"></p>
+</div>
+</div>
+<p><strong>Probability Theory in Action</strong></p>
+<div class="cell" data-execution_count="7">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Conditional Probability: Probability of High Humidity given Rainy Weather.</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>high_humidity <span class="op">=</span> weather_df[<span class="st">'Humidity'</span>] <span class="op">&gt;</span> <span class="dv">80</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>rainy_days <span class="op">=</span> weather_df[<span class="st">'Weather_Condition'</span>] <span class="op">==</span> <span class="st">'Rainy'</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>prob_high_humidity_given_rain <span class="op">=</span> np.mean(high_humidity[rainy_days])</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Probability of High Humidity given Rainy Weather: </span><span class="sc">{</span>prob_high_humidity_given_rain<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Probability of High Humidity given Rainy Weather: 0.27586206896551724</code></pre>
 </div>
-<p>:::</p>
+</div>
 <div class="cell" data-execution_count="8">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Joint Distribution: Temperature and Humidity.</span></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>sns.jointplot(data<span class="op">=</span>weather_df, x<span class="op">=</span><span class="st">'Temperature'</span>, y<span class="op">=</span><span class="st">'Humidity'</span>, kind<span class="op">=</span><span class="st">'kde'</span>, color<span class="op">=</span><span class="st">'red'</span>)</span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Joint Distribution: Temperature and Humidity.</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>sns.jointplot(data<span class="op">=</span>weather_df, x<span class="op">=</span><span class="st">'Temperature'</span>, y<span class="op">=</span><span class="st">'Humidity'</span>, kind<span class="op">=</span><span class="st">'kde'</span>, color<span class="op">=</span><span class="st">'red'</span>)</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
-<p><img src="index_files/figure-html/cell-8-output-1.png" width="570" height="566"></p>
+<p><img src="index_files/figure-html/cell-9-output-1.png" width="570" height="566"></p>
 </div>
 </div>
 <p><strong>Correlation Analysis</strong></p>
 <div class="cell" data-execution_count="9">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Correlation Heatmap</span></span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Selecting only numerical columns for correlation analysis</span></span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>numerical_weather_df <span class="op">=</span> weather_df.select_dtypes(include<span class="op">=</span>[np.number])</span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Plotting the correlation heatmap</span></span>
-<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>sns.heatmap(numerical_weather_df.corr(), annot<span class="op">=</span><span class="va">True</span>, cmap<span class="op">=</span><span class="st">'coolwarm'</span>)</span>
-<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">"Correlation Heatmap"</span>)</span>
-<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Correlation Heatmap</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Selecting only numerical columns for correlation analysis</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>numerical_weather_df <span class="op">=</span> weather_df.select_dtypes(include<span class="op">=</span>[np.number])</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Plotting the correlation heatmap</span></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>sns.heatmap(numerical_weather_df.corr(), annot<span class="op">=</span><span class="va">True</span>, cmap<span class="op">=</span><span class="st">'coolwarm'</span>)</span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">"Correlation Heatmap"</span>)</span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
-<p><img src="index_files/figure-html/cell-9-output-1.png" width="533" height="431"></p>
+<p><img src="index_files/figure-html/cell-10-output-1.png" width="533" height="431"></p>
 </div>
 </div>
 <p><strong>Linear Regression for Temperature Prediction</strong></p>
 <div class="cell" data-execution_count="10">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Model Training and Evaluation.</span></span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Preparing data for linear regression</span></span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.linear_model <span class="im">import</span> LinearRegression</span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.metrics <span class="im">import</span> mean_squared_error</span>
-<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.model_selection <span class="im">import</span> train_test_split</span>
-<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Preparing data for linear regression</span></span>
-<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>X <span class="op">=</span> weather_df[[<span class="st">'Humidity'</span>]]</span>
-<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> weather_df[<span class="st">'Temperature'</span>]</span>
-<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>X_train, X_test, y_train, y_test <span class="op">=</span> train_test_split(X, y, test_size<span class="op">=</span><span class="fl">0.2</span>, random_state<span class="op">=</span><span class="dv">0</span>)</span>
-<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Training the model</span></span>
-<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a>model <span class="op">=</span> LinearRegression()</span>
-<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a>model.fit(X_train, y_train)</span>
-<span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-16"><a href="#cb10-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Making predictions</span></span>
-<span id="cb10-17"><a href="#cb10-17" aria-hidden="true" tabindex="-1"></a>y_pred <span class="op">=</span> model.predict(X_test)</span>
-<span id="cb10-18"><a href="#cb10-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-19"><a href="#cb10-19" aria-hidden="true" tabindex="-1"></a><span class="co"># Plotting actual vs predicted values</span></span>
-<span id="cb10-20"><a href="#cb10-20" aria-hidden="true" tabindex="-1"></a>plt.scatter(X_test, y_test, color<span class="op">=</span><span class="st">'blue'</span>, label<span class="op">=</span><span class="st">'Actual'</span>)</span>
-<span id="cb10-21"><a href="#cb10-21" aria-hidden="true" tabindex="-1"></a>plt.scatter(X_test, y_pred, color<span class="op">=</span><span class="st">'red'</span>, label<span class="op">=</span><span class="st">'Predicted'</span>)</span>
-<span id="cb10-22"><a href="#cb10-22" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Humidity'</span>)</span>
-<span id="cb10-23"><a href="#cb10-23" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Temperature'</span>)</span>
-<span id="cb10-24"><a href="#cb10-24" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Actual vs Predicted Temperature'</span>)</span>
-<span id="cb10-25"><a href="#cb10-25" aria-hidden="true" tabindex="-1"></a>plt.legend()</span>
-<span id="cb10-26"><a href="#cb10-26" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
-<span id="cb10-27"><a href="#cb10-27" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-28"><a href="#cb10-28" aria-hidden="true" tabindex="-1"></a><span class="co"># Model evaluation</span></span>
-<span id="cb10-29"><a href="#cb10-29" aria-hidden="true" tabindex="-1"></a>mse <span class="op">=</span> mean_squared_error(y_test, y_pred)</span>
-<span id="cb10-30"><a href="#cb10-30" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Mean Squared Error:"</span>, mse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Model Training and Evaluation.</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Preparing data for linear regression</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.linear_model <span class="im">import</span> LinearRegression</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.metrics <span class="im">import</span> mean_squared_error</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.model_selection <span class="im">import</span> train_test_split</span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Preparing data for linear regression</span></span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>X <span class="op">=</span> weather_df[[<span class="st">'Humidity'</span>]]</span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> weather_df[<span class="st">'Temperature'</span>]</span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>X_train, X_test, y_train, y_test <span class="op">=</span> train_test_split(X, y, test_size<span class="op">=</span><span class="fl">0.2</span>, random_state<span class="op">=</span><span class="dv">0</span>)</span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Training the model</span></span>
+<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a>model <span class="op">=</span> LinearRegression()</span>
+<span id="cb11-14"><a href="#cb11-14" aria-hidden="true" tabindex="-1"></a>model.fit(X_train, y_train)</span>
+<span id="cb11-15"><a href="#cb11-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-16"><a href="#cb11-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Making predictions</span></span>
+<span id="cb11-17"><a href="#cb11-17" aria-hidden="true" tabindex="-1"></a>y_pred <span class="op">=</span> model.predict(X_test)</span>
+<span id="cb11-18"><a href="#cb11-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-19"><a href="#cb11-19" aria-hidden="true" tabindex="-1"></a><span class="co"># Plotting actual vs predicted values</span></span>
+<span id="cb11-20"><a href="#cb11-20" aria-hidden="true" tabindex="-1"></a>plt.scatter(X_test, y_test, color<span class="op">=</span><span class="st">'blue'</span>, label<span class="op">=</span><span class="st">'Actual'</span>)</span>
+<span id="cb11-21"><a href="#cb11-21" aria-hidden="true" tabindex="-1"></a>plt.scatter(X_test, y_pred, color<span class="op">=</span><span class="st">'red'</span>, label<span class="op">=</span><span class="st">'Predicted'</span>)</span>
+<span id="cb11-22"><a href="#cb11-22" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Humidity'</span>)</span>
+<span id="cb11-23"><a href="#cb11-23" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Temperature'</span>)</span>
+<span id="cb11-24"><a href="#cb11-24" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Actual vs Predicted Temperature'</span>)</span>
+<span id="cb11-25"><a href="#cb11-25" aria-hidden="true" tabindex="-1"></a>plt.legend()</span>
+<span id="cb11-26"><a href="#cb11-26" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
+<span id="cb11-27"><a href="#cb11-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-28"><a href="#cb11-28" aria-hidden="true" tabindex="-1"></a><span class="co"># Model evaluation</span></span>
+<span id="cb11-29"><a href="#cb11-29" aria-hidden="true" tabindex="-1"></a>mse <span class="op">=</span> mean_squared_error(y_test, y_pred)</span>
+<span id="cb11-30"><a href="#cb11-30" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Mean Squared Error:"</span>, mse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
-<p><img src="index_files/figure-html/cell-10-output-1.png" width="585" height="449"></p>
+<p><img src="index_files/figure-html/cell-11-output-1.png" width="585" height="449"></p>
 </div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Mean Squared Error: 24.010797366937965</code></pre>
@@ -466,21 +470,21 @@ print(f"Probability of High Humidity given Rainy Weather: {prob_high_humidity_gi
 </div>
 <p><strong>Markov Chain for Weather Condition Transitions</strong></p>
 <div class="cell" data-execution_count="11">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Let's simulate a simple Markov chain to model the transitions between different weather conditions.</span></span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculating transition probabilities</span></span>
-<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>weather_conditions <span class="op">=</span> weather_df[<span class="st">'Weather_Condition'</span>].unique()</span>
-<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>transition_matrix <span class="op">=</span> pd.DataFrame(index<span class="op">=</span>weather_conditions, columns<span class="op">=</span>weather_conditions).fillna(<span class="dv">0</span>)</span>
-<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (prev, curr) <span class="kw">in</span> <span class="bu">zip</span>(weather_df[<span class="st">'Weather_Condition'</span>], weather_df[<span class="st">'Weather_Condition'</span>][<span class="dv">1</span>:]):</span>
-<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>    transition_matrix.at[prev, curr] <span class="op">+=</span> <span class="dv">1</span></span>
-<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Normalizing the rows to sum to 1</span></span>
-<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a>transition_matrix <span class="op">=</span> transition_matrix.div(transition_matrix.<span class="bu">sum</span>(axis<span class="op">=</span><span class="dv">1</span>), axis<span class="op">=</span><span class="dv">0</span>)</span>
-<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Display the transition matrix</span></span>
-<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(transition_matrix)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Let's simulate a simple Markov chain to model the transitions between different weather conditions.</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculating transition probabilities</span></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>weather_conditions <span class="op">=</span> weather_df[<span class="st">'Weather_Condition'</span>].unique()</span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>transition_matrix <span class="op">=</span> pd.DataFrame(index<span class="op">=</span>weather_conditions, columns<span class="op">=</span>weather_conditions).fillna(<span class="dv">0</span>)</span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (prev, curr) <span class="kw">in</span> <span class="bu">zip</span>(weather_df[<span class="st">'Weather_Condition'</span>], weather_df[<span class="st">'Weather_Condition'</span>][<span class="dv">1</span>:]):</span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>    transition_matrix.at[prev, curr] <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Normalizing the rows to sum to 1</span></span>
+<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a>transition_matrix <span class="op">=</span> transition_matrix.div(transition_matrix.<span class="bu">sum</span>(axis<span class="op">=</span><span class="dv">1</span>), axis<span class="op">=</span><span class="dv">0</span>)</span>
+<span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-14"><a href="#cb13-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Display the transition matrix</span></span>
+<span id="cb13-15"><a href="#cb13-15" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(transition_matrix)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>           Windy     Snowy    Cloudy     Foggy     Sunny     Rainy
 Windy   0.155116  0.165017  0.161716  0.194719  0.181518  0.141914
@@ -494,19 +498,19 @@ Rainy   0.131488  0.179931  0.211073  0.166090  0.141869  0.169550</code></pre>
 <p>This code calculates the probabilities of transitioning from one weather condition to another. It’s a basic form of a Markov chain.</p>
 <p><strong>Monte Carlo Simulation for Temperature Extremes</strong></p>
 <div class="cell" data-execution_count="12">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Use Monte Carlo simulation to estimate the probability of extreme temperature events.</span></span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>np.random.seed(<span class="dv">0</span>)</span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>num_simulations <span class="op">=</span> <span class="dv">10000</span></span>
-<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>extreme_temp_count <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>extreme_temp_threshold <span class="op">=</span> <span class="dv">30</span>  <span class="co"># Define what you consider as extreme temperature</span></span>
-<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> _ <span class="kw">in</span> <span class="bu">range</span>(num_simulations):</span>
-<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a>    simulated_temp <span class="op">=</span> np.random.choice(weather_df[<span class="st">'Temperature'</span>])</span>
-<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> simulated_temp <span class="op">&gt;</span> extreme_temp_threshold:</span>
-<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a>        extreme_temp_count <span class="op">+=</span> <span class="dv">1</span></span>
-<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a>probability_of_extreme_temp <span class="op">=</span> extreme_temp_count <span class="op">/</span> num_simulations</span>
-<span id="cb14-13"><a href="#cb14-13" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Probability of Extreme Temperature (&gt; </span><span class="sc">{</span>extreme_temp_threshold<span class="sc">}</span><span class="ss">°C): </span><span class="sc">{</span>probability_of_extreme_temp<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Use Monte Carlo simulation to estimate the probability of extreme temperature events.</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>np.random.seed(<span class="dv">0</span>)</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>num_simulations <span class="op">=</span> <span class="dv">10000</span></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>extreme_temp_count <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>extreme_temp_threshold <span class="op">=</span> <span class="dv">30</span>  <span class="co"># Define what you consider as extreme temperature</span></span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> _ <span class="kw">in</span> <span class="bu">range</span>(num_simulations):</span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>    simulated_temp <span class="op">=</span> np.random.choice(weather_df[<span class="st">'Temperature'</span>])</span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> simulated_temp <span class="op">&gt;</span> extreme_temp_threshold:</span>
+<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a>        extreme_temp_count <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a>probability_of_extreme_temp <span class="op">=</span> extreme_temp_count <span class="op">/</span> num_simulations</span>
+<span id="cb15-13"><a href="#cb15-13" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Probability of Extreme Temperature (&gt; </span><span class="sc">{</span>extreme_temp_threshold<span class="sc">}</span><span class="ss">°C): </span><span class="sc">{</span>probability_of_extreme_temp<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Probability of Extreme Temperature (&gt; 30°C): 0.0226</code></pre>
 </div>
