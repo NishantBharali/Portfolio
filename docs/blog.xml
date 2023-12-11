@@ -5,16 +5,16 @@
       xmlns:dc="http://purl.org/dc/elements/1.1/" 
       version="2.0">
 <channel>
-<title>Computer Engineering Bytes</title>
-<link>https://nishantbharali.github.io/Official-Blog/blog.html</link>
-<atom:link href="https://nishantbharali.github.io/Official-Blog/blog.xml" rel="self" type="application/rss+xml"/>
-<description>Nishant Bharali&#39;s engineering website built with Python and Quarto</description>
+<title>Engineering Bytes</title>
+<link>https://nishantbharali.github.io/Blog/blog.html</link>
+<atom:link href="https://nishantbharali.github.io/Blog/blog.xml" rel="self" type="application/rss+xml"/>
+<description>Nishant Bharali&#39;s engineering blog</description>
 <generator>quarto-1.3.450</generator>
 <lastBuildDate>Fri, 24 Nov 2023 05:00:00 GMT</lastBuildDate>
 <item>
   <title>Anomaly/Outlier Detection in a Financial Dataset</title>
   <dc:creator>Nishant Bharali</dc:creator>
-  <link>https://nishantbharali.github.io/Official-Blog/posts/Anomaly-Outlier Detection/index.html</link>
+  <link>https://nishantbharali.github.io/Blog/posts/Anomaly-Outlier Detection/index.html</link>
   <description><![CDATA[ 
 
 
@@ -262,13 +262,13 @@ font-style: inherit;">'PCA of Scaled Numerical Data'</span>)</span>
 <span id="cb1-44"></span>
 <span id="cb1-45">descriptive_stats, pca_df.head()</span></code></pre></div>
 <div class="cell-output cell-output-display">
-<p><img src="https://nishantbharali.github.io/Official-Blog/posts/Anomaly-Outlier Detection/index_files/figure-html/cell-2-output-1.png" width="1385" height="459"></p>
+<p><img src="https://nishantbharali.github.io/Blog/posts/Anomaly-Outlier Detection/index_files/figure-html/cell-2-output-1.png" width="1385" height="459"></p>
 </div>
 <div class="cell-output cell-output-display">
-<p><img src="https://nishantbharali.github.io/Official-Blog/posts/Anomaly-Outlier Detection/index_files/figure-html/cell-2-output-2.png" width="1418" height="459"></p>
+<p><img src="https://nishantbharali.github.io/Blog/posts/Anomaly-Outlier Detection/index_files/figure-html/cell-2-output-2.png" width="1418" height="459"></p>
 </div>
 <div class="cell-output cell-output-display">
-<p><img src="https://nishantbharali.github.io/Official-Blog/posts/Anomaly-Outlier Detection/index_files/figure-html/cell-2-output-3.png" width="810" height="523"></p>
+<p><img src="https://nishantbharali.github.io/Blog/posts/Anomaly-Outlier Detection/index_files/figure-html/cell-2-output-3.png" width="810" height="523"></p>
 </div>
 <div class="cell-output cell-output-display" data-execution_count="1">
 <pre><code>(               Age         Income  Transaction Amount
@@ -344,10 +344,10 @@ background-color: null;
 font-style: inherit;">8</span>))</span>
 <span id="cb3-10">plt.show()</span></code></pre></div>
 <div class="cell-output cell-output-display">
-<p><img src="https://nishantbharali.github.io/Official-Blog/posts/Anomaly-Outlier Detection/index_files/figure-html/cell-3-output-1.png" width="1170" height="505"></p>
+<p><img src="https://nishantbharali.github.io/Blog/posts/Anomaly-Outlier Detection/index_files/figure-html/cell-3-output-1.png" width="1170" height="505"></p>
 </div>
 <div class="cell-output cell-output-display">
-<p><img src="https://nishantbharali.github.io/Official-Blog/posts/Anomaly-Outlier Detection/index_files/figure-html/cell-3-output-2.png" width="1161" height="310"></p>
+<p><img src="https://nishantbharali.github.io/Blog/posts/Anomaly-Outlier Detection/index_files/figure-html/cell-3-output-2.png" width="1161" height="310"></p>
 </div>
 </div>
 <p><strong>Analysis Results: Anomaly Detection with Isolation Forest</strong></p>
@@ -511,7 +511,7 @@ background-color: null;
 font-style: inherit;">'Anomalies in the PCA Plane'</span>)</span>
 <span id="cb6-13">plt.show()</span></code></pre></div>
 <div class="cell-output cell-output-display">
-<p><img src="https://nishantbharali.github.io/Official-Blog/posts/Anomaly-Outlier Detection/index_files/figure-html/cell-5-output-1.png" width="587" height="449"></p>
+<p><img src="https://nishantbharali.github.io/Blog/posts/Anomaly-Outlier Detection/index_files/figure-html/cell-5-output-1.png" width="587" height="449"></p>
 </div>
 </div>
 <p><strong>K-Means Clustering for Anomaly Detection</strong></p>
@@ -655,7 +655,7 @@ font-style: inherit;">'K-Means Clustering'</span>)</span>
 <span id="cb8-8">plt.legend()</span>
 <span id="cb8-9">plt.show()</span></code></pre></div>
 <div class="cell-output cell-output-display">
-<p><img src="https://nishantbharali.github.io/Official-Blog/posts/Anomaly-Outlier Detection/index_files/figure-html/cell-7-output-1.png" width="810" height="523"></p>
+<p><img src="https://nishantbharali.github.io/Blog/posts/Anomaly-Outlier Detection/index_files/figure-html/cell-7-output-1.png" width="810" height="523"></p>
 </div>
 </div>
 <p><strong>DBSCAN for Anomaly Detection</strong></p>
@@ -767,7 +767,7 @@ font-style: inherit;">'DBSCAN Clustering'</span>)</span>
 <span id="cb10-6">plt.legend()</span>
 <span id="cb10-7">plt.show()</span></code></pre></div>
 <div class="cell-output cell-output-display">
-<p><img src="https://nishantbharali.github.io/Official-Blog/posts/Anomaly-Outlier Detection/index_files/figure-html/cell-9-output-1.png" width="810" height="523"></p>
+<p><img src="https://nishantbharali.github.io/Blog/posts/Anomaly-Outlier Detection/index_files/figure-html/cell-9-output-1.png" width="810" height="523"></p>
 </div>
 </div>
 <p><strong>Local Outlier Factor (LOF)</strong></p>
@@ -842,7 +842,7 @@ background-color: null;
 font-style: inherit;">'Local Outlier Factor'</span>)</span>
 <span id="cb12-5">plt.show()</span></code></pre></div>
 <div class="cell-output cell-output-display">
-<p><img src="https://nishantbharali.github.io/Official-Blog/posts/Anomaly-Outlier Detection/index_files/figure-html/cell-11-output-1.png" width="810" height="523"></p>
+<p><img src="https://nishantbharali.github.io/Blog/posts/Anomaly-Outlier Detection/index_files/figure-html/cell-11-output-1.png" width="810" height="523"></p>
 </div>
 </div>
 <p><strong>T-SNE for Visualization of High-Dimensional Data</strong></p>
@@ -947,7 +947,7 @@ background-color: null;
 font-style: inherit;">'T-SNE Visualization'</span>)</span>
 <span id="cb13-20">plt.show()</span></code></pre></div>
 <div class="cell-output cell-output-display">
-<p><img src="https://nishantbharali.github.io/Official-Blog/posts/Anomaly-Outlier Detection/index_files/figure-html/cell-12-output-1.png" width="819" height="523"></p>
+<p><img src="https://nishantbharali.github.io/Blog/posts/Anomaly-Outlier Detection/index_files/figure-html/cell-12-output-1.png" width="819" height="523"></p>
 </div>
 </div>
 <p>T-SNE results can be plotted to show how the data is distributed in the reduced-dimensional space, highlighting the anomalies detected.</p>
@@ -1060,7 +1060,7 @@ font-style: inherit;">sum</span>()</span>
 <span id="cb14-18"></span>
 <span id="cb14-19">num_anomalies_detected, pca_df.head()</span></code></pre></div>
 <div class="cell-output cell-output-display">
-<p><img src="https://nishantbharali.github.io/Official-Blog/posts/Anomaly-Outlier Detection/index_files/figure-html/cell-13-output-1.png" width="810" height="523"></p>
+<p><img src="https://nishantbharali.github.io/Blog/posts/Anomaly-Outlier Detection/index_files/figure-html/cell-13-output-1.png" width="810" height="523"></p>
 </div>
 <div class="cell-output cell-output-display" data-execution_count="12">
 <pre><code>(50,
@@ -1082,14 +1082,14 @@ font-style: inherit;">sum</span>()</span>
 
 <div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div id="quarto-reuse" class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</a></div></div></section></div> ]]></description>
   <category>machine learning</category>
-  <guid>https://nishantbharali.github.io/Official-Blog/posts/Anomaly-Outlier Detection/index.html</guid>
+  <guid>https://nishantbharali.github.io/Blog/posts/Anomaly-Outlier Detection/index.html</guid>
   <pubDate>Fri, 24 Nov 2023 05:00:00 GMT</pubDate>
-  <media:content url="https://nishantbharali.github.io/Official-Blog/posts/Anomaly-Outlier Detection/image2.jpg" medium="image" type="image/jpeg"/>
+  <media:content url="https://nishantbharali.github.io/Blog/posts/Anomaly-Outlier Detection/image2.jpg" medium="image" type="image/jpeg"/>
 </item>
 <item>
   <title>Advanced Classification techniques with Model Prediction Analysis</title>
   <dc:creator>Nishant Bharali</dc:creator>
-  <link>https://nishantbharali.github.io/Official-Blog/posts/Classification/index.html</link>
+  <link>https://nishantbharali.github.io/Blog/posts/Classification/index.html</link>
   <description><![CDATA[ 
 
 
@@ -1219,10 +1219,10 @@ memory usage: 117.3+ KB
 None</code></pre>
 </div>
 <div class="cell-output cell-output-display">
-<p><img src="https://nishantbharali.github.io/Official-Blog/posts/Classification/index_files/figure-html/cell-2-output-2.png" width="601" height="429"></p>
+<p><img src="https://nishantbharali.github.io/Blog/posts/Classification/index_files/figure-html/cell-2-output-2.png" width="601" height="429"></p>
 </div>
 <div class="cell-output cell-output-display">
-<p><img src="https://nishantbharali.github.io/Official-Blog/posts/Classification/index_files/figure-html/cell-2-output-3.png" width="1069" height="947"></p>
+<p><img src="https://nishantbharali.github.io/Blog/posts/Classification/index_files/figure-html/cell-2-output-3.png" width="1069" height="947"></p>
 </div>
 </div>
 <p><strong>Data Preprocessing</strong></p>
@@ -1335,10 +1335,10 @@ background-color: null;
 font-style: inherit;">'species'</span>)</span>
 <span id="cb4-8">plt.show()</span></code></pre></div>
 <div class="cell-output cell-output-display">
-<p><img src="https://nishantbharali.github.io/Official-Blog/posts/Classification/index_files/figure-html/cell-4-output-1.png" width="745" height="638"></p>
+<p><img src="https://nishantbharali.github.io/Blog/posts/Classification/index_files/figure-html/cell-4-output-1.png" width="745" height="638"></p>
 </div>
 <div class="cell-output cell-output-display">
-<p><img src="https://nishantbharali.github.io/Official-Blog/posts/Classification/index_files/figure-html/cell-4-output-2.png" width="1016" height="947"></p>
+<p><img src="https://nishantbharali.github.io/Blog/posts/Classification/index_files/figure-html/cell-4-output-2.png" width="1016" height="947"></p>
 </div>
 </div>
 <p><strong>Model Building and Evaluation For Classification</strong></p>
@@ -1515,22 +1515,22 @@ weighted avg       0.98      0.98      0.98       900
 </code></pre>
 </div>
 <div class="cell-output cell-output-display">
-<p><img src="https://nishantbharali.github.io/Official-Blog/posts/Classification/index_files/figure-html/cell-5-output-2.png" width="537" height="411"></p>
+<p><img src="https://nishantbharali.github.io/Blog/posts/Classification/index_files/figure-html/cell-5-output-2.png" width="537" height="411"></p>
 </div>
 <div class="cell-output cell-output-display">
-<p><img src="https://nishantbharali.github.io/Official-Blog/posts/Classification/index_files/figure-html/cell-5-output-3.png" width="537" height="411"></p>
+<p><img src="https://nishantbharali.github.io/Blog/posts/Classification/index_files/figure-html/cell-5-output-3.png" width="537" height="411"></p>
 </div>
 <div class="cell-output cell-output-display">
-<p><img src="https://nishantbharali.github.io/Official-Blog/posts/Classification/index_files/figure-html/cell-5-output-4.png" width="537" height="411"></p>
+<p><img src="https://nishantbharali.github.io/Blog/posts/Classification/index_files/figure-html/cell-5-output-4.png" width="537" height="411"></p>
 </div>
 <div class="cell-output cell-output-display">
-<p><img src="https://nishantbharali.github.io/Official-Blog/posts/Classification/index_files/figure-html/cell-5-output-5.png" width="537" height="411"></p>
+<p><img src="https://nishantbharali.github.io/Blog/posts/Classification/index_files/figure-html/cell-5-output-5.png" width="537" height="411"></p>
 </div>
 <div class="cell-output cell-output-display">
-<p><img src="https://nishantbharali.github.io/Official-Blog/posts/Classification/index_files/figure-html/cell-5-output-6.png" width="537" height="411"></p>
+<p><img src="https://nishantbharali.github.io/Blog/posts/Classification/index_files/figure-html/cell-5-output-6.png" width="537" height="411"></p>
 </div>
 <div class="cell-output cell-output-display">
-<p><img src="https://nishantbharali.github.io/Official-Blog/posts/Classification/index_files/figure-html/cell-5-output-7.png" width="537" height="411"></p>
+<p><img src="https://nishantbharali.github.io/Blog/posts/Classification/index_files/figure-html/cell-5-output-7.png" width="537" height="411"></p>
 </div>
 </div>
 <p>In this code, we introduce different types of classification models, including Random Forest Classifier, Gradient Boosting Classifier, Support Vector Classifier (SVC), K-Nearest Neighbors Classifier (KNN), and Logistic Regression.</p>
@@ -1595,7 +1595,7 @@ weighted avg       1.00      1.00      1.00       900
 </code></pre>
 </div>
 <div class="cell-output cell-output-display">
-<p><img src="https://nishantbharali.github.io/Official-Blog/posts/Classification/index_files/figure-html/cell-6-output-2.png" width="537" height="411"></p>
+<p><img src="https://nishantbharali.github.io/Blog/posts/Classification/index_files/figure-html/cell-6-output-2.png" width="537" height="411"></p>
 </div>
 </div>
 <p><strong>Hyperparameter Tuning for the Classification Model</strong></p>
@@ -1888,7 +1888,7 @@ background-color: null;
 font-style: inherit;">"lower right"</span>)</span>
 <span id="cb11-44">plt.show()</span></code></pre></div>
 <div class="cell-output cell-output-display">
-<p><img src="https://nishantbharali.github.io/Official-Blog/posts/Classification/index_files/figure-html/cell-8-output-1.png" width="823" height="671"></p>
+<p><img src="https://nishantbharali.github.io/Blog/posts/Classification/index_files/figure-html/cell-8-output-1.png" width="823" height="671"></p>
 </div>
 </div>
 <p>This code will generate ROC curves for each of the classifiers used, providing a visual comparison of their performance in terms of the trade-off between the True Positive Rate and False Positive Rate. The area under the curve (AUC) is also displayed as a measure of the model’s performance, with a higher AUC indicating a better model. This analysis is crucial for understanding the performance of classification models, especially in multi-class settings.</p>
@@ -1973,7 +1973,7 @@ background-color: null;
 font-style: inherit;">'PCA of Iris Dataset'</span>)</span>
 <span id="cb12-16">plt.show()</span></code></pre></div>
 <div class="cell-output cell-output-display">
-<p><img src="https://nishantbharali.github.io/Official-Blog/posts/Classification/index_files/figure-html/cell-9-output-1.png" width="674" height="523"></p>
+<p><img src="https://nishantbharali.github.io/Blog/posts/Classification/index_files/figure-html/cell-9-output-1.png" width="674" height="523"></p>
 </div>
 </div>
 <p><strong>Additional Advanced Analysis</strong></p>
@@ -2241,13 +2241,13 @@ background-color: null;
 font-style: inherit;">'Pairplot of Features with Species as Hue'</span>)</span>
 <span id="cb17-35">plt.show()</span></code></pre></div>
 <div class="cell-output cell-output-display">
-<p><img src="https://nishantbharali.github.io/Official-Blog/posts/Classification/index_files/figure-html/cell-12-output-1.png" width="676" height="449"></p>
+<p><img src="https://nishantbharali.github.io/Blog/posts/Classification/index_files/figure-html/cell-12-output-1.png" width="676" height="449"></p>
 </div>
 <div class="cell-output cell-output-display">
 <pre><code>&lt;Figure size 960x768 with 0 Axes&gt;</code></pre>
 </div>
 <div class="cell-output cell-output-display">
-<p><img src="https://nishantbharali.github.io/Official-Blog/posts/Classification/index_files/figure-html/cell-12-output-3.png" width="1016" height="947"></p>
+<p><img src="https://nishantbharali.github.io/Blog/posts/Classification/index_files/figure-html/cell-12-output-3.png" width="1016" height="947"></p>
 </div>
 </div>
 <p><strong>Model Building, Evaluation, and Visualization for Prediction</strong></p>
@@ -2392,13 +2392,13 @@ Mean Squared Error: 0.006380666666666666
 R-squared (R2) Score: 0.9904355711168809</code></pre>
 </div>
 <div class="cell-output cell-output-display">
-<p><img src="https://nishantbharali.github.io/Official-Blog/posts/Classification/index_files/figure-html/cell-13-output-2.png" width="663" height="449"></p>
+<p><img src="https://nishantbharali.github.io/Blog/posts/Classification/index_files/figure-html/cell-13-output-2.png" width="663" height="449"></p>
 </div>
 <div class="cell-output cell-output-display">
-<p><img src="https://nishantbharali.github.io/Official-Blog/posts/Classification/index_files/figure-html/cell-13-output-3.png" width="672" height="449"></p>
+<p><img src="https://nishantbharali.github.io/Blog/posts/Classification/index_files/figure-html/cell-13-output-3.png" width="672" height="449"></p>
 </div>
 <div class="cell-output cell-output-display">
-<p><img src="https://nishantbharali.github.io/Official-Blog/posts/Classification/index_files/figure-html/cell-13-output-4.png" width="672" height="449"></p>
+<p><img src="https://nishantbharali.github.io/Blog/posts/Classification/index_files/figure-html/cell-13-output-4.png" width="672" height="449"></p>
 </div>
 </div>
 <p><strong>Advanced Model Tuning and Analysis for Prediction</strong></p>
@@ -2603,7 +2603,7 @@ background-color: null;
 font-style: inherit;">"Feature Importance (Random Forest)"</span>)</span>
 <span id="cb25-11">plt.show()</span></code></pre></div>
 <div class="cell-output cell-output-display">
-<p><img src="https://nishantbharali.github.io/Official-Blog/posts/Classification/index_files/figure-html/cell-16-output-1.png" width="666" height="431"></p>
+<p><img src="https://nishantbharali.github.io/Blog/posts/Classification/index_files/figure-html/cell-16-output-1.png" width="666" height="431"></p>
 </div>
 </div>
 <p><strong>Handling Class Imbalance</strong></p>
@@ -2641,14 +2641,14 @@ font-style: inherit;">=</span> smote.fit_resample(X_train, y_train)</span></code
 
 <div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div id="quarto-reuse" class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</a></div></div></section></div> ]]></description>
   <category>machine learning</category>
-  <guid>https://nishantbharali.github.io/Official-Blog/posts/Classification/index.html</guid>
+  <guid>https://nishantbharali.github.io/Blog/posts/Classification/index.html</guid>
   <pubDate>Fri, 24 Nov 2023 05:00:00 GMT</pubDate>
-  <media:content url="https://nishantbharali.github.io/Official-Blog/posts/Classification/image1.jpg" medium="image" type="image/jpeg"/>
+  <media:content url="https://nishantbharali.github.io/Blog/posts/Classification/image1.jpg" medium="image" type="image/jpeg"/>
 </item>
 <item>
   <title>Advanced Clustering and Prediction techniques</title>
   <dc:creator>Nishant Bharali</dc:creator>
-  <link>https://nishantbharali.github.io/Official-Blog/posts/Clustering/index.html</link>
+  <link>https://nishantbharali.github.io/Blog/posts/Clustering/index.html</link>
   <description><![CDATA[ 
 
 
@@ -2726,7 +2726,7 @@ background-color: null;
 font-style: inherit;">1</span>))</span>
 <span id="cb3-3">plt.show()</span></code></pre></div>
 <div class="cell-output cell-output-display">
-<p><img src="https://nishantbharali.github.io/Official-Blog/posts/Clustering/index_files/figure-html/cell-3-output-1.png" width="711" height="711"></p>
+<p><img src="https://nishantbharali.github.io/Blog/posts/Clustering/index_files/figure-html/cell-3-output-1.png" width="711" height="711"></p>
 </div>
 </div>
 <p><strong>Data Preprocessing</strong></p>
@@ -2836,7 +2836,7 @@ font-style: inherit;">'</span>)</span>
 <span id="cb6-7">plt.tight_layout()</span>
 <span id="cb6-8">plt.show()</span></code></pre></div>
 <div class="cell-output cell-output-display">
-<p><img src="https://nishantbharali.github.io/Official-Blog/posts/Clustering/index_files/figure-html/cell-5-output-1.png" width="1141" height="374"></p>
+<p><img src="https://nishantbharali.github.io/Blog/posts/Clustering/index_files/figure-html/cell-5-output-1.png" width="1141" height="374"></p>
 </div>
 </div>
 </section>
@@ -2902,7 +2902,7 @@ background-color: null;
 font-style: inherit;">'WCSS'</span>)</span>
 <span id="cb7-12">plt.show()</span></code></pre></div>
 <div class="cell-output cell-output-display">
-<p><img src="https://nishantbharali.github.io/Official-Blog/posts/Clustering/index_files/figure-html/cell-6-output-1.png" width="593" height="449"></p>
+<p><img src="https://nishantbharali.github.io/Blog/posts/Clustering/index_files/figure-html/cell-6-output-1.png" width="593" height="449"></p>
 </div>
 </div>
 <p><strong>Application of K-Means</strong></p>
@@ -2954,7 +2954,7 @@ background-color: null;
 font-style: inherit;">'Customer Segments'</span>)</span>
 <span id="cb8-6">plt.show()</span></code></pre></div>
 <div class="cell-output cell-output-display">
-<p><img src="https://nishantbharali.github.io/Official-Blog/posts/Clustering/index_files/figure-html/cell-7-output-1.png" width="593" height="449"></p>
+<p><img src="https://nishantbharali.github.io/Blog/posts/Clustering/index_files/figure-html/cell-7-output-1.png" width="593" height="449"></p>
 </div>
 </div>
 <p><strong>K-Means Visualization</strong></p>
@@ -2987,7 +2987,7 @@ background-color: null;
 font-style: inherit;">1.02</span>)</span>
 <span id="cb9-3">plt.show()</span></code></pre></div>
 <div class="cell-output cell-output-display">
-<p><img src="https://nishantbharali.github.io/Official-Blog/posts/Clustering/index_files/figure-html/cell-8-output-1.png" width="834" height="740"></p>
+<p><img src="https://nishantbharali.github.io/Blog/posts/Clustering/index_files/figure-html/cell-8-output-1.png" width="834" height="740"></p>
 </div>
 </div>
 </section>
@@ -3049,7 +3049,7 @@ background-color: null;
 font-style: inherit;">'DBSCAN Clustering'</span>)</span>
 <span id="cb11-4">plt.show()</span></code></pre></div>
 <div class="cell-output cell-output-display">
-<p><img src="https://nishantbharali.github.io/Official-Blog/posts/Clustering/index_files/figure-html/cell-10-output-1.png" width="593" height="449"></p>
+<p><img src="https://nishantbharali.github.io/Blog/posts/Clustering/index_files/figure-html/cell-10-output-1.png" width="593" height="449"></p>
 </div>
 </div>
 </section>
@@ -3158,10 +3158,10 @@ background-color: null;
 font-style: inherit;">1.02</span>)</span>
 <span id="cb12-20">plt.show()</span></code></pre></div>
 <div class="cell-output cell-output-display">
-<p><img src="https://nishantbharali.github.io/Official-Blog/posts/Clustering/index_files/figure-html/cell-11-output-1.png" width="804" height="579"></p>
+<p><img src="https://nishantbharali.github.io/Blog/posts/Clustering/index_files/figure-html/cell-11-output-1.png" width="804" height="579"></p>
 </div>
 <div class="cell-output cell-output-display">
-<p><img src="https://nishantbharali.github.io/Official-Blog/posts/Clustering/index_files/figure-html/cell-11-output-2.png" width="862" height="740"></p>
+<p><img src="https://nishantbharali.github.io/Blog/posts/Clustering/index_files/figure-html/cell-11-output-2.png" width="862" height="740"></p>
 </div>
 </div>
 <p><strong>Hierarchical Clustering Cut</strong></p>
@@ -3213,7 +3213,7 @@ background-color: null;
 font-style: inherit;">'Hierarchical Clustering'</span>)</span>
 <span id="cb13-8">plt.show()</span></code></pre></div>
 <div class="cell-output cell-output-display">
-<p><img src="https://nishantbharali.github.io/Official-Blog/posts/Clustering/index_files/figure-html/cell-12-output-1.png" width="593" height="449"></p>
+<p><img src="https://nishantbharali.github.io/Blog/posts/Clustering/index_files/figure-html/cell-12-output-1.png" width="593" height="449"></p>
 </div>
 </div>
 </section>
@@ -3295,7 +3295,7 @@ background-color: null;
 font-style: inherit;">'Silhouette Score'</span>)</span>
 <span id="cb14-17">plt.show()</span></code></pre></div>
 <div class="cell-output cell-output-display">
-<p><img src="https://nishantbharali.github.io/Official-Blog/posts/Clustering/index_files/figure-html/cell-13-output-1.png" width="597" height="449"></p>
+<p><img src="https://nishantbharali.github.io/Blog/posts/Clustering/index_files/figure-html/cell-13-output-1.png" width="597" height="449"></p>
 </div>
 </div>
 <p><strong>2. Hierarchical Clustering</strong></p>
@@ -3361,7 +3361,7 @@ background-color: null;
 font-style: inherit;">'Silhouette Score'</span>)</span>
 <span id="cb15-16">plt.show()</span></code></pre></div>
 <div class="cell-output cell-output-display">
-<p><img src="https://nishantbharali.github.io/Official-Blog/posts/Clustering/index_files/figure-html/cell-14-output-1.png" width="606" height="449"></p>
+<p><img src="https://nishantbharali.github.io/Blog/posts/Clustering/index_files/figure-html/cell-14-output-1.png" width="606" height="449"></p>
 </div>
 </div>
 </section>
@@ -3375,14 +3375,14 @@ font-style: inherit;">'Silhouette Score'</span>)</span>
 
 <div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div id="quarto-reuse" class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</a></div></div></section></div> ]]></description>
   <category>machine learning</category>
-  <guid>https://nishantbharali.github.io/Official-Blog/posts/Clustering/index.html</guid>
+  <guid>https://nishantbharali.github.io/Blog/posts/Clustering/index.html</guid>
   <pubDate>Fri, 24 Nov 2023 05:00:00 GMT</pubDate>
-  <media:content url="https://nishantbharali.github.io/Official-Blog/posts/Clustering/image1.jpg" medium="image" type="image/jpeg"/>
+  <media:content url="https://nishantbharali.github.io/Blog/posts/Clustering/image1.jpg" medium="image" type="image/jpeg"/>
 </item>
 <item>
   <title>Git</title>
   <dc:creator>Nishant Bharali</dc:creator>
-  <link>https://nishantbharali.github.io/Official-Blog/posts/git/git.html</link>
+  <link>https://nishantbharali.github.io/Blog/posts/git/git.html</link>
   <description><![CDATA[ 
 
 
@@ -3731,14 +3731,14 @@ font-style: inherit;">&gt;</span></span></code></pre></div>
 
 <div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div id="quarto-reuse" class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</a></div></div></section></div> ]]></description>
   <category>Tools</category>
-  <guid>https://nishantbharali.github.io/Official-Blog/posts/git/git.html</guid>
+  <guid>https://nishantbharali.github.io/Blog/posts/git/git.html</guid>
   <pubDate>Fri, 24 Nov 2023 05:00:00 GMT</pubDate>
-  <media:content url="https://nishantbharali.github.io/Official-Blog/posts/git/horst_git-hug.png" medium="image" type="image/png" height="51" width="144"/>
+  <media:content url="https://nishantbharali.github.io/Blog/posts/git/horst_git-hug.png" medium="image" type="image/png" height="51" width="144"/>
 </item>
 <item>
   <title>Advanced analysis on Linear and Non-Linear Regression models</title>
   <dc:creator>Nishant Bharali</dc:creator>
-  <link>https://nishantbharali.github.io/Official-Blog/posts/Linear and Non Linear Regression/index.html</link>
+  <link>https://nishantbharali.github.io/Blog/posts/Linear and Non Linear Regression/index.html</link>
   <description><![CDATA[ 
 
 
@@ -4002,7 +4002,7 @@ font-style: inherit;">#Visualizing the distributions and relationships</span></s
 <span id="cb2-2">sns.pairplot(housing_df)</span>
 <span id="cb2-3">plt.show()</span></code></pre></div>
 <div class="cell-output cell-output-display">
-<p><img src="https://nishantbharali.github.io/Official-Blog/posts/Linear and Non Linear Regression/index_files/figure-html/cell-3-output-1.png" width="1887" height="1887"></p>
+<p><img src="https://nishantbharali.github.io/Blog/posts/Linear and Non Linear Regression/index_files/figure-html/cell-3-output-1.png" width="1887" height="1887"></p>
 </div>
 </div>
 </section>
@@ -4345,7 +4345,7 @@ Notes:
 strong multicollinearity problems or that the design matrix is singular.</code></pre>
 </div>
 <div class="cell-output cell-output-display">
-<p><img src="https://nishantbharali.github.io/Official-Blog/posts/Linear and Non Linear Regression/index_files/figure-html/cell-7-output-2.png" width="629" height="449"></p>
+<p><img src="https://nishantbharali.github.io/Blog/posts/Linear and Non Linear Regression/index_files/figure-html/cell-7-output-2.png" width="629" height="449"></p>
 </div>
 </div>
 <p><strong>3. Learning Curves</strong></p>
@@ -4436,7 +4436,7 @@ font-style: inherit;"># Plotting learning curve for Linear Regression</span></sp
 background-color: null;
 font-style: inherit;">"Linear Regression Learning Curve"</span>)</span></code></pre></div>
 <div class="cell-output cell-output-display">
-<p><img src="https://nishantbharali.github.io/Official-Blog/posts/Linear and Non Linear Regression/index_files/figure-html/cell-8-output-1.png" width="617" height="449"></p>
+<p><img src="https://nishantbharali.github.io/Blog/posts/Linear and Non Linear Regression/index_files/figure-html/cell-8-output-1.png" width="617" height="449"></p>
 </div>
 </div>
 <p><strong>4. Ensemble Methods</strong></p>
@@ -4930,7 +4930,7 @@ font-style: inherit;">'Neural Network Predictions'</span>)</span>
 <span id="cb21-19">plt.tight_layout()</span>
 <span id="cb21-20">plt.show()</span></code></pre></div>
 <div class="cell-output cell-output-display">
-<p><img src="https://nishantbharali.github.io/Official-Blog/posts/Linear and Non Linear Regression/index_files/figure-html/cell-14-output-1.png" width="1142" height="566"></p>
+<p><img src="https://nishantbharali.github.io/Blog/posts/Linear and Non Linear Regression/index_files/figure-html/cell-14-output-1.png" width="1142" height="566"></p>
 </div>
 </div>
 <ol start="2" type="I">
@@ -5048,7 +5048,7 @@ font-style: inherit;">'Neural Network Residuals'</span>)</span>
 <span id="cb22-19">plt.tight_layout()</span>
 <span id="cb22-20">plt.show()</span></code></pre></div>
 <div class="cell-output cell-output-display">
-<p><img src="https://nishantbharali.github.io/Official-Blog/posts/Linear and Non Linear Regression/index_files/figure-html/cell-15-output-1.png" width="1142" height="566"></p>
+<p><img src="https://nishantbharali.github.io/Blog/posts/Linear and Non Linear Regression/index_files/figure-html/cell-15-output-1.png" width="1142" height="566"></p>
 </div>
 </div>
 <p><strong>Building and Evaluating Non-Linear Model (Support Vector Regression)</strong></p>
@@ -5251,7 +5251,7 @@ font-style: inherit;">'Support Vector Regression Predictions'</span>)</span>
 <span id="cb26-27">plt.tight_layout()</span>
 <span id="cb26-28">plt.show()</span></code></pre></div>
 <div class="cell-output cell-output-display">
-<p><img src="https://nishantbharali.github.io/Official-Blog/posts/Linear and Non Linear Regression/index_files/figure-html/cell-18-output-1.png" width="1718" height="566"></p>
+<p><img src="https://nishantbharali.github.io/Blog/posts/Linear and Non Linear Regression/index_files/figure-html/cell-18-output-1.png" width="1718" height="566"></p>
 </div>
 </div>
 <p>D. Residual Plot for All Models</p>
@@ -5419,7 +5419,7 @@ font-style: inherit;">'Support Vector Regression Residuals'</span>)</span>
 <span id="cb27-27">plt.tight_layout()</span>
 <span id="cb27-28">plt.show()</span></code></pre></div>
 <div class="cell-output cell-output-display">
-<p><img src="https://nishantbharali.github.io/Official-Blog/posts/Linear and Non Linear Regression/index_files/figure-html/cell-19-output-1.png" width="1718" height="566"></p>
+<p><img src="https://nishantbharali.github.io/Blog/posts/Linear and Non Linear Regression/index_files/figure-html/cell-19-output-1.png" width="1718" height="566"></p>
 </div>
 </div>
 </section>
@@ -5435,14 +5435,14 @@ font-style: inherit;">'Support Vector Regression Residuals'</span>)</span>
 
 <div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div id="quarto-reuse" class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</a></div></div></section></div> ]]></description>
   <category>machine learning</category>
-  <guid>https://nishantbharali.github.io/Official-Blog/posts/Linear and Non Linear Regression/index.html</guid>
+  <guid>https://nishantbharali.github.io/Blog/posts/Linear and Non Linear Regression/index.html</guid>
   <pubDate>Fri, 24 Nov 2023 05:00:00 GMT</pubDate>
-  <media:content url="https://nishantbharali.github.io/Official-Blog/posts/Linear and Non Linear Regression/image2.jpg" medium="image" type="image/jpeg"/>
+  <media:content url="https://nishantbharali.github.io/Blog/posts/Linear and Non Linear Regression/image2.jpg" medium="image" type="image/jpeg"/>
 </item>
 <item>
   <title>Large Language Models (LLM)</title>
   <dc:creator>Nishant Bharali</dc:creator>
-  <link>https://nishantbharali.github.io/Official-Blog/posts/llm/llm.html</link>
+  <link>https://nishantbharali.github.io/Blog/posts/llm/llm.html</link>
   <description><![CDATA[ 
 
 
@@ -5453,14 +5453,14 @@ font-style: inherit;">'Support Vector Regression Residuals'</span>)</span>
 
 <div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div id="quarto-reuse" class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</a></div></div></section></div> ]]></description>
   <category>Tools</category>
-  <guid>https://nishantbharali.github.io/Official-Blog/posts/llm/llm.html</guid>
+  <guid>https://nishantbharali.github.io/Blog/posts/llm/llm.html</guid>
   <pubDate>Fri, 24 Nov 2023 05:00:00 GMT</pubDate>
-  <media:content url="https://nishantbharali.github.io/Official-Blog/posts/llm/dalle_llm-guru.jpg" medium="image" type="image/jpeg"/>
+  <media:content url="https://nishantbharali.github.io/Blog/posts/llm/dalle_llm-guru.jpg" medium="image" type="image/jpeg"/>
 </item>
 <item>
   <title>Probability Theory and Random Processes</title>
   <dc:creator>Nishant Bharali</dc:creator>
-  <link>https://nishantbharali.github.io/Official-Blog/posts/Random Processes/index.html</link>
+  <link>https://nishantbharali.github.io/Blog/posts/Random Processes/index.html</link>
   <description><![CDATA[ 
 
 
@@ -5597,7 +5597,7 @@ font-style: inherit;">0.5</span>)</span>
 <span id="cb2-5">plt.legend()</span>
 <span id="cb2-6">plt.show()</span></code></pre></div>
 <div class="cell-output cell-output-display">
-<p><img src="https://nishantbharali.github.io/Official-Blog/posts/Random Processes/index_files/figure-html/cell-3-output-1.png" width="593" height="429"></p>
+<p><img src="https://nishantbharali.github.io/Blog/posts/Random Processes/index_files/figure-html/cell-3-output-1.png" width="593" height="429"></p>
 </div>
 </div>
 <div class="cell" data-execution_count="4">
@@ -5611,7 +5611,7 @@ background-color: null;
 font-style: inherit;">'Weather_Condition'</span>)</span>
 <span id="cb3-3">plt.show()</span></code></pre></div>
 <div class="cell-output cell-output-display">
-<p><img src="https://nishantbharali.github.io/Official-Blog/posts/Random Processes/index_files/figure-html/cell-4-output-1.png" width="618" height="476"></p>
+<p><img src="https://nishantbharali.github.io/Blog/posts/Random Processes/index_files/figure-html/cell-4-output-1.png" width="618" height="476"></p>
 </div>
 </div>
 <p><strong>Probability Distributions</strong></p>
@@ -5687,7 +5687,7 @@ font-style: inherit;">%</span> (mean, std)</span>
 <span id="cb4-13"></span>
 <span id="cb4-14">plt.show()</span></code></pre></div>
 <div class="cell-output cell-output-display">
-<p><img src="https://nishantbharali.github.io/Official-Blog/posts/Random Processes/index_files/figure-html/cell-5-output-1.png" width="593" height="449"></p>
+<p><img src="https://nishantbharali.github.io/Blog/posts/Random Processes/index_files/figure-html/cell-5-output-1.png" width="593" height="449"></p>
 </div>
 </div>
 <div class="cell" data-execution_count="6">
@@ -5756,7 +5756,7 @@ font-style: inherit;">2</span>)</span>
 <span id="cb5-13"></span>
 <span id="cb5-14">plt.show()</span></code></pre></div>
 <div class="cell-output cell-output-display">
-<p><img src="https://nishantbharali.github.io/Official-Blog/posts/Random Processes/index_files/figure-html/cell-6-output-1.png" width="593" height="429"></p>
+<p><img src="https://nishantbharali.github.io/Blog/posts/Random Processes/index_files/figure-html/cell-6-output-1.png" width="593" height="429"></p>
 </div>
 </div>
 <p><strong>Time Series Analysis</strong></p>
@@ -5803,7 +5803,7 @@ background-color: null;
 font-style: inherit;">'red'</span>)</span>
 <span id="cb8-3">plt.show()</span></code></pre></div>
 <div class="cell-output cell-output-display">
-<p><img src="https://nishantbharali.github.io/Official-Blog/posts/Random Processes/index_files/figure-html/cell-8-output-1.png" width="570" height="566"></p>
+<p><img src="https://nishantbharali.github.io/Blog/posts/Random Processes/index_files/figure-html/cell-8-output-1.png" width="570" height="566"></p>
 </div>
 </div>
 <p><strong>Correlation Analysis</strong></p>
@@ -5837,7 +5837,7 @@ background-color: null;
 font-style: inherit;">"Correlation Heatmap"</span>)</span>
 <span id="cb9-8">plt.show()</span></code></pre></div>
 <div class="cell-output cell-output-display">
-<p><img src="https://nishantbharali.github.io/Official-Blog/posts/Random Processes/index_files/figure-html/cell-9-output-1.png" width="533" height="431"></p>
+<p><img src="https://nishantbharali.github.io/Blog/posts/Random Processes/index_files/figure-html/cell-9-output-1.png" width="533" height="431"></p>
 </div>
 </div>
 <p><strong>Linear Regression for Temperature Prediction</strong></p>
@@ -5949,7 +5949,7 @@ font-style: inherit;">print</span>(<span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"Mean Squared Error:"</span>, mse)</span></code></pre></div>
 <div class="cell-output cell-output-display">
-<p><img src="https://nishantbharali.github.io/Official-Blog/posts/Random Processes/index_files/figure-html/cell-10-output-1.png" width="585" height="449"></p>
+<p><img src="https://nishantbharali.github.io/Blog/posts/Random Processes/index_files/figure-html/cell-10-output-1.png" width="585" height="449"></p>
 </div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Mean Squared Error: 24.010797366937965</code></pre>
@@ -6152,14 +6152,14 @@ font-style: inherit;">"</span>)</span></code></pre></div>
 
 <div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div id="quarto-reuse" class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</a></div></div></section></div> ]]></description>
   <category>machine learning</category>
-  <guid>https://nishantbharali.github.io/Official-Blog/posts/Random Processes/index.html</guid>
+  <guid>https://nishantbharali.github.io/Blog/posts/Random Processes/index.html</guid>
   <pubDate>Fri, 24 Nov 2023 05:00:00 GMT</pubDate>
-  <media:content url="https://nishantbharali.github.io/Official-Blog/posts/Random Processes/image.jpg" medium="image" type="image/jpeg"/>
+  <media:content url="https://nishantbharali.github.io/Blog/posts/Random Processes/image.jpg" medium="image" type="image/jpeg"/>
 </item>
 <item>
   <title>Data Science Hangout</title>
   <dc:creator>Nishant Bharali</dc:creator>
-  <link>https://nishantbharali.github.io/Official-Blog/posts/2023-01-01-data-science-hangout/2023-01-01-data-science-hangout.html</link>
+  <link>https://nishantbharali.github.io/Blog/posts/2023-01-01-data-science-hangout/2023-01-01-data-science-hangout.html</link>
   <description><![CDATA[ 
 
 
@@ -6180,20 +6180,20 @@ font-style: inherit;">"</span>)</span></code></pre></div>
 <div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div id="quarto-reuse" class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</a></div></div></section></div> ]]></description>
   <category>tidyverse</category>
   <category>machine learning</category>
-  <guid>https://nishantbharali.github.io/Official-Blog/posts/2023-01-01-data-science-hangout/2023-01-01-data-science-hangout.html</guid>
+  <guid>https://nishantbharali.github.io/Blog/posts/2023-01-01-data-science-hangout/2023-01-01-data-science-hangout.html</guid>
   <pubDate>Sun, 01 Jan 2023 05:00:00 GMT</pubDate>
-  <media:content url="https://nishantbharali.github.io/Official-Blog/posts/2023-01-01-data-science-hangout/images/Posit_Data_Science_Hangout.png" medium="image" type="image/png" height="78" width="144"/>
+  <media:content url="https://nishantbharali.github.io/Blog/posts/2023-01-01-data-science-hangout/images/Posit_Data_Science_Hangout.png" medium="image" type="image/png" height="78" width="144"/>
 </item>
 <item>
   <title>A Brief History of the Dataframe</title>
   <dc:creator>Nishant Bharali</dc:creator>
-  <link>https://nishantbharali.github.io/Official-Blog/posts/2021-05-24-dataframe/2021-05-24-dataframe.html</link>
+  <link>https://nishantbharali.github.io/Blog/posts/2021-05-24-dataframe/2021-05-24-dataframe.html</link>
   <description><![CDATA[ 
 
 
 
 <p>This is quite the insightful read on the history of the dataframe. From its origins in the S programming language, to R, to the <code>pandas</code> library for Python (to the <code>tibble</code> for R!)… I couldn’t imagine doing my work without this fundamental data structure, but will it really be defined out of existence? See below link for an excellent overview by <a href="https://devin-petersohn.medium.com/">Devin Petersohn</a>:</p>
-<p><img src="https://nishantbharali.github.io/Official-Blog/posts/2021-05-24-dataframe/images/dataframe.jpeg" class="img-fluid"></p>
+<p><img src="https://nishantbharali.github.io/Blog/posts/2021-05-24-dataframe/images/dataframe.jpeg" class="img-fluid"></p>
 <p>Source:</p>
 <ul>
 <li><p><a href="https://towardsdatascience.com/preventing-the-death-of-the-dataframe-8bca1c0f83c8">Towards Data Science: Preventing the Death of the Dataframe</a></p></li>
@@ -6205,21 +6205,21 @@ font-style: inherit;">"</span>)</span></code></pre></div>
 
 <div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div id="quarto-reuse" class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</a></div></div></section></div> ]]></description>
   <category>tibble</category>
-  <guid>https://nishantbharali.github.io/Official-Blog/posts/2021-05-24-dataframe/2021-05-24-dataframe.html</guid>
+  <guid>https://nishantbharali.github.io/Blog/posts/2021-05-24-dataframe/2021-05-24-dataframe.html</guid>
   <pubDate>Mon, 24 May 2021 04:00:00 GMT</pubDate>
-  <media:content url="https://nishantbharali.github.io/Official-Blog/posts/2021-05-24-dataframe/images/dataframe.jpeg" medium="image" type="image/jpeg"/>
+  <media:content url="https://nishantbharali.github.io/Blog/posts/2021-05-24-dataframe/images/dataframe.jpeg" medium="image" type="image/jpeg"/>
 </item>
 <item>
   <title>DT: An R Interface to the JavaScript library DataTables</title>
   <dc:creator>Nishant Bharali</dc:creator>
-  <link>https://nishantbharali.github.io/Official-Blog/posts/2021-05-03-DT/2021-05-03-DT.html</link>
+  <link>https://nishantbharali.github.io/Blog/posts/2021-05-03-DT/2021-05-03-DT.html</link>
   <description><![CDATA[ 
 
 
 
 <p>The <a href="https://rstudio.github.io/DT/">DT package</a> for R is a powerful integration of the JavaScript library <em>DataTables</em>. One of the things that I enjoy with <code>DT</code> is enhancing my Shiny apps by rendering interactive tables with <code>DT</code>. The <code>DT</code> documentation, written by <a href="https://www.rstudio.com/">RStudio PBC</a> and the <code>DT</code> devs, is incredibly well-written and you’ll learn a lot about how you can use these tables in the development of robust R web apps. And the available Options…. Endless in a good way!</p>
 <p>If you’re a Shiny dev, check out the live demos sourced below.</p>
-<p><img src="https://nishantbharali.github.io/Official-Blog/posts/2021-05-03-DT/images/DT_Shiny.png" class="img-fluid"></p>
+<p><img src="https://nishantbharali.github.io/Blog/posts/2021-05-03-DT/images/DT_Shiny.png" class="img-fluid"></p>
 <p>Source:</p>
 <ul>
 <li><p><a href="https://github.com/rstudio/DT">DT on GitHub</a></p></li>
@@ -6232,14 +6232,14 @@ font-style: inherit;">"</span>)</span></code></pre></div>
 
 <div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div id="quarto-reuse" class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</a></div></div></section></div> ]]></description>
   <category>dt</category>
-  <guid>https://nishantbharali.github.io/Official-Blog/posts/2021-05-03-DT/2021-05-03-DT.html</guid>
+  <guid>https://nishantbharali.github.io/Blog/posts/2021-05-03-DT/2021-05-03-DT.html</guid>
   <pubDate>Mon, 03 May 2021 04:00:00 GMT</pubDate>
-  <media:content url="https://nishantbharali.github.io/Official-Blog/posts/2021-05-03-DT/images/DT_Shiny.png" medium="image" type="image/png" height="84" width="144"/>
+  <media:content url="https://nishantbharali.github.io/Blog/posts/2021-05-03-DT/images/DT_Shiny.png" medium="image" type="image/png" height="84" width="144"/>
 </item>
 <item>
   <title>Preparing for 2021 Goals with a Raspberry Pi</title>
   <dc:creator>Nishant Bharali</dc:creator>
-  <link>https://nishantbharali.github.io/Official-Blog/posts/2020-12-31-Raspberry-Pi/2020-12-31-Raspberry-Pi.html</link>
+  <link>https://nishantbharali.github.io/Blog/posts/2020-12-31-Raspberry-Pi/2020-12-31-Raspberry-Pi.html</link>
   <description><![CDATA[ 
 
 
@@ -6248,25 +6248,25 @@ font-style: inherit;">"</span>)</span></code></pre></div>
 <p>Below are some pics of my current progress.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://nishantbharali.github.io/Official-Blog/posts/2020-12-31-Raspberry-Pi/images/Pi1.jpg" class="img-fluid figure-img"></p>
+<p><img src="https://nishantbharali.github.io/Blog/posts/2020-12-31-Raspberry-Pi/images/Pi1.jpg" class="img-fluid figure-img"></p>
 <figcaption class="figure-caption">Raspberry Pi 4, Model B, 8GB RAM, &amp; Super Cute Tiny Heat Sinks</figcaption>
 </figure>
 </div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://nishantbharali.github.io/Official-Blog/posts/2020-12-31-Raspberry-Pi/images/Pi2.jpg" class="img-fluid figure-img"></p>
+<p><img src="https://nishantbharali.github.io/Blog/posts/2020-12-31-Raspberry-Pi/images/Pi2.jpg" class="img-fluid figure-img"></p>
 <figcaption class="figure-caption">Enclosing the Pi 4 in a CanaKit case + fan</figcaption>
 </figure>
 </div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://nishantbharali.github.io/Official-Blog/posts/2020-12-31-Raspberry-Pi/images/Pi3.jpg" class="img-fluid figure-img"></p>
+<p><img src="https://nishantbharali.github.io/Blog/posts/2020-12-31-Raspberry-Pi/images/Pi3.jpg" class="img-fluid figure-img"></p>
 <figcaption class="figure-caption">Raspberry Pi OS, a Debian distro for the Pi</figcaption>
 </figure>
 </div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://nishantbharali.github.io/Official-Blog/posts/2020-12-31-Raspberry-Pi/images/Pi4.jpeg" class="img-fluid figure-img"></p>
+<p><img src="https://nishantbharali.github.io/Blog/posts/2020-12-31-Raspberry-Pi/images/Pi4.jpeg" class="img-fluid figure-img"></p>
 <figcaption class="figure-caption">Jupyter Lab server on the Pi set up w/ Python, R, and Julia</figcaption>
 </figure>
 </div>
@@ -6275,34 +6275,34 @@ font-style: inherit;">"</span>)</span></code></pre></div>
 
 <div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div id="quarto-reuse" class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</a></div></div></section></div> ]]></description>
   <category>linux</category>
-  <guid>https://nishantbharali.github.io/Official-Blog/posts/2020-12-31-Raspberry-Pi/2020-12-31-Raspberry-Pi.html</guid>
+  <guid>https://nishantbharali.github.io/Blog/posts/2020-12-31-Raspberry-Pi/2020-12-31-Raspberry-Pi.html</guid>
   <pubDate>Thu, 31 Dec 2020 05:00:00 GMT</pubDate>
-  <media:content url="https://nishantbharali.github.io/Official-Blog/posts/2020-12-31-Raspberry-Pi/images/Pi-banner.png" medium="image" type="image/png" height="76" width="144"/>
+  <media:content url="https://nishantbharali.github.io/Blog/posts/2020-12-31-Raspberry-Pi/images/Pi-banner.png" medium="image" type="image/png" height="76" width="144"/>
 </item>
 <item>
   <title>Detailed R Package Development Tutorial from Method Bites</title>
   <dc:creator>Nishant Bharali</dc:creator>
-  <link>https://nishantbharali.github.io/Official-Blog/posts/2020-09-13-R-Package-Detailed-Tutorial/2020-09-13-R-Package-Detailed-Tutorial.html</link>
+  <link>https://nishantbharali.github.io/Blog/posts/2020-09-13-R-Package-Detailed-Tutorial/2020-09-13-R-Package-Detailed-Tutorial.html</link>
   <description><![CDATA[ 
 
 
 
 <p>I’ll keep this short since all credit should go towards the amazing Cosima Meyer and Dennis Hammerschmidton… They compressed some of the most valuable steps for creating and deploying a package. This duo’s work was published for the MZES Social Science Data Lab. If you want a detailed and easy-to-follow how-to for R package development, bookmark this step-by-step guide!</p>
-<p><img src="https://nishantbharali.github.io/Official-Blog/posts/2020-09-13-R-Package-Detailed-Tutorial/images/package_dev.png" class="img-fluid"></p>
+<p><img src="https://nishantbharali.github.io/Blog/posts/2020-09-13-R-Package-Detailed-Tutorial/images/package_dev.png" class="img-fluid"></p>
 <p>Source:<br> * Methods Bites: <a href="https://www.mzes.uni-mannheim.de/socialsciencedatalab/article/r-package/">How to write your own R package and publish it on CRAN</a></p>
 
 
 
 <div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div id="quarto-reuse" class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</a></div></div></section></div> ]]></description>
   <category>packages</category>
-  <guid>https://nishantbharali.github.io/Official-Blog/posts/2020-09-13-R-Package-Detailed-Tutorial/2020-09-13-R-Package-Detailed-Tutorial.html</guid>
+  <guid>https://nishantbharali.github.io/Blog/posts/2020-09-13-R-Package-Detailed-Tutorial/2020-09-13-R-Package-Detailed-Tutorial.html</guid>
   <pubDate>Sun, 13 Sep 2020 04:00:00 GMT</pubDate>
-  <media:content url="https://nishantbharali.github.io/Official-Blog/posts/2020-09-13-R-Package-Detailed-Tutorial/images/methods_bites.png" medium="image" type="image/png" height="167" width="144"/>
+  <media:content url="https://nishantbharali.github.io/Blog/posts/2020-09-13-R-Package-Detailed-Tutorial/images/methods_bites.png" medium="image" type="image/png" height="167" width="144"/>
 </item>
 <item>
   <title>D&amp;D Adventures + blogdown</title>
   <dc:creator>Nishant Bharali</dc:creator>
-  <link>https://nishantbharali.github.io/Official-Blog/posts/2020-04-05-DnD-Adventures/2020-04-05-DnD-Adventures.html</link>
+  <link>https://nishantbharali.github.io/Blog/posts/2020-04-05-DnD-Adventures/2020-04-05-DnD-Adventures.html</link>
   <description><![CDATA[ 
 
 
@@ -6311,7 +6311,7 @@ font-style: inherit;">"</span>)</span></code></pre></div>
 <p>If you know of good resources for newbies and new D&amp;D Dungeon Masters (“DMs”), I’d love to know about your favorite resources. For data science folks out there, this site was built with R using <code>blogdown</code>, Hugo themes, and deployed for free using GitHub and Netlify.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://nishantbharali.github.io/Official-Blog/posts/2020-04-05-DnD-Adventures/images/Dnd.png" class="img-fluid figure-img"></p>
+<p><img src="https://nishantbharali.github.io/Blog/posts/2020-04-05-DnD-Adventures/images/Dnd.png" class="img-fluid figure-img"></p>
 <figcaption class="figure-caption">D&amp;D dragon looking for trouble</figcaption>
 </figure>
 </div>
@@ -6322,20 +6322,20 @@ font-style: inherit;">"</span>)</span></code></pre></div>
 <div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div id="quarto-reuse" class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</a></div></div></section></div> ]]></description>
   <category>rmarkdown</category>
   <category>blogdown</category>
-  <guid>https://nishantbharali.github.io/Official-Blog/posts/2020-04-05-DnD-Adventures/2020-04-05-DnD-Adventures.html</guid>
+  <guid>https://nishantbharali.github.io/Blog/posts/2020-04-05-DnD-Adventures/2020-04-05-DnD-Adventures.html</guid>
   <pubDate>Sun, 05 Apr 2020 04:00:00 GMT</pubDate>
-  <media:content url="https://nishantbharali.github.io/Official-Blog/posts/2020-04-05-DnD-Adventures/images/Dnd.png" medium="image" type="image/png" height="61" width="144"/>
+  <media:content url="https://nishantbharali.github.io/Blog/posts/2020-04-05-DnD-Adventures/images/Dnd.png" medium="image" type="image/png" height="61" width="144"/>
 </item>
 <item>
   <title>Resampling with k-fold Cross Validation</title>
   <dc:creator>Nishant Bharali</dc:creator>
-  <link>https://nishantbharali.github.io/Official-Blog/posts/2020-02-01-k-fold-cross-validation/2020-02-01-k-fold-cross-validation.html</link>
+  <link>https://nishantbharali.github.io/Blog/posts/2020-02-01-k-fold-cross-validation/2020-02-01-k-fold-cross-validation.html</link>
   <description><![CDATA[ 
 
 
 
 <p>k-fold “randomly divides the training data into k groups (or folds) of approximate size [with the model being] fit on k-1 folds and the remaining fold used to compute model performance.” I use k=5 or k=10 given that this is typical industry practice without really questioning “why?”</p>
-<p><img src="https://nishantbharali.github.io/Official-Blog/posts/2020-02-01-k-fold-cross-validation/images/kfold.jpg" class="img-fluid"></p>
+<p><img src="https://nishantbharali.github.io/Blog/posts/2020-02-01-k-fold-cross-validation/images/kfold.jpg" class="img-fluid"></p>
 <p>In reading through Hands-On Machine Learning with R by Brad Boehmke, Ph.D.&nbsp;and Brandon Greenwell, I was surprised to learn that studies have shown that k=10 performs similarly to leave-one-out cross validation where k=n.</p>
 <p>Without realizing it, sometimes I get carried away optimizing code and drifting from statistics and the core “science” in data science… k-fold CV is a technique used by many and is agnostic to your statistical programming language of choice but if you’re an #R user, I can’t recommend this book enough (free in full online, link below)!</p>
 <p>Source:</p>
@@ -6348,38 +6348,38 @@ font-style: inherit;">"</span>)</span></code></pre></div>
 <div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div id="quarto-reuse" class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</a></div></div></section></div> ]]></description>
   <category>statistics</category>
   <category>machine learning</category>
-  <guid>https://nishantbharali.github.io/Official-Blog/posts/2020-02-01-k-fold-cross-validation/2020-02-01-k-fold-cross-validation.html</guid>
+  <guid>https://nishantbharali.github.io/Blog/posts/2020-02-01-k-fold-cross-validation/2020-02-01-k-fold-cross-validation.html</guid>
   <pubDate>Sat, 01 Feb 2020 05:00:00 GMT</pubDate>
-  <media:content url="https://nishantbharali.github.io/Official-Blog/posts/2020-02-01-k-fold-cross-validation/images/kfold.jpg" medium="image" type="image/jpeg"/>
+  <media:content url="https://nishantbharali.github.io/Blog/posts/2020-02-01-k-fold-cross-validation/images/kfold.jpg" medium="image" type="image/jpeg"/>
 </item>
 <item>
   <title>Ubuntu Update to 19.10</title>
   <dc:creator>Nishant Bharali</dc:creator>
-  <link>https://nishantbharali.github.io/Official-Blog/posts/2019-12-31-Ubuntu-Update/2019-12-31-Ubuntu-Update.html</link>
+  <link>https://nishantbharali.github.io/Blog/posts/2019-12-31-Ubuntu-Update/2019-12-31-Ubuntu-Update.html</link>
   <description><![CDATA[ 
 
 
 
-<p><img src="https://nishantbharali.github.io/Official-Blog/posts/2019-12-31-Ubuntu-Update/images/Ubuntu.jpg" class="img-fluid"></p>
+<p><img src="https://nishantbharali.github.io/Blog/posts/2019-12-31-Ubuntu-Update/images/Ubuntu.jpg" class="img-fluid"></p>
 <p>Update Ubuntu 19.04 to 19.10 on dual-booted systems. Not sure exactly where things broke down for me, but as of right now, #Ubuntu seems inaccessible. Not too bummed about it as everything is backed up, but if you’ve recently had the same heartburn and found a solution, please send me a message!</p>
 
 
 
 <div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div id="quarto-reuse" class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</a></div></div></section></div> ]]></description>
   <category>linux</category>
-  <guid>https://nishantbharali.github.io/Official-Blog/posts/2019-12-31-Ubuntu-Update/2019-12-31-Ubuntu-Update.html</guid>
+  <guid>https://nishantbharali.github.io/Blog/posts/2019-12-31-Ubuntu-Update/2019-12-31-Ubuntu-Update.html</guid>
   <pubDate>Tue, 31 Dec 2019 05:00:00 GMT</pubDate>
-  <media:content url="https://nishantbharali.github.io/Official-Blog/posts/2019-12-31-Ubuntu-Update/images/Ubuntu.jpg" medium="image" type="image/jpeg"/>
+  <media:content url="https://nishantbharali.github.io/Blog/posts/2019-12-31-Ubuntu-Update/images/Ubuntu.jpg" medium="image" type="image/jpeg"/>
 </item>
 <item>
   <title>Book Rec: Hands-On Machine Learning with R</title>
   <dc:creator>Nishant Bharali</dc:creator>
-  <link>https://nishantbharali.github.io/Official-Blog/posts/2019-12-17-Hands-On-Machine-Learning-with-R/2019-12-17-Hands-On-Machine-Learning-with-R.html</link>
+  <link>https://nishantbharali.github.io/Blog/posts/2019-12-17-Hands-On-Machine-Learning-with-R/2019-12-17-Hands-On-Machine-Learning-with-R.html</link>
   <description><![CDATA[ 
 
 
 
-<p><img src="https://nishantbharali.github.io/Official-Blog/posts/2019-12-17-Hands-On-Machine-Learning-with-R/images/HOMLR.jpg" class="img-fluid"></p>
+<p><img src="https://nishantbharali.github.io/Blog/posts/2019-12-17-Hands-On-Machine-Learning-with-R/images/HOMLR.jpg" class="img-fluid"></p>
 <p>I am super excited to finally dig into Hands-On Machine Learning with R by <a href="https://www.linkedin.com/in/brad-boehmke-ph-d-9b0a257/">Brad Boehmke, Ph.D.</a> and <a href="https://www.linkedin.com/in/brandon-greenwell-90310b94/">Brandon Greenwell</a>.</p>
 <p>There are a ton of solid ML books on the market for Python and R users but I’ve struggled with developing a best practice ML workflow to make maintainable code and to enhance my sampling, evaluation, and iteration process. As an R user, I’m glad to have this hands-on approach resource to improve my use of the ML stack within R.</p>
 <p>The full text and code samples are available online, for free: https://lnkd.in/gvmXY3W</p>
@@ -6388,19 +6388,19 @@ font-style: inherit;">"</span>)</span></code></pre></div>
 
 <div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div id="quarto-reuse" class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</a></div></div></section></div> ]]></description>
   <category>machine learning</category>
-  <guid>https://nishantbharali.github.io/Official-Blog/posts/2019-12-17-Hands-On-Machine-Learning-with-R/2019-12-17-Hands-On-Machine-Learning-with-R.html</guid>
+  <guid>https://nishantbharali.github.io/Blog/posts/2019-12-17-Hands-On-Machine-Learning-with-R/2019-12-17-Hands-On-Machine-Learning-with-R.html</guid>
   <pubDate>Tue, 17 Dec 2019 05:00:00 GMT</pubDate>
-  <media:content url="https://nishantbharali.github.io/Official-Blog/posts/2019-12-17-Hands-On-Machine-Learning-with-R/images/HOMLR.jpg" medium="image" type="image/jpeg"/>
+  <media:content url="https://nishantbharali.github.io/Blog/posts/2019-12-17-Hands-On-Machine-Learning-with-R/images/HOMLR.jpg" medium="image" type="image/jpeg"/>
 </item>
 <item>
   <title>Building a Website with Blogdown</title>
   <dc:creator>Nishant Bharali</dc:creator>
-  <link>https://nishantbharali.github.io/Official-Blog/posts/2019-11-18-Blogdown/2019-11-18-Blogdown.html</link>
+  <link>https://nishantbharali.github.io/Blog/posts/2019-11-18-Blogdown/2019-11-18-Blogdown.html</link>
   <description><![CDATA[ 
 
 
 
-<p><img src="https://nishantbharali.github.io/Official-Blog/posts/2019-11-18-Blogdown/images/blogdown.jpg" class="img-fluid"></p>
+<p><img src="https://nishantbharali.github.io/Blog/posts/2019-11-18-Blogdown/images/blogdown.jpg" class="img-fluid"></p>
 <p><a href="https://www.linkedin.com/in/pabloibarajas/">Pablo Barajas</a>, a recent graduate at UC Irvine and friend of Scatter Podcast, led a presentation on how to build a website using R, RStudio, and Blogdown.</p>
 <p>For anyone wanting to <em>fairly easily</em> build an online portfolio or blog that looks professional, I highly recommend Blogdown. I used this process to build this website, as did Pablo for his personal website, and I can help if you have any questions. Here’s the process in short: RStudio site build with Blogdown -&gt; Commit to GitHub -&gt; Apply Hugo theme -&gt; Netlify for CI/CD</p>
 <p>This event was hosted by the Orange County R Users Group (“OCRUG”) and UCI’s Merage Analytics Club (“MAC”). If you’re in Orange County and looking to network and learn with local data science practitioners and students, I highly recommend attending OCRUG events, R-Ladies Irvine events, or public MAC events. Great learning opportunities here!</p>
@@ -6418,9 +6418,9 @@ font-style: inherit;">"</span>)</span></code></pre></div>
 <div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div id="quarto-reuse" class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</a></div></div></section></div> ]]></description>
   <category>rmarkdown</category>
   <category>blogdown</category>
-  <guid>https://nishantbharali.github.io/Official-Blog/posts/2019-11-18-Blogdown/2019-11-18-Blogdown.html</guid>
+  <guid>https://nishantbharali.github.io/Blog/posts/2019-11-18-Blogdown/2019-11-18-Blogdown.html</guid>
   <pubDate>Mon, 18 Nov 2019 05:00:00 GMT</pubDate>
-  <media:content url="https://nishantbharali.github.io/Official-Blog/posts/2019-11-18-Blogdown/images/blogdown.jpg" medium="image" type="image/jpeg"/>
+  <media:content url="https://nishantbharali.github.io/Blog/posts/2019-11-18-Blogdown/images/blogdown.jpg" medium="image" type="image/jpeg"/>
 </item>
 </channel>
 </rss>

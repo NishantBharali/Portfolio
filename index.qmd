@@ -10,6 +10,9 @@ about:
     - icon: rss
       text: Blog
       href: https://nishantbharali.github.io/Blog/blog.html
+    - icon: file-earmark-person
+      href: https://nishantbharali.github.io/Blog/cv/cv.html
+      text: CV
     - icon: linkedin
       text: LinkedIn
       href: https://www.linkedin.com/in/nishant-kumar-bharali/

@@ -5,7 +5,18 @@ comments: false
 title-block-banner: false
 ---
 
-*The sound of the Gion Shoja bells echoes the impermanence of all things; the color of the sala flowers reveals the truth that the prosperous must decline.*
+<style>
+.rounded-img {
+  border-radius: 50%; /* makes the image round */
+  width: 300px; /* width of the image */
+  height: 300px; /* height of the image, should be the same as width to maintain aspect ratio */
+  object-fit: cover; /* ensures the image covers the area without being stretched */
+  overflow: hidden;
+  display: inline-block;
+}
+</style>
+
+![The sound of the Gion Shoja bells echoes the impermanence of all things; the color of the sala flowers reveals the truth that the prosperous must decline](./images/Nishant_2.jpg){.rounded-img}
 
 ## Professional
 

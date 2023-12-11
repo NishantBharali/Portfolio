@@ -1,1 +1,1 @@
-Sitemap: https://nishantbharali.github.io/Official-Blog/sitemap.xml
+Sitemap: https://nishantbharali.github.io/Blog/sitemap.xml
