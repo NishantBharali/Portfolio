@@ -11,7 +11,7 @@ about:
       text: Blog
       href: https://nishantbharali.github.io/Blog/blog.html
     - icon: file-earmark-person
-      href: docs/cv/cv.html
+      href: cv/cv.html
       text: CV
     - icon: linkedin
       text: LinkedIn
