@@ -10,7 +10,47 @@
 <atom:link href="https://nishantbharali.github.io/Blog/blog.xml" rel="self" type="application/rss+xml"/>
 <description>Nishant Bharali&#39;s engineering blog</description>
 <generator>quarto-1.3.450</generator>
-<lastBuildDate>Fri, 24 Nov 2023 05:00:00 GMT</lastBuildDate>
+<lastBuildDate>Sat, 02 Dec 2023 05:00:00 GMT</lastBuildDate>
+<item>
+  <title>Ubuntu Update to 19.10</title>
+  <dc:creator>Nishant Bharali</dc:creator>
+  <link>https://nishantbharali.github.io/Blog/posts/2019-12-31-Ubuntu-Update/2019-12-31-Ubuntu-Update.html</link>
+  <description><![CDATA[ 
+
+
+
+<p><img src="https://nishantbharali.github.io/Blog/posts/2019-12-31-Ubuntu-Update/images/Ubuntu.jpg" class="img-fluid"></p>
+<p>Update Ubuntu 19.04 to 19.10 on dual-booted systems. Not sure exactly where things broke down for me, but as of right now, #Ubuntu seems inaccessible. Not too bummed about it as everything is backed up, but if you’ve recently had the same heartburn and found a solution, please send me a message!</p>
+
+
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div id="quarto-reuse" class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</a></div></div></section></div> ]]></description>
+  <category>linux</category>
+  <guid>https://nishantbharali.github.io/Blog/posts/2019-12-31-Ubuntu-Update/2019-12-31-Ubuntu-Update.html</guid>
+  <pubDate>Sat, 02 Dec 2023 05:00:00 GMT</pubDate>
+  <media:content url="https://nishantbharali.github.io/Blog/posts/2019-12-31-Ubuntu-Update/images/Ubuntu.jpg" medium="image" type="image/jpeg"/>
+</item>
+<item>
+  <title>Book Rec: Hands-On Machine Learning with R</title>
+  <dc:creator>Nishant Bharali</dc:creator>
+  <link>https://nishantbharali.github.io/Blog/posts/2019-12-17-Hands-On-Machine-Learning-with-R/2019-12-17-Hands-On-Machine-Learning-with-R.html</link>
+  <description><![CDATA[ 
+
+
+
+<p><img src="https://nishantbharali.github.io/Blog/posts/2019-12-17-Hands-On-Machine-Learning-with-R/images/HOMLR.jpg" class="img-fluid"></p>
+<p>I am super excited to finally dig into Hands-On Machine Learning with R by <a href="https://www.linkedin.com/in/brad-boehmke-ph-d-9b0a257/">Brad Boehmke, Ph.D.</a> and <a href="https://www.linkedin.com/in/brandon-greenwell-90310b94/">Brandon Greenwell</a>.</p>
+<p>There are a ton of solid ML books on the market for Python and R users but I’ve struggled with developing a best practice ML workflow to make maintainable code and to enhance my sampling, evaluation, and iteration process. As an R user, I’m glad to have this hands-on approach resource to improve my use of the ML stack within R.</p>
+<p>The full text and code samples are available online, for free: https://lnkd.in/gvmXY3W</p>
+
+
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div id="quarto-reuse" class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</a></div></div></section></div> ]]></description>
+  <category>machine learning</category>
+  <guid>https://nishantbharali.github.io/Blog/posts/2019-12-17-Hands-On-Machine-Learning-with-R/2019-12-17-Hands-On-Machine-Learning-with-R.html</guid>
+  <pubDate>Fri, 01 Dec 2023 05:00:00 GMT</pubDate>
+  <media:content url="https://nishantbharali.github.io/Blog/posts/2019-12-17-Hands-On-Machine-Learning-with-R/images/HOMLR.jpg" medium="image" type="image/jpeg"/>
+</item>
 <item>
   <title>Anomaly/Outlier Detection in a Financial Dataset</title>
   <dc:creator>Nishant Bharali</dc:creator>
@@ -6157,6 +6197,109 @@ font-style: inherit;">"</span>)</span></code></pre></div>
   <media:content url="https://nishantbharali.github.io/Blog/posts/Random Processes/image.jpg" medium="image" type="image/jpeg"/>
 </item>
 <item>
+  <title>Building a Website with Blogdown</title>
+  <dc:creator>Nishant Bharali</dc:creator>
+  <link>https://nishantbharali.github.io/Blog/posts/2019-11-18-Blogdown/2019-11-18-Blogdown.html</link>
+  <description><![CDATA[ 
+
+
+
+<p><img src="https://nishantbharali.github.io/Blog/posts/2019-11-18-Blogdown/images/blogdown.jpg" class="img-fluid"></p>
+<p><a href="https://www.linkedin.com/in/pabloibarajas/">Pablo Barajas</a>, a recent graduate at UC Irvine and friend of Scatter Podcast, led a presentation on how to build a website using R, RStudio, and Blogdown.</p>
+<p>For anyone wanting to <em>fairly easily</em> build an online portfolio or blog that looks professional, I highly recommend Blogdown. I used this process to build this website, as did Pablo for his personal website, and I can help if you have any questions. Here’s the process in short: RStudio site build with Blogdown -&gt; Commit to GitHub -&gt; Apply Hugo theme -&gt; Netlify for CI/CD</p>
+<p>This event was hosted by the Orange County R Users Group (“OCRUG”) and UCI’s Merage Analytics Club (“MAC”). If you’re in Orange County and looking to network and learn with local data science practitioners and students, I highly recommend attending OCRUG events, R-Ladies Irvine events, or public MAC events. Great learning opportunities here!</p>
+<p>Links:</p>
+<ul>
+<li>Pablo’s presentation on <a href="https://pbarajas.rbind.io/posts/website-tutorial/">his Blogdown site</a></li>
+<li>Blogdown <a href="https://blog.rstudio.com/2017/09/11/announcing-blogdown/">overview from RStudio</a></li>
+<li>OCRUG’s <a href="https://ocrug.org">homepage</a></li>
+<li>R-Ladies <a href="https://www.rladiesirvine.org">Irvine chapter</a></li>
+<li>Merage Analytics Club <a href="https://sites.uci.edu/merageaa/">website</a></li>
+</ul>
+
+
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div id="quarto-reuse" class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</a></div></div></section></div> ]]></description>
+  <category>rmarkdown</category>
+  <category>blogdown</category>
+  <guid>https://nishantbharali.github.io/Blog/posts/2019-11-18-Blogdown/2019-11-18-Blogdown.html</guid>
+  <pubDate>Sat, 18 Nov 2023 05:00:00 GMT</pubDate>
+  <media:content url="https://nishantbharali.github.io/Blog/posts/2019-11-18-Blogdown/images/blogdown.jpg" medium="image" type="image/jpeg"/>
+</item>
+<item>
+  <title>Detailed R Package Development Tutorial from Method Bites</title>
+  <dc:creator>Nishant Bharali</dc:creator>
+  <link>https://nishantbharali.github.io/Blog/posts/2020-09-13-R-Package-Detailed-Tutorial/2020-09-13-R-Package-Detailed-Tutorial.html</link>
+  <description><![CDATA[ 
+
+
+
+<p>I’ll keep this short since all credit should go towards the amazing Cosima Meyer and Dennis Hammerschmidton… They compressed some of the most valuable steps for creating and deploying a package. This duo’s work was published for the MZES Social Science Data Lab. If you want a detailed and easy-to-follow how-to for R package development, bookmark this step-by-step guide!</p>
+<p><img src="https://nishantbharali.github.io/Blog/posts/2020-09-13-R-Package-Detailed-Tutorial/images/package_dev.png" class="img-fluid"></p>
+<p>Source:<br> * Methods Bites: <a href="https://www.mzes.uni-mannheim.de/socialsciencedatalab/article/r-package/">How to write your own R package and publish it on CRAN</a></p>
+
+
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div id="quarto-reuse" class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</a></div></div></section></div> ]]></description>
+  <category>packages</category>
+  <guid>https://nishantbharali.github.io/Blog/posts/2020-09-13-R-Package-Detailed-Tutorial/2020-09-13-R-Package-Detailed-Tutorial.html</guid>
+  <pubDate>Wed, 13 Sep 2023 04:00:00 GMT</pubDate>
+  <media:content url="https://nishantbharali.github.io/Blog/posts/2020-09-13-R-Package-Detailed-Tutorial/images/methods_bites.png" medium="image" type="image/png" height="167" width="144"/>
+</item>
+<item>
+  <title>D&amp;D Adventures + blogdown</title>
+  <dc:creator>Nishant Bharali</dc:creator>
+  <link>https://nishantbharali.github.io/Blog/posts/2020-04-05-DnD-Adventures/2020-04-05-DnD-Adventures.html</link>
+  <description><![CDATA[ 
+
+
+
+<p>Wizards of the Coast have developed such an incredible tabletop, fantasy, RPG with the 5th edition of D&amp;D… I wish I would have re-discovered this game years back. For context, I haven’t touched D&amp;D since 1997!</p>
+<p>If you know of good resources for newbies and new D&amp;D Dungeon Masters (“DMs”), I’d love to know about your favorite resources. For data science folks out there, this site was built with R using <code>blogdown</code>, Hugo themes, and deployed for free using GitHub and Netlify.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://nishantbharali.github.io/Blog/posts/2020-04-05-DnD-Adventures/images/Dnd.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">D&amp;D dragon looking for trouble</figcaption>
+</figure>
+</div>
+<p>Reference: <br> * Javier’s <a href="https://flamboyant-brahmagupta-3caca6.netlify.app/">D&amp;D Adventures</a></p>
+
+
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div id="quarto-reuse" class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</a></div></div></section></div> ]]></description>
+  <category>rmarkdown</category>
+  <category>blogdown</category>
+  <guid>https://nishantbharali.github.io/Blog/posts/2020-04-05-DnD-Adventures/2020-04-05-DnD-Adventures.html</guid>
+  <pubDate>Wed, 05 Apr 2023 04:00:00 GMT</pubDate>
+  <media:content url="https://nishantbharali.github.io/Blog/posts/2020-04-05-DnD-Adventures/images/Dnd.png" medium="image" type="image/png" height="61" width="144"/>
+</item>
+<item>
+  <title>Resampling with k-fold Cross Validation</title>
+  <dc:creator>Nishant Bharali</dc:creator>
+  <link>https://nishantbharali.github.io/Blog/posts/2020-02-01-k-fold-cross-validation/2020-02-01-k-fold-cross-validation.html</link>
+  <description><![CDATA[ 
+
+
+
+<p>k-fold “randomly divides the training data into k groups (or folds) of approximate size [with the model being] fit on k-1 folds and the remaining fold used to compute model performance.” I use k=5 or k=10 given that this is typical industry practice without really questioning “why?”</p>
+<p><img src="https://nishantbharali.github.io/Blog/posts/2020-02-01-k-fold-cross-validation/images/kfold.jpg" class="img-fluid"></p>
+<p>In reading through Hands-On Machine Learning with R by Brad Boehmke, Ph.D.&nbsp;and Brandon Greenwell, I was surprised to learn that studies have shown that k=10 performs similarly to leave-one-out cross validation where k=n.</p>
+<p>Without realizing it, sometimes I get carried away optimizing code and drifting from statistics and the core “science” in data science… k-fold CV is a technique used by many and is agnostic to your statistical programming language of choice but if you’re an #R user, I can’t recommend this book enough (free in full online, link below)!</p>
+<p>Source:</p>
+<ul>
+<li>Hands-On Machine Learning with R <a href="https://bradleyboehmke.github.io/HOML/process.html#resampling">Chapter 2.4 Resampling Methods</a></li>
+</ul>
+
+
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div id="quarto-reuse" class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</a></div></div></section></div> ]]></description>
+  <category>statistics</category>
+  <category>machine learning</category>
+  <guid>https://nishantbharali.github.io/Blog/posts/2020-02-01-k-fold-cross-validation/2020-02-01-k-fold-cross-validation.html</guid>
+  <pubDate>Wed, 01 Feb 2023 05:00:00 GMT</pubDate>
+  <media:content url="https://nishantbharali.github.io/Blog/posts/2020-02-01-k-fold-cross-validation/images/kfold.jpg" medium="image" type="image/jpeg"/>
+</item>
+<item>
   <title>Data Science Hangout</title>
   <dc:creator>Nishant Bharali</dc:creator>
   <link>https://nishantbharali.github.io/Blog/posts/2023-01-01-data-science-hangout/2023-01-01-data-science-hangout.html</link>
@@ -6278,149 +6421,6 @@ font-style: inherit;">"</span>)</span></code></pre></div>
   <guid>https://nishantbharali.github.io/Blog/posts/2020-12-31-Raspberry-Pi/2020-12-31-Raspberry-Pi.html</guid>
   <pubDate>Thu, 31 Dec 2020 05:00:00 GMT</pubDate>
   <media:content url="https://nishantbharali.github.io/Blog/posts/2020-12-31-Raspberry-Pi/images/Pi-banner.png" medium="image" type="image/png" height="76" width="144"/>
-</item>
-<item>
-  <title>Detailed R Package Development Tutorial from Method Bites</title>
-  <dc:creator>Nishant Bharali</dc:creator>
-  <link>https://nishantbharali.github.io/Blog/posts/2020-09-13-R-Package-Detailed-Tutorial/2020-09-13-R-Package-Detailed-Tutorial.html</link>
-  <description><![CDATA[ 
-
-
-
-<p>I’ll keep this short since all credit should go towards the amazing Cosima Meyer and Dennis Hammerschmidton… They compressed some of the most valuable steps for creating and deploying a package. This duo’s work was published for the MZES Social Science Data Lab. If you want a detailed and easy-to-follow how-to for R package development, bookmark this step-by-step guide!</p>
-<p><img src="https://nishantbharali.github.io/Blog/posts/2020-09-13-R-Package-Detailed-Tutorial/images/package_dev.png" class="img-fluid"></p>
-<p>Source:<br> * Methods Bites: <a href="https://www.mzes.uni-mannheim.de/socialsciencedatalab/article/r-package/">How to write your own R package and publish it on CRAN</a></p>
-
-
-
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div id="quarto-reuse" class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</a></div></div></section></div> ]]></description>
-  <category>packages</category>
-  <guid>https://nishantbharali.github.io/Blog/posts/2020-09-13-R-Package-Detailed-Tutorial/2020-09-13-R-Package-Detailed-Tutorial.html</guid>
-  <pubDate>Sun, 13 Sep 2020 04:00:00 GMT</pubDate>
-  <media:content url="https://nishantbharali.github.io/Blog/posts/2020-09-13-R-Package-Detailed-Tutorial/images/methods_bites.png" medium="image" type="image/png" height="167" width="144"/>
-</item>
-<item>
-  <title>D&amp;D Adventures + blogdown</title>
-  <dc:creator>Nishant Bharali</dc:creator>
-  <link>https://nishantbharali.github.io/Blog/posts/2020-04-05-DnD-Adventures/2020-04-05-DnD-Adventures.html</link>
-  <description><![CDATA[ 
-
-
-
-<p>Wizards of the Coast have developed such an incredible tabletop, fantasy, RPG with the 5th edition of D&amp;D… I wish I would have re-discovered this game years back. For context, I haven’t touched D&amp;D since 1997!</p>
-<p>If you know of good resources for newbies and new D&amp;D Dungeon Masters (“DMs”), I’d love to know about your favorite resources. For data science folks out there, this site was built with R using <code>blogdown</code>, Hugo themes, and deployed for free using GitHub and Netlify.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="https://nishantbharali.github.io/Blog/posts/2020-04-05-DnD-Adventures/images/Dnd.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">D&amp;D dragon looking for trouble</figcaption>
-</figure>
-</div>
-<p>Reference: <br> * Javier’s <a href="https://flamboyant-brahmagupta-3caca6.netlify.app/">D&amp;D Adventures</a></p>
-
-
-
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div id="quarto-reuse" class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</a></div></div></section></div> ]]></description>
-  <category>rmarkdown</category>
-  <category>blogdown</category>
-  <guid>https://nishantbharali.github.io/Blog/posts/2020-04-05-DnD-Adventures/2020-04-05-DnD-Adventures.html</guid>
-  <pubDate>Sun, 05 Apr 2020 04:00:00 GMT</pubDate>
-  <media:content url="https://nishantbharali.github.io/Blog/posts/2020-04-05-DnD-Adventures/images/Dnd.png" medium="image" type="image/png" height="61" width="144"/>
-</item>
-<item>
-  <title>Resampling with k-fold Cross Validation</title>
-  <dc:creator>Nishant Bharali</dc:creator>
-  <link>https://nishantbharali.github.io/Blog/posts/2020-02-01-k-fold-cross-validation/2020-02-01-k-fold-cross-validation.html</link>
-  <description><![CDATA[ 
-
-
-
-<p>k-fold “randomly divides the training data into k groups (or folds) of approximate size [with the model being] fit on k-1 folds and the remaining fold used to compute model performance.” I use k=5 or k=10 given that this is typical industry practice without really questioning “why?”</p>
-<p><img src="https://nishantbharali.github.io/Blog/posts/2020-02-01-k-fold-cross-validation/images/kfold.jpg" class="img-fluid"></p>
-<p>In reading through Hands-On Machine Learning with R by Brad Boehmke, Ph.D.&nbsp;and Brandon Greenwell, I was surprised to learn that studies have shown that k=10 performs similarly to leave-one-out cross validation where k=n.</p>
-<p>Without realizing it, sometimes I get carried away optimizing code and drifting from statistics and the core “science” in data science… k-fold CV is a technique used by many and is agnostic to your statistical programming language of choice but if you’re an #R user, I can’t recommend this book enough (free in full online, link below)!</p>
-<p>Source:</p>
-<ul>
-<li>Hands-On Machine Learning with R <a href="https://bradleyboehmke.github.io/HOML/process.html#resampling">Chapter 2.4 Resampling Methods</a></li>
-</ul>
-
-
-
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div id="quarto-reuse" class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</a></div></div></section></div> ]]></description>
-  <category>statistics</category>
-  <category>machine learning</category>
-  <guid>https://nishantbharali.github.io/Blog/posts/2020-02-01-k-fold-cross-validation/2020-02-01-k-fold-cross-validation.html</guid>
-  <pubDate>Sat, 01 Feb 2020 05:00:00 GMT</pubDate>
-  <media:content url="https://nishantbharali.github.io/Blog/posts/2020-02-01-k-fold-cross-validation/images/kfold.jpg" medium="image" type="image/jpeg"/>
-</item>
-<item>
-  <title>Ubuntu Update to 19.10</title>
-  <dc:creator>Nishant Bharali</dc:creator>
-  <link>https://nishantbharali.github.io/Blog/posts/2019-12-31-Ubuntu-Update/2019-12-31-Ubuntu-Update.html</link>
-  <description><![CDATA[ 
-
-
-
-<p><img src="https://nishantbharali.github.io/Blog/posts/2019-12-31-Ubuntu-Update/images/Ubuntu.jpg" class="img-fluid"></p>
-<p>Update Ubuntu 19.04 to 19.10 on dual-booted systems. Not sure exactly where things broke down for me, but as of right now, #Ubuntu seems inaccessible. Not too bummed about it as everything is backed up, but if you’ve recently had the same heartburn and found a solution, please send me a message!</p>
-
-
-
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div id="quarto-reuse" class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</a></div></div></section></div> ]]></description>
-  <category>linux</category>
-  <guid>https://nishantbharali.github.io/Blog/posts/2019-12-31-Ubuntu-Update/2019-12-31-Ubuntu-Update.html</guid>
-  <pubDate>Tue, 31 Dec 2019 05:00:00 GMT</pubDate>
-  <media:content url="https://nishantbharali.github.io/Blog/posts/2019-12-31-Ubuntu-Update/images/Ubuntu.jpg" medium="image" type="image/jpeg"/>
-</item>
-<item>
-  <title>Book Rec: Hands-On Machine Learning with R</title>
-  <dc:creator>Nishant Bharali</dc:creator>
-  <link>https://nishantbharali.github.io/Blog/posts/2019-12-17-Hands-On-Machine-Learning-with-R/2019-12-17-Hands-On-Machine-Learning-with-R.html</link>
-  <description><![CDATA[ 
-
-
-
-<p><img src="https://nishantbharali.github.io/Blog/posts/2019-12-17-Hands-On-Machine-Learning-with-R/images/HOMLR.jpg" class="img-fluid"></p>
-<p>I am super excited to finally dig into Hands-On Machine Learning with R by <a href="https://www.linkedin.com/in/brad-boehmke-ph-d-9b0a257/">Brad Boehmke, Ph.D.</a> and <a href="https://www.linkedin.com/in/brandon-greenwell-90310b94/">Brandon Greenwell</a>.</p>
-<p>There are a ton of solid ML books on the market for Python and R users but I’ve struggled with developing a best practice ML workflow to make maintainable code and to enhance my sampling, evaluation, and iteration process. As an R user, I’m glad to have this hands-on approach resource to improve my use of the ML stack within R.</p>
-<p>The full text and code samples are available online, for free: https://lnkd.in/gvmXY3W</p>
-
-
-
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div id="quarto-reuse" class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</a></div></div></section></div> ]]></description>
-  <category>machine learning</category>
-  <guid>https://nishantbharali.github.io/Blog/posts/2019-12-17-Hands-On-Machine-Learning-with-R/2019-12-17-Hands-On-Machine-Learning-with-R.html</guid>
-  <pubDate>Tue, 17 Dec 2019 05:00:00 GMT</pubDate>
-  <media:content url="https://nishantbharali.github.io/Blog/posts/2019-12-17-Hands-On-Machine-Learning-with-R/images/HOMLR.jpg" medium="image" type="image/jpeg"/>
-</item>
-<item>
-  <title>Building a Website with Blogdown</title>
-  <dc:creator>Nishant Bharali</dc:creator>
-  <link>https://nishantbharali.github.io/Blog/posts/2019-11-18-Blogdown/2019-11-18-Blogdown.html</link>
-  <description><![CDATA[ 
-
-
-
-<p><img src="https://nishantbharali.github.io/Blog/posts/2019-11-18-Blogdown/images/blogdown.jpg" class="img-fluid"></p>
-<p><a href="https://www.linkedin.com/in/pabloibarajas/">Pablo Barajas</a>, a recent graduate at UC Irvine and friend of Scatter Podcast, led a presentation on how to build a website using R, RStudio, and Blogdown.</p>
-<p>For anyone wanting to <em>fairly easily</em> build an online portfolio or blog that looks professional, I highly recommend Blogdown. I used this process to build this website, as did Pablo for his personal website, and I can help if you have any questions. Here’s the process in short: RStudio site build with Blogdown -&gt; Commit to GitHub -&gt; Apply Hugo theme -&gt; Netlify for CI/CD</p>
-<p>This event was hosted by the Orange County R Users Group (“OCRUG”) and UCI’s Merage Analytics Club (“MAC”). If you’re in Orange County and looking to network and learn with local data science practitioners and students, I highly recommend attending OCRUG events, R-Ladies Irvine events, or public MAC events. Great learning opportunities here!</p>
-<p>Links:</p>
-<ul>
-<li>Pablo’s presentation on <a href="https://pbarajas.rbind.io/posts/website-tutorial/">his Blogdown site</a></li>
-<li>Blogdown <a href="https://blog.rstudio.com/2017/09/11/announcing-blogdown/">overview from RStudio</a></li>
-<li>OCRUG’s <a href="https://ocrug.org">homepage</a></li>
-<li>R-Ladies <a href="https://www.rladiesirvine.org">Irvine chapter</a></li>
-<li>Merage Analytics Club <a href="https://sites.uci.edu/merageaa/">website</a></li>
-</ul>
-
-
-
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div id="quarto-reuse" class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</a></div></div></section></div> ]]></description>
-  <category>rmarkdown</category>
-  <category>blogdown</category>
-  <guid>https://nishantbharali.github.io/Blog/posts/2019-11-18-Blogdown/2019-11-18-Blogdown.html</guid>
-  <pubDate>Mon, 18 Nov 2019 05:00:00 GMT</pubDate>
-  <media:content url="https://nishantbharali.github.io/Blog/posts/2019-11-18-Blogdown/images/blogdown.jpg" medium="image" type="image/jpeg"/>
 </item>
 </channel>
 </rss>
