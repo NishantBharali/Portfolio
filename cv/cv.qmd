@@ -85,13 +85,13 @@ I aim to leverage my background in science and engineering to help shape the fut
 
 ## PROJECTS
 
-## Information Data Hiding using Steganography Techniques | OpenCV, Pillow, SciKit-Image, NumPy, Matplotlib
+## Information Data Hiding using Steganography Techniques | **OpenCV, Pillow, SciKit-Image, NumPy, Matplotlib**
 
 - Presented Comparative Image analysis between the two data hiding techniques are made on the reconstructed image to conclude which Steganography method achieves better results, Least Significant Bit (LSB) or Discrete Cosine Transform (DST)
 
 - Automated the generation and evaluation of ~25,000 images, achieving an 87% pose detection accuracy from the model
 
-## Idea Repository API | Spring boot, Redux Saga, Postman API, JSON, Git, Jenkins, MySQL, Oracle Database, React Framework
+## Idea Repository API | **Spring boot, Redux Saga, Postman API, JSON, Git, Jenkins, MySQL, Oracle Database, React Framework**
 
 - An API for a full-stack web application to establish user security - authorization and authentication at the backend with Redux-based UI focus on frontend. 
 
@@ -101,7 +101,7 @@ I aim to leverage my background in science and engineering to help shape the fut
 
 - GitHub: https://github.com/NishantBharali/projects
 
-## Digital Hearing Aid System using MATLAB | Simulation, MATLAB (GUI)
+## Digital Hearing Aid System using MATLAB | **Simulation, MATLAB (GUI)**
 
 - Designed a digital hearing aid system using MATLAB using Digital Signal Processing. The implementation of this configurable
 DHA system includes noise reduction filter, frequency shaper function and amplitude compression function.
@@ -113,7 +113,7 @@ different levels of hearing loss.
 signal. Then, AWGN (Additive white Gaussian noise) and random noise are added to the signal before they are processed by
 various MATLAB functions to get an output which is audible to the hearing impaired person. 
 
-## Detection of Number Plate and Identification of Number using MATLAB | Platform Simulation, MATLAB, Simulink 
+## Detection of Number Plate and Identification of Number using MATLAB | **Platform Simulation, MATLAB, Simulink**
 
 - Our project focuses on developing an automated number plate recognition system, streamlining the process of plate
 detection and information storage. As vehicles enter a secure area, our system automatically captures and stores their
@@ -122,14 +122,14 @@ number plates, replacing manual data collection for improved accuracy.
 - The project operates on a supervised method, utilizing a reference database for comparison. It comprises three key
 components: reference creation, plate detection, and alphabet/digit identification. 
 
-## Information Data Hiding using Steganography Techniques | OpenCV, Pillow, SciKit-Image, NumPy, Matplotlib
+## Information Data Hiding using Steganography Techniques | **OpenCV, Pillow, SciKit-Image, NumPy, Matplotlib**
 
 - Presented Comparative Image analysis between the two data hiding techniques are made on the reconstructed image to
 conclude which Steganography method achieves better results, Least Significant Bit (LSB) or Discrete Cosine Transform (DST).
 
 - Automated the generation and evaluation of 35,000 images, achieving an 87% pose detection accuracy from the model.
 
-## Adaptive Traffic Light System using 8051 Microcontroller |8051 Micrcontroller (AT89C51), LEDs, 7 Segment Display, IR Sensors, Proteus Simulation
+## Adaptive Traffic Light System using 8051 Microcontroller | **8051 Micrcontroller (AT89C51), LEDs, 7 Segment Display, IR Sensors, Proteus Simulation**
 
 - Designed an adaptive traffic light system, which allots different time frames based on the density of traffic to a certain lane.
 
@@ -138,11 +138,11 @@ which will be conveyed by the LEDs with the time delay in consideration.
 
 ## SKILLS
 
-* *Technical Skills*: Python, Keras, SciKit-Image (sci-kit learn), Java, MATLAB, SQL, CAN, LIN, HTML, CSS, React, CI/CD, Linux bash, RESTful API, Redux-saga, Spring Framework, Jupyter, Microcontroller 8051, Simulink, SOLIDWORKS, Verilog
+* **Technical Skills**: Python, Keras, SciKit-Image (sci-kit learn), Java, MATLAB, SQL, CAN, LIN, HTML, CSS, React, CI/CD, Linux bash, RESTful API, Redux-saga, Spring Framework, Jupyter, Microcontroller 8051, Simulink, SOLIDWORKS, Verilog
 
-* *Framework and Tools*: OpenCV, Matplotlib (Pillow), Vector CANalyzer, CANoe, Wireshark, Android and QNX architecture, Postman, Git Jenkins, Microservices, ROS, Visual Studio, Gazebo, MySQL
+* **Framework and Tools**: OpenCV, Matplotlib (Pillow), Vector CANalyzer, CANoe, Wireshark, Android and QNX architecture, Postman, Git Jenkins, Microservices, ROS, Visual Studio, Gazebo, MySQL
 
-* *Other*: Agile, Scrum,JIRA, Product& Project Management, MicrosoftOffice Suite, eLMS
+* **Other**: Agile, Scrum,JIRA, Product& Project Management, MicrosoftOffice Suite, eLMS
 
 ## OTHERS AND ORGANIZATIONS
 
