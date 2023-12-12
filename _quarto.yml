@@ -5,7 +5,7 @@ project:
 website:
   title: "Engineering Bytes"
   site-url: https://nishantbharali.github.io/Blog/
-  description: "Nishant Bharali's engineering blog"
+  description: "Nishant Bharali's Engineering Blog"
   open-graph: true
   cookie-consent: true
   twitter-card: 
@@ -28,7 +28,7 @@ website:
         text: Stack Overflow
       - icon: envelope
         href: mailto:nishantkb@vt.edu
-        text: Gmail
+        text: Mail
       - icon: file-earmark-person
         href: cv/cv.html
         text: CV
