@@ -17,16 +17,21 @@ website:
       - icon: linkedin
         href: https://www.linkedin.com/in/nishant-kumar-bharali/
         target: _blank
+        text: LinkedIn
       - icon: github
         href: https://github.com/NishantBharali
         target: _blank
+        text: GitHub
       - icon: stack-overflow
         href: https://stackoverflow.com/users/18371927/nishant
         target: _blank
+        text: Stack Overflow
       - icon: envelope
         href: mailto:nishantkb@vt.edu
+        text: Gmail
       - icon: file-earmark-person
-        href: cv/cv.html
+        href: Resume2.pdf
+        text: Resume
       - text: Blog
         href: blog.qmd
       - text: Resources

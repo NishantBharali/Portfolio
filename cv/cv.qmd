@@ -15,7 +15,7 @@ nishantkb@vt.edu
 
 ## Summary
 
-My goal is to train and lead the next generation of data scientists to integrate substantive expertise from diverse fields with machine intelligence.
+My goal is to learn and apply lead the practical control methods in the field of robotics and autonomous vehicles to integrate substantive expertise from diverse fields with machine intelligence and vision.
 
 Through research and projects, I am constantly improving my ability to obtain, tidy, explore, transform, visualize, model, and communicate data. My preferred tools are MATLAB, Simulink, Java, JavaScript and Python, open source programming languages kept on the cutting edge by their energetic communities.
 

@@ -146,30 +146,30 @@ cookieconsent.run({
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
-  <li class="nav-item compact">
+  <li class="nav-item">
     <a class="nav-link" href="https://www.linkedin.com/in/nishant-kumar-bharali/" rel="" target="_blank"><i class="bi bi-linkedin" role="img">
 </i> 
- <span class="menu-text"></span></a>
+ <span class="menu-text">LinkedIn</span></a>
   </li>  
-  <li class="nav-item compact">
+  <li class="nav-item">
     <a class="nav-link" href="https://github.com/NishantBharali" rel="" target="_blank"><i class="bi bi-github" role="img">
 </i> 
- <span class="menu-text"></span></a>
+ <span class="menu-text">GitHub</span></a>
   </li>  
-  <li class="nav-item compact">
+  <li class="nav-item">
     <a class="nav-link" href="https://stackoverflow.com/users/18371927/nishant" rel="" target="_blank"><i class="bi bi-stack-overflow" role="img">
 </i> 
- <span class="menu-text"></span></a>
+ <span class="menu-text">Stack Overflow</span></a>
   </li>  
-  <li class="nav-item compact">
+  <li class="nav-item">
     <a class="nav-link" href="mailto:nishantkb@vt.edu" rel="" target=""><i class="bi bi-envelope" role="img">
 </i> 
- <span class="menu-text"></span></a>
+ <span class="menu-text">Gmail</span></a>
   </li>  
-  <li class="nav-item compact">
-    <a class="nav-link" href="../../cv/cv.html" rel="" target=""><i class="bi bi-file-earmark-person" role="img">
+  <li class="nav-item">
+    <a class="nav-link" href="../../Resume2.pdf" rel="" target=""><i class="bi bi-file-earmark-person" role="img">
 </i> 
- <span class="menu-text"></span></a>
+ <span class="menu-text">Resume</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="../../blog.html" rel="" target="">
@@ -288,7 +288,7 @@ cookieconsent.run({
 <p>Machine learning is a fascinating field that empowers computers to learn and make predictions or decisions without being explicitly programmed. One of the fundamental tasks in machine learning is classification, where the goal is to categorize data points into predefined classes or labels. In this blog post, we dive deep into the world of classification, exploring advanced techniques and their application on a real-world dataset.</p>
 <p>The Iris dataset is a well-known benchmark in the machine learning community. It consists of measurements of four features from three different species of iris flowers. This seemingly simple dataset serves as an excellent playground for understanding and implementing classification algorithms. However, we won’t stop at the basics; we’ll explore advanced classification techniques, model tuning, and even dive into ensemble methods and neural networks.</p>
 <p><strong>Data Loading and Preliminary Analysis</strong></p>
-<div class="cell" data-execution_count="1">
+<div class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Importing essential libraries</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
@@ -365,7 +365,7 @@ None</code></pre>
 </div>
 </div>
 <p><strong>Data Preprocessing</strong></p>
-<div class="cell" data-execution_count="2">
+<div class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.model_selection <span class="im">import</span> train_test_split</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.preprocessing <span class="im">import</span> LabelEncoder, StandardScaler</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -386,7 +386,7 @@ None</code></pre>
 <span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>X_test <span class="op">=</span> scaler.transform(X_test)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><strong>Exploratory Data Analysis (EDA)</strong></p>
-<div class="cell" data-execution_count="3">
+<div class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Correlation heatmap</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">8</span>))</span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>sns.heatmap(iris_df.corr(), annot<span class="op">=</span><span class="va">True</span>, cmap<span class="op">=</span><span class="st">'viridis'</span>)</span>
@@ -403,7 +403,7 @@ None</code></pre>
 </div>
 </div>
 <p><strong>Model Building and Evaluation For Classification</strong></p>
-<div class="cell" data-execution_count="4">
+<div class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.metrics <span class="im">import</span> classification_report, confusion_matrix</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.tree <span class="im">import</span> DecisionTreeClassifier</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.ensemble <span class="im">import</span> RandomForestClassifier, GradientBoostingClassifier</span>
@@ -529,7 +529,7 @@ weighted avg       0.98      0.98      0.98       900
 <p>In this code, we introduce different types of classification models, including Random Forest Classifier, Gradient Boosting Classifier, Support Vector Classifier (SVC), K-Nearest Neighbors Classifier (KNN), and Logistic Regression.</p>
 <p>For each model, we train it on the training data and evaluate its performance using accuracy and a classification report that includes precision, recall, and F1-score. This allows you to compare the performance of various classification algorithms on the Iris dataset.</p>
 <p><strong>Advanced Model Tuning and Analysis</strong></p>
-<div class="cell" data-execution_count="5">
+<div class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.model_selection <span class="im">import</span> GridSearchCV</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Hyperparameter tuning for RandomForestClassifier</span></span>
@@ -558,7 +558,7 @@ weighted avg       1.00      1.00      1.00       900
 </div>
 </div>
 <p><strong>Hyperparameter Tuning for the Classification Model</strong></p>
-<div class="cell" data-execution_count="6">
+<div class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.model_selection <span class="im">import</span> GridSearchCV</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.metrics <span class="im">import</span> classification_report, accuracy_score</span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -599,7 +599,7 @@ weighted avg       1.00      1.00      1.00       900
 </div>
 <p><strong>ROC Curve Analysis for Multiple Models</strong></p>
 <p>Comparing the performance of the various classification models using ROC Curve analysis, here we discuss the plots of the ROC Curve for each model. This will involve calculating the True Positive Rate (TPR) and False Positive Rate (FPR) for each model and plotting them.</p>
-<div class="cell" data-execution_count="7">
+<div class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.metrics <span class="im">import</span> roc_curve, auc</span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.preprocessing <span class="im">import</span> label_binarize</span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.multiclass <span class="im">import</span> OneVsRestClassifier</span>
@@ -650,7 +650,7 @@ weighted avg       1.00      1.00      1.00       900
 </div>
 <p>This code will generate ROC curves for each of the classifiers used, providing a visual comparison of their performance in terms of the trade-off between the True Positive Rate and False Positive Rate. The area under the curve (AUC) is also displayed as a measure of the model’s performance, with a higher AUC indicating a better model. This analysis is crucial for understanding the performance of classification models, especially in multi-class settings.</p>
 <p><strong>Dimensionality Reduction and Visualization</strong></p>
-<div class="cell" data-execution_count="8">
+<div class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.decomposition <span class="im">import</span> PCA</span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="co"># PCA for dimensionality reduction</span></span>
@@ -674,7 +674,7 @@ weighted avg       1.00      1.00      1.00       900
 <p><strong>Additional Advanced Analysis</strong></p>
 <p><strong>1. Cross-Validation</strong></p>
 <p>Cross-validation is a technique used to evaluate the generalizability of a model by training and testing it on different subsets of the dataset.</p>
-<div class="cell" data-execution_count="9">
+<div class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.model_selection <span class="im">import</span> cross_val_score</span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Example using RandomForestClassifier</span></span>
@@ -693,7 +693,7 @@ Average Score: 0.9973333333333333</code></pre>
 </div>
 <p><strong>2. Ensemble Methods</strong></p>
 <p>Ensemble methods combine multiple models to improve the overall performance. Here, I will use an ensemble of different classifiers.</p>
-<div class="cell" data-execution_count="10">
+<div class="cell" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.linear_model <span class="im">import</span> LogisticRegression</span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.ensemble <span class="im">import</span> VotingClassifier</span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -729,7 +729,7 @@ weighted avg       1.00      1.00      1.00       900
 </div>
 <p><strong>PREDICTION</strong></p>
 <p><strong>Prediction: Data Preprocessing with Visualization</strong></p>
-<div class="cell" data-execution_count="11">
+<div class="cell" data-execution_count="12">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.model_selection <span class="im">import</span> train_test_split</span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.preprocessing <span class="im">import</span> LabelEncoder, StandardScaler</span>
 <span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
@@ -776,7 +776,7 @@ weighted avg       1.00      1.00      1.00       900
 </div>
 </div>
 <p><strong>Model Building, Evaluation, and Visualization for Prediction</strong></p>
-<div class="cell" data-execution_count="12">
+<div class="cell" data-execution_count="13">
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.metrics <span class="im">import</span> mean_squared_error, r2_score</span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.linear_model <span class="im">import</span> LinearRegression</span>
 <span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.tree <span class="im">import</span> DecisionTreeRegressor</span>
@@ -831,7 +831,7 @@ R-squared (R2) Score: 0.9906161137440759</code></pre>
 </div>
 </div>
 <p><strong>Advanced Model Tuning and Analysis for Prediction</strong></p>
-<div class="cell" data-execution_count="13">
+<div class="cell" data-execution_count="14">
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.model_selection <span class="im">import</span> GridSearchCV</span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Hyperparameter tuning for Random Forest Regressor</span></span>
@@ -860,7 +860,7 @@ R-squared (R2) Score: 0.9909395581924271</code></pre>
 </div>
 <p><strong>Feature Selection and Importance Analysis</strong></p>
 <p>Feature selection is crucial for improving model performance and reducing overfitting. Here, we use techniques like Recursive Feature Elimination (RFE) and feature importance analysis to select the most relevant features for classification or prediction.</p>
-<div class="cell" data-execution_count="14">
+<div class="cell" data-execution_count="15">
 <div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.feature_selection <span class="im">import</span> RFE</span>
 <span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.linear_model <span class="im">import</span> LogisticRegression</span>
 <span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -877,7 +877,7 @@ R-squared (R2) Score: 0.9909395581924271</code></pre>
 </div>
 </div>
 <p>Additionally, we can analyze feature importance for tree-based models like Random Forest or Gradient Boosting to understand which features contribute the most to predictions.</p>
-<div class="cell" data-execution_count="15">
+<div class="cell" data-execution_count="16">
 <div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.ensemble <span class="im">import</span> RandomForestClassifier</span>
 <span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Feature Importance Analysis for Random Forest Classifier</span></span>
@@ -895,7 +895,7 @@ R-squared (R2) Score: 0.9909395581924271</code></pre>
 </div>
 <p><strong>Handling Class Imbalance</strong></p>
 <p>In real-world datasets, class imbalance is common, where one class has significantly fewer samples than others. Techniques like oversampling, undersampling, and Synthetic Minority Over-sampling Technique (SMOTE) can be employed to address this issue.</p>
-<div class="cell" data-execution_count="16">
+<div class="cell" data-execution_count="17">
 <div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> imblearn.over_sampling <span class="im">import</span> SMOTE</span>
 <span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Using SMOTE to handle class imbalance</span></span>

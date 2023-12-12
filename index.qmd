@@ -10,9 +10,9 @@ about:
     - icon: rss
       text: Blog
       href: https://nishantbharali.github.io/Blog/blog.html
-    - icon: file-earmark-person
-      href: https://nishantbharali.github.io/Blog/cv/cv.html
-      text: CV
+    # - icon: file-earmark-person
+    #   href: https://nishantbharali.github.io/Blog/cv/cv.html
+    #   text: Curriculum Vitae
     - icon: linkedin
       text: LinkedIn
       href: https://www.linkedin.com/in/nishant-kumar-bharali/
@@ -23,9 +23,13 @@ comments: false
 page-layout: full
 ---
 
+```{=html}
+<iframe width="680" height="400" src="VT CV.pdf" title="Curriculum Vitae"></iframe>
+```
+
 Greetings! My name is Nishant Bharali. <img src="images/wave.gif" width="40px"/>
 
-I'm an engineer with experiences in software modeling, analytics, vehicle controls, and machine learning. For a living, I get to solve problems with data... **Life is good!**
+I'm an engineer with experiences in software modeling, analytics, vehicle controls, machine vision and machine learning. For a living, I get to solve problems with data, currently pursuing my Master's in Computer Engineering... **Life is boring without challenges worth thriving against!**
 
 ## Programming
 
