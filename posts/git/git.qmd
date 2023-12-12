@@ -1,7 +1,7 @@
 ---
 title: Git
 description: "Diving deep into the Git tool"
-date: 11-24-2023
+date: 06-24-2023
 categories: [Tools/Packages]
 image: horst_git-hug.png
 ---

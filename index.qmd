@@ -11,8 +11,9 @@ about:
       text: Blog
       href: https://nishantbharali.github.io/Blog/blog.html
     - icon: file-earmark-person
-      href: https://nishantbharali.github.io/Blog/cv/cv.html
-      text: Curriculum Vitae
+      href: Resume2.pdf
+      # https://nishantbharali.github.io/Blog/cv/cv.html
+      text: Resume
     - icon: linkedin
       text: LinkedIn
       href: https://www.linkedin.com/in/nishant-kumar-bharali/
@@ -24,7 +25,7 @@ page-layout: full
 ---
 
 ```{=html}
-<iframe width="680" height="400" src="https://techxplore.com/engineering-news/" title="Daily Tech Updates"></iframe>
+<iframe width="700" height="400" src="https://techxplore.com/engineering-news/" title="Daily Tech Updates"></iframe>
 ```
 
 Greetings! My name is Nishant Bharali. <img src="images/wave.gif" width="40px"/>

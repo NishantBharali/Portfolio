@@ -30,8 +30,8 @@ website:
         href: mailto:nishantkb@vt.edu
         text: Gmail
       - icon: file-earmark-person
-        href: Resume2.pdf
-        text: Resume
+        href: cv/cv.html
+        text: CV
       - text: Blog
         href: blog.qmd
       - text: Resources
