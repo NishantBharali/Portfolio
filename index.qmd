@@ -11,7 +11,7 @@ about:
       text: Blog
       href: https://nishantbharali.github.io/Blog/blog.html
     - icon: file-earmark-person
-      href: Resume.html
+      href: https://nishantbharali.github.io/Blog/Resume/Resume.html
       # https://nishantbharali.github.io/Blog/cv/cv.html
       text: Resume
     - icon: linkedin
