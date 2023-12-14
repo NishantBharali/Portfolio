@@ -3,7 +3,7 @@ title: Advanced analysis on Linear and Non-Linear Regression models
 description: "A Comprehensive Analysis on Housing Market. Utilizing regression methodologies for the purpose of analyzing trends within the housing market"
 date: 11-24-2023
 categories: [Machine Learning]
-image: image2.jpg
+image: AU5v.gif
 ---
 
 ## A Comprehensive Analysis on Housing Market

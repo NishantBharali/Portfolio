@@ -1084,7 +1084,7 @@ font-style: inherit;">sum</span>()</span>
   <category>Machine Learning</category>
   <guid>https://nishantbharali.github.io/Blog/posts/Anomaly-Outlier Detection/index.html</guid>
   <pubDate>Fri, 24 Nov 2023 05:00:00 GMT</pubDate>
-  <media:content url="https://nishantbharali.github.io/Blog/posts/Anomaly-Outlier Detection/image2.jpg" medium="image" type="image/jpeg"/>
+  <media:content url="https://nishantbharali.github.io/Blog/posts/Anomaly-Outlier Detection/Bnip.gif" medium="image" type="image/gif"/>
 </item>
 <item>
   <title>Advanced Classification techniques with Model Prediction Analysis</title>
@@ -2643,7 +2643,7 @@ font-style: inherit;">=</span> smote.fit_resample(X_train, y_train)</span></code
   <category>Machine Learning</category>
   <guid>https://nishantbharali.github.io/Blog/posts/Classification/index.html</guid>
   <pubDate>Fri, 24 Nov 2023 05:00:00 GMT</pubDate>
-  <media:content url="https://nishantbharali.github.io/Blog/posts/Classification/image1.jpg" medium="image" type="image/jpeg"/>
+  <media:content url="https://nishantbharali.github.io/Blog/posts/Classification/Rz0T.gif" medium="image" type="image/gif"/>
 </item>
 <item>
   <title>Advanced Clustering and Prediction techniques</title>
@@ -3377,7 +3377,7 @@ font-style: inherit;">'Silhouette Score'</span>)</span>
   <category>Machine Learning</category>
   <guid>https://nishantbharali.github.io/Blog/posts/Clustering/index.html</guid>
   <pubDate>Fri, 24 Nov 2023 05:00:00 GMT</pubDate>
-  <media:content url="https://nishantbharali.github.io/Blog/posts/Clustering/image1.jpg" medium="image" type="image/jpeg"/>
+  <media:content url="https://nishantbharali.github.io/Blog/posts/Clustering/E3K6.gif" medium="image" type="image/gif"/>
 </item>
 <item>
   <title>Advanced analysis on Linear and Non-Linear Regression models</title>
@@ -5079,7 +5079,7 @@ font-style: inherit;">'Support Vector Regression Residuals'</span>)</span>
   <category>Machine Learning</category>
   <guid>https://nishantbharali.github.io/Blog/posts/Linear and Non Linear Regression/index.html</guid>
   <pubDate>Fri, 24 Nov 2023 05:00:00 GMT</pubDate>
-  <media:content url="https://nishantbharali.github.io/Blog/posts/Linear and Non Linear Regression/image2.jpg" medium="image" type="image/jpeg"/>
+  <media:content url="https://nishantbharali.github.io/Blog/posts/Linear and Non Linear Regression/AU5v.gif" medium="image" type="image/gif"/>
 </item>
 <item>
   <title>Probability Theory and Random Processes</title>
@@ -5822,7 +5822,7 @@ font-style: inherit;">"</span>)</span></code></pre></div>
   <category>Machine Learning</category>
   <guid>https://nishantbharali.github.io/Blog/posts/Random Processes/index.html</guid>
   <pubDate>Fri, 24 Nov 2023 05:00:00 GMT</pubDate>
-  <media:content url="https://nishantbharali.github.io/Blog/posts/Random Processes/image.jpg" medium="image" type="image/jpeg"/>
+  <media:content url="https://nishantbharali.github.io/Blog/posts/Random Processes/weatherGif.gif" medium="image" type="image/gif"/>
 </item>
 <item>
   <title>Detailed R Package Development Tutorial from Method Bites</title>
@@ -5845,7 +5845,7 @@ font-style: inherit;">"</span>)</span></code></pre></div>
   <media:content url="https://nishantbharali.github.io/Blog/posts/2020-09-13-R-Package-Detailed-Tutorial/images/methods_bites.png" medium="image" type="image/png" height="167" width="144"/>
 </item>
 <item>
-  <title>Ubuntu Update to 19.10</title>
+  <title>Linux Ubuntu</title>
   <dc:creator>Nishant Bharali</dc:creator>
   <link>https://nishantbharali.github.io/Blog/posts/2019-12-31-Ubuntu-Update/2019-12-31-Ubuntu-Update.html</link>
   <description><![CDATA[ 
@@ -5853,7 +5853,11 @@ font-style: inherit;">"</span>)</span></code></pre></div>
 
 
 <p><img src="https://nishantbharali.github.io/Blog/posts/2019-12-31-Ubuntu-Update/images/Ubuntu.jpg" class="img-fluid"></p>
-<p>Update Ubuntu 19.04 to 19.10 on dual-booted systems. Not sure exactly where things broke down for me, but as of right now, #Ubuntu seems inaccessible. Not too bummed about it as everything is backed up, but if you’ve recently had the same heartburn and found a solution, please send me a message!</p>
+<p>Updated Ubuntu 23.04 (Lunar Lobster) to 23.10 (Mantic Minotaur) on dual-booted systems.</p>
+<p>Ubuntu, derived from the African philosophy of ‘humanity towards others,’ is a robust, open-source operating system underpinned by the Linux kernel. As a Debian-based distribution, it encapsulates the principles of ease-of-use and versatility, making it a premier choice for a multitude of computing environments, from personal laptops to professional-grade servers and cloud infrastructures. It’s maintained by Canonical Ltd.&nbsp;and a global community of developers, ensuring a secure, stable, and consistently updated platform.</p>
+<p>Out-of-the-box, Ubuntu offers an extensive repository of packages and pre-compiled binaries available through the Advanced Packaging Tool (APT), facilitating straightforward installation and management of software. The default installation comes with the GNOME desktop environment, which provides a user-centric and visually appealing interface while maintaining the potential for extensive customization. It also includes a compendium of open-source applications covering productivity, creative suites, and media playback.</p>
+<p>For developers, Ubuntu is a haven with its support for a wide range of programming languages, development tools, and containerization technologies like Docker and Kubernetes, promoting a streamlined workflow for DevOps and continuous integration/continuous deployment (CI/CD) practices. Moreover, with its Long-Term Support (LTS) releases, Ubuntu ensures five years of security patches and updates, catering to the needs of enterprises for stable and long-term deployment cycles. With the support of Canonical, businesses can opt for extended security maintenance (ESM), further lengthening the support period.</p>
+<p>In the realms of cloud computing and virtualization, Ubuntu is a first-class citizen, optimized for scalability and performance on various cloud platforms, thereby reinforcing its status as a heavyweight in both the open-source community and commercial sectors.</p>
 
 
 
@@ -5861,7 +5865,7 @@ font-style: inherit;">"</span>)</span></code></pre></div>
   <category>Linux</category>
   <guid>https://nishantbharali.github.io/Blog/posts/2019-12-31-Ubuntu-Update/2019-12-31-Ubuntu-Update.html</guid>
   <pubDate>Sat, 02 Sep 2023 04:00:00 GMT</pubDate>
-  <media:content url="https://nishantbharali.github.io/Blog/posts/2019-12-31-Ubuntu-Update/images/Ubuntu.jpg" medium="image" type="image/jpeg"/>
+  <media:content url="https://nishantbharali.github.io/Blog/posts/2019-12-31-Ubuntu-Update/images/linux-ubuntu.gif" medium="image" type="image/gif"/>
 </item>
 <item>
   <title>Preparing for 2024 Goals with a Raspberry Pi</title>
@@ -6260,25 +6264,53 @@ font-style: inherit;">&gt;</span></span></code></pre></div>
   <category>Tools/Packages</category>
   <guid>https://nishantbharali.github.io/Blog/posts/git/git.html</guid>
   <pubDate>Sat, 24 Jun 2023 04:00:00 GMT</pubDate>
-  <media:content url="https://nishantbharali.github.io/Blog/posts/git/horst_git-hug.png" medium="image" type="image/png" height="51" width="144"/>
+  <media:content url="https://nishantbharali.github.io/Blog/posts/git/git_gif.gif" medium="image" type="image/gif"/>
 </item>
 <item>
-  <title>Large Language Models (LLM)</title>
+  <title>Large Language Models</title>
   <dc:creator>Nishant Bharali</dc:creator>
   <link>https://nishantbharali.github.io/Blog/posts/llm/llm.html</link>
   <description><![CDATA[ 
 
 
 
+<section id="exploring-the-frontiers-of-ai-large-language-models" class="level1">
+<h1>Exploring the Frontiers of AI: Large Language Models</h1>
+<p>Large language models (LLMs) like GPT (Generative Pre-trained Transformer) have revolutionized the field of artificial intelligence by providing unprecedented capabilities in natural language processing. These models, trained on vast datasets, can generate text, answer questions, summarize information, and even write code with surprising coherence and relevance.</p>
+<section id="the-power-of-generative-pre-training" class="level2">
+<h2 class="anchored" data-anchor-id="the-power-of-generative-pre-training">The Power of Generative Pre-training</h2>
+<p>LLMs leverage a technique known as generative pre-training, where a model is first trained on a large corpus of text data in an unsupervised manner. This allows the model to learn the nuances of language, including grammar, syntax, and even style. The pre-trained model is then fine-tuned on specific tasks, enabling it to perform a variety of language-based tasks with a high degree of proficiency.</p>
+</section>
+<section id="transformer-architecture-a-paradigm-shift" class="level2">
+<h2 class="anchored" data-anchor-id="transformer-architecture-a-paradigm-shift">Transformer Architecture: A Paradigm Shift</h2>
+<p>The transformer architecture, introduced in the seminal paper “Attention is All You Need,” eschews traditional sequential processing for a parallel approach that uses attention mechanisms. This allows LLMs to weigh the importance of different parts of the input data and has proven to be highly effective for language understanding and generation.</p>
+</section>
+<section id="applications-and-implications" class="level2">
+<h2 class="anchored" data-anchor-id="applications-and-implications">Applications and Implications</h2>
+<p>LLMs are not just academic curiosities; they have practical applications ranging from writing assistance to customer service bots, and they’re integral to search engines and translation services. However, they also raise important questions about ethics and biases in AI, as they often reflect the data they were trained on, which can include biased or inaccurate information.</p>
+</section>
+<section id="the-future-of-llms" class="level2">
+<h2 class="anchored" data-anchor-id="the-future-of-llms">The Future of LLMs</h2>
+<p>As we continue to push the boundaries of what’s possible with LLMs, it’s important to consider the broader implications of this technology. Responsible AI practices, including bias mitigation and transparency, will be crucial in ensuring that the benefits of LLMs are realized while minimizing potential harms.</p>
+<p>LLMs represent a significant milestone in AI, but they are not the final destination. Ongoing research is focused on making these models more efficient, ethical, and capable, ensuring that they serve as valuable tools for progress in various domains of human endeavor.</p>
+</section>
+<section id="conclusion" class="level2">
+<h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
+<p>As we stand on the cusp of a new era in AI, large language models are at the forefront, driving innovation and enabling a deeper, more nuanced interaction between humans and machines. Their continued development will undoubtedly unlock new possibilities, challenge existing paradigms, and inspire future generations of AI research.</p>
 <p><a href="https://en.wikipedia.org/wiki/Large_language_model#:~:text=A%20large%20language%20model%20(LLM)%20is%20a%20type%20of%20language%20model%20notable%20for%20its%20ability%20to%20achieve%20general%2Dpurpose%20language%20understanding%20and%20generation.">Large Language Models</a> (LLMs) are a way to automatically generate text. more informative commit messages based on the currently staged changes.</p>
 
 
+</section>
+</section>
 
 <div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div id="quarto-reuse" class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</a></div></div></section></div> ]]></description>
   <category>Tools/Packages</category>
+  <category>Artificial Intelligence</category>
+  <category>Machine Learning</category>
+  <category>Natural Language Processing</category>
   <guid>https://nishantbharali.github.io/Blog/posts/llm/llm.html</guid>
   <pubDate>Sat, 24 Jun 2023 04:00:00 GMT</pubDate>
-  <media:content url="https://nishantbharali.github.io/Blog/posts/llm/dalle_llm-guru.jpg" medium="image" type="image/jpeg"/>
+  <media:content url="https://nishantbharali.github.io/Blog/posts/llm/llmGif.gif" medium="image" type="image/gif"/>
 </item>
 <item>
   <title>A Brief History of the Dataframe</title>
@@ -6352,7 +6384,7 @@ font-style: inherit;">&gt;</span></span></code></pre></div>
   <category>Data Science</category>
   <guid>https://nishantbharali.github.io/Blog/posts/2019-12-17-Hands-On-Machine-Learning-with-R/2019-12-17-Hands-On-Machine-Learning-with-R.html</guid>
   <pubDate>Wed, 01 Feb 2023 05:00:00 GMT</pubDate>
-  <media:content url="https://nishantbharali.github.io/Blog/posts/2019-12-17-Hands-On-Machine-Learning-with-R/images/HOMLR.jpg" medium="image" type="image/jpeg"/>
+  <media:content url="https://nishantbharali.github.io/Blog/posts/2019-12-17-Hands-On-Machine-Learning-with-R/images/handsOnGif.gif" medium="image" type="image/gif"/>
 </item>
 <item>
   <title>Resampling with k-fold Cross Validation</title>
@@ -6408,7 +6440,7 @@ font-style: inherit;">&gt;</span></span></code></pre></div>
   <category>Blogdown</category>
   <guid>https://nishantbharali.github.io/Blog/posts/2019-11-18-Blogdown/2019-11-18-Blogdown.html</guid>
   <pubDate>Wed, 18 Jan 2023 05:00:00 GMT</pubDate>
-  <media:content url="https://nishantbharali.github.io/Blog/posts/2019-11-18-Blogdown/images/blogdown.jpg" medium="image" type="image/jpeg"/>
+  <media:content url="https://nishantbharali.github.io/Blog/posts/2019-11-18-Blogdown/images/blogdownGif.gif" medium="image" type="image/gif"/>
 </item>
 <item>
   <title>DT: An R Interface to the JavaScript library DataTables</title>
