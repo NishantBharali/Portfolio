@@ -3,5 +3,4 @@ title: "Resume"
 format: html
 ---
 
-<iframe src="Resume2.pdf" width="100%" height="800px">
-</iframe>
+[View or Download My Resume](Resume2.pdf)
