@@ -4,6 +4,7 @@ description: "A Comprehensive Analysis on Housing Market. Utilizing regression m
 date: 11-24-2023
 categories: [Machine Learning]
 image: AU5v.gif
+toc-location: right
 ---
 
 ## A Comprehensive Analysis on Housing Market
@@ -493,3 +494,19 @@ For weather data analysis, random processes and probability theory enable us to 
 In the case of housing data analysis, linear and nonlinear regression techniques enable us to model complex relationships between housing features and prices. Whether it's linear relationships for straightforward cases or nonlinear models to capture intricate patterns, these tools empower us to make more informed decisions in real estate, investments, and market analysis.
 
 In both domains, machine learning applied to these fundamental concepts provides us with the means to extract valuable insights and make data-driven decisions, ultimately enhancing our understanding and predictive capabilities, and offering practical solutions that can improve the quality of life and the efficiency of various industries.
+
+
+```{=html}
+<script>
+const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+</script>
+<style>
+div#quarto-sidebar-glass { display: none !important; }
+ul.navbar-nav.navbar-nav-scroll { -webkit-flex-direction: row !important; }
+/* #quarto-sidebar { padding: 5px; }
+#quarto-sidebar > * { padding: 5px; }
+div.sidebar-menu-container > * { padding: 5px 5px 5px 5px; }
+#quarto-margin-sidebar { padding: 40px; } */
+</style>
+```

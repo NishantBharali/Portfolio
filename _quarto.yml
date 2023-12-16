@@ -3,34 +3,40 @@ project:
   output-dir: docs
 
 website:
-  title: "Engineering Bytes"
+  title: Tech Bytes
+  repo-url: https://github.com/NishantBharali/Blog
+  repo-actions: [source]
   site-url: https://nishantbharali.github.io/Blog/
-  description: "Nishant Bharali's Engineering Blog"
-  open-graph: true
+  favicon: images/image80.webp
+  search: 
+    location: navbar
+    type: overlay
+    copy-button: true
+  back-to-top-navigation: true
+  page-footer:
+    left: "Copyright 2023, Nishant Bharali" 
+    right: 
+      - icon: linkedin
+        href: https://www.linkedin.com/in/nishant-kumar-bharali/
+        text: LinkedIn
+      - icon: github
+        href: https://github.com/NishantBharali
+        text: GitHub
+      - icon: stack-overflow
+        href: https://stackoverflow.com/users/18371927/nishant
+        text: Stack Overflow
+      - icon: envelope
+        href: mailto:nishantkb@vt.edu
+        text: Mail
+  open-graph:
+    site-name: Tech Bytes
   cookie-consent: true
   twitter-card: 
     image: images/Nishant.jpg
     card-style: summary_large_image
     creator: "@NishantBharali"
   navbar:
-    right:
-      - icon: linkedin
-        href: https://www.linkedin.com/in/nishant-kumar-bharali/
-        target: _blank
-        text: LinkedIn
-      - icon: github
-        href: https://github.com/NishantBharali
-        target: _blank
-        text: GitHub
-      - icon: stack-overflow
-        href: https://stackoverflow.com/users/18371927/nishant
-        target: _blank
-        text: Stack Overflow
-      - icon: envelope
-        href: mailto:nishantkb@vt.edu
-        text: Mail
-      - href: cv/cv.html
-        text: CV
+    left:
       - text: Blog
         href: blog.qmd
       - text: Resources
@@ -51,12 +57,78 @@ website:
             target: _blank
       - text: About
         href: about.qmd
+      - text: Contact
+        menu:
+          - icon: linkedin
+            href: https://www.linkedin.com/in/nishant-kumar-bharali/
+            target: _blank
+            text: LinkedIn
+          - icon: github
+            href: https://github.com/NishantBharali
+            target: _blank
+            text: GitHub
+          - icon: stack-overflow
+            href: https://stackoverflow.com/users/18371927/nishant
+            target: _blank
+            text: Stack Overflow
+          - icon: envelope
+            href: mailto:nishantkb@vt.edu
+            text: Gmail
+          - href: cv/cv.html
+            text: Curriculum Vitae
+  
+  sidebar:
+    style: "docked"
+    search: false
+    sort: order
+    collapse-level: 1
+    contents:
+      - text: "Home"
+        file: index.qmd
+      - section: Blog Posts
+        file: blog.qmd
+        contents:
+          - section: Tools
+            href: posts/#category=Tools/Packages
+            contents:
+              - posts/git/git.qmd
+              - posts/llm/llm.qmd
+              - posts/quarto/quarto.qmd
+          - section: Machine Learning
+            href: posts/#category=Machine Learning
+            contents:
+              - posts/2019-12-17-Hands-On-Machine-Learning-with-R/2019-12-17-Hands-On-Machine-Learning-with-R.qmd
+              - posts/Anomaly-Outlier Detection/index.qmd
+              - posts/Classification/index.qmd
+              - posts/Clustering/index.qmd
+              - posts/Linear and Non Linear Regression/index.qmd
+              - posts/Random Processes/index.qmd
+      - text: "About Me"
+        file: about.qmd
+      - section: "Resources"
+        contents:
+          - text: "My Resources"
+            href: resources.qmd
+          - text: Python for Data Science
+            href: https://r4ds.hadley.nz/
+            target: _blank
+          - text: Tidyverse
+            href: https://www.tidyverse.org/
+            target: _blank
+          - text: Tidymodels
+            href: https://www.tidymodels.org/
+            target: _blank
+          - text: Tidyverse Style Guide
+            href: https://style.tidyverse.org/
+            target: _blank
 
 format:
   html:
+    page-layout: full
     theme:
       light: [flatly, theme-light.scss]
       dark: [darkly, theme-dark.scss]
+    css: styles.css
     fontsize: 1.0em
     code-copy: true
     code-overflow: wrap

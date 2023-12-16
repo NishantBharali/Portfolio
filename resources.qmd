@@ -3,7 +3,7 @@ title: "Resources"
 title-block-banner: false
 toc: true
 toc-title: "Table of Contents"
-toc-location: left
+toc-location: right
 ---
 
 In the past, I lost track of reality trying to track a gazillion links covering every data-science-friendly programming language under the sun. `**shakes head**` Bad idea. Since I program in R daily, I like to keep track of R and Posit / RStudio developments. I'm mostly going to share R resources that I find useful for analytics, statistical programming, machine learning, data science workflows, and web app development. I'm enjoying Python a lot more recently so I'll slowly build up this resources page with Python sub-topics that I find bookmark worthy.
@@ -55,3 +55,19 @@ Python and R are open-source programming languages for statistical computing and
 * [leaflet](https://rstudio.github.io/leaflet/): R implementation of the popular Leaflet JavaScript library for developing interactive maps
 * [plotly](https://plotly.com/r/): An extensive graphic library for creating interactive visualizations and 3D (WebGL) charts
 * [embed](https://embed.tidymodels.org/): This package is one of my go-to packages for machine learning and I if I'm working on a classification problem, you can count on me incorporating some of the extra steps it provides for the [recipes](https://recipes.tidymodels.org/) package for embedding predictors into one or more numeric columns
+
+
+```{=html}
+<script>
+const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+</script>
+<style>
+div#quarto-sidebar-glass { display: none !important; }
+ul.navbar-nav.navbar-nav-scroll { -webkit-flex-direction: row !important; }
+/* #quarto-sidebar { padding: 5px; }
+#quarto-sidebar > * { padding: 5px; }
+div.sidebar-menu-container > * { padding: 5px 5px 5px 5px; }
+#quarto-margin-sidebar { padding: 40px; } */
+</style>
+```

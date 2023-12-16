@@ -1,0 +1,373 @@
+---
+title: Quarto
+description: "Guide to use Quarto to its full potential"
+date: 06-24-2023
+categories: [Tools/Packages]
+image: horst_many-qmd-to-output.png
+toc-location: right
+---
+
+::: {.callout-note icon=false}
+
+#### [Goal]{.bi .bi-bullseye}
+
+Create a Quarto website and publish it on GitHub/GitLab Pages, Netlify, and Quarto Pub.
+
+:::
+
+[Quarto](https://quarto.org/#:~:text=An%20open%2Dsource%20scientific%20and%20technical%20publishing%20system) is an [open-source software](https://en.wikipedia.org/wiki/Open-source_software#:~:text=Open%2Dsource%20software%20(OSS)%20is%20computer%20software%20that%20is%20released%20under%20a%20license%20in%20which%20the%20copyright%20holder%20grants%20users%20the%20rights%20to%20use%2C%20study%2C%20change%2C%20and%20distribute%20the%20software%20and%20its%20source%20code%20to%20anyone%20and%20for%20any%20purpose.) system for turning plain-text source files into outputs like articles, books, blogs, dashboards, presentations, reports, and websites. [Announced](https://posit.co/blog/announcing-quarto-a-new-scientific-and-technical-publishing-system) by [Posit](https://posit.co) CEO [JJ Allaire](https://www.rstudio.com/authors/j.j.-allaire/), Quarto is already taking the world🌐by storm⛈️!
+
+I strongly believe that everyone, regardless of their background and current technical skill level, can learn and benefit from Quarto. [Getting started with Quarto](https://quarto.org/docs/get-started/) is easy thanks to its [excellent documentation](https://quarto.org/docs/guide/) and vibrant community of enthusiastic users and developers.
+
+Rather than repeat the basic information already available elsewhere, I will share some advanced techniques along with the fundamental knowledge needed to understand how they work. The topics I cover are very technical, but my goal is to make the content on [my blog](../../blog.qmd) as accessible as possible.
+
+The first topic I will delve into is creating and publishing a website with Quarto. To follow the Quarto documentation on [creating a website](https://quarto.org/docs/websites/), you will need [Visual Studio Code (VSCode)](https://code.visualstudio.com), [VSCodium](https://vscodium.com/#:~:text=VSCodium%20is%20a%20community%2Ddriven%2C%20freely%2Dlicensed%20binary%20distribution%20of%20Microsoft%E2%80%99s%20editor%20VS%20Code.) and [RStudio](https://posit.co/download/rstudio-desktop), or a [terminal](https://en.wikipedia.org/wiki/Terminal_emulator).
+
+# Publishing Quarto sites {#sec-pub}
+
+## Installing tools {#sec-inst}
+
+If you use [macOS](https://en.wikipedia.org/wiki/MacOS#:~:text=macOS%20(/%CB%8Cm%C3%A6ko%CA%8A%CB%88%C9%9Bs/%3B%5B6%5D%20previously%20OS%C2%A0X%20and%20originally%20Mac%C2%A0OS%C2%A0X)%20is%20an%20operating%20system%20developed%20and%20marketed%20by%20Apple%20Inc.%20since%202001.), [Linux](https://en.wikipedia.org/wiki/Linux#:~:text=Linux%20(/%CB%88l%C9%AAn%CA%8Aks/%20LIN%2Duuks)%5B11%5D%20is%20a%20family%20of%20open%2Dsource%20Unix%2Dlike%20operating%20systems), or the [Windows Subsystem for Linux (WSL)](https://en.wikipedia.org/wiki/Windows_Subsystem_for_Linux#:~:text=Windows%20Subsystem%20for%20Linux%20(WSL)%20is%20a%20feature%20of%20Windows%20that%20allows%20developers%20to%20run%20a%20Linux%20environment%20without%20the%20need%20for%20a%20separate%20virtual%20machine%20or%20dual%20booting.), you can install all of the aforementioned tools with the [Homebrew](https://brew.sh) package manager. To install everything you will need to follow along with this blog post, you can first [install Homebrew](https://brew.sh/#install) and then run `brew` `bundle` in a directory that contains the [Brewfile](https://homebrew-file.readthedocs.io/en/latest/usage.html) shown in @exm-brew.
+
+::: {#exm-brew}
+```{.ruby filename="Brewfile"}
+brew "gh"
+brew "git"
+brew "glab"
+cask "github"
+cask "quarto"
+cask "rstudio"
+cask "vscodium"
+cask "visual-studio-code"
+vscode "quarto.quarto"
+vscode "REditorSupport.r"
+```
+:::
+
+Using a [package manager](https://en.wikipedia.org/wiki/Package_manager#:~:text=A%20package%20manager%20or%20package%2Dmanagement%20system%20is%20a%20collection%20of%20software%20tools%20that%20automates%20the%20process%20of%20installing%2C%20upgrading%2C%20configuring%2C%20and%20removing%20computer%20programs%20for%20a%20computer%20in%20a%20consistent%20manner.) like Homebrew to install all the requirements with a single [shell](https://en.wikipedia.org/wiki/Unix_shell#:~:text=A%20Unix%20shell%20is%20a%20command%2Dline%20interpreter%20or%20shell%20that%20provides%20a%20command%20line%20user%20interface%20for%20Unix%2Dlike%20operating%20systems.) command like `brew` `bundle` is the fastest and easiest way to get ready to follow along with this blog post. If you are curious about how I set up my computer, you can take a look at [my Brewfile](https://github.com/NishantBharali/setup/blob/main/Brewfile) and other configuration files in my `setup` [repository (repo)](https://en.wikipedia.org/wiki/Repository_(version_control)#:~:text=In%20version%20control%20systems%2C%20a%20repository%20is%20a%20data%20structure%20that%20stores%20metadata%20for%20a%20set%20of%20files%20or%20directory%20structure.) on [GitHub](https://github.com/NishantBharali/setup).
+
+Apart from RStudio, VSCode, and VSCodium, the Brewfile in @exm-brew will install the [Git](https://en.wikipedia.org/wiki/Git#:~:text=Git%20(/%C9%A1%C9%AAt/)%5B8%5D%20is%20a%20distributed%20version%20control%20system%5B9%5D%20that%20tracks%20changes%20in%20any%20set%20of%20computer%20files%2C%20usually%20used%20for%20coordinating%20work%20among%20programmers%20who%20are%20collaboratively%20developing%20source%20code%20during%20software%20development.) version control system, the GitHub and GitLab [command line interfaces (CLIs)](https://en.wikipedia.org/wiki/Command-line_interface#:~:text=A%20command%2Dline%20interface%20(CLI)%20is%20a%20means%20of%20interacting%20with%20a%20computer%20program%20by%20inputting%20lines%20of%20text%20called%20command%2Dlines.), and [`GitHub Desktop`](https://desktop.github.com), a [Git Graphical User Interface (GUI)](https://git-scm.com/downloads/guis#:~:text=iOS-,GitHub%20Desktop,-Platforms%3A%20Mac). For more information on Git, a tool used by 93% of software developers worldwide according to [survey results](https://stackoverflow.blog/2023/01/09/beyond-git-the-other-version-control-systems-developers-use/#:~:text=Our%20developer%20survey%20found%2093%25%20of%20developers%20use%20Git.) published by [StackOverflow](https://stackoverflow.com/tour), take a look at the ["GitHub for supporting, reusing, contributing, and failing safely"](https://openscapes.org/blog/2022-05-27-github-illustrated-series/) post by [Allison Horst](https://allisonhorst.com) and [Julie Lowndes](https://jules32.github.io) on the [Openscapes](https://openscapes.org/) [blog](https://openscapes.org/blog).
+
+As an alternative to installing tools on your computer, you can use the web interface provided by [GitHub Codespaces](https://github.com/features/codespaces). To set up a Codespace, you can remove the lines that start with `cask` from the Brewfile provided in @exm-brew and add the file to a repo called [`dotfiles`](https://docs.github.com/en/codespaces/customizing-your-codespace/personalizing-github-codespaces-for-your-account#dotfiles) and along with a `setup.sh` file like the one shown in @exm-set.
+
+::: {#exm-set}
+```{.sh filename="setup.sh"}
+echo | /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+(echo; echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"') >> /home/codespace/.profile
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+brew bundle
+```
+:::
+
+## Publishing overview {#sec-over}
+
+Once you are done setting up your computer or Codespace, you create a [Quarto website template](https://quarto.org/docs/websites/#quick-start:~:text=This%20will%20create%20the%20scaffolding%20for%20a%20simple%20website%20in%20the%20mysite%20sub%2Ddirectory.) and make your site publicly available on the internet using one of the many available [publishing services](https://quarto.org/docs/publishing/#getting-started). To explore and assess different publishing [workflows](https://en.wikipedia.org/wiki/Workflow#:~:text=A%20workflow%20is%20a%20generic%20term%20for%20orchestrated%20and%20repeatable%20patterns%20of%20activity%2C%20enabled%20by%20the%20systematic%20organization%20of%20resources%20into%20processes%20that%20transform%20materials%2C%20provide%20services%2C%20or%20process%20information.) and free website hosting options, I set up my personal website on four different [web hosts](https://en.wikipedia.org/wiki/Web_hosting_service#:~:text=Companies%20providing%20web%20hosting%20services%20are%20sometimes%20called%20web%20hosts.): [GitHub Pages](https://nishantbharali.github.io/Blog/).
+
+There are so many different ways to publish a Quarto site that I decided to come up with a naming system for Quarto publishing methods. The naming system derives a code for each publishing method from the numbered lists in the Quarto publishing documentation. For example, I refer to the [two methods to publish to Quarto Pub](https://quarto.org/docs/publishing/quarto-pub.html#:~:text=Use%20the%20quarto,your%20code%20changes.) as [Q1] and [Q2]:
+
+@tbl-pub uses this naming system in its `Code` column to identify the publishing methods I discuss in this blog post. Each publishing method targets a particular web `Host`, `Render`s content locally or on a remote server, and deploys sites using either the [`quarto` `publish`](https://quarto.org/docs/output-formats/html-publishing.html#publish-command) or the [`git` `push`](https://git-scm.com/docs/git-push) [shell](https://en.wikipedia.org/wiki/Unix_shell#:~:text=A%20Unix%20shell%20is%20a%20command%2Dline%20interpreter%20or%20shell%20that%20provides%20a%20command%20line%20user%20interface%20for%20Unix%2Dlike%20operating%20systems.) `Command`.
+
+| Code  | Host     | Render | Command   |
+| ----- | -------- | ------ | --------- |
+| [G1]  | GitHub   | Local  | `push`    |
+| [G2]  | GitHub   | Local  | `publish` |
+| [G3]  | GitHub   | Remote | `push`    |
+| [N1]  | Netlify  | Local  | `publish` |
+| [N2]  | Netlify  | Local  | `push`    |
+| [N3]  | Netlify  | Remote | `push`    |
+| [Q1]  | Quarto   | Local  | `publish` |
+| [Q2]  | Quarto   | Remote | `push`    |
+
+: Quarto website publishing methods {#tbl-pub}
+
+[Q1]: https://quarto.org/docs/publishing/quarto-pub.html#:~:text=Use%20the%20quarto%20publish%20command%20to%20publish%20content%20rendered%20on%20your%20local%20machine
+[Q2]: https://quarto.org/docs/publishing/quarto-pub.html#:~:text=If%20you%20are%20using%20GitHub%2C%20you%20can%20use%20a%20GitHub%20Action%20to%20automatically%20render%20your%20project%20and%20publish%20the%20resulting%20content%20whenever%20your%20code%20changes.
+[N1]: https://quarto.org/docs/publishing/netlify.html#:~:text=Use%20the%20quarto%20publish%20command%20to%20publish%20content%20rendered%20on%20your%20local%20machine.
+[N2]: https://quarto.org/docs/publishing/netlify.html#:~:text=If%20you%20are%20using%20GitHub%2C%20GitLab%2C%20Bitbucket%2C%20or%20Azure%20DevOps%2C%20you%20can%20point%20Netlify%20at%20your%20site%E2%80%99s%20source%20code%20and%20have%20it%20deployed%20whenever%20your%20code%20changes.
+[N3]: https://quarto.org/docs/publishing/netlify.html#:~:text=If%20you%20are%20using%20GitHub%2C%20you%20can%20use%20a%20GitHub%20Action%20to%20automatically%20render%20your%20project%20and%20publish%20the%20resulting%20content%20whenever%20your%20code%20changes.
+[G1]: https://quarto.org/docs/publishing/github-pages.html#:~:text=Render%20sites%20on%20your%20local%20machine%20to%20the%20docs%20directory%2C%20check%20the%20rendered%20site%20into%20GitHub%2C%20and%20then%20configure%20your%20GitHub%20repo%20to%20publish%20from%20the%20docs%20directory.
+[G2]: https://quarto.org/docs/publishing/github-pages.html#:~:text=Use%20the%20quarto%20publish%20command%20to%20publish%20content%20rendered%20on%20your%20local%20machine.
+[G3]: https://quarto.org/docs/publishing/github-pages.html#:~:text=Use%20a%20GitHub%20Action%20to%20automatically%20render%20your%20files%20(a%20single%20Quarto%20document%20or%20a%20Quarto%20project)%20and%20publish%20the%20resulting%20content%20whenever%20you%20push%20a%20source%20code%20change%20to%20your%20repository.
+
+### Git workflow {#sec-over-git}
+
+The first publishing method I tried for my personal site was [G1], which requires the use of Git to [push](https://github.com/git-guides/git-push#what-does-git-push-do) all website content to a Git provider like GitHub or GitLab. After I set up [GitHub Pages](https://quarto.org/docs/publishing/github-pages.html#render-to-docs) and [GitLab Pages](https://docs.gitlab.com/ee/user/project/pages/), I could update my website on both of these web hosts just by going through the standard Git workflow shown in @fig-git.
+
+```{mermaid fig-align="center"}
+%%| label: fig-git
+%%| fig-cap: Git workflow
+%%| fig-align: center
+%%| fig-width: 9
+flowchart LR
+   A[working<br/>directory]-.git<br/>add.->B{{staging<br/>area}}-.git<br/>commit.->C([local<br/>repo])-.git<br/>push.->D(remote<br/>repo)
+```
+
+To make it easier to make incremental changes to my website and frequently release new content, I combined all of the `git` shell commands in @fig-git into a shell [alias](https://en.wikipedia.org/wiki/Alias_(command)#:~:text=In%20computing%2C%20alias%20is%20a%20command%20in%20various%20command%2Dline%20interpreters%20(shells)%2C%20which%20enables%20a%20replacement%20of%20a%20word%20by%20another%20string.). You can add shell aliases to a [shell configuration file](https://en.wikipedia.org/wiki/Unix_shell#:~:text=The%20%22rc%22%20suffix%20on%20some%20Unix%20configuration%20files%20(for%20example%2C%20%22.vimrc%22)%2C%20is%20a%20remnant%20of%20the%20RUNCOM%20ancestry%20of%20Unix%20shells.) like `.bashrc` or `.zshrc` on your computer to shorten commands or combine any sequence of commands into one step.
+
+The [`aacmp` alias](https://github.com/NishantBharali/setup/blob/936ae9e222b0fe0648d88675db2d4718568a93f2/.zshrc#L134) in the [`.zshrc`](https://github.com/NishantBharali/setup/blob/main/.zshrc) file in my [`setup`](https://github.com/NishantBharali/setup) repo allows me to enter a free-form [commit message](https://en.wikipedia.org/wiki/Commit_(version_control)#:~:text=git%20commit%20%2Dm%20%27-,commit%20message,-%27) directly on the command line without quotes, e.g. `qp` `edit` `first` `blog`. If you decide to try my `aacmp` alias, please exercise extreme caution as any un-[escaped](https://en.wikipedia.org/wiki/Escape_character#:~:text=an%20escape%20character%20is%20a%20character%20that%20invokes%20an%20alternative%20interpretation%20on%20the%20following%20characters%20in%20a%20character%20sequence.) or un-quoted [metacharacters](https://en.wikipedia.org/wiki/Metacharacter#:~:text=A%20metacharacter%20is%20a%20character%20that%20has%20a%20special%20meaning%20to%20a%20computer%20program%2C%20such%20as%20a%20shell%20interpreter) may yield surprising effects instead of being included verbatim in the commit message. For example, `qp` `*` will list the contents of the current directory in the commit message in place of the asterisk!
+
+An alternative to a shell alias that combines `git` commands is a keyboard shortcut in Git-enabled GUI. @exm-key shows two files, `tasks.json` and `update.sh`, that we can use to set up VSCode, VSCodium, and GitHub Codespaces to go through the Git workflow whenever we press Ctrl+Shift+B on Linux/Windows or ⌘+Shift+B on Mac (mnemonic: B is for Build).
+
+::: {#exm-key}
+
+::: {.panel-tabset}
+
+#### `update.sh`
+
+```{.yaml include="../../update.sh"}
+```
+
+#### `tasks.json`
+
+```{.yaml include="../../.vscode/tasks.json"}
+```
+
+:::
+
+:::
+
+This mechanism is called [Tasks](https://code.visualstudio.com/docs/editor/tasks) and is used to [automate](https://en.wikipedia.org/wiki/Build_automation#:~:text=Build%20automation%20is%20the%20process%20of%20automating%20the%20creation%20of%20a%20software%20build) [software build](https://en.wikipedia.org/wiki/Software_build#:~:text=In%20software%20development%2C%20a%20build%20is%20the%20process%20of%20converting%20source%20code%20files%20into%20standalone%20software%20artifact(s)%20that%20can%20be%20run%20on%20a%20computer%2C%20or%20the%20result%20of%20doing%20so.) tasks, which can include any steps required to build and publish a website. Importantly, the Tasks mechanism requires that the `tasks.json` file be added to the `.vscode` directory and that we enable execution of the `update.sh` script by running `chmod` `+x` `update.sh` in our project root.
+
+Shell aliases and keyboard shortcuts can greatly facilitate the Git workflow which is essential not only for [G1], but also [G3], [N3], and [Q2]. Unlike these other publishing methods, [G1] leads to messy [commits](https://en.wikipedia.org/wiki/Commit_(version_control)#:~:text=In%20version%20control%20systems%2C%20a%20commit%20is%20an%20operation%20which%20sends%20the%20latest%20changes%20of%20the%20source%20code%20to%20the%20repository%2C%20making%20these%20changes%20part%20of%20the%20head%20revision%20of%20the%20repository.) that contain changes to both source and output files.
+
+### `quarto` `publish` {#sec-over-qp}
+
+To have cleaner commits, I switched from [G1] to [G2] by adding `quarto` `publish` to my publishing workflow. With [G2], I can track changes to my source files on my `main` [branch](https://en.wikipedia.org/wiki/Branching_(version_control)#:~:text=Branching%2C%20in%20version%20control%20and%20software%20configuration%20management%2C%20is%20the%20duplication%20of%20an%20object%20under%20version%20control) and publish my output files to GitHub Pages and GitLab Pages from my `gh-pages` branch.
+
+[Q1], [N1], and [G2] all use `quarto` `publish` to [render](https://quarto.org/docs/websites/index.html#website-render) website content locally and then deploy it in one fell swoop. If you do not plan to use the [Git](https://en.wikipedia.org/wiki/Git#:~:text=Git%20(/%C9%A1%C9%AAt/)%5B8%5D%20is%20a%20distributed%20version%20control%20system%5B9%5D%20that%20tracks%20changes%20in%20any%20set%20of%20computer%20files%2C%20usually%20used%20for%20coordinating%20work%20among%20programmers%20who%20are%20collaboratively%20developing%20source%20code%20during%20software%20development.) version control system or the advanced features offered by [GitHub](https://github.com), [GitLab](https://gitlab.com), or [Netlify](https://netlify.com), then I recommend deploying your site to [Quarto Pub](https://quarto.pub) by running [`quarto` `publish` `quarto-pub`](https://quarto.org/docs/publishing/quarto-pub.html#publish-command) ([Q1] in @tbl-pub).
+
+Like [Q1], [N1] is a deployment method that does not require Git and makes it possible to deploy our site with a single shell command: [`quarto` `publish` `netlify`](https://quarto.org/docs/publishing/netlify.html#publish-command). [N1] provides access to the advanced web hosting features offered by Netlify and can even [render content](https://quarto.org/docs/publishing/netlify.html#rendering-on-netlify) as long as code execution is [frozen](https://quarto.org/docs/publishing/netlify.html#freezing-computations).
+
+I deployed my site to GitHub Pages currently. When I run `quarto` `publish` `gh-pages`, Quarto renders my site into my output directory, copies the output directory contents to the `gh-pages` branch of my local repo, and then [commits](https://git-scm.com/docs/git-commit) and [pushes](https://git-scm.com/docs/git-push) the changes to my remote repos on [GitHub](https://github.com/NishantBharali/Blog), I am planning to trigger Netlify and GitLab as well to [build my site](https://quarto.org/docs/publishing/netlify.html#publish-from-git-provider) from the `gh-pages` branch through this process.
+
+To summarize the Quarto publishing methods I discussed so far, [Q1] and [N1] are easy to configure and use, [N2] automatically builds sites from Git repos, [G1] is not recommended because it pollutes commits with output file changes, and [G2] is more difficult to set up and use but provides clean commits and a nice separation of source and output files.
+
+### GitHub Actions {#sec-over-act}
+
+All of the publishing methods I have discussed so far require us to generate output files locally by rendering our source files.
+In contrast, [Q2], [G3], and [N3] make it possible to skip local rendering in favor of relying on [GitHub Actions](https://quarto.org/docs/publishing/quarto-pub.html#github-action) to handle all of the necessary steps.
+
+[G3] is noteworthy, because it offers the same convenience of [G1] but without messy commits that mix changes to source and output files. An added bonus of [G3] is that rendering with GitHub Actions provides a reproducible computational environment that is not dependent on what you have installed on your computer.
+
+Instead of using GitHub Actions, I could have used [GitLab CI/CD](https://docs.gitlab.com/ee/ci) to build my site. I decided not to go down this route because the Quarto dev team has many [GitHub Actions workflows](https://github.com/quarto-dev/quarto-actions) available but currently no official support for GitLab CI/CD.
+
+Before trying to use GitHub Actions or any [other continuous integration systems](https://quarto.org/docs/publishing/ci.html) in your publishing workflow, I suggest getting used to working with `quarto` `publish` ([Q1], [G2], or [N1]). You can always set up other publishing methods later without sacrificing anything, because all of the publishing methods except [G1] can be combined together.
+
+In @sec-set, I will walk through the setup of both [G2] and [G3] to provide the option of rendering locally by running `quarto` `publish` or rendering remotely with GitHub Actions by pushing to the `main` branch. Along the way, I will share many practical tips and general advice that you can apply to any project.
+
+## Publishing setup {#sec-set}
+
+### Repo setup {#sec-set-repo}
+
+Before you can use GitHub Actions to publish your site, you will need a [GitHub](https://github.com/signup), an [SSH key](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account#about-addition-of-ssh-keys-to-your-account), and a repo like [`Blog`](https://github.com/NishantBharali/Blog) that has a default [branch](https://en.wikipedia.org/wiki/Branching_(version_control)#:~:text=Branching%2C%20in%20version%20control%20and%20software%20configuration%20management%2C%20is%20the%20duplication%20of%20an%20object%20under%20version%20control) called `main` and another branch which must be called `gh-pages`. If you want to publish on GitLab Pages, you will also need a [GitLab](https://gitlab.com/users/sign_up) account.
+
+You can create the repo and the `gh-pages` branch using the web interface of <https://github.com> or <https://gitlab.com> in your browser, but the best way to start a new project is using the CLI for [GitHub](https://cli.github.com) or [GitLab](https://docs.gitlab.com/ee/editor_extensions/gitlab_cli/) in your [terminal](https://en.wikipedia.org/wiki/Terminal_emulator). First, run `gh` `auth` `login` or `glab` `auth` `login` and follow the prompts to authenticate via your web browser or with an authentication token.
+
+The GitHub CLI allows you to add an SSH key to your account during or [after authentication](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account?tool=cli#adding-a-new-ssh-key-to-your-account). The GitLab CLI does not handle SSH keys during authentication, but  has a similar command for [adding an SSH key to your GitLab account](https://gitlab.com/gitlab-org/cli/-/blob/main/docs/source/ssh-key/add.md).
+
+After authentication and SSH key setup, you can run the code in either of the code chunks in @exm-git to set up your local and remote repos and create a Quarto website project in the local repo. You can create shell alias that combine all of the repo creation steps like I did in my [`.zshrc`](https://github.com/NishantBharali/setup/blob/0bd5898908974746fa55e7e8f19a36859040b6ca/.zshrc#L630).
+
+::: {#exm-git}
+::: {.panel-tabset}
+
+#### GitHub
+
+```{.sh}
+cd # start in home directory
+mkdir -p USERNAME
+cd USERNAME
+gh repo create USERNAME.github.io --add-readme --clone --public
+cd SITENAME
+quarto create project website USERNAME.github.io
+```
+
+#### GitLab
+
+```{.sh}
+cd # start in home directory
+mkdir -p USERNAME
+cd USERNAME
+glab repo create USERNAME.gitlab.io --readme --defaultBranch main --public
+cd SITENAME
+git pull origin main
+git branch --set-upstream-to=origin/main main
+quarto create project website USERNAME.gitlab.io
+```
+:::
+:::
+
+To make it easier to maintain my site on both GitHub and GitLab Pages, I set up my local repo cloned to have two `origin` remote URLs using the code as shown in @exm-remote. Now, running `quarto` `publish` or `git` `push` in my local repo, updates my content on both GitHub and GitLab.
+
+::: {#exm-remote}
+```{.sh}
+git remote add hub git@github.com:NishantBharali/Blog
+git remote set-url --add origin $(git remote get-url lab)
+```
+:::
+
+If you want to have your website hosted on GitHub Pages, you will need to [set `gh-pages` as your source branch](https://quarto.org/docs/publishing/github-pages.html#source-branch) in your repo settings. For GitLab Pages, you will need to add a `.gitlab-ci.yml` file to your repo and update your `_quarto.yml` file as shown in @exm-yml to include `.gitlab-ci.yml` as a `resource` in your output directory.
+
+::: {#exm-yml}
+
+::: {.panel-tabset}
+
+#### `.gitlab-ci.yml`
+
+```{.yaml include="../../.gitlab-ci.yml"}
+```
+
+#### `_quarto.yml`
+
+```{.yaml include="../../_quarto.yml" start-line=1 end-line=3}
+```
+
+:::
+
+:::
+
+By default, GitLab Pages includes a random hash in site [URLs](https://en.wikipedia.org/wiki/URL#:~:text=A%20Uniform%20Resource%20Locator%20(URL)%2C%20colloquially%20known%20as%20an%20address%20on%20the%20Web). To shorten the URL of my GitLab Pages site, one has to uncheck **Use unique domain** under `Deploy > Pages` in the GitLab sidebar.
+
+At this point, we have completed [G2] setup and you should be able to run `quarto` `publish` `gh-pages` from your `main` branch to render your site and deploy it to GitHub and/or GitLab Pages. Deploying with `quarto` `publish` at least once is a prerequisite for setting up any of the publishing methods that rely on GitHub Actions, because `quarto` `publish` creates a `_publish.yml` file in the root of your project that is required for publishing via GitHub Actions.
+
+### GitHub Actions {#sec-set-act}
+
+In addition to the steps described above, [G3] setup requires that we create a `.github/workflows` directory and add a [YAML](https://en.wikipedia.org/wiki/YAML#:~:text=YAML%20(/%CB%88j%C3%A6m%C9%99l/)%20(see%20%C2%A7%C2%A0History%20and%20name)%20is%20a%20human%2Dreadable%20data%20serialization%20language.) file to that directory. @exm-curl contains the `gh-pages.yml` file I use for my own site and the shell code that can used to obtain this file.
+
+::: {#exm-curl}
+
+::: {.panel-tabset}
+
+#### `curl`
+
+```{.sh}
+mkdir -p .github/workflows
+cd .github/workflows
+curl -O https://raw.githubusercontent.com/NishantBharali/Blog/main/.github/workflows/gh-pages.yml
+```
+
+#### `gh-pages.yml`
+
+```{.yaml include="../../.github/workflows/gh-pages.yml"}
+```
+
+:::
+:::
+
+The `gh-pages.yml` file in @exm-curl installs Quarto, the R and Python programming languages, and the packages in the `renv.lock` and `requirements.txt` files. If you do not need R and/or Python, you can remove any unnecessary portions of the file.
+
+To modify the Python files that are installed by GitHub Actions, you can edit the `requirements.txt` file in your repo. To update your `renv.lock` file so that it includes all of the R packages your site requires, run [`renv::snapshot()`](https://rstudio.github.io/renv/reference/snapshot.html) in an R session or `Rscript` `-e` `renv::snapshot()` in a shell.
+
+After pushing the `gh-pages.yml` file, you can visit the Actions tab in your remote repo on GitHub to check the progress of the deployment of your site. If your site did not build successfully, you can go through the logs to try to diagnose the problem.
+
+I added a "Push to GitLab" step to my `gh-pages.yml` to make GitHub Actions push my remote `gh-pages` to GitLab so that my site is kept in sync on both GitHub and GitLab Pages. This required manually creating a token on GitLab and adding it to GitHub, which I accomplished using the GitHub CLI as shown in @exm-secret.
+
+::: {#exm-secret}
+
+```{.sh}
+gh secret set GITLAB_AUTH_TOKEN
+```
+:::
+
+After the setup described above, I now have two options for publishing my Quarto site: `quarto` `publish` and 2) `git push`. In addition to GitHub and GitLab Pages, both of these options automatically update my site on Netlify via [N2].
+
+To also automatically update my site on Quarto Pub, I created a separate GitHub Actions workflow by adding another YAML file to the `.github/workflows` directory in my repo. @exm-qpub shows my `quarto-pub.yml` file and the shell code that can be used to obtain it.
+
+::: {#exm-qpub}
+
+::: {.panel-tabset}
+
+#### `curl`
+
+```{.sh}
+mkdir -p .github/workflows
+cd .github/workflows
+curl -O https://raw.githubusercontent.com/NishantBharali/Blog/main/.github/workflows/gh-pages.yml
+```
+
+#### `quarto-pub.yml`
+
+```{.yaml include="../../.github/workflows/quarto-pub.yml"}
+```
+:::
+:::
+
+My `quarto-pub.yml` file is based on [Q2], but it runs upon completion of the `pages-build-deployment` workflow instead of a push to `main`. I changed the workflow trigger so that it runs after my GitHub Pages site is built, regardless of whether I triggered the build by running `quarto` `publish` `gh-pages` or pushing to `main`.
+
+@fig-meth summarizes all of the steps that occur during my Quarto publishing workflow. This workflow allows me to publish my site on four web hosts every time I run `quarto` `publish` `gh-pages` ([G2]) or `git` `push` ([G3])!
+
+```{mermaid fig-align="center"}
+%%| label: fig-meth
+%%| fig-cap: Quarto publishing workflow
+%%| fig-align: center
+%%| fig-width: 9
+flowchart LR
+    A[local<br/>main]-.G2.->B[local<br/>gh-pages]-.G2.->C[GitHub<br/>gh-pages]
+    B[local<br/>gh-pages]-.G2.->D[GitLab<br/>gh-pages]
+    A[local<br/>main]-.G3.->F[GitHub<br/>main]-.G3.->C[GitHub<br/>gh-pages]-.G3.->D[GitLab<br/>gh-pages]
+    A[local<br/>main]-.G3.->G[GitLab<br/>main]
+    C[GitHub<br/>gh-pages]-.N2.->E[Netlify]
+    C[GitHub<br/>gh-pages]-.Q2.->H[Quarto<br/>Pub]
+```
+
+So far I have only noticed one difference between the four web hosts I use for my site: GitHub Pages is the only web host that properly differentiates between internal and [external links](https://quarto.org/docs/output-formats/html-basics.html#external-links). All of the other web hosts include the [external link icon]{.external} on all links regardless of whether they target my site or an external site.
+
+I tried unsuccessfully to solve this issue by setting the [`link-external-filter`](https://quarto.org/docs/output-formats/html-basics.html#external-links) property to a [regular expression](https://en.wikipedia.org/wiki/Regular_expression#:~:text=A%20regular%20expression%20(shortened%20as%20regex%20or%20regexp)%2C%5B1%5D%20sometimes%20referred%20to%20as%20rational%20expression%2C%5B2%5D%5B3%5D%20is%20a%20sequence%20of%20characters%20that%20specifies%20a%20match%20pattern%20in%20text.). If you notice a problem with the `link-external-icon` feature on other web hosts, I suggest switching to GitHub Pages.
+
+# Customizing Quarto sites {#sec-cust}
+
+## Site navigation {#sec-nav}
+
+Once your site is [built](https://quarto.org/docs/websites/website-blog.html#quick-start) and [published](https://quarto.org/docs/websites/website-blog.html#publishing), you can make it easier to navigate with a customized navigation bar (navbar) and sidebar, as described in the [Quarto documentation](https://quarto.org/docs/websites/website-navigation.html). Check out the `_quarto.yml` files for [my site](https://github.com/NishantBharali/Blog/blob/main/_quarto.yml) and the Quarto [documentation site](https://github.com/quarto-dev/quarto-web/blob/main/_quarto.yml) to see how the navigation components are set up.
+
+In my navbar, I added toggle buttons for [reader mode](https://quarto.org/docs/websites/website-navigation.html#reader-mode) and [dark mode](https://quarto.org/docs/output-formats/html-themes.html#dark-mode). The names of the other icons on right side of the navbar are included in the sidebar.
+
+## HTML blocks {#sec-html}
+
+My navbar also provides the current date and time in `Dec` ordinal (`deco`) format, which counts the [years since 1 BC](https://en.wikipedia.org/wiki/ISO_8601#:~:text=year%200000%20being%20equal%20to%201%20BC) and the days since March 1. `Dec` is a calendar and time system that I created and use throughout my blog.
+
+ [Mine Çetinkaya-Rundel](https://mine-cr.com/) wrote about [HTML blocks](https://mine-cetinkaya-rundel.github.io/quarto-tip-a-day/posts/12-html-block/) as part of her [A Quarto tip a day](https://mine-cetinkaya-rundel.github.io/quarto-tip-a-day/about.html) project.
+
+
+HTML blocks are useful for running [JavaScript](https://en.wikipedia.org/wiki/JavaScript#:~:text=JavaScript%20(/%CB%88d%CA%92%C9%91%CB%90v%C9%99skr%C9%AApt/)%2C%20often%20abbreviated%20as%20JS%2C%20is%20a%20programming%20language%20that%20is%20one%20of%20the%20core%20technologies%20of%20the%20World%20Wide%20Web%2C%20alongside%20HTML%20and%20CSS) code in the context of a single page on your site without affecting the others. I also use HTML blocks to add a `<style>` element to my `.qmd` files as a last ditch effort to fine tune the style of my site.
+
+Before I resort to the `<style>` element approach, I try writing [CSS](https://en.wikipedia.org/wiki/CSS#:~:text=Cascading%20Style%20Sheets%20(CSS)%20is%20a%20style%20sheet%20language%20used%20for%20describing%20the%20presentation%20of%20a%20document%20written%20in%20a%20markup%20language%20such%20as%20HTML) in my [`styles.css`](https://quarto.org/docs/visual-editor/content.html#defining-styles), `light.css`, and [`dark.css`](https://quarto.org/docs/output-formats/html-themes.html#customizing-themes) files. So far, this approach has been sufficient to make any styling changes I want, but if it every fails, I can use JavaScript to override the default styling provided by Quarto by modifying `style` attributes, which have the highest [specificity](https://en.wikipedia.org/wiki/CSS#Specificity:~:text=Specificity%20refers%20to%20the%20relative%20weights%20of%20various%20rules.) in [CSS](https://en.wikipedia.org/wiki/CSS#:~:text=Cascading%20Style%20Sheets%20(CSS)%20is%20a%20style%20sheet%20language%20used%20for%20describing%20the%20presentation%20of%20a%20document%20written%20in%20a%20markup%20language%20such%20as%20HTML).
+
+
+## Pandoc filter {#sec-filt}
+
+In addition to customizing dates on the [listing page](https://nishantbharali.github.io/Blog/blog.html) of my blog, I wanted to customize the date format in every blog post. To complete this task, I used a [Lua](https://en.wikipedia.org/wiki/Lua_(programming_language)#:~:text=Lua%20(/%CB%88lu%CB%90%C9%99/%20LOO%2D%C9%99%3B%20from%20Portuguese%3A%20lua%20%5B%CB%88lu(w)%C9%90%5D%20meaning%20moon)%20is%20a%20lightweight%2C%20high%2Dlevel%2C%20multi%2Dparadigm%20programming%20language%20designed%20primarily%20for%20embedded%20use%20in%20applications.) script as a [Pandoc filter](https://quarto.org/docs/extensions/filters.html).
+
+[Pandoc](https://pandoc.org/) is a program that converts documents into practically any format. The "pan" in Pandoc comes from the Ancient Greek word for [*all*](https://en.wiktionary.org/wiki/pan-#:~:text=pan%2D-,all,-Usage%20notes%5B). Pandoc strives to convert *all* document formats, just like [Pangea](https://en.wikipedia.org/wiki/Pangaea#:~:text=Pangaea%20or%20Pangea%20(/p%C3%A6n%CB%88d%CA%92i%CB%90.%C9%99/)%5B1%5D%20was%20a%20supercontinent%20that%20existed%20during%20the%20late%20Paleozoic%20and%20early%20Mesozoic%20eras.) contained *all* the land and a [panacea](https://en.wiktionary.org/wiki/panacea#English:~:text=A%20solution%20to%20all%20problems.) solves *all* problems.
+
+Quarto uses Pandoc to convert markdown files into target format(s) like `html` or `pdf`. If the source files contain executable code, Quarto executes the code via one of two computational engines: [Jupyter](https://jupyter.org/#:~:text=Free%20software%2C%20open%20standards%2C%20and%20web%20services%20for%20interactive%20computing%20across%20all%20programming%20languages) or [Knitr](https://yihui.org/knitr/#:~:text=the%20knitr%20package%20was%20designed%20to%20be%20a%20transparent%20engine%20for%20dynamic%20report%20generation%20with%20R). @fig-render shows the Quarto workflow.
+
+```{mermaid fig-align="center"}
+%%| label: fig-render
+%%| fig-cap: Quarto rendering workflow
+%%| fig-align: center
+%%| fig-width: 9
+flowchart LR
+   A[qmd<br/>ipynb]-.Knitr<br/>Jupyter.->B((md))-.Pandoc with<br/>Lua filters.->C(html<br/>pdf<br/>docx<br/>etc.)
+```
+
+Mine Çetinkaya-Rundel's Quarto tip series includes a similar [Quarto workflow mermaid diagram](https://mine-cetinkaya-rundel.github.io/quarto-tip-a-day/posts/21-diagrams/#fig-mermaid) and her ["Hello, Quarto!"](https://mine.quarto.pub/hello-quarto) rstudio::conf(2022) keynote with [Julia Stewart Lowndes](https://jules32.github.io) contains truly beautiful Quarto workflow images by [Allison Horst](https://allisonhorst.com): [1](https://mine.quarto.pub/hello-quarto/#/publishing-system-2), [2](https://mine.quarto.pub/hello-quarto/#/quarto-flattens-the-learning-curve), [3](https://mine.quarto.pub/hello-quarto/#/quarto-can-grow-with-learners-in-a-profound-way), and [4](https://mine.quarto.pub/hello-quarto/#/quarto-cli-orchestrates-each-step-of-rendering).
+
+Quarto controls Pandoc, Jupyter, and Knitr in two ways: 1) with arguments passed to the [Quarto CLI](https://en.wikipedia.org/wiki/Command-line_interface#:~:text=A%20command%2Dline%20interface%20(CLI)%20is%20a%20means%20of%20interacting%20with%20a%20computer%20program%20by%20inputting%20lines%20of%20text%20called%20command%2Dlines.) commands and 2) with [YAML](https://yaml.org/) key-value pairs in `.qmd`, `.ipynb`, or `.yml` files.
+
+
+HTML blocks can run JavaScript which excels at making content dynamic and interactive, pre- and post-render scripts can be in any programming language, while Pandoc filters are written in Lua and modify output during rendering.
+
+```{=html}
+<script>
+const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+</script>
+<style>
+div#quarto-sidebar-glass { display: none !important; }
+ul.navbar-nav.navbar-nav-scroll { -webkit-flex-direction: row !important; }
+/* #quarto-sidebar { padding: 5px; }
+#quarto-sidebar > * { padding: 5px; }
+div.sidebar-menu-container > * { padding: 5px 5px 5px 5px; }
+#quarto-margin-sidebar { padding: 40px; } */
+</style>
+```

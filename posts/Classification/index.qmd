@@ -4,6 +4,7 @@ description: "Implementing advanced classification techniques for precise model 
 date: 11-24-2023
 categories: [Machine Learning]
 image: Rz0T.gif
+toc-location: right
 ---
 
 #### Advanced Classification techniques with Model Prediction Analysis
@@ -461,3 +462,18 @@ Our exploration of ROC curves allowed us to visualize and compare the trade-offs
 In the end, classification is a powerful tool in the machine learning toolkit, with applications ranging from medical diagnosis to spam email filtering. The Iris dataset served as an ideal playground to learn and experiment with these techniques, but the knowledge gained can be applied to more complex and real-world classification problems.
 
 As you continue your journey in machine learning, remember that classification is just the tip of the iceberg. The world of machine learning is vast and ever-evolving, and there are countless exciting challenges and opportunities awaiting those who dare to explore it further.
+
+```{=html}
+<script>
+const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+</script>
+<style>
+div#quarto-sidebar-glass { display: none !important; }
+ul.navbar-nav.navbar-nav-scroll { -webkit-flex-direction: row !important; }
+/* #quarto-sidebar { padding: 5px; }
+#quarto-sidebar > * { padding: 5px; }
+div.sidebar-menu-container > * { padding: 5px 5px 5px 5px; }
+#quarto-margin-sidebar { padding: 40px; } */
+</style>
+```

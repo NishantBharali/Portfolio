@@ -167,4 +167,20 @@ middleware instead of its native Thunk middleware for faster web page response a
 
 - Use of the MySQL server and spring framework was incorporated for dynamic usage of the backend while the saga
 middleware at the frontend uses the data stored in redux store dynamically and asynchronously to facilitate faster and
-responsive web page
+responsive web page.
+
+
+```{=html}
+<script>
+const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+</script>
+<style>
+div#quarto-sidebar-glass { display: none !important; }
+ul.navbar-nav.navbar-nav-scroll { -webkit-flex-direction: row !important; }
+/* #quarto-sidebar { padding: 5px; }
+#quarto-sidebar > * { padding: 5px; }
+div.sidebar-menu-container > * { padding: 5px 5px 5px 5px; }
+#quarto-margin-sidebar { padding: 40px; } */
+</style>
+```

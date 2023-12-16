@@ -1,0 +1,30 @@
+on:
+  workflow_run:
+    workflows: [pages-build-deployment]
+    types: [completed]
+
+name: Update Quarto Pub
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out main repository
+        uses: actions/checkout@v4
+
+      - name: Check out _site
+        uses: actions/checkout@v4
+        with:
+          ref: gh-pages
+          path: _site
+
+      - name: Set up Quarto
+        uses: quarto-dev/quarto-actions/setup@v2
+
+      - name: Publish
+        uses: quarto-dev/quarto-actions/publish@v2
+        with:
+          target: quarto-pub
+          render: false
+          QUARTO_PUB_AUTH_TOKEN: ${{ secrets.QUARTO_PUB_AUTH_TOKEN }}
+          GITHUB_USERNAME: NishantBharali

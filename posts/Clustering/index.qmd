@@ -4,6 +4,7 @@ description: "Employing sophisticated clustering techniques with retail customer
 date: 11-24-2023
 categories: [Machine Learning]
 image: E3K6.gif
+toc-location: right
 ---
 
 #### Advanced Clustering and Prediction techniques Using Retail Customer Data
@@ -232,3 +233,19 @@ plt.show()
 #In this in-depth analysis, we have explored different clustering techniques and visualized their results to segment customers in a comprehensive manner. Each method offers unique insights: K-Means provides clear segmentations, Hierarchical Clustering helps us understand the data structure, and DBSCAN identifies core and outlier points effectively. 
 
 By comparing these methods, we can choose the one that best suits our specific needs for customer segmentation. This advanced clustering analysis can guide strategic decisions, improve customer engagement, and enhance targeting in marketing campaigns.
+
+
+```{=html}
+<script>
+const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+</script>
+<style>
+div#quarto-sidebar-glass { display: none !important; }
+ul.navbar-nav.navbar-nav-scroll { -webkit-flex-direction: row !important; }
+/* #quarto-sidebar { padding: 5px; }
+#quarto-sidebar > * { padding: 5px; }
+div.sidebar-menu-container > * { padding: 5px 5px 5px 5px; }
+#quarto-margin-sidebar { padding: 40px; } */
+</style>
+```

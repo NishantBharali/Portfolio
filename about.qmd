@@ -3,6 +3,7 @@ title: "About Me"
 image: /images/Nishant.jpg
 comments: false
 title-block-banner: false
+toc-location: right
 ---
 
 <style>
@@ -26,3 +27,19 @@ My career includes over 2 years of software engineering for Oracle Cerner and au
 
 -   **Other Analytics & Programming Platforms**: Python, Jupyter Notebooks, MATLAB, GitLab / GitHub, Google Cloud Platform, SQL, Netlify
 -   **Microsoft**: Expert-level Excel financial modeler with experiences including nested formulas, XLOOKUPs, Solver for optimization   and simulations, macros for psuedo-automated data manipulation, add-in integrations, and more.
+
+
+```{=html}
+<script>
+const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+</script>
+<style>
+div#quarto-sidebar-glass { display: none !important; }
+ul.navbar-nav.navbar-nav-scroll { -webkit-flex-direction: row !important; }
+/* #quarto-sidebar { padding: 5px; }
+#quarto-sidebar > * { padding: 5px; }
+div.sidebar-menu-container > * { padding: 5px 5px 5px 5px; }
+#quarto-margin-sidebar { padding: 40px; } */
+</style>
+```

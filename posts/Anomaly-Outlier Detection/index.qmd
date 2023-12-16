@@ -4,6 +4,7 @@ description: "Detecting anomalies in financial data involves using specialized a
 date: 11-24-2023
 categories: [Machine Learning]
 image: Bnip.gif
+toc-location: right
 ---
 
 ## Detecting anomalies in financial data involves using specialized algorithms to identify irregularities, enhancing risk management and fraud prevention
@@ -329,3 +330,18 @@ In conclusion, the analysis of anomalies and outliers in financial datasets is o
 By leveraging advanced analytics and machine learning algorithms, financial institutions can proactively mitigate risks, enhance customer trust, and streamline their operations. The continuous monitoring and refinement of anomaly detection methods are critical in the ever-evolving landscape of finance.
 
 As financial data continues to grow in complexity and volume, the ability to detect anomalies accurately becomes increasingly crucial. It is essential for organizations to stay vigilant and adapt their anomaly detection strategies to stay ahead of emerging threats and challenges in the financial sector.
+
+```{=html}
+<script>
+const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+</script>
+<style>
+div#quarto-sidebar-glass { display: none !important; }
+ul.navbar-nav.navbar-nav-scroll { -webkit-flex-direction: row !important; }
+/* #quarto-sidebar { padding: 5px; }
+#quarto-sidebar > * { padding: 5px; }
+div.sidebar-menu-container > * { padding: 5px 5px 5px 5px; }
+#quarto-margin-sidebar { padding: 40px; } */
+</style>
+```

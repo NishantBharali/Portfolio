@@ -5,10 +5,10 @@
       xmlns:dc="http://purl.org/dc/elements/1.1/" 
       version="2.0">
 <channel>
-<title>Engineering Bytes</title>
+<title>Tech Bytes</title>
 <link>https://nishantbharali.github.io/Blog/blog.html</link>
 <atom:link href="https://nishantbharali.github.io/Blog/blog.xml" rel="self" type="application/rss+xml"/>
-<description>Nishant Bharali&#39;s Engineering Blog</description>
+<description></description>
 <generator>quarto-1.3.450</generator>
 <lastBuildDate>Fri, 24 Nov 2023 05:00:00 GMT</lastBuildDate>
 <item>
@@ -1076,11 +1076,23 @@ font-style: inherit;">sum</span>()</span>
 <p>In conclusion, the analysis of anomalies and outliers in financial datasets is of paramount importance for safeguarding financial systems and ensuring data quality. In this report, we delved into the application of various techniques to detect anomalies in a financial dataset containing Age, Income, Transaction Amount, Transaction Type, and Location. The results of this analysis can guide decision-makers in identifying potential issues, such as fraudulent transactions or data entry errors.</p>
 <p>By leveraging advanced analytics and machine learning algorithms, financial institutions can proactively mitigate risks, enhance customer trust, and streamline their operations. The continuous monitoring and refinement of anomaly detection methods are critical in the ever-evolving landscape of finance.</p>
 <p>As financial data continues to grow in complexity and volume, the ability to detect anomalies accurately becomes increasingly crucial. It is essential for organizations to stay vigilant and adapt their anomaly detection strategies to stay ahead of emerging threats and challenges in the financial sector.</p>
+<script>
+const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+</script>
+<style>
+div#quarto-sidebar-glass { display: none !important; }
+ul.navbar-nav.navbar-nav-scroll { -webkit-flex-direction: row !important; }
+/* #quarto-sidebar { padding: 5px; }
+#quarto-sidebar > * { padding: 5px; }
+div.sidebar-menu-container > * { padding: 5px 5px 5px 5px; }
+#quarto-margin-sidebar { padding: 40px; } */
+</style>
 
 
 </section>
 
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div id="quarto-reuse" class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</a></div></div></section></div> ]]></description>
+<a onclick="window.scrollTo(0, 0); return false;" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div id="quarto-reuse" class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</a></div></div></section></div> ]]></description>
   <category>Machine Learning</category>
   <guid>https://nishantbharali.github.io/Blog/posts/Anomaly-Outlier Detection/index.html</guid>
   <pubDate>Fri, 24 Nov 2023 05:00:00 GMT</pubDate>
@@ -2635,11 +2647,23 @@ font-style: inherit;">=</span> smote.fit_resample(X_train, y_train)</span></code
 <p>Our exploration of ROC curves allowed us to visualize and compare the trade-offs between true positive and false positive rates across different models, providing valuable insights into their performance.</p>
 <p>In the end, classification is a powerful tool in the machine learning toolkit, with applications ranging from medical diagnosis to spam email filtering. The Iris dataset served as an ideal playground to learn and experiment with these techniques, but the knowledge gained can be applied to more complex and real-world classification problems.</p>
 <p>As you continue your journey in machine learning, remember that classification is just the tip of the iceberg. The world of machine learning is vast and ever-evolving, and there are countless exciting challenges and opportunities awaiting those who dare to explore it further.</p>
+<script>
+const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+</script>
+<style>
+div#quarto-sidebar-glass { display: none !important; }
+ul.navbar-nav.navbar-nav-scroll { -webkit-flex-direction: row !important; }
+/* #quarto-sidebar { padding: 5px; }
+#quarto-sidebar > * { padding: 5px; }
+div.sidebar-menu-container > * { padding: 5px 5px 5px 5px; }
+#quarto-margin-sidebar { padding: 40px; } */
+</style>
 
 
 </section>
 
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div id="quarto-reuse" class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</a></div></div></section></div> ]]></description>
+<a onclick="window.scrollTo(0, 0); return false;" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div id="quarto-reuse" class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</a></div></div></section></div> ]]></description>
   <category>Machine Learning</category>
   <guid>https://nishantbharali.github.io/Blog/posts/Classification/index.html</guid>
   <pubDate>Fri, 24 Nov 2023 05:00:00 GMT</pubDate>
@@ -3369,11 +3393,23 @@ font-style: inherit;">'Silhouette Score'</span>)</span>
 <h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
 <p>#In this in-depth analysis, we have explored different clustering techniques and visualized their results to segment customers in a comprehensive manner. Each method offers unique insights: K-Means provides clear segmentations, Hierarchical Clustering helps us understand the data structure, and DBSCAN identifies core and outlier points effectively.</p>
 <p>By comparing these methods, we can choose the one that best suits our specific needs for customer segmentation. This advanced clustering analysis can guide strategic decisions, improve customer engagement, and enhance targeting in marketing campaigns.</p>
+<script>
+const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+</script>
+<style>
+div#quarto-sidebar-glass { display: none !important; }
+ul.navbar-nav.navbar-nav-scroll { -webkit-flex-direction: row !important; }
+/* #quarto-sidebar { padding: 5px; }
+#quarto-sidebar > * { padding: 5px; }
+div.sidebar-menu-container > * { padding: 5px 5px 5px 5px; }
+#quarto-margin-sidebar { padding: 40px; } */
+</style>
 
 
 </section>
 
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div id="quarto-reuse" class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</a></div></div></section></div> ]]></description>
+<a onclick="window.scrollTo(0, 0); return false;" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div id="quarto-reuse" class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</a></div></div></section></div> ]]></description>
   <category>Machine Learning</category>
   <guid>https://nishantbharali.github.io/Blog/posts/Clustering/index.html</guid>
   <pubDate>Fri, 24 Nov 2023 05:00:00 GMT</pubDate>
@@ -5071,11 +5107,23 @@ font-style: inherit;">'Support Vector Regression Residuals'</span>)</span>
 <p>For weather data analysis, random processes and probability theory enable us to understand and quantify the stochastic nature of weather patterns. Leveraging machine learning techniques on this data helps us provide accurate forecasts and anticipate extreme events, benefiting numerous sectors that rely on weather information.</p>
 <p>In the case of housing data analysis, linear and nonlinear regression techniques enable us to model complex relationships between housing features and prices. Whether it’s linear relationships for straightforward cases or nonlinear models to capture intricate patterns, these tools empower us to make more informed decisions in real estate, investments, and market analysis.</p>
 <p>In both domains, machine learning applied to these fundamental concepts provides us with the means to extract valuable insights and make data-driven decisions, ultimately enhancing our understanding and predictive capabilities, and offering practical solutions that can improve the quality of life and the efficiency of various industries.</p>
+<script>
+const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+</script>
+<style>
+div#quarto-sidebar-glass { display: none !important; }
+ul.navbar-nav.navbar-nav-scroll { -webkit-flex-direction: row !important; }
+/* #quarto-sidebar { padding: 5px; }
+#quarto-sidebar > * { padding: 5px; }
+div.sidebar-menu-container > * { padding: 5px 5px 5px 5px; }
+#quarto-margin-sidebar { padding: 40px; } */
+</style>
 
 
 </section>
 
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div id="quarto-reuse" class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</a></div></div></section></div> ]]></description>
+<a onclick="window.scrollTo(0, 0); return false;" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div id="quarto-reuse" class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</a></div></div></section></div> ]]></description>
   <category>Machine Learning</category>
   <guid>https://nishantbharali.github.io/Blog/posts/Linear and Non Linear Regression/index.html</guid>
   <pubDate>Fri, 24 Nov 2023 05:00:00 GMT</pubDate>
@@ -5813,102 +5861,28 @@ font-style: inherit;">"</span>)</span></code></pre></div>
 <h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
 <p>This analysis shows more sophisticated ways of applying probability theory and random processes to the weather dataset, providing insights into weather patterns and temperature predictions.</p>
 <p>Summarized the findings from the above analysis. Discussed the relevance of these probabilistic models in understanding weather patterns.</p>
+<script>
+const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+</script>
+<style>
+div#quarto-sidebar-glass { display: none !important; }
+ul.navbar-nav.navbar-nav-scroll { -webkit-flex-direction: row !important; }
+/* #quarto-sidebar { padding: 5px; }
+#quarto-sidebar > * { padding: 5px; }
+div.sidebar-menu-container > * { padding: 5px 5px 5px 5px; }
+#quarto-margin-sidebar { padding: 40px; } */
+</style>
 
 
 </section>
 </section>
 
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div id="quarto-reuse" class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</a></div></div></section></div> ]]></description>
+<a onclick="window.scrollTo(0, 0); return false;" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div id="quarto-reuse" class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</a></div></div></section></div> ]]></description>
   <category>Machine Learning</category>
   <guid>https://nishantbharali.github.io/Blog/posts/Random Processes/index.html</guid>
   <pubDate>Fri, 24 Nov 2023 05:00:00 GMT</pubDate>
   <media:content url="https://nishantbharali.github.io/Blog/posts/Random Processes/weatherGif.gif" medium="image" type="image/gif"/>
-</item>
-<item>
-  <title>Detailed R Package Development Tutorial from Method Bites</title>
-  <dc:creator>Nishant Bharali</dc:creator>
-  <link>https://nishantbharali.github.io/Blog/posts/2020-09-13-R-Package-Detailed-Tutorial/2020-09-13-R-Package-Detailed-Tutorial.html</link>
-  <description><![CDATA[ 
-
-
-
-<p>I’ll keep this short since all credit should go towards the amazing Cosima Meyer and Dennis Hammerschmidton… They compressed some of the most valuable steps for creating and deploying a package. This duo’s work was published for the MZES Social Science Data Lab. If you want a detailed and easy-to-follow how-to for R package development, bookmark this step-by-step guide!</p>
-<p><img src="https://nishantbharali.github.io/Blog/posts/2020-09-13-R-Package-Detailed-Tutorial/images/package_dev.png" class="img-fluid"></p>
-<p>Source:<br> * Methods Bites: <a href="https://www.mzes.uni-mannheim.de/socialsciencedatalab/article/r-package/">How to write your own R package and publish it on CRAN</a></p>
-
-
-
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div id="quarto-reuse" class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</a></div></div></section></div> ]]></description>
-  <category>Tools/Packages</category>
-  <guid>https://nishantbharali.github.io/Blog/posts/2020-09-13-R-Package-Detailed-Tutorial/2020-09-13-R-Package-Detailed-Tutorial.html</guid>
-  <pubDate>Wed, 13 Sep 2023 04:00:00 GMT</pubDate>
-  <media:content url="https://nishantbharali.github.io/Blog/posts/2020-09-13-R-Package-Detailed-Tutorial/images/methods_bites.png" medium="image" type="image/png" height="167" width="144"/>
-</item>
-<item>
-  <title>Linux Ubuntu</title>
-  <dc:creator>Nishant Bharali</dc:creator>
-  <link>https://nishantbharali.github.io/Blog/posts/2019-12-31-Ubuntu-Update/2019-12-31-Ubuntu-Update.html</link>
-  <description><![CDATA[ 
-
-
-
-<p><img src="https://nishantbharali.github.io/Blog/posts/2019-12-31-Ubuntu-Update/images/Ubuntu.jpg" class="img-fluid"></p>
-<p>Updated Ubuntu 23.04 (Lunar Lobster) to 23.10 (Mantic Minotaur) on dual-booted systems.</p>
-<p>Ubuntu, derived from the African philosophy of ‘humanity towards others,’ is a robust, open-source operating system underpinned by the Linux kernel. As a Debian-based distribution, it encapsulates the principles of ease-of-use and versatility, making it a premier choice for a multitude of computing environments, from personal laptops to professional-grade servers and cloud infrastructures. It’s maintained by Canonical Ltd.&nbsp;and a global community of developers, ensuring a secure, stable, and consistently updated platform.</p>
-<p>Out-of-the-box, Ubuntu offers an extensive repository of packages and pre-compiled binaries available through the Advanced Packaging Tool (APT), facilitating straightforward installation and management of software. The default installation comes with the GNOME desktop environment, which provides a user-centric and visually appealing interface while maintaining the potential for extensive customization. It also includes a compendium of open-source applications covering productivity, creative suites, and media playback.</p>
-<p>For developers, Ubuntu is a haven with its support for a wide range of programming languages, development tools, and containerization technologies like Docker and Kubernetes, promoting a streamlined workflow for DevOps and continuous integration/continuous deployment (CI/CD) practices. Moreover, with its Long-Term Support (LTS) releases, Ubuntu ensures five years of security patches and updates, catering to the needs of enterprises for stable and long-term deployment cycles. With the support of Canonical, businesses can opt for extended security maintenance (ESM), further lengthening the support period.</p>
-<p>In the realms of cloud computing and virtualization, Ubuntu is a first-class citizen, optimized for scalability and performance on various cloud platforms, thereby reinforcing its status as a heavyweight in both the open-source community and commercial sectors.</p>
-
-
-
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div id="quarto-reuse" class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</a></div></div></section></div> ]]></description>
-  <category>Linux</category>
-  <guid>https://nishantbharali.github.io/Blog/posts/2019-12-31-Ubuntu-Update/2019-12-31-Ubuntu-Update.html</guid>
-  <pubDate>Sat, 02 Sep 2023 04:00:00 GMT</pubDate>
-  <media:content url="https://nishantbharali.github.io/Blog/posts/2019-12-31-Ubuntu-Update/images/linux-ubuntu.gif" medium="image" type="image/gif"/>
-</item>
-<item>
-  <title>Preparing for 2024 Goals with a Raspberry Pi</title>
-  <dc:creator>Nishant Bharali</dc:creator>
-  <link>https://nishantbharali.github.io/Blog/posts/2020-12-31-Raspberry-Pi/2020-12-31-Raspberry-Pi.html</link>
-  <description><![CDATA[ 
-
-
-
-<p>Killing a few birds with one stone and getting ready for 2021… <br><br>1) Getting better at Linux / shell commands, <br> 2) Learning Julia (see my Resources tab for some great Julia starter links!), <br> 3) Doing it all on a Raspberry Pi 😜 Happy holidays and Happy New Years to all!</p>
-<p>Below are some pics of my current progress.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="https://nishantbharali.github.io/Blog/posts/2020-12-31-Raspberry-Pi/images/Pi1.jpg" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Raspberry Pi 4, Model B, 8GB RAM, &amp; Super Cute Tiny Heat Sinks</figcaption>
-</figure>
-</div>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="https://nishantbharali.github.io/Blog/posts/2020-12-31-Raspberry-Pi/images/Pi2.jpg" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Enclosing the Pi 4 in a CanaKit case + fan</figcaption>
-</figure>
-</div>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="https://nishantbharali.github.io/Blog/posts/2020-12-31-Raspberry-Pi/images/Pi3.jpg" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Raspberry Pi OS, a Debian distro for the Pi</figcaption>
-</figure>
-</div>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="https://nishantbharali.github.io/Blog/posts/2020-12-31-Raspberry-Pi/images/Pi4.jpeg" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Jupyter Lab server on the Pi set up w/ Python, R, and Julia</figcaption>
-</figure>
-</div>
-
-
-
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div id="quarto-reuse" class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</a></div></div></section></div> ]]></description>
-  <category>Linux</category>
-  <guid>https://nishantbharali.github.io/Blog/posts/2020-12-31-Raspberry-Pi/2020-12-31-Raspberry-Pi.html</guid>
-  <pubDate>Mon, 31 Jul 2023 04:00:00 GMT</pubDate>
-  <media:content url="https://nishantbharali.github.io/Blog/posts/2020-12-31-Raspberry-Pi/images/Pi-banner.png" medium="image" type="image/png" height="76" width="144"/>
 </item>
 <item>
   <title>Git</title>
@@ -6255,12 +6229,24 @@ font-style: inherit;">&gt;</span></span></code></pre></div>
 <p>The drawback of my keyboard shortcut approach for the Git workflow is that it produces generic commit messages that are no very informative. Anyone reading the messages will not be able to tell what changes were made and more importantly why the changes were made.</p>
 <p>To automatically generate commit messages based on the currently staged changes, we can use a <a href="https://en.wikipedia.org/wiki/Large_language_model#:~:text=A%20large%20language%20model%20(LLM)%20is%20a%20type%20of%20language%20model%20notable%20for%20its%20ability%20to%20achieve%20general%2Dpurpose%20language%20understanding%20and%20generation.">Large Language Model</a> (LLM). <a href="https://en.wikipedia.org/wiki/Generative_artificial_intelligence#:~:text=Generative%20artificial%20intelligence%20(also%20generative%20AI%20or%20GenAI%5B1%5D)%20is%20artificial%20intelligence%20capable%20of%20generating%20text%2C%20images%2C%20or%20other%20media">Generative artificial intelligence</a> models like LLMs tend to be large in size and have atypical computational requirements.</p>
 <p>I really enjoy using Git, especially with shell aliases in my terminal and keyboard shortcuts in my favorite text editors. If we ever collaborate on a project together, you can be sure that I will insist on using Git!</p>
+<script>
+const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+</script>
+<style>
+div#quarto-sidebar-glass { display: none !important; }
+ul.navbar-nav.navbar-nav-scroll { -webkit-flex-direction: row !important; }
+/* #quarto-sidebar { padding: 5px; }
+#quarto-sidebar > * { padding: 5px; }
+div.sidebar-menu-container > * { padding: 5px 5px 5px 5px; }
+#quarto-margin-sidebar { padding: 40px; } */
+</style>
 
 
 </section>
 </section>
 
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div id="quarto-reuse" class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</a></div></div></section></div> ]]></description>
+<a onclick="window.scrollTo(0, 0); return false;" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div id="quarto-reuse" class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</a></div></div></section></div> ]]></description>
   <category>Tools/Packages</category>
   <guid>https://nishantbharali.github.io/Blog/posts/git/git.html</guid>
   <pubDate>Sat, 24 Jun 2023 04:00:00 GMT</pubDate>
@@ -6298,12 +6284,24 @@ font-style: inherit;">&gt;</span></span></code></pre></div>
 <h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
 <p>As we stand on the cusp of a new era in AI, large language models are at the forefront, driving innovation and enabling a deeper, more nuanced interaction between humans and machines. Their continued development will undoubtedly unlock new possibilities, challenge existing paradigms, and inspire future generations of AI research.</p>
 <p><a href="https://en.wikipedia.org/wiki/Large_language_model#:~:text=A%20large%20language%20model%20(LLM)%20is%20a%20type%20of%20language%20model%20notable%20for%20its%20ability%20to%20achieve%20general%2Dpurpose%20language%20understanding%20and%20generation.">Large Language Models</a> (LLMs) are a way to automatically generate text. more informative commit messages based on the currently staged changes.</p>
+<script>
+const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+</script>
+<style>
+div#quarto-sidebar-glass { display: none !important; }
+ul.navbar-nav.navbar-nav-scroll { -webkit-flex-direction: row !important; }
+/* #quarto-sidebar { padding: 5px; }
+#quarto-sidebar > * { padding: 5px; }
+div.sidebar-menu-container > * { padding: 5px 5px 5px 5px; }
+#quarto-margin-sidebar { padding: 40px; } */
+</style>
 
 
 </section>
 </section>
 
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div id="quarto-reuse" class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</a></div></div></section></div> ]]></description>
+<a onclick="window.scrollTo(0, 0); return false;" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div id="quarto-reuse" class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</a></div></div></section></div> ]]></description>
   <category>Tools/Packages</category>
   <category>Artificial Intelligence</category>
   <category>Machine Learning</category>
@@ -6313,56 +6311,543 @@ font-style: inherit;">&gt;</span></span></code></pre></div>
   <media:content url="https://nishantbharali.github.io/Blog/posts/llm/llmGif.gif" medium="image" type="image/gif"/>
 </item>
 <item>
-  <title>A Brief History of the Dataframe</title>
+  <title>Quarto</title>
   <dc:creator>Nishant Bharali</dc:creator>
-  <link>https://nishantbharali.github.io/Blog/posts/2021-05-24-dataframe/2021-05-24-dataframe.html</link>
+  <link>https://nishantbharali.github.io/Blog/posts/quarto/quarto.html</link>
   <description><![CDATA[ 
 
 
 
-<p>This is quite the insightful read on the history of the dataframe. From its origins in the S programming language, to R, to the <code>pandas</code> library for Python (to the <code>tibble</code> for R!)… I couldn’t imagine doing my work without this fundamental data structure, but will it really be defined out of existence? See below link for an excellent overview by <a href="https://devin-petersohn.medium.com/">Devin Petersohn</a>:</p>
-<p><img src="https://nishantbharali.github.io/Blog/posts/2021-05-24-dataframe/images/dataframe.jpeg" class="img-fluid"></p>
-<p>Source:</p>
-<ul>
-<li><p><a href="https://towardsdatascience.com/preventing-the-death-of-the-dataframe-8bca1c0f83c8">Towards Data Science: Preventing the Death of the Dataframe</a></p></li>
-<li><p><a href="https://pandas.pydata.org/">pandas for Python</a></p></li>
-<li><p><a href="https://tibble.tidyverse.org/">tibble for R</a></p></li>
-</ul>
-
-
-
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div id="quarto-reuse" class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</a></div></div></section></div> ]]></description>
-  <category>Data Science</category>
-  <guid>https://nishantbharali.github.io/Blog/posts/2021-05-24-dataframe/2021-05-24-dataframe.html</guid>
-  <pubDate>Wed, 24 May 2023 04:00:00 GMT</pubDate>
-  <media:content url="https://nishantbharali.github.io/Blog/posts/2021-05-24-dataframe/images/dataframe.jpeg" medium="image" type="image/jpeg"/>
-</item>
-<item>
-  <title>D&amp;D Adventures + blogdown</title>
-  <dc:creator>Nishant Bharali</dc:creator>
-  <link>https://nishantbharali.github.io/Blog/posts/2020-04-05-DnD-Adventures/2020-04-05-DnD-Adventures.html</link>
-  <description><![CDATA[ 
-
-
-
-<p>Wizards of the Coast have developed such an incredible tabletop, fantasy, RPG with the 5th edition of D&amp;D… I wish I would have re-discovered this game years back. For context, I haven’t touched D&amp;D since 1997!</p>
-<p>If you know of good resources for newbies and new D&amp;D Dungeon Masters (“DMs”), I’d love to know about your favorite resources. For data science folks out there, this site was built with R using <code>blogdown</code>, Hugo themes, and deployed for free using GitHub and Netlify.</p>
-<div class="quarto-figure quarto-figure-center">
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="bi bi-bullseye">Goal</span>
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Create a Quarto website and publish it on GitHub/GitLab Pages, Netlify, and Quarto Pub.</p>
+</div>
+</div>
+<p><a href="https://quarto.org/#:~:text=An%20open%2Dsource%20scientific%20and%20technical%20publishing%20system">Quarto</a> is an <a href="https://en.wikipedia.org/wiki/Open-source_software#:~:text=Open%2Dsource%20software%20(OSS)%20is%20computer%20software%20that%20is%20released%20under%20a%20license%20in%20which%20the%20copyright%20holder%20grants%20users%20the%20rights%20to%20use%2C%20study%2C%20change%2C%20and%20distribute%20the%20software%20and%20its%20source%20code%20to%20anyone%20and%20for%20any%20purpose.">open-source software</a> system for turning plain-text source files into outputs like articles, books, blogs, dashboards, presentations, reports, and websites. <a href="https://posit.co/blog/announcing-quarto-a-new-scientific-and-technical-publishing-system">Announced</a> by <a href="https://posit.co">Posit</a> CEO <a href="https://www.rstudio.com/authors/j.j.-allaire/">JJ Allaire</a>, Quarto is already taking the world🌐by storm⛈️!</p>
+<p>I strongly believe that everyone, regardless of their background and current technical skill level, can learn and benefit from Quarto. <a href="https://quarto.org/docs/get-started/">Getting started with Quarto</a> is easy thanks to its <a href="https://quarto.org/docs/guide/">excellent documentation</a> and vibrant community of enthusiastic users and developers.</p>
+<p>Rather than repeat the basic information already available elsewhere, I will share some advanced techniques along with the fundamental knowledge needed to understand how they work. The topics I cover are very technical, but my goal is to make the content on <a href="../../blog.html">my blog</a> as accessible as possible.</p>
+<p>The first topic I will delve into is creating and publishing a website with Quarto. To follow the Quarto documentation on <a href="https://quarto.org/docs/websites/">creating a website</a>, you will need <a href="https://code.visualstudio.com">Visual Studio Code (VSCode)</a>, <a href="https://vscodium.com/#:~:text=VSCodium%20is%20a%20community%2Ddriven%2C%20freely%2Dlicensed%20binary%20distribution%20of%20Microsoft%E2%80%99s%20editor%20VS%20Code.">VSCodium</a> and <a href="https://posit.co/download/rstudio-desktop">RStudio</a>, or a <a href="https://en.wikipedia.org/wiki/Terminal_emulator">terminal</a>.</p>
+<section id="sec-pub" class="level1">
+<h1>Publishing Quarto sites</h1>
+<section id="sec-inst" class="level2">
+<h2 class="anchored" data-anchor-id="sec-inst">Installing tools</h2>
+<p>If you use <a href="https://en.wikipedia.org/wiki/MacOS#:~:text=macOS%20(/%CB%8Cm%C3%A6ko%CA%8A%CB%88%C9%9Bs/%3B%5B6%5D%20previously%20OS%C2%A0X%20and%20originally%20Mac%C2%A0OS%C2%A0X)%20is%20an%20operating%20system%20developed%20and%20marketed%20by%20Apple%20Inc.%20since%202001.">macOS</a>, <a href="https://en.wikipedia.org/wiki/Linux#:~:text=Linux%20(/%CB%88l%C9%AAn%CA%8Aks/%20LIN%2Duuks)%5B11%5D%20is%20a%20family%20of%20open%2Dsource%20Unix%2Dlike%20operating%20systems">Linux</a>, or the <a href="https://en.wikipedia.org/wiki/Windows_Subsystem_for_Linux#:~:text=Windows%20Subsystem%20for%20Linux%20(WSL)%20is%20a%20feature%20of%20Windows%20that%20allows%20developers%20to%20run%20a%20Linux%20environment%20without%20the%20need%20for%20a%20separate%20virtual%20machine%20or%20dual%20booting.">Windows Subsystem for Linux (WSL)</a>, you can install all of the aforementioned tools with the <a href="https://brew.sh">Homebrew</a> package manager. To install everything you will need to follow along with this blog post, you can first <a href="https://brew.sh/#install">install Homebrew</a> and then run <code>brew</code> <code>bundle</code> in a directory that contains the <a href="https://homebrew-file.readthedocs.io/en/latest/usage.html">Brewfile</a> shown in Example&nbsp;1.</p>
+<div id="exm-brew" class="theorem example">
+<p><span class="theorem-title"><strong>Example 1 </strong></span>&nbsp;</p>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Brewfile</strong></pre>
+</div>
+<div class="sourceCode" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode ruby code-with-copy"><code class="sourceCode ruby"><span id="cb1-1">brew <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"gh"</span></span>
+<span id="cb1-2">brew <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"git"</span></span>
+<span id="cb1-3">brew <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"glab"</span></span>
+<span id="cb1-4">cask <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"github"</span></span>
+<span id="cb1-5">cask <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"quarto"</span></span>
+<span id="cb1-6">cask <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"rstudio"</span></span>
+<span id="cb1-7">cask <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"vscodium"</span></span>
+<span id="cb1-8">cask <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"visual-studio-code"</span></span>
+<span id="cb1-9">vscode <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"quarto.quarto"</span></span>
+<span id="cb1-10">vscode <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"REditorSupport.r"</span></span></code></pre></div>
+</div>
+</div>
+<p>Using a <a href="https://en.wikipedia.org/wiki/Package_manager#:~:text=A%20package%20manager%20or%20package%2Dmanagement%20system%20is%20a%20collection%20of%20software%20tools%20that%20automates%20the%20process%20of%20installing%2C%20upgrading%2C%20configuring%2C%20and%20removing%20computer%20programs%20for%20a%20computer%20in%20a%20consistent%20manner.">package manager</a> like Homebrew to install all the requirements with a single <a href="https://en.wikipedia.org/wiki/Unix_shell#:~:text=A%20Unix%20shell%20is%20a%20command%2Dline%20interpreter%20or%20shell%20that%20provides%20a%20command%20line%20user%20interface%20for%20Unix%2Dlike%20operating%20systems.">shell</a> command like <code>brew</code> <code>bundle</code> is the fastest and easiest way to get ready to follow along with this blog post. If you are curious about how I set up my computer, you can take a look at <a href="https://github.com/NishantBharali/setup/blob/main/Brewfile">my Brewfile</a> and other configuration files in my <code>setup</code> <a href="https://en.wikipedia.org/wiki/Repository_(version_control)#:~:text=In%20version%20control%20systems%2C%20a%20repository%20is%20a%20data%20structure%20that%20stores%20metadata%20for%20a%20set%20of%20files%20or%20directory%20structure.">repository (repo)</a> on <a href="https://github.com/NishantBharali/setup">GitHub</a>.</p>
+<p>Apart from RStudio, VSCode, and VSCodium, the Brewfile in Example&nbsp;1 will install the <a href="https://en.wikipedia.org/wiki/Git#:~:text=Git%20(/%C9%A1%C9%AAt/)%5B8%5D%20is%20a%20distributed%20version%20control%20system%5B9%5D%20that%20tracks%20changes%20in%20any%20set%20of%20computer%20files%2C%20usually%20used%20for%20coordinating%20work%20among%20programmers%20who%20are%20collaboratively%20developing%20source%20code%20during%20software%20development.">Git</a> version control system, the GitHub and GitLab <a href="https://en.wikipedia.org/wiki/Command-line_interface#:~:text=A%20command%2Dline%20interface%20(CLI)%20is%20a%20means%20of%20interacting%20with%20a%20computer%20program%20by%20inputting%20lines%20of%20text%20called%20command%2Dlines.">command line interfaces (CLIs)</a>, and <a href="https://desktop.github.com"><code>GitHub Desktop</code></a>, a <a href="https://git-scm.com/downloads/guis#:~:text=iOS-,GitHub%20Desktop,-Platforms%3A%20Mac">Git Graphical User Interface (GUI)</a>. For more information on Git, a tool used by 93% of software developers worldwide according to <a href="https://stackoverflow.blog/2023/01/09/beyond-git-the-other-version-control-systems-developers-use/#:~:text=Our%20developer%20survey%20found%2093%25%20of%20developers%20use%20Git.">survey results</a> published by <a href="https://stackoverflow.com/tour">StackOverflow</a>, take a look at the <a href="https://openscapes.org/blog/2022-05-27-github-illustrated-series/">“GitHub for supporting, reusing, contributing, and failing safely”</a> post by <a href="https://allisonhorst.com">Allison Horst</a> and <a href="https://jules32.github.io">Julie Lowndes</a> on the <a href="https://openscapes.org/">Openscapes</a> <a href="https://openscapes.org/blog">blog</a>.</p>
+<p>As an alternative to installing tools on your computer, you can use the web interface provided by <a href="https://github.com/features/codespaces">GitHub Codespaces</a>. To set up a Codespace, you can remove the lines that start with <code>cask</code> from the Brewfile provided in Example&nbsp;1 and add the file to a repo called <a href="https://docs.github.com/en/codespaces/customizing-your-codespace/personalizing-github-codespaces-for-your-account#dotfiles"><code>dotfiles</code></a> and along with a <code>setup.sh</code> file like the one shown in Example&nbsp;2.</p>
+<div id="exm-set" class="theorem example">
+<p><span class="theorem-title"><strong>Example 2 </strong></span>&nbsp;</p>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>setup.sh</strong></pre>
+</div>
+<div class="sourceCode" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">echo</span> <span class="kw" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">|</span> <span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">/bin/bash</span> <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">-c</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"</span><span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">$(</span><span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">curl</span> <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">-fsSL</span> https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh<span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">)</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"</span></span>
+<span id="cb2-2"><span class="kw" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">(</span><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">echo</span><span class="kw" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">;</span> <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">echo</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"'</span><span class="kw" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">)</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&gt;&gt;</span> /home/codespace/.profile</span>
+<span id="cb2-3"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">eval</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"</span><span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">$(</span><span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">/home/linuxbrew/.linuxbrew/bin/brew</span> shellenv<span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">)</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"</span></span>
+<span id="cb2-4"><span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">brew</span> bundle</span></code></pre></div>
+</div>
+</div>
+</section>
+<section id="sec-over" class="level2">
+<h2 class="anchored" data-anchor-id="sec-over">Publishing overview</h2>
+<p>Once you are done setting up your computer or Codespace, you create a <a href="https://quarto.org/docs/websites/#quick-start:~:text=This%20will%20create%20the%20scaffolding%20for%20a%20simple%20website%20in%20the%20mysite%20sub%2Ddirectory.">Quarto website template</a> and make your site publicly available on the internet using one of the many available <a href="https://quarto.org/docs/publishing/#getting-started">publishing services</a>. To explore and assess different publishing <a href="https://en.wikipedia.org/wiki/Workflow#:~:text=A%20workflow%20is%20a%20generic%20term%20for%20orchestrated%20and%20repeatable%20patterns%20of%20activity%2C%20enabled%20by%20the%20systematic%20organization%20of%20resources%20into%20processes%20that%20transform%20materials%2C%20provide%20services%2C%20or%20process%20information.">workflows</a> and free website hosting options, I set up my personal website on four different <a href="https://en.wikipedia.org/wiki/Web_hosting_service#:~:text=Companies%20providing%20web%20hosting%20services%20are%20sometimes%20called%20web%20hosts.">web hosts</a>: <a href="https://nishantbharali.github.io/Blog/">GitHub Pages</a>.</p>
+<p>There are so many different ways to publish a Quarto site that I decided to come up with a naming system for Quarto publishing methods. The naming system derives a code for each publishing method from the numbered lists in the Quarto publishing documentation. For example, I refer to the <a href="https://quarto.org/docs/publishing/quarto-pub.html#:~:text=Use%20the%20quarto,your%20code%20changes.">two methods to publish to Quarto Pub</a> as <a href="https://quarto.org/docs/publishing/quarto-pub.html#:~:text=Use%20the%20quarto%20publish%20command%20to%20publish%20content%20rendered%20on%20your%20local%20machine">Q1</a> and <a href="https://quarto.org/docs/publishing/quarto-pub.html#:~:text=If%20you%20are%20using%20GitHub%2C%20you%20can%20use%20a%20GitHub%20Action%20to%20automatically%20render%20your%20project%20and%20publish%20the%20resulting%20content%20whenever%20your%20code%20changes.">Q2</a>:</p>
+<p>Table&nbsp;1 uses this naming system in its <code>Code</code> column to identify the publishing methods I discuss in this blog post. Each publishing method targets a particular web <code>Host</code>, <code>Render</code>s content locally or on a remote server, and deploys sites using either the <a href="https://quarto.org/docs/output-formats/html-publishing.html#publish-command"><code>quarto</code> <code>publish</code></a> or the <a href="https://git-scm.com/docs/git-push"><code>git</code> <code>push</code></a> <a href="https://en.wikipedia.org/wiki/Unix_shell#:~:text=A%20Unix%20shell%20is%20a%20command%2Dline%20interpreter%20or%20shell%20that%20provides%20a%20command%20line%20user%20interface%20for%20Unix%2Dlike%20operating%20systems.">shell</a> <code>Command</code>.</p>
+<div id="tbl-pub" class="anchored">
+<table class="table">
+<caption>Table&nbsp;1: Quarto website publishing methods</caption>
+<thead>
+<tr class="header">
+<th>Code</th>
+<th>Host</th>
+<th>Render</th>
+<th>Command</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><a href="https://quarto.org/docs/publishing/github-pages.html#:~:text=Render%20sites%20on%20your%20local%20machine%20to%20the%20docs%20directory%2C%20check%20the%20rendered%20site%20into%20GitHub%2C%20and%20then%20configure%20your%20GitHub%20repo%20to%20publish%20from%20the%20docs%20directory.">G1</a></td>
+<td>GitHub</td>
+<td>Local</td>
+<td><code>push</code></td>
+</tr>
+<tr class="even">
+<td><a href="https://quarto.org/docs/publishing/github-pages.html#:~:text=Use%20the%20quarto%20publish%20command%20to%20publish%20content%20rendered%20on%20your%20local%20machine.">G2</a></td>
+<td>GitHub</td>
+<td>Local</td>
+<td><code>publish</code></td>
+</tr>
+<tr class="odd">
+<td><a href="https://quarto.org/docs/publishing/github-pages.html#:~:text=Use%20a%20GitHub%20Action%20to%20automatically%20render%20your%20files%20(a%20single%20Quarto%20document%20or%20a%20Quarto%20project)%20and%20publish%20the%20resulting%20content%20whenever%20you%20push%20a%20source%20code%20change%20to%20your%20repository.">G3</a></td>
+<td>GitHub</td>
+<td>Remote</td>
+<td><code>push</code></td>
+</tr>
+<tr class="even">
+<td><a href="https://quarto.org/docs/publishing/netlify.html#:~:text=Use%20the%20quarto%20publish%20command%20to%20publish%20content%20rendered%20on%20your%20local%20machine.">N1</a></td>
+<td>Netlify</td>
+<td>Local</td>
+<td><code>publish</code></td>
+</tr>
+<tr class="odd">
+<td><a href="https://quarto.org/docs/publishing/netlify.html#:~:text=If%20you%20are%20using%20GitHub%2C%20GitLab%2C%20Bitbucket%2C%20or%20Azure%20DevOps%2C%20you%20can%20point%20Netlify%20at%20your%20site%E2%80%99s%20source%20code%20and%20have%20it%20deployed%20whenever%20your%20code%20changes.">N2</a></td>
+<td>Netlify</td>
+<td>Local</td>
+<td><code>push</code></td>
+</tr>
+<tr class="even">
+<td><a href="https://quarto.org/docs/publishing/netlify.html#:~:text=If%20you%20are%20using%20GitHub%2C%20you%20can%20use%20a%20GitHub%20Action%20to%20automatically%20render%20your%20project%20and%20publish%20the%20resulting%20content%20whenever%20your%20code%20changes.">N3</a></td>
+<td>Netlify</td>
+<td>Remote</td>
+<td><code>push</code></td>
+</tr>
+<tr class="odd">
+<td><a href="https://quarto.org/docs/publishing/quarto-pub.html#:~:text=Use%20the%20quarto%20publish%20command%20to%20publish%20content%20rendered%20on%20your%20local%20machine">Q1</a></td>
+<td>Quarto</td>
+<td>Local</td>
+<td><code>publish</code></td>
+</tr>
+<tr class="even">
+<td><a href="https://quarto.org/docs/publishing/quarto-pub.html#:~:text=If%20you%20are%20using%20GitHub%2C%20you%20can%20use%20a%20GitHub%20Action%20to%20automatically%20render%20your%20project%20and%20publish%20the%20resulting%20content%20whenever%20your%20code%20changes.">Q2</a></td>
+<td>Quarto</td>
+<td>Remote</td>
+<td><code>push</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<section id="sec-over-git" class="level3">
+<h3 class="anchored" data-anchor-id="sec-over-git">Git workflow</h3>
+<p>The first publishing method I tried for my personal site was <a href="https://quarto.org/docs/publishing/github-pages.html#:~:text=Render%20sites%20on%20your%20local%20machine%20to%20the%20docs%20directory%2C%20check%20the%20rendered%20site%20into%20GitHub%2C%20and%20then%20configure%20your%20GitHub%20repo%20to%20publish%20from%20the%20docs%20directory.">G1</a>, which requires the use of Git to <a href="https://github.com/git-guides/git-push#what-does-git-push-do">push</a> all website content to a Git provider like GitHub or GitLab. After I set up <a href="https://quarto.org/docs/publishing/github-pages.html#render-to-docs">GitHub Pages</a> and <a href="https://docs.gitlab.com/ee/user/project/pages/">GitLab Pages</a>, I could update my website on both of these web hosts just by going through the standard Git workflow shown in Figure&nbsp;1.</p>
+<div class="cell" data-fig-width="9" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb3-1">flowchart LR</span>
+<span id="cb3-2">   A[working&lt;br/&gt;directory]-.git&lt;br/&gt;add.-&gt;B{{staging&lt;br/&gt;area}}-.git&lt;br/&gt;commit.-&gt;C([local&lt;br/&gt;repo])-.git&lt;br/&gt;push.-&gt;D(remote&lt;br/&gt;repo)</span></code></pre></div>
+<div class="cell-output-display">
+<div id="fig-git" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
-<p><img src="https://nishantbharali.github.io/Blog/posts/2020-04-05-DnD-Adventures/images/Dnd.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">D&amp;D dragon looking for trouble</figcaption>
+<div>
+<pre class="mermaid mermaid-js" data-label="fig-git">flowchart LR
+   A[working&lt;br/&gt;directory]-.git&lt;br/&gt;add.-&gt;B{{staging&lt;br/&gt;area}}-.git&lt;br/&gt;commit.-&gt;C([local&lt;br/&gt;repo])-.git&lt;br/&gt;push.-&gt;D(remote&lt;br/&gt;repo)
+</pre>
+</div>
+<figcaption class="figure-caption">Figure&nbsp;1: Git workflow</figcaption>
 </figure>
 </div>
-<p>Reference: <br> * Javier’s <a href="https://flamboyant-brahmagupta-3caca6.netlify.app/">D&amp;D Adventures</a></p>
+</div>
+</div>
+<p>To make it easier to make incremental changes to my website and frequently release new content, I combined all of the <code>git</code> shell commands in Figure&nbsp;1 into a shell <a href="https://en.wikipedia.org/wiki/Alias_(command)#:~:text=In%20computing%2C%20alias%20is%20a%20command%20in%20various%20command%2Dline%20interpreters%20(shells)%2C%20which%20enables%20a%20replacement%20of%20a%20word%20by%20another%20string.">alias</a>. You can add shell aliases to a <a href="https://en.wikipedia.org/wiki/Unix_shell#:~:text=The%20%22rc%22%20suffix%20on%20some%20Unix%20configuration%20files%20(for%20example%2C%20%22.vimrc%22)%2C%20is%20a%20remnant%20of%20the%20RUNCOM%20ancestry%20of%20Unix%20shells.">shell configuration file</a> like <code>.bashrc</code> or <code>.zshrc</code> on your computer to shorten commands or combine any sequence of commands into one step.</p>
+<p>The <a href="https://github.com/NishantBharali/setup/blob/936ae9e222b0fe0648d88675db2d4718568a93f2/.zshrc#L134"><code>aacmp</code> alias</a> in the <a href="https://github.com/NishantBharali/setup/blob/main/.zshrc"><code>.zshrc</code></a> file in my <a href="https://github.com/NishantBharali/setup"><code>setup</code></a> repo allows me to enter a free-form <a href="https://en.wikipedia.org/wiki/Commit_(version_control)#:~:text=git%20commit%20%2Dm%20%27-,commit%20message,-%27">commit message</a> directly on the command line without quotes, e.g.&nbsp;<code>qp</code> <code>edit</code> <code>first</code> <code>blog</code>. If you decide to try my <code>aacmp</code> alias, please exercise extreme caution as any un-<a href="https://en.wikipedia.org/wiki/Escape_character#:~:text=an%20escape%20character%20is%20a%20character%20that%20invokes%20an%20alternative%20interpretation%20on%20the%20following%20characters%20in%20a%20character%20sequence.">escaped</a> or un-quoted <a href="https://en.wikipedia.org/wiki/Metacharacter#:~:text=A%20metacharacter%20is%20a%20character%20that%20has%20a%20special%20meaning%20to%20a%20computer%20program%2C%20such%20as%20a%20shell%20interpreter">metacharacters</a> may yield surprising effects instead of being included verbatim in the commit message. For example, <code>qp</code> <code>*</code> will list the contents of the current directory in the commit message in place of the asterisk!</p>
+<p>An alternative to a shell alias that combines <code>git</code> commands is a keyboard shortcut in Git-enabled GUI. Example&nbsp;3 shows two files, <code>tasks.json</code> and <code>update.sh</code>, that we can use to set up VSCode, VSCodium, and GitHub Codespaces to go through the Git workflow whenever we press Ctrl+Shift+B on Linux/Windows or ⌘+Shift+B on Mac (mnemonic: B is for Build).</p>
+<div id="exm-key" class="theorem example">
+<p><span class="theorem-title"><strong>Example 3 </strong></span>&nbsp;</p>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs"><li class="nav-item"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" aria-controls="tabset-1-1" aria-selected="true"><code>update.sh</code></a></li><li class="nav-item"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" aria-controls="tabset-1-2" aria-selected="false"><code>tasks.json</code></a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1" class="tab-pane active" aria-labelledby="tabset-1-1-tab">
+<div class="sourceCode" id="cb4" data-include="../../update.sh" style="background: #f1f3f5;"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"></code></pre></div>
+</div>
+<div id="tabset-1-2" class="tab-pane" aria-labelledby="tabset-1-2-tab">
+<div class="sourceCode" id="cb5" data-include="../../.vscode/tasks.json" style="background: #f1f3f5;"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"></code></pre></div>
+</div>
+</div>
+</div>
+</div>
+<p>This mechanism is called <a href="https://code.visualstudio.com/docs/editor/tasks">Tasks</a> and is used to <a href="https://en.wikipedia.org/wiki/Build_automation#:~:text=Build%20automation%20is%20the%20process%20of%20automating%20the%20creation%20of%20a%20software%20build">automate</a> <a href="https://en.wikipedia.org/wiki/Software_build#:~:text=In%20software%20development%2C%20a%20build%20is%20the%20process%20of%20converting%20source%20code%20files%20into%20standalone%20software%20artifact(s)%20that%20can%20be%20run%20on%20a%20computer%2C%20or%20the%20result%20of%20doing%20so.">software build</a> tasks, which can include any steps required to build and publish a website. Importantly, the Tasks mechanism requires that the <code>tasks.json</code> file be added to the <code>.vscode</code> directory and that we enable execution of the <code>update.sh</code> script by running <code>chmod</code> <code>+x</code> <code>update.sh</code> in our project root.</p>
+<p>Shell aliases and keyboard shortcuts can greatly facilitate the Git workflow which is essential not only for <a href="https://quarto.org/docs/publishing/github-pages.html#:~:text=Render%20sites%20on%20your%20local%20machine%20to%20the%20docs%20directory%2C%20check%20the%20rendered%20site%20into%20GitHub%2C%20and%20then%20configure%20your%20GitHub%20repo%20to%20publish%20from%20the%20docs%20directory.">G1</a>, but also <a href="https://quarto.org/docs/publishing/github-pages.html#:~:text=Use%20a%20GitHub%20Action%20to%20automatically%20render%20your%20files%20(a%20single%20Quarto%20document%20or%20a%20Quarto%20project)%20and%20publish%20the%20resulting%20content%20whenever%20you%20push%20a%20source%20code%20change%20to%20your%20repository.">G3</a>, <a href="https://quarto.org/docs/publishing/netlify.html#:~:text=If%20you%20are%20using%20GitHub%2C%20you%20can%20use%20a%20GitHub%20Action%20to%20automatically%20render%20your%20project%20and%20publish%20the%20resulting%20content%20whenever%20your%20code%20changes.">N3</a>, and <a href="https://quarto.org/docs/publishing/quarto-pub.html#:~:text=If%20you%20are%20using%20GitHub%2C%20you%20can%20use%20a%20GitHub%20Action%20to%20automatically%20render%20your%20project%20and%20publish%20the%20resulting%20content%20whenever%20your%20code%20changes.">Q2</a>. Unlike these other publishing methods, <a href="https://quarto.org/docs/publishing/github-pages.html#:~:text=Render%20sites%20on%20your%20local%20machine%20to%20the%20docs%20directory%2C%20check%20the%20rendered%20site%20into%20GitHub%2C%20and%20then%20configure%20your%20GitHub%20repo%20to%20publish%20from%20the%20docs%20directory.">G1</a> leads to messy <a href="https://en.wikipedia.org/wiki/Commit_(version_control)#:~:text=In%20version%20control%20systems%2C%20a%20commit%20is%20an%20operation%20which%20sends%20the%20latest%20changes%20of%20the%20source%20code%20to%20the%20repository%2C%20making%20these%20changes%20part%20of%20the%20head%20revision%20of%20the%20repository.">commits</a> that contain changes to both source and output files.</p>
+</section>
+<section id="sec-over-qp" class="level3">
+<h3 class="anchored" data-anchor-id="sec-over-qp"><code>quarto</code> <code>publish</code></h3>
+<p>To have cleaner commits, I switched from <a href="https://quarto.org/docs/publishing/github-pages.html#:~:text=Render%20sites%20on%20your%20local%20machine%20to%20the%20docs%20directory%2C%20check%20the%20rendered%20site%20into%20GitHub%2C%20and%20then%20configure%20your%20GitHub%20repo%20to%20publish%20from%20the%20docs%20directory.">G1</a> to <a href="https://quarto.org/docs/publishing/github-pages.html#:~:text=Use%20the%20quarto%20publish%20command%20to%20publish%20content%20rendered%20on%20your%20local%20machine.">G2</a> by adding <code>quarto</code> <code>publish</code> to my publishing workflow. With <a href="https://quarto.org/docs/publishing/github-pages.html#:~:text=Use%20the%20quarto%20publish%20command%20to%20publish%20content%20rendered%20on%20your%20local%20machine.">G2</a>, I can track changes to my source files on my <code>main</code> <a href="https://en.wikipedia.org/wiki/Branching_(version_control)#:~:text=Branching%2C%20in%20version%20control%20and%20software%20configuration%20management%2C%20is%20the%20duplication%20of%20an%20object%20under%20version%20control">branch</a> and publish my output files to GitHub Pages and GitLab Pages from my <code>gh-pages</code> branch.</p>
+<p><a href="https://quarto.org/docs/publishing/quarto-pub.html#:~:text=Use%20the%20quarto%20publish%20command%20to%20publish%20content%20rendered%20on%20your%20local%20machine">Q1</a>, <a href="https://quarto.org/docs/publishing/netlify.html#:~:text=Use%20the%20quarto%20publish%20command%20to%20publish%20content%20rendered%20on%20your%20local%20machine.">N1</a>, and <a href="https://quarto.org/docs/publishing/github-pages.html#:~:text=Use%20the%20quarto%20publish%20command%20to%20publish%20content%20rendered%20on%20your%20local%20machine.">G2</a> all use <code>quarto</code> <code>publish</code> to <a href="https://quarto.org/docs/websites/index.html#website-render">render</a> website content locally and then deploy it in one fell swoop. If you do not plan to use the <a href="https://en.wikipedia.org/wiki/Git#:~:text=Git%20(/%C9%A1%C9%AAt/)%5B8%5D%20is%20a%20distributed%20version%20control%20system%5B9%5D%20that%20tracks%20changes%20in%20any%20set%20of%20computer%20files%2C%20usually%20used%20for%20coordinating%20work%20among%20programmers%20who%20are%20collaboratively%20developing%20source%20code%20during%20software%20development.">Git</a> version control system or the advanced features offered by <a href="https://github.com">GitHub</a>, <a href="https://gitlab.com">GitLab</a>, or <a href="https://netlify.com">Netlify</a>, then I recommend deploying your site to <a href="https://quarto.pub">Quarto Pub</a> by running <a href="https://quarto.org/docs/publishing/quarto-pub.html#publish-command"><code>quarto</code> <code>publish</code> <code>quarto-pub</code></a> (<a href="https://quarto.org/docs/publishing/quarto-pub.html#:~:text=Use%20the%20quarto%20publish%20command%20to%20publish%20content%20rendered%20on%20your%20local%20machine">Q1</a> in Table&nbsp;1).</p>
+<p>Like <a href="https://quarto.org/docs/publishing/quarto-pub.html#:~:text=Use%20the%20quarto%20publish%20command%20to%20publish%20content%20rendered%20on%20your%20local%20machine">Q1</a>, <a href="https://quarto.org/docs/publishing/netlify.html#:~:text=Use%20the%20quarto%20publish%20command%20to%20publish%20content%20rendered%20on%20your%20local%20machine.">N1</a> is a deployment method that does not require Git and makes it possible to deploy our site with a single shell command: <a href="https://quarto.org/docs/publishing/netlify.html#publish-command"><code>quarto</code> <code>publish</code> <code>netlify</code></a>. <a href="https://quarto.org/docs/publishing/netlify.html#:~:text=Use%20the%20quarto%20publish%20command%20to%20publish%20content%20rendered%20on%20your%20local%20machine.">N1</a> provides access to the advanced web hosting features offered by Netlify and can even <a href="https://quarto.org/docs/publishing/netlify.html#rendering-on-netlify">render content</a> as long as code execution is <a href="https://quarto.org/docs/publishing/netlify.html#freezing-computations">frozen</a>.</p>
+<p>I deployed my site to GitHub Pages currently. When I run <code>quarto</code> <code>publish</code> <code>gh-pages</code>, Quarto renders my site into my output directory, copies the output directory contents to the <code>gh-pages</code> branch of my local repo, and then <a href="https://git-scm.com/docs/git-commit">commits</a> and <a href="https://git-scm.com/docs/git-push">pushes</a> the changes to my remote repos on <a href="https://github.com/NishantBharali/Blog">GitHub</a>, I am planning to trigger Netlify and GitLab as well to <a href="https://quarto.org/docs/publishing/netlify.html#publish-from-git-provider">build my site</a> from the <code>gh-pages</code> branch through this process.</p>
+<p>To summarize the Quarto publishing methods I discussed so far, <a href="https://quarto.org/docs/publishing/quarto-pub.html#:~:text=Use%20the%20quarto%20publish%20command%20to%20publish%20content%20rendered%20on%20your%20local%20machine">Q1</a> and <a href="https://quarto.org/docs/publishing/netlify.html#:~:text=Use%20the%20quarto%20publish%20command%20to%20publish%20content%20rendered%20on%20your%20local%20machine.">N1</a> are easy to configure and use, <a href="https://quarto.org/docs/publishing/netlify.html#:~:text=If%20you%20are%20using%20GitHub%2C%20GitLab%2C%20Bitbucket%2C%20or%20Azure%20DevOps%2C%20you%20can%20point%20Netlify%20at%20your%20site%E2%80%99s%20source%20code%20and%20have%20it%20deployed%20whenever%20your%20code%20changes.">N2</a> automatically builds sites from Git repos, <a href="https://quarto.org/docs/publishing/github-pages.html#:~:text=Render%20sites%20on%20your%20local%20machine%20to%20the%20docs%20directory%2C%20check%20the%20rendered%20site%20into%20GitHub%2C%20and%20then%20configure%20your%20GitHub%20repo%20to%20publish%20from%20the%20docs%20directory.">G1</a> is not recommended because it pollutes commits with output file changes, and <a href="https://quarto.org/docs/publishing/github-pages.html#:~:text=Use%20the%20quarto%20publish%20command%20to%20publish%20content%20rendered%20on%20your%20local%20machine.">G2</a> is more difficult to set up and use but provides clean commits and a nice separation of source and output files.</p>
+</section>
+<section id="sec-over-act" class="level3">
+<h3 class="anchored" data-anchor-id="sec-over-act">GitHub Actions</h3>
+<p>All of the publishing methods I have discussed so far require us to generate output files locally by rendering our source files. In contrast, <a href="https://quarto.org/docs/publishing/quarto-pub.html#:~:text=If%20you%20are%20using%20GitHub%2C%20you%20can%20use%20a%20GitHub%20Action%20to%20automatically%20render%20your%20project%20and%20publish%20the%20resulting%20content%20whenever%20your%20code%20changes.">Q2</a>, <a href="https://quarto.org/docs/publishing/github-pages.html#:~:text=Use%20a%20GitHub%20Action%20to%20automatically%20render%20your%20files%20(a%20single%20Quarto%20document%20or%20a%20Quarto%20project)%20and%20publish%20the%20resulting%20content%20whenever%20you%20push%20a%20source%20code%20change%20to%20your%20repository.">G3</a>, and <a href="https://quarto.org/docs/publishing/netlify.html#:~:text=If%20you%20are%20using%20GitHub%2C%20you%20can%20use%20a%20GitHub%20Action%20to%20automatically%20render%20your%20project%20and%20publish%20the%20resulting%20content%20whenever%20your%20code%20changes.">N3</a> make it possible to skip local rendering in favor of relying on <a href="https://quarto.org/docs/publishing/quarto-pub.html#github-action">GitHub Actions</a> to handle all of the necessary steps.</p>
+<p><a href="https://quarto.org/docs/publishing/github-pages.html#:~:text=Use%20a%20GitHub%20Action%20to%20automatically%20render%20your%20files%20(a%20single%20Quarto%20document%20or%20a%20Quarto%20project)%20and%20publish%20the%20resulting%20content%20whenever%20you%20push%20a%20source%20code%20change%20to%20your%20repository.">G3</a> is noteworthy, because it offers the same convenience of <a href="https://quarto.org/docs/publishing/github-pages.html#:~:text=Render%20sites%20on%20your%20local%20machine%20to%20the%20docs%20directory%2C%20check%20the%20rendered%20site%20into%20GitHub%2C%20and%20then%20configure%20your%20GitHub%20repo%20to%20publish%20from%20the%20docs%20directory.">G1</a> but without messy commits that mix changes to source and output files. An added bonus of <a href="https://quarto.org/docs/publishing/github-pages.html#:~:text=Use%20a%20GitHub%20Action%20to%20automatically%20render%20your%20files%20(a%20single%20Quarto%20document%20or%20a%20Quarto%20project)%20and%20publish%20the%20resulting%20content%20whenever%20you%20push%20a%20source%20code%20change%20to%20your%20repository.">G3</a> is that rendering with GitHub Actions provides a reproducible computational environment that is not dependent on what you have installed on your computer.</p>
+<p>Instead of using GitHub Actions, I could have used <a href="https://docs.gitlab.com/ee/ci">GitLab CI/CD</a> to build my site. I decided not to go down this route because the Quarto dev team has many <a href="https://github.com/quarto-dev/quarto-actions">GitHub Actions workflows</a> available but currently no official support for GitLab CI/CD.</p>
+<p>Before trying to use GitHub Actions or any <a href="https://quarto.org/docs/publishing/ci.html">other continuous integration systems</a> in your publishing workflow, I suggest getting used to working with <code>quarto</code> <code>publish</code> (<a href="https://quarto.org/docs/publishing/quarto-pub.html#:~:text=Use%20the%20quarto%20publish%20command%20to%20publish%20content%20rendered%20on%20your%20local%20machine">Q1</a>, <a href="https://quarto.org/docs/publishing/github-pages.html#:~:text=Use%20the%20quarto%20publish%20command%20to%20publish%20content%20rendered%20on%20your%20local%20machine.">G2</a>, or <a href="https://quarto.org/docs/publishing/netlify.html#:~:text=Use%20the%20quarto%20publish%20command%20to%20publish%20content%20rendered%20on%20your%20local%20machine.">N1</a>). You can always set up other publishing methods later without sacrificing anything, because all of the publishing methods except <a href="https://quarto.org/docs/publishing/github-pages.html#:~:text=Render%20sites%20on%20your%20local%20machine%20to%20the%20docs%20directory%2C%20check%20the%20rendered%20site%20into%20GitHub%2C%20and%20then%20configure%20your%20GitHub%20repo%20to%20publish%20from%20the%20docs%20directory.">G1</a> can be combined together.</p>
+<p>In Section&nbsp;1.3, I will walk through the setup of both <a href="https://quarto.org/docs/publishing/github-pages.html#:~:text=Use%20the%20quarto%20publish%20command%20to%20publish%20content%20rendered%20on%20your%20local%20machine.">G2</a> and <a href="https://quarto.org/docs/publishing/github-pages.html#:~:text=Use%20a%20GitHub%20Action%20to%20automatically%20render%20your%20files%20(a%20single%20Quarto%20document%20or%20a%20Quarto%20project)%20and%20publish%20the%20resulting%20content%20whenever%20you%20push%20a%20source%20code%20change%20to%20your%20repository.">G3</a> to provide the option of rendering locally by running <code>quarto</code> <code>publish</code> or rendering remotely with GitHub Actions by pushing to the <code>main</code> branch. Along the way, I will share many practical tips and general advice that you can apply to any project.</p>
+</section>
+</section>
+<section id="sec-set" class="level2">
+<h2 class="anchored" data-anchor-id="sec-set">Publishing setup</h2>
+<section id="sec-set-repo" class="level3">
+<h3 class="anchored" data-anchor-id="sec-set-repo">Repo setup</h3>
+<p>Before you can use GitHub Actions to publish your site, you will need a <a href="https://github.com/signup">GitHub</a>, an <a href="https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account#about-addition-of-ssh-keys-to-your-account">SSH key</a>, and a repo like <a href="https://github.com/NishantBharali/Blog"><code>Blog</code></a> that has a default <a href="https://en.wikipedia.org/wiki/Branching_(version_control)#:~:text=Branching%2C%20in%20version%20control%20and%20software%20configuration%20management%2C%20is%20the%20duplication%20of%20an%20object%20under%20version%20control">branch</a> called <code>main</code> and another branch which must be called <code>gh-pages</code>. If you want to publish on GitLab Pages, you will also need a <a href="https://gitlab.com/users/sign_up">GitLab</a> account.</p>
+<p>You can create the repo and the <code>gh-pages</code> branch using the web interface of <a href="https://github.com" class="uri">https://github.com</a> or <a href="https://gitlab.com" class="uri">https://gitlab.com</a> in your browser, but the best way to start a new project is using the CLI for <a href="https://cli.github.com">GitHub</a> or <a href="https://docs.gitlab.com/ee/editor_extensions/gitlab_cli/">GitLab</a> in your <a href="https://en.wikipedia.org/wiki/Terminal_emulator">terminal</a>. First, run <code>gh</code> <code>auth</code> <code>login</code> or <code>glab</code> <code>auth</code> <code>login</code> and follow the prompts to authenticate via your web browser or with an authentication token.</p>
+<p>The GitHub CLI allows you to add an SSH key to your account during or <a href="https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account?tool=cli#adding-a-new-ssh-key-to-your-account">after authentication</a>. The GitLab CLI does not handle SSH keys during authentication, but has a similar command for <a href="https://gitlab.com/gitlab-org/cli/-/blob/main/docs/source/ssh-key/add.md">adding an SSH key to your GitLab account</a>.</p>
+<p>After authentication and SSH key setup, you can run the code in either of the code chunks in Example&nbsp;4 to set up your local and remote repos and create a Quarto website project in the local repo. You can create shell alias that combine all of the repo creation steps like I did in my <a href="https://github.com/NishantBharali/setup/blob/0bd5898908974746fa55e7e8f19a36859040b6ca/.zshrc#L630"><code>.zshrc</code></a>.</p>
+<div id="exm-git" class="theorem example">
+<p><span class="theorem-title"><strong>Example 4 </strong></span>&nbsp;</p>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs"><li class="nav-item"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" aria-controls="tabset-2-1" aria-selected="true">GitHub</a></li><li class="nav-item"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" aria-controls="tabset-2-2" aria-selected="false">GitLab</a></li></ul>
+<div class="tab-content">
+<div id="tabset-2-1" class="tab-pane active" aria-labelledby="tabset-2-1-tab">
+<div class="sourceCode" id="cb6" style="background: #f1f3f5;"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">cd</span> <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># start in home directory</span></span>
+<span id="cb6-2"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">mkdir</span> <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">-p</span> USERNAME</span>
+<span id="cb6-3"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">cd</span> USERNAME</span>
+<span id="cb6-4"><span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">gh</span> repo create USERNAME.github.io <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">--add-readme</span> <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">--clone</span> <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">--public</span></span>
+<span id="cb6-5"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">cd</span> SITENAME</span>
+<span id="cb6-6"><span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">quarto</span> create project website USERNAME.github.io</span></code></pre></div>
+</div>
+<div id="tabset-2-2" class="tab-pane" aria-labelledby="tabset-2-2-tab">
+<div class="sourceCode" id="cb7" style="background: #f1f3f5;"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">cd</span> <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># start in home directory</span></span>
+<span id="cb7-2"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">mkdir</span> <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">-p</span> USERNAME</span>
+<span id="cb7-3"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">cd</span> USERNAME</span>
+<span id="cb7-4"><span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">glab</span> repo create USERNAME.gitlab.io <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">--readme</span> <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">--defaultBranch</span> main <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">--public</span></span>
+<span id="cb7-5"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">cd</span> SITENAME</span>
+<span id="cb7-6"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">git</span> pull origin main</span>
+<span id="cb7-7"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">git</span> branch <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">--set-upstream-to</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span>origin/main main</span>
+<span id="cb7-8"><span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">quarto</span> create project website USERNAME.gitlab.io</span></code></pre></div>
+</div>
+</div>
+</div>
+</div>
+<p>To make it easier to maintain my site on both GitHub and GitLab Pages, I set up my local repo cloned to have two <code>origin</code> remote URLs using the code as shown in Example&nbsp;5. Now, running <code>quarto</code> <code>publish</code> or <code>git</code> <code>push</code> in my local repo, updates my content on both GitHub and GitLab.</p>
+<div id="exm-remote" class="theorem example">
+<p><span class="theorem-title"><strong>Example 5 </strong></span>&nbsp;</p>
+<div class="sourceCode" id="cb8" style="background: #f1f3f5;"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">git</span> remote add hub git@github.com:NishantBharali/Blog</span>
+<span id="cb8-2"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">git</span> remote set-url <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">--add</span> origin <span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">$(</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">git</span> remote get-url lab<span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">)</span></span></code></pre></div>
+</div>
+<p>If you want to have your website hosted on GitHub Pages, you will need to <a href="https://quarto.org/docs/publishing/github-pages.html#source-branch">set <code>gh-pages</code> as your source branch</a> in your repo settings. For GitLab Pages, you will need to add a <code>.gitlab-ci.yml</code> file to your repo and update your <code>_quarto.yml</code> file as shown in Example&nbsp;6 to include <code>.gitlab-ci.yml</code> as a <code>resource</code> in your output directory.</p>
+<div id="exm-yml" class="theorem example">
+<p><span class="theorem-title"><strong>Example 6 </strong></span>&nbsp;</p>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs"><li class="nav-item"><a class="nav-link active" id="tabset-3-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-1" aria-controls="tabset-3-1" aria-selected="true"><code>.gitlab-ci.yml</code></a></li><li class="nav-item"><a class="nav-link" id="tabset-3-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-2" aria-controls="tabset-3-2" aria-selected="false"><code>_quarto.yml</code></a></li></ul>
+<div class="tab-content">
+<div id="tabset-3-1" class="tab-pane active" aria-labelledby="tabset-3-1-tab">
+<div class="sourceCode" id="cb9" data-include="../../.gitlab-ci.yml" style="background: #f1f3f5;"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"></code></pre></div>
+</div>
+<div id="tabset-3-2" class="tab-pane" aria-labelledby="tabset-3-2-tab">
+<div class="sourceCode" id="cb10" data-include="../../_quarto.yml" data-start-line="1" data-end-line="3" style="background: #f1f3f5;"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"></code></pre></div>
+</div>
+</div>
+</div>
+</div>
+<p>By default, GitLab Pages includes a random hash in site <a href="https://en.wikipedia.org/wiki/URL#:~:text=A%20Uniform%20Resource%20Locator%20(URL)%2C%20colloquially%20known%20as%20an%20address%20on%20the%20Web">URLs</a>. To shorten the URL of my GitLab Pages site, one has to uncheck <strong>Use unique domain</strong> under <code>Deploy &gt; Pages</code> in the GitLab sidebar.</p>
+<p>At this point, we have completed <a href="https://quarto.org/docs/publishing/github-pages.html#:~:text=Use%20the%20quarto%20publish%20command%20to%20publish%20content%20rendered%20on%20your%20local%20machine.">G2</a> setup and you should be able to run <code>quarto</code> <code>publish</code> <code>gh-pages</code> from your <code>main</code> branch to render your site and deploy it to GitHub and/or GitLab Pages. Deploying with <code>quarto</code> <code>publish</code> at least once is a prerequisite for setting up any of the publishing methods that rely on GitHub Actions, because <code>quarto</code> <code>publish</code> creates a <code>_publish.yml</code> file in the root of your project that is required for publishing via GitHub Actions.</p>
+</section>
+<section id="sec-set-act" class="level3">
+<h3 class="anchored" data-anchor-id="sec-set-act">GitHub Actions</h3>
+<p>In addition to the steps described above, <a href="https://quarto.org/docs/publishing/github-pages.html#:~:text=Use%20a%20GitHub%20Action%20to%20automatically%20render%20your%20files%20(a%20single%20Quarto%20document%20or%20a%20Quarto%20project)%20and%20publish%20the%20resulting%20content%20whenever%20you%20push%20a%20source%20code%20change%20to%20your%20repository.">G3</a> setup requires that we create a <code>.github/workflows</code> directory and add a <a href="https://en.wikipedia.org/wiki/YAML#:~:text=YAML%20(/%CB%88j%C3%A6m%C9%99l/)%20(see%20%C2%A7%C2%A0History%20and%20name)%20is%20a%20human%2Dreadable%20data%20serialization%20language.">YAML</a> file to that directory. Example&nbsp;7 contains the <code>gh-pages.yml</code> file I use for my own site and the shell code that can used to obtain this file.</p>
+<div id="exm-curl" class="theorem example">
+<p><span class="theorem-title"><strong>Example 7 </strong></span>&nbsp;</p>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs"><li class="nav-item"><a class="nav-link active" id="tabset-4-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-1" aria-controls="tabset-4-1" aria-selected="true"><code>curl</code></a></li><li class="nav-item"><a class="nav-link" id="tabset-4-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-2" aria-controls="tabset-4-2" aria-selected="false"><code>gh-pages.yml</code></a></li></ul>
+<div class="tab-content">
+<div id="tabset-4-1" class="tab-pane active" aria-labelledby="tabset-4-1-tab">
+<div class="sourceCode" id="cb11" style="background: #f1f3f5;"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">mkdir</span> <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">-p</span> .github/workflows</span>
+<span id="cb11-2"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">cd</span> .github/workflows</span>
+<span id="cb11-3"><span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">curl</span> <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">-O</span> https://raw.githubusercontent.com/NishantBharali/Blog/main/.github/workflows/gh-pages.yml</span></code></pre></div>
+</div>
+<div id="tabset-4-2" class="tab-pane" aria-labelledby="tabset-4-2-tab">
+<div class="sourceCode" id="cb12" data-include="../../.github/workflows/gh-pages.yml" style="background: #f1f3f5;"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"></code></pre></div>
+</div>
+</div>
+</div>
+</div>
+<p>The <code>gh-pages.yml</code> file in Example&nbsp;7 installs Quarto, the R and Python programming languages, and the packages in the <code>renv.lock</code> and <code>requirements.txt</code> files. If you do not need R and/or Python, you can remove any unnecessary portions of the file.</p>
+<p>To modify the Python files that are installed by GitHub Actions, you can edit the <code>requirements.txt</code> file in your repo. To update your <code>renv.lock</code> file so that it includes all of the R packages your site requires, run <a href="https://rstudio.github.io/renv/reference/snapshot.html"><code>renv::snapshot()</code></a> in an R session or <code>Rscript</code> <code>-e</code> <code>renv::snapshot()</code> in a shell.</p>
+<p>After pushing the <code>gh-pages.yml</code> file, you can visit the Actions tab in your remote repo on GitHub to check the progress of the deployment of your site. If your site did not build successfully, you can go through the logs to try to diagnose the problem.</p>
+<p>I added a “Push to GitLab” step to my <code>gh-pages.yml</code> to make GitHub Actions push my remote <code>gh-pages</code> to GitLab so that my site is kept in sync on both GitHub and GitLab Pages. This required manually creating a token on GitLab and adding it to GitHub, which I accomplished using the GitHub CLI as shown in Example&nbsp;8.</p>
+<div id="exm-secret" class="theorem example">
+<p><span class="theorem-title"><strong>Example 8 </strong></span>&nbsp;</p>
+<div class="sourceCode" id="cb13" style="background: #f1f3f5;"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">gh</span> secret set GITLAB_AUTH_TOKEN</span></code></pre></div>
+</div>
+<p>After the setup described above, I now have two options for publishing my Quarto site: <code>quarto</code> <code>publish</code> and 2) <code>git push</code>. In addition to GitHub and GitLab Pages, both of these options automatically update my site on Netlify via <a href="https://quarto.org/docs/publishing/netlify.html#:~:text=If%20you%20are%20using%20GitHub%2C%20GitLab%2C%20Bitbucket%2C%20or%20Azure%20DevOps%2C%20you%20can%20point%20Netlify%20at%20your%20site%E2%80%99s%20source%20code%20and%20have%20it%20deployed%20whenever%20your%20code%20changes.">N2</a>.</p>
+<p>To also automatically update my site on Quarto Pub, I created a separate GitHub Actions workflow by adding another YAML file to the <code>.github/workflows</code> directory in my repo. Example&nbsp;9 shows my <code>quarto-pub.yml</code> file and the shell code that can be used to obtain it.</p>
+<div id="exm-qpub" class="theorem example">
+<p><span class="theorem-title"><strong>Example 9 </strong></span>&nbsp;</p>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs"><li class="nav-item"><a class="nav-link active" id="tabset-5-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-5-1" aria-controls="tabset-5-1" aria-selected="true"><code>curl</code></a></li><li class="nav-item"><a class="nav-link" id="tabset-5-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-5-2" aria-controls="tabset-5-2" aria-selected="false"><code>quarto-pub.yml</code></a></li></ul>
+<div class="tab-content">
+<div id="tabset-5-1" class="tab-pane active" aria-labelledby="tabset-5-1-tab">
+<div class="sourceCode" id="cb14" style="background: #f1f3f5;"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb14-1"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">mkdir</span> <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">-p</span> .github/workflows</span>
+<span id="cb14-2"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">cd</span> .github/workflows</span>
+<span id="cb14-3"><span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">curl</span> <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">-O</span> https://raw.githubusercontent.com/NishantBharali/Blog/main/.github/workflows/gh-pages.yml</span></code></pre></div>
+</div>
+<div id="tabset-5-2" class="tab-pane" aria-labelledby="tabset-5-2-tab">
+<div class="sourceCode" id="cb15" data-include="../../.github/workflows/quarto-pub.yml" style="background: #f1f3f5;"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"></code></pre></div>
+</div>
+</div>
+</div>
+</div>
+<p>My <code>quarto-pub.yml</code> file is based on <a href="https://quarto.org/docs/publishing/quarto-pub.html#:~:text=If%20you%20are%20using%20GitHub%2C%20you%20can%20use%20a%20GitHub%20Action%20to%20automatically%20render%20your%20project%20and%20publish%20the%20resulting%20content%20whenever%20your%20code%20changes.">Q2</a>, but it runs upon completion of the <code>pages-build-deployment</code> workflow instead of a push to <code>main</code>. I changed the workflow trigger so that it runs after my GitHub Pages site is built, regardless of whether I triggered the build by running <code>quarto</code> <code>publish</code> <code>gh-pages</code> or pushing to <code>main</code>.</p>
+<p>Figure&nbsp;2 summarizes all of the steps that occur during my Quarto publishing workflow. This workflow allows me to publish my site on four web hosts every time I run <code>quarto</code> <code>publish</code> <code>gh-pages</code> (<a href="https://quarto.org/docs/publishing/github-pages.html#:~:text=Use%20the%20quarto%20publish%20command%20to%20publish%20content%20rendered%20on%20your%20local%20machine.">G2</a>) or <code>git</code> <code>push</code> (<a href="https://quarto.org/docs/publishing/github-pages.html#:~:text=Use%20a%20GitHub%20Action%20to%20automatically%20render%20your%20files%20(a%20single%20Quarto%20document%20or%20a%20Quarto%20project)%20and%20publish%20the%20resulting%20content%20whenever%20you%20push%20a%20source%20code%20change%20to%20your%20repository.">G3</a>)!</p>
+<div class="cell" data-fig-width="9" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb16" style="background: #f1f3f5;"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb16-1">flowchart LR</span>
+<span id="cb16-2">    A[local&lt;br/&gt;main]-.G2.-&gt;B[local&lt;br/&gt;gh-pages]-.G2.-&gt;C[GitHub&lt;br/&gt;gh-pages]</span>
+<span id="cb16-3">    B[local&lt;br/&gt;gh-pages]-.G2.-&gt;D[GitLab&lt;br/&gt;gh-pages]</span>
+<span id="cb16-4">    A[local&lt;br/&gt;main]-.G3.-&gt;F[GitHub&lt;br/&gt;main]-.G3.-&gt;C[GitHub&lt;br/&gt;gh-pages]-.G3.-&gt;D[GitLab&lt;br/&gt;gh-pages]</span>
+<span id="cb16-5">    A[local&lt;br/&gt;main]-.G3.-&gt;G[GitLab&lt;br/&gt;main]</span>
+<span id="cb16-6">    C[GitHub&lt;br/&gt;gh-pages]-.N2.-&gt;E[Netlify]</span>
+<span id="cb16-7">    C[GitHub&lt;br/&gt;gh-pages]-.Q2.-&gt;H[Quarto&lt;br/&gt;Pub]</span></code></pre></div>
+<div class="cell-output-display">
+<div id="fig-meth" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<div>
+<pre class="mermaid mermaid-js" data-label="fig-meth">flowchart LR
+    A[local&lt;br/&gt;main]-.G2.-&gt;B[local&lt;br/&gt;gh-pages]-.G2.-&gt;C[GitHub&lt;br/&gt;gh-pages]
+    B[local&lt;br/&gt;gh-pages]-.G2.-&gt;D[GitLab&lt;br/&gt;gh-pages]
+    A[local&lt;br/&gt;main]-.G3.-&gt;F[GitHub&lt;br/&gt;main]-.G3.-&gt;C[GitHub&lt;br/&gt;gh-pages]-.G3.-&gt;D[GitLab&lt;br/&gt;gh-pages]
+    A[local&lt;br/&gt;main]-.G3.-&gt;G[GitLab&lt;br/&gt;main]
+    C[GitHub&lt;br/&gt;gh-pages]-.N2.-&gt;E[Netlify]
+    C[GitHub&lt;br/&gt;gh-pages]-.Q2.-&gt;H[Quarto&lt;br/&gt;Pub]
+</pre>
+</div>
+<figcaption class="figure-caption">Figure&nbsp;2: Quarto publishing workflow</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>So far I have only noticed one difference between the four web hosts I use for my site: GitHub Pages is the only web host that properly differentiates between internal and <a href="https://quarto.org/docs/output-formats/html-basics.html#external-links">external links</a>. All of the other web hosts include the <span class="external">external link icon</span> on all links regardless of whether they target my site or an external site.</p>
+<p>I tried unsuccessfully to solve this issue by setting the <a href="https://quarto.org/docs/output-formats/html-basics.html#external-links"><code>link-external-filter</code></a> property to a <a href="https://en.wikipedia.org/wiki/Regular_expression#:~:text=A%20regular%20expression%20(shortened%20as%20regex%20or%20regexp)%2C%5B1%5D%20sometimes%20referred%20to%20as%20rational%20expression%2C%5B2%5D%5B3%5D%20is%20a%20sequence%20of%20characters%20that%20specifies%20a%20match%20pattern%20in%20text.">regular expression</a>. If you notice a problem with the <code>link-external-icon</code> feature on other web hosts, I suggest switching to GitHub Pages.</p>
+</section>
+</section>
+</section>
+<section id="sec-cust" class="level1">
+<h1>Customizing Quarto sites</h1>
+<section id="sec-nav" class="level2">
+<h2 class="anchored" data-anchor-id="sec-nav">Site navigation</h2>
+<p>Once your site is <a href="https://quarto.org/docs/websites/website-blog.html#quick-start">built</a> and <a href="https://quarto.org/docs/websites/website-blog.html#publishing">published</a>, you can make it easier to navigate with a customized navigation bar (navbar) and sidebar, as described in the <a href="https://quarto.org/docs/websites/website-navigation.html">Quarto documentation</a>. Check out the <code>_quarto.yml</code> files for <a href="https://github.com/NishantBharali/Blog/blob/main/_quarto.yml">my site</a> and the Quarto <a href="https://github.com/quarto-dev/quarto-web/blob/main/_quarto.yml">documentation site</a> to see how the navigation components are set up.</p>
+<p>In my navbar, I added toggle buttons for <a href="https://quarto.org/docs/websites/website-navigation.html#reader-mode">reader mode</a> and <a href="https://quarto.org/docs/output-formats/html-themes.html#dark-mode">dark mode</a>. The names of the other icons on right side of the navbar are included in the sidebar.</p>
+</section>
+<section id="sec-html" class="level2">
+<h2 class="anchored" data-anchor-id="sec-html">HTML blocks</h2>
+<p>My navbar also provides the current date and time in <code>Dec</code> ordinal (<code>deco</code>) format, which counts the <a href="https://en.wikipedia.org/wiki/ISO_8601#:~:text=year%200000%20being%20equal%20to%201%20BC">years since 1 BC</a> and the days since March 1. <code>Dec</code> is a calendar and time system that I created and use throughout my blog.</p>
+<p><a href="https://mine-cr.com/">Mine Çetinkaya-Rundel</a> wrote about <a href="https://mine-cetinkaya-rundel.github.io/quarto-tip-a-day/posts/12-html-block/">HTML blocks</a> as part of her <a href="https://mine-cetinkaya-rundel.github.io/quarto-tip-a-day/about.html">A Quarto tip a day</a> project.</p>
+<p>HTML blocks are useful for running <a href="https://en.wikipedia.org/wiki/JavaScript#:~:text=JavaScript%20(/%CB%88d%CA%92%C9%91%CB%90v%C9%99skr%C9%AApt/)%2C%20often%20abbreviated%20as%20JS%2C%20is%20a%20programming%20language%20that%20is%20one%20of%20the%20core%20technologies%20of%20the%20World%20Wide%20Web%2C%20alongside%20HTML%20and%20CSS">JavaScript</a> code in the context of a single page on your site without affecting the others. I also use HTML blocks to add a <code>&lt;style&gt;</code> element to my <code>.qmd</code> files as a last ditch effort to fine tune the style of my site.</p>
+<p>Before I resort to the <code>&lt;style&gt;</code> element approach, I try writing <a href="https://en.wikipedia.org/wiki/CSS#:~:text=Cascading%20Style%20Sheets%20(CSS)%20is%20a%20style%20sheet%20language%20used%20for%20describing%20the%20presentation%20of%20a%20document%20written%20in%20a%20markup%20language%20such%20as%20HTML">CSS</a> in my <a href="https://quarto.org/docs/visual-editor/content.html#defining-styles"><code>styles.css</code></a>, <code>light.css</code>, and <a href="https://quarto.org/docs/output-formats/html-themes.html#customizing-themes"><code>dark.css</code></a> files. So far, this approach has been sufficient to make any styling changes I want, but if it every fails, I can use JavaScript to override the default styling provided by Quarto by modifying <code>style</code> attributes, which have the highest <a href="https://en.wikipedia.org/wiki/CSS#Specificity:~:text=Specificity%20refers%20to%20the%20relative%20weights%20of%20various%20rules.">specificity</a> in <a href="https://en.wikipedia.org/wiki/CSS#:~:text=Cascading%20Style%20Sheets%20(CSS)%20is%20a%20style%20sheet%20language%20used%20for%20describing%20the%20presentation%20of%20a%20document%20written%20in%20a%20markup%20language%20such%20as%20HTML">CSS</a>.</p>
+</section>
+<section id="sec-filt" class="level2">
+<h2 class="anchored" data-anchor-id="sec-filt">Pandoc filter</h2>
+<p>In addition to customizing dates on the <a href="https://nishantbharali.github.io/Blog/blog.html">listing page</a> of my blog, I wanted to customize the date format in every blog post. To complete this task, I used a <a href="https://en.wikipedia.org/wiki/Lua_(programming_language)#:~:text=Lua%20(/%CB%88lu%CB%90%C9%99/%20LOO%2D%C9%99%3B%20from%20Portuguese%3A%20lua%20%5B%CB%88lu(w)%C9%90%5D%20meaning%20moon)%20is%20a%20lightweight%2C%20high%2Dlevel%2C%20multi%2Dparadigm%20programming%20language%20designed%20primarily%20for%20embedded%20use%20in%20applications.">Lua</a> script as a <a href="https://quarto.org/docs/extensions/filters.html">Pandoc filter</a>.</p>
+<p><a href="https://pandoc.org/">Pandoc</a> is a program that converts documents into practically any format. The “pan” in Pandoc comes from the Ancient Greek word for <a href="https://en.wiktionary.org/wiki/pan-#:~:text=pan%2D-,all,-Usage%20notes%5B"><em>all</em></a>. Pandoc strives to convert <em>all</em> document formats, just like <a href="https://en.wikipedia.org/wiki/Pangaea#:~:text=Pangaea%20or%20Pangea%20(/p%C3%A6n%CB%88d%CA%92i%CB%90.%C9%99/)%5B1%5D%20was%20a%20supercontinent%20that%20existed%20during%20the%20late%20Paleozoic%20and%20early%20Mesozoic%20eras.">Pangea</a> contained <em>all</em> the land and a <a href="https://en.wiktionary.org/wiki/panacea#English:~:text=A%20solution%20to%20all%20problems.">panacea</a> solves <em>all</em> problems.</p>
+<p>Quarto uses Pandoc to convert markdown files into target format(s) like <code>html</code> or <code>pdf</code>. If the source files contain executable code, Quarto executes the code via one of two computational engines: <a href="https://jupyter.org/#:~:text=Free%20software%2C%20open%20standards%2C%20and%20web%20services%20for%20interactive%20computing%20across%20all%20programming%20languages">Jupyter</a> or <a href="https://yihui.org/knitr/#:~:text=the%20knitr%20package%20was%20designed%20to%20be%20a%20transparent%20engine%20for%20dynamic%20report%20generation%20with%20R">Knitr</a>. Figure&nbsp;3 shows the Quarto workflow.</p>
+<div class="cell" data-fig-width="9" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb17" style="background: #f1f3f5;"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb17-1">flowchart LR</span>
+<span id="cb17-2">   A[qmd&lt;br/&gt;ipynb]-.Knitr&lt;br/&gt;Jupyter.-&gt;B((md))-.Pandoc with&lt;br/&gt;Lua filters.-&gt;C(html&lt;br/&gt;pdf&lt;br/&gt;docx&lt;br/&gt;etc.)</span></code></pre></div>
+<div class="cell-output-display">
+<div id="fig-render" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<div>
+<pre class="mermaid mermaid-js" data-label="fig-render">flowchart LR
+   A[qmd&lt;br/&gt;ipynb]-.Knitr&lt;br/&gt;Jupyter.-&gt;B((md))-.Pandoc with&lt;br/&gt;Lua filters.-&gt;C(html&lt;br/&gt;pdf&lt;br/&gt;docx&lt;br/&gt;etc.)
+</pre>
+</div>
+<figcaption class="figure-caption">Figure&nbsp;3: Quarto rendering workflow</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Mine Çetinkaya-Rundel’s Quarto tip series includes a similar <a href="https://mine-cetinkaya-rundel.github.io/quarto-tip-a-day/posts/21-diagrams/#fig-mermaid">Quarto workflow mermaid diagram</a> and her <a href="https://mine.quarto.pub/hello-quarto">“Hello, Quarto!”</a> rstudio::conf(2022) keynote with <a href="https://jules32.github.io">Julia Stewart Lowndes</a> contains truly beautiful Quarto workflow images by <a href="https://allisonhorst.com">Allison Horst</a>: <a href="https://mine.quarto.pub/hello-quarto/#/publishing-system-2">1</a>, <a href="https://mine.quarto.pub/hello-quarto/#/quarto-flattens-the-learning-curve">2</a>, <a href="https://mine.quarto.pub/hello-quarto/#/quarto-can-grow-with-learners-in-a-profound-way">3</a>, and <a href="https://mine.quarto.pub/hello-quarto/#/quarto-cli-orchestrates-each-step-of-rendering">4</a>.</p>
+<p>Quarto controls Pandoc, Jupyter, and Knitr in two ways: 1) with arguments passed to the <a href="https://en.wikipedia.org/wiki/Command-line_interface#:~:text=A%20command%2Dline%20interface%20(CLI)%20is%20a%20means%20of%20interacting%20with%20a%20computer%20program%20by%20inputting%20lines%20of%20text%20called%20command%2Dlines.">Quarto CLI</a> commands and 2) with <a href="https://yaml.org/">YAML</a> key-value pairs in <code>.qmd</code>, <code>.ipynb</code>, or <code>.yml</code> files.</p>
+<p>HTML blocks can run JavaScript which excels at making content dynamic and interactive, pre- and post-render scripts can be in any programming language, while Pandoc filters are written in Lua and modify output during rendering.</p>
+<script>
+const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+</script>
+<style>
+div#quarto-sidebar-glass { display: none !important; }
+ul.navbar-nav.navbar-nav-scroll { -webkit-flex-direction: row !important; }
+/* #quarto-sidebar { padding: 5px; }
+#quarto-sidebar > * { padding: 5px; }
+div.sidebar-menu-container > * { padding: 5px 5px 5px 5px; }
+#quarto-margin-sidebar { padding: 40px; } */
+</style>
 
 
+</section>
+</section>
 
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div id="quarto-reuse" class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</a></div></div></section></div> ]]></description>
-  <category>Rmarkdown</category>
-  <category>Blogdown</category>
-  <guid>https://nishantbharali.github.io/Blog/posts/2020-04-05-DnD-Adventures/2020-04-05-DnD-Adventures.html</guid>
-  <pubDate>Wed, 05 Apr 2023 04:00:00 GMT</pubDate>
-  <media:content url="https://nishantbharali.github.io/Blog/posts/2020-04-05-DnD-Adventures/images/Dnd.png" medium="image" type="image/png" height="61" width="144"/>
+<a onclick="window.scrollTo(0, 0); return false;" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div id="quarto-reuse" class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</a></div></div></section></div> ]]></description>
+  <category>Tools/Packages</category>
+  <guid>https://nishantbharali.github.io/Blog/posts/quarto/quarto.html</guid>
+  <pubDate>Sat, 24 Jun 2023 04:00:00 GMT</pubDate>
+  <media:content url="https://nishantbharali.github.io/Blog/posts/quarto/horst_many-qmd-to-output.png" medium="image" type="image/png" height="88" width="144"/>
 </item>
 <item>
   <title>Book Rec: Hands-On Machine Learning with R</title>
@@ -6376,98 +6861,27 @@ font-style: inherit;">&gt;</span></span></code></pre></div>
 <p>I am super excited to finally dig into Hands-On Machine Learning with R by <a href="https://www.linkedin.com/in/brad-boehmke-ph-d-9b0a257/">Brad Boehmke, Ph.D.</a> and <a href="https://www.linkedin.com/in/brandon-greenwell-90310b94/">Brandon Greenwell</a>.</p>
 <p>There are a ton of solid ML books on the market for Python and R users but I’ve struggled with developing a best practice ML workflow to make maintainable code and to enhance my sampling, evaluation, and iteration process. As an R user, I’m glad to have this hands-on approach resource to improve my use of the ML stack within R.</p>
 <p>The full text and code samples are available online, for free: https://lnkd.in/gvmXY3W</p>
+<script>
+const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+</script>
+<style>
+div#quarto-sidebar-glass { display: none !important; }
+ul.navbar-nav.navbar-nav-scroll { -webkit-flex-direction: row !important; }
+/* #quarto-sidebar { padding: 5px; }
+#quarto-sidebar > * { padding: 5px; }
+div.sidebar-menu-container > * { padding: 5px 5px 5px 5px; }
+#quarto-margin-sidebar { padding: 40px; } */
+</style>
 
 
 
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div id="quarto-reuse" class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</a></div></div></section></div> ]]></description>
+<a onclick="window.scrollTo(0, 0); return false;" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div id="quarto-reuse" class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</a></div></div></section></div> ]]></description>
   <category>Machine Learning</category>
   <category>Data Science</category>
   <guid>https://nishantbharali.github.io/Blog/posts/2019-12-17-Hands-On-Machine-Learning-with-R/2019-12-17-Hands-On-Machine-Learning-with-R.html</guid>
   <pubDate>Wed, 01 Feb 2023 05:00:00 GMT</pubDate>
   <media:content url="https://nishantbharali.github.io/Blog/posts/2019-12-17-Hands-On-Machine-Learning-with-R/images/handsOnGif.gif" medium="image" type="image/gif"/>
-</item>
-<item>
-  <title>Resampling with k-fold Cross Validation</title>
-  <dc:creator>Nishant Bharali</dc:creator>
-  <link>https://nishantbharali.github.io/Blog/posts/2020-02-01-k-fold-cross-validation/2020-02-01-k-fold-cross-validation.html</link>
-  <description><![CDATA[ 
-
-
-
-<p>k-fold “randomly divides the training data into k groups (or folds) of approximate size [with the model being] fit on k-1 folds and the remaining fold used to compute model performance.” I use k=5 or k=10 given that this is typical industry practice without really questioning “why?”</p>
-<p><img src="https://nishantbharali.github.io/Blog/posts/2020-02-01-k-fold-cross-validation/images/kfold.jpg" class="img-fluid"></p>
-<p>In reading through Hands-On Machine Learning with R by Brad Boehmke, Ph.D.&nbsp;and Brandon Greenwell, I was surprised to learn that studies have shown that k=10 performs similarly to leave-one-out cross validation where k=n.</p>
-<p>Without realizing it, sometimes I get carried away optimizing code and drifting from statistics and the core “science” in data science… k-fold CV is a technique used by many and is agnostic to your statistical programming language of choice but if you’re an #R user, I can’t recommend this book enough (free in full online, link below)!</p>
-<p>Source:</p>
-<ul>
-<li>Hands-On Machine Learning with R <a href="https://bradleyboehmke.github.io/HOML/process.html#resampling">Chapter 2.4 Resampling Methods</a></li>
-</ul>
-
-
-
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div id="quarto-reuse" class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</a></div></div></section></div> ]]></description>
-  <category>Statistics</category>
-  <category>Machine Learning</category>
-  <guid>https://nishantbharali.github.io/Blog/posts/2020-02-01-k-fold-cross-validation/2020-02-01-k-fold-cross-validation.html</guid>
-  <pubDate>Wed, 01 Feb 2023 05:00:00 GMT</pubDate>
-  <media:content url="https://nishantbharali.github.io/Blog/posts/2020-02-01-k-fold-cross-validation/images/kfold.jpg" medium="image" type="image/jpeg"/>
-</item>
-<item>
-  <title>Building a Website with Blogdown</title>
-  <dc:creator>Nishant Bharali</dc:creator>
-  <link>https://nishantbharali.github.io/Blog/posts/2019-11-18-Blogdown/2019-11-18-Blogdown.html</link>
-  <description><![CDATA[ 
-
-
-
-<p><img src="https://nishantbharali.github.io/Blog/posts/2019-11-18-Blogdown/images/blogdown.jpg" class="img-fluid"></p>
-<p><a href="https://www.linkedin.com/in/pabloibarajas/">Pablo Barajas</a>, a recent graduate at UC Irvine and friend of Scatter Podcast, led a presentation on how to build a website using R, RStudio, and Blogdown.</p>
-<p>For anyone wanting to <em>fairly easily</em> build an online portfolio or blog that looks professional, I highly recommend Blogdown. I used this process to build this website, as did Pablo for his personal website, and I can help if you have any questions. Here’s the process in short: RStudio site build with Blogdown -&gt; Commit to GitHub -&gt; Apply Hugo theme -&gt; Netlify for CI/CD</p>
-<p>This event was hosted by the Orange County R Users Group (“OCRUG”) and UCI’s Merage Analytics Club (“MAC”). If you’re in Orange County and looking to network and learn with local data science practitioners and students, I highly recommend attending OCRUG events, R-Ladies Irvine events, or public MAC events. Great learning opportunities here!</p>
-<p>Links:</p>
-<ul>
-<li>Pablo’s presentation on <a href="https://pbarajas.rbind.io/posts/website-tutorial/">his Blogdown site</a></li>
-<li>Blogdown <a href="https://blog.rstudio.com/2017/09/11/announcing-blogdown/">overview from RStudio</a></li>
-<li>OCRUG’s <a href="https://ocrug.org">homepage</a></li>
-<li>R-Ladies <a href="https://www.rladiesirvine.org">Irvine chapter</a></li>
-<li>Merage Analytics Club <a href="https://sites.uci.edu/merageaa/">website</a></li>
-</ul>
-
-
-
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div id="quarto-reuse" class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</a></div></div></section></div> ]]></description>
-  <category>Rmarkdown</category>
-  <category>Blogdown</category>
-  <guid>https://nishantbharali.github.io/Blog/posts/2019-11-18-Blogdown/2019-11-18-Blogdown.html</guid>
-  <pubDate>Wed, 18 Jan 2023 05:00:00 GMT</pubDate>
-  <media:content url="https://nishantbharali.github.io/Blog/posts/2019-11-18-Blogdown/images/blogdownGif.gif" medium="image" type="image/gif"/>
-</item>
-<item>
-  <title>DT: An R Interface to the JavaScript library DataTables</title>
-  <dc:creator>Nishant Bharali</dc:creator>
-  <link>https://nishantbharali.github.io/Blog/posts/2021-05-03-DT/2021-05-03-DT.html</link>
-  <description><![CDATA[ 
-
-
-
-<p>The <a href="https://rstudio.github.io/DT/">DT package</a> for R is a powerful integration of the JavaScript library <em>DataTables</em>. One of the things that I enjoy with <code>DT</code> is enhancing my Shiny apps by rendering interactive tables with <code>DT</code>. The <code>DT</code> documentation, written by <a href="https://www.rstudio.com/">RStudio PBC</a> and the <code>DT</code> devs, is incredibly well-written and you’ll learn a lot about how you can use these tables in the development of robust R web apps. And the available Options…. Endless in a good way!</p>
-<p>If you’re a Shiny dev, check out the live demos sourced below.</p>
-<p><img src="https://nishantbharali.github.io/Blog/posts/2021-05-03-DT/images/DT_Shiny.png" class="img-fluid"></p>
-<p>Source:</p>
-<ul>
-<li><p><a href="https://github.com/rstudio/DT">DT on GitHub</a></p></li>
-<li><p><a href="https://rstudio.github.io/DT/">DT site</a></p></li>
-<li><p><a href="https://yihui.shinyapps.io/DT-selection/">Live Shiny demo: DT Selections Ex. 1</a></p></li>
-<li><p><a href="https://yihui.shinyapps.io/DT-rows/">Live Shiny demo: DT Selection Ex. 2</a></p></li>
-</ul>
-
-
-
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div id="quarto-reuse" class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</a></div></div></section></div> ]]></description>
-  <category>Data Science</category>
-  <guid>https://nishantbharali.github.io/Blog/posts/2021-05-03-DT/2021-05-03-DT.html</guid>
-  <pubDate>Mon, 03 May 2021 04:00:00 GMT</pubDate>
-  <media:content url="https://nishantbharali.github.io/Blog/posts/2021-05-03-DT/images/DT_Shiny.png" medium="image" type="image/png" height="84" width="144"/>
 </item>
 </channel>
 </rss>

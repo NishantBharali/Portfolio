@@ -4,6 +4,7 @@ description: "An in-depth look at how large language models are transforming the
 date: 06-24-2023
 categories: [Tools/Packages, Artificial Intelligence, Machine Learning, Natural Language Processing]
 image: llmGif.gif
+toc-location: right
 ---
 
 # Exploring the Frontiers of AI: Large Language Models
@@ -35,3 +36,18 @@ As we stand on the cusp of a new era in AI, large language models are at the for
 
 
 [Large Language Models](https://en.wikipedia.org/wiki/Large_language_model#:~:text=A%20large%20language%20model%20(LLM)%20is%20a%20type%20of%20language%20model%20notable%20for%20its%20ability%20to%20achieve%20general%2Dpurpose%20language%20understanding%20and%20generation.) (LLMs) are a way to automatically generate text. more informative commit messages based on the currently staged changes.
+
+```{=html}
+<script>
+const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+</script>
+<style>
+div#quarto-sidebar-glass { display: none !important; }
+ul.navbar-nav.navbar-nav-scroll { -webkit-flex-direction: row !important; }
+/* #quarto-sidebar { padding: 5px; }
+#quarto-sidebar > * { padding: 5px; }
+div.sidebar-menu-container > * { padding: 5px 5px 5px 5px; }
+#quarto-margin-sidebar { padding: 40px; } */
+</style>
+```
