@@ -95,7 +95,7 @@ website:
               - posts/llm/llm.qmd
               - posts/quarto/quarto.qmd
           - section: Machine Learning
-            href: posts/#category=Machine_Learning
+            href: blog.html#category=Machine_Learning
             contents:
               - posts/2019-12-17-Hands-On-Machine-Learning-with-R/2019-12-17-Hands-On-Machine-Learning-with-R.qmd
               - posts/Anomaly-Outlier Detection/index.qmd
