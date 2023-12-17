@@ -91,11 +91,25 @@ website:
           - section: Tools
             href: blog.html#category=Tools/Packages
             contents:
-              - posts/git/git.qmd
-              - posts/llm/llm.qmd
-              - posts/quarto/quarto.qmd
+              - href: posts/git/git.qmd
+                text: "Git"
+              - href: posts/llm/llm.qmd
+                text: "LLM"
+              - href: posts/quarto/quarto.qmd
+                text: "Quarto"
           - section: Machine Learning
             href: blog.html#category=Machine Learning
+            contents:
+              - href: posts/Random Processes/index.qmd
+                text: "Probability"
+              - href: posts/Linear and Non Linear Regression/index.qmd
+                text: "Regression"
+              - href: posts/Clustering/index.qmd
+                text: "Clustering"
+              - href: posts/Classification/index.qmd
+                text: "Classification"
+              - href: posts/Anomaly-Outlier Detection/index.qmd
+                text: "Anamoly"
       - text: "About Me"
         file: about.qmd
       - section: "Resources"
