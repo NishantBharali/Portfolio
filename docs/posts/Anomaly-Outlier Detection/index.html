@@ -226,7 +226,7 @@ cookieconsent.run({
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../blog.html">Blog Posts</a></li><li class="breadcrumb-item"><a href="../../posts/#category=Machine Learning">Machine Learning</a></li><li class="breadcrumb-item"><a href="../../posts/Anomaly-Outlier Detection/index.html">Anomaly/Outlier Detection in a Financial Dataset</a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../blog.html">Blog Posts</a></li><li class="breadcrumb-item"><a href="../../posts/#category=Machine_Learning">Machine Learning</a></li><li class="breadcrumb-item"><a href="../../posts/Anomaly-Outlier Detection/index.html">Anomaly/Outlier Detection in a Financial Dataset</a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
     </div>
@@ -284,7 +284,7 @@ cookieconsent.run({
   </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../../posts/#category=Machine Learning" class="sidebar-item-text sidebar-link">
+            <a href="../../posts/#category=Machine_Learning" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Machine Learning</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -388,8 +388,16 @@ cookieconsent.run({
     <h2 id="toc-title">Table of Contents</h2>
    
   <ul>
-  <li><a href="#detecting-anomalies-in-financial-data-involves-using-specialized-algorithms-to-identify-irregularities-enhancing-risk-management-and-fraud-prevention" id="toc-detecting-anomalies-in-financial-data-involves-using-specialized-algorithms-to-identify-irregularities-enhancing-risk-management-and-fraud-prevention" class="nav-link active" data-scroll-target="#detecting-anomalies-in-financial-data-involves-using-specialized-algorithms-to-identify-irregularities-enhancing-risk-management-and-fraud-prevention">Detecting anomalies in financial data involves using specialized algorithms to identify irregularities, enhancing risk management and fraud prevention</a></li>
+  <li><a href="#anomalyoutlier-detection-in-a-financial-dataset" id="toc-anomalyoutlier-detection-in-a-financial-dataset" class="nav-link active" data-scroll-target="#anomalyoutlier-detection-in-a-financial-dataset">Anomaly/Outlier Detection in a Financial Dataset</a></li>
   <li><a href="#introduction" id="toc-introduction" class="nav-link" data-scroll-target="#introduction">Introduction</a></li>
+  <li><a href="#data-exploration-and-analysis" id="toc-data-exploration-and-analysis" class="nav-link" data-scroll-target="#data-exploration-and-analysis">Data Exploration and Analysis</a></li>
+  <li><a href="#analysis-results-anomaly-detection-with-isolation-forest" id="toc-analysis-results-anomaly-detection-with-isolation-forest" class="nav-link" data-scroll-target="#analysis-results-anomaly-detection-with-isolation-forest">Analysis Results: Anomaly Detection with Isolation Forest</a></li>
+  <li><a href="#anomaly-detection-using-isolation-forest" id="toc-anomaly-detection-using-isolation-forest" class="nav-link" data-scroll-target="#anomaly-detection-using-isolation-forest">Anomaly Detection Using Isolation Forest</a></li>
+  <li><a href="#k-means-clustering-for-anomaly-detection" id="toc-k-means-clustering-for-anomaly-detection" class="nav-link" data-scroll-target="#k-means-clustering-for-anomaly-detection">K-Means Clustering for Anomaly Detection</a></li>
+  <li><a href="#dbscan-for-anomaly-detection" id="toc-dbscan-for-anomaly-detection" class="nav-link" data-scroll-target="#dbscan-for-anomaly-detection">DBSCAN for Anomaly Detection</a></li>
+  <li><a href="#local-outlier-factor-lof" id="toc-local-outlier-factor-lof" class="nav-link" data-scroll-target="#local-outlier-factor-lof">Local Outlier Factor (LOF)</a></li>
+  <li><a href="#final-check-for-anomaly-detection" id="toc-final-check-for-anomaly-detection" class="nav-link" data-scroll-target="#final-check-for-anomaly-detection">Final check for Anomaly detection</a></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/NishantBharali/Blog/blob/main/posts/Anomaly-Outlier Detection/index.qmd" class="toc-action">View source</a></p></div></div></nav>
     </div>
@@ -400,7 +408,7 @@ cookieconsent.run({
 <div class="quarto-title">
 <h1 class="title">Anomaly/Outlier Detection in a Financial Dataset</h1>
   <div class="quarto-categories">
-    <div class="quarto-category">Machine Learning</div>
+    <div class="quarto-category">Machine_Learning</div>
   </div>
   </div>
 
@@ -442,8 +450,9 @@ cookieconsent.run({
 
 </header>
 
-<section id="detecting-anomalies-in-financial-data-involves-using-specialized-algorithms-to-identify-irregularities-enhancing-risk-management-and-fraud-prevention" class="level2">
-<h2 class="anchored" data-anchor-id="detecting-anomalies-in-financial-data-involves-using-specialized-algorithms-to-identify-irregularities-enhancing-risk-management-and-fraud-prevention">Detecting anomalies in financial data involves using specialized algorithms to identify irregularities, enhancing risk management and fraud prevention</h2>
+<section id="anomalyoutlier-detection-in-a-financial-dataset" class="level2">
+<h2 class="anchored" data-anchor-id="anomalyoutlier-detection-in-a-financial-dataset">Anomaly/Outlier Detection in a Financial Dataset</h2>
+<p><strong>Detecting anomalies in financial data involves using specialized algorithms to identify irregularities, enhancing risk management and fraud prevention</strong></p>
 </section>
 <section id="introduction" class="level2">
 <h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
@@ -460,7 +469,9 @@ cookieconsent.run({
 <p>A. Histograms: These show the distribution of numerical features. While age appears fairly uniformly distributed, income and transaction amounts show right-skewed distributions. B. Boxplots: The boxplots highlight potential outliers, especially in the income and transaction amount data. PCA Scatter Plot: After applying PCA for dimensionality reduction, we get a 2D visualization of the scaled numerical data. This plot can help us identify clusters and potential outliers visually.</p>
 <p><strong>Next Steps for Anomaly Detection</strong></p>
 <p>Based on these visualizations and statistics, the next step is to apply anomaly detection techniques. I will use the Isolation Forest algorithm, a popular method for outlier detection, especially effective with high-dimensional datasets. This method isolates anomalies instead of profiling normal data points. Anomalies are few and different, hence easier to isolate.</p>
-<p><strong>Data Exploration and Analysis</strong></p>
+</section>
+<section id="data-exploration-and-analysis" class="level2">
+<h2 class="anchored" data-anchor-id="data-exploration-and-analysis">Data Exploration and Analysis</h2>
 <p>I applied the Isolation Forest algorithm to our scaled numerical data and identify the anomalies. Let’s proceed with this analysis.</p>
 <div class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
@@ -555,16 +566,20 @@ cookieconsent.run({
 <p><img src="index_files/figure-html/cell-3-output-2.png" width="1161" height="310"></p>
 </div>
 </div>
-<p><strong>Analysis Results: Anomaly Detection with Isolation Forest</strong></p>
-<p><em>Anomaly Detection</em></p>
+</section>
+<section id="analysis-results-anomaly-detection-with-isolation-forest" class="level2">
+<h2 class="anchored" data-anchor-id="analysis-results-anomaly-detection-with-isolation-forest">Analysis Results: Anomaly Detection with Isolation Forest</h2>
+<p><strong>Anomaly Detection</strong></p>
 <p>The Isolation Forest algorithm was applied to the scaled numerical data, and it identified 50 anomalies in our dataset. This is consistent with the initial contamination rate set to 5% of the data.</p>
-<p><em>Visualization of Detected Anomalies</em></p>
+<p><strong>Visualization of Detected Anomalies</strong></p>
 <p>The scatter plot based on the PCA results with anomalies highlighted shows:</p>
 <p>A. Normal data points in blue. B. Anomalies marked in red.</p>
 <p>These anomalies represent unusual patterns in terms of age, income, and transaction amounts, as identified by the Isolation Forest algorithm.</p>
-<p><em>Interpretation</em></p>
+<p><strong>Interpretation</strong></p>
 <p>The visualization clearly shows that the anomalies are distinct from the bulk of the data, signifying their outlier status. These could represent unusual financial transactions or demographic anomalies that would be of interest in real-world scenarios like fraud detection or targeted marketing.</p>
-<p><strong>Anomaly Detection Using Isolation Forest</strong></p>
+</section>
+<section id="anomaly-detection-using-isolation-forest" class="level2">
+<h2 class="anchored" data-anchor-id="anomaly-detection-using-isolation-forest">Anomaly Detection Using Isolation Forest</h2>
 <p>We apply the Isolation Forest algorithm to detect anomalies in the dataset. This method is effective for high-dimensional datasets and does not require prior knowledge of the number of anomalies.</p>
 <div class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.ensemble <span class="im">import</span> IsolationForest</span>
@@ -611,7 +626,9 @@ Name: count, dtype: int64</code></pre>
 <p><img src="index_files/figure-html/cell-5-output-1.png" width="587" height="449"></p>
 </div>
 </div>
-<p><strong>K-Means Clustering for Anomaly Detection</strong></p>
+</section>
+<section id="k-means-clustering-for-anomaly-detection" class="level2">
+<h2 class="anchored" data-anchor-id="k-means-clustering-for-anomaly-detection">K-Means Clustering for Anomaly Detection</h2>
 <p>K-Means can be used for anomaly detection by identifying small clusters as anomalies.</p>
 <div class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.cluster <span class="im">import</span> KMeans</span>
@@ -643,7 +660,9 @@ Name: count, dtype: int64</code></pre>
 <p><img src="index_files/figure-html/cell-7-output-1.png" width="810" height="523"></p>
 </div>
 </div>
-<p><strong>DBSCAN for Anomaly Detection</strong></p>
+</section>
+<section id="dbscan-for-anomaly-detection" class="level2">
+<h2 class="anchored" data-anchor-id="dbscan-for-anomaly-detection">DBSCAN for Anomaly Detection</h2>
 <p>DBSCAN is effective in identifying regions of high density and isolating outliers as points in low-density areas.</p>
 <div class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.cluster <span class="im">import</span> DBSCAN</span>
@@ -669,7 +688,9 @@ Name: count, dtype: int64</code></pre>
 <p><img src="index_files/figure-html/cell-9-output-1.png" width="810" height="523"></p>
 </div>
 </div>
-<p><strong>Local Outlier Factor (LOF)</strong></p>
+</section>
+<section id="local-outlier-factor-lof" class="level2">
+<h2 class="anchored" data-anchor-id="local-outlier-factor-lof">Local Outlier Factor (LOF)</h2>
 <p>LOF computes a score reflecting the degree of abnormality of the data, considering local density.</p>
 <div class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.neighbors <span class="im">import</span> LocalOutlierFactor</span>
@@ -721,7 +742,9 @@ Name: count, dtype: int64</code></pre>
 </div>
 <p>T-SNE results can be plotted to show how the data is distributed in the reduced-dimensional space, highlighting the anomalies detected.</p>
 <p>These techniques represent a deeper dive into anomaly detection, leveraging different approaches from clustering, neural networks, and neighborhood-based methods. Each method has its strengths and can be combined or compared for a comprehensive anomaly detection strategy.</p>
-<p><strong>Final check for Anomaly detection</strong></p>
+</section>
+<section id="final-check-for-anomaly-detection" class="level2">
+<h2 class="anchored" data-anchor-id="final-check-for-anomaly-detection">Final check for Anomaly detection</h2>
 <div class="cell" data-execution_count="13">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Applying Isolation Forest for anomaly detection</span></span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>iso_forest <span class="op">=</span> IsolationForest(n_estimators<span class="op">=</span><span class="dv">100</span>, contamination<span class="op">=</span><span class="fl">0.05</span>, random_state<span class="op">=</span><span class="dv">0</span>)</span>
@@ -755,7 +778,9 @@ Name: count, dtype: int64</code></pre>
  4 -0.009123  0.894454        1)</code></pre>
 </div>
 </div>
-<p><strong>Conclusion</strong></p>
+</section>
+<section id="conclusion" class="level2">
+<h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
 <p>In conclusion, the analysis of anomalies and outliers in financial datasets is of paramount importance for safeguarding financial systems and ensuring data quality. In this report, we delved into the application of various techniques to detect anomalies in a financial dataset containing Age, Income, Transaction Amount, Transaction Type, and Location. The results of this analysis can guide decision-makers in identifying potential issues, such as fraudulent transactions or data entry errors.</p>
 <p>By leveraging advanced analytics and machine learning algorithms, financial institutions can proactively mitigate risks, enhance customer trust, and streamline their operations. The continuous monitoring and refinement of anomaly detection methods are critical in the ever-evolving landscape of finance.</p>
 <p>As financial data continues to grow in complexity and volume, the ability to detect anomalies accurately becomes increasingly crucial. It is essential for organizations to stay vigilant and adapt their anomaly detection strategies to stay ahead of emerging threats and challenges in the financial sector.</p>

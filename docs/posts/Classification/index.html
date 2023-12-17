@@ -226,7 +226,7 @@ cookieconsent.run({
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../blog.html">Blog Posts</a></li><li class="breadcrumb-item"><a href="../../posts/#category=Machine Learning">Machine Learning</a></li><li class="breadcrumb-item"><a href="../../posts/Classification/index.html">Advanced Classification techniques with Model Prediction Analysis</a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../blog.html">Blog Posts</a></li><li class="breadcrumb-item"><a href="../../posts/#category=Machine_Learning">Machine Learning</a></li><li class="breadcrumb-item"><a href="../../posts/Classification/index.html">Advanced Classification techniques with Model Prediction Analysis</a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
     </div>
@@ -284,7 +284,7 @@ cookieconsent.run({
   </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../../posts/#category=Machine Learning" class="sidebar-item-text sidebar-link">
+            <a href="../../posts/#category=Machine_Learning" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Machine Learning</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -388,7 +388,14 @@ cookieconsent.run({
     <h2 id="toc-title">Table of Contents</h2>
    
   <ul>
-  <li><a href="#implementing-advanced-classification-techniques-for-precise-model-prediction-analysis-to-enhance-accuracy-and-efficiency" id="toc-implementing-advanced-classification-techniques-for-precise-model-prediction-analysis-to-enhance-accuracy-and-efficiency" class="nav-link active" data-scroll-target="#implementing-advanced-classification-techniques-for-precise-model-prediction-analysis-to-enhance-accuracy-and-efficiency">Implementing advanced classification techniques for precise model prediction analysis to enhance accuracy and efficiency</a></li>
+  <li><a href="#advanced-classification-techniques-with-model-prediction-analysis" id="toc-advanced-classification-techniques-with-model-prediction-analysis" class="nav-link active" data-scroll-target="#advanced-classification-techniques-with-model-prediction-analysis">Advanced Classification techniques with Model Prediction Analysis</a></li>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link" data-scroll-target="#introduction">Introduction</a></li>
+  <li><a href="#model-building-and-evaluation-for-classification" id="toc-model-building-and-evaluation-for-classification" class="nav-link" data-scroll-target="#model-building-and-evaluation-for-classification">Model Building and Evaluation For Classification</a></li>
+  <li><a href="#roc-curve-analysis-for-multiple-models" id="toc-roc-curve-analysis-for-multiple-models" class="nav-link" data-scroll-target="#roc-curve-analysis-for-multiple-models">ROC Curve Analysis for Multiple Models</a></li>
+  <li><a href="#additional-advanced-analysis" id="toc-additional-advanced-analysis" class="nav-link" data-scroll-target="#additional-advanced-analysis">Additional Advanced Analysis</a></li>
+  <li><a href="#prediction" id="toc-prediction" class="nav-link" data-scroll-target="#prediction">PREDICTION</a></li>
+  <li><a href="#model-building-evaluation-and-visualization-for-prediction" id="toc-model-building-evaluation-and-visualization-for-prediction" class="nav-link" data-scroll-target="#model-building-evaluation-and-visualization-for-prediction">Model Building, Evaluation, and Visualization for Prediction</a></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/NishantBharali/Blog/blob/main/posts/Classification/index.qmd" class="toc-action">View source</a></p></div></div></nav>
     </div>
@@ -399,7 +406,7 @@ cookieconsent.run({
 <div class="quarto-title">
 <h1 class="title">Advanced Classification techniques with Model Prediction Analysis</h1>
   <div class="quarto-categories">
-    <div class="quarto-category">Machine Learning</div>
+    <div class="quarto-category">Machine_Learning</div>
   </div>
   </div>
 
@@ -441,12 +448,12 @@ cookieconsent.run({
 
 </header>
 
-<section id="advanced-classification-techniques-with-model-prediction-analysis" class="level4">
-<h4 class="anchored" data-anchor-id="advanced-classification-techniques-with-model-prediction-analysis">Advanced Classification techniques with Model Prediction Analysis</h4>
+<section id="advanced-classification-techniques-with-model-prediction-analysis" class="level2">
+<h2 class="anchored" data-anchor-id="advanced-classification-techniques-with-model-prediction-analysis">Advanced Classification techniques with Model Prediction Analysis</h2>
+<p><strong>Implementing advanced classification techniques for precise model prediction analysis to enhance accuracy and efficiency</strong></p>
 </section>
-<section id="implementing-advanced-classification-techniques-for-precise-model-prediction-analysis-to-enhance-accuracy-and-efficiency" class="level2">
-<h2 class="anchored" data-anchor-id="implementing-advanced-classification-techniques-for-precise-model-prediction-analysis-to-enhance-accuracy-and-efficiency">Implementing advanced classification techniques for precise model prediction analysis to enhance accuracy and efficiency</h2>
-<p><strong>Introduction</strong></p>
+<section id="introduction" class="level2">
+<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
 <p>Machine learning is a fascinating field that empowers computers to learn and make predictions or decisions without being explicitly programmed. One of the fundamental tasks in machine learning is classification, where the goal is to categorize data points into predefined classes or labels. In this blog post, we dive deep into the world of classification, exploring advanced techniques and their application on a real-world dataset.</p>
 <p>The Iris dataset is a well-known benchmark in the machine learning community. It consists of measurements of four features from three different species of iris flowers. This seemingly simple dataset serves as an excellent playground for understanding and implementing classification algorithms. However, we won’t stop at the basics; we’ll explore advanced classification techniques, model tuning, and even dive into ensemble methods and neural networks.</p>
 <p><strong>Data Loading and Preliminary Analysis</strong></p>
@@ -564,7 +571,9 @@ None</code></pre>
 <p><img src="index_files/figure-html/cell-4-output-2.png" width="1016" height="947"></p>
 </div>
 </div>
-<p><strong>Model Building and Evaluation For Classification</strong></p>
+</section>
+<section id="model-building-and-evaluation-for-classification" class="level2">
+<h2 class="anchored" data-anchor-id="model-building-and-evaluation-for-classification">Model Building and Evaluation For Classification</h2>
 <div class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.metrics <span class="im">import</span> classification_report, confusion_matrix</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.tree <span class="im">import</span> DecisionTreeClassifier</span>
@@ -759,7 +768,9 @@ weighted avg       1.00      1.00      1.00       900
 </code></pre>
 </div>
 </div>
-<p><strong>ROC Curve Analysis for Multiple Models</strong></p>
+</section>
+<section id="roc-curve-analysis-for-multiple-models" class="level2">
+<h2 class="anchored" data-anchor-id="roc-curve-analysis-for-multiple-models">ROC Curve Analysis for Multiple Models</h2>
 <p>Comparing the performance of the various classification models using ROC Curve analysis, here we discuss the plots of the ROC Curve for each model. This will involve calculating the True Positive Rate (TPR) and False Positive Rate (FPR) for each model and plotting them.</p>
 <div class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.metrics <span class="im">import</span> roc_curve, auc</span>
@@ -833,7 +844,9 @@ weighted avg       1.00      1.00      1.00       900
 <p><img src="index_files/figure-html/cell-9-output-1.png" width="674" height="523"></p>
 </div>
 </div>
-<p><strong>Additional Advanced Analysis</strong></p>
+</section>
+<section id="additional-advanced-analysis" class="level2">
+<h2 class="anchored" data-anchor-id="additional-advanced-analysis">Additional Advanced Analysis</h2>
 <p><strong>1. Cross-Validation</strong></p>
 <p>Cross-validation is a technique used to evaluate the generalizability of a model by training and testing it on different subsets of the dataset.</p>
 <div class="cell" data-execution_count="10">
@@ -889,7 +902,9 @@ weighted avg       1.00      1.00      1.00       900
 </code></pre>
 </div>
 </div>
-<p><strong>PREDICTION</strong></p>
+</section>
+<section id="prediction" class="level2">
+<h2 class="anchored" data-anchor-id="prediction">PREDICTION</h2>
 <p><strong>Prediction: Data Preprocessing with Visualization</strong></p>
 <div class="cell" data-execution_count="12">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.model_selection <span class="im">import</span> train_test_split</span>
@@ -937,7 +952,9 @@ weighted avg       1.00      1.00      1.00       900
 <p><img src="index_files/figure-html/cell-12-output-3.png" width="1016" height="947"></p>
 </div>
 </div>
-<p><strong>Model Building, Evaluation, and Visualization for Prediction</strong></p>
+</section>
+<section id="model-building-evaluation-and-visualization-for-prediction" class="level2">
+<h2 class="anchored" data-anchor-id="model-building-evaluation-and-visualization-for-prediction">Model Building, Evaluation, and Visualization for Prediction</h2>
 <div class="cell" data-execution_count="13">
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.metrics <span class="im">import</span> mean_squared_error, r2_score</span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.linear_model <span class="im">import</span> LinearRegression</span>
@@ -1064,7 +1081,9 @@ R-squared (R2) Score: 0.9909395581924271</code></pre>
 <span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a>smote <span class="op">=</span> SMOTE(sampling_strategy<span class="op">=</span><span class="st">'auto'</span>)</span>
 <span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a>X_train_resampled, y_train_resampled <span class="op">=</span> smote.fit_resample(X_train, y_train)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p><strong>Conclusion</strong></p>
+</section>
+<section id="conclusion" class="level2">
+<h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
 <p>In this journey through the Iris dataset and the realm of classification, we’ve covered a wide range of topics. Starting with data loading and preprocessing, we explored the relationships between features, ensuring that we understood our data thoroughly. We then introduced a variety of classification models, from decision trees to support vector machines, and compared their performance using robust evaluation metrics.</p>
 <p>But we didn’t stop there. We delved into advanced techniques, including cross-validation to ensure the generalizability of our models, ensemble methods that combined the strengths of multiple classifiers, and even a taste of neural networks for classification tasks.</p>
 <p>Our exploration of ROC curves allowed us to visualize and compare the trade-offs between true positive and false positive rates across different models, providing valuable insights into their performance.</p>

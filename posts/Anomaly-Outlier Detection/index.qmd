@@ -2,12 +2,14 @@
 title:  Anomaly/Outlier Detection in a Financial Dataset
 description: "Detecting anomalies in financial data involves using specialized algorithms to identify irregularities, enhancing risk management and fraud prevention"
 date: 11-24-2023
-categories: [Machine Learning]
+categories: [Machine_Learning]
 image: Bnip.gif
 toc-location: right
 ---
 
-## Detecting anomalies in financial data involves using specialized algorithms to identify irregularities, enhancing risk management and fraud prevention
+## Anomaly/Outlier Detection in a Financial Dataset
+
+**Detecting anomalies in financial data involves using specialized algorithms to identify irregularities, enhancing risk management and fraud prevention**
 
 ## Introduction
 
@@ -45,7 +47,7 @@ PCA Scatter Plot: After applying PCA for dimensionality reduction, we get a 2D v
 
 Based on these visualizations and statistics, the next step is to apply anomaly detection techniques. I will use the Isolation Forest algorithm, a popular method for outlier detection, especially effective with high-dimensional datasets. This method isolates anomalies instead of profiling normal data points. Anomalies are few and different, hence easier to isolate.
 
-**Data Exploration and Analysis**
+## Data Exploration and Analysis
 
 I applied the Isolation Forest algorithm to our scaled numerical data and identify the anomalies. Let's proceed with this analysis.
 ```{python}
@@ -114,13 +116,13 @@ plt.show()
 ```
 
 
-**Analysis Results: Anomaly Detection with Isolation Forest**
+## Analysis Results: Anomaly Detection with Isolation Forest
 
-*Anomaly Detection*
+**Anomaly Detection**
 
 The Isolation Forest algorithm was applied to the scaled numerical data, and it identified 50 anomalies in our dataset. This is consistent with the initial contamination rate set to 5% of the data.
 
-*Visualization of Detected Anomalies*
+**Visualization of Detected Anomalies**
 
 The scatter plot based on the PCA results with anomalies highlighted shows:
 
@@ -129,12 +131,12 @@ B. Anomalies marked in red.
 
 These anomalies represent unusual patterns in terms of age, income, and transaction amounts, as identified by the Isolation Forest algorithm.
 
-*Interpretation*
+**Interpretation**
 
 The visualization clearly shows that the anomalies are distinct from the bulk of the data, signifying their outlier status. These could represent unusual financial transactions or demographic anomalies that would be of interest in real-world scenarios like fraud detection or targeted marketing.
 
 
-**Anomaly Detection Using Isolation Forest**
+## Anomaly Detection Using Isolation Forest
 
 We apply the Isolation Forest algorithm to detect anomalies in the dataset. This method is effective for high-dimensional datasets and does not require prior knowledge of the number of anomalies.
 ```{python}
@@ -178,7 +180,7 @@ plt.show()
 ```
 
 
-**K-Means Clustering for Anomaly Detection**
+## K-Means Clustering for Anomaly Detection
 
 K-Means can be used for anomaly detection by identifying small clusters as anomalies.
 ```{python}
@@ -213,7 +215,7 @@ plt.show()
 ```
 
 
-**DBSCAN for Anomaly Detection**
+## DBSCAN for Anomaly Detection
 
 DBSCAN is effective in identifying regions of high density and isolating outliers as points in low-density areas.
 ```{python}
@@ -242,7 +244,7 @@ plt.show()
 ```
 
 
-**Local Outlier Factor (LOF)**
+## Local Outlier Factor (LOF)
 
 LOF computes a score reflecting the degree of abnormality of the data, considering local density.
 ```{python}
@@ -299,7 +301,7 @@ T-SNE results can be plotted to show how the data is distributed in the reduced-
 
 These techniques represent a deeper dive into anomaly detection, leveraging different approaches from clustering, neural networks, and neighborhood-based methods. Each method has its strengths and can be combined or compared for a comprehensive anomaly detection strategy.
 
-**Final check for Anomaly detection**
+## Final check for Anomaly detection
 ```{python}
 # Applying Isolation Forest for anomaly detection
 iso_forest = IsolationForest(n_estimators=100, contamination=0.05, random_state=0)
@@ -323,7 +325,7 @@ num_anomalies_detected, pca_df.head()
 ```
 
 
-**Conclusion**
+## Conclusion
 
 In conclusion, the analysis of anomalies and outliers in financial datasets is of paramount importance for safeguarding financial systems and ensuring data quality. In this report, we delved into the application of various techniques to detect anomalies in a financial dataset containing Age, Income, Transaction Amount, Transaction Type, and Location. The results of this analysis can guide decision-makers in identifying potential issues, such as fraudulent transactions or data entry errors.
 

@@ -2,7 +2,7 @@
 title: Large Language Models
 description: "An in-depth look at how large language models are transforming the landscape of artificial intelligence."
 date: 06-24-2023
-categories: [Tools/Packages, Artificial Intelligence, Machine Learning, Natural Language Processing]
+categories: [Tools/Packages, Artificial_Intelligence, Machine_Learning]
 image: llmGif.gif
 toc-location: right
 ---

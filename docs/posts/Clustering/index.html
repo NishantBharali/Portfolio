@@ -226,7 +226,7 @@ cookieconsent.run({
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../blog.html">Blog Posts</a></li><li class="breadcrumb-item"><a href="../../posts/#category=Machine Learning">Machine Learning</a></li><li class="breadcrumb-item"><a href="../../posts/Clustering/index.html">Advanced Clustering and Prediction techniques</a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../blog.html">Blog Posts</a></li><li class="breadcrumb-item"><a href="../../posts/#category=Machine_Learning">Machine Learning</a></li><li class="breadcrumb-item"><a href="../../posts/Clustering/index.html">Advanced Clustering and Prediction techniques</a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
     </div>
@@ -284,7 +284,7 @@ cookieconsent.run({
   </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../../posts/#category=Machine Learning" class="sidebar-item-text sidebar-link">
+            <a href="../../posts/#category=Machine_Learning" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Machine Learning</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -388,11 +388,8 @@ cookieconsent.run({
     <h2 id="toc-title">Table of Contents</h2>
    
   <ul>
-  <li><a href="#employing-sophisticated-clustering-techniques-with-retail-customer-data-and-comparing-further-with-prediction-models" id="toc-employing-sophisticated-clustering-techniques-with-retail-customer-data-and-comparing-further-with-prediction-models" class="nav-link active" data-scroll-target="#employing-sophisticated-clustering-techniques-with-retail-customer-data-and-comparing-further-with-prediction-models">Employing sophisticated clustering techniques with retail customer data and comparing further with prediction models</a></li>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
   <li><a href="#advanced-clustering-with-multiple-techniques" id="toc-advanced-clustering-with-multiple-techniques" class="nav-link" data-scroll-target="#advanced-clustering-with-multiple-techniques">Advanced Clustering with Multiple Techniques</a></li>
-  <li><a href="#k-means-clustering" id="toc-k-means-clustering" class="nav-link" data-scroll-target="#k-means-clustering">1. K-Means Clustering</a></li>
-  <li><a href="#dbscan-clustering" id="toc-dbscan-clustering" class="nav-link" data-scroll-target="#dbscan-clustering">2. DBSCAN clustering</a></li>
-  <li><a href="#hierarchical-cluster-visualization" id="toc-hierarchical-cluster-visualization" class="nav-link" data-scroll-target="#hierarchical-cluster-visualization">3. Hierarchical Cluster Visualization</a></li>
   <li><a href="#silhouette-analysis-for-k-means-and-hierarchical-clustering" id="toc-silhouette-analysis-for-k-means-and-hierarchical-clustering" class="nav-link" data-scroll-target="#silhouette-analysis-for-k-means-and-hierarchical-clustering">Silhouette Analysis for K-means and Hierarchical Clustering</a></li>
   <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
   </ul>
@@ -405,7 +402,7 @@ cookieconsent.run({
 <div class="quarto-title">
 <h1 class="title">Advanced Clustering and Prediction techniques</h1>
   <div class="quarto-categories">
-    <div class="quarto-category">Machine Learning</div>
+    <div class="quarto-category">Machine_Learning</div>
   </div>
   </div>
 
@@ -449,12 +446,12 @@ cookieconsent.run({
 
 <section id="advanced-clustering-and-prediction-techniques-using-retail-customer-data" class="level4">
 <h4 class="anchored" data-anchor-id="advanced-clustering-and-prediction-techniques-using-retail-customer-data">Advanced Clustering and Prediction techniques Using Retail Customer Data</h4>
-</section>
-<section id="employing-sophisticated-clustering-techniques-with-retail-customer-data-and-comparing-further-with-prediction-models" class="level2">
-<h2 class="anchored" data-anchor-id="employing-sophisticated-clustering-techniques-with-retail-customer-data-and-comparing-further-with-prediction-models">Employing sophisticated clustering techniques with retail customer data and comparing further with prediction models</h2>
+<p><strong>Employing sophisticated clustering techniques with retail customer data and comparing further with prediction models</strong></p>
 <p>Clustering is a fundamental technique in machine learning that involves grouping data points so that the objects in the same group (or cluster) are more similar to each other than to those in other groups. It’s a form of unsupervised learning, as the groups are not predefined but rather determined by the algorithm itself. This approach is particularly useful in understanding the structure within data, identifying patterns, and making strategic decisions.</p>
 <p>In this blog, we will explore how to apply clustering techniques to a customer dataset. Our dataset contains customer information with attributes like Customer ID, Age, Annual Income, and Spending Score. The goal is to segment customers into distinct groups based on these features, which can help in tailoring marketing strategies, understanding customer behavior, and improving customer service.</p>
-<p><strong>Introduction</strong></p>
+</section>
+<section id="introduction" class="level2">
+<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
 <p><strong>Data Loading and Basic Visualization</strong></p>
 <div class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Importing libraries</span></span>
@@ -529,9 +526,7 @@ cookieconsent.run({
 <section id="advanced-clustering-with-multiple-techniques" class="level2">
 <h2 class="anchored" data-anchor-id="advanced-clustering-with-multiple-techniques">Advanced Clustering with Multiple Techniques</h2>
 <p>We’ll explore different clustering algorithms beyond K-Means, such as Hierarchical Clustering and DBSCAN, to understand how they segment the data differently.</p>
-</section>
-<section id="k-means-clustering" class="level2">
-<h2 class="anchored" data-anchor-id="k-means-clustering">1. K-Means Clustering</h2>
+<p><strong>1. K-Means Clustering</strong></p>
 <div class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Using the Elbow Method to determine the optimal number of clusters.</span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>wcss <span class="op">=</span> []</span>
@@ -570,9 +565,7 @@ cookieconsent.run({
 <p><img src="index_files/figure-html/cell-8-output-1.png" width="834" height="740"></p>
 </div>
 </div>
-</section>
-<section id="dbscan-clustering" class="level2">
-<h2 class="anchored" data-anchor-id="dbscan-clustering">2. DBSCAN clustering</h2>
+<p><strong>2. DBSCAN clustering</strong></p>
 <div class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.cluster <span class="im">import</span> DBSCAN</span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -590,9 +583,7 @@ cookieconsent.run({
 <p><img src="index_files/figure-html/cell-10-output-1.png" width="593" height="449"></p>
 </div>
 </div>
-</section>
-<section id="hierarchical-cluster-visualization" class="level2">
-<h2 class="anchored" data-anchor-id="hierarchical-cluster-visualization">3. Hierarchical Cluster Visualization</h2>
+<p><strong>3. Hierarchical Cluster Visualization</strong></p>
 <p>Visualize the clusters formed by each algorithm in multiple dimensions to gain deeper insights.</p>
 <div class="cell" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy.cluster.hierarchy <span class="im">import</span> dendrogram, linkage</span>

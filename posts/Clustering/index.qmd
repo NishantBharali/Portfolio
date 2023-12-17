@@ -2,20 +2,20 @@
 title: Advanced Clustering and Prediction techniques
 description: "Employing sophisticated clustering techniques with retail customer data and comparing further with prediction models"
 date: 11-24-2023
-categories: [Machine Learning]
+categories: [Machine_Learning]
 image: E3K6.gif
 toc-location: right
 ---
 
 #### Advanced Clustering and Prediction techniques Using Retail Customer Data
 
-## Employing sophisticated clustering techniques with retail customer data and comparing further with prediction models
+**Employing sophisticated clustering techniques with retail customer data and comparing further with prediction models**
 
 Clustering is a fundamental technique in machine learning that involves grouping data points so that the objects in the same group (or cluster) are more similar to each other than to those in other groups. It's a form of unsupervised learning, as the groups are not predefined but rather determined by the algorithm itself. This approach is particularly useful in understanding the structure within data, identifying patterns, and making strategic decisions.
 
 In this blog, we will explore how to apply clustering techniques to a customer dataset. Our dataset contains customer information with attributes like Customer ID, Age, Annual Income, and Spending Score. The goal is to segment customers into distinct groups based on these features, which can help in tailoring marketing strategies, understanding customer behavior, and improving customer service.
 
-**Introduction**
+## Introduction
 
 **Data Loading and Basic Visualization**
 
@@ -80,7 +80,7 @@ plt.show()
 
 We'll explore different clustering algorithms beyond K-Means, such as Hierarchical Clustering and DBSCAN, to understand how they segment the data differently.
 
-## 1. K-Means Clustering
+**1. K-Means Clustering**
 
 ```{python}
 #Using the Elbow Method to determine the optimal number of clusters.
@@ -119,7 +119,7 @@ plt.show()
 ```
 
 
-## 2. DBSCAN clustering
+**2. DBSCAN clustering**
 
 ```{python}
 from sklearn.cluster import DBSCAN
@@ -140,7 +140,7 @@ plt.show()
 ```
 
 
-## 3. Hierarchical Cluster Visualization
+**3. Hierarchical Cluster Visualization**
 
 Visualize the clusters formed by each algorithm in multiple dimensions to gain deeper insights.
 

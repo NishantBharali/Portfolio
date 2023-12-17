@@ -95,7 +95,7 @@ website:
               - posts/llm/llm.qmd
               - posts/quarto/quarto.qmd
           - section: Machine Learning
-            href: posts/#category=Machine Learning
+            href: posts/#category=Machine_Learning
             contents:
               - posts/2019-12-17-Hands-On-Machine-Learning-with-R/2019-12-17-Hands-On-Machine-Learning-with-R.qmd
               - posts/Anomaly-Outlier Detection/index.qmd
@@ -129,6 +129,10 @@ format:
       light: [flatly, theme-light.scss]
       dark: [darkly, theme-dark.scss]
     css: styles.css
+    grid:
+      sidebar-width: 150px
+      body-width: 1800px
+      margin-width: 250px
     fontsize: 1.0em
     code-copy: true
     code-overflow: wrap

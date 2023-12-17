@@ -2,16 +2,16 @@
 title: Advanced Classification techniques with Model Prediction Analysis
 description: "Implementing advanced classification techniques for precise model prediction analysis to enhance accuracy and efficiency"
 date: 11-24-2023
-categories: [Machine Learning]
+categories: [Machine_Learning]
 image: Rz0T.gif
 toc-location: right
 ---
 
-#### Advanced Classification techniques with Model Prediction Analysis
+## Advanced Classification techniques with Model Prediction Analysis
 
-## Implementing advanced classification techniques for precise model prediction analysis to enhance accuracy and efficiency
+**Implementing advanced classification techniques for precise model prediction analysis to enhance accuracy and efficiency**
 
-**Introduction**
+## Introduction
 
 Machine learning is a fascinating field that empowers computers to learn and make predictions or decisions without being explicitly programmed. One of the fundamental tasks in machine learning is classification, where the goal is to categorize data points into predefined classes or labels. In this blog post, we dive deep into the world of classification, exploring advanced techniques and their application on a real-world dataset.
 
@@ -82,7 +82,7 @@ plt.show()
 ```
 
 
-**Model Building and Evaluation For Classification**
+## Model Building and Evaluation For Classification
 
 ```{python}
 from sklearn.metrics import classification_report, confusion_matrix
@@ -172,7 +172,7 @@ print(classification_report(y_test, tuned_rf_predictions))
 ```
 
 
-**ROC Curve Analysis for Multiple Models**
+## ROC Curve Analysis for Multiple Models
 
 Comparing the performance of the various classification models using ROC Curve analysis, here we discuss the plots of the ROC Curve for each model. This will involve calculating the True Positive Rate (TPR) and False Positive Rate (FPR) for each model and plotting them.
 
@@ -249,7 +249,7 @@ plt.show()
 ```
 
 
-**Additional Advanced Analysis**
+## Additional Advanced Analysis
 
 **1. Cross-Validation**
 
@@ -294,7 +294,7 @@ print(classification_report(y_test, ensemble_predictions))
 ```
 
 
-**PREDICTION**
+## PREDICTION
 
 **Prediction: Data Preprocessing with Visualization**
 
@@ -337,7 +337,7 @@ plt.show()
 ```
 
 
-**Model Building, Evaluation, and Visualization for Prediction**
+## Model Building, Evaluation, and Visualization for Prediction
 
 ```{python}
 from sklearn.metrics import mean_squared_error, r2_score
@@ -451,7 +451,7 @@ X_train_resampled, y_train_resampled = smote.fit_resample(X_train, y_train)
 ```
 
 
-**Conclusion**
+## Conclusion
 
 In this journey through the Iris dataset and the realm of classification, we've covered a wide range of topics. Starting with data loading and preprocessing, we explored the relationships between features, ensuring that we understood our data thoroughly. We then introduced a variety of classification models, from decision trees to support vector machines, and compared their performance using robust evaluation metrics.
 

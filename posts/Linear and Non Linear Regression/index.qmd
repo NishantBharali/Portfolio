@@ -2,16 +2,16 @@
 title: Advanced analysis on Linear and Non-Linear Regression models
 description: "A Comprehensive Analysis on Housing Market. Utilizing regression methodologies for the purpose of analyzing trends within the housing market"
 date: 11-24-2023
-categories: [Machine Learning]
+categories: [Machine_Learning]
 image: AU5v.gif
 toc-location: right
 ---
 
 ## A Comprehensive Analysis on Housing Market
 
-## Utilizing linear and non-linear regression methodologies for the purpose of analyzing trends within the housing market
+**Utilizing linear and non-linear regression methodologies for the purpose of analyzing trends within the housing market**
 
-**Introduction**
+## Introduction
 
 In machine learning, linear and nonlinear regression are fundamental techniques used to model relationships between variables, such as predicting housing prices based on various features in a dataset.
 

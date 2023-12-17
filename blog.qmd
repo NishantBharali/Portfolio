@@ -1,10 +1,20 @@
 ---
 title: "Blog"
 listing:
-  contents: posts
+  contents:
+    - posts/git/*.qmd
+    - posts/quarto/*.qmd
+    - posts/Anomaly-Outlier Detection/*.qmd
+    - posts/Classification/*.qmd
+    - posts/Clustering/*.qmd
+    - posts/Linear and Non Linear Regression/*.qmd
+    - posts/Random Proceses/*.qmd
+    - posts/llm/*.qmd
+    - posts/2019-12-17-Hands-On-Machine-Learning-with-R/*.qmd
   sort: "date desc"
-  type: default
+  type: grid
   categories: true
+  fields: [image, title, description, file-modified, categories]
   sort-ui: false
   filter-ui: true
   feed: true
