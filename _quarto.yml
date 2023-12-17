@@ -89,20 +89,13 @@ website:
         file: blog.qmd
         contents:
           - section: Tools
-            href: posts/#category=Tools/Packages
+            href: blog.html#category=Tools/Packages
             contents:
               - posts/git/git.qmd
               - posts/llm/llm.qmd
               - posts/quarto/quarto.qmd
           - section: Machine Learning
-            href: blog.html#category=Machine_Learning
-            contents:
-              - posts/2019-12-17-Hands-On-Machine-Learning-with-R/2019-12-17-Hands-On-Machine-Learning-with-R.qmd
-              - posts/Anomaly-Outlier Detection/index.qmd
-              - posts/Classification/index.qmd
-              - posts/Clustering/index.qmd
-              - posts/Linear and Non Linear Regression/index.qmd
-              - posts/Random Processes/index.qmd
+            href: blog.html#category=Machine Learning
       - text: "About Me"
         file: about.qmd
       - section: "Resources"

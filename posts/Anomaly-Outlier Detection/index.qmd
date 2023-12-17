@@ -2,7 +2,7 @@
 title:  Anomaly/Outlier Detection in a Financial Dataset
 description: "Detecting anomalies in financial data involves using specialized algorithms to identify irregularities, enhancing risk management and fraud prevention"
 date: 11-24-2023
-categories: [Machine_Learning]
+categories: [Machine Learning]
 image: Bnip.gif
 toc-location: right
 ---
