@@ -37,23 +37,20 @@ website:
     creator: "@NishantBharali"
   navbar:
     left:
-      - text: Blog
-        href: blog.qmd
+      - text: Projects
+        menu:
+          - text: "Machine Learning"
+            href: blog.qmd
+          - text: "Tools"
+            href: tool.qmd
+          - text: "Robotics"
+            href: robotics.qmd
       - text: Resources
         menu:
           - text: "Nishant's Resources"
             href: resources.qmd
           - text: Python for Data Science
             href: https://r4ds.hadley.nz/
-            target: _blank
-          - text: Tidyverse
-            href: https://www.tidyverse.org/
-            target: _blank
-          - text: Tidymodels
-            href: https://www.tidymodels.org/
-            target: _blank
-          - text: Tidyverse Style Guide
-            href: https://style.tidyverse.org/
             target: _blank
       - text: About
         href: about.qmd
@@ -85,18 +82,14 @@ website:
     contents:
       - text: "Home"
         file: index.qmd
-      - section: Blog Posts
-        file: blog.qmd
+      - section: Projects
+        file: Projects.qmd
         contents:
-          - section: Tools
-            href: blog.html#category=Tools/Packages
+          - section: Robotics
+            href: blog.html#category=Robotics
             contents:
-              - href: posts/git/git.qmd
-                text: "Git"
-              - href: posts/llm/llm.qmd
-                text: "LLM"
-              - href: posts/quarto/quarto.qmd
-                text: "Quarto"
+              - href: Robotics/Robotics.qmd
+                text: "Robotics"
           - section: Machine Learning
             href: blog.html#category=Machine Learning
             contents:
@@ -110,6 +103,15 @@ website:
                 text: "Classification"
               - href: posts/Anomaly-Outlier Detection/index.qmd
                 text: "Anamoly"
+          - section: Tools
+            href: blog.html#category=Tools/Packages
+            contents:
+              - href: posts/git/git.qmd
+                text: "Git"
+              - href: posts/llm/llm.qmd
+                text: "LLM"
+              - href: posts/quarto/quarto.qmd
+                text: "Quarto"
       - text: "About Me"
         file: about.qmd
       - section: "Resources"
@@ -118,15 +120,6 @@ website:
             href: resources.qmd
           - text: Python for Data Science
             href: https://r4ds.hadley.nz/
-            target: _blank
-          - text: Tidyverse
-            href: https://www.tidyverse.org/
-            target: _blank
-          - text: Tidymodels
-            href: https://www.tidymodels.org/
-            target: _blank
-          - text: Tidyverse Style Guide
-            href: https://style.tidyverse.org/
             target: _blank
 
 format:

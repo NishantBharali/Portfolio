@@ -1,0 +1,968 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss  xmlns:atom="http://www.w3.org/2005/Atom" 
+      xmlns:media="http://search.yahoo.com/mrss/" 
+      xmlns:content="http://purl.org/rss/1.0/modules/content/" 
+      xmlns:dc="http://purl.org/dc/elements/1.1/" 
+      version="2.0">
+<channel>
+<title>Tech Bytes</title>
+<link>https://nishantbharali.github.io/Blog/tool.html</link>
+<atom:link href="https://nishantbharali.github.io/Blog/tool.xml" rel="self" type="application/rss+xml"/>
+<description></description>
+<image>
+<url>https://nishantbharali.github.io/Blog/images/Tools.gif</url>
+<title>Tech Bytes</title>
+<link>https://nishantbharali.github.io/Blog/tool.html</link>
+</image>
+<generator>quarto-1.3.450</generator>
+<lastBuildDate>Sat, 24 Jun 2023 04:00:00 GMT</lastBuildDate>
+<item>
+  <title>Git</title>
+  <link>https://nishantbharali.github.io/Blog/Tools/git/git.html</link>
+  <description><![CDATA[ 
+
+
+
+<p><a href="https://en.wikipedia.org/wiki/Git#:~:text=Git%20(/%C9%A1%C9%AAt/)%5B8%5D%20is%20a%20distributed%20version%20control%20system%5B9%5D%20that%20tracks%20changes%20in%20any%20set%20of%20computer%20files%2C%20usually%20used%20for%20coordinating%20work%20among%20programmers%20who%20are%20collaboratively%20developing%20source%20code%20during%20software%20development.">Git</a> is a <a href="https://en.wikipedia.org/wiki/Version_control#:~:text=version%20control%20(also%20known%20as%20revision%20control%2C%20source%20control%2C%20or%20source%20code%20management)%20is%20a%20class%20of%20systems%20responsible%20for%20managing%20changes%20to%20computer%20programs%2C%20documents%2C%20large%20web%20sites%2C%20or%20other%20collections%20of%20information.">version control</a> system created by <a href="https://en.wikipedia.org/wiki/Linus_Torvalds#:~:text=Linus%20Benedict%20Torvalds%20(,control%20system%20Git.)">Linus Torvalds</a>, who is also the creator of <a href="https://en.wikipedia.org/wiki/Linux#:~:text=Linux%20(/%CB%88l%C9%AAn%CA%8Aks/%20LIN%2Duuks)%5B11%5D%20is%20a%20family%20of%20open%2Dsource%20Unix%2Dlike%20operating%20systems%20based%20on%20the%20Linux%20kernel%2C%5B12%5D%20an%20operating%20system%20kernel%20first%20released%20on%20September%2017%2C%201991%2C%20by%20Linus%20Torvalds.">Linux</a>. Since its first release, Git has largely replaced other version control systems and is used by 93% of <a href="https://en.wikipedia.org/wiki/Software#:~:text=Software%20is%20a%20set%20of%20computer%20programs%20and%20associated%20documentation%20and%20data.">software</a> developers worldwide, according to <a href="https://stackoverflow.blog/2023/01/09/beyond-git-the-other-version-control-systems-developers-use/#:~:text=Our%20developer%20survey%20found%2093%25%20of%20developers%20use%20Git.">survey results</a> published by <a href="https://stackoverflow.com/tour">StackOverflow</a>.</p>
+<p>Thanks to Git, I can sleep💤soundly at night, reassured by the knowledge that all of my progress on all of my ongoing project is recorded. My progress is not only stored on my local computer, but also on <a href="https://en.wikipedia.org/wiki/Git#:~:text=Git%20repository%20services%2C%20including%20GitHub%2C%20SourceForge%2C%20Bitbucket%20and%20GitLab.%5B">Git repository hosting services</a> such as <a href="https://en.wikipedia.org/wiki/GitHub#:~:text=GitHub%2C%20Inc.%20(/%CB%88%C9%A1%C9%AAth%CA%8Cb/%5Ba%5D)%20is%20a%20platform%20and%20cloud%2Dbased%20service%20for%20software%20development%20and%20version%20control%2C%20allowing%20developers%20to%20store%20and%20manage%20their%20code.">GitHub</a> and <a href="https://en.wikipedia.org/wiki/GitLab">GitLab</a>.</p>
+<p>A Git <a href="https://en.wikipedia.org/wiki/Repository_(version_control)#:~:text=In%20version%20control%20systems%2C%20a%20repository%20is%20a%20data%20structure%20that%20stores%20metadata%20for%20a%20set%20of%20files%20or%20directory%20structure.">repository</a> (repo) is a <a href="https://en.wikipedia.org/wiki/Directory_(computing)#:~:text=a%20directory%20is%20a%20file%20system%20cataloging%20structure%20which%20contains%20references%20to%20other%20computer%20files%2C%20and%20possibly%20other%20directories.">directory</a> that tracks the changes made to its contents. For more information on GitHub, the largest Git repo host, take a look at the <a href="https://openscapes.org/blog/2022-05-27-github-illustrated-series/">“GitHub for supporting, reusing, contributing, and failing safely”</a> post by <a href="https://allisonhorst.com">Allison Horst</a> and <a href="https://jules32.github.io">Julie Lowndes</a> on the <a href="https://openscapes.org/">Openscapes</a> <a href="https://openscapes.org/blog">blog</a>.</p>
+<p>GitHub and GitLab do not only host repos, but also websites via <a href="https://quarto.org/docs/publishing/github-pages.html#render-to-docs">GitHub Pages</a> and <a href="https://docs.gitlab.com/ee/user/project/pages/">GitLab Pages</a>. My personal site is hosted for free on both <a href="https://maptv.github.io">GitHub Pages</a> and <a href="https://maptv.gitlab.io">GitLab Pages</a>.</p>
+<p>Before you can benefit from everything GitHub and/or GitLab have to offer, you will need to set up your computer so that you can work locally and/or configure a service like <a href="https://github.com/features/codespaces">GitHub Codespaces</a> or <a href="https://docs.gitlab.com/ee/user/project/web_ide">GitLab Web IDE</a> so you can work remotely in your <a href="https://en.wikipedia.org/wiki/Web_browser#:~:text=A%20web%20browser%20is%20an%20application%20for%20accessing%20websites%20and%20the%20Internet.%5B">web browser</a>. In this post, I discuss local development environment setup with the <a href="https://brew.sh">Homebrew</a> <a href="https://en.wikipedia.org/wiki/Package_manager#:~:text=A%20package%20manager%20or%20package%2Dmanagement%20system%20is%20a%20collection%20of%20software%20tools%20that%20automates%20the%20process%20of%20installing%2C%20upgrading%2C%20configuring%2C%20and%20removing%20computer%20programs%20for%20a%20computer%20in%20a%20consistent%20manner.">package manager</a> and repo setup with the GitHub and GitLab CLI.</p>
+<p>If you follow along to end of this post, you will have a repo called <code>dotfiles</code> that can be used for Codespaces setup.</p>
+<section id="sec-setup" class="level2">
+<h2 class="anchored" data-anchor-id="sec-setup">Setup</h2>
+<section id="sec-setup-brew" class="level3">
+<h3 class="anchored" data-anchor-id="sec-setup-brew">Homebrew</h3>
+<p><a href="https://en.wikipedia.org/wiki/Linux#:~:text=Linux%20(/%CB%88l%C9%AAn%CA%8Aks/%20LIN%2Duuks)%5B11%5D%20is%20a%20family%20of%20open%2Dsource%20Unix%2Dlike%20operating%20systems">Linux</a>, <a href="https://en.wikipedia.org/wiki/MacOS#:~:text=macOS%20(/%CB%8Cm%C3%A6ko%CA%8A%CB%88%C9%9Bs/%3B%5B6%5D%20previously%20OS%C2%A0X%20and%20originally%20Mac%C2%A0OS%C2%A0X)%20is%20an%20operating%20system%20developed%20and%20marketed%20by%20Apple%20Inc.%20since%202001.">macOS</a>, or <a href="https://en.wikipedia.org/wiki/Windows_Subsystem_for_Linux#:~:text=Windows%20Subsystem%20for%20Linux%20(WSL)%20is%20a%20feature%20of%20Windows%20that%20allows%20developers%20to%20run%20a%20Linux%20environment%20without%20the%20need%20for%20a%20separate%20virtual%20machine%20or%20dual%20booting.">Windows Subsystem for Linux</a> (WSL) users can use Homebrew to install everything needed to work through all of the examples in this blog post. First, <a href="https://brew.sh/#install">install Homebrew</a> itself with the latest <a href="https://github.com/Homebrew/brew/releases"><code>.pkg</code> installer</a> for macOS or by running the Example&nbsp;1 <a href="https://en.wikipedia.org/wiki/Unix#:~:text=Unix%20(/%CB%88ju%CB%90n%C9%AAks/%2C%20YOO%2Dniks%3B%20trademarked%20as%20UNIX)%20is%20a%20family%20of%20multitasking%2C%20multi%2Duser%20computer%20operating%20systems">Unix</a> <a href="https://en.wikipedia.org/wiki/Unix_shell#:~:text=A%20Unix%20shell%20is%20a%20command%2Dline%20interpreter%20or%20shell%20that%20provides%20a%20command%20line%20user%20interface%20for%20Unix%2Dlike%20operating%20systems.">shell</a> code in your <a href="https://en.wikipedia.org/wiki/Terminal_emulator#:~:text=A%20terminal%20emulator%2C%20or%20terminal%20application%2C%20is%20a%20computer%20program%20that%20emulates%20a%20video%20terminal%20within%20some%20other%20display%20architecture.">terminal</a>.</p>
+<div id="exm-brew" class="theorem example">
+<p><span class="theorem-title"><strong>Example 1 </strong></span>&nbsp;</p>
+<div class="sourceCode" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">/bin/bash</span> <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">-c</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"</span><span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">$(</span><span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">curl</span> <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">-fsSL</span> https://<span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">\</span></span>
+<span id="cb1-2">raw.githubusercontent.com/Homebrew/<span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">\</span></span>
+<span id="cb1-3">install/HEAD/install.sh<span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">)</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"</span></span></code></pre></div>
+</div>
+<p>If you are not completely satisfied with the integrated terminal built into your preferred <a href="https://en.wikipedia.org/wiki/Source-code_editor#:~:text=A%20source%2Dcode%20editor%20is%20a%20text%20editor%20program%20designed%20specifically%20for%20editing%20source%20code%20of%20computer%20programs.">source-code editor</a> or the standalone terminal that comes with your <a href="https://en.wikipedia.org/wiki/Operating_system#:~:text=An%20operating%20system%20(OS)%20is%20system%20software%20that%20manages%20computer%20hardware%20and%20software%20resources%2C%20and%20provides%20common%20services%20for%20computer%20programs.">operating system</a> (OS), you can use Homebrew to install a new one. The standalone terminal I use most often is <a href="https://formulae.brew.sh/cask/iterm2#default">iTerm2</a>, which is only for macOS, but I also have the following multi-OS terminals: <a href="https://formulae.brew.sh/cask/alacritty#default">Alacritty</a>, <a href="https://formulae.brew.sh/cask/hyper#default">Hyper</a>, <a href="https://formulae.brew.sh/cask/kitty#default">Kitty</a>, and <a href="https://formulae.brew.sh/cask/tabby#default">Tabby</a>.</p>
+<p>After installing Homebrew, you can run <code>brew</code> <code>doctor</code> in your terminal to confirm that everything is set up correctly. If the <code>brew</code> command is not available, you need to follow the instructions provided after installation to add <code>brew</code> to your <a href="https://en.wikipedia.org/wiki/PATH_(variable)#:~:text=PATH%20is%20an%20environment%20variable%20on%20Unix%2Dlike%20operating%20systems%2C%20DOS%2C%20OS/2%2C%20and%20Microsoft%20Windows%2C%20specifying%20a%20set%20of%20directories%20where%20executable%20programs%20are%20located.">PATH variable</a>.</p>
+<p>Once Homebrew is ready, you can run the shell code in Example&nbsp;2 to create a file called <code>Brewfile</code> with the <a href="https://en.wikipedia.org/wiki/Echo_(command)#:~:text=echo%20is%20a%20command%20that%20outputs%20the%20strings%20that%20are%20passed%20to%20it%20as%20arguments."><code>echo</code></a> shell command and install everything listed in this newly created <a href="https://homebrew-file.readthedocs.io/en/latest/usage.html"><code>Brewfile</code></a> with the <code>brew</code> <code>bundle</code> shell command.</p>
+<div id="exm-echo" class="theorem example">
+<p><span class="theorem-title"><strong>Example 2 </strong></span>&nbsp;</p>
+<div class="sourceCode" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">echo</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'brew "gh"\nbrew "git"</span></span>
+<span id="cb2-2"><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">brew "glab"\ncask "github"'</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&gt;</span> Brewfile</span>
+<span id="cb2-3"><span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">brew</span> bundle</span></code></pre></div>
+</div>
+<p>The <code>Brewfile</code> created by the shell code in Example&nbsp;2 installs:</p>
+<ul>
+<li>Git,</li>
+<li>the <a href="https://en.wikipedia.org/wiki/Command-line_interface#:~:text=A%20command%2Dline%20interface%20(CLI)%20is%20a%20means%20of%20interacting%20with%20a%20computer%20program%20by%20inputting%20lines%20of%20text%20called%20command%2Dlines.">command line interfaces</a> (CLIs) for
+<ul>
+<li><a href="https://cli.github.com">GitHub</a> and</li>
+<li><a href="https://docs.gitlab.com/ee/editor_extensions/gitlab_cli/">GitLab</a>, and</li>
+</ul></li>
+<li>the <a href="https://git-scm.com/downloads/guis#:~:text=iOS-,GitHub%20Desktop,-Platforms%3A%20Mac">GitHub Desktop</a> Git <a href="https://en.wikipedia.org/wiki/Graphical_user_interface#:~:text=A%20graphical%20user%20interface%2C%20or%20GUI%20(/%CB%88%C9%A1u%CB%90i/%5B1%5D%5B2%5D%20GOO%2Dee)%2C%20is%20a%20form%20of%20user%20interface%20that%20allows%20users%20to%20interact%20with%20electronic%20devices%20through%20graphical%20icons%20and%20audio%20indicators%20such%20as%20primary%20notation.">Graphical User Interface</a> (GUI).</li>
+</ul>
+<p>If you are curious about how I set up my computer, you can take a look at my <a href="https://github.com/maptv/setup/blob/main/Brewfile"><code>Brewfile</code></a> and other configuration files in my <code>setup</code> repo on <a href="https://github.com/maptv/setup">GitHub</a> and <a href="https://gitlab.com/maptv/setup">GitLab</a>. I will highlight a few configuration files in Section&nbsp;2.</p>
+</section>
+<section id="sec-setup-repo" class="level3">
+<h3 class="anchored" data-anchor-id="sec-setup-repo">Repository</h3>
+<p>Before we get started, you will need a <a href="https://github.com/signup">GitHub</a> and/or <a href="https://gitlab.com/users/sign_up">GitLab</a> account and a way to authenticate into your account(s).</p>
+<p>Of the many <a href="https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/about-authentication-to-github#about-authentication-to-github">authentication methods</a>, passkeys stand out because they can function as both a password and <a href="https://en.wikipedia.org/wiki/Multi-factor_authentication#:~:text=two%2Dfactor%20authentication%2C%20or%202FA%2C%20along%20with%20similar%20terms">two-factor authentication</a>%20is%20an%20electronic%20authentication%20method%20in%20which%20a%20user%20is%20granted%20access%20to%20a%20website%20or%20application%20only%20after%20successfully%20presenting%20two%20or%20more%20pieces%20of%20evidence%20(or%20factors)%20to%20an%20authentication%20mechanism.) (2FA), thus combining the two steps in the 2FA sign-in process into one. Passkeys will certaily GitHub recently announced its plan to make <a href="https://github.blog/2023-03-09-raising-the-bar-for-software-security-github-2fa-begins-march-13">2FA mandatory</a> for code contributors, which will make passkeys . <a href="https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account#about-addition-of-ssh-keys-to-your-account">SSH key</a>.</p>
+<p>satisfy both requirements, including SSH keys are still the easiest way to authenticate to GitHub and GitLab in my honest opinion.</p>
+<p>You can create a repo using the web interface of <a href="https://github.com" class="uri">https://github.com</a> or <a href="https://gitlab.com" class="uri">https://gitlab.com</a> in your browser, but the best way to start a new project is using the CLI for <a href="https://cli.github.com">GitHub</a> or <a href="https://docs.gitlab.com/ee/editor_extensions/gitlab_cli/">GitLab</a> in your <a href="https://en.wikipedia.org/wiki/Terminal_emulator">terminal</a>. First, run <code>gh</code> <code>auth</code> <code>login</code> or <code>glab</code> <code>auth</code> <code>login</code> and follow the prompts to authenticate via your web browser or with an <a href="https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens">authentication token</a>.</p>
+<p>The GitHub CLI allows you to add an SSH key to your account during or <a href="https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account?tool=cli#adding-a-new-ssh-key-to-your-account">after authentication</a>. The GitLab CLI does not handle SSH keys during authentication, but has a similar command for <a href="https://gitlab.com/gitlab-org/cli/-/blob/main/docs/source/ssh-key/add.md">adding an SSH key to your GitLab account</a>.</p>
+<p>After authentication and SSH key setup, you can run the code in either of the code chunks in Example&nbsp;3 to set up your local and remote repos and create a Quarto website project in the local repo. You can create shell alias that combine all of the repo creation steps like I did in my <a href="https://github.com/maptv/setup/blob/0bd5898908974746fa55e7e8f19a36859040b6ca/.zshrc#L630"><code>.zshrc</code></a>.</p>
+<div id="exm-git" class="theorem example">
+<p><span class="theorem-title"><strong>Example 3 </strong></span>&nbsp;</p>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs"><li class="nav-item"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" aria-controls="tabset-1-1" aria-selected="true">GitHub</a></li><li class="nav-item"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" aria-controls="tabset-1-2" aria-selected="false">GitLab</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1" class="tab-pane active" aria-labelledby="tabset-1-1-tab">
+<div class="sourceCode" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">cd</span> <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># start in home directory</span></span>
+<span id="cb3-2"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">mkdir</span> USERNAME</span>
+<span id="cb3-3"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">cd</span> USERNAME</span>
+<span id="cb3-4"><span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">gh</span> repo create REPONAME <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">--add-readme</span> <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">--clone</span> <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">--public</span></span>
+<span id="cb3-5"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">cd</span> REPONAME</span></code></pre></div>
+</div>
+<div id="tabset-1-2" class="tab-pane" aria-labelledby="tabset-1-2-tab">
+<div class="sourceCode" id="cb4" style="background: #f1f3f5;"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">cd</span> <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># start in home directory</span></span>
+<span id="cb4-2"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">mkdir</span> USERNAME</span>
+<span id="cb4-3"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">cd</span> USERNAME</span>
+<span id="cb4-4"><span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">glab</span> repo create REPONAME <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">--readme</span> <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">--defaultBranch</span> main <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">--public</span></span>
+<span id="cb4-5"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">cd</span> REPONAME</span>
+<span id="cb4-6"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">git</span> pull origin main</span>
+<span id="cb4-7"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">git</span> branch <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">--set-upstream-to</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span>origin/main main</span></code></pre></div>
+</div>
+</div>
+</div>
+</div>
+<p>To make it easier to backup my repos on both GitHub and GitLab, I set up each local repo to have two <code>origin</code> remote URLs using the code as shown in Example&nbsp;4. With this setting, running <code>git</code> <code>push</code> in my local repo updates my remote repos on both GitHub and GitLab.</p>
+<div id="exm-remote" class="theorem example">
+<p><span class="theorem-title"><strong>Example 4 </strong></span>&nbsp;</p>
+<div class="sourceCode" id="cb5" style="background: #f1f3f5;"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">git</span> remote add lab git@gitlab.com:maptv/maptv.gitlab.io</span>
+<span id="cb5-2"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">git</span> remote add hub git@github.com:maptv/maptv.github.io</span>
+<span id="cb5-3"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">git</span> remote set-url <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">--add</span> origin <span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">$(</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">git</span> remote get-url lab<span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">)</span></span></code></pre></div>
+</div>
+</section>
+</section>
+<section id="sec-workflow" class="level2">
+<h2 class="anchored" data-anchor-id="sec-workflow">Git workflow</h2>
+<p>When I want to add or update the content on my site, I go through the steps in the standard Git workflow shown in Figure&nbsp;1. Every time I “push” a collection of changes called a <a href="https://en.wikipedia.org/wiki/Commit_(version_control)#:~:text=In%20version%20control%20systems%2C%20a%20commit%20is%20an%20operation%20which%20sends%20the%20latest%20changes%20of%20the%20source%20code%20to%20the%20repository%2C%20making%20these%20changes%20part%20of%20the%20head%20revision%20of%20the%20repository.">commit</a> to my <a href="https://github.com/NishantBharali">GitHub</a> repo on GitHub, a <a href="https://en.wikipedia.org/wiki/Continuous_integration#:~:text=In%20software%20engineering%2C%20continuous%20integration%20(CI)%20is%20the%20practice%20of%20merging%20all%20developers%27%20working%20copies%20to%20a%20shared%20mainline%20several%20times%20a%20day.">continuous integration</a> (CI) system called <a href="https://docs.github.com/en/actions">GitHub Actions</a> automatically completes the steps required to build and publish my website.</p>
+<div class="cell" data-fig-width="9" data-layout-align="center">
+<div class="cell-output-display">
+<div id="fig-git" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<div>
+<pre class="mermaid mermaid-js" data-label="fig-git">flowchart LR
+   A[working&lt;br/&gt;directory]-.git&lt;br/&gt;add.-&gt;B{{staging&lt;br/&gt;area}}-.git&lt;br/&gt;commit.-&gt;C([local&lt;br/&gt;repo])-.git&lt;br/&gt;push.-&gt;D(remote&lt;br/&gt;repo)
+</pre>
+</div>
+<figcaption class="figure-caption">Figure&nbsp;1: Git workflow</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<section id="sec-workflow-alias" class="level3">
+<h3 class="anchored" data-anchor-id="sec-workflow-alias">Shell aliases</h3>
+<p>To make it easier to make incremental changes to my website and frequently release new content, I combined all of the <code>git</code> shell commands in Figure&nbsp;1 into shell <a href="https://en.wikipedia.org/wiki/Alias_(command)#:~:text=In%20computing%2C%20alias%20is%20a%20command%20in%20various%20command%2Dline%20interpreters%20(shells)%2C%20which%20enables%20a%20replacement%20of%20a%20word%20by%20another%20string.">aliases</a>. You can add shell aliases to a <a href="https://en.wikipedia.org/wiki/Unix_shell#:~:text=The%20%22rc%22%20suffix%20on%20some%20Unix%20configuration%20files%20(for%20example%2C%20%22.vimrc%22)%2C%20is%20a%20remnant%20of%20the%20RUNCOM%20ancestry%20of%20Unix%20shells.">shell configuration file</a> like <code>.bashrc</code> or <code>.zshrc</code> on your computer to shorten one or more commands and any associated command <a href="https://en.wikipedia.org/wiki/Command-line_interface#Arguments:~:text=A%20command%2Dline%20argument%20or%20parameter%20is%20an%20item%20of%20information%20provided%20to%20a%20program%20when%20it%20is%20started.">arguments</a>.</p>
+<p>The <code>git</code> <code>commit</code> aliases in the <code>.zshrc</code> file in my <code>setup</code> repo on <a href="https://github.com/maptv/setup">GitHub</a> and <a href="https://gitlab.com/maptv/setup">GitLab</a> target different groups of files for inclusion in the next commit. For example, <code>cmp</code> targets <a href="https://git-scm.com/book/en/v2/Getting-Started-What-is-Git%3F#:~:text=Staged%20means%20that%20you%20have%20marked%20a%20modified%20file%20in%20its%20current%20version%20to%20go%20into%20your%20next%20commit%20snapshot.">staged</a> files, <code>camp</code> targets <a href="https://git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-the-Repository#:~:text=Tracked%20files%20are%20files%20that%20were%20in%20the%20last%20snapshot%2C%20as%20well%20as%20any%20newly%20staged%20files">tracked</a> files, <code>a.cmp</code> targets files in the current directory, and <code>aacmp</code> targets files in the repo.</p>
+<p>Example&nbsp;5 shows the <code>aacmp</code> alias as an example of the shell alias syntax. The mnemonic device for this alias is <strong>a</strong>dd <strong>a</strong>ll, <strong>c</strong>ommit with a <strong>m</strong>essage, and <strong>p</strong>ush.</p>
+<div id="exm-alias" class="theorem example">
+<p><span class="theorem-title"><strong>Example 5 </strong></span>&nbsp;</p>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>.zshrc</strong></pre>
+</div>
+<div class="sourceCode" id="cb6" style="background: #f1f3f5;"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">alias</span> aacmp=<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"func() { git add --all &amp;&amp; git commit --message </span><span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">\</span></span>
+<span id="cb6-2"><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">    </span><span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">\"</span><span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">$(</span><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">echo</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'${*:-$(echo $(git diff --name-status --cached \</span></span>
+<span id="cb6-3"><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">    | tr "[:space:]" " "))}'</span><span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">)</span><span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">\"</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;"> &amp;&amp; git push; }; func"</span></span></code></pre></div>
+</div>
+</div>
+<p>Aliases like <code>aacmp</code> allow me to enter free-form <a href="https://en.wikipedia.org/wiki/Commit_(version_control)#:~:text=git%20commit%20%2Dm%20%27-,commit%20message,-%27">commit messages</a> directly on the command line without quotes, e.g.&nbsp;<code>aacmp</code> <code>edit</code> <code>first</code> <code>post</code>. If you decide to try one of these aliases, please exercise extreme caution as any un-<a href="https://en.wikipedia.org/wiki/Escape_character#:~:text=an%20escape%20character%20is%20a%20character%20that%20invokes%20an%20alternative%20interpretation%20on%20the%20following%20characters%20in%20a%20character%20sequence.">escaped</a> or un-quoted <a href="https://en.wikipedia.org/wiki/Metacharacter#:~:text=A%20metacharacter%20is%20a%20character%20that%20has%20a%20special%20meaning%20to%20a%20computer%20program%2C%20such%20as%20a%20shell%20interpreter">metacharacters</a> may yield surprising effects instead of being included verbatim in the commit message, e.g.&nbsp;<code>*</code> is replaced by all of the file and directory names in the current directory!</p>
+<p>If no commit message is provided after the aliases, a generic commit message is created that includes the <a href="https://git-scm.com/docs/git-diff#Documentation/git-diff.txt---diff-filterACDMRTUXB82308203">change type</a> and name of each changed file. In Section&nbsp;2.2, I describe how I used this generic commit message approach to further simplify the Git workflow.</p>
+</section>
+<section id="sec-workflow-key" class="level3">
+<h3 class="anchored" data-anchor-id="sec-workflow-key">Keybindings</h3>
+<p>An alternative to a shell alias that combines <code>git</code> commands is to use a keyboard shortcut in a <a href="https://git-scm.com/downloads/guis#:~:text=iOS-,GitHub%20Desktop,-Platforms%3A%20Mac">Git Graphical User Interface (GUI)</a> such as <a href="https://desktop.github.com"><code>GitHub Desktop</code></a> or the Git interface in a <a href="https://en.wikipedia.org/wiki/Source-code_editor#:~:text=A%20source%2Dcode%20editor%20is%20a%20text%20editor%20program%20designed%20specifically%20for%20editing%20source%20code%20of%20computer%20programs.">code editor</a> like VSCode, VSCodium, or RStudio. I use keyboard shortcuts in VSCode and VSCodium to send shell commands to the integrated terminal without moving my focus away from the files I am editing.</p>
+<p>I created different shortcuts to control which files are included in each commit: ⌥⇧F for the current file only, ⌥⇧S for already <a href="https://git-scm.com/book/en/v2/Getting-Started-What-is-Git%3F#:~:text=Staged%20means%20that%20you%20have%20marked%20a%20modified%20file%20in%20its%20current%20version%20to%20go%20into%20your%20next%20commit%20snapshot.">staged</a> files, ⌥⇧T for all <a href="https://git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-the-Repository#:~:text=Tracked%20files%20are%20files%20that%20were%20in%20the%20last%20snapshot%2C%20as%20well%20as%20any%20newly%20staged%20files">tracked files</a>, and ⌥⇧U for all files including <a href="https://git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-the-Repository#:~:text=Untracked%20files%20are%20everything%20else%E2%80%89%E2%80%94%E2%80%89any%20files%20in%20your%20working%20directory%20that%20were%20not%20in%20your%20last%20snapshot%20and%20are%20not%20in%20your%20staging%20area.">untracked files</a>. I also have keyboard shortcuts that affect a specific directory (and all of its subdirectories): ⌥⇧D for the current file’s directory, ⌥⇧. for shell’s current directory, ⌥⇧C for the current working directory according to VSCode/VSCodium, ⌥⇧W for the <a href="https://code.visualstudio.com/docs/editor/workspaces#:~:text=A%20Visual%20Studio%20Code%20%22workspace%22%20is%20the%20collection%20of%20one%20or%20more%20folders%20that%20are%20opened%20in%20a%20VS%20Code%20window">Workspace</a> directory.</p>
+<p>Example&nbsp;6 displays the ⌥⇧F shortcut as an example of the VSCode/VSCodium shortcut syntax. This shortcut uses the <a href="https://en.wikipedia.org/wiki/ANSI_escape_code#C0_control_codes">escape code</a> for the <a href="https://en.wikipedia.org/wiki/ANSI_escape_code#C0_control_codes:~:text=0x0D,Carriage%20Return">return key</a> (<code>\u000D</code>) to run several <code>git</code> commands and <a href="https://code.visualstudio.com/docs/editor/variables-reference#_predefined-variables">predefined variables</a> to insert the absolute (<code>${file}</code>) and relative (<code>${relativeFile}</code>) path to the currently open file.</p>
+<div id="exm-key" class="theorem example">
+<p><span class="theorem-title"><strong>Example 6 </strong></span>&nbsp;</p>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>keybindings.json</strong></pre>
+</div>
+<div class="sourceCode" id="cb7" style="background: #f1f3f5;"><pre class="sourceCode json code-with-copy"><code class="sourceCode json"><span id="cb7-1"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">{</span></span>
+<span id="cb7-2">  <span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">"key"</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">:</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"shift+alt+f"</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">,</span></span>
+<span id="cb7-3">  <span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">"command"</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">:</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"workbench.action.terminal.sendSequence"</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">,</span> <span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">"args"</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">:</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">{</span> <span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">"text"</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">:</span></span>
+<span id="cb7-4">    <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"git add ${file} &amp;&amp; git commit -m </span><span class="ch" style="color: #20794D;
+background-color: null;
+font-style: inherit;">\"</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">M ${relativeFile}</span><span class="ch" style="color: #20794D;
+background-color: null;
+font-style: inherit;">\"</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;"> &amp;&amp; git push</span><span class="ch" style="color: #20794D;
+background-color: null;
+font-style: inherit;">\u000D</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">},</span></span>
+<span id="cb7-5">  <span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">"when"</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">:</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"terminalIsOpen"</span></span>
+<span id="cb7-6"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">}</span></span></code></pre></div>
+</div>
+</div>
+<p>If you want to set up similar shortcuts for yourself, take a look at <a href="https://github.com/maptv/setup/blob/main/keybindings.json">my keybindings.json</a> in my <code>setup</code> repo on <a href="https://github.com/maptv/setup">GitHub</a> and <a href="https://gitlab.com/maptv/setup">GitLab</a>. As you create keyboard shortcuts, please be mindful of <a href="https://code.visualstudio.com/docs/getstarted/keybindings#_detecting-keybinding-conflicts">keybinding conflicts</a> that may arise.</p>
+<p>To set up a keyboard shortcut that runs a series of steps rather than a single line of shell code, I suggest you use the VSCode/VSCodium <a href="https://code.visualstudio.com/docs/editor/tasks">Tasks</a> mechanism, a system designed to <a href="https://en.wikipedia.org/wiki/Build_automation#:~:text=Build%20automation%20is%20the%20process%20of%20automating%20the%20creation%20of%20a%20software%20build">automate</a> <a href="https://en.wikipedia.org/wiki/Software_build#:~:text=In%20software%20development%2C%20a%20build%20is%20the%20process%20of%20converting%20source%20code%20files%20into%20standalone%20software%20artifact(s)%20that%20can%20be%20run%20on%20a%20computer%2C%20or%20the%20result%20of%20doing%20so.">software build</a> tasks. The default keyboard shortcut to run all tasks in a <a href="https://code.visualstudio.com/docs/editor/tasks#_global-tasks:~:text=Workspace%20or%20folder%20specific%20tasks%20are%20configured%20from%20the%20tasks.json%20file%20in%20the%20.vscode%20folder%20for%20a%20workspace.">local</a> or <a href="https://code.visualstudio.com/docs/editor/tasks#_global-tasks">global</a> <code>task.json</code> file is ⌃⇧B on Linux/Windows or ⌘⇧B on Mac (mnemonic: B is for Build), but you can <a href="https://code.visualstudio.com/docs/editor/tasks#_binding-keyboard-shortcuts-to-tasks">bind other shortcuts to specific tasks</a>.</p>
+<p>If you use a text editor like <a href="https://en.wikipedia.org/wiki/Vim_(text_editor)#:~:text=Vim%20(/v%C9%AAm/%3B%5B5%5D%20a%20contraction%20of%20Vi%20IMproved)%20is%20a%20free%20and%20open%2Dsource%2C%20screen%2Dbased%20text%20editor%20program.">Vim</a> or <a href="https://en.wikipedia.org/wiki/Emacs#:~:text=Emacs%20/%CB%88i%CB%90m%C3%A6ks/%2C%20originally%20named%20EMACS%20(an%20acronym%20for%20%22Editor%20Macros%22)%2C%5B1%5D%5B2%5D%5B3%5D%20is%20a%20family%20of%20text%20editors%20that%20are%20characterized%20by%20their%20extensibility.">Emacs</a>, you can create keybindings for Vim plugins like <a href="https://github.com/tpope/vim-fugitive">fugitive</a> or Emacs packages like <a href="https://magit.vc/">magit</a> that run through the entire Git workflow. Example&nbsp;7 shows the Vim+fugitive equivalent of my ⌥⇧F VSCode/VSCodium keybinding.</p>
+<div id="exm-vim" class="theorem example">
+<p><span class="theorem-title"><strong>Example 7 </strong></span>&nbsp;</p>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>.vimrc</strong></pre>
+</div>
+<div class="sourceCode" id="cb8" style="background: #f1f3f5;"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">nnoremap</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;</span>A-S-f<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&gt;</span> :Gw<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;</span>bar<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&gt;</span>G! commit <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">-m</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"M "</span>%<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;</span>bar<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&gt;</span>G! push<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;</span>CR<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&gt;</span></span></code></pre></div>
+</div>
+</div>
+<p>The drawback of my keyboard shortcut approach for the Git workflow is that it produces generic commit messages that are no very informative. Anyone reading the messages will not be able to tell what changes were made and more importantly why the changes were made.</p>
+<p>To automatically generate commit messages based on the currently staged changes, we can use a <a href="https://en.wikipedia.org/wiki/Large_language_model#:~:text=A%20large%20language%20model%20(LLM)%20is%20a%20type%20of%20language%20model%20notable%20for%20its%20ability%20to%20achieve%20general%2Dpurpose%20language%20understanding%20and%20generation.">Large Language Model</a> (LLM). <a href="https://en.wikipedia.org/wiki/Generative_artificial_intelligence#:~:text=Generative%20artificial%20intelligence%20(also%20generative%20AI%20or%20GenAI%5B1%5D)%20is%20artificial%20intelligence%20capable%20of%20generating%20text%2C%20images%2C%20or%20other%20media">Generative artificial intelligence</a> models like LLMs tend to be large in size and have atypical computational requirements.</p>
+<p>I really enjoy using Git, especially with shell aliases in my terminal and keyboard shortcuts in my favorite text editors. If we ever collaborate on a project together, you can be sure that I will insist on using Git!</p>
+<script>
+const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+</script>
+<style>
+div#quarto-sidebar-glass { display: none !important; }
+ul.navbar-nav.navbar-nav-scroll { -webkit-flex-direction: row !important; }
+/* #quarto-sidebar { padding: 5px; }
+#quarto-sidebar > * { padding: 5px; }
+div.sidebar-menu-container > * { padding: 5px 5px 5px 5px; }
+#quarto-margin-sidebar { padding: 40px; } */
+</style>
+
+
+</section>
+</section>
+
+<a onclick="window.scrollTo(0, 0); return false;" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a> ]]></description>
+  <category>Tools/Packages</category>
+  <guid>https://nishantbharali.github.io/Blog/Tools/git/git.html</guid>
+  <pubDate>Sat, 24 Jun 2023 04:00:00 GMT</pubDate>
+  <media:content url="https://nishantbharali.github.io/Blog/Tools/git/git_gif.gif" medium="image" type="image/gif"/>
+</item>
+<item>
+  <title>Large Language Models</title>
+  <link>https://nishantbharali.github.io/Blog/Tools/llm/llm.html</link>
+  <description><![CDATA[ 
+
+
+
+<section id="exploring-the-frontiers-of-ai-large-language-models" class="level1">
+<h1>Exploring the Frontiers of AI: Large Language Models</h1>
+<p>Large language models (LLMs) like GPT (Generative Pre-trained Transformer) have revolutionized the field of artificial intelligence by providing unprecedented capabilities in natural language processing. These models, trained on vast datasets, can generate text, answer questions, summarize information, and even write code with surprising coherence and relevance.</p>
+<section id="the-power-of-generative-pre-training" class="level2">
+<h2 class="anchored" data-anchor-id="the-power-of-generative-pre-training">The Power of Generative Pre-training</h2>
+<p>LLMs leverage a technique known as generative pre-training, where a model is first trained on a large corpus of text data in an unsupervised manner. This allows the model to learn the nuances of language, including grammar, syntax, and even style. The pre-trained model is then fine-tuned on specific tasks, enabling it to perform a variety of language-based tasks with a high degree of proficiency.</p>
+</section>
+<section id="transformer-architecture-a-paradigm-shift" class="level2">
+<h2 class="anchored" data-anchor-id="transformer-architecture-a-paradigm-shift">Transformer Architecture: A Paradigm Shift</h2>
+<p>The transformer architecture, introduced in the seminal paper “Attention is All You Need,” eschews traditional sequential processing for a parallel approach that uses attention mechanisms. This allows LLMs to weigh the importance of different parts of the input data and has proven to be highly effective for language understanding and generation.</p>
+</section>
+<section id="applications-and-implications" class="level2">
+<h2 class="anchored" data-anchor-id="applications-and-implications">Applications and Implications</h2>
+<p>LLMs are not just academic curiosities; they have practical applications ranging from writing assistance to customer service bots, and they’re integral to search engines and translation services. However, they also raise important questions about ethics and biases in AI, as they often reflect the data they were trained on, which can include biased or inaccurate information.</p>
+</section>
+<section id="the-future-of-llms" class="level2">
+<h2 class="anchored" data-anchor-id="the-future-of-llms">The Future of LLMs</h2>
+<p>As we continue to push the boundaries of what’s possible with LLMs, it’s important to consider the broader implications of this technology. Responsible AI practices, including bias mitigation and transparency, will be crucial in ensuring that the benefits of LLMs are realized while minimizing potential harms.</p>
+<p>LLMs represent a significant milestone in AI, but they are not the final destination. Ongoing research is focused on making these models more efficient, ethical, and capable, ensuring that they serve as valuable tools for progress in various domains of human endeavor.</p>
+</section>
+<section id="conclusion" class="level2">
+<h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
+<p>As we stand on the cusp of a new era in AI, large language models are at the forefront, driving innovation and enabling a deeper, more nuanced interaction between humans and machines. Their continued development will undoubtedly unlock new possibilities, challenge existing paradigms, and inspire future generations of AI research.</p>
+<p><a href="https://en.wikipedia.org/wiki/Large_language_model#:~:text=A%20large%20language%20model%20(LLM)%20is%20a%20type%20of%20language%20model%20notable%20for%20its%20ability%20to%20achieve%20general%2Dpurpose%20language%20understanding%20and%20generation.">Large Language Models</a> (LLMs) are a way to automatically generate text. more informative commit messages based on the currently staged changes.</p>
+<script>
+const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+</script>
+<style>
+div#quarto-sidebar-glass { display: none !important; }
+ul.navbar-nav.navbar-nav-scroll { -webkit-flex-direction: row !important; }
+/* #quarto-sidebar { padding: 5px; }
+#quarto-sidebar > * { padding: 5px; }
+div.sidebar-menu-container > * { padding: 5px 5px 5px 5px; }
+#quarto-margin-sidebar { padding: 40px; } */
+</style>
+
+
+</section>
+</section>
+
+<a onclick="window.scrollTo(0, 0); return false;" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a> ]]></description>
+  <category>Tools/Packages</category>
+  <category>Artificial Intelligence</category>
+  <category>Machine Learning</category>
+  <guid>https://nishantbharali.github.io/Blog/Tools/llm/llm.html</guid>
+  <pubDate>Sat, 24 Jun 2023 04:00:00 GMT</pubDate>
+  <media:content url="https://nishantbharali.github.io/Blog/Tools/llm/llmGif.gif" medium="image" type="image/gif"/>
+</item>
+<item>
+  <title>Quarto</title>
+  <link>https://nishantbharali.github.io/Blog/Tools/quarto/quarto.html</link>
+  <description><![CDATA[ 
+
+
+
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="bi bi-bullseye">Goal</span>
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Create a Quarto website and publish it on GitHub/GitLab Pages, Netlify, and Quarto Pub.</p>
+</div>
+</div>
+<p><a href="https://quarto.org/#:~:text=An%20open%2Dsource%20scientific%20and%20technical%20publishing%20system">Quarto</a> is an <a href="https://en.wikipedia.org/wiki/Open-source_software#:~:text=Open%2Dsource%20software%20(OSS)%20is%20computer%20software%20that%20is%20released%20under%20a%20license%20in%20which%20the%20copyright%20holder%20grants%20users%20the%20rights%20to%20use%2C%20study%2C%20change%2C%20and%20distribute%20the%20software%20and%20its%20source%20code%20to%20anyone%20and%20for%20any%20purpose.">open-source software</a> system for turning plain-text source files into outputs like articles, books, blogs, dashboards, presentations, reports, and websites. <a href="https://posit.co/blog/announcing-quarto-a-new-scientific-and-technical-publishing-system">Announced</a> by <a href="https://posit.co">Posit</a> CEO <a href="https://www.rstudio.com/authors/j.j.-allaire/">JJ Allaire</a>, Quarto is already taking the world🌐by storm⛈️!</p>
+<p>I strongly believe that everyone, regardless of their background and current technical skill level, can learn and benefit from Quarto. <a href="https://quarto.org/docs/get-started/">Getting started with Quarto</a> is easy thanks to its <a href="https://quarto.org/docs/guide/">excellent documentation</a> and vibrant community of enthusiastic users and developers.</p>
+<p>Rather than repeat the basic information already available elsewhere, I will share some advanced techniques along with the fundamental knowledge needed to understand how they work. The topics I cover are very technical, but my goal is to make the content on <a href="../../blog.html">my blog</a> as accessible as possible.</p>
+<p>The first topic I will delve into is creating and publishing a website with Quarto. To follow the Quarto documentation on <a href="https://quarto.org/docs/websites/">creating a website</a>, you will need <a href="https://code.visualstudio.com">Visual Studio Code (VSCode)</a>, <a href="https://vscodium.com/#:~:text=VSCodium%20is%20a%20community%2Ddriven%2C%20freely%2Dlicensed%20binary%20distribution%20of%20Microsoft%E2%80%99s%20editor%20VS%20Code.">VSCodium</a> and <a href="https://posit.co/download/rstudio-desktop">RStudio</a>, or a <a href="https://en.wikipedia.org/wiki/Terminal_emulator">terminal</a>.</p>
+<section id="sec-pub" class="level1">
+<h1>Publishing Quarto sites</h1>
+<section id="sec-inst" class="level2">
+<h2 class="anchored" data-anchor-id="sec-inst">Installing tools</h2>
+<p>If you use <a href="https://en.wikipedia.org/wiki/MacOS#:~:text=macOS%20(/%CB%8Cm%C3%A6ko%CA%8A%CB%88%C9%9Bs/%3B%5B6%5D%20previously%20OS%C2%A0X%20and%20originally%20Mac%C2%A0OS%C2%A0X)%20is%20an%20operating%20system%20developed%20and%20marketed%20by%20Apple%20Inc.%20since%202001.">macOS</a>, <a href="https://en.wikipedia.org/wiki/Linux#:~:text=Linux%20(/%CB%88l%C9%AAn%CA%8Aks/%20LIN%2Duuks)%5B11%5D%20is%20a%20family%20of%20open%2Dsource%20Unix%2Dlike%20operating%20systems">Linux</a>, or the <a href="https://en.wikipedia.org/wiki/Windows_Subsystem_for_Linux#:~:text=Windows%20Subsystem%20for%20Linux%20(WSL)%20is%20a%20feature%20of%20Windows%20that%20allows%20developers%20to%20run%20a%20Linux%20environment%20without%20the%20need%20for%20a%20separate%20virtual%20machine%20or%20dual%20booting.">Windows Subsystem for Linux (WSL)</a>, you can install all of the aforementioned tools with the <a href="https://brew.sh">Homebrew</a> package manager. To install everything you will need to follow along with this blog post, you can first <a href="https://brew.sh/#install">install Homebrew</a> and then run <code>brew</code> <code>bundle</code> in a directory that contains the <a href="https://homebrew-file.readthedocs.io/en/latest/usage.html">Brewfile</a> shown in Example&nbsp;1.</p>
+<div id="exm-brew" class="theorem example">
+<p><span class="theorem-title"><strong>Example 1 </strong></span>&nbsp;</p>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Brewfile</strong></pre>
+</div>
+<div class="sourceCode" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode ruby code-with-copy"><code class="sourceCode ruby"><span id="cb1-1">brew <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"gh"</span></span>
+<span id="cb1-2">brew <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"git"</span></span>
+<span id="cb1-3">brew <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"glab"</span></span>
+<span id="cb1-4">cask <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"github"</span></span>
+<span id="cb1-5">cask <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"quarto"</span></span>
+<span id="cb1-6">cask <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"rstudio"</span></span>
+<span id="cb1-7">cask <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"vscodium"</span></span>
+<span id="cb1-8">cask <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"visual-studio-code"</span></span>
+<span id="cb1-9">vscode <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"quarto.quarto"</span></span>
+<span id="cb1-10">vscode <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"REditorSupport.r"</span></span></code></pre></div>
+</div>
+</div>
+<p>Using a <a href="https://en.wikipedia.org/wiki/Package_manager#:~:text=A%20package%20manager%20or%20package%2Dmanagement%20system%20is%20a%20collection%20of%20software%20tools%20that%20automates%20the%20process%20of%20installing%2C%20upgrading%2C%20configuring%2C%20and%20removing%20computer%20programs%20for%20a%20computer%20in%20a%20consistent%20manner.">package manager</a> like Homebrew to install all the requirements with a single <a href="https://en.wikipedia.org/wiki/Unix_shell#:~:text=A%20Unix%20shell%20is%20a%20command%2Dline%20interpreter%20or%20shell%20that%20provides%20a%20command%20line%20user%20interface%20for%20Unix%2Dlike%20operating%20systems.">shell</a> command like <code>brew</code> <code>bundle</code> is the fastest and easiest way to get ready to follow along with this blog post. If you are curious about how I set up my computer, you can take a look at <a href="https://github.com/NishantBharali/setup/blob/main/Brewfile">my Brewfile</a> and other configuration files in my <code>setup</code> <a href="https://en.wikipedia.org/wiki/Repository_(version_control)#:~:text=In%20version%20control%20systems%2C%20a%20repository%20is%20a%20data%20structure%20that%20stores%20metadata%20for%20a%20set%20of%20files%20or%20directory%20structure.">repository (repo)</a> on <a href="https://github.com/NishantBharali/setup">GitHub</a>.</p>
+<p>Apart from RStudio, VSCode, and VSCodium, the Brewfile in Example&nbsp;1 will install the <a href="https://en.wikipedia.org/wiki/Git#:~:text=Git%20(/%C9%A1%C9%AAt/)%5B8%5D%20is%20a%20distributed%20version%20control%20system%5B9%5D%20that%20tracks%20changes%20in%20any%20set%20of%20computer%20files%2C%20usually%20used%20for%20coordinating%20work%20among%20programmers%20who%20are%20collaboratively%20developing%20source%20code%20during%20software%20development.">Git</a> version control system, the GitHub and GitLab <a href="https://en.wikipedia.org/wiki/Command-line_interface#:~:text=A%20command%2Dline%20interface%20(CLI)%20is%20a%20means%20of%20interacting%20with%20a%20computer%20program%20by%20inputting%20lines%20of%20text%20called%20command%2Dlines.">command line interfaces (CLIs)</a>, and <a href="https://desktop.github.com"><code>GitHub Desktop</code></a>, a <a href="https://git-scm.com/downloads/guis#:~:text=iOS-,GitHub%20Desktop,-Platforms%3A%20Mac">Git Graphical User Interface (GUI)</a>. For more information on Git, a tool used by 93% of software developers worldwide according to <a href="https://stackoverflow.blog/2023/01/09/beyond-git-the-other-version-control-systems-developers-use/#:~:text=Our%20developer%20survey%20found%2093%25%20of%20developers%20use%20Git.">survey results</a> published by <a href="https://stackoverflow.com/tour">StackOverflow</a>, take a look at the <a href="https://openscapes.org/blog/2022-05-27-github-illustrated-series/">“GitHub for supporting, reusing, contributing, and failing safely”</a> post by <a href="https://allisonhorst.com">Allison Horst</a> and <a href="https://jules32.github.io">Julie Lowndes</a> on the <a href="https://openscapes.org/">Openscapes</a> <a href="https://openscapes.org/blog">blog</a>.</p>
+<p>As an alternative to installing tools on your computer, you can use the web interface provided by <a href="https://github.com/features/codespaces">GitHub Codespaces</a>. To set up a Codespace, you can remove the lines that start with <code>cask</code> from the Brewfile provided in Example&nbsp;1 and add the file to a repo called <a href="https://docs.github.com/en/codespaces/customizing-your-codespace/personalizing-github-codespaces-for-your-account#dotfiles"><code>dotfiles</code></a> and along with a <code>setup.sh</code> file like the one shown in Example&nbsp;2.</p>
+<div id="exm-set" class="theorem example">
+<p><span class="theorem-title"><strong>Example 2 </strong></span>&nbsp;</p>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>setup.sh</strong></pre>
+</div>
+<div class="sourceCode" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">echo</span> <span class="kw" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">|</span> <span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">/bin/bash</span> <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">-c</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"</span><span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">$(</span><span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">curl</span> <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">-fsSL</span> https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh<span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">)</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"</span></span>
+<span id="cb2-2"><span class="kw" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">(</span><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">echo</span><span class="kw" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">;</span> <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">echo</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"'</span><span class="kw" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">)</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&gt;&gt;</span> /home/codespace/.profile</span>
+<span id="cb2-3"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">eval</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"</span><span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">$(</span><span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">/home/linuxbrew/.linuxbrew/bin/brew</span> shellenv<span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">)</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"</span></span>
+<span id="cb2-4"><span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">brew</span> bundle</span></code></pre></div>
+</div>
+</div>
+</section>
+<section id="sec-over" class="level2">
+<h2 class="anchored" data-anchor-id="sec-over">Publishing overview</h2>
+<p>Once you are done setting up your computer or Codespace, you create a <a href="https://quarto.org/docs/websites/#quick-start:~:text=This%20will%20create%20the%20scaffolding%20for%20a%20simple%20website%20in%20the%20mysite%20sub%2Ddirectory.">Quarto website template</a> and make your site publicly available on the internet using one of the many available <a href="https://quarto.org/docs/publishing/#getting-started">publishing services</a>. To explore and assess different publishing <a href="https://en.wikipedia.org/wiki/Workflow#:~:text=A%20workflow%20is%20a%20generic%20term%20for%20orchestrated%20and%20repeatable%20patterns%20of%20activity%2C%20enabled%20by%20the%20systematic%20organization%20of%20resources%20into%20processes%20that%20transform%20materials%2C%20provide%20services%2C%20or%20process%20information.">workflows</a> and free website hosting options, I set up my personal website on four different <a href="https://en.wikipedia.org/wiki/Web_hosting_service#:~:text=Companies%20providing%20web%20hosting%20services%20are%20sometimes%20called%20web%20hosts.">web hosts</a>: <a href="https://nishantbharali.github.io/Blog/">GitHub Pages</a>.</p>
+<p>There are so many different ways to publish a Quarto site that I decided to come up with a naming system for Quarto publishing methods. The naming system derives a code for each publishing method from the numbered lists in the Quarto publishing documentation. For example, I refer to the <a href="https://quarto.org/docs/publishing/quarto-pub.html#:~:text=Use%20the%20quarto,your%20code%20changes.">two methods to publish to Quarto Pub</a> as <a href="https://quarto.org/docs/publishing/quarto-pub.html#:~:text=Use%20the%20quarto%20publish%20command%20to%20publish%20content%20rendered%20on%20your%20local%20machine">Q1</a> and <a href="https://quarto.org/docs/publishing/quarto-pub.html#:~:text=If%20you%20are%20using%20GitHub%2C%20you%20can%20use%20a%20GitHub%20Action%20to%20automatically%20render%20your%20project%20and%20publish%20the%20resulting%20content%20whenever%20your%20code%20changes.">Q2</a>:</p>
+<p>Table&nbsp;1 uses this naming system in its <code>Code</code> column to identify the publishing methods I discuss in this blog post. Each publishing method targets a particular web <code>Host</code>, <code>Render</code>s content locally or on a remote server, and deploys sites using either the <a href="https://quarto.org/docs/output-formats/html-publishing.html#publish-command"><code>quarto</code> <code>publish</code></a> or the <a href="https://git-scm.com/docs/git-push"><code>git</code> <code>push</code></a> <a href="https://en.wikipedia.org/wiki/Unix_shell#:~:text=A%20Unix%20shell%20is%20a%20command%2Dline%20interpreter%20or%20shell%20that%20provides%20a%20command%20line%20user%20interface%20for%20Unix%2Dlike%20operating%20systems.">shell</a> <code>Command</code>.</p>
+<div id="tbl-pub" class="anchored">
+<table class="table">
+<caption>Table&nbsp;1: Quarto website publishing methods</caption>
+<thead>
+<tr class="header">
+<th>Code</th>
+<th>Host</th>
+<th>Render</th>
+<th>Command</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><a href="https://quarto.org/docs/publishing/github-pages.html#:~:text=Render%20sites%20on%20your%20local%20machine%20to%20the%20docs%20directory%2C%20check%20the%20rendered%20site%20into%20GitHub%2C%20and%20then%20configure%20your%20GitHub%20repo%20to%20publish%20from%20the%20docs%20directory.">G1</a></td>
+<td>GitHub</td>
+<td>Local</td>
+<td><code>push</code></td>
+</tr>
+<tr class="even">
+<td><a href="https://quarto.org/docs/publishing/github-pages.html#:~:text=Use%20the%20quarto%20publish%20command%20to%20publish%20content%20rendered%20on%20your%20local%20machine.">G2</a></td>
+<td>GitHub</td>
+<td>Local</td>
+<td><code>publish</code></td>
+</tr>
+<tr class="odd">
+<td><a href="https://quarto.org/docs/publishing/github-pages.html#:~:text=Use%20a%20GitHub%20Action%20to%20automatically%20render%20your%20files%20(a%20single%20Quarto%20document%20or%20a%20Quarto%20project)%20and%20publish%20the%20resulting%20content%20whenever%20you%20push%20a%20source%20code%20change%20to%20your%20repository.">G3</a></td>
+<td>GitHub</td>
+<td>Remote</td>
+<td><code>push</code></td>
+</tr>
+<tr class="even">
+<td><a href="https://quarto.org/docs/publishing/netlify.html#:~:text=Use%20the%20quarto%20publish%20command%20to%20publish%20content%20rendered%20on%20your%20local%20machine.">N1</a></td>
+<td>Netlify</td>
+<td>Local</td>
+<td><code>publish</code></td>
+</tr>
+<tr class="odd">
+<td><a href="https://quarto.org/docs/publishing/netlify.html#:~:text=If%20you%20are%20using%20GitHub%2C%20GitLab%2C%20Bitbucket%2C%20or%20Azure%20DevOps%2C%20you%20can%20point%20Netlify%20at%20your%20site%E2%80%99s%20source%20code%20and%20have%20it%20deployed%20whenever%20your%20code%20changes.">N2</a></td>
+<td>Netlify</td>
+<td>Local</td>
+<td><code>push</code></td>
+</tr>
+<tr class="even">
+<td><a href="https://quarto.org/docs/publishing/netlify.html#:~:text=If%20you%20are%20using%20GitHub%2C%20you%20can%20use%20a%20GitHub%20Action%20to%20automatically%20render%20your%20project%20and%20publish%20the%20resulting%20content%20whenever%20your%20code%20changes.">N3</a></td>
+<td>Netlify</td>
+<td>Remote</td>
+<td><code>push</code></td>
+</tr>
+<tr class="odd">
+<td><a href="https://quarto.org/docs/publishing/quarto-pub.html#:~:text=Use%20the%20quarto%20publish%20command%20to%20publish%20content%20rendered%20on%20your%20local%20machine">Q1</a></td>
+<td>Quarto</td>
+<td>Local</td>
+<td><code>publish</code></td>
+</tr>
+<tr class="even">
+<td><a href="https://quarto.org/docs/publishing/quarto-pub.html#:~:text=If%20you%20are%20using%20GitHub%2C%20you%20can%20use%20a%20GitHub%20Action%20to%20automatically%20render%20your%20project%20and%20publish%20the%20resulting%20content%20whenever%20your%20code%20changes.">Q2</a></td>
+<td>Quarto</td>
+<td>Remote</td>
+<td><code>push</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<section id="sec-over-git" class="level3">
+<h3 class="anchored" data-anchor-id="sec-over-git">Git workflow</h3>
+<p>The first publishing method I tried for my personal site was <a href="https://quarto.org/docs/publishing/github-pages.html#:~:text=Render%20sites%20on%20your%20local%20machine%20to%20the%20docs%20directory%2C%20check%20the%20rendered%20site%20into%20GitHub%2C%20and%20then%20configure%20your%20GitHub%20repo%20to%20publish%20from%20the%20docs%20directory.">G1</a>, which requires the use of Git to <a href="https://github.com/git-guides/git-push#what-does-git-push-do">push</a> all website content to a Git provider like GitHub or GitLab. After I set up <a href="https://quarto.org/docs/publishing/github-pages.html#render-to-docs">GitHub Pages</a> and <a href="https://docs.gitlab.com/ee/user/project/pages/">GitLab Pages</a>, I could update my website on both of these web hosts just by going through the standard Git workflow shown in Figure&nbsp;1.</p>
+<div class="cell" data-fig-width="9" data-layout-align="center">
+<div class="cell-output-display">
+<div id="fig-git" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<div>
+<pre class="mermaid mermaid-js" data-label="fig-git">flowchart LR
+   A[working&lt;br/&gt;directory]-.git&lt;br/&gt;add.-&gt;B{{staging&lt;br/&gt;area}}-.git&lt;br/&gt;commit.-&gt;C([local&lt;br/&gt;repo])-.git&lt;br/&gt;push.-&gt;D(remote&lt;br/&gt;repo)
+</pre>
+</div>
+<figcaption class="figure-caption">Figure&nbsp;1: Git workflow</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>To make it easier to make incremental changes to my website and frequently release new content, I combined all of the <code>git</code> shell commands in Figure&nbsp;1 into a shell <a href="https://en.wikipedia.org/wiki/Alias_(command)#:~:text=In%20computing%2C%20alias%20is%20a%20command%20in%20various%20command%2Dline%20interpreters%20(shells)%2C%20which%20enables%20a%20replacement%20of%20a%20word%20by%20another%20string.">alias</a>. You can add shell aliases to a <a href="https://en.wikipedia.org/wiki/Unix_shell#:~:text=The%20%22rc%22%20suffix%20on%20some%20Unix%20configuration%20files%20(for%20example%2C%20%22.vimrc%22)%2C%20is%20a%20remnant%20of%20the%20RUNCOM%20ancestry%20of%20Unix%20shells.">shell configuration file</a> like <code>.bashrc</code> or <code>.zshrc</code> on your computer to shorten commands or combine any sequence of commands into one step.</p>
+<p>The <a href="https://github.com/NishantBharali/setup/blob/936ae9e222b0fe0648d88675db2d4718568a93f2/.zshrc#L134"><code>aacmp</code> alias</a> in the <a href="https://github.com/NishantBharali/setup/blob/main/.zshrc"><code>.zshrc</code></a> file in my <a href="https://github.com/NishantBharali/setup"><code>setup</code></a> repo allows me to enter a free-form <a href="https://en.wikipedia.org/wiki/Commit_(version_control)#:~:text=git%20commit%20%2Dm%20%27-,commit%20message,-%27">commit message</a> directly on the command line without quotes, e.g.&nbsp;<code>qp</code> <code>edit</code> <code>first</code> <code>blog</code>. If you decide to try my <code>aacmp</code> alias, please exercise extreme caution as any un-<a href="https://en.wikipedia.org/wiki/Escape_character#:~:text=an%20escape%20character%20is%20a%20character%20that%20invokes%20an%20alternative%20interpretation%20on%20the%20following%20characters%20in%20a%20character%20sequence.">escaped</a> or un-quoted <a href="https://en.wikipedia.org/wiki/Metacharacter#:~:text=A%20metacharacter%20is%20a%20character%20that%20has%20a%20special%20meaning%20to%20a%20computer%20program%2C%20such%20as%20a%20shell%20interpreter">metacharacters</a> may yield surprising effects instead of being included verbatim in the commit message. For example, <code>qp</code> <code>*</code> will list the contents of the current directory in the commit message in place of the asterisk!</p>
+<p>An alternative to a shell alias that combines <code>git</code> commands is a keyboard shortcut in Git-enabled GUI. Example&nbsp;3 shows two files, <code>tasks.json</code> and <code>update.sh</code>, that we can use to set up VSCode, VSCodium, and GitHub Codespaces to go through the Git workflow whenever we press Ctrl+Shift+B on Linux/Windows or ⌘+Shift+B on Mac (mnemonic: B is for Build).</p>
+<div id="exm-key" class="theorem example">
+<p><span class="theorem-title"><strong>Example 3 </strong></span>&nbsp;</p>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs"><li class="nav-item"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" aria-controls="tabset-1-1" aria-selected="true"><code>update.sh</code></a></li><li class="nav-item"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" aria-controls="tabset-1-2" aria-selected="false"><code>tasks.json</code></a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1" class="tab-pane active" aria-labelledby="tabset-1-1-tab">
+<div class="sourceCode" id="cb3" data-include="../../update.sh" style="background: #f1f3f5;"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"></code></pre></div>
+</div>
+<div id="tabset-1-2" class="tab-pane" aria-labelledby="tabset-1-2-tab">
+<div class="sourceCode" id="cb4" data-include="../../.vscode/tasks.json" style="background: #f1f3f5;"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"></code></pre></div>
+</div>
+</div>
+</div>
+</div>
+<p>This mechanism is called <a href="https://code.visualstudio.com/docs/editor/tasks">Tasks</a> and is used to <a href="https://en.wikipedia.org/wiki/Build_automation#:~:text=Build%20automation%20is%20the%20process%20of%20automating%20the%20creation%20of%20a%20software%20build">automate</a> <a href="https://en.wikipedia.org/wiki/Software_build#:~:text=In%20software%20development%2C%20a%20build%20is%20the%20process%20of%20converting%20source%20code%20files%20into%20standalone%20software%20artifact(s)%20that%20can%20be%20run%20on%20a%20computer%2C%20or%20the%20result%20of%20doing%20so.">software build</a> tasks, which can include any steps required to build and publish a website. Importantly, the Tasks mechanism requires that the <code>tasks.json</code> file be added to the <code>.vscode</code> directory and that we enable execution of the <code>update.sh</code> script by running <code>chmod</code> <code>+x</code> <code>update.sh</code> in our project root.</p>
+<p>Shell aliases and keyboard shortcuts can greatly facilitate the Git workflow which is essential not only for <a href="https://quarto.org/docs/publishing/github-pages.html#:~:text=Render%20sites%20on%20your%20local%20machine%20to%20the%20docs%20directory%2C%20check%20the%20rendered%20site%20into%20GitHub%2C%20and%20then%20configure%20your%20GitHub%20repo%20to%20publish%20from%20the%20docs%20directory.">G1</a>, but also <a href="https://quarto.org/docs/publishing/github-pages.html#:~:text=Use%20a%20GitHub%20Action%20to%20automatically%20render%20your%20files%20(a%20single%20Quarto%20document%20or%20a%20Quarto%20project)%20and%20publish%20the%20resulting%20content%20whenever%20you%20push%20a%20source%20code%20change%20to%20your%20repository.">G3</a>, <a href="https://quarto.org/docs/publishing/netlify.html#:~:text=If%20you%20are%20using%20GitHub%2C%20you%20can%20use%20a%20GitHub%20Action%20to%20automatically%20render%20your%20project%20and%20publish%20the%20resulting%20content%20whenever%20your%20code%20changes.">N3</a>, and <a href="https://quarto.org/docs/publishing/quarto-pub.html#:~:text=If%20you%20are%20using%20GitHub%2C%20you%20can%20use%20a%20GitHub%20Action%20to%20automatically%20render%20your%20project%20and%20publish%20the%20resulting%20content%20whenever%20your%20code%20changes.">Q2</a>. Unlike these other publishing methods, <a href="https://quarto.org/docs/publishing/github-pages.html#:~:text=Render%20sites%20on%20your%20local%20machine%20to%20the%20docs%20directory%2C%20check%20the%20rendered%20site%20into%20GitHub%2C%20and%20then%20configure%20your%20GitHub%20repo%20to%20publish%20from%20the%20docs%20directory.">G1</a> leads to messy <a href="https://en.wikipedia.org/wiki/Commit_(version_control)#:~:text=In%20version%20control%20systems%2C%20a%20commit%20is%20an%20operation%20which%20sends%20the%20latest%20changes%20of%20the%20source%20code%20to%20the%20repository%2C%20making%20these%20changes%20part%20of%20the%20head%20revision%20of%20the%20repository.">commits</a> that contain changes to both source and output files.</p>
+</section>
+<section id="sec-over-qp" class="level3">
+<h3 class="anchored" data-anchor-id="sec-over-qp"><code>quarto</code> <code>publish</code></h3>
+<p>To have cleaner commits, I switched from <a href="https://quarto.org/docs/publishing/github-pages.html#:~:text=Render%20sites%20on%20your%20local%20machine%20to%20the%20docs%20directory%2C%20check%20the%20rendered%20site%20into%20GitHub%2C%20and%20then%20configure%20your%20GitHub%20repo%20to%20publish%20from%20the%20docs%20directory.">G1</a> to <a href="https://quarto.org/docs/publishing/github-pages.html#:~:text=Use%20the%20quarto%20publish%20command%20to%20publish%20content%20rendered%20on%20your%20local%20machine.">G2</a> by adding <code>quarto</code> <code>publish</code> to my publishing workflow. With <a href="https://quarto.org/docs/publishing/github-pages.html#:~:text=Use%20the%20quarto%20publish%20command%20to%20publish%20content%20rendered%20on%20your%20local%20machine.">G2</a>, I can track changes to my source files on my <code>main</code> <a href="https://en.wikipedia.org/wiki/Branching_(version_control)#:~:text=Branching%2C%20in%20version%20control%20and%20software%20configuration%20management%2C%20is%20the%20duplication%20of%20an%20object%20under%20version%20control">branch</a> and publish my output files to GitHub Pages and GitLab Pages from my <code>gh-pages</code> branch.</p>
+<p><a href="https://quarto.org/docs/publishing/quarto-pub.html#:~:text=Use%20the%20quarto%20publish%20command%20to%20publish%20content%20rendered%20on%20your%20local%20machine">Q1</a>, <a href="https://quarto.org/docs/publishing/netlify.html#:~:text=Use%20the%20quarto%20publish%20command%20to%20publish%20content%20rendered%20on%20your%20local%20machine.">N1</a>, and <a href="https://quarto.org/docs/publishing/github-pages.html#:~:text=Use%20the%20quarto%20publish%20command%20to%20publish%20content%20rendered%20on%20your%20local%20machine.">G2</a> all use <code>quarto</code> <code>publish</code> to <a href="https://quarto.org/docs/websites/index.html#website-render">render</a> website content locally and then deploy it in one fell swoop. If you do not plan to use the <a href="https://en.wikipedia.org/wiki/Git#:~:text=Git%20(/%C9%A1%C9%AAt/)%5B8%5D%20is%20a%20distributed%20version%20control%20system%5B9%5D%20that%20tracks%20changes%20in%20any%20set%20of%20computer%20files%2C%20usually%20used%20for%20coordinating%20work%20among%20programmers%20who%20are%20collaboratively%20developing%20source%20code%20during%20software%20development.">Git</a> version control system or the advanced features offered by <a href="https://github.com">GitHub</a>, <a href="https://gitlab.com">GitLab</a>, or <a href="https://netlify.com">Netlify</a>, then I recommend deploying your site to <a href="https://quarto.pub">Quarto Pub</a> by running <a href="https://quarto.org/docs/publishing/quarto-pub.html#publish-command"><code>quarto</code> <code>publish</code> <code>quarto-pub</code></a> (<a href="https://quarto.org/docs/publishing/quarto-pub.html#:~:text=Use%20the%20quarto%20publish%20command%20to%20publish%20content%20rendered%20on%20your%20local%20machine">Q1</a> in Table&nbsp;1).</p>
+<p>Like <a href="https://quarto.org/docs/publishing/quarto-pub.html#:~:text=Use%20the%20quarto%20publish%20command%20to%20publish%20content%20rendered%20on%20your%20local%20machine">Q1</a>, <a href="https://quarto.org/docs/publishing/netlify.html#:~:text=Use%20the%20quarto%20publish%20command%20to%20publish%20content%20rendered%20on%20your%20local%20machine.">N1</a> is a deployment method that does not require Git and makes it possible to deploy our site with a single shell command: <a href="https://quarto.org/docs/publishing/netlify.html#publish-command"><code>quarto</code> <code>publish</code> <code>netlify</code></a>. <a href="https://quarto.org/docs/publishing/netlify.html#:~:text=Use%20the%20quarto%20publish%20command%20to%20publish%20content%20rendered%20on%20your%20local%20machine.">N1</a> provides access to the advanced web hosting features offered by Netlify and can even <a href="https://quarto.org/docs/publishing/netlify.html#rendering-on-netlify">render content</a> as long as code execution is <a href="https://quarto.org/docs/publishing/netlify.html#freezing-computations">frozen</a>.</p>
+<p>I deployed my site to GitHub Pages currently. When I run <code>quarto</code> <code>publish</code> <code>gh-pages</code>, Quarto renders my site into my output directory, copies the output directory contents to the <code>gh-pages</code> branch of my local repo, and then <a href="https://git-scm.com/docs/git-commit">commits</a> and <a href="https://git-scm.com/docs/git-push">pushes</a> the changes to my remote repos on <a href="https://github.com/NishantBharali/Blog">GitHub</a>, I am planning to trigger Netlify and GitLab as well to <a href="https://quarto.org/docs/publishing/netlify.html#publish-from-git-provider">build my site</a> from the <code>gh-pages</code> branch through this process.</p>
+<p>To summarize the Quarto publishing methods I discussed so far, <a href="https://quarto.org/docs/publishing/quarto-pub.html#:~:text=Use%20the%20quarto%20publish%20command%20to%20publish%20content%20rendered%20on%20your%20local%20machine">Q1</a> and <a href="https://quarto.org/docs/publishing/netlify.html#:~:text=Use%20the%20quarto%20publish%20command%20to%20publish%20content%20rendered%20on%20your%20local%20machine.">N1</a> are easy to configure and use, <a href="https://quarto.org/docs/publishing/netlify.html#:~:text=If%20you%20are%20using%20GitHub%2C%20GitLab%2C%20Bitbucket%2C%20or%20Azure%20DevOps%2C%20you%20can%20point%20Netlify%20at%20your%20site%E2%80%99s%20source%20code%20and%20have%20it%20deployed%20whenever%20your%20code%20changes.">N2</a> automatically builds sites from Git repos, <a href="https://quarto.org/docs/publishing/github-pages.html#:~:text=Render%20sites%20on%20your%20local%20machine%20to%20the%20docs%20directory%2C%20check%20the%20rendered%20site%20into%20GitHub%2C%20and%20then%20configure%20your%20GitHub%20repo%20to%20publish%20from%20the%20docs%20directory.">G1</a> is not recommended because it pollutes commits with output file changes, and <a href="https://quarto.org/docs/publishing/github-pages.html#:~:text=Use%20the%20quarto%20publish%20command%20to%20publish%20content%20rendered%20on%20your%20local%20machine.">G2</a> is more difficult to set up and use but provides clean commits and a nice separation of source and output files.</p>
+</section>
+<section id="sec-over-act" class="level3">
+<h3 class="anchored" data-anchor-id="sec-over-act">GitHub Actions</h3>
+<p>All of the publishing methods I have discussed so far require us to generate output files locally by rendering our source files. In contrast, <a href="https://quarto.org/docs/publishing/quarto-pub.html#:~:text=If%20you%20are%20using%20GitHub%2C%20you%20can%20use%20a%20GitHub%20Action%20to%20automatically%20render%20your%20project%20and%20publish%20the%20resulting%20content%20whenever%20your%20code%20changes.">Q2</a>, <a href="https://quarto.org/docs/publishing/github-pages.html#:~:text=Use%20a%20GitHub%20Action%20to%20automatically%20render%20your%20files%20(a%20single%20Quarto%20document%20or%20a%20Quarto%20project)%20and%20publish%20the%20resulting%20content%20whenever%20you%20push%20a%20source%20code%20change%20to%20your%20repository.">G3</a>, and <a href="https://quarto.org/docs/publishing/netlify.html#:~:text=If%20you%20are%20using%20GitHub%2C%20you%20can%20use%20a%20GitHub%20Action%20to%20automatically%20render%20your%20project%20and%20publish%20the%20resulting%20content%20whenever%20your%20code%20changes.">N3</a> make it possible to skip local rendering in favor of relying on <a href="https://quarto.org/docs/publishing/quarto-pub.html#github-action">GitHub Actions</a> to handle all of the necessary steps.</p>
+<p><a href="https://quarto.org/docs/publishing/github-pages.html#:~:text=Use%20a%20GitHub%20Action%20to%20automatically%20render%20your%20files%20(a%20single%20Quarto%20document%20or%20a%20Quarto%20project)%20and%20publish%20the%20resulting%20content%20whenever%20you%20push%20a%20source%20code%20change%20to%20your%20repository.">G3</a> is noteworthy, because it offers the same convenience of <a href="https://quarto.org/docs/publishing/github-pages.html#:~:text=Render%20sites%20on%20your%20local%20machine%20to%20the%20docs%20directory%2C%20check%20the%20rendered%20site%20into%20GitHub%2C%20and%20then%20configure%20your%20GitHub%20repo%20to%20publish%20from%20the%20docs%20directory.">G1</a> but without messy commits that mix changes to source and output files. An added bonus of <a href="https://quarto.org/docs/publishing/github-pages.html#:~:text=Use%20a%20GitHub%20Action%20to%20automatically%20render%20your%20files%20(a%20single%20Quarto%20document%20or%20a%20Quarto%20project)%20and%20publish%20the%20resulting%20content%20whenever%20you%20push%20a%20source%20code%20change%20to%20your%20repository.">G3</a> is that rendering with GitHub Actions provides a reproducible computational environment that is not dependent on what you have installed on your computer.</p>
+<p>Instead of using GitHub Actions, I could have used <a href="https://docs.gitlab.com/ee/ci">GitLab CI/CD</a> to build my site. I decided not to go down this route because the Quarto dev team has many <a href="https://github.com/quarto-dev/quarto-actions">GitHub Actions workflows</a> available but currently no official support for GitLab CI/CD.</p>
+<p>Before trying to use GitHub Actions or any <a href="https://quarto.org/docs/publishing/ci.html">other continuous integration systems</a> in your publishing workflow, I suggest getting used to working with <code>quarto</code> <code>publish</code> (<a href="https://quarto.org/docs/publishing/quarto-pub.html#:~:text=Use%20the%20quarto%20publish%20command%20to%20publish%20content%20rendered%20on%20your%20local%20machine">Q1</a>, <a href="https://quarto.org/docs/publishing/github-pages.html#:~:text=Use%20the%20quarto%20publish%20command%20to%20publish%20content%20rendered%20on%20your%20local%20machine.">G2</a>, or <a href="https://quarto.org/docs/publishing/netlify.html#:~:text=Use%20the%20quarto%20publish%20command%20to%20publish%20content%20rendered%20on%20your%20local%20machine.">N1</a>). You can always set up other publishing methods later without sacrificing anything, because all of the publishing methods except <a href="https://quarto.org/docs/publishing/github-pages.html#:~:text=Render%20sites%20on%20your%20local%20machine%20to%20the%20docs%20directory%2C%20check%20the%20rendered%20site%20into%20GitHub%2C%20and%20then%20configure%20your%20GitHub%20repo%20to%20publish%20from%20the%20docs%20directory.">G1</a> can be combined together.</p>
+<p>In Section&nbsp;1.3, I will walk through the setup of both <a href="https://quarto.org/docs/publishing/github-pages.html#:~:text=Use%20the%20quarto%20publish%20command%20to%20publish%20content%20rendered%20on%20your%20local%20machine.">G2</a> and <a href="https://quarto.org/docs/publishing/github-pages.html#:~:text=Use%20a%20GitHub%20Action%20to%20automatically%20render%20your%20files%20(a%20single%20Quarto%20document%20or%20a%20Quarto%20project)%20and%20publish%20the%20resulting%20content%20whenever%20you%20push%20a%20source%20code%20change%20to%20your%20repository.">G3</a> to provide the option of rendering locally by running <code>quarto</code> <code>publish</code> or rendering remotely with GitHub Actions by pushing to the <code>main</code> branch. Along the way, I will share many practical tips and general advice that you can apply to any project.</p>
+</section>
+</section>
+<section id="sec-set" class="level2">
+<h2 class="anchored" data-anchor-id="sec-set">Publishing setup</h2>
+<section id="sec-set-repo" class="level3">
+<h3 class="anchored" data-anchor-id="sec-set-repo">Repo setup</h3>
+<p>Before you can use GitHub Actions to publish your site, you will need a <a href="https://github.com/signup">GitHub</a>, an <a href="https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account#about-addition-of-ssh-keys-to-your-account">SSH key</a>, and a repo like <a href="https://github.com/NishantBharali/Blog"><code>Blog</code></a> that has a default <a href="https://en.wikipedia.org/wiki/Branching_(version_control)#:~:text=Branching%2C%20in%20version%20control%20and%20software%20configuration%20management%2C%20is%20the%20duplication%20of%20an%20object%20under%20version%20control">branch</a> called <code>main</code> and another branch which must be called <code>gh-pages</code>. If you want to publish on GitLab Pages, you will also need a <a href="https://gitlab.com/users/sign_up">GitLab</a> account.</p>
+<p>You can create the repo and the <code>gh-pages</code> branch using the web interface of <a href="https://github.com" class="uri">https://github.com</a> or <a href="https://gitlab.com" class="uri">https://gitlab.com</a> in your browser, but the best way to start a new project is using the CLI for <a href="https://cli.github.com">GitHub</a> or <a href="https://docs.gitlab.com/ee/editor_extensions/gitlab_cli/">GitLab</a> in your <a href="https://en.wikipedia.org/wiki/Terminal_emulator">terminal</a>. First, run <code>gh</code> <code>auth</code> <code>login</code> or <code>glab</code> <code>auth</code> <code>login</code> and follow the prompts to authenticate via your web browser or with an authentication token.</p>
+<p>The GitHub CLI allows you to add an SSH key to your account during or <a href="https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account?tool=cli#adding-a-new-ssh-key-to-your-account">after authentication</a>. The GitLab CLI does not handle SSH keys during authentication, but has a similar command for <a href="https://gitlab.com/gitlab-org/cli/-/blob/main/docs/source/ssh-key/add.md">adding an SSH key to your GitLab account</a>.</p>
+<p>After authentication and SSH key setup, you can run the code in either of the code chunks in Example&nbsp;4 to set up your local and remote repos and create a Quarto website project in the local repo. You can create shell alias that combine all of the repo creation steps like I did in my <a href="https://github.com/NishantBharali/setup/blob/0bd5898908974746fa55e7e8f19a36859040b6ca/.zshrc#L630"><code>.zshrc</code></a>.</p>
+<div id="exm-git" class="theorem example">
+<p><span class="theorem-title"><strong>Example 4 </strong></span>&nbsp;</p>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs"><li class="nav-item"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" aria-controls="tabset-2-1" aria-selected="true">GitHub</a></li><li class="nav-item"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" aria-controls="tabset-2-2" aria-selected="false">GitLab</a></li></ul>
+<div class="tab-content">
+<div id="tabset-2-1" class="tab-pane active" aria-labelledby="tabset-2-1-tab">
+<div class="sourceCode" id="cb5" style="background: #f1f3f5;"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">cd</span> <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># start in home directory</span></span>
+<span id="cb5-2"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">mkdir</span> <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">-p</span> USERNAME</span>
+<span id="cb5-3"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">cd</span> USERNAME</span>
+<span id="cb5-4"><span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">gh</span> repo create USERNAME.github.io <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">--add-readme</span> <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">--clone</span> <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">--public</span></span>
+<span id="cb5-5"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">cd</span> SITENAME</span>
+<span id="cb5-6"><span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">quarto</span> create project website USERNAME.github.io</span></code></pre></div>
+</div>
+<div id="tabset-2-2" class="tab-pane" aria-labelledby="tabset-2-2-tab">
+<div class="sourceCode" id="cb6" style="background: #f1f3f5;"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">cd</span> <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># start in home directory</span></span>
+<span id="cb6-2"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">mkdir</span> <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">-p</span> USERNAME</span>
+<span id="cb6-3"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">cd</span> USERNAME</span>
+<span id="cb6-4"><span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">glab</span> repo create USERNAME.gitlab.io <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">--readme</span> <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">--defaultBranch</span> main <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">--public</span></span>
+<span id="cb6-5"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">cd</span> SITENAME</span>
+<span id="cb6-6"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">git</span> pull origin main</span>
+<span id="cb6-7"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">git</span> branch <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">--set-upstream-to</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span>origin/main main</span>
+<span id="cb6-8"><span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">quarto</span> create project website USERNAME.gitlab.io</span></code></pre></div>
+</div>
+</div>
+</div>
+</div>
+<p>To make it easier to maintain my site on both GitHub and GitLab Pages, I set up my local repo cloned to have two <code>origin</code> remote URLs using the code as shown in Example&nbsp;5. Now, running <code>quarto</code> <code>publish</code> or <code>git</code> <code>push</code> in my local repo, updates my content on both GitHub and GitLab.</p>
+<div id="exm-remote" class="theorem example">
+<p><span class="theorem-title"><strong>Example 5 </strong></span>&nbsp;</p>
+<div class="sourceCode" id="cb7" style="background: #f1f3f5;"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">git</span> remote add hub git@github.com:NishantBharali/Blog</span>
+<span id="cb7-2"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">git</span> remote set-url <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">--add</span> origin <span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">$(</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">git</span> remote get-url lab<span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">)</span></span></code></pre></div>
+</div>
+<p>If you want to have your website hosted on GitHub Pages, you will need to <a href="https://quarto.org/docs/publishing/github-pages.html#source-branch">set <code>gh-pages</code> as your source branch</a> in your repo settings. For GitLab Pages, you will need to add a <code>.gitlab-ci.yml</code> file to your repo and update your <code>_quarto.yml</code> file as shown in Example&nbsp;6 to include <code>.gitlab-ci.yml</code> as a <code>resource</code> in your output directory.</p>
+<div id="exm-yml" class="theorem example">
+<p><span class="theorem-title"><strong>Example 6 </strong></span>&nbsp;</p>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs"><li class="nav-item"><a class="nav-link active" id="tabset-3-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-1" aria-controls="tabset-3-1" aria-selected="true"><code>.gitlab-ci.yml</code></a></li><li class="nav-item"><a class="nav-link" id="tabset-3-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-2" aria-controls="tabset-3-2" aria-selected="false"><code>_quarto.yml</code></a></li></ul>
+<div class="tab-content">
+<div id="tabset-3-1" class="tab-pane active" aria-labelledby="tabset-3-1-tab">
+<div class="sourceCode" id="cb8" data-include="../../.gitlab-ci.yml" style="background: #f1f3f5;"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"></code></pre></div>
+</div>
+<div id="tabset-3-2" class="tab-pane" aria-labelledby="tabset-3-2-tab">
+<div class="sourceCode" id="cb9" data-include="../../_quarto.yml" data-start-line="1" data-end-line="3" style="background: #f1f3f5;"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"></code></pre></div>
+</div>
+</div>
+</div>
+</div>
+<p>By default, GitLab Pages includes a random hash in site <a href="https://en.wikipedia.org/wiki/URL#:~:text=A%20Uniform%20Resource%20Locator%20(URL)%2C%20colloquially%20known%20as%20an%20address%20on%20the%20Web">URLs</a>. To shorten the URL of my GitLab Pages site, one has to uncheck <strong>Use unique domain</strong> under <code>Deploy &gt; Pages</code> in the GitLab sidebar.</p>
+<p>At this point, we have completed <a href="https://quarto.org/docs/publishing/github-pages.html#:~:text=Use%20the%20quarto%20publish%20command%20to%20publish%20content%20rendered%20on%20your%20local%20machine.">G2</a> setup and you should be able to run <code>quarto</code> <code>publish</code> <code>gh-pages</code> from your <code>main</code> branch to render your site and deploy it to GitHub and/or GitLab Pages. Deploying with <code>quarto</code> <code>publish</code> at least once is a prerequisite for setting up any of the publishing methods that rely on GitHub Actions, because <code>quarto</code> <code>publish</code> creates a <code>_publish.yml</code> file in the root of your project that is required for publishing via GitHub Actions.</p>
+</section>
+<section id="sec-set-act" class="level3">
+<h3 class="anchored" data-anchor-id="sec-set-act">GitHub Actions</h3>
+<p>In addition to the steps described above, <a href="https://quarto.org/docs/publishing/github-pages.html#:~:text=Use%20a%20GitHub%20Action%20to%20automatically%20render%20your%20files%20(a%20single%20Quarto%20document%20or%20a%20Quarto%20project)%20and%20publish%20the%20resulting%20content%20whenever%20you%20push%20a%20source%20code%20change%20to%20your%20repository.">G3</a> setup requires that we create a <code>.github/workflows</code> directory and add a <a href="https://en.wikipedia.org/wiki/YAML#:~:text=YAML%20(/%CB%88j%C3%A6m%C9%99l/)%20(see%20%C2%A7%C2%A0History%20and%20name)%20is%20a%20human%2Dreadable%20data%20serialization%20language.">YAML</a> file to that directory. Example&nbsp;7 contains the <code>gh-pages.yml</code> file I use for my own site and the shell code that can used to obtain this file.</p>
+<div id="exm-curl" class="theorem example">
+<p><span class="theorem-title"><strong>Example 7 </strong></span>&nbsp;</p>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs"><li class="nav-item"><a class="nav-link active" id="tabset-4-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-1" aria-controls="tabset-4-1" aria-selected="true"><code>curl</code></a></li><li class="nav-item"><a class="nav-link" id="tabset-4-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-2" aria-controls="tabset-4-2" aria-selected="false"><code>gh-pages.yml</code></a></li></ul>
+<div class="tab-content">
+<div id="tabset-4-1" class="tab-pane active" aria-labelledby="tabset-4-1-tab">
+<div class="sourceCode" id="cb10" style="background: #f1f3f5;"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">mkdir</span> <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">-p</span> .github/workflows</span>
+<span id="cb10-2"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">cd</span> .github/workflows</span>
+<span id="cb10-3"><span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">curl</span> <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">-O</span> https://raw.githubusercontent.com/NishantBharali/Blog/main/.github/workflows/gh-pages.yml</span></code></pre></div>
+</div>
+<div id="tabset-4-2" class="tab-pane" aria-labelledby="tabset-4-2-tab">
+<div class="sourceCode" id="cb11" data-include="../../.github/workflows/gh-pages.yml" style="background: #f1f3f5;"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"></code></pre></div>
+</div>
+</div>
+</div>
+</div>
+<p>The <code>gh-pages.yml</code> file in Example&nbsp;7 installs Quarto, the R and Python programming languages, and the packages in the <code>renv.lock</code> and <code>requirements.txt</code> files. If you do not need R and/or Python, you can remove any unnecessary portions of the file.</p>
+<p>To modify the Python files that are installed by GitHub Actions, you can edit the <code>requirements.txt</code> file in your repo. To update your <code>renv.lock</code> file so that it includes all of the R packages your site requires, run <a href="https://rstudio.github.io/renv/reference/snapshot.html"><code>renv::snapshot()</code></a> in an R session or <code>Rscript</code> <code>-e</code> <code>renv::snapshot()</code> in a shell.</p>
+<p>After pushing the <code>gh-pages.yml</code> file, you can visit the Actions tab in your remote repo on GitHub to check the progress of the deployment of your site. If your site did not build successfully, you can go through the logs to try to diagnose the problem.</p>
+<p>I added a “Push to GitLab” step to my <code>gh-pages.yml</code> to make GitHub Actions push my remote <code>gh-pages</code> to GitLab so that my site is kept in sync on both GitHub and GitLab Pages. This required manually creating a token on GitLab and adding it to GitHub, which I accomplished using the GitHub CLI as shown in Example&nbsp;8.</p>
+<div id="exm-secret" class="theorem example">
+<p><span class="theorem-title"><strong>Example 8 </strong></span>&nbsp;</p>
+<div class="sourceCode" id="cb12" style="background: #f1f3f5;"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">gh</span> secret set GITLAB_AUTH_TOKEN</span></code></pre></div>
+</div>
+<p>After the setup described above, I now have two options for publishing my Quarto site: <code>quarto</code> <code>publish</code> and 2) <code>git push</code>. In addition to GitHub and GitLab Pages, both of these options automatically update my site on Netlify via <a href="https://quarto.org/docs/publishing/netlify.html#:~:text=If%20you%20are%20using%20GitHub%2C%20GitLab%2C%20Bitbucket%2C%20or%20Azure%20DevOps%2C%20you%20can%20point%20Netlify%20at%20your%20site%E2%80%99s%20source%20code%20and%20have%20it%20deployed%20whenever%20your%20code%20changes.">N2</a>.</p>
+<p>To also automatically update my site on Quarto Pub, I created a separate GitHub Actions workflow by adding another YAML file to the <code>.github/workflows</code> directory in my repo. Example&nbsp;9 shows my <code>quarto-pub.yml</code> file and the shell code that can be used to obtain it.</p>
+<div id="exm-qpub" class="theorem example">
+<p><span class="theorem-title"><strong>Example 9 </strong></span>&nbsp;</p>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs"><li class="nav-item"><a class="nav-link active" id="tabset-5-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-5-1" aria-controls="tabset-5-1" aria-selected="true"><code>curl</code></a></li><li class="nav-item"><a class="nav-link" id="tabset-5-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-5-2" aria-controls="tabset-5-2" aria-selected="false"><code>quarto-pub.yml</code></a></li></ul>
+<div class="tab-content">
+<div id="tabset-5-1" class="tab-pane active" aria-labelledby="tabset-5-1-tab">
+<div class="sourceCode" id="cb13" style="background: #f1f3f5;"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">mkdir</span> <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">-p</span> .github/workflows</span>
+<span id="cb13-2"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">cd</span> .github/workflows</span>
+<span id="cb13-3"><span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">curl</span> <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">-O</span> https://raw.githubusercontent.com/NishantBharali/Blog/main/.github/workflows/gh-pages.yml</span></code></pre></div>
+</div>
+<div id="tabset-5-2" class="tab-pane" aria-labelledby="tabset-5-2-tab">
+<div class="sourceCode" id="cb14" data-include="../../.github/workflows/quarto-pub.yml" style="background: #f1f3f5;"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"></code></pre></div>
+</div>
+</div>
+</div>
+</div>
+<p>My <code>quarto-pub.yml</code> file is based on <a href="https://quarto.org/docs/publishing/quarto-pub.html#:~:text=If%20you%20are%20using%20GitHub%2C%20you%20can%20use%20a%20GitHub%20Action%20to%20automatically%20render%20your%20project%20and%20publish%20the%20resulting%20content%20whenever%20your%20code%20changes.">Q2</a>, but it runs upon completion of the <code>pages-build-deployment</code> workflow instead of a push to <code>main</code>. I changed the workflow trigger so that it runs after my GitHub Pages site is built, regardless of whether I triggered the build by running <code>quarto</code> <code>publish</code> <code>gh-pages</code> or pushing to <code>main</code>.</p>
+<p>Figure&nbsp;2 summarizes all of the steps that occur during my Quarto publishing workflow. This workflow allows me to publish my site on four web hosts every time I run <code>quarto</code> <code>publish</code> <code>gh-pages</code> (<a href="https://quarto.org/docs/publishing/github-pages.html#:~:text=Use%20the%20quarto%20publish%20command%20to%20publish%20content%20rendered%20on%20your%20local%20machine.">G2</a>) or <code>git</code> <code>push</code> (<a href="https://quarto.org/docs/publishing/github-pages.html#:~:text=Use%20a%20GitHub%20Action%20to%20automatically%20render%20your%20files%20(a%20single%20Quarto%20document%20or%20a%20Quarto%20project)%20and%20publish%20the%20resulting%20content%20whenever%20you%20push%20a%20source%20code%20change%20to%20your%20repository.">G3</a>)!</p>
+<div class="cell" data-fig-width="9" data-layout-align="center">
+<div class="cell-output-display">
+<div id="fig-meth" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<div>
+<pre class="mermaid mermaid-js" data-label="fig-meth">flowchart LR
+    A[local&lt;br/&gt;main]-.G2.-&gt;B[local&lt;br/&gt;gh-pages]-.G2.-&gt;C[GitHub&lt;br/&gt;gh-pages]
+    B[local&lt;br/&gt;gh-pages]-.G2.-&gt;D[GitLab&lt;br/&gt;gh-pages]
+    A[local&lt;br/&gt;main]-.G3.-&gt;F[GitHub&lt;br/&gt;main]-.G3.-&gt;C[GitHub&lt;br/&gt;gh-pages]-.G3.-&gt;D[GitLab&lt;br/&gt;gh-pages]
+    A[local&lt;br/&gt;main]-.G3.-&gt;G[GitLab&lt;br/&gt;main]
+    C[GitHub&lt;br/&gt;gh-pages]-.N2.-&gt;E[Netlify]
+    C[GitHub&lt;br/&gt;gh-pages]-.Q2.-&gt;H[Quarto&lt;br/&gt;Pub]
+</pre>
+</div>
+<figcaption class="figure-caption">Figure&nbsp;2: Quarto publishing workflow</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>So far I have only noticed one difference between the four web hosts I use for my site: GitHub Pages is the only web host that properly differentiates between internal and <a href="https://quarto.org/docs/output-formats/html-basics.html#external-links">external links</a>. All of the other web hosts include the <span class="external">external link icon</span> on all links regardless of whether they target my site or an external site.</p>
+<p>I tried unsuccessfully to solve this issue by setting the <a href="https://quarto.org/docs/output-formats/html-basics.html#external-links"><code>link-external-filter</code></a> property to a <a href="https://en.wikipedia.org/wiki/Regular_expression#:~:text=A%20regular%20expression%20(shortened%20as%20regex%20or%20regexp)%2C%5B1%5D%20sometimes%20referred%20to%20as%20rational%20expression%2C%5B2%5D%5B3%5D%20is%20a%20sequence%20of%20characters%20that%20specifies%20a%20match%20pattern%20in%20text.">regular expression</a>. If you notice a problem with the <code>link-external-icon</code> feature on other web hosts, I suggest switching to GitHub Pages.</p>
+</section>
+</section>
+</section>
+<section id="sec-cust" class="level1">
+<h1>Customizing Quarto sites</h1>
+<section id="sec-nav" class="level2">
+<h2 class="anchored" data-anchor-id="sec-nav">Site navigation</h2>
+<p>Once your site is <a href="https://quarto.org/docs/websites/website-blog.html#quick-start">built</a> and <a href="https://quarto.org/docs/websites/website-blog.html#publishing">published</a>, you can make it easier to navigate with a customized navigation bar (navbar) and sidebar, as described in the <a href="https://quarto.org/docs/websites/website-navigation.html">Quarto documentation</a>. Check out the <code>_quarto.yml</code> files for <a href="https://github.com/NishantBharali/Blog/blob/main/_quarto.yml">my site</a> and the Quarto <a href="https://github.com/quarto-dev/quarto-web/blob/main/_quarto.yml">documentation site</a> to see how the navigation components are set up.</p>
+<p>In my navbar, I added toggle buttons for <a href="https://quarto.org/docs/websites/website-navigation.html#reader-mode">reader mode</a> and <a href="https://quarto.org/docs/output-formats/html-themes.html#dark-mode">dark mode</a>. The names of the other icons on right side of the navbar are included in the sidebar.</p>
+</section>
+<section id="sec-html" class="level2">
+<h2 class="anchored" data-anchor-id="sec-html">HTML blocks</h2>
+<p>My navbar also provides the current date and time in <code>Dec</code> ordinal (<code>deco</code>) format, which counts the <a href="https://en.wikipedia.org/wiki/ISO_8601#:~:text=year%200000%20being%20equal%20to%201%20BC">years since 1 BC</a> and the days since March 1. <code>Dec</code> is a calendar and time system that I created and use throughout my blog.</p>
+<p><a href="https://mine-cr.com/">Mine Çetinkaya-Rundel</a> wrote about <a href="https://mine-cetinkaya-rundel.github.io/quarto-tip-a-day/posts/12-html-block/">HTML blocks</a> as part of her <a href="https://mine-cetinkaya-rundel.github.io/quarto-tip-a-day/about.html">A Quarto tip a day</a> project.</p>
+<p>HTML blocks are useful for running <a href="https://en.wikipedia.org/wiki/JavaScript#:~:text=JavaScript%20(/%CB%88d%CA%92%C9%91%CB%90v%C9%99skr%C9%AApt/)%2C%20often%20abbreviated%20as%20JS%2C%20is%20a%20programming%20language%20that%20is%20one%20of%20the%20core%20technologies%20of%20the%20World%20Wide%20Web%2C%20alongside%20HTML%20and%20CSS">JavaScript</a> code in the context of a single page on your site without affecting the others. I also use HTML blocks to add a <code>&lt;style&gt;</code> element to my <code>.qmd</code> files as a last ditch effort to fine tune the style of my site.</p>
+<p>Before I resort to the <code>&lt;style&gt;</code> element approach, I try writing <a href="https://en.wikipedia.org/wiki/CSS#:~:text=Cascading%20Style%20Sheets%20(CSS)%20is%20a%20style%20sheet%20language%20used%20for%20describing%20the%20presentation%20of%20a%20document%20written%20in%20a%20markup%20language%20such%20as%20HTML">CSS</a> in my <a href="https://quarto.org/docs/visual-editor/content.html#defining-styles"><code>styles.css</code></a>, <code>light.css</code>, and <a href="https://quarto.org/docs/output-formats/html-themes.html#customizing-themes"><code>dark.css</code></a> files. So far, this approach has been sufficient to make any styling changes I want, but if it every fails, I can use JavaScript to override the default styling provided by Quarto by modifying <code>style</code> attributes, which have the highest <a href="https://en.wikipedia.org/wiki/CSS#Specificity:~:text=Specificity%20refers%20to%20the%20relative%20weights%20of%20various%20rules.">specificity</a> in <a href="https://en.wikipedia.org/wiki/CSS#:~:text=Cascading%20Style%20Sheets%20(CSS)%20is%20a%20style%20sheet%20language%20used%20for%20describing%20the%20presentation%20of%20a%20document%20written%20in%20a%20markup%20language%20such%20as%20HTML">CSS</a>.</p>
+</section>
+<section id="sec-filt" class="level2">
+<h2 class="anchored" data-anchor-id="sec-filt">Pandoc filter</h2>
+<p>In addition to customizing dates on the <a href="https://nishantbharali.github.io/Blog/blog.html">listing page</a> of my blog, I wanted to customize the date format in every blog post. To complete this task, I used a <a href="https://en.wikipedia.org/wiki/Lua_(programming_language)#:~:text=Lua%20(/%CB%88lu%CB%90%C9%99/%20LOO%2D%C9%99%3B%20from%20Portuguese%3A%20lua%20%5B%CB%88lu(w)%C9%90%5D%20meaning%20moon)%20is%20a%20lightweight%2C%20high%2Dlevel%2C%20multi%2Dparadigm%20programming%20language%20designed%20primarily%20for%20embedded%20use%20in%20applications.">Lua</a> script as a <a href="https://quarto.org/docs/extensions/filters.html">Pandoc filter</a>.</p>
+<p><a href="https://pandoc.org/">Pandoc</a> is a program that converts documents into practically any format. The “pan” in Pandoc comes from the Ancient Greek word for <a href="https://en.wiktionary.org/wiki/pan-#:~:text=pan%2D-,all,-Usage%20notes%5B"><em>all</em></a>. Pandoc strives to convert <em>all</em> document formats, just like <a href="https://en.wikipedia.org/wiki/Pangaea#:~:text=Pangaea%20or%20Pangea%20(/p%C3%A6n%CB%88d%CA%92i%CB%90.%C9%99/)%5B1%5D%20was%20a%20supercontinent%20that%20existed%20during%20the%20late%20Paleozoic%20and%20early%20Mesozoic%20eras.">Pangea</a> contained <em>all</em> the land and a <a href="https://en.wiktionary.org/wiki/panacea#English:~:text=A%20solution%20to%20all%20problems.">panacea</a> solves <em>all</em> problems.</p>
+<p>Quarto uses Pandoc to convert markdown files into target format(s) like <code>html</code> or <code>pdf</code>. If the source files contain executable code, Quarto executes the code via one of two computational engines: <a href="https://jupyter.org/#:~:text=Free%20software%2C%20open%20standards%2C%20and%20web%20services%20for%20interactive%20computing%20across%20all%20programming%20languages">Jupyter</a> or <a href="https://yihui.org/knitr/#:~:text=the%20knitr%20package%20was%20designed%20to%20be%20a%20transparent%20engine%20for%20dynamic%20report%20generation%20with%20R">Knitr</a>. Figure&nbsp;3 shows the Quarto workflow.</p>
+<div class="cell" data-fig-width="9" data-layout-align="center">
+<div class="cell-output-display">
+<div id="fig-render" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<div>
+<pre class="mermaid mermaid-js" data-label="fig-render">flowchart LR
+   A[qmd&lt;br/&gt;ipynb]-.Knitr&lt;br/&gt;Jupyter.-&gt;B((md))-.Pandoc with&lt;br/&gt;Lua filters.-&gt;C(html&lt;br/&gt;pdf&lt;br/&gt;docx&lt;br/&gt;etc.)
+</pre>
+</div>
+<figcaption class="figure-caption">Figure&nbsp;3: Quarto rendering workflow</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Mine Çetinkaya-Rundel’s Quarto tip series includes a similar <a href="https://mine-cetinkaya-rundel.github.io/quarto-tip-a-day/posts/21-diagrams/#fig-mermaid">Quarto workflow mermaid diagram</a> and her <a href="https://mine.quarto.pub/hello-quarto">“Hello, Quarto!”</a> rstudio::conf(2022) keynote with <a href="https://jules32.github.io">Julia Stewart Lowndes</a> contains truly beautiful Quarto workflow images by <a href="https://allisonhorst.com">Allison Horst</a>: <a href="https://mine.quarto.pub/hello-quarto/#/publishing-system-2">1</a>, <a href="https://mine.quarto.pub/hello-quarto/#/quarto-flattens-the-learning-curve">2</a>, <a href="https://mine.quarto.pub/hello-quarto/#/quarto-can-grow-with-learners-in-a-profound-way">3</a>, and <a href="https://mine.quarto.pub/hello-quarto/#/quarto-cli-orchestrates-each-step-of-rendering">4</a>.</p>
+<p>Quarto controls Pandoc, Jupyter, and Knitr in two ways: 1) with arguments passed to the <a href="https://en.wikipedia.org/wiki/Command-line_interface#:~:text=A%20command%2Dline%20interface%20(CLI)%20is%20a%20means%20of%20interacting%20with%20a%20computer%20program%20by%20inputting%20lines%20of%20text%20called%20command%2Dlines.">Quarto CLI</a> commands and 2) with <a href="https://yaml.org/">YAML</a> key-value pairs in <code>.qmd</code>, <code>.ipynb</code>, or <code>.yml</code> files.</p>
+<p>HTML blocks can run JavaScript which excels at making content dynamic and interactive, pre- and post-render scripts can be in any programming language, while Pandoc filters are written in Lua and modify output during rendering.</p>
+<script>
+const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+</script>
+<style>
+div#quarto-sidebar-glass { display: none !important; }
+ul.navbar-nav.navbar-nav-scroll { -webkit-flex-direction: row !important; }
+/* #quarto-sidebar { padding: 5px; }
+#quarto-sidebar > * { padding: 5px; }
+div.sidebar-menu-container > * { padding: 5px 5px 5px 5px; }
+#quarto-margin-sidebar { padding: 40px; } */
+</style>
+
+
+</section>
+</section>
+
+<a onclick="window.scrollTo(0, 0); return false;" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a> ]]></description>
+  <category>Tools/Packages</category>
+  <guid>https://nishantbharali.github.io/Blog/Tools/quarto/quarto.html</guid>
+  <pubDate>Sat, 24 Jun 2023 04:00:00 GMT</pubDate>
+  <media:content url="https://nishantbharali.github.io/Blog/Tools/quarto/horst_many-qmd-to-output.png" medium="image" type="image/png" height="88" width="144"/>
+</item>
+</channel>
+</rss>

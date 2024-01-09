@@ -1,15 +1,33 @@
 [
   {
+    "listing": "/robotics.html",
+    "items": [
+      "/Robotics/Robotics.html"
+    ]
+  },
+  {
     "listing": "/blog.html",
     "items": [
       "/posts/Anomaly-Outlier Detection/index.html",
       "/posts/Classification/index.html",
       "/posts/Clustering/index.html",
-      "/posts/Linear and Non Linear Regression/index.html",
-      "/posts/git/git.html",
-      "/posts/quarto/quarto.html",
-      "/posts/llm/llm.html",
-      "/posts/2019-12-17-Hands-On-Machine-Learning-with-R/2019-12-17-Hands-On-Machine-Learning-with-R.html"
+      "/posts/Linear and Non Linear Regression/index.html"
+    ]
+  },
+  {
+    "listing": "/Projects.html",
+    "items": [
+      "/blog.html",
+      "/tool.html",
+      "/robotics.html"
+    ]
+  },
+  {
+    "listing": "/tool.html",
+    "items": [
+      "/Tools/git/git.html",
+      "/Tools/llm/llm.html",
+      "/Tools/quarto/quarto.html"
     ]
   }
 ]

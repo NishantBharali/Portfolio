@@ -1,6 +1,6 @@
 ---
 title: "Nishant Bharali"
-subtitle: "Persistently Evolve"
+subtitle: "Portfolio"
 image: ./images/Nishant.jpg
 about:
   template: trestles
@@ -8,8 +8,8 @@ about:
   image-shape: round
   links:
     - icon: rss
-      text: Blog
-      href: https://nishantbharali.github.io/Blog/blog.html
+      text: Projects
+      href: https://nishantbharali.github.io/Blog/Projects.html
     - icon: file-earmark-person
       href: https://nishantbharali.github.io/Blog/Resume/Resume.html
       # https://nishantbharali.github.io/Blog/cv/cv.html
@@ -45,9 +45,7 @@ My framework of choice for web app development is Java + [Spring](https://spring
 
 There are a plethora of online and in-person data science communities to learn from and share your own experiences. Online communities for open-source languages and data science are incredibly welcoming and below are my favorites:
 
-- [SoCal R Users Group](https://www.meetup.com/socal-rug/ "SoCal RUG meets on a monthly basis for online and in-person events")
 - [Data Science Hangout](https://www.rstudio.com/data-science-hangout/live-calls/ "Data Science Hangout hosted by RStudio's Rachael Dempsey, Thursdays at 12pm ET")
-- [R-Ladies Global](https://rladies.org/ "R-Ladies Is A World-Wide Organization To Promote Gender Diversity In The R Community")
 - [The Ravit Show](https://theravitshow.com/ "TRS, hosted by Ravit Jain, is a community for data science & AI practitioners")
 
 ```{=html}

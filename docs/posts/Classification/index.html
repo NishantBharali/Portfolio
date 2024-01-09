@@ -148,10 +148,25 @@ cookieconsent.run({
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
-  <li class="nav-item">
-    <a class="nav-link active" href="../../blog.html" rel="" target="" aria-current="page">
- <span class="menu-text">Blog</span></a>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-projects" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
+ <span class="menu-text">Projects</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-projects">    
+        <li>
+    <a class="dropdown-item" href="../../blog.html" rel="" target="">
+ <span class="dropdown-text">Machine Learning</span></a>
   </li>  
+        <li>
+    <a class="dropdown-item" href="../../tool.html" rel="" target="">
+ <span class="dropdown-text">Tools</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../robotics.html" rel="" target="">
+ <span class="dropdown-text">Robotics</span></a>
+  </li>  
+    </ul>
+  </li>
   <li class="nav-item dropdown ">
     <a class="nav-link dropdown-toggle" href="#" id="nav-menu-resources" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
  <span class="menu-text">Resources</span>
@@ -165,22 +180,10 @@ cookieconsent.run({
     <a class="dropdown-item" href="https://r4ds.hadley.nz/" rel="" target="_blank">
  <span class="dropdown-text">Python for Data Science</span></a>
   </li>  
-        <li>
-    <a class="dropdown-item" href="https://www.tidyverse.org/" rel="" target="_blank">
- <span class="dropdown-text">Tidyverse</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="https://www.tidymodels.org/" rel="" target="_blank">
- <span class="dropdown-text">Tidymodels</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="https://style.tidyverse.org/" rel="" target="_blank">
- <span class="dropdown-text">Tidyverse Style Guide</span></a>
-  </li>  
     </ul>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="../../about.html" rel="" target="">
+    <a class="nav-link active" href="../../about.html" rel="" target="" aria-current="page">
  <span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item dropdown ">
@@ -226,7 +229,7 @@ cookieconsent.run({
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../blog.html">Blog Posts</a></li><li class="breadcrumb-item"><a href="../../blog.html#category=Machine Learning">Machine Learning</a></li><li class="breadcrumb-item"><a href="../../posts/Classification/index.html">Classification</a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../Projects.html">Projects</a></li><li class="breadcrumb-item"><a href="../../blog.html#category=Machine Learning">Machine Learning</a></li><li class="breadcrumb-item"><a href="../../posts/Classification/index.html">Classification</a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
     </div>
@@ -246,8 +249,8 @@ cookieconsent.run({
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../../blog.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Blog Posts</span></a>
+            <a href="../../Projects.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Projects</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -255,8 +258,8 @@ cookieconsent.run({
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../../blog.html#category=Tools/Packages" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Tools</span></a>
+            <a href="../../blog.html#category=Robotics" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Robotics</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -264,20 +267,8 @@ cookieconsent.run({
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../posts/git/git.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Git</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../posts/llm/llm.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">LLM</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../posts/quarto/quarto.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Quarto</span></a>
+  <a href="../../Robotics/Robotics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Robotics</span></a>
   </div>
 </li>
       </ul>
@@ -323,6 +314,35 @@ cookieconsent.run({
 </li>
       </ul>
   </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../blog.html#category=Tools/Packages" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Tools</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../posts/git/git.qmd" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Git</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../posts/llm/llm.qmd" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">LLM</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../posts/quarto/quarto.qmd" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Quarto</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
       </ul>
   </li>
         <li class="sidebar-item">
@@ -333,13 +353,13 @@ cookieconsent.run({
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false">
  <span class="menu-text">Resources</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../resources.html" class="sidebar-item-text sidebar-link">
@@ -350,24 +370,6 @@ cookieconsent.run({
   <div class="sidebar-item-container"> 
   <a href="https://r4ds.hadley.nz/" class="sidebar-item-text sidebar-link" target="&quot;_blank&quot;">
  <span class="menu-text">Python for Data Science</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="https://www.tidyverse.org/" class="sidebar-item-text sidebar-link" target="&quot;_blank&quot;">
- <span class="menu-text">Tidyverse</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="https://www.tidymodels.org/" class="sidebar-item-text sidebar-link" target="&quot;_blank&quot;">
- <span class="menu-text">Tidymodels</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="https://style.tidyverse.org/" class="sidebar-item-text sidebar-link" target="&quot;_blank&quot;">
- <span class="menu-text">Tidyverse Style Guide</span></a>
   </div>
 </li>
       </ul>
@@ -609,7 +611,7 @@ None</code></pre>
               precision    recall  f1-score   support
 
            0       1.00      1.00      1.00       289
-           1       0.99      0.98      0.98       299
+           1       0.99      0.98      0.99       299
            2       0.98      0.99      0.99       312
 
     accuracy                           0.99       900
@@ -710,8 +712,8 @@ weighted avg       0.98      0.98      0.98       900
               precision    recall  f1-score   support
 
            0       1.00      1.00      1.00       289
-           1       0.99      1.00      0.99       299
-           2       1.00      0.99      1.00       312
+           1       0.99      0.99      0.99       299
+           2       0.99      0.99      0.99       312
 
     accuracy                           1.00       900
    macro avg       1.00      1.00      1.00       900
@@ -855,9 +857,9 @@ weighted avg       1.00      1.00      1.00       900
 <span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Cross-Validation Scores for RandomForestClassifier:"</span>, cv_scores)</span>
 <span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Average Score:"</span>, np.mean(cv_scores))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Cross-Validation Scores for RandomForestClassifier: [1.         1.         0.99333333 0.99333333 1.         0.99666667
+<pre><code>Cross-Validation Scores for RandomForestClassifier: [0.99666667 1.         0.99333333 0.99333333 1.         0.99666667
  0.99666667 0.99333333 1.         1.        ]
-Average Score: 0.9973333333333333</code></pre>
+Average Score: 0.9969999999999999</code></pre>
 </div>
 </div>
 <p><strong>2. Ensemble Methods</strong></p>
@@ -990,8 +992,8 @@ Model: DecisionTreeRegressor
 Mean Squared Error: 0.0077777777777777776
 R-squared (R2) Score: 0.9883413432623143
 Model: RandomForestRegressor
-Mean Squared Error: 0.006260222222222222
-R-squared (R2) Score: 0.9906161137440759</code></pre>
+Mean Squared Error: 0.006041444444444443
+R-squared (R2) Score: 0.990944055102883</code></pre>
 </div>
 <div class="cell-output cell-output-display">
 <p><img src="index_files/figure-html/cell-13-output-2.png" width="663" height="449"></p>
@@ -1027,8 +1029,8 @@ R-squared (R2) Score: 0.9906161137440759</code></pre>
 <span id="cb21-20"><a href="#cb21-20" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'R-squared (R2) Score: </span><span class="sc">{</span>r2_score(y_test, predictions)<span class="sc">}</span><span class="ss">'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Tuned Random Forest Regressor - Model Evaluation
-Mean Squared Error: 0.006044444444444445
-R-squared (R2) Score: 0.9909395581924271</code></pre>
+Mean Squared Error: 0.0072306666666666665
+R-squared (R2) Score: 0.9891614464876909</code></pre>
 </div>
 </div>
 <p><strong>Feature Selection and Importance Analysis</strong></p>

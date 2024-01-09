@@ -1,0 +1,2512 @@
+---
+title: "Robotics and Automation"
+categories: [Robotics]
+image: ../images/Robotics.gif 
+format:
+    html: 
+        code-fold: true
+        code-overflow: scroll
+        code-tools: true
+
+---
+
+## Inverse Kinematics Optimazation
+
+We are building a snake robot. This snake robot moves in a plane and has 5 joints, making it a redundant robot. We are using this redundancy to mimic the motion of real snakes.
+
+![](Images/Inv_diagram.png){fig-align="center" width=30%} 
+
+Leaving 𝑏 = 0 within the Jacobian pseudoinverse. Implementing the numerical inverse kinematics algorithm to find the inverse kinematics solutions when:
+
+* **Case 1: 𝐿 = 1 and the desired end-effector pose is:**
+
+**Tsb = [rotz(pi/4), [3;2;0]; 0 0 0 1]**
+
+```{python}
+import numpy as np
+import matplotlib
+import matplotlib.pyplot as plt
+matplotlib.use('Agg')  # Set the backend to a non-interactive backend
+import matplotlib.animation as animation
+from matplotlib.animation import PillowWriter
+
+# Define the necessary functions
+def bracket3(S):
+    return np.array([[0, -S[2], S[1]], [S[2], 0, -S[0]], [-S[1], S[0], 0]])
+
+def expm(A):
+    return np.linalg.matrix_power(np.eye(A.shape[0]) + A / 16, 16)
+
+def adjointM(T):
+    R = T[0:3, 0:3]
+    p = T[0:3, 3]
+    return np.block([[R, np.zeros((3, 3))], [bracket3(p) @ R, R]])
+
+def r2axisangle(R):
+    if np.linalg.norm(R - np.eye(3)) < 1e-3:
+        return np.array([0, 0, 0])
+    else:
+        theta = np.arccos(0.5 * (np.trace(R) - 1))
+        omega_hat = 1 / (2 * np.sin(theta)) * (R - R.T)
+        omega = np.array([omega_hat[2, 1], omega_hat[0, 2], omega_hat[1, 0]])
+        return omega * theta
+
+def bracket_s(s):
+    return np.array([[0, -s[2], s[1], s[3]], [s[2], 0, -s[0], s[4]], [-s[1], s[0], 0, s[5]], [0, 0, 0, 0]])
+
+def fk(M, S, theta):
+    T = np.eye(4)
+    theta = np.atleast_1d(theta)
+    for i in range(len(theta)):
+        T = np.dot(T, expm(bracket_s(S[:, i]) * theta[i]))
+    return np.dot(T, M)
+
+def JacS(S, theta):
+    T = np.eye(4)
+    Js = np.zeros((6, len(theta)))
+    for i in range(len(theta)):
+        Si = S[:, i]
+        Js[:, i] = adjointM(T) @ Si
+        T = np.dot(T, expm(bracket_s(Si) * theta[i]))
+    return Js
+
+def rotz(angle):
+    c, s = np.cos(angle), np.sin(angle)
+    return np.array([[c, -s, 0], [s, c, 0], [0, 0, 1]])
+
+# Initialize plot
+fig, ax = plt.subplots()
+ax.set_xlim(-6, 6)
+ax.set_ylim(-6, 6)
+ax.grid(True)
+line, = ax.plot([], [], 'o-', color=[1, 0.5, 0], linewidth=4)
+plt.ion()
+
+# Initialize parameters
+L = 1
+theta = np.array([np.pi/8] * 5)
+
+S1 = np.array([0, 0, 1, 0, 0, 0])
+S2 = np.array([0, 0, 1, 0, -1 * L, 0])
+S3 = np.array([0, 0, 1, 0, -2 * L, 0])
+S4 = np.array([0, 0, 1, 0, -3 * L, 0])
+S5 = np.array([0, 0, 1, 0, -4 * L, 0])
+
+# Create S_eq by concatenating the individual S vectors horizontally
+S = np.column_stack((S1, S2, S3, S4, S5))
+
+M = np.vstack([np.hstack([np.eye(3), np.array([[5*L, 0, 0]]).T]), [0, 0, 0, 1]])
+M1 = np.vstack([np.hstack([np.eye(3), np.array([[1*L, 0, 0]]).T]), [0, 0, 0, 1]])
+M2 = np.vstack([np.hstack([np.eye(3), np.array([[2*L, 0, 0]]).T]), [0, 0, 0, 1]])
+M3 = np.vstack([np.hstack([np.eye(3), np.array([[3*L, 0, 0]]).T]), [0, 0, 0, 1]])
+M4 = np.vstack([np.hstack([np.eye(3), np.array([[4*L, 0, 0]]).T]), [0, 0, 0, 1]])
+
+# Desired transformation
+T_d = np.vstack([np.hstack([rotz(np.pi/4), np.array([[3, 2, 0]]).T]), [0, 0, 0, 1]])
+Xd = np.concatenate([r2axisangle(T_d[0:3, 0:3]), T_d[0:3, 3]])
+
+# Initial forward kinematics
+T = fk(M, S, theta)
+X = np.concatenate([r2axisangle(T[0:3, 0:3]), T[0:3, 3]])
+
+# Animation function
+def update(frame):
+    global theta, T, X
+    if np.linalg.norm(Xd - X) > 1e-1:
+        # Calculate joint transformations
+        T1 = fk(M1, S[:, 0:1], theta[0])
+        T2 = fk(M2, S[:, 0:2], [theta[0], theta[1]])
+        T3 = fk(M3, S[:, 0:3], [theta[0], theta[1], theta[2]])
+        T4 = fk(M4, S[:, 0:4], [theta[0], theta[1], theta[2], theta[3]])
+        P_v = np.array([[0, 0]] + [T1[0:2, 3]]+ [T2[0:2, 3]]+ [T3[0:2, 3]]+ [T4[0:2, 3]] + [T[0:2, 3]]).T
+        
+        # Draw the robot
+        line.set_data(P_v[0, :], P_v[1, :])
+        
+        # Update Jacobians and compute delta_theta
+        JS = JacS(S, theta)
+        Jb = np.dot(adjointM(np.linalg.inv(T)), JS)
+        J_geometric = np.block([[T[0:3, 0:3], np.zeros((3, 3))], [np.zeros((3, 3)), T[0:3, 0:3]]]) @ Jb
+        V = Xd - X
+        delta_theta = np.dot(np.linalg.pinv(J_geometric), V)
+        
+        # Update theta
+        theta += 0.1 * delta_theta
+        print(theta)
+        T = fk(M, S, theta)
+        X = np.concatenate([r2axisangle(T[0:3, 0:3]), T[0:3, 3]])
+
+    return line,
+
+# Create and save the animation
+ani = animation.FuncAnimation(fig, update, frames=np.arange(100), interval=200, blit=False)
+
+# Save the animation
+writer = PillowWriter(fps=7)  
+ani.save("Inverse_Kinematics_1.gif", writer=writer)
+```
+
+
+At each iteration we first plot the robot and save a video frame. Then we calculate the Jacobian and perform numerical inverse kinematics. The loop terminates when the actual pose is close to the desired pose.
+
+**MATLAB implementation**
+
+<details>
+
+```matlab
+
+close all
+clear
+clc
+
+% create figure
+figure
+axis([-6, 6, -6, 6])
+grid on
+hold on
+
+% save as a video file
+v = VideoWriter('Inverse_Kinematics_1.mp4', 'MPEG-4');
+v.FrameRate = 25;
+open(v);
+
+% initial joint values
+L = 1;
+theta = [pi/8; pi/8; pi/8; pi/8; pi/8];
+
+S1 = [0 0 1 0 0 0]';
+S2 = [0 0 1 0 -1*L 0]';
+S3 = [0 0 1 0 -2*L 0]';
+S4 = [0 0 1 0 -3*L 0]';
+S5 = [0 0 1 0 -4*L 0]';
+
+S_eq = [S1, S2, S3, S4, S5];   
+M = [eye(3), [5*L;0;0]; 0 0 0 1];
+M1 = [eye(3), [1*L;0;0]; 0 0 0 1];
+M2 = [eye(3), [2*L;0;0]; 0 0 0 1];
+M3 = [eye(3), [3*L;0;0]; 0 0 0 1];
+M4 = [eye(3), [4*L;0;0]; 0 0 0 1];
+
+% Given desired Transformation matrices T_d
+T_d = [rotz(pi/4), [3;2;0]; 0 0 0 1];
+Xd = [r2axisangle(T_d(1:3, 1:3)); T_d(1:3,4)];
+
+% T with initial joint positions
+T = fk(M, S_eq, theta);
+X = [r2axisangle(T(1:3, 1:3)); T(1:3,4)];
+
+while norm(Xd - X) > 1e-2
+
+    p0 = [0; 0]; % plot the robot
+    T1 = fk(M1, S1, theta(1)); % 1. get the position of each link
+    T2 = fk(M2, [S1, S2], [theta(1), theta(2)]);
+    T3 = fk(M3, [S1, S2, S3], [theta(1), theta(2), theta(3)]);
+    T4 = fk(M4, [S1, S2, S3, S4], [theta(1), theta(2), theta(3), theta(4)]);
+    P_v = [p0, T1(1:2, 4), T2(1:2, 4), T3(1:2, 4), T4(1:2, 4), T(1:2, 4)];
+
+    cla; % 2. draw the robot and save the frame
+    plot(P_v(1,:), P_v(2,:), 'o-', 'color',[1, 0.5, 0],'linewidth',4)
+    drawnow
+    frame = getframe(gcf);
+    writeVideo(v, frame); % My Implementation for inverse kinematics calculation below
+
+    JS = JacS(S_eq, theta); % Updated Space Jacobian
+    Jb = adjointM(inv(T))*JS; %Updated Body Jacobian
+    J = [T(1:3, 1:3) zeros(3); zeros(3) T(1:3, 1:3)] * Jb; % Updated Geometric Jacobian
+    V = Xd - X;
+
+    delta_theta = pinv(J)*V +(eye(5) - pinv(J)*J)*[0;0;0;0;0];
+
+    theta = double(theta + 0.1 * delta_theta); % Updating theta until the while loop is satisfied to get the desired joint positions
+    T = fk(M, S_eq, theta);
+    X = [r2axisangle(T(1:3, 1:3)); T(1:3,4)];
+end
+
+close(v);
+close all
+```
+
+</details>
+
+**Result:**
+
+<img src="Inverse_Kinematics_1.gif" alt="Animated GIF" loop width="100%" height="100%">
+
+
+* **Case 2: 𝐿 = 1 and the desired end-effector pose is:**
+
+**Tsb = [rotz(pi/2), [-2;4;0]; 0 0 0 1]**
+
+```{python}
+import numpy as np
+import matplotlib
+matplotlib.use('Agg')  # Set the backend to a non-interactive backend
+import matplotlib.pyplot as plt
+import matplotlib.animation as animation
+from matplotlib.animation import PillowWriter
+
+# Define the necessary functions
+def bracket3(S):
+    return np.array([[0, -S[2], S[1]], [S[2], 0, -S[0]], [-S[1], S[0], 0]])
+
+def expm(A):
+    return np.linalg.matrix_power(np.eye(A.shape[0]) + A / 16, 16)
+
+def adjointM(T):
+    R = T[0:3, 0:3]
+    p = T[0:3, 3]
+    return np.block([[R, np.zeros((3, 3))], [bracket3(p) @ R, R]])
+
+def r2axisangle(R):
+    if np.linalg.norm(R - np.eye(3)) < 1e-3:
+        return np.array([0, 0, 0])
+    else:
+        theta = np.arccos(0.5 * (np.trace(R) - 1))
+        omega_hat = 1 / (2 * np.sin(theta)) * (R - R.T)
+        omega = np.array([omega_hat[2, 1], omega_hat[0, 2], omega_hat[1, 0]])
+        return omega * theta
+
+def bracket_s(s):
+    return np.array([[0, -s[2], s[1], s[3]], [s[2], 0, -s[0], s[4]], [-s[1], s[0], 0, s[5]], [0, 0, 0, 0]])
+
+def fk(M, S, theta):
+    T = np.eye(4)
+    theta = np.atleast_1d(theta)
+    for i in range(len(theta)):
+        T = np.dot(T, expm(bracket_s(S[:, i]) * theta[i]))
+    return np.dot(T, M)
+
+def JacS(S, theta):
+    T = np.eye(4)
+    Js = np.zeros((6, len(theta)))
+    for i in range(len(theta)):
+        Si = S[:, i]
+        Js[:, i] = np.dot(adjointM(T), Si)
+        T = np.dot(T, expm(bracket_s(Si) * theta[i]))
+    return Js
+
+def rotz(angle):
+    c, s = np.cos(angle), np.sin(angle)
+    return np.array([[c, -s, 0], [s, c, 0], [0, 0, 1]])
+
+# Initialize plot
+fig, ax = plt.subplots()
+ax.set_xlim(-6, 6)
+ax.set_ylim(-6, 6)
+ax.grid(True)
+line, = ax.plot([], [], 'o-', color=[1, 0.5, 0], linewidth=4)
+plt.ion()
+
+# Initialize parameters
+L = 1
+theta = np.array([np.pi/8] * 5)
+
+S1 = np.array([0, 0, 1, 0, 0, 0])
+S2 = np.array([0, 0, 1, 0, -1 * L, 0])
+S3 = np.array([0, 0, 1, 0, -2 * L, 0])
+S4 = np.array([0, 0, 1, 0, -3 * L, 0])
+S5 = np.array([0, 0, 1, 0, -4 * L, 0])
+
+# Create S_eq by concatenating the individual S vectors horizontally
+S = np.column_stack((S1, S2, S3, S4, S5))
+
+M = np.vstack([np.hstack([np.eye(3), np.array([[5*L, 0, 0]]).T]), [0, 0, 0, 1]])
+M1 = np.vstack([np.hstack([np.eye(3), np.array([[1*L, 0, 0]]).T]), [0, 0, 0, 1]])
+M2 = np.vstack([np.hstack([np.eye(3), np.array([[2*L, 0, 0]]).T]), [0, 0, 0, 1]])
+M3 = np.vstack([np.hstack([np.eye(3), np.array([[3*L, 0, 0]]).T]), [0, 0, 0, 1]])
+M4 = np.vstack([np.hstack([np.eye(3), np.array([[4*L, 0, 0]]).T]), [0, 0, 0, 1]])
+
+# Desired transformation
+T_d = np.vstack([np.hstack([rotz(np.pi/2), np.array([[-2, 4, 0]]).T]), [0, 0, 0, 1]])
+Xd = np.concatenate([r2axisangle(T_d[0:3, 0:3]), T_d[0:3, 3]])
+
+# Initial forward kinematics
+T = fk(M, S, theta)
+X = np.concatenate([r2axisangle(T[0:3, 0:3]), T[0:3, 3]])
+
+# Animation function
+def update(frame):
+    global theta, T, X
+    if np.linalg.norm(Xd - X) > 1e-1:
+        # Calculate joint transformations
+        T1 = fk(M1, S[:, 0:1], theta[0])
+        T2 = fk(M2, S[:, 0:2], [theta[0], theta[1]])
+        T3 = fk(M3, S[:, 0:3], [theta[0], theta[1], theta[2]])
+        T4 = fk(M4, S[:, 0:4], [theta[0], theta[1], theta[2], theta[3]])
+        P_v = np.array([[0, 0]] + [T1[0:2, 3]]+ [T2[0:2, 3]]+ [T3[0:2, 3]]+ [T4[0:2, 3]] + [T[0:2, 3]]).T
+        
+        # Draw the robot
+        line.set_data(P_v[0, :], P_v[1, :])
+        
+        # Update Jacobians and compute delta_theta
+        JS = JacS(S, theta)
+        Jb = np.dot(adjointM(np.linalg.inv(T)), JS)
+        J_geometric = np.block([[T[0:3, 0:3], np.zeros((3, 3))], [np.zeros((3, 3)), T[0:3, 0:3]]]) @ Jb
+        V = Xd - X
+        delta_theta = np.dot(np.linalg.pinv(J_geometric), V)
+        
+        # Update theta
+        theta += 0.1 * delta_theta
+        print(theta)
+        T = fk(M, S, theta)
+        X = np.concatenate([r2axisangle(T[0:3, 0:3]), T[0:3, 3]])
+
+    return line,
+
+# Create and save the animation
+ani = animation.FuncAnimation(fig, update, frames=np.arange(100), interval=200, blit=False)
+
+# Save the animation
+writer = PillowWriter(fps=7)  
+ani.save("Inverse_Kinematics_2.gif", writer=writer)
+```
+
+
+**MATLAB implementation**
+
+<details>
+
+```matlab
+
+close all
+clear
+clc
+
+% create figure
+figure
+axis([-6, 6, -6, 6])
+grid on
+hold on
+
+% save as a video file
+v = VideoWriter('Inverse_Kinematics_2.mp4', 'MPEG-4');
+v.FrameRate = 25;
+open(v);
+
+% initial joint values
+L = 1;
+theta = [pi/8; pi/8; pi/8; pi/8; pi/8];
+
+S1 = [0 0 1 0 0 0]';
+S2 = [0 0 1 0 -1*L 0]';
+S3 = [0 0 1 0 -2*L 0]';
+S4 = [0 0 1 0 -3*L 0]';
+S5 = [0 0 1 0 -4*L 0]';
+
+S_eq = [S1, S2, S3, S4, S5];   
+M = [eye(3), [5*L;0;0]; 0 0 0 1];
+M1 = [eye(3), [1*L;0;0]; 0 0 0 1];
+M2 = [eye(3), [2*L;0;0]; 0 0 0 1];
+M3 = [eye(3), [3*L;0;0]; 0 0 0 1];
+M4 = [eye(3), [4*L;0;0]; 0 0 0 1];
+
+% Given desired Transformation matrices T_d
+T_d = [rotz(pi/4), [-2;4;0]; 0 0 0 1];
+Xd = [r2axisangle(T_d(1:3, 1:3)); T_d(1:3,4)];
+
+% T with initial joint positions
+T = fk(M, S_eq, theta);
+X = [r2axisangle(T(1:3, 1:3)); T(1:3,4)];
+
+while norm(Xd - X) > 1e-2
+
+    p0 = [0; 0]; % plot the robot
+    T1 = fk(M1, S1, theta(1)); % 1. get the position of each link
+    T2 = fk(M2, [S1, S2], [theta(1), theta(2)]);
+    T3 = fk(M3, [S1, S2, S3], [theta(1), theta(2), theta(3)]);
+    T4 = fk(M4, [S1, S2, S3, S4], [theta(1), theta(2), theta(3), theta(4)]);
+    P_v = [p0, T1(1:2, 4), T2(1:2, 4), T3(1:2, 4), T4(1:2, 4), T(1:2, 4)];
+
+    cla; % 2. draw the robot and save the frame
+    plot(P_v(1,:), P_v(2,:), 'o-', 'color',[1, 0.5, 0],'linewidth',4)
+    drawnow
+    frame = getframe(gcf);
+    writeVideo(v, frame); % My Implementation for inverse kinematics calculation below
+
+    JS = JacS(S_eq, theta); % Updated Space Jacobian
+    Jb = adjointM(inv(T))*JS; %Updated Body Jacobian
+    J = [T(1:3, 1:3) zeros(3); zeros(3) T(1:3, 1:3)] * Jb; % Updated Geometric Jacobian
+    V = Xd - X;
+
+    delta_theta = pinv(J)*V +(eye(5) - pinv(J)*J)*[0;0;0;0;0];
+
+    theta = double(theta + 0.1 * delta_theta); % Updating theta until the while loop is satisfied to get the desired joint positions
+    T = fk(M, S_eq, theta);
+    X = [r2axisangle(T(1:3, 1:3)); T(1:3,4)];
+end
+
+close(v);
+close all
+```
+
+</details>
+
+**Result:**
+
+<img src="Inverse_Kinematics_2.gif" alt="Animated GIF" loop width="100%" height="100%">
+
+
+* **Case 3: 𝐿 = 1 and the desired end-effector pose is:**
+
+**Tsb = [rotz(0), [3;-1;0]; 0 0 0 1]**
+
+```{python}
+import numpy as np
+import matplotlib
+matplotlib.use('Agg')  # Set the backend to a non-interactive backend
+import matplotlib.pyplot as plt
+import matplotlib.animation as animation
+from matplotlib.animation import PillowWriter
+
+# Define the necessary functions
+def bracket3(S):
+    return np.array([[0, -S[2], S[1]], [S[2], 0, -S[0]], [-S[1], S[0], 0]])
+
+def expm(A):
+    return np.linalg.matrix_power(np.eye(A.shape[0]) + A / 16, 16)
+
+def adjointM(T):
+    R = T[0:3, 0:3]
+    p = T[0:3, 3]
+    return np.block([[R, np.zeros((3, 3))], [bracket3(p) @ R, R]])
+
+def r2axisangle(R):
+    if np.linalg.norm(R - np.eye(3)) < 1e-3:
+        return np.array([0, 0, 0])
+    else:
+        trace = np.clip((np.trace(R) - 1) / 2, -1, 1)  # Clip trace to the valid range
+        if trace < -1:
+            trace = -1
+        elif trace > 1:
+            trace = 1
+        theta = np.arccos(0.5*trace)
+        omega_hat = 1 / (2 * np.sin(theta)) * (R - R.T)
+        omega = np.array([omega_hat[2, 1], omega_hat[0, 2], omega_hat[1, 0]])
+        return omega * theta
+
+def bracket_s(s):
+    return np.array([[0, -s[2], s[1], s[3]], [s[2], 0, -s[0], s[4]], [-s[1], s[0], 0, s[5]], [0, 0, 0, 0]])
+
+def fk(M, S, theta):
+    T = np.eye(4)
+    theta = np.atleast_1d(theta)
+    for i in range(len(theta)):
+        T = np.dot(T, expm(bracket_s(S[:, i]) * theta[i]))
+    return np.dot(T, M)
+
+def JacS(S, theta):
+    T = np.eye(4)
+    Js = np.zeros((6, len(theta)))
+    for i in range(len(theta)):
+        Si = S[:, i]
+        Js[:, i] = np.dot(adjointM(T), Si)
+        T = np.dot(T, expm(bracket_s(Si) * theta[i]))
+    return Js
+
+def rotz(angle):
+    c, s = np.cos(angle), np.sin(angle)
+    return np.array([[c, -s, 0], [s, c, 0], [0, 0, 1]])
+
+# Initialize plot
+fig, ax = plt.subplots()
+ax.set_xlim(-6, 6)
+ax.set_ylim(-6, 6)
+ax.grid(True)
+line, = ax.plot([], [], 'o-', color=[1, 0.5, 0], linewidth=4)
+plt.ion()
+
+# Initialize parameters
+L = 1
+theta = np.array([np.pi/8] * 5)
+
+S1 = np.array([0, 0, 1, 0, 0, 0])
+S2 = np.array([0, 0, 1, 0, -1 * L, 0])
+S3 = np.array([0, 0, 1, 0, -2 * L, 0])
+S4 = np.array([0, 0, 1, 0, -3 * L, 0])
+S5 = np.array([0, 0, 1, 0, -4 * L, 0])
+
+# Create S_eq by concatenating the individual S vectors horizontally
+S = np.column_stack((S1, S2, S3, S4, S5))
+
+M = np.vstack([np.hstack([np.eye(3), np.array([[5*L, 0, 0]]).T]), [0, 0, 0, 1]])
+M1 = np.vstack([np.hstack([np.eye(3), np.array([[1*L, 0, 0]]).T]), [0, 0, 0, 1]])
+M2 = np.vstack([np.hstack([np.eye(3), np.array([[2*L, 0, 0]]).T]), [0, 0, 0, 1]])
+M3 = np.vstack([np.hstack([np.eye(3), np.array([[3*L, 0, 0]]).T]), [0, 0, 0, 1]])
+M4 = np.vstack([np.hstack([np.eye(3), np.array([[4*L, 0, 0]]).T]), [0, 0, 0, 1]])
+
+# Desired transformation
+T_d = np.vstack([np.hstack([rotz(0), np.array([[3, -1, 0]]).T]), [0, 0, 0, 1]])
+Xd = np.concatenate([r2axisangle(T_d[0:3, 0:3]), T_d[0:3, 3]])
+
+# Initial forward kinematics
+T = fk(M, S, theta)
+X = np.concatenate([r2axisangle(T[0:3, 0:3]), T[0:3, 3]])
+
+# Animation function
+def update(frame):
+    global theta, T, X
+    if np.linalg.norm(Xd - X) > 1e-1:
+        # Calculate joint transformations
+        T1 = fk(M1, S[:, 0:1], theta[0])
+        T2 = fk(M2, S[:, 0:2], [theta[0], theta[1]])
+        T3 = fk(M3, S[:, 0:3], [theta[0], theta[1], theta[2]])
+        T4 = fk(M4, S[:, 0:4], [theta[0], theta[1], theta[2], theta[3]])
+        P_v = np.array([[0, 0]] + [T1[0:2, 3]]+ [T2[0:2, 3]]+ [T3[0:2, 3]]+ [T4[0:2, 3]] + [T[0:2, 3]]).T
+        
+        # Draw the robot
+        line.set_data(P_v[0, :], P_v[1, :])
+        
+        # Update Jacobians and compute delta_theta
+        JS = JacS(S, theta)
+        Jb = np.dot(adjointM(np.linalg.inv(T)), JS)
+        J_geometric = np.block([[T[0:3, 0:3], np.zeros((3, 3))], [np.zeros((3, 3)), T[0:3, 0:3]]]) @ Jb
+        V = Xd - X
+        delta_theta = np.dot(np.linalg.pinv(J_geometric), V)
+        
+        # Update theta
+        theta += 0.1 * delta_theta
+        print(theta)
+        T = fk(M, S, theta)
+        X = np.concatenate([r2axisangle(T[0:3, 0:3]), T[0:3, 3]])
+
+    return line,
+
+# Create and save the animation
+ani = animation.FuncAnimation(fig, update, frames=np.arange(100), interval=200, blit=False)
+
+# Save the animation
+writer = PillowWriter(fps=7)  
+ani.save("Inverse_Kinematics_3.gif", writer=writer)
+```
+
+
+<details>
+
+```matlab
+
+close all
+clear
+clc
+
+% create figure
+figure
+axis([-6, 6, -6, 6])
+grid on
+hold on
+
+% save as a video file
+v = VideoWriter('Inverse_Kinematics_3.mp4', 'MPEG-4');
+v.FrameRate = 25;
+open(v);
+
+% initial joint values
+L = 1;
+theta = [pi/8; pi/8; pi/8; pi/8; pi/8];
+
+S1 = [0 0 1 0 0 0]';
+S2 = [0 0 1 0 -1*L 0]';
+S3 = [0 0 1 0 -2*L 0]';
+S4 = [0 0 1 0 -3*L 0]';
+S5 = [0 0 1 0 -4*L 0]';
+
+S_eq = [S1, S2, S3, S4, S5];   
+M = [eye(3), [5*L;0;0]; 0 0 0 1];
+M1 = [eye(3), [1*L;0;0]; 0 0 0 1];
+M2 = [eye(3), [2*L;0;0]; 0 0 0 1];
+M3 = [eye(3), [3*L;0;0]; 0 0 0 1];
+M4 = [eye(3), [4*L;0;0]; 0 0 0 1];
+
+% Given desired Transformation matrices T_d
+T_d = [rotz(0), [3;-1;0]; 0 0 0 1];
+Xd = [r2axisangle(T_d(1:3, 1:3)); T_d(1:3,4)];
+
+% T with initial joint positions
+T = fk(M, S_eq, theta);
+X = [r2axisangle(T(1:3, 1:3)); T(1:3,4)];
+
+while norm(Xd - X) > 1e-2
+
+    p0 = [0; 0]; % plot the robot
+    T1 = fk(M1, S1, theta(1)); % 1. get the position of each link
+    T2 = fk(M2, [S1, S2], [theta(1), theta(2)]);
+    T3 = fk(M3, [S1, S2, S3], [theta(1), theta(2), theta(3)]);
+    T4 = fk(M4, [S1, S2, S3, S4], [theta(1), theta(2), theta(3), theta(4)]);
+    P_v = [p0, T1(1:2, 4), T2(1:2, 4), T3(1:2, 4), T4(1:2, 4), T(1:2, 4)];
+
+    cla; % 2. draw the robot and save the frame
+    plot(P_v(1,:), P_v(2,:), 'o-', 'color',[1, 0.5, 0],'linewidth',4)
+    drawnow
+    frame = getframe(gcf);
+    writeVideo(v, frame); % My Implementation for inverse kinematics calculation below
+
+    JS = JacS(S_eq, theta); % Updated Space Jacobian
+    Jb = adjointM(inv(T))*JS; %Updated Body Jacobian
+    J = [T(1:3, 1:3) zeros(3); zeros(3) T(1:3, 1:3)] * Jb; % Updated Geometric Jacobian
+    V = Xd - X;
+
+    delta_theta = pinv(J)*V +(eye(5) - pinv(J)*J)*[0;0;0;0;0];
+
+    theta = double(theta + 0.1 * delta_theta); % Updating theta until the while loop is satisfied to get the desired joint positions
+    T = fk(M, S_eq, theta);
+    X = [r2axisangle(T(1:3, 1:3)); T(1:3,4)];
+end
+
+close(v);
+close all
+```
+</details>
+
+**Result:**
+
+<img src="Inverse_Kinematics_3.gif" alt="Animated GIF" loop width="100%" height="100%">
+
+
+## Jacobian Pseudoinverse and Redundancy
+
+This problem continues exploring the redundant snake robot used simulated above. So far we have left 𝑏 = 0 in our Jacobian pseudoinverse. More generally, choosing 𝑏 allows us to set a secondary objective for the inverse kinematics of redundant robots.
+
+Here we establish that numerical inverse kinematics finds a solution for 𝜃 such that 𝑇𝑠𝑏 (𝜃) equals the desired end-effector pose. But when working with redundant robots, multiple solutions are often possible. Choosing 𝑏 affects which of these solutions the algorithm selects.
+
+Now I set 𝑏 as the following vector (and update 𝑏 as 𝜃1 changes):
+
+b = [[-theta(0) 
+        0 
+        0 
+        0 
+        0]], (6x1) vector
+
+* Equation: del_theta = pinv(J)*V + (I - pinv(J)*J)*b
+
+**Here we change the delta_theta by manipulating the pseudoinverse and introducing the null-space**
+
+Note: b was a zero vector till now for all the three cases, but now we will notice the change for Case 3:
+
+**CASE 3: Modified delta_theta for Redundancy**
+
+```{python}
+import numpy as np
+import matplotlib
+matplotlib.use('Agg')  # Set the backend to a non-interactive backend
+import matplotlib.pyplot as plt
+import matplotlib.animation as animation
+from matplotlib.animation import PillowWriter
+
+# Define the necessary functions
+def bracket3(S):
+    return np.array([[0, -S[2], S[1]], [S[2], 0, -S[0]], [-S[1], S[0], 0]])
+
+def expm(A):
+    return np.linalg.matrix_power(np.eye(A.shape[0]) + A / 16, 16)
+
+def adjointM(T):
+    R = T[0:3, 0:3]
+    p = T[0:3, 3]
+    return np.block([[R, np.zeros((3, 3))], [bracket3(p) @ R, R]])
+
+def r2axisangle(R):
+    if np.linalg.norm(R - np.eye(3)) < 1e-3:
+        return np.array([0, 0, 0])
+    else:
+        trace = np.clip((np.trace(R) - 1) / 2, -1, 1)  # Clip trace to the valid range
+        if trace < -1:
+            trace = -1
+        elif trace > 1:
+            trace = 1
+        theta = np.arccos(0.5*trace)
+        omega_hat = 1 / (2 * np.sin(theta)) * (R - R.T)
+        omega = np.array([omega_hat[2, 1], omega_hat[0, 2], omega_hat[1, 0]])
+        return omega * theta
+
+def bracket_s(s):
+    return np.array([[0, -s[2], s[1], s[3]], [s[2], 0, -s[0], s[4]], [-s[1], s[0], 0, s[5]], [0, 0, 0, 0]])
+
+def fk(M, S, theta):
+    T = np.eye(4)
+    theta = np.atleast_1d(theta)
+    for i in range(len(theta)):
+        T = np.dot(T, expm(bracket_s(S[:, i]) * theta[i]))
+    return np.dot(T, M)
+
+def JacS(S, theta):
+    T = np.eye(4)
+    Js = np.zeros((6, len(theta)))
+    for i in range(len(theta)):
+        Si = S[:, i]
+        Js[:, i] = np.dot(adjointM(T), Si)
+        T = np.dot(T, expm(bracket_s(Si) * theta[i]))
+    return Js
+
+def rotz(angle):
+    c, s = np.cos(angle), np.sin(angle)
+    return np.array([[c, -s, 0], [s, c, 0], [0, 0, 1]])
+
+# Initialize plot
+fig, ax = plt.subplots()
+ax.set_xlim(-6, 6)
+ax.set_ylim(-6, 6)
+ax.grid(True)
+line, = ax.plot([], [], 'o-', color=[1, 0.5, 0], linewidth=4)
+plt.ion()
+
+# Initialize parameters
+L = 1
+theta = np.array([np.pi/8] * 5)
+
+S1 = np.array([0, 0, 1, 0, 0, 0])
+S2 = np.array([0, 0, 1, 0, -1 * L, 0])
+S3 = np.array([0, 0, 1, 0, -2 * L, 0])
+S4 = np.array([0, 0, 1, 0, -3 * L, 0])
+S5 = np.array([0, 0, 1, 0, -4 * L, 0])
+
+# Create S_eq by concatenating the individual S vectors horizontally
+S = np.column_stack((S1, S2, S3, S4, S5))
+
+M = np.vstack([np.hstack([np.eye(3), np.array([[5*L, 0, 0]]).T]), [0, 0, 0, 1]])
+M1 = np.vstack([np.hstack([np.eye(3), np.array([[1*L, 0, 0]]).T]), [0, 0, 0, 1]])
+M2 = np.vstack([np.hstack([np.eye(3), np.array([[2*L, 0, 0]]).T]), [0, 0, 0, 1]])
+M3 = np.vstack([np.hstack([np.eye(3), np.array([[3*L, 0, 0]]).T]), [0, 0, 0, 1]])
+M4 = np.vstack([np.hstack([np.eye(3), np.array([[4*L, 0, 0]]).T]), [0, 0, 0, 1]])
+
+# Desired transformation
+T_d = np.vstack([np.hstack([rotz(0), np.array([[3, -1, 0]]).T]), [0, 0, 0, 1]])
+Xd = np.concatenate([r2axisangle(T_d[0:3, 0:3]), T_d[0:3, 3]])
+
+# Initial forward kinematics
+T = fk(M, S, theta)
+X = np.concatenate([r2axisangle(T[0:3, 0:3]), T[0:3, 3]])
+
+# Animation function
+def update(frame):
+    global theta, T, X
+    if np.linalg.norm(Xd - X) > 1e-1:
+        # Calculate joint transformations
+        T1 = fk(M1, S[:, 0:1], theta[0])
+        T2 = fk(M2, S[:, 0:2], [theta[0], theta[1]])
+        T3 = fk(M3, S[:, 0:3], [theta[0], theta[1], theta[2]])
+        T4 = fk(M4, S[:, 0:4], [theta[0], theta[1], theta[2], theta[3]])
+        P_v = np.array([[0, 0]] + [T1[0:2, 3]]+ [T2[0:2, 3]]+ [T3[0:2, 3]]+ [T4[0:2, 3]] + [T[0:2, 3]]).T
+        
+        # Draw the robot
+        line.set_data(P_v[0, :], P_v[1, :])
+        
+        # Update Jacobians and compute delta_theta
+        JS = JacS(S, theta)
+        Jb = np.dot(adjointM(np.linalg.inv(T)), JS)
+        J_geometric = np.block([[T[0:3, 0:3], np.zeros((3, 3))], [np.zeros((3, 3)), T[0:3, 0:3]]]) @ Jb
+        V = Xd - X
+
+        # [del_theta = pinv(J)*V + (I - pinv(J)*J)*b] <- Updated delta_theta to include the null-space with the specified b vector
+        delta_theta = np.dot(np.linalg.pinv(J_geometric), V) + np.dot((np.eye(5) - np.dot(np.linalg.pinv(J_geometric), J_geometric)), np.array([-theta[0], 0, 0, 0, 0]))
+        
+        # Update theta
+        theta += 0.1 * delta_theta
+        print(theta)
+        T = fk(M, S, theta)
+        X = np.concatenate([r2axisangle(T[0:3, 0:3]), T[0:3, 3]])
+
+    return line,
+
+# Create and save the animation
+ani = animation.FuncAnimation(fig, update, frames=np.arange(100), interval=200, blit=False)
+
+# Save the animation
+writer = PillowWriter(fps=7)  
+ani.save("Inverse_Kinematics_Null.gif", writer=writer)
+```
+
+
+**MATLAB implementation**
+
+<details>
+
+```matlab
+
+close all
+clear
+clc
+
+% create figure
+figure
+axis([-6, 6, -6, 6])
+grid on
+hold on
+
+% save as a video file
+v = VideoWriter('Inverse_Kinematics_3_null_space.mp4', 'MPEG-4');
+v.FrameRate = 25;
+open(v);
+
+% initial joint values
+L = 1;
+theta = [pi/8; pi/8; pi/8; pi/8; pi/8];
+
+S1 = [0 0 1 0 0 0]';
+S2 = [0 0 1 0 -1*L 0]';
+S3 = [0 0 1 0 -2*L 0]';
+S4 = [0 0 1 0 -3*L 0]';
+S5 = [0 0 1 0 -4*L 0]';
+
+S_eq = [S1, S2, S3, S4, S5];   
+M = [eye(3), [5*L;0;0]; 0 0 0 1];
+M1 = [eye(3), [1*L;0;0]; 0 0 0 1];
+M2 = [eye(3), [2*L;0;0]; 0 0 0 1];
+M3 = [eye(3), [3*L;0;0]; 0 0 0 1];
+M4 = [eye(3), [4*L;0;0]; 0 0 0 1];
+
+% Given desired Transformation matrices T_d
+T_d = [rotz(0), [3;-1;0]; 0 0 0 1];
+Xd = [r2axisangle(T_d(1:3, 1:3)); T_d(1:3,4)];
+
+% T with initial joint positions
+T = fk(M, S_eq, theta);
+X = [r2axisangle(T(1:3, 1:3)); T(1:3,4)];
+
+while norm(Xd - X) > 1e-2
+
+    p0 = [0; 0]; % plot the robot
+    T1 = fk(M1, S1, theta(1)); % 1. get the position of each link
+    T2 = fk(M2, [S1, S2], [theta(1), theta(2)]);
+    T3 = fk(M3, [S1, S2, S3], [theta(1), theta(2), theta(3)]);
+    T4 = fk(M4, [S1, S2, S3, S4], [theta(1), theta(2), theta(3), theta(4)]);
+    P_v = [p0, T1(1:2, 4), T2(1:2, 4), T3(1:2, 4), T4(1:2, 4), T(1:2, 4)];
+
+    cla; % 2. draw the robot and save the frame
+    plot(P_v(1,:), P_v(2,:), 'o-', 'color',[1, 0.5, 0],'linewidth',4)
+    drawnow
+    frame = getframe(gcf);
+    writeVideo(v, frame); % My Implementation for inverse kinematics calculation below
+
+    JS = JacS(S_eq, theta); % Updated Space Jacobian
+    Jb = adjointM(inv(T))*JS; %Updated Body Jacobian
+    J = [T(1:3, 1:3) zeros(3); zeros(3) T(1:3, 1:3)] * Jb; % Updated Geometric Jacobian
+    V = Xd - X;
+
+    delta_theta = pinv(J)*V +(eye(5) - pinv(J)*J)*[-theta(1);0;0;0;0];
+
+    theta = double(theta + 0.1 * delta_theta); % Updating theta until the while loop is satisfied to get the desired joint positions
+    T = fk(M, S_eq, theta);
+    X = [r2axisangle(T(1:3, 1:3)); T(1:3,4)];
+end
+
+close(v);
+close all
+```
+
+</details>
+
+**Result:**
+
+<img src="Inverse_Kinematics_Null.gif" alt="Animated GIF" loop width="100%" height="100%">
+
+
+The final joint positions (approximately):
+
+* **Case 3 with 𝑏 = 0:**
+𝜃 = [−1.51 0.29 1.36 0.78 −0.92]^𝑇
+
+* **Case 3 with 𝑏 = −𝜃1:**
+𝜃 = [−0.38 −1.40 1.20 1.70 −1.12]^𝑇
+
+Comparing these two results, we have that |𝜃1| is smaller (and 𝜃1 is closer to zero) with the secondary objective:
+
+* **0.38 < 1.51**
+
+There are several reasons why we may want to minimize a joint angle:
+
+    • The actuator at that joint moves more slowly than the other actuators.
+
+    • Moving the actuator at that joint consumes more power as compared to the other actuators along the robot arm.
+
+    • We want to avoid colliding with an obstacle, and we need to keep one or more joints at a specific angle to avoid that obstacle
+
+
+
+
+
+## Potential Fields in Motion Planning
+
+Here I will use potential fields to get a motion plan for the 2-DoF environment shown below. Here the drone’s position is 𝜃 = [𝑥, 𝑦]^𝑇.
+
+Implementing the potential fields approach:
+
+• Setting 𝜃𝑠𝑡𝑎𝑟𝑡 = [0, 0]^𝑇 and 𝜃𝑔𝑜𝑎𝑙 = [1, 1]^𝑇
+
+• The first obstacle has center 𝑐1 = [0.3, 0.5]^𝑇 and radius 𝑟1 = 0.125
+
+• The second obstacle has center 𝑐2 = [0.7, 0.5]^𝑇 and radius 𝑟2 = 0.225
+
+NOTE: Always start with a low learning rate 𝛼 in your g
+
+```{python}
+import numpy as np
+import matplotlib
+matplotlib.use('Agg')  # Set the backend to a non-interactive backend
+import matplotlib.pyplot as plt
+from matplotlib.animation import FuncAnimation, PillowWriter
+
+# Parameters
+theta_start = np.array([0.0, 0.0])
+theta_goal = np.array([1.0, 1.0])
+centers = np.array([[0.3, 0.5], [0.7, 0.5]])
+radii = np.array([0.125, 0.225])
+
+# Function to compute potential field
+def field(theta, theta_goal, centers, radii):
+    U = 0.5 * np.linalg.norm(theta_goal - theta)**2
+    for idx in range(len(radii)):
+        center = centers[idx]
+        radius = radii[idx]
+        dist = np.linalg.norm(center - theta)
+        if dist < radius:
+            U += 0.5 * (1/dist - 1/radius)**2
+    return U
+
+# Initialize figure
+fig, ax = plt.subplots()
+ax.grid(True)
+
+# Drawing circles
+for idx in range(len(radii)):
+    circle = plt.Circle(centers[idx], radii[idx], color=[0.5, 0.5, 0.5], fill=False)
+    ax.add_patch(circle)
+
+# Start and goal points
+ax.plot(theta_start[0], theta_start[1], 'ko', markerfacecolor='k')
+ax.plot(theta_goal[0], theta_goal[1], 'ko', markerfacecolor='k')
+ax.axis('equal')
+
+# Parameters for gradient descent
+theta = theta_start
+delta = 0.01  # Adjusted delta value
+learning_rate = 0.01  # Adjusted learning rate
+path = [theta_start]  # To store the path
+
+# Animation update function
+def update(frame):
+    global theta
+    if np.linalg.norm(theta - theta_goal) < 0.1:
+        return
+
+    U = field(theta, theta_goal, centers, radii)
+    U1 = field(theta + np.array([delta, 0.0]), theta_goal, centers, radii)
+    U2 = field(theta + np.array([0.0, delta]), theta_goal, centers, radii)
+    Ugrad = np.array([U1 - U, U2 - U]) / delta
+    theta -= learning_rate * Ugrad
+    path.append(theta.copy())
+    ax.plot([p[0] for p in path], [p[1] for p in path], 'o', color=[1, 0.5, 0], markerfacecolor=[1, 0.5, 0])
+
+# Create animation
+ani = FuncAnimation(fig, update, frames=np.arange(300), repeat=False)
+
+# Save to GIF using PillowWriter
+gif_path = 'Potential_Field.gif'
+ani.save(gif_path, writer=PillowWriter(fps=30))
+```
+
+**MATLAB implementation**
+
+<details>
+
+```matlab
+
+clear
+close all
+% Parameters
+theta_start = [0; 0];
+theta_goal = [1; 1];
+centers = [.3, .7; .5, .5];
+radii = [.125, .225];
+% Create figure
+figure
+grid on
+hold on
+for idx = 1:length(radii)
+ viscircles(centers(:,idx)', radii(idx), 'Color', [0.5, 0.5, 0.5]);
+end
+plot(theta_start(1), theta_start(2), 'ko', 'MarkerFaceColor', 'k')
+plot(theta_goal(1), theta_goal(2), 'ko', 'MarkerFaceColor', 'k')
+axis equal
+% Gradient descent down potential field
+theta = theta_start;
+delta = 0.01;
+learning_rate = 0.01;
+for idx = 1:1000
+ if norm(theta - theta_goal) < 0.1
+ break
+ end
+ U = field(theta, theta_goal, centers, radii);
+ U1 = field(theta + [delta; 0], theta_goal, centers, radii);
+ U2 = field(theta + [0; delta], theta_goal, centers, radii);
+ Ugrad = [U1 - U; U2 - U] / delta;
+ theta = theta - learning_rate * Ugrad;
+ plot(theta(1), theta(2), 'o', 'color', [1, 0.5, 0], ...
+ 'MarkerFaceColor', [1, 0.5, 0])
+end
+% Find potential field at position theta
+function U = field(theta, theta_goal, centers, radii)
+ U = 0.5 * norm(theta_goal - theta)^2;
+ for idx = 1:length(radii)
+ center = centers(:, idx);
+ radius = radii(idx);
+ dist = norm(center - theta);
+ if dist < radius
+ U = U + 0.5 * (1/dist - 1/radius)^2;
+ end
+ end
+end
+```
+</details>
+
+**Result:**
+
+<img src="Potential_Field.gif" alt="Animated GIF" loop width="100%" height="100%">
+
+
+
+* Modifying the position of the obstacles so that a valid plan from 𝜃𝑠𝑡𝑎𝑟𝑡 to 𝜃𝑔𝑜𝑎𝑙 exists but the potential fields planner fails (i.e., gets stuck). Below is the simulation that shows the obstacles and the failed motion plan.
+
+There are many possible solutions. For instance, I am setting 𝑐1 = [0.4, 0.5]^𝑇.
+
+**Motion Plan Failure**
+
+```{python}
+import numpy as np
+import matplotlib
+matplotlib.use('Agg')  # Set the backend to a non-interactive backend
+import matplotlib.pyplot as plt
+from matplotlib.animation import FuncAnimation, PillowWriter
+
+# Parameters
+theta_start = np.array([0.0, 0.0])
+theta_goal = np.array([1.0, 1.0])
+centers = np.array([[0.4, 0.5], [0.5, 0.5]])
+radii = np.array([0.125, 0.225])
+
+# Function to compute potential field
+def field(theta, theta_goal, centers, radii):
+    U = 0.5 * np.linalg.norm(theta_goal - theta)**2
+    for idx in range(len(radii)):
+        center = centers[idx]
+        radius = radii[idx]
+        dist = np.linalg.norm(center - theta)
+        if dist < radius:
+            U += 0.5 * (1/dist - 1/radius)**2
+    return U
+
+# Initialize figure
+fig, ax = plt.subplots()
+ax.grid(True)
+
+# Drawing circles
+for idx in range(len(radii)):
+    circle = plt.Circle(centers[idx], radii[idx], color=[0.5, 0.5, 0.5], fill=False)
+    ax.add_patch(circle)
+
+# Start and goal points
+ax.plot(theta_start[0], theta_start[1], 'ko', markerfacecolor='k')
+ax.plot(theta_goal[0], theta_goal[1], 'ko', markerfacecolor='k')
+ax.axis('equal')
+
+# Parameters for gradient descent
+theta = theta_start
+delta = 0.01  # Adjusted delta value
+learning_rate = 0.01  # Adjusted learning rate
+path = [theta_start]  # To store the path
+
+# Animation update function
+def update(frame):
+    global theta
+    if np.linalg.norm(theta - theta_goal) < 0.1:
+        return
+
+    U = field(theta, theta_goal, centers, radii)
+    U1 = field(theta + np.array([delta, 0.0]), theta_goal, centers, radii)
+    U2 = field(theta + np.array([0.0, delta]), theta_goal, centers, radii)
+    Ugrad = np.array([U1 - U, U2 - U]) / delta
+    theta -= learning_rate * Ugrad
+    path.append(theta.copy())
+    ax.plot([p[0] for p in path], [p[1] for p in path], 'o', color=[1, 0.5, 0], markerfacecolor=[1, 0.5, 0])
+
+# Create animation
+ani = FuncAnimation(fig, update, frames=np.arange(300), repeat=False)
+
+# Save to GIF using PillowWriter
+gif_path = 'Potential_Field_fail.gif'
+ani.save(gif_path, writer=PillowWriter(fps=30))
+```
+
+
+**MATLAB Implementation**
+
+<details>
+
+```matlab
+clear
+close all
+
+% Start and goal environments
+theta_start= [0; 0];
+theta_goal = [1; 1];
+
+% Modified obstacle positions and sizes
+obs_c21 = [0.3; 0.5];  % Shifted first obstacle closer to the second
+obs_r21 = 0.15;        % Slightly increased radius
+obs_c22 = [0.8; 0.5];  % Shifted second obstacle closer to the first
+obs_r22 = 0.25;        % Slightly increased radius
+
+% Visualize the environment
+figure
+grid on
+hold on
+axis([0, 1, 0, 1])
+axis equal
+viscircles(obs_c21', obs_r21, 'Color', [0.5, 0.5, 0.5]);
+viscircles(obs_c22', obs_r22, 'Color', [0.5, 0.5, 0.5]);
+plot(0, 0, 'ko', 'MarkerFaceColor', 'k');
+plot(1, 1, 'ko', 'MarkerFaceColor', 'k');
+
+% Setting the variables
+alpha= 0.01;
+epsilon = 0.1;
+delta= 0.01;
+
+% Initial trajectory
+theta(:,1) = theta_start;
+t=1;
+del_Unet=1;
+
+while norm(del_Unet)> epsilon
+    del_Ux= U_theta(theta(:,t) + [delta;0]);
+    del_Uy= U_theta(theta(:,t)+ [0;delta]);
+    del_U= U_theta(theta(:,t));
+
+    del_Unet=[del_Ux-del_U; del_Uy-del_U]/delta;
+
+    theta(:,t+1)= theta(:,t)- alpha*del_Unet;
+    t=t+1;
+end
+
+
+grid on
+hold on
+axis equal
+plot(theta(1,:), theta(2,:), 'o-',...
+    'Color', [1, 0.5, 0], 'LineWidth', 2);
+    
+
+function U = U_theta(theta) 
+    beta=2;
+    gamma=1;
+    theta_goal = [1; 1];
+    % Modified obstacle positions and sizes
+    obs_c21 = [0.3; 0.5];  % Update obstacle parameters
+    obs_r21 = 0.15;
+    obs_c22 = [0.6; 0.5];
+    obs_r22 = 0.25;
+
+    Urep1=0;
+    Urep2=0;
+
+    Uatt=0.5*beta*norm(theta_goal-theta)^2;    
+
+    if norm(obs_c21-theta)<= obs_r21
+        Urep1=0.5* gamma*((1/norm(obs_c21-theta))- (1/obs_r21))^2;
+    end
+    if norm(obs_c22-theta)<= obs_r22
+        Urep2= 0.5*gamma*((1/norm(obs_c22-theta))- (1/obs_r22))^2;
+    end
+
+    Urep= Urep1+ Urep2;
+    disp(Urep);
+    U= Uatt + Urep;
+end
+```
+
+</details>
+
+**Result:**
+
+<img src="Potential_Field_fail.gif" alt="Animated GIF" loop width="100%" height="100%">
+
+This failure occurs because the robot uses gradient descent to move towards decreasing potential energy, and the robot gets trapped in a **local minimum**.
+
+In this modification, the obstacles are placed closer to each other, potentially creating a narrow corridor that the drone might not be able to navigate due to the combined repulsive forces. This setup can result in the planner getting stuck in a local minimum, where the drone is unable to progress towards the goal. Thus, we place a local minimim in between the start and goal. **Gradient descent** can only climb "down" so if it's surrounded by high gradients, it can't escape.
+
+
+
+
+## Trajectory Optimization
+
+**MATLAB Implementations**
+
+Here we are using trajectory optimization to perform motion planning in 2-DoF environments. As before, the mobile robot’s position is 𝜃 = [𝑥, 𝑦]^𝑇.
+
+Implementing the trajectory optimization algorithm Below. My code should be able to work with an arbitrary number of waypoints and circular obstacles. 
+
+Thus setting the initial trajectory 𝜉^0 as:
+
+* xi_0 = [linspace(theta_start(1), theta_goal(1), k);
+linspace(theta_start(2), theta_goal(2), k)];
+
+
+* **Environment 1: One obstacle with center 𝑐1 = [0.2, 0.35]^𝑇 and radius 𝑟1 = 0.2. A second obstacle with center 𝑐2 = [0.5, 0.3]^𝑇 and radius 𝑟2 = 0.2. A third obstacle with center 𝑐3 = [0.7, 0.5]^𝑇 and radius 𝑟3 = 0.2. Setting 𝑘 = 20.**
+
+**MATLAB Code**
+
+<details>
+
+```matlab
+
+clear
+close all
+
+% start and goal
+theta_start = [0;0];
+theta_goal = [1;1];
+centers = [0.2 0.5, 0.7; 0.35 0.3, 0.5];
+radii = [0.2, 0.2, 0.2];
+
+% initial trajectory
+n = 2;
+k = 20;
+xi_0 = [linspace(theta_start(1), theta_goal(1), k);...
+ linspace(theta_start(2), theta_goal(2), k)];
+xi_0_vec = reshape(xi_0, [], 1);
+
+% start and goal equality constraints
+A = [eye(n) zeros(n, n*(k-1));...
+ zeros(n, n*(k-1)), eye(n)];
+B = [theta_start; theta_goal];
+
+% nonlinear optimization
+options = optimoptions('fmincon','Display','final',...
+ 'Algorithm','sqp','MaxFunctionEvaluations',1e5);
+xi_star_vec = fmincon(@(xi) cost(xi, centers, radii), xi_0_vec, ...
+ [], [], A, B, [], [], [], options);
+xi_star = reshape(xi_star_vec, 2, []);
+
+% plot result
+figure
+grid on
+hold on
+axis equal
+for idx = 1:length(radii)
+ viscircles(centers(:, idx)', radii(idx), 'Color', [0.5, 0.5, ...
+ 0.5]);
+end
+plot(xi_0(1,:), xi_0(2,:), 'o-', 'Color', [0.3, 0.3, ...
+ 0.3], 'LineWidth', 3);
+plot(xi_star(1,:), xi_star(2,:), 'o-', 'Color', [1, 0.5, ...
+ 0], 'LineWidth', 3);
+% cost function to minimize
+
+function C = cost(xi, centers, radii)
+ xi = reshape(xi, 2, []);
+ C = 0;
+ for idx = 2:length(xi)
+ theta_curr = xi(:, idx);
+ theta_prev = xi(:, idx - 1);
+ C = C + norm(theta_curr - theta_prev)^2;
+ for jdx = 1:length(radii)
+ center = centers(:, jdx);
+ radius = radii(jdx);
+ if norm(theta_curr - center) < radius
+ C = C + 0.5*(1/norm(theta_curr - center) - 1/radius)^2;
+ end
+ end
+ end
+end
+```
+</details>
+
+**Result**
+
+![](Images/Traj_Env_1.png){fig-align="left" width=40%}
+
+
+* **Environment 2: One obstacle with center 𝑐1 = [0.5, 0.3]^𝑇 and radius 𝑟1 = 0.3. A second obstacle with center 𝑐2 = [0.5, 0.7]^𝑇 and radius 𝑟2 = 0.2. Setting 𝑘 = 15.**
+
+**MATLAB implementation**
+
+<details>
+
+```matlab
+
+clear
+close all
+
+% start and goal
+theta_start = [0;0];
+theta_goal = [1;1];
+centers = [0.5 0.5; 0.3 0.7];
+radii = [0.3, 0.2];
+
+% initial trajectory
+n = 2;
+k = 15;
+xi_0 = [linspace(theta_start(1), theta_goal(1), k);...
+ linspace(theta_start(2), theta_goal(2), k)];
+xi_0_vec = reshape(xi_0, [], 1);
+
+% start and goal equality constraints
+A = [eye(n) zeros(n, n*(k-1));...
+ zeros(n, n*(k-1)), eye(n)];
+B = [theta_start; theta_goal];
+
+% nonlinear optimization
+options = optimoptions('fmincon','Display','final',...
+ 'Algorithm','sqp','MaxFunctionEvaluations',1e5);
+xi_star_vec = fmincon(@(xi) cost(xi, centers, radii), xi_0_vec, ...
+ [], [], A, B, [], [], [], options);
+xi_star = reshape(xi_star_vec, 2, []);
+
+% plot result
+figure
+grid on
+hold on
+axis equal
+for idx = 1:length(radii)
+ viscircles(centers(:, idx)', radii(idx), 'Color', [0.5, 0.5, ...
+ 0.5]);
+end
+plot(xi_0(1,:), xi_0(2,:), 'o-', 'Color', [0.3, 0.3, ...
+ 0.3], 'LineWidth', 3);
+plot(xi_star(1,:), xi_star(2,:), 'o-', 'Color', [1, 0.5, ...
+ 0], 'LineWidth', 3);
+
+% cost function to minimize
+function C = cost(xi, centers, radii)
+ xi = reshape(xi, 2, []);
+ C = 0;
+ for idx = 2:length(xi)
+ theta_curr = xi(:, idx);
+ theta_prev = xi(:, idx - 1);
+ C = C + norm(theta_curr - theta_prev)^2;
+ for jdx = 1:length(radii)
+ center = centers(:, jdx);
+ radius = radii(jdx);
+ if norm(theta_curr - center) < radius
+ C = C + 0.5*(1/norm(theta_curr - center) - 1/radius)^2;
+ end
+ end
+ end
+end
+```
+</details>
+
+**Result**
+
+![](Images/Traj_Env_2.png){fig-align="left" width=40%}
+
+
+* **Environment 3: One obstacle with center 𝑐1 = [0.55, 0.5]^𝑇 and radius 𝑟1 = 0.3. Trajectory should have 𝑘 = 10 waypoints.**
+
+**MATLAB implementation**
+
+<details>
+
+```matlab
+
+clear
+close all
+
+% start and goal
+theta_start = [0;0];
+theta_goal = [1;1];
+centers = [0.55; 0.5];
+radii = 0.3;
+
+% initial trajectory
+n = 2;
+k = 10;
+xi_0 = [linspace(theta_start(1), theta_goal(1), k);...
+ linspace(theta_start(2), theta_goal(2), k)];
+xi_0_vec = reshape(xi_0, [], 1);
+
+% start and goal equality constraints
+A = [eye(n) zeros(n, n*(k-1));...
+ zeros(n, n*(k-1)), eye(n)];
+B = [theta_start; theta_goal];
+
+% nonlinear optimization
+options = optimoptions('fmincon','Display','final',...
+ 'Algorithm','sqp','MaxFunctionEvaluations',1e5);
+xi_star_vec = fmincon(@(xi) cost(xi, centers, radii), xi_0_vec, ...
+ [], [], A, B, [], [], [], options);
+xi_star = reshape(xi_star_vec, 2, []);
+
+% plot result
+figure
+grid on
+hold on
+axis equal
+for idx = 1:length(radii)
+ viscircles(centers(:, idx)', radii(idx), 'Color', [0.5, 0.5, ...
+ 0.5]);
+end
+plot(xi_0(1,:), xi_0(2,:), 'o-', 'Color', [0.3, 0.3, ...
+ 0.3], 'LineWidth', 3);
+plot(xi_star(1,:), xi_star(2,:), 'o-', 'Color', [1, 0.5, ...
+ 0], 'LineWidth', 3);
+
+% cost function to minimize
+function C = cost(xi, centers, radii)
+ xi = reshape(xi, 2, []);
+ C = 0;
+ for idx = 2:length(xi)
+ theta_curr = xi(:, idx);
+ theta_prev = xi(:, idx - 1);
+ C = C + norm(theta_curr - theta_prev)^2;
+ for jdx = 1:length(radii)
+ center = centers(:, jdx);
+ radius = radii(jdx);
+ if norm(theta_curr - center) < radius
+ C = C + 0.5*(1/norm(theta_curr - center) - 1/radius)^2;
+ end
+ end
+ end
+end
+```
+</details>
+
+**Result**
+
+![](Images/Traj_Env_3.png){fig-align="left" width=40%}
+
+**Legend: Here, in all the three environments the gray line is the initial trajectory 𝜉^0, while the orange line is the optimal trajectory 𝜉.**
+
+# Special Scenario
+
+**Consider an environment with two obstacles:**
+
+* 𝜃𝑠𝑡𝑎𝑟𝑡 = [0, 0]^𝑇 and 𝜃𝑔𝑜𝑎𝑙 = [1, 1]^𝑇.
+
+* First obstacle with center 𝑐1 = [0.4, 0.6]^𝑇 and radius 𝑟1 = 0.2.
+
+* Second obstacle with center 𝑐2 = [0.6, 0.4]^𝑇 and radius 𝑟2 = 0.2.
+
+* The trajectory 𝜉 should have 𝑘 = 20 waypoints.
+
+Modifying the initial trajectory 𝜉^0 so that the optimal trajectory goes around both obstacles.
+
+**Solution:**
+
+For this environment an **initial trajectory 𝜉^0** that moves straight from start to goal gets stuck. The nonlinear optimizer cannot find a way to modify this initial trajectory to **decrease the cost** (i.e., we are stuck in a local minima), and so the final answer simply jumps across the obstacles. We can fix this problem by choosing an initial trajectory that moves either above or below the obstacles. 
+
+For example, try:
+**𝜉^0 =[[0 0 0 . . . 0;**
+       **0 1/(𝑘 − 1) 2/(𝑘 − 1) . . . 1]], 𝜉^0 ∈ R^(𝑛×𝑘)**
+
+This results in an optimal trajectory 𝜉 that goes above both obstacles. See the figure below. If you selected an initial trajectory that caused the robot to converge to a path below both obstacles, that is also fine.
+
+**Result**
+
+![](Images/Traj_Env_4_special.png){fig-align="left" width=40%}
+
+
+
+## RRT Algorithm
+
+* **The path plan should actually work on a robot.** If the path plan makes the robot turn at sharp angles but the robot can’t move at sharp angles (like a car), that path plan shouldn’t be allowed.
+
+* **The path plan should be as close to optimal as possible.** While it’s nice to find any path plan that gets the robot from a start location to a goal location, that isn’t enough unfortunately. We’d like something that’s somewhat efficient. Not only will it help the robot complete its task as fast as possible, but it’ll also conserve its precious battery life.
+
+* **The path plan should avoid colliding with walls.** This obviously goes without saying. Robots can be pretty expensive, and crashing is never a good thing. My little robot alone cost me well over a thousand bucks.
+
+One of the most popular algorithms for coming up with a path plan that tries to satisfies these conditions is called Rapidly-exploring Random Trees (RRT). Since a picture is worth a thousand words, check out the diagram below. Let’s suppose the robot has to go from a start location (the red dot) to a goal location (the green dot) in a simple map without any obstacles. Basically, we’ll start off with a tree that has a root node representing the start position of the robot. After that, we’ll build the tree up gradually. How? We’ll take a bunch of random samples of the map, make a new node for each random sample, and insert each new node into the tree somehow. Once the tree has a node that’s close enough to the goal position of the robot, we’re done.
+
+
+Here we are using the RRT algorithm to perform motion planning in 2-DoF environments. As before, the mobile robot’s position is 𝜃 = [𝑥, 𝑦]^𝑇.
+
+Implementing the RRT algorithm below. This code should be able to work with an arbitrary number of circular obstacles with 2 conditions:
+
+• The bounds of the workspace are 𝑥 ∈ [0, 1], 𝑦 ∈ [0, 1]
+• The motion plan must end within 𝜖 = 0.1 units of the goal
+
+**Code Implementation** 
+
+```{python}
+import numpy as np
+import matplotlib
+matplotlib.use('Agg')  # Set the backend to a non-interactive backend
+import matplotlib.pyplot as plt
+from matplotlib.patches import Circle
+from matplotlib.animation import PillowWriter, FuncAnimation
+
+# Define start and goal positions
+theta_start = {'coord': np.array([0, 0]), 'parent': None}
+theta_goal = np.array([1, 1])
+
+# Workspace bounds
+x_bounds = [0, 1]
+y_bounds = [0, 1]
+
+# Define obstacles
+obstacles = np.array([
+    [0.5, 0.3, 0.2],
+    [0.7, 0.7, 0.2],
+    [0.6, 0.4, 0.1],
+    [0.4, 0.3, 0.2],
+    [0.1, 0.75, 0.3]
+])
+
+# RRT parameters
+epsilon = 0.1  # Goal threshold
+delta = 0.05   # Step size
+N = 1000       # Number of iterations
+
+# Initialize tree
+G = [theta_start]
+
+# Visualize environment setup
+fig, ax = plt.subplots()
+ax.grid(True)
+ax.set_xlim(x_bounds)
+ax.set_ylim(y_bounds)
+ax.set_aspect('equal')
+
+# Plot obstacles
+for obstacle in obstacles:
+    circle = Circle(obstacle[0:2], obstacle[2], color='gray', fill=False)
+    ax.add_patch(circle)
+
+# Plot start and goal
+start_plot, = ax.plot(theta_start['coord'][0], theta_start['coord'][1], 'ko', markerfacecolor='k')
+goal_plot, = ax.plot(theta_goal[0], theta_goal[1], 'ko', markerfacecolor='k')
+
+# This flag is used to stop the animation once the goal is reached
+goal_reached = False
+
+# Animation update function
+def update(frame):
+    global G, goal_reached
+
+    if goal_reached:
+        return
+
+    theta_rand = theta_goal if np.random.rand() < 0.2 else np.random.rand(2)
+    distances = [np.linalg.norm(node['coord'] - theta_rand) for node in G]
+    theta_near_index = np.argmin(distances)
+    theta_near = G[theta_near_index]
+    vec_to_rand = theta_rand - theta_near['coord']
+    vec_to_rand = delta * vec_to_rand / np.linalg.norm(vec_to_rand)
+    theta_new = {'coord': theta_near['coord'] + vec_to_rand, 'parent': theta_near_index}
+
+    if not is_collision(theta_new['coord'], obstacles):
+        G.append(theta_new)
+        ax.plot([theta_near['coord'][0], theta_new['coord'][0]], [theta_near['coord'][1], theta_new['coord'][1]], 'k-', linewidth=2)
+        ax.plot(theta_new['coord'][0], theta_new['coord'][1], 'o', color='gray', markerfacecolor='gray')
+
+        if np.linalg.norm(theta_new['coord'] - theta_goal) < epsilon:
+            # Draw the final path in orange
+            current = theta_new
+            while current['parent'] is not None:
+                parent = G[current['parent']]
+                ax.plot([current['coord'][0], parent['coord'][0]], [current['coord'][1], parent['coord'][1]], color='orange', linewidth=3)
+                current = parent
+            goal_reached = True
+
+# Collision checking function
+def is_collision(coord, obstacles):
+    return any(np.linalg.norm(coord - obstacle[0:2]) < obstacle[2] for obstacle in obstacles)
+
+# Create the animation
+ani = FuncAnimation(fig, update, frames=N, repeat=False)
+
+# Save the animation as a GIF
+gif_path = "RRT_main.gif"
+writer = PillowWriter(fps=20)
+ani.save(gif_path, writer=writer)
+
+# Close the plot
+plt.close()
+```
+
+**MATLAB Implementation**
+
+<details>
+
+```matlab
+clear
+close all
+
+% Define start and goal positions
+theta_start.coord = [0; 0];
+theta_goal = [1; 1];
+
+% Workspace bounds
+x_bounds = [0, 1];
+y_bounds = [0, 1];
+
+% Define obstacles
+% Each row is an obstacle with format: [center_x, center_y, radius]
+obstacles = [
+    0.5, 0.3, 0.2;
+    0.7, 0.7, 0.2;
+    0.6, 0.4, 0.1;
+    0.4, 0.3, 0.2;
+    0.1, 0.75, 0.3;
+    % Add as many obstacles required, satisfying the condition of arbitrary
+    % number of obstacles' inclusion
+];
+
+% RRT parameters
+epsilon = 0.1; % Goal threshold
+delta = 0.05;  % Step size
+N = 1000;      % Number of iterations
+
+% Visualize environment
+figure
+hold on
+grid on
+axis([x_bounds, y_bounds])
+axis equal
+
+% Plot obstacles
+for i = 1:size(obstacles, 1)
+    viscircles(obstacles(i, 1:2), obstacles(i, 3), 'Color', [0.5, 0.5, 0.5]);
+end
+
+% Initialize tree
+theta_start.parent = 0;
+G(1) = theta_start;
+
+% Main RRT loop
+for idx = 1:N
+    if norm(G(end).coord - theta_goal) < epsilon
+        break
+    end
+
+    % Random sample
+    theta_rand = rand(2,1);
+
+    % Nearest node
+    [min_dist, theta_near_index] = min(vecnorm([G.coord] - theta_rand));
+    theta_near = G(theta_near_index);
+
+    % Step towards random sample
+    vec_to_rand = theta_rand - theta_near.coord;
+    if norm(vec_to_rand) > delta
+        vec_to_rand = delta * vec_to_rand / norm(vec_to_rand);
+    end
+    theta_new.coord = theta_near.coord + vec_to_rand;
+
+    % Collision check with all obstacles
+    if isCollision(theta_new.coord, obstacles)
+        continue;
+    end
+
+    % Add new node to tree
+    theta_new.parent = theta_near_index;
+    G = [G, theta_new];
+
+    % Plotting
+    plot(theta_new.coord(1), theta_new.coord(2), 'o', 'Color', [0.5, 0.5, 0.5], ...
+    'MarkerFaceColor', [0.5, 0.5, 0.5]);
+    line([theta_near.coord(1), theta_new.coord(1)], [theta_near.coord(2), theta_new.coord(2)], 'Color', 'k', 'LineWidth', 2);
+end
+
+% Trace back path
+child_theta = G(end);
+while child_theta.parent ~= 0
+    parent_theta = G(child_theta.parent);
+    line([child_theta.coord(1), parent_theta.coord(1)], [child_theta.coord(2), parent_theta.coord(2)], 'Color', [1, 0.5, 0], 'LineWidth', 3);
+    child_theta = parent_theta;
+end
+
+% Plot start and goal
+plot(theta_start.coord(1), theta_start.coord(2), 'ko', 'MarkerFaceColor', 'k');
+plot(theta_goal(1), theta_goal(2), 'ko', 'MarkerFaceColor', 'k');
+
+% Collision checking function
+
+function collision = isCollision(coord, obstacles)
+    collision = any(arrayfun(@(idx) norm(coord - obstacles(idx, 1:2)') < obstacles(idx, 3), 1:size(obstacles, 1)));
+end
+```
+</details>
+
+**Result**
+
+<img src="RRT_main.gif" alt="Animated GIF" loop width="100%" height="100%">
+
+
+
+Notice that centers is a matrix where each column corresponds to an obstacle center. Similarly, radii is a vector where the 𝑖-th entry corresponds to the radius of the 𝑖-th obstacle.
+
+ * **Environment 1: One obstacle with center 𝑐1 = [0.55, 0.5]^𝑇 and radius 𝑟1 = 0.3.**
+
+
+**RRT Algorithm for 1 Obstacle**
+
+```{python}
+import numpy as np
+import matplotlib
+matplotlib.use('Agg')  # Set the backend to a non-interactive backend
+import matplotlib.pyplot as plt
+from matplotlib.patches import Circle
+from matplotlib.animation import PillowWriter, FuncAnimation
+
+# Environment
+theta_start = {'coord': np.array([0, 0])}
+theta_goal = {'coord': np.array([1, 1])}
+centers = np.array([[0.5], [0.5]])
+radii = np.array([0.3])
+
+# Parameters
+epsilon = 0.1
+delta = 0.1
+N = 1000
+
+# Initialize figure
+fig, ax = plt.subplots()
+ax.grid(True)
+ax.set_xlim(0, 1)
+ax.set_ylim(0, 1)
+ax.set_aspect('equal', adjustable='box')
+
+# Draw obstacles
+
+for idx in range(len(radii)):
+    circle = Circle(centers[:, idx], radii[idx], color=[0.5, 0.5, 0.5], alpha=0.7)
+    ax.add_patch(circle)
+
+# Plot start and goal
+ax.plot(0, 0, 'ko', markerfacecolor='k')
+ax.plot(1, 1, 'ko', markerfacecolor='k')
+
+# Initialize tree
+theta_start['parent'] = None
+G = [theta_start]
+final_path_plotted = False
+
+def update(frame):
+    global G, final_path_plotted
+    if frame == 0 or final_path_plotted:
+        return
+
+    # Sample random joint position
+    theta_rand = np.random.rand(2)
+
+    # Find node in G nearest to theta_rand
+    dist = [np.linalg.norm(node['coord'] - theta_rand) for node in G]
+    theta_near_index = np.argmin(dist)
+    theta_near = G[theta_near_index]
+
+    # Take a step from theta_near towards theta_rand
+    vec_to_rand = theta_rand - theta_near['coord']
+    dist_to_rand = np.linalg.norm(vec_to_rand)
+
+    theta_new = {}
+    if dist_to_rand < delta:
+        theta_new['coord'] = theta_rand
+    else:
+        theta_new['coord'] = theta_near['coord'] + delta * vec_to_rand / dist_to_rand
+
+    # Check if theta_new is collision-free
+    collision = False
+    for jdx in range(len(radii)):
+        center = centers[:, jdx]
+        radius = radii[jdx]
+        if np.linalg.norm(theta_new['coord'] - center) < radius:
+            collision = True
+            break
+
+    if collision:
+        return
+
+    # If collision-free, add theta_new to tree with parent theta_near
+    theta_new['parent'] = theta_near_index
+    G.append(theta_new)
+
+    # Plot node and edge
+    ax.plot(theta_new['coord'][0], theta_new['coord'][1], 'o', color=[0.5, 0.5, 0.5], markerfacecolor=[0.5, 0.5, 0.5])
+    ax.plot([theta_near['coord'][0], theta_new['coord'][0]], [theta_near['coord'][1], theta_new['coord'][1]], 'k-', linewidth=2)
+
+    # If goal is close enough to the last node in G, plot the final path
+    if np.linalg.norm(G[-1]['coord'] - theta_goal['coord']) < epsilon:
+        next_theta = G[-1]
+        while next_theta['parent'] is not None:
+            prev_theta = G[next_theta['parent']]
+            line, = ax.plot([next_theta['coord'][0], prev_theta['coord'][0]], [next_theta['coord'][1], prev_theta['coord'][1]], 'orange', linewidth=3)
+            next_theta = prev_theta
+
+        # Add final path to the animation
+        final_path_plotted = True
+        return line,
+
+
+# Create the animation
+ani = FuncAnimation(fig, update, frames=N, repeat=False)
+
+# Save the animation
+writer = PillowWriter(fps=20)
+ani.save("RRT_1_obstacles.gif", writer=writer)
+```
+
+
+**Result:**
+
+<img src="RRT_1_obstacles.gif" alt="Animated GIF" loop width="100%" height="100%">
+
+
+* **Environment 2: One obstacle with center 𝑐1 = [0.5, 0.3]^𝑇 and radius 𝑟1 = 0.3. A second obstacle with center 𝑐2 = [0.5, 0.7]^𝑇 and radius 𝑟2 = 0.2.**
+
+**RRT Algorithm for 2 Obstacles**
+
+```{python}
+import numpy as np
+import matplotlib
+matplotlib.use('Agg')  # Set the backend to a non-interactive backend
+import matplotlib.pyplot as plt
+from matplotlib.patches import Circle
+from matplotlib.animation import PillowWriter, FuncAnimation
+
+# Environment
+theta_start = {'coord': np.array([0, 0])}
+theta_goal = {'coord': np.array([1, 1])}
+centers = np.array([[0.5, 0.3], [0.5, 0.7]])
+radii = np.array([0.3, 0.2])
+
+# Parameters
+epsilon = 0.1
+delta = 0.1
+N = 1000
+
+# Initialize figure
+fig, ax = plt.subplots()
+ax.grid(True)
+ax.set_xlim(0, 1)
+ax.set_ylim(0, 1)
+ax.set_aspect('equal', adjustable='box')
+
+# Draw obstacles
+
+for idx in range(len(radii)):
+    circle = Circle(centers[:, idx], radii[idx], color=[0.5, 0.5, 0.5], alpha=0.7)
+    ax.add_patch(circle)
+
+# Plot start and goal
+ax.plot(0, 0, 'ko', markerfacecolor='k')
+ax.plot(1, 1, 'ko', markerfacecolor='k')
+
+# Initialize tree
+theta_start['parent'] = None
+G = [theta_start]
+final_path_plotted = False
+
+def update(frame):
+    global G, final_path_plotted
+    if frame == 0 or final_path_plotted:
+        return
+
+    # Sample random joint position
+    theta_rand = np.random.rand(2)
+
+    # Find node in G nearest to theta_rand
+    dist = [np.linalg.norm(node['coord'] - theta_rand) for node in G]
+    theta_near_index = np.argmin(dist)
+    theta_near = G[theta_near_index]
+
+    # Take a step from theta_near towards theta_rand
+    vec_to_rand = theta_rand - theta_near['coord']
+    dist_to_rand = np.linalg.norm(vec_to_rand)
+
+    theta_new = {}
+    if dist_to_rand < delta:
+        theta_new['coord'] = theta_rand
+    else:
+        theta_new['coord'] = theta_near['coord'] + delta * vec_to_rand / dist_to_rand
+
+    # Check if theta_new is collision-free
+    collision = False
+    for jdx in range(len(radii)):
+        center = centers[:, jdx]
+        radius = radii[jdx]
+        if np.linalg.norm(theta_new['coord'] - center) < radius:
+            collision = True
+            break
+
+    if collision:
+        return
+
+    # If collision-free, add theta_new to tree with parent theta_near
+    theta_new['parent'] = theta_near_index
+    G.append(theta_new)
+
+    # Plot node and edge
+    ax.plot(theta_new['coord'][0], theta_new['coord'][1], 'o', color=[0.5, 0.5, 0.5], markerfacecolor=[0.5, 0.5, 0.5])
+    ax.plot([theta_near['coord'][0], theta_new['coord'][0]], [theta_near['coord'][1], theta_new['coord'][1]], 'k-', linewidth=2)
+
+    # If goal is close enough to the last node in G, plot the final path
+    if np.linalg.norm(G[-1]['coord'] - theta_goal['coord']) < epsilon:
+        next_theta = G[-1]
+        while next_theta['parent'] is not None:
+            prev_theta = G[next_theta['parent']]
+            line, = ax.plot([next_theta['coord'][0], prev_theta['coord'][0]], [next_theta['coord'][1], prev_theta['coord'][1]], 'orange', linewidth=3)
+            next_theta = prev_theta
+
+        # Add final path to the animation
+        final_path_plotted = True
+        return line,
+
+
+# Create the animation
+ani = FuncAnimation(fig, update, frames=N, repeat=False)
+
+# Save the animation
+writer = PillowWriter(fps=20)
+ani.save("RRT_2_obstacles.gif", writer=writer)
+```
+
+**Result:**
+
+<img src="RRT_2_obstacles.gif" alt="Animated GIF" loop width="100%" height="100%">
+
+
+* **Environment 3: One obstacle with center 𝑐1 = [0.2, 0.35]^𝑇 and radius 𝑟1 = 0.2. A second obstacle with center 𝑐2 = [0.5, 0.3]^𝑇 and radius 𝑟2 = 0.2. A third obstacle with center 𝑐3 = [0.7, 0.5]^𝑇 and radius 𝑟3 = 0.2.**
+
+Here we are declaring it a Baseline Algorithm for 3 obstacles. Later below we will discuss the differences between a baseline and Goal-bias algorithm and their pros-cons.
+
+**Baseline RRT Algorithm**
+
+```{python}
+import numpy as np
+import matplotlib
+matplotlib.use('Agg')  # Set the backend to a non-interactive backend
+import matplotlib.pyplot as plt
+from matplotlib.patches import Circle
+from matplotlib.animation import PillowWriter, FuncAnimation
+
+# Environment
+theta_start = {'coord': np.array([0, 0])}
+theta_goal = {'coord': np.array([1, 1])}
+centers = np.array([[0.2, 0.5, 0.7], [0.35, 0.3, 0.5]])
+radii = np.array([0.2, 0.2, 0.2])
+
+# Parameters
+epsilon = 0.1
+delta = 0.1
+N = 1000
+
+# Initialize figure
+fig, ax = plt.subplots()
+ax.grid(True)
+ax.set_xlim(0, 1)
+ax.set_ylim(0, 1)
+ax.set_aspect('equal', adjustable='box')
+
+# Draw obstacles
+
+for idx in range(len(radii)):
+    circle = Circle(centers[:, idx], radii[idx], color=[0.5, 0.5, 0.5], alpha=0.7)
+    ax.add_patch(circle)
+
+# Plot start and goal
+ax.plot(0, 0, 'ko', markerfacecolor='k')
+ax.plot(1, 1, 'ko', markerfacecolor='k')
+
+# Initialize tree
+theta_start['parent'] = None
+G = [theta_start]
+final_path_plotted = False
+
+def update(frame):
+    global G, final_path_plotted
+    if frame == 0 or final_path_plotted:
+        return
+
+    # Sample random joint position
+    theta_rand = np.random.rand(2)
+
+    # Find node in G nearest to theta_rand
+    dist = [np.linalg.norm(node['coord'] - theta_rand) for node in G]
+    theta_near_index = np.argmin(dist)
+    theta_near = G[theta_near_index]
+
+    # Take a step from theta_near towards theta_rand
+    vec_to_rand = theta_rand - theta_near['coord']
+    dist_to_rand = np.linalg.norm(vec_to_rand)
+
+    theta_new = {}
+    if dist_to_rand < delta:
+        theta_new['coord'] = theta_rand
+    else:
+        theta_new['coord'] = theta_near['coord'] + delta * vec_to_rand / dist_to_rand
+
+    # Check if theta_new is collision-free
+    collision = False
+    for jdx in range(len(radii)):
+        center = centers[:, jdx]
+        radius = radii[jdx]
+        if np.linalg.norm(theta_new['coord'] - center) < radius:
+            collision = True
+            break
+
+    if collision:
+        return
+
+    # If collision-free, add theta_new to tree with parent theta_near
+    theta_new['parent'] = theta_near_index
+    G.append(theta_new)
+
+    # Plot node and edge
+    ax.plot(theta_new['coord'][0], theta_new['coord'][1], 'o', color=[0.5, 0.5, 0.5], markerfacecolor=[0.5, 0.5, 0.5])
+    ax.plot([theta_near['coord'][0], theta_new['coord'][0]], [theta_near['coord'][1], theta_new['coord'][1]], 'k-', linewidth=2)
+
+    # If goal is close enough to the last node in G, plot the final path
+    if np.linalg.norm(G[-1]['coord'] - theta_goal['coord']) < epsilon:
+        next_theta = G[-1]
+        while next_theta['parent'] is not None:
+            prev_theta = G[next_theta['parent']]
+            line, = ax.plot([next_theta['coord'][0], prev_theta['coord'][0]], [next_theta['coord'][1], prev_theta['coord'][1]], 'orange', linewidth=3)
+            next_theta = prev_theta
+
+        # Add final path to the animation
+        final_path_plotted = True
+        return line,
+
+
+# Create the animation
+ani = FuncAnimation(fig, update, frames=N, repeat=False)
+
+# Save the animation
+writer = PillowWriter(fps=20)
+ani.save("Baseline_RRT.gif", writer=writer)
+
+plt.show()
+```
+
+**MATLAB Implementation**
+
+<details>
+
+```{matlab}
+clear
+close all
+
+% environment
+theta_start.coord = [0; 0];
+theta_goal.coord = [1; 1];
+centers = [0.2, 0.5, 0.7; 0.35, 0.3, 0.5];
+radii = [0.2, 0.2, 0.2];
+
+% parameters
+epsilon = 0.1;
+delta = 0.1;
+N = 1000;
+
+% visualize environment
+figure
+grid on
+hold on
+axis([0, 1, 0, 1])
+axis equal
+
+for idx = 1:length(radii)
+ viscircles(centers(:, idx)', radii(idx), 'Color', [0.5, 0.5, ...
+ 0.5]);
+end
+
+plot(0, 0, 'ko', 'MarkerFaceColor', 'k')
+plot(1, 1, 'ko', 'MarkerFaceColor', 'k')
+
+% initialize tree
+theta_start.parent = 0;
+G(1) = theta_start;
+
+for idx = 1:N
+ % stop if theta_new is close to theta_goal
+ if norm(G(end).coord - theta_goal.coord) < epsilon
+ break
+ end
+
+ % sample random joint position
+ theta_rand = rand(2,1);
+
+ % find node in G nearest to theta_rand
+ dist = zeros(length(G), 1);
+ for jdx = 1:1:length(G)
+ dist(jdx) = norm(G(jdx).coord - theta_rand);
+ end
+ [~, theta_near_index] = min(dist);
+ theta_near = G(theta_near_index);
+
+ % take a step from theta_near towards theta_rand
+ vec_to_rand = theta_rand - theta_near.coord;
+ dist_to_rand = norm(vec_to_rand);
+
+ if dist_to_rand < delta
+ theta_new.coord = theta_rand;
+ else
+ theta_new.coord = theta_near.coord + delta * ...
+ vec_to_rand/dist_to_rand;
+ end
+
+ % check if theta_new is collision free
+ collision = false;
+ for jdx = 1:length(radii)
+ center = centers(:, jdx);
+ radius = radii(jdx);
+ if norm(theta_new.coord - center) < radius
+ collision = true;
+ end
+ end
+
+ if collision
+ continue
+ end
+
+ % if collision free, add theta_new to tree with parent theta_near
+ theta_new.parent = theta_near_index;
+ G = [G, theta_new];
+
+ % plot node and edge
+ plot(theta_new.coord(1), theta_new.coord(2), 'o', 'Color', [0.5, ...
+ 0.5, 0.5], 'MarkerFaceColor', [0.5, 0.5, 0.5])
+ line([theta_near.coord(1), theta_new.coord(1)], ...
+ [theta_near.coord(2), theta_new.coord(2)], 'Color', 'k', 'LineWidth', ...
+ 2);
+end
+
+% work backwards from the final node to the root of the tree
+next_theta = G(end);
+while next_theta.parent ~= 0
+ prev_theta_idx = next_theta.parent;
+ prev_theta = G(prev_theta_idx);
+ line([next_theta.coord(1), prev_theta.coord(1)], ...
+ [next_theta.coord(2), prev_theta.coord(2)], 'Color', [1, 0.5, ...
+ 0], 'LineWidth', 3);
+ next_theta = prev_theta;
+end
+```
+
+</details>
+
+**Result:**
+
+<img src="Baseline_RRT.gif" alt="Animated GIF" loop width="100%" height="100%">
+
+
+We can see the trajectory plots in the above figures. Here the black lines and gray dots show the tree 𝐺, while the orange line is the final motion plan from 𝜃𝑠𝑡𝑎𝑟𝑡 to a point close to the goal (𝜖 ≤ 0.1). Each time we run your RRT code you should get a different solution: RRT builds the tree through random sampling.
+
+
+## Goal-Bias RRT Algorithm
+
+This version will sample the goal more frequently (let’s refer to this as goal bias). For goal bias, with probability 0.2 set 𝜃𝑟𝑎𝑛𝑑 as 𝜃𝑔𝑜𝑎𝑙. Otherwise sample randomly as normal. Run your code 10 times for baseline and 10 times for goal bias. Write down how many samples it takes on average to find a motion plan. Which approach is more sample-efficient: baseline or goal bias? 
+
+Let us check the implementation and results.
+
+**Goal-Bias RRT Implementation**
+
+```{python}
+import numpy as np
+import matplotlib
+matplotlib.use('Agg')  # Set the backend to a non-interactive backend
+import matplotlib.pyplot as plt
+from matplotlib.patches import Circle
+from matplotlib.animation import PillowWriter, FuncAnimation
+
+# Environment
+theta_start = {'coord': np.array([0, 0])}
+theta_goal = {'coord': np.array([1, 1])}
+centers = np.array([[0.2, 0.5, 0.7], [0.35, 0.3, 0.5]])
+radii = np.array([0.2, 0.2, 0.2])
+
+# Parameters
+epsilon = 0.1
+delta = 0.1
+N = 1000
+
+# Initialize figure
+fig, ax = plt.subplots()
+ax.grid(True)
+ax.set_xlim(0, 1)
+ax.set_ylim(0, 1)
+ax.set_aspect('equal', adjustable='box')
+
+# Draw obstacles
+for idx in range(len(radii)):
+    circle = Circle(centers[:, idx], radii[idx], color=[0.5, 0.5, 0.5], alpha=0.7)
+    ax.add_patch(circle)
+
+# Plot start and goal
+ax.plot(0, 0, 'ko', markerfacecolor='k')
+ax.plot(1, 1, 'ko', markerfacecolor='k')
+
+# Initialize tree
+theta_start['parent'] = None
+G = [theta_start]
+final_path_plotted = False
+
+def update(frame):
+    global G, final_path_plotted
+    if frame == 0 or final_path_plotted:
+        return
+
+    # Sample random joint position
+    if np.random.rand() < 0.2:
+        theta_rand = theta_goal['coord']
+    else:
+        theta_rand = np.random.rand(2)
+
+
+    # Find node in G nearest to theta_rand
+    dist = [np.linalg.norm(node['coord'] - theta_rand) for node in G]
+    theta_near_index = np.argmin(dist)
+    theta_near = G[theta_near_index]
+
+    # Take a step from theta_near towards theta_rand
+    vec_to_rand = theta_rand - theta_near['coord']
+    dist_to_rand = np.linalg.norm(vec_to_rand)
+
+    theta_new = {}
+    if dist_to_rand < delta:
+        theta_new['coord'] = theta_rand
+    else:
+        theta_new['coord'] = theta_near['coord'] + delta * vec_to_rand / dist_to_rand
+
+    # Check if theta_new is collision-free
+    collision = False
+    for jdx in range(len(radii)):
+        center = centers[:, jdx]
+        radius = radii[jdx]
+        if np.linalg.norm(theta_new['coord'] - center) < radius:
+            collision = True
+            break
+
+    if collision:
+        return
+
+    # If collision-free, add theta_new to tree with parent theta_near
+    theta_new['parent'] = theta_near_index
+    G.append(theta_new)
+
+    # Plot node and edge
+    ax.plot(theta_new['coord'][0], theta_new['coord'][1], 'o', color=[0.5, 0.5, 0.5], markerfacecolor=[0.5, 0.5, 0.5])
+    ax.plot([theta_near['coord'][0], theta_new['coord'][0]], [theta_near['coord'][1], theta_new['coord'][1]], 'k-', linewidth=2)
+
+    # If goal is close enough to the last node in G, plot the final path
+    if np.linalg.norm(G[-1]['coord'] - theta_goal['coord']) < epsilon:
+        next_theta = G[-1]
+        while next_theta['parent'] is not None:
+            prev_theta = G[next_theta['parent']]
+            line, = ax.plot([next_theta['coord'][0], prev_theta['coord'][0]], [next_theta['coord'][1], prev_theta['coord'][1]], 'orange', linewidth=3)
+            next_theta = prev_theta
+
+        # Add final path to the animation
+        final_path_plotted = True
+        return line,
+
+
+# Create the animation
+ani = FuncAnimation(fig, update, frames=N, repeat=False)
+
+# Save the animation
+writer = PillowWriter(fps=20)
+ani.save("Goal_bias_RRT.gif", writer=writer)
+```
+
+**MATLAB Implementation**
+
+<details>
+
+```{matlab}
+clear
+close all
+% Environment initiation
+theta_start.coord = [0; 0];
+theta_goal = [1; 1];
+
+% Obstacle Parameters
+% First obstacle center and radius
+center = [0.2; 0.35];
+radius = 0.2;
+% Second obstacle center and radius
+center2 = [0.5; 0.3]; 
+radius2 = 0.2;
+% Third obstacle center and radius
+center3 = [0.7; 0.5];
+radius3 = 0.2;
+
+% Specifying parameters
+epsilon = 0.1;
+delta = 0.1;
+N = 1000;
+
+% Visualizing the environment
+figure
+grid on
+hold on
+axis([0, 1, 0, 1])
+axis equal
+viscircles(center', radius, 'Color', [0.5, 0.5, 0.5]);
+viscircles(center2', radius2, 'Color', [0.7, 0.3, 0.3]); % Visualizing the second obstacle
+viscircles(center3', radius3, 'Color', [0.3, 0.5, 0.7]); % Visualizing the third obstacle
+plot(0, 0, 'ko', 'MarkerFaceColor', 'k')
+plot(1, 1, 'ko', 'MarkerFaceColor', 'k')
+
+% Initializing the tree
+theta_start.parent = 0;
+G(1) = theta_start;
+
+for idx = 1:N
+    
+    % Stop if the last node in G is close to theta_goal
+    if norm(G(end).coord  - theta_goal) < epsilon
+        break
+    end
+
+    % sample random joint position: probability 0.2
+    
+    if rand() < 0.2
+        theta_rand = theta_goal;
+    else
+        theta_rand = rand(2,1);
+    end
+    
+    % find node in G nearest to theta_rand
+    min_dist = inf;
+    theta_near_index = 0;
+
+    for jdx = 1:length(G)
+        coord = G(jdx).coord;
+        dist = norm(theta_rand - coord);
+        if dist < min_dist
+            min_dist = dist;
+            theta_near_index = jdx;
+        end
+    end
+
+    theta_near = G(theta_near_index);
+    % take a step from theta_near towards theta_rand
+    vec_to_rand = theta_rand - theta_near.coord;
+    dist_to_rand = norm(vec_to_rand);
+    if dist_to_rand < delta
+        theta_new.coord = theta_rand;
+    else
+        theta_new.coord = theta_near.coord + delta * ...
+        vec_to_rand/dist_to_rand;
+    end
+    
+    % check if theta_new is collision free with all obstacles
+    dist_to_obs1 = norm(theta_new.coord - center);
+    dist_to_obs2 = norm(theta_new.coord - center2);
+    dist_to_obs3 = norm(theta_new.coord - center3);
+    if dist_to_obs1 < radius || dist_to_obs2 < radius2 || dist_to_obs3 < radius3
+        continue
+    end
+
+    % if collision free, add theta_new to tree with parent theta_near
+    theta_new.parent = theta_near_index;
+    G = [G, theta_new];
+
+    % plot node and edge
+    plot(theta_new.coord(1), theta_new.coord(2), 'o', 'Color', [0.5, 0.5, 0.5], ...
+    'MarkerFaceColor', [0.5, 0.5, 0.5])
+    line([theta_near.coord(1), theta_new.coord(1)], [theta_near.coord(2), ...
+    theta_new.coord(2)], 'Color', 'k', 'LineWidth', 2);
+    drawnow
+
+end
+
+% work backwards from the final node to the root of the tree
+child_theta = G(end);
+while child_theta.parent ~= 0
+
+    parent_theta_index = child_theta.parent;
+    parent_theta = G(parent_theta_index);
+    line([child_theta.coord(1), parent_theta.coord(1)], ...
+        [child_theta.coord(2), parent_theta.coord(2)], ...
+        'Color', [1, 0.5, 0], 'LineWidth', 3);
+    child_theta = parent_theta;
+end
+```
+
+</details>
+
+**Result:**
+
+<img src="Goal_bias_RRT.gif" alt="Animated GIF" loop width="100%" height="100%">
+
+
+
+The samples 𝑁 across ten runs with baseline and goal bias are tabulated below.
+
+
+| run  | baseline | goal bias|
+|------|----------|----------|
+| 1    |   254    |   225    |
+| 2    |   363    |   169    |
+| 3    |   318    |   150    |
+| 4    |   590    |   143    |
+| 5    |   352    |   249    |
+| 6    |   359    |   166    |
+| 7    |   202    |   251    |
+| 8    |   267    |   162    |
+| 9    |   440    |   183    |
+| 10   |   226    |   313    |
+
+
+
+On average, the **baseline** required **337** samples to reach a valid motion plan, while **goal bias** needed **201** samples. For **Environment 3** the evidence suggests that biasing the samples towards 𝜃𝑔𝑜𝑎𝑙 decreases the total number of samples and causes RRT to reach a solution faster. Intuitively, this is because the tree is trying to move in the direction of the goal more frequently. 
+
+This is particularly advantageous when the robot is in free space (or has passed the obstacles) and should move directly towards the goal. The code snippet required to implement goal bias is shown below:
+
+**Python version**
+
+```python
+# Sample random joint position: probability 0.2
+if np.random.rand() < 0.2:
+    theta_rand = theta_goal['coord']
+else:
+    theta_rand = np.random.rand(2)
+```
+**MATLAB version**
+
+<details>
+
+```matlab
+% sample random joint position: probability 0.2
+    
+if rand() < 0.2
+    theta_rand = theta_goal;
+else
+    theta_rand = rand(2,1);
+end
+```
+</details>
+
+
+
+**Sample Efficiency Comparison:**
+
+• Goal-biased RRT seemed to be more sample-efficient in open or less complex environments because it directs its exploration towards the goal, thereby potentially finding a path with fewer samples.
+
+• In contrast, the baseline RRT might be more effective in highly cluttered environments where a direct path to the goal is less likely, and a more uniform exploration of the space is beneficial.
+
+We need to understand the key differences between the two methods and their impact on sample efficiency:
+
+* Baseline RRT: This approach uniformly samples the entire configuration space without any bias towards the goal. It explores the space in a more scattered manner, which can be beneficial in complex environments with many obstacles. However, it might take more samples to find a path to the goal, especially in large or open spaces, because the sampling is entirely random and not directed towards the goal.
+    
+* Goal-Biased RRT: In this approach, the algorithm is biased to sample near the goal state more frequently. This bias can significantly reduce the number of samples required to find a path to the goal in many cases, especially in less complex environments or when the goal is not surrounded by obstacles. The downside is that in highly cluttered environments, this bias might lead to more samples being wasted near the goal where paths are infeasible.
+
+
+
+
+
+
+```{=html}
+<script>
+const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+</script>
+<style>
+div#quarto-sidebar-glass { display: none !important; }
+ul.navbar-nav.navbar-nav-scroll { -webkit-flex-direction: row !important; }
+/* #quarto-sidebar { padding: 5px; }
+#quarto-sidebar > * { padding: 5px; }
+div.sidebar-menu-container > * { padding: 5px 5px 5px 5px; }
+#quarto-margin-sidebar { padding: 40px; } */
+</style>
+```

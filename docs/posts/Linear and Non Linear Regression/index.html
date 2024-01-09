@@ -148,10 +148,25 @@ cookieconsent.run({
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
-  <li class="nav-item">
-    <a class="nav-link active" href="../../blog.html" rel="" target="" aria-current="page">
- <span class="menu-text">Blog</span></a>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-projects" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
+ <span class="menu-text">Projects</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-projects">    
+        <li>
+    <a class="dropdown-item" href="../../blog.html" rel="" target="">
+ <span class="dropdown-text">Machine Learning</span></a>
   </li>  
+        <li>
+    <a class="dropdown-item" href="../../tool.html" rel="" target="">
+ <span class="dropdown-text">Tools</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../robotics.html" rel="" target="">
+ <span class="dropdown-text">Robotics</span></a>
+  </li>  
+    </ul>
+  </li>
   <li class="nav-item dropdown ">
     <a class="nav-link dropdown-toggle" href="#" id="nav-menu-resources" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
  <span class="menu-text">Resources</span>
@@ -165,22 +180,10 @@ cookieconsent.run({
     <a class="dropdown-item" href="https://r4ds.hadley.nz/" rel="" target="_blank">
  <span class="dropdown-text">Python for Data Science</span></a>
   </li>  
-        <li>
-    <a class="dropdown-item" href="https://www.tidyverse.org/" rel="" target="_blank">
- <span class="dropdown-text">Tidyverse</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="https://www.tidymodels.org/" rel="" target="_blank">
- <span class="dropdown-text">Tidymodels</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="https://style.tidyverse.org/" rel="" target="_blank">
- <span class="dropdown-text">Tidyverse Style Guide</span></a>
-  </li>  
     </ul>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="../../about.html" rel="" target="">
+    <a class="nav-link active" href="../../about.html" rel="" target="" aria-current="page">
  <span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item dropdown ">
@@ -226,7 +229,7 @@ cookieconsent.run({
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../blog.html">Blog Posts</a></li><li class="breadcrumb-item"><a href="../../blog.html#category=Machine Learning">Machine Learning</a></li><li class="breadcrumb-item"><a href="../../posts/Linear and Non Linear Regression/index.html">Regression</a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../Projects.html">Projects</a></li><li class="breadcrumb-item"><a href="../../blog.html#category=Machine Learning">Machine Learning</a></li><li class="breadcrumb-item"><a href="../../posts/Linear and Non Linear Regression/index.html">Regression</a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
     </div>
@@ -246,8 +249,8 @@ cookieconsent.run({
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../../blog.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Blog Posts</span></a>
+            <a href="../../Projects.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Projects</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -255,8 +258,8 @@ cookieconsent.run({
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../../blog.html#category=Tools/Packages" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Tools</span></a>
+            <a href="../../blog.html#category=Robotics" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Robotics</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -264,20 +267,8 @@ cookieconsent.run({
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../posts/git/git.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Git</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../posts/llm/llm.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">LLM</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../posts/quarto/quarto.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Quarto</span></a>
+  <a href="../../Robotics/Robotics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Robotics</span></a>
   </div>
 </li>
       </ul>
@@ -323,6 +314,35 @@ cookieconsent.run({
 </li>
       </ul>
   </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../blog.html#category=Tools/Packages" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Tools</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../posts/git/git.qmd" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Git</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../posts/llm/llm.qmd" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">LLM</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../posts/quarto/quarto.qmd" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Quarto</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
       </ul>
   </li>
         <li class="sidebar-item">
@@ -333,13 +353,13 @@ cookieconsent.run({
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false">
  <span class="menu-text">Resources</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../resources.html" class="sidebar-item-text sidebar-link">
@@ -350,24 +370,6 @@ cookieconsent.run({
   <div class="sidebar-item-container"> 
   <a href="https://r4ds.hadley.nz/" class="sidebar-item-text sidebar-link" target="&quot;_blank&quot;">
  <span class="menu-text">Python for Data Science</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="https://www.tidyverse.org/" class="sidebar-item-text sidebar-link" target="&quot;_blank&quot;">
- <span class="menu-text">Tidyverse</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="https://www.tidymodels.org/" class="sidebar-item-text sidebar-link" target="&quot;_blank&quot;">
- <span class="menu-text">Tidymodels</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="https://style.tidyverse.org/" class="sidebar-item-text sidebar-link" target="&quot;_blank&quot;">
- <span class="menu-text">Tidyverse Style Guide</span></a>
   </div>
 </li>
       </ul>
@@ -625,8 +627,8 @@ Random Forest Test R2: 0.865534268688408</code></pre>
 Dep. Variable:                  Price   R-squared:                       0.917
 Model:                            OLS   Adj. R-squared:                  0.914
 Method:                 Least Squares   F-statistic:                     283.3
-Date:                Sun, 10 Dec 2023   Prob (F-statistic):          3.91e-119
-Time:                        20:22:05   Log-Likelihood:                -2932.4
+Date:                Tue, 09 Jan 2024   Prob (F-statistic):          3.91e-119
+Time:                        04:02:04   Log-Likelihood:                -2932.4
 No. Observations:                 240   AIC:                             5885.
 Df Residuals:                     230   BIC:                             5920.
 Df Model:                           9                                         
