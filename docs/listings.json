@@ -2,7 +2,11 @@
   {
     "listing": "/robotics.html",
     "items": [
-      "/Robotics/Robotics.html"
+      "/Robotics/Control.html",
+      "/Robotics/Dynamics.html",
+      "/Robotics/Inverse_kinematics.html",
+      "/Robotics/Potential_trajectory.html",
+      "/Robotics/RRT.html"
     ]
   },
   {

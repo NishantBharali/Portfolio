@@ -261,8 +261,32 @@ cookieconsent.run({
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Robotics/Robotics.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Robotics</span></a>
+  <a href="./Robotics/Inverse_kinematics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Inverse Kinematics</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Robotics/Potential_trajectory.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Trajectory Optimization</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Robotics/Dynamics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Dynamics</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Robotics/Control.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Control</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Robotics/RRT.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">RRT</span></a>
   </div>
 </li>
       </ul>
@@ -375,7 +399,7 @@ cookieconsent.run({
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Robotics">Robotics <span class="quarto-category-count">(1)</span></div></div></div>
+    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(5)</span></div><div class="category" data-category="Robotics">Robotics <span class="quarto-category-count">(5)</span></div></div></div>
 <!-- main -->
 <main class="content column-body" id="quarto-document-content">
 
@@ -420,15 +444,69 @@ div.sidebar-menu-container > * { padding: 5px 5px 5px 5px; }
     </div>
 </div>
 <div class="list grid quarto-listing-cols-3">
-<div class="g-col-1" data-index="0" data-categories="Robotics" data-listing-file-modified-sort="1704791623385" data-listing-reading-time-sort="63">
-<a href="./Robotics/Robotics.html" class="quarto-grid-link">
+<div class="g-col-1" data-index="0" data-categories="Robotics" data-listing-file-modified-sort="1706091210550" data-listing-reading-time-sort="12">
+<a href="./Robotics/Control.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
-<img src="./images/Robotics.gif" class="thumbnail-image card-img" style="height: 150px;">
+<img src="./Robotics/Control__Cover_GIF.gif" class="thumbnail-image card-img" style="height: 150px;">
 </p>
 <div class="card-body post-contents">
 <h5 class="no-anchor card-title listing-title">
-Robotics and Automation
+Robot Control
+</h5>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('Robotics'); return false;">
+Robotics
+</div>
+</div>
+<div class="card-text listing-description">
+Now we are simulating the rigid system and compliant system in Simulink (Matlab). For both systems set <span class="math inline">\(\normalsize \theta_𝑑\)</span> as a Pulse Generator with amplitude 1 m, period 5 s, and pulse width 50%. The model stop time should be…
+</div>
+</div>
+<div class="card-footer">
+<div class="card-file-modified listing-file-modified">
+<p>1/24/24, 5:13:30 AM</p>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="1" data-categories="Robotics" data-listing-file-modified-sort="1706091333948" data-listing-reading-time-sort="15">
+<a href="./Robotics/Dynamics.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img src="./Robotics/Dynamics_Pendulum_Cover_GIF.gif" class="thumbnail-image card-img" style="height: 150px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Robot Dynamics
+</h5>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('Robotics'); return false;">
+Robotics
+</div>
+</div>
+<div class="card-text listing-description">
+Here we will simulate the dynamics of the planar robot shown above. We have the dynamics of this robot mentioned in the code.
+</div>
+</div>
+<div class="card-footer">
+<div class="card-file-modified listing-file-modified">
+<p>1/24/24, 5:15:33 AM</p>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="2" data-categories="Robotics" data-listing-file-modified-sort="1706091288015" data-listing-reading-time-sort="27">
+<a href="./Robotics/Inverse_kinematics.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img src="./Robotics/Inverse_Kinematics_Cover_GIF.gif" class="thumbnail-image card-img" style="height: 150px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Inverse Kinematics Simulation
 </h5>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('Robotics'); return false;">
@@ -441,7 +519,61 @@ Robotics
 </div>
 <div class="card-footer">
 <div class="card-file-modified listing-file-modified">
-<p>1/9/24, 4:13:43 AM</p>
+<p>1/24/24, 5:14:48 AM</p>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="3" data-categories="Robotics" data-listing-file-modified-sort="1706092752528" data-listing-reading-time-sort="12">
+<a href="./Robotics/Potential_trajectory.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img src="./Robotics/Trajectory_Cover_GIF.gif" class="thumbnail-image card-img" style="height: 150px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Motion Planning &amp; Trajectory Optimization
+</h5>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('Robotics'); return false;">
+Robotics
+</div>
+</div>
+<div class="card-text listing-description">
+Here I will use potential fields to get a motion plan for the 2-DoF environment shown below. Here the drone’s position is <span class="math inline">\(\normalsize \theta = [𝑥, 𝑦]^𝑇\)</span>.
+</div>
+</div>
+<div class="card-footer">
+<div class="card-file-modified listing-file-modified">
+<p>1/24/24, 5:39:12 AM</p>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="4" data-categories="Robotics" data-listing-file-modified-sort="1706091179626" data-listing-reading-time-sort="26">
+<a href="./Robotics/RRT.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img src="./Robotics/RRT_main.gif" class="thumbnail-image card-img" style="height: 150px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+RRT Algorithm Simulation
+</h5>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('Robotics'); return false;">
+Robotics
+</div>
+</div>
+<div class="card-text listing-description">
+<strong>The path plan should actually work on a robot.</strong> If the path…
+</div>
+</div>
+<div class="card-footer">
+<div class="card-file-modified listing-file-modified">
+<p>1/24/24, 5:12:59 AM</p>
 </div>
 </div>
 </div>

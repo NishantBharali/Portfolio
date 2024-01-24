@@ -1,0 +1,1017 @@
+---
+title: "RRT Algorithm Simulation"
+categories: [Robotics]
+image: RRT_main.gif
+format:
+    html: 
+        code-fold: true
+        code-overflow: scroll
+        code-tools: true
+
+---
+
+## RRT Algorithm
+
+* **The path plan should actually work on a robot.** If the path plan makes the robot turn at sharp angles but the robot can’t move at sharp angles (like a car), that path plan shouldn’t be allowed.
+
+* **The path plan should be as close to optimal as possible.** While it’s nice to find any path plan that gets the robot from a start location to a goal location, that isn’t enough unfortunately. We’d like something that’s somewhat efficient. Not only will it help the robot complete its task as fast as possible, but it’ll also conserve its precious battery life.
+
+* **The path plan should avoid colliding with walls.** This obviously goes without saying. Robots can be pretty expensive, and crashing is never a good thing. My little robot alone cost me well over a thousand bucks.
+
+One of the most popular algorithms for coming up with a path plan that tries to satisfies these conditions is called Rapidly-exploring Random Trees (RRT). Since a picture is worth a thousand words, check out the diagram below. Let’s suppose the robot has to go from a start location (the red dot) to a goal location (the green dot) in a simple map without any obstacles. Basically, we’ll start off with a tree that has a root node representing the start position of the robot. After that, we’ll build the tree up gradually. How? We’ll take a bunch of random samples of the map, make a new node for each random sample, and insert each new node into the tree somehow. Once the tree has a node that’s close enough to the goal position of the robot, we’re done.
+
+
+Here we are using the RRT algorithm to perform motion planning in 2-DoF environments. As before, the mobile robot’s position is $\normalsize \theta = [𝑥, 𝑦]^𝑇$.
+
+Implementing the RRT algorithm below. This code should be able to work with an arbitrary number of circular obstacles with 2 conditions:
+
+• The bounds of the workspace are $\normalsize 𝑥 ∈ [0, 1], \, 𝑦 ∈ [0, 1]$
+• The motion plan must end within $\normalsize \epsilon = 0.1$  units of the goal
+
+**Code Implementation** 
+
+```{python}
+import numpy as np
+import matplotlib
+matplotlib.use('Agg')  # Set the backend to a non-interactive backend
+import matplotlib.pyplot as plt
+from matplotlib.patches import Circle
+from matplotlib.animation import PillowWriter, FuncAnimation
+
+# Define start and goal positions
+theta_start = {'coord': np.array([0, 0]), 'parent': None}
+theta_goal = np.array([1, 1])
+
+# Workspace bounds
+x_bounds = [0, 1]
+y_bounds = [0, 1]
+
+# Define obstacles
+obstacles = np.array([
+    [0.5, 0.3, 0.2],
+    [0.7, 0.7, 0.2],
+    [0.6, 0.4, 0.1],
+    [0.4, 0.3, 0.2],
+    [0.1, 0.75, 0.3]
+])
+
+# RRT parameters
+epsilon = 0.1  # Goal threshold
+delta = 0.05   # Step size
+N = 1000       # Number of iterations
+
+# Initialize tree
+G = [theta_start]
+
+# Visualize environment setup
+fig, ax = plt.subplots()
+ax.grid(True)
+ax.set_xlim(x_bounds)
+ax.set_ylim(y_bounds)
+ax.set_aspect('equal')
+
+# Plot obstacles
+for obstacle in obstacles:
+    circle = Circle(obstacle[0:2], obstacle[2], color='gray', fill=False)
+    ax.add_patch(circle)
+
+# Plot start and goal
+start_plot, = ax.plot(theta_start['coord'][0], theta_start['coord'][1], 'ko', markerfacecolor='k')
+goal_plot, = ax.plot(theta_goal[0], theta_goal[1], 'ko', markerfacecolor='k')
+
+# This flag is used to stop the animation once the goal is reached
+goal_reached = False
+
+# Animation update function
+def update(frame):
+    global G, goal_reached
+
+    if goal_reached:
+        return
+
+    theta_rand = theta_goal if np.random.rand() < 0.2 else np.random.rand(2)
+    distances = [np.linalg.norm(node['coord'] - theta_rand) for node in G]
+    theta_near_index = np.argmin(distances)
+    theta_near = G[theta_near_index]
+    vec_to_rand = theta_rand - theta_near['coord']
+    vec_to_rand = delta * vec_to_rand / np.linalg.norm(vec_to_rand)
+    theta_new = {'coord': theta_near['coord'] + vec_to_rand, 'parent': theta_near_index}
+
+    if not is_collision(theta_new['coord'], obstacles):
+        G.append(theta_new)
+        ax.plot([theta_near['coord'][0], theta_new['coord'][0]], [theta_near['coord'][1], theta_new['coord'][1]], 'k-', linewidth=2)
+        ax.plot(theta_new['coord'][0], theta_new['coord'][1], 'o', color='gray', markerfacecolor='gray')
+
+        if np.linalg.norm(theta_new['coord'] - theta_goal) < epsilon:
+            # Draw the final path in orange
+            current = theta_new
+            while current['parent'] is not None:
+                parent = G[current['parent']]
+                ax.plot([current['coord'][0], parent['coord'][0]], [current['coord'][1], parent['coord'][1]], color='orange', linewidth=3)
+                current = parent
+            goal_reached = True
+
+# Collision checking function
+def is_collision(coord, obstacles):
+    return any(np.linalg.norm(coord - obstacle[0:2]) < obstacle[2] for obstacle in obstacles)
+
+# Create the animation
+ani = FuncAnimation(fig, update, frames=N, repeat=False)
+
+# Save the animation as a GIF
+gif_path = "RRT_main.gif"
+writer = PillowWriter(fps=20)
+ani.save(gif_path, writer=writer)
+
+# Close the plot
+plt.close()
+```
+
+**MATLAB Implementation**
+
+<details>
+
+```matlab
+clear
+close all
+
+% Define start and goal positions
+theta_start.coord = [0; 0];
+theta_goal = [1; 1];
+
+% Workspace bounds
+x_bounds = [0, 1];
+y_bounds = [0, 1];
+
+% Define obstacles
+% Each row is an obstacle with format: [center_x, center_y, radius]
+obstacles = [
+    0.5, 0.3, 0.2;
+    0.7, 0.7, 0.2;
+    0.6, 0.4, 0.1;
+    0.4, 0.3, 0.2;
+    0.1, 0.75, 0.3;
+    % Add as many obstacles required, satisfying the condition of arbitrary
+    % number of obstacles' inclusion
+];
+
+% RRT parameters
+epsilon = 0.1; % Goal threshold
+delta = 0.05;  % Step size
+N = 1000;      % Number of iterations
+
+% Visualize environment
+figure
+hold on
+grid on
+axis([x_bounds, y_bounds])
+axis equal
+
+% Plot obstacles
+for i = 1:size(obstacles, 1)
+    viscircles(obstacles(i, 1:2), obstacles(i, 3), 'Color', [0.5, 0.5, 0.5]);
+end
+
+% Initialize tree
+theta_start.parent = 0;
+G(1) = theta_start;
+
+% Main RRT loop
+for idx = 1:N
+    if norm(G(end).coord - theta_goal) < epsilon
+        break
+    end
+
+    % Random sample
+    theta_rand = rand(2,1);
+
+    % Nearest node
+    [min_dist, theta_near_index] = min(vecnorm([G.coord] - theta_rand));
+    theta_near = G(theta_near_index);
+
+    % Step towards random sample
+    vec_to_rand = theta_rand - theta_near.coord;
+    if norm(vec_to_rand) > delta
+        vec_to_rand = delta * vec_to_rand / norm(vec_to_rand);
+    end
+    theta_new.coord = theta_near.coord + vec_to_rand;
+
+    % Collision check with all obstacles
+    if isCollision(theta_new.coord, obstacles)
+        continue;
+    end
+
+    % Add new node to tree
+    theta_new.parent = theta_near_index;
+    G = [G, theta_new];
+
+    % Plotting
+    plot(theta_new.coord(1), theta_new.coord(2), 'o', 'Color', [0.5, 0.5, 0.5], ...
+    'MarkerFaceColor', [0.5, 0.5, 0.5]);
+    line([theta_near.coord(1), theta_new.coord(1)], [theta_near.coord(2), theta_new.coord(2)], 'Color', 'k', 'LineWidth', 2);
+end
+
+% Trace back path
+child_theta = G(end);
+while child_theta.parent ~= 0
+    parent_theta = G(child_theta.parent);
+    line([child_theta.coord(1), parent_theta.coord(1)], [child_theta.coord(2), parent_theta.coord(2)], 'Color', [1, 0.5, 0], 'LineWidth', 3);
+    child_theta = parent_theta;
+end
+
+% Plot start and goal
+plot(theta_start.coord(1), theta_start.coord(2), 'ko', 'MarkerFaceColor', 'k');
+plot(theta_goal(1), theta_goal(2), 'ko', 'MarkerFaceColor', 'k');
+
+% Collision checking function
+
+function collision = isCollision(coord, obstacles)
+    collision = any(arrayfun(@(idx) norm(coord - obstacles(idx, 1:2)') < obstacles(idx, 3), 1:size(obstacles, 1)));
+end
+```
+</details>
+
+**Result**
+
+<img src="RRT_main.gif" alt="Animated GIF" loop width="50%" height="50%">
+
+
+
+Notice that centers is a matrix where each column corresponds to an obstacle center. Similarly, radii is a vector where the $\normalsize 𝑖^{th}$ entry corresponds to the radius of the $\normalsize 𝑖^{th}$ obstacle.
+
+ * **Environment 1: One obstacle with $\normalsize center \; 𝑐_1 = [0.55, 0.5]^𝑇 \; and \; radius \; 𝑟_1 = 0.3$.**
+
+
+**RRT Algorithm for 1 Obstacle**
+
+```{python}
+import numpy as np
+import matplotlib
+matplotlib.use('Agg')  # Set the backend to a non-interactive backend
+import matplotlib.pyplot as plt
+from matplotlib.patches import Circle
+from matplotlib.animation import PillowWriter, FuncAnimation
+
+# Environment
+theta_start = {'coord': np.array([0, 0])}
+theta_goal = {'coord': np.array([1, 1])}
+centers = np.array([[0.5], [0.5]])
+radii = np.array([0.3])
+
+# Parameters
+epsilon = 0.1
+delta = 0.1
+N = 1000
+
+# Initialize figure
+fig, ax = plt.subplots()
+ax.grid(True)
+ax.set_xlim(0, 1)
+ax.set_ylim(0, 1)
+ax.set_aspect('equal', adjustable='box')
+
+# Draw obstacles
+
+for idx in range(len(radii)):
+    circle = Circle(centers[:, idx], radii[idx], color=[0.5, 0.5, 0.5], alpha=0.7)
+    ax.add_patch(circle)
+
+# Plot start and goal
+ax.plot(0, 0, 'ko', markerfacecolor='k')
+ax.plot(1, 1, 'ko', markerfacecolor='k')
+
+# Initialize tree
+theta_start['parent'] = None
+G = [theta_start]
+final_path_plotted = False
+
+def update(frame):
+    global G, final_path_plotted
+    if frame == 0 or final_path_plotted:
+        return
+
+    # Sample random joint position
+    theta_rand = np.random.rand(2)
+
+    # Find node in G nearest to theta_rand
+    dist = [np.linalg.norm(node['coord'] - theta_rand) for node in G]
+    theta_near_index = np.argmin(dist)
+    theta_near = G[theta_near_index]
+
+    # Take a step from theta_near towards theta_rand
+    vec_to_rand = theta_rand - theta_near['coord']
+    dist_to_rand = np.linalg.norm(vec_to_rand)
+
+    theta_new = {}
+    if dist_to_rand < delta:
+        theta_new['coord'] = theta_rand
+    else:
+        theta_new['coord'] = theta_near['coord'] + delta * vec_to_rand / dist_to_rand
+
+    # Check if theta_new is collision-free
+    collision = False
+    for jdx in range(len(radii)):
+        center = centers[:, jdx]
+        radius = radii[jdx]
+        if np.linalg.norm(theta_new['coord'] - center) < radius:
+            collision = True
+            break
+
+    if collision:
+        return
+
+    # If collision-free, add theta_new to tree with parent theta_near
+    theta_new['parent'] = theta_near_index
+    G.append(theta_new)
+
+    # Plot node and edge
+    ax.plot(theta_new['coord'][0], theta_new['coord'][1], 'o', color=[0.5, 0.5, 0.5], markerfacecolor=[0.5, 0.5, 0.5])
+    ax.plot([theta_near['coord'][0], theta_new['coord'][0]], [theta_near['coord'][1], theta_new['coord'][1]], 'k-', linewidth=2)
+
+    # If goal is close enough to the last node in G, plot the final path
+    if np.linalg.norm(G[-1]['coord'] - theta_goal['coord']) < epsilon:
+        next_theta = G[-1]
+        while next_theta['parent'] is not None:
+            prev_theta = G[next_theta['parent']]
+            line, = ax.plot([next_theta['coord'][0], prev_theta['coord'][0]], [next_theta['coord'][1], prev_theta['coord'][1]], 'orange', linewidth=3)
+            next_theta = prev_theta
+
+        # Add final path to the animation
+        final_path_plotted = True
+        return line,
+
+
+# Create the animation
+ani = FuncAnimation(fig, update, frames=N, repeat=False)
+
+# Save the animation
+writer = PillowWriter(fps=20)
+ani.save("RRT_1_obstacles.gif", writer=writer)
+```
+
+
+**Result:**
+
+<img src="RRT_1_obstacles.gif" alt="Animated GIF" loop width="50%" height="50%">
+
+
+* **Environment 2: One obstacle with $\normalsize center \; 𝑐_1 = [0.5, 0.3]^𝑇 \; and \; radius \; 𝑟_1 = 0.3$. A second obstacle with $\normalsize center \; 𝑐_2 = [0.5, 0.7]^𝑇 \; and \; radius \; 𝑟_2 = 0.2$**
+
+**RRT Algorithm for 2 Obstacles**
+
+```{python}
+import numpy as np
+import matplotlib
+matplotlib.use('Agg')  # Set the backend to a non-interactive backend
+import matplotlib.pyplot as plt
+from matplotlib.patches import Circle
+from matplotlib.animation import PillowWriter, FuncAnimation
+
+# Environment
+theta_start = {'coord': np.array([0, 0])}
+theta_goal = {'coord': np.array([1, 1])}
+centers = np.array([[0.5, 0.5], [0.3, 0.7]])
+radii = np.array([0.3, 0.2])
+
+# Parameters
+epsilon = 0.1
+delta = 0.1
+N = 1000
+
+# Initialize figure
+fig, ax = plt.subplots()
+ax.grid(True)
+ax.set_xlim(0, 1)
+ax.set_ylim(0, 1)
+ax.set_aspect('equal', adjustable='box')
+
+# Draw obstacles
+
+for idx in range(len(radii)):
+    circle = Circle(centers[:, idx], radii[idx], color=[0.5, 0.5, 0.5], alpha=0.7)
+    ax.add_patch(circle)
+
+# Plot start and goal
+ax.plot(0, 0, 'ko', markerfacecolor='k')
+ax.plot(1, 1, 'ko', markerfacecolor='k')
+
+# Initialize tree
+theta_start['parent'] = None
+G = [theta_start]
+final_path_plotted = False
+
+def update(frame):
+    global G, final_path_plotted
+    if frame == 0 or final_path_plotted:
+        return
+
+    # Sample random joint position
+    theta_rand = np.random.rand(2)
+
+    # Find node in G nearest to theta_rand
+    dist = [np.linalg.norm(node['coord'] - theta_rand) for node in G]
+    theta_near_index = np.argmin(dist)
+    theta_near = G[theta_near_index]
+
+    # Take a step from theta_near towards theta_rand
+    vec_to_rand = theta_rand - theta_near['coord']
+    dist_to_rand = np.linalg.norm(vec_to_rand)
+
+    theta_new = {}
+    if dist_to_rand < delta:
+        theta_new['coord'] = theta_rand
+    else:
+        theta_new['coord'] = theta_near['coord'] + delta * vec_to_rand / dist_to_rand
+
+    # Check if theta_new is collision-free
+    collision = False
+    for jdx in range(len(radii)):
+        center = centers[:, jdx]
+        radius = radii[jdx]
+        if np.linalg.norm(theta_new['coord'] - center) < radius:
+            collision = True
+            break
+
+    if collision:
+        return
+
+    # If collision-free, add theta_new to tree with parent theta_near
+    theta_new['parent'] = theta_near_index
+    G.append(theta_new)
+
+    # Plot node and edge
+    ax.plot(theta_new['coord'][0], theta_new['coord'][1], 'o', color=[0.5, 0.5, 0.5], markerfacecolor=[0.5, 0.5, 0.5])
+    ax.plot([theta_near['coord'][0], theta_new['coord'][0]], [theta_near['coord'][1], theta_new['coord'][1]], 'k-', linewidth=2)
+
+    # If goal is close enough to the last node in G, plot the final path
+    if np.linalg.norm(G[-1]['coord'] - theta_goal['coord']) < epsilon:
+        next_theta = G[-1]
+        while next_theta['parent'] is not None:
+            prev_theta = G[next_theta['parent']]
+            line, = ax.plot([next_theta['coord'][0], prev_theta['coord'][0]], [next_theta['coord'][1], prev_theta['coord'][1]], 'orange', linewidth=3)
+            next_theta = prev_theta
+
+        # Add final path to the animation
+        final_path_plotted = True
+        return line,
+
+
+# Create the animation
+ani = FuncAnimation(fig, update, frames=N, repeat=False)
+
+# Save the animation
+writer = PillowWriter(fps=20)
+ani.save("RRT_2_obstacles.gif", writer=writer)
+```
+
+**Result:**
+
+<img src="RRT_2_obstacles.gif" alt="Animated GIF" loop width="50%" height="50%">
+
+
+* **Environment 3: One obstacle with $\normalsize center \; 𝑐_1 = [0.2, 0.35]^𝑇 \; and \; radius \; 𝑟_1 = 0.2$. A second obstacle with $\normalsize center \; 𝑐_2 = [0.5, 0.3]^𝑇 \; and \; radius \; 𝑟_2 = 0.2$. A third obstacle with $\normalsize center \; 𝑐_3 = [0.7, 0.5]^𝑇 \; and \; radius \; 𝑟_3 = 0.2$**
+
+Here we are declaring it a Baseline Algorithm for 3 obstacles. Later below we will discuss the differences between a baseline and Goal-bias algorithm and their pros-cons.
+
+**Baseline RRT Algorithm**
+
+```{python}
+import numpy as np
+import matplotlib
+matplotlib.use('Agg')  # Set the backend to a non-interactive backend
+import matplotlib.pyplot as plt
+from matplotlib.patches import Circle
+from matplotlib.animation import PillowWriter, FuncAnimation
+
+# Environment
+theta_start = {'coord': np.array([0, 0])}
+theta_goal = {'coord': np.array([1, 1])}
+centers = np.array([[0.2, 0.5, 0.7], [0.35, 0.3, 0.5]])
+radii = np.array([0.2, 0.2, 0.2])
+
+# Parameters
+epsilon = 0.1
+delta = 0.1
+N = 1000
+
+# Initialize figure
+fig, ax = plt.subplots()
+ax.grid(True)
+ax.set_xlim(0, 1)
+ax.set_ylim(0, 1)
+ax.set_aspect('equal', adjustable='box')
+
+# Draw obstacles
+
+for idx in range(len(radii)):
+    circle = Circle(centers[:, idx], radii[idx], color=[0.5, 0.5, 0.5], alpha=0.7)
+    ax.add_patch(circle)
+
+# Plot start and goal
+ax.plot(0, 0, 'ko', markerfacecolor='k')
+ax.plot(1, 1, 'ko', markerfacecolor='k')
+
+# Initialize tree
+theta_start['parent'] = None
+G = [theta_start]
+final_path_plotted = False
+
+def update(frame):
+    global G, final_path_plotted
+    if frame == 0 or final_path_plotted:
+        return
+
+    # Sample random joint position
+    theta_rand = np.random.rand(2)
+
+    # Find node in G nearest to theta_rand
+    dist = [np.linalg.norm(node['coord'] - theta_rand) for node in G]
+    theta_near_index = np.argmin(dist)
+    theta_near = G[theta_near_index]
+
+    # Take a step from theta_near towards theta_rand
+    vec_to_rand = theta_rand - theta_near['coord']
+    dist_to_rand = np.linalg.norm(vec_to_rand)
+
+    theta_new = {}
+    if dist_to_rand < delta:
+        theta_new['coord'] = theta_rand
+    else:
+        theta_new['coord'] = theta_near['coord'] + delta * vec_to_rand / dist_to_rand
+
+    # Check if theta_new is collision-free
+    collision = False
+    for jdx in range(len(radii)):
+        center = centers[:, jdx]
+        radius = radii[jdx]
+        if np.linalg.norm(theta_new['coord'] - center) < radius:
+            collision = True
+            break
+
+    if collision:
+        return
+
+    # If collision-free, add theta_new to tree with parent theta_near
+    theta_new['parent'] = theta_near_index
+    G.append(theta_new)
+
+    # Plot node and edge
+    ax.plot(theta_new['coord'][0], theta_new['coord'][1], 'o', color=[0.5, 0.5, 0.5], markerfacecolor=[0.5, 0.5, 0.5])
+    ax.plot([theta_near['coord'][0], theta_new['coord'][0]], [theta_near['coord'][1], theta_new['coord'][1]], 'k-', linewidth=2)
+
+    # If goal is close enough to the last node in G, plot the final path
+    if np.linalg.norm(G[-1]['coord'] - theta_goal['coord']) < epsilon:
+        next_theta = G[-1]
+        while next_theta['parent'] is not None:
+            prev_theta = G[next_theta['parent']]
+            line, = ax.plot([next_theta['coord'][0], prev_theta['coord'][0]], [next_theta['coord'][1], prev_theta['coord'][1]], 'orange', linewidth=3)
+            next_theta = prev_theta
+
+        # Add final path to the animation
+        final_path_plotted = True
+        return line,
+
+
+# Create the animation
+ani = FuncAnimation(fig, update, frames=N, repeat=False)
+
+# Save the animation
+writer = PillowWriter(fps=20)
+ani.save("Baseline_RRT.gif", writer=writer)
+
+plt.show()
+```
+
+**MATLAB Implementation**
+
+<details>
+
+```{matlab}
+clear
+close all
+
+% environment
+theta_start.coord = [0; 0];
+theta_goal.coord = [1; 1];
+centers = [0.2, 0.5, 0.7; 0.35, 0.3, 0.5];
+radii = [0.2, 0.2, 0.2];
+
+% parameters
+epsilon = 0.1;
+delta = 0.1;
+N = 1000;
+
+% visualize environment
+figure
+grid on
+hold on
+axis([0, 1, 0, 1])
+axis equal
+
+for idx = 1:length(radii)
+ viscircles(centers(:, idx)', radii(idx), 'Color', [0.5, 0.5, ...
+ 0.5]);
+end
+
+plot(0, 0, 'ko', 'MarkerFaceColor', 'k')
+plot(1, 1, 'ko', 'MarkerFaceColor', 'k')
+
+% initialize tree
+theta_start.parent = 0;
+G(1) = theta_start;
+
+for idx = 1:N
+ % stop if theta_new is close to theta_goal
+ if norm(G(end).coord - theta_goal.coord) < epsilon
+ break
+ end
+
+ % sample random joint position
+ theta_rand = rand(2,1);
+
+ % find node in G nearest to theta_rand
+ dist = zeros(length(G), 1);
+ for jdx = 1:1:length(G)
+ dist(jdx) = norm(G(jdx).coord - theta_rand);
+ end
+ [~, theta_near_index] = min(dist);
+ theta_near = G(theta_near_index);
+
+ % take a step from theta_near towards theta_rand
+ vec_to_rand = theta_rand - theta_near.coord;
+ dist_to_rand = norm(vec_to_rand);
+
+ if dist_to_rand < delta
+ theta_new.coord = theta_rand;
+ else
+ theta_new.coord = theta_near.coord + delta * ...
+ vec_to_rand/dist_to_rand;
+ end
+
+ % check if theta_new is collision free
+ collision = false;
+ for jdx = 1:length(radii)
+ center = centers(:, jdx);
+ radius = radii(jdx);
+ if norm(theta_new.coord - center) < radius
+ collision = true;
+ end
+ end
+
+ if collision
+ continue
+ end
+
+ % if collision free, add theta_new to tree with parent theta_near
+ theta_new.parent = theta_near_index;
+ G = [G, theta_new];
+
+ % plot node and edge
+ plot(theta_new.coord(1), theta_new.coord(2), 'o', 'Color', [0.5, ...
+ 0.5, 0.5], 'MarkerFaceColor', [0.5, 0.5, 0.5])
+ line([theta_near.coord(1), theta_new.coord(1)], ...
+ [theta_near.coord(2), theta_new.coord(2)], 'Color', 'k', 'LineWidth', ...
+ 2);
+end
+
+% work backwards from the final node to the root of the tree
+next_theta = G(end);
+while next_theta.parent ~= 0
+ prev_theta_idx = next_theta.parent;
+ prev_theta = G(prev_theta_idx);
+ line([next_theta.coord(1), prev_theta.coord(1)], ...
+ [next_theta.coord(2), prev_theta.coord(2)], 'Color', [1, 0.5, ...
+ 0], 'LineWidth', 3);
+ next_theta = prev_theta;
+end
+```
+
+</details>
+
+**Result:**
+
+<img src="Baseline_RRT.gif" alt="Animated GIF" loop width="50%" height="50%">
+
+
+We can see the trajectory plots in the above figures. Here the black lines and gray dots show the tree 𝐺, while the orange line is the final motion plan from 𝜃𝑠𝑡𝑎𝑟𝑡 to a point close to the goal $\normalsize (\epsilon ≤ 0.1)$. Each time we run your RRT code you should get a different solution: RRT builds the tree through random sampling.
+
+
+## Goal-Bias RRT Algorithm
+
+This version will sample the goal more frequently (let’s refer to this as goal bias). For goal bias, with probability $\normalsize 0.2$ set $\normalsize \theta_{rand}$ as $\normalsize \theta_{goal}$. Otherwise sample randomly as normal. Then we run our code 10 times for baseline and 10 times for goal bias. 
+
+Thus we write down how many samples it takes on average to find a motion plan. Which approach is more sample-efficient: baseline or goal bias? 
+
+Let us check the implementation and results.
+
+**Goal-Bias RRT Implementation**
+
+```{python}
+import numpy as np
+import matplotlib
+matplotlib.use('Agg')  # Set the backend to a non-interactive backend
+import matplotlib.pyplot as plt
+from matplotlib.patches import Circle
+from matplotlib.animation import PillowWriter, FuncAnimation
+
+# Environment
+theta_start = {'coord': np.array([0, 0])}
+theta_goal = {'coord': np.array([1, 1])}
+centers = np.array([[0.2, 0.5, 0.7], [0.35, 0.3, 0.5]])
+radii = np.array([0.2, 0.2, 0.2])
+
+# Parameters
+epsilon = 0.1
+delta = 0.1
+N = 1000
+
+# Initialize figure
+fig, ax = plt.subplots()
+ax.grid(True)
+ax.set_xlim(0, 1)
+ax.set_ylim(0, 1)
+ax.set_aspect('equal', adjustable='box')
+
+# Draw obstacles
+for idx in range(len(radii)):
+    circle = Circle(centers[:, idx], radii[idx], color=[0.5, 0.5, 0.5], alpha=0.7)
+    ax.add_patch(circle)
+
+# Plot start and goal
+ax.plot(0, 0, 'ko', markerfacecolor='k')
+ax.plot(1, 1, 'ko', markerfacecolor='k')
+
+# Initialize tree
+theta_start['parent'] = None
+G = [theta_start]
+final_path_plotted = False
+
+def update(frame):
+    global G, final_path_plotted
+    if frame == 0 or final_path_plotted:
+        return
+
+    # Sample random joint position
+    if np.random.rand() < 0.2:
+        theta_rand = theta_goal['coord']
+    else:
+        theta_rand = np.random.rand(2)
+
+
+    # Find node in G nearest to theta_rand
+    dist = [np.linalg.norm(node['coord'] - theta_rand) for node in G]
+    theta_near_index = np.argmin(dist)
+    theta_near = G[theta_near_index]
+
+    # Take a step from theta_near towards theta_rand
+    vec_to_rand = theta_rand - theta_near['coord']
+    dist_to_rand = np.linalg.norm(vec_to_rand)
+
+    theta_new = {}
+    if dist_to_rand < delta:
+        theta_new['coord'] = theta_rand
+    else:
+        theta_new['coord'] = theta_near['coord'] + delta * vec_to_rand / dist_to_rand
+
+    # Check if theta_new is collision-free
+    collision = False
+    for jdx in range(len(radii)):
+        center = centers[:, jdx]
+        radius = radii[jdx]
+        if np.linalg.norm(theta_new['coord'] - center) < radius:
+            collision = True
+            break
+
+    if collision:
+        return
+
+    # If collision-free, add theta_new to tree with parent theta_near
+    theta_new['parent'] = theta_near_index
+    G.append(theta_new)
+
+    # Plot node and edge
+    ax.plot(theta_new['coord'][0], theta_new['coord'][1], 'o', color=[0.5, 0.5, 0.5], markerfacecolor=[0.5, 0.5, 0.5])
+    ax.plot([theta_near['coord'][0], theta_new['coord'][0]], [theta_near['coord'][1], theta_new['coord'][1]], 'k-', linewidth=2)
+
+    # If goal is close enough to the last node in G, plot the final path
+    if np.linalg.norm(G[-1]['coord'] - theta_goal['coord']) < epsilon:
+        next_theta = G[-1]
+        while next_theta['parent'] is not None:
+            prev_theta = G[next_theta['parent']]
+            line, = ax.plot([next_theta['coord'][0], prev_theta['coord'][0]], [next_theta['coord'][1], prev_theta['coord'][1]], 'orange', linewidth=3)
+            next_theta = prev_theta
+
+        # Add final path to the animation
+        final_path_plotted = True
+        return line,
+
+
+# Create the animation
+ani = FuncAnimation(fig, update, frames=N, repeat=False)
+
+# Save the animation
+writer = PillowWriter(fps=20)
+ani.save("Goal_bias_RRT.gif", writer=writer)
+```
+
+**MATLAB Implementation**
+
+<details>
+
+```{matlab}
+clear
+close all
+% Environment initiation
+theta_start.coord = [0; 0];
+theta_goal = [1; 1];
+
+% Obstacle Parameters
+% First obstacle center and radius
+center = [0.2; 0.35];
+radius = 0.2;
+% Second obstacle center and radius
+center2 = [0.5; 0.3]; 
+radius2 = 0.2;
+% Third obstacle center and radius
+center3 = [0.7; 0.5];
+radius3 = 0.2;
+
+% Specifying parameters
+epsilon = 0.1;
+delta = 0.1;
+N = 1000;
+
+% Visualizing the environment
+figure
+grid on
+hold on
+axis([0, 1, 0, 1])
+axis equal
+viscircles(center', radius, 'Color', [0.5, 0.5, 0.5]);
+viscircles(center2', radius2, 'Color', [0.7, 0.3, 0.3]); % Visualizing the second obstacle
+viscircles(center3', radius3, 'Color', [0.3, 0.5, 0.7]); % Visualizing the third obstacle
+plot(0, 0, 'ko', 'MarkerFaceColor', 'k')
+plot(1, 1, 'ko', 'MarkerFaceColor', 'k')
+
+% Initializing the tree
+theta_start.parent = 0;
+G(1) = theta_start;
+
+for idx = 1:N
+    
+    % Stop if the last node in G is close to theta_goal
+    if norm(G(end).coord  - theta_goal) < epsilon
+        break
+    end
+
+    % sample random joint position: probability 0.2
+    
+    if rand() < 0.2
+        theta_rand = theta_goal;
+    else
+        theta_rand = rand(2,1);
+    end
+    
+    % find node in G nearest to theta_rand
+    min_dist = inf;
+    theta_near_index = 0;
+
+    for jdx = 1:length(G)
+        coord = G(jdx).coord;
+        dist = norm(theta_rand - coord);
+        if dist < min_dist
+            min_dist = dist;
+            theta_near_index = jdx;
+        end
+    end
+
+    theta_near = G(theta_near_index);
+    % take a step from theta_near towards theta_rand
+    vec_to_rand = theta_rand - theta_near.coord;
+    dist_to_rand = norm(vec_to_rand);
+    if dist_to_rand < delta
+        theta_new.coord = theta_rand;
+    else
+        theta_new.coord = theta_near.coord + delta * ...
+        vec_to_rand/dist_to_rand;
+    end
+    
+    % check if theta_new is collision free with all obstacles
+    dist_to_obs1 = norm(theta_new.coord - center);
+    dist_to_obs2 = norm(theta_new.coord - center2);
+    dist_to_obs3 = norm(theta_new.coord - center3);
+    if dist_to_obs1 < radius || dist_to_obs2 < radius2 || dist_to_obs3 < radius3
+        continue
+    end
+
+    % if collision free, add theta_new to tree with parent theta_near
+    theta_new.parent = theta_near_index;
+    G = [G, theta_new];
+
+    % plot node and edge
+    plot(theta_new.coord(1), theta_new.coord(2), 'o', 'Color', [0.5, 0.5, 0.5], ...
+    'MarkerFaceColor', [0.5, 0.5, 0.5])
+    line([theta_near.coord(1), theta_new.coord(1)], [theta_near.coord(2), ...
+    theta_new.coord(2)], 'Color', 'k', 'LineWidth', 2);
+    drawnow
+
+end
+
+% work backwards from the final node to the root of the tree
+child_theta = G(end);
+while child_theta.parent ~= 0
+
+    parent_theta_index = child_theta.parent;
+    parent_theta = G(parent_theta_index);
+    line([child_theta.coord(1), parent_theta.coord(1)], ...
+        [child_theta.coord(2), parent_theta.coord(2)], ...
+        'Color', [1, 0.5, 0], 'LineWidth', 3);
+    child_theta = parent_theta;
+end
+```
+
+</details>
+
+**Result:**
+
+<img src="Goal_bias_RRT.gif" alt="Animated GIF" loop width="50%" height="50%">
+
+
+
+The samples 𝑁 across ten runs with baseline and goal bias are tabulated below.
+
+
+| run  | baseline | goal bias|
+|------|----------|----------|
+| 1    |   254    |   225    |
+| 2    |   363    |   169    |
+| 3    |   318    |   150    |
+| 4    |   590    |   143    |
+| 5    |   352    |   249    |
+| 6    |   359    |   166    |
+| 7    |   202    |   251    |
+| 8    |   267    |   162    |
+| 9    |   440    |   183    |
+| 10   |   226    |   313    |
+
+
+
+On average, the **baseline** required **337** samples to reach a valid motion plan, while **goal bias** needed **201** samples. For **Environment 3** the evidence suggests that biasing the samples towards 𝜃𝑔𝑜𝑎𝑙 decreases the total number of samples and causes RRT to reach a solution faster. Intuitively, this is because the tree is trying to move in the direction of the goal more frequently. 
+
+This is particularly advantageous when the robot is in free space (or has passed the obstacles) and should move directly towards the goal. The code snippet required to implement goal bias is shown below:
+
+**Python version**
+
+```python
+# Sample random joint position: probability 0.2
+if np.random.rand() < 0.2:
+    theta_rand = theta_goal['coord']
+else:
+    theta_rand = np.random.rand(2)
+```
+**MATLAB version**
+
+<details>
+
+```matlab
+% sample random joint position: probability 0.2
+    
+if rand() < 0.2
+    theta_rand = theta_goal;
+else
+    theta_rand = rand(2,1);
+end
+```
+</details>
+
+
+
+**Sample Efficiency Comparison:**
+
+• Goal-biased RRT seemed to be more sample-efficient in open or less complex environments because it directs its exploration towards the goal, thereby potentially finding a path with fewer samples.
+
+• In contrast, the baseline RRT might be more effective in highly cluttered environments where a direct path to the goal is less likely, and a more uniform exploration of the space is beneficial.
+
+We need to understand the key differences between the two methods and their impact on sample efficiency:
+
+* Baseline RRT: This approach uniformly samples the entire configuration space without any bias towards the goal. It explores the space in a more scattered manner, which can be beneficial in complex environments with many obstacles. However, it might take more samples to find a path to the goal, especially in large or open spaces, because the sampling is entirely random and not directed towards the goal.
+    
+* Goal-Biased RRT: In this approach, the algorithm is biased to sample near the goal state more frequently. This bias can significantly reduce the number of samples required to find a path to the goal in many cases, especially in less complex environments or when the goal is not surrounded by obstacles. The downside is that in highly cluttered environments, this bias might lead to more samples being wasted near the goal where paths are infeasible.
+
+
+
+
+```{=html}
+<script>
+const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+</script>
+<style>
+div#quarto-sidebar-glass { display: none !important; }
+ul.navbar-nav.navbar-nav-scroll { -webkit-flex-direction: row !important; }
+/* #quarto-sidebar { padding: 5px; }
+#quarto-sidebar > * { padding: 5px; }
+div.sidebar-menu-container > * { padding: 5px 5px 5px 5px; }
+#quarto-margin-sidebar { padding: 40px; } */
+</style>
+```

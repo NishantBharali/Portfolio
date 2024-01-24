@@ -2,78 +2,94 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://nishantbharali.github.io/Blog/Tools/quarto/quarto.html</loc>
-    <lastmod>2024-01-09T09:15:00.826Z</lastmod>
+    <lastmod>2024-01-24T10:41:07.625Z</lastmod>
   </url>
   <url>
     <loc>https://nishantbharali.github.io/Blog/Tools/git/git.html</loc>
-    <lastmod>2024-01-09T09:14:58.145Z</lastmod>
+    <lastmod>2024-01-24T10:41:04.903Z</lastmod>
   </url>
   <url>
     <loc>https://nishantbharali.github.io/Blog/robotics.html</loc>
-    <lastmod>2024-01-09T09:14:55.521Z</lastmod>
+    <lastmod>2024-01-24T10:41:02.167Z</lastmod>
   </url>
   <url>
-    <loc>https://nishantbharali.github.io/Blog/Robotics/Materials/Materials/Module_1-Basics/Homework/My HW1_Problem_4.html</loc>
-    <lastmod>2024-01-09T09:14:43.039Z</lastmod>
+    <loc>https://nishantbharali.github.io/Blog/Robotics/Potential_trajectory.html</loc>
+    <lastmod>2024-01-24T10:40:54.870Z</lastmod>
+  </url>
+  <url>
+    <loc>https://nishantbharali.github.io/Blog/Robotics/Inverse_kinematics.html</loc>
+    <lastmod>2024-01-24T10:40:48.239Z</lastmod>
+  </url>
+  <url>
+    <loc>https://nishantbharali.github.io/Blog/Robotics/Control.html</loc>
+    <lastmod>2024-01-24T10:40:39.828Z</lastmod>
   </url>
   <url>
     <loc>https://nishantbharali.github.io/Blog/resources.html</loc>
-    <lastmod>2024-01-09T09:14:41.513Z</lastmod>
+    <lastmod>2024-01-24T10:40:36.053Z</lastmod>
   </url>
   <url>
     <loc>https://nishantbharali.github.io/Blog/posts/Random Processes/index.html</loc>
-    <lastmod>2024-01-09T09:14:39.594Z</lastmod>
+    <lastmod>2024-01-24T10:40:34.064Z</lastmod>
   </url>
   <url>
     <loc>https://nishantbharali.github.io/Blog/posts/Clustering/index.html</loc>
-    <lastmod>2024-01-09T09:14:34.611Z</lastmod>
+    <lastmod>2024-01-24T10:40:28.856Z</lastmod>
   </url>
   <url>
     <loc>https://nishantbharali.github.io/Blog/posts/Anomaly-Outlier Detection/index.html</loc>
-    <lastmod>2024-01-09T09:14:29.513Z</lastmod>
+    <lastmod>2024-01-24T10:40:23.727Z</lastmod>
   </url>
   <url>
     <loc>https://nishantbharali.github.io/Blog/cv/cv.html</loc>
-    <lastmod>2024-01-09T09:14:24.815Z</lastmod>
+    <lastmod>2024-01-24T10:40:18.862Z</lastmod>
   </url>
   <url>
     <loc>https://nishantbharali.github.io/Blog/about.html</loc>
-    <lastmod>2024-01-09T09:14:10.553Z</lastmod>
+    <lastmod>2024-01-24T10:39:51.448Z</lastmod>
   </url>
   <url>
     <loc>https://nishantbharali.github.io/Blog/blog.html</loc>
-    <lastmod>2024-01-09T09:14:11.827Z</lastmod>
+    <lastmod>2024-01-24T10:39:52.903Z</lastmod>
   </url>
   <url>
     <loc>https://nishantbharali.github.io/Blog/index.html</loc>
-    <lastmod>2024-01-09T09:14:25.622Z</lastmod>
+    <lastmod>2024-01-24T10:40:19.893Z</lastmod>
   </url>
   <url>
     <loc>https://nishantbharali.github.io/Blog/posts/Classification/index.html</loc>
-    <lastmod>2024-01-09T09:14:32.323Z</lastmod>
+    <lastmod>2024-01-24T10:40:26.460Z</lastmod>
   </url>
   <url>
     <loc>https://nishantbharali.github.io/Blog/posts/Linear and Non Linear Regression/index.html</loc>
-    <lastmod>2024-01-09T09:14:37.240Z</lastmod>
+    <lastmod>2024-01-24T10:40:31.618Z</lastmod>
   </url>
   <url>
     <loc>https://nishantbharali.github.io/Blog/Projects.html</loc>
-    <lastmod>2024-01-09T09:14:40.533Z</lastmod>
+    <lastmod>2024-01-24T10:40:35.048Z</lastmod>
   </url>
   <url>
     <loc>https://nishantbharali.github.io/Blog/Resume/Resume.html</loc>
-    <lastmod>2024-01-09T09:14:42.260Z</lastmod>
+    <lastmod>2024-01-24T10:40:36.824Z</lastmod>
   </url>
   <url>
-    <loc>https://nishantbharali.github.io/Blog/Robotics/Robotics.html</loc>
-    <lastmod>2024-01-09T09:14:53.501Z</lastmod>
+    <loc>https://nishantbharali.github.io/Blog/Robotics/Dynamics.html</loc>
+    <lastmod>2024-01-24T10:40:43.558Z</lastmod>
+  </url>
+  <url>
+    <loc>https://nishantbharali.github.io/Blog/Robotics/Materials/Materials/Module_1-Basics/Homework/My HW1_Problem_4.html</loc>
+    <lastmod>2024-01-24T10:40:50.235Z</lastmod>
+  </url>
+  <url>
+    <loc>https://nishantbharali.github.io/Blog/Robotics/RRT.html</loc>
+    <lastmod>2024-01-24T10:40:59.654Z</lastmod>
   </url>
   <url>
     <loc>https://nishantbharali.github.io/Blog/tool.html</loc>
-    <lastmod>2024-01-09T09:14:56.717Z</lastmod>
+    <lastmod>2024-01-24T10:41:03.404Z</lastmod>
   </url>
   <url>
     <loc>https://nishantbharali.github.io/Blog/Tools/llm/llm.html</loc>
-    <lastmod>2024-01-09T09:14:58.962Z</lastmod>
+    <lastmod>2024-01-24T10:41:05.716Z</lastmod>
   </url>
 </urlset>

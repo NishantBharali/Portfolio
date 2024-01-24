@@ -15,7 +15,7 @@
 <link>https://nishantbharali.github.io/Blog/Projects.html</link>
 </image>
 <generator>quarto-1.3.450</generator>
-<lastBuildDate>Tue, 09 Jan 2024 09:14:40 GMT</lastBuildDate>
+<lastBuildDate>Wed, 24 Jan 2024 10:40:35 GMT</lastBuildDate>
 <item>
   <title>Machine Learning</title>
   <link>https://nishantbharali.github.io/Blog/blog.html</link>
@@ -161,7 +161,7 @@ No matching items
 </div>
 </div><a onclick="window.scrollTo(0, 0); return false;" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a> ]]></description>
   <guid>https://nishantbharali.github.io/Blog/blog.html</guid>
-  <pubDate>Tue, 09 Jan 2024 09:14:40 GMT</pubDate>
+  <pubDate>Wed, 24 Jan 2024 10:40:35 GMT</pubDate>
   <media:content url="https://nishantbharali.github.io/Blog/images/handsOnGif.gif" medium="image" type="image/gif"/>
 </item>
 <item>
@@ -288,7 +288,7 @@ No matching items
 </div>
 </div><a onclick="window.scrollTo(0, 0); return false;" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a> ]]></description>
   <guid>https://nishantbharali.github.io/Blog/tool.html</guid>
-  <pubDate>Tue, 09 Jan 2024 09:14:40 GMT</pubDate>
+  <pubDate>Wed, 24 Jan 2024 10:40:35 GMT</pubDate>
   <media:content url="https://nishantbharali.github.io/Blog/images/Tools.gif" medium="image" type="image/gif"/>
 </item>
 <item>
@@ -322,15 +322,15 @@ div.sidebar-menu-container > * { padding: 5px 5px 5px 5px; }
     </div>
 </div>
 <div class="list grid quarto-listing-cols-3">
-<div class="g-col-1" data-index="0" data-categories="Robotics" data-listing-file-modified-sort="1704791623385" data-listing-reading-time-sort="63">
-<a href="./Robotics/Robotics.html" class="quarto-grid-link">
+<div class="g-col-1" data-index="0" data-categories="Robotics" data-listing-file-modified-sort="1706091210550" data-listing-reading-time-sort="12">
+<a href="./Robotics/Control.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
-<img src="https://nishantbharali.github.io/Blog/images/Robotics.gif" class="thumbnail-image card-img" style="height: 150px;">
+<img src="https://nishantbharali.github.io/Blog/Robotics/Control__Cover_GIF.gif" class="thumbnail-image card-img" style="height: 150px;">
 </p>
 <div class="card-body post-contents">
 <h5 class="no-anchor card-title listing-title">
-Robotics and Automation
+Robot Control
 </h5>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('Robotics'); return false;">
@@ -338,12 +338,120 @@ Robotics
 </div>
 </div>
 <div class="card-text listing-description">
-<!-- desc(5A0113B34292)[max=175]:Robotics/Robotics.html -->
+<!-- desc(5A0113B34292)[max=175]:Robotics/Control.html -->
 </div>
 </div>
 <div class="card-footer">
 <div class="card-file-modified listing-file-modified">
-<p>1/9/24, 4:13:43 AM</p>
+<p>1/24/24, 5:13:30 AM</p>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="1" data-categories="Robotics" data-listing-file-modified-sort="1706091333948" data-listing-reading-time-sort="15">
+<a href="./Robotics/Dynamics.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img src="https://nishantbharali.github.io/Blog/Robotics/Dynamics_Pendulum_Cover_GIF.gif" class="thumbnail-image card-img" style="height: 150px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Robot Dynamics
+</h5>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('Robotics'); return false;">
+Robotics
+</div>
+</div>
+<div class="card-text listing-description">
+<!-- desc(5A0113B34292)[max=175]:Robotics/Dynamics.html -->
+</div>
+</div>
+<div class="card-footer">
+<div class="card-file-modified listing-file-modified">
+<p>1/24/24, 5:15:33 AM</p>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="2" data-categories="Robotics" data-listing-file-modified-sort="1706091288015" data-listing-reading-time-sort="27">
+<a href="./Robotics/Inverse_kinematics.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img src="https://nishantbharali.github.io/Blog/Robotics/Inverse_Kinematics_Cover_GIF.gif" class="thumbnail-image card-img" style="height: 150px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Inverse Kinematics Simulation
+</h5>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('Robotics'); return false;">
+Robotics
+</div>
+</div>
+<div class="card-text listing-description">
+<!-- desc(5A0113B34292)[max=175]:Robotics/Inverse_kinematics.html -->
+</div>
+</div>
+<div class="card-footer">
+<div class="card-file-modified listing-file-modified">
+<p>1/24/24, 5:14:48 AM</p>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="3" data-categories="Robotics" data-listing-file-modified-sort="1706092752528" data-listing-reading-time-sort="12">
+<a href="./Robotics/Potential_trajectory.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img src="https://nishantbharali.github.io/Blog/Robotics/Trajectory_Cover_GIF.gif" class="thumbnail-image card-img" style="height: 150px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Motion Planning &amp; Trajectory Optimization
+</h5>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('Robotics'); return false;">
+Robotics
+</div>
+</div>
+<div class="card-text listing-description">
+<!-- desc(5A0113B34292)[max=175]:Robotics/Potential_trajectory.html -->
+</div>
+</div>
+<div class="card-footer">
+<div class="card-file-modified listing-file-modified">
+<p>1/24/24, 5:39:12 AM</p>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="4" data-categories="Robotics" data-listing-file-modified-sort="1706091179626" data-listing-reading-time-sort="26">
+<a href="./Robotics/RRT.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img src="https://nishantbharali.github.io/Blog/Robotics/RRT_main.gif" class="thumbnail-image card-img" style="height: 150px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+RRT Algorithm Simulation
+</h5>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('Robotics'); return false;">
+Robotics
+</div>
+</div>
+<div class="card-text listing-description">
+<!-- desc(5A0113B34292)[max=175]:Robotics/RRT.html -->
+</div>
+</div>
+<div class="card-footer">
+<div class="card-file-modified listing-file-modified">
+<p>1/24/24, 5:12:59 AM</p>
 </div>
 </div>
 </div>
@@ -355,7 +463,7 @@ No matching items
 </div>
 </div><a onclick="window.scrollTo(0, 0); return false;" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a> ]]></description>
   <guid>https://nishantbharali.github.io/Blog/robotics.html</guid>
-  <pubDate>Tue, 09 Jan 2024 09:14:40 GMT</pubDate>
+  <pubDate>Wed, 24 Jan 2024 10:40:35 GMT</pubDate>
   <media:content url="https://nishantbharali.github.io/Blog/images/Robotics.gif" medium="image" type="image/gif"/>
 </item>
 </channel>

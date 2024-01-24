@@ -1,0 +1,968 @@
+---
+title: "Inverse Kinematics Simulation"
+categories: [Robotics]
+image: Inverse_Kinematics_Cover_GIF.gif 
+format:
+    html: 
+        code-fold: true
+        code-overflow: scroll
+        code-tools: true
+
+---
+
+## Inverse Kinematics Optimazation
+
+We are building a snake robot. This snake robot moves in a plane and has 5 joints, making it a redundant robot. We are using this redundancy to mimic the motion of real snakes.
+
+![](Images/Inv_diagram.png){fig-align="center" width=50%} 
+
+Leaving $\normalsize 𝑏 = 0$ within the Jacobian pseudoinverse. Implementing the numerical inverse kinematics algorithm to find the inverse kinematics solutions when:
+
+
+![Plot of the snake robot in its initial position 𝜃 = [𝜋/8, 𝜋/8, 𝜋/8, 𝜋/8, 𝜋/8]'](Images/Inverse_Default_plot.png){fig-align="center" width=50%} 
+
+
+
+* **Case 1: 𝐿 = 1 and the desired end-effector pose is:**
+
+**$\normalsize T_{sb} = [rotz(\pi/4), [3; 2; 0]; 0 \, 0 \, 0 \, 1]$**
+
+
+```{python}
+import numpy as np
+import matplotlib
+import matplotlib.pyplot as plt
+matplotlib.use('Agg')  # Set the backend to a non-interactive backend
+import matplotlib.animation as animation
+from matplotlib.animation import PillowWriter
+
+# Define the necessary functions
+def bracket3(S):
+    return np.array([[0, -S[2], S[1]], [S[2], 0, -S[0]], [-S[1], S[0], 0]])
+
+def expm(A):
+    return np.linalg.matrix_power(np.eye(A.shape[0]) + A / 16, 16)
+
+def adjointM(T):
+    R = T[0:3, 0:3]
+    p = T[0:3, 3]
+    return np.block([[R, np.zeros((3, 3))], [bracket3(p) @ R, R]])
+
+def r2axisangle(R):
+    if np.linalg.norm(R - np.eye(3)) < 1e-3:
+        return np.array([0, 0, 0])
+    else:
+        theta = np.arccos(0.5 * (np.trace(R) - 1))
+        omega_hat = 1 / (2 * np.sin(theta)) * (R - R.T)
+        omega = np.array([omega_hat[2, 1], omega_hat[0, 2], omega_hat[1, 0]])
+        return omega * theta
+
+def bracket_s(s):
+    return np.array([[0, -s[2], s[1], s[3]], [s[2], 0, -s[0], s[4]], [-s[1], s[0], 0, s[5]], [0, 0, 0, 0]])
+
+def fk(M, S, theta):
+    T = np.eye(4)
+    theta = np.atleast_1d(theta)
+    for i in range(len(theta)):
+        T = np.dot(T, expm(bracket_s(S[:, i]) * theta[i]))
+    return np.dot(T, M)
+
+def JacS(S, theta):
+    T = np.eye(4)
+    Js = np.zeros((6, len(theta)))
+    for i in range(len(theta)):
+        Si = S[:, i]
+        Js[:, i] = adjointM(T) @ Si
+        T = np.dot(T, expm(bracket_s(Si) * theta[i]))
+    return Js
+
+def rotz(angle):
+    c, s = np.cos(angle), np.sin(angle)
+    return np.array([[c, -s, 0], [s, c, 0], [0, 0, 1]])
+
+# Initialize plot
+fig, ax = plt.subplots()
+ax.set_xlim(-6, 6)
+ax.set_ylim(-6, 6)
+ax.grid(True)
+line, = ax.plot([], [], 'o-', color=[1, 0.5, 0], linewidth=4)
+plt.ion()
+
+# Initialize parameters
+L = 1
+theta = np.array([np.pi/8] * 5)
+
+S1 = np.array([0, 0, 1, 0, 0, 0])
+S2 = np.array([0, 0, 1, 0, -1 * L, 0])
+S3 = np.array([0, 0, 1, 0, -2 * L, 0])
+S4 = np.array([0, 0, 1, 0, -3 * L, 0])
+S5 = np.array([0, 0, 1, 0, -4 * L, 0])
+
+# Create S_eq by concatenating the individual S vectors horizontally
+S = np.column_stack((S1, S2, S3, S4, S5))
+
+M = np.vstack([np.hstack([np.eye(3), np.array([[5*L, 0, 0]]).T]), [0, 0, 0, 1]])
+M1 = np.vstack([np.hstack([np.eye(3), np.array([[1*L, 0, 0]]).T]), [0, 0, 0, 1]])
+M2 = np.vstack([np.hstack([np.eye(3), np.array([[2*L, 0, 0]]).T]), [0, 0, 0, 1]])
+M3 = np.vstack([np.hstack([np.eye(3), np.array([[3*L, 0, 0]]).T]), [0, 0, 0, 1]])
+M4 = np.vstack([np.hstack([np.eye(3), np.array([[4*L, 0, 0]]).T]), [0, 0, 0, 1]])
+
+# Desired transformation
+T_d = np.vstack([np.hstack([rotz(np.pi/4), np.array([[3, 2, 0]]).T]), [0, 0, 0, 1]])
+Xd = np.concatenate([r2axisangle(T_d[0:3, 0:3]), T_d[0:3, 3]])
+
+# Initial forward kinematics
+T = fk(M, S, theta)
+X = np.concatenate([r2axisangle(T[0:3, 0:3]), T[0:3, 3]])
+
+# Animation function
+def update(frame):
+    global theta, T, X
+    if np.linalg.norm(Xd - X) > 1e-1:
+        # Calculate joint transformations
+        T1 = fk(M1, S[:, 0:1], theta[0])
+        T2 = fk(M2, S[:, 0:2], [theta[0], theta[1]])
+        T3 = fk(M3, S[:, 0:3], [theta[0], theta[1], theta[2]])
+        T4 = fk(M4, S[:, 0:4], [theta[0], theta[1], theta[2], theta[3]])
+        P_v = np.array([[0, 0]] + [T1[0:2, 3]]+ [T2[0:2, 3]]+ [T3[0:2, 3]]+ [T4[0:2, 3]] + [T[0:2, 3]]).T
+        
+        # Draw the robot
+        line.set_data(P_v[0, :], P_v[1, :])
+        
+        # Update Jacobians and compute delta_theta
+        JS = JacS(S, theta)
+        Jb = np.dot(adjointM(np.linalg.inv(T)), JS)
+        J_geometric = np.block([[T[0:3, 0:3], np.zeros((3, 3))], [np.zeros((3, 3)), T[0:3, 0:3]]]) @ Jb
+        V = Xd - X
+        delta_theta = np.dot(np.linalg.pinv(J_geometric), V)
+        
+        # Update theta
+        theta += 0.1 * delta_theta
+        print(theta)
+        T = fk(M, S, theta)
+        X = np.concatenate([r2axisangle(T[0:3, 0:3]), T[0:3, 3]])
+
+    return line,
+
+# Create and save the animation
+ani = animation.FuncAnimation(fig, update, frames=np.arange(100), interval=200, blit=False)
+
+# Save the animation
+writer = PillowWriter(fps=7)  
+ani.save("Inverse_Kinematics_1.gif", writer=writer)
+```
+
+
+At each iteration we first plot the robot and save a video frame. Then we calculate the Jacobian and perform numerical inverse kinematics. The loop terminates when the actual pose is close to the desired pose.
+
+**MATLAB implementation**
+
+<details>
+
+```matlab
+
+close all
+clear
+clc
+
+% create figure
+figure
+axis([-6, 6, -6, 6])
+grid on
+hold on
+
+% save as a video file
+v = VideoWriter('Inverse_Kinematics_1.mp4', 'MPEG-4');
+v.FrameRate = 25;
+open(v);
+
+% initial joint values
+L = 1;
+theta = [pi/8; pi/8; pi/8; pi/8; pi/8];
+
+S1 = [0 0 1 0 0 0]';
+S2 = [0 0 1 0 -1*L 0]';
+S3 = [0 0 1 0 -2*L 0]';
+S4 = [0 0 1 0 -3*L 0]';
+S5 = [0 0 1 0 -4*L 0]';
+
+S_eq = [S1, S2, S3, S4, S5];   
+M = [eye(3), [5*L;0;0]; 0 0 0 1];
+M1 = [eye(3), [1*L;0;0]; 0 0 0 1];
+M2 = [eye(3), [2*L;0;0]; 0 0 0 1];
+M3 = [eye(3), [3*L;0;0]; 0 0 0 1];
+M4 = [eye(3), [4*L;0;0]; 0 0 0 1];
+
+% Given desired Transformation matrices T_d
+T_d = [rotz(pi/4), [3;2;0]; 0 0 0 1];
+Xd = [r2axisangle(T_d(1:3, 1:3)); T_d(1:3,4)];
+
+% T with initial joint positions
+T = fk(M, S_eq, theta);
+X = [r2axisangle(T(1:3, 1:3)); T(1:3,4)];
+
+while norm(Xd - X) > 1e-2
+
+    p0 = [0; 0]; % plot the robot
+    T1 = fk(M1, S1, theta(1)); % 1. get the position of each link
+    T2 = fk(M2, [S1, S2], [theta(1), theta(2)]);
+    T3 = fk(M3, [S1, S2, S3], [theta(1), theta(2), theta(3)]);
+    T4 = fk(M4, [S1, S2, S3, S4], [theta(1), theta(2), theta(3), theta(4)]);
+    P_v = [p0, T1(1:2, 4), T2(1:2, 4), T3(1:2, 4), T4(1:2, 4), T(1:2, 4)];
+
+    cla; % 2. draw the robot and save the frame
+    plot(P_v(1,:), P_v(2,:), 'o-', 'color',[1, 0.5, 0],'linewidth',4)
+    drawnow
+    frame = getframe(gcf);
+    writeVideo(v, frame); % My Implementation for inverse kinematics calculation below
+
+    JS = JacS(S_eq, theta); % Updated Space Jacobian
+    Jb = adjointM(inv(T))*JS; %Updated Body Jacobian
+    J = [T(1:3, 1:3) zeros(3); zeros(3) T(1:3, 1:3)] * Jb; % Updated Geometric Jacobian
+    V = Xd - X;
+
+    delta_theta = pinv(J)*V +(eye(5) - pinv(J)*J)*[0;0;0;0;0];
+
+    theta = double(theta + 0.1 * delta_theta); % Updating theta until the while loop is satisfied to get the desired joint positions
+    T = fk(M, S_eq, theta);
+    X = [r2axisangle(T(1:3, 1:3)); T(1:3,4)];
+end
+
+close(v);
+close all
+```
+
+</details>
+
+**Result:**
+
+<img src="Inverse_Kinematics_1.gif" alt="Animated GIF" loop width="50%" height="50%">
+
+
+* **Case 2: 𝐿 = 1 and the desired end-effector pose is:**
+
+**$\normalsize T_{sb} = [rotz(\pi/2), [-2; 4; 0]; 0 \, 0 \, 0 \, 1]$**
+
+```{python}
+import numpy as np
+import matplotlib
+matplotlib.use('Agg')  # Set the backend to a non-interactive backend
+import matplotlib.pyplot as plt
+import matplotlib.animation as animation
+from matplotlib.animation import PillowWriter
+
+# Define the necessary functions
+def bracket3(S):
+    return np.array([[0, -S[2], S[1]], [S[2], 0, -S[0]], [-S[1], S[0], 0]])
+
+def expm(A):
+    return np.linalg.matrix_power(np.eye(A.shape[0]) + A / 16, 16)
+
+def adjointM(T):
+    R = T[0:3, 0:3]
+    p = T[0:3, 3]
+    return np.block([[R, np.zeros((3, 3))], [bracket3(p) @ R, R]])
+
+def r2axisangle(R):
+    if np.linalg.norm(R - np.eye(3)) < 1e-3:
+        return np.array([0, 0, 0])
+    else:
+        theta = np.arccos(0.5 * (np.trace(R) - 1))
+        omega_hat = 1 / (2 * np.sin(theta)) * (R - R.T)
+        omega = np.array([omega_hat[2, 1], omega_hat[0, 2], omega_hat[1, 0]])
+        return omega * theta
+
+def bracket_s(s):
+    return np.array([[0, -s[2], s[1], s[3]], [s[2], 0, -s[0], s[4]], [-s[1], s[0], 0, s[5]], [0, 0, 0, 0]])
+
+def fk(M, S, theta):
+    T = np.eye(4)
+    theta = np.atleast_1d(theta)
+    for i in range(len(theta)):
+        T = np.dot(T, expm(bracket_s(S[:, i]) * theta[i]))
+    return np.dot(T, M)
+
+def JacS(S, theta):
+    T = np.eye(4)
+    Js = np.zeros((6, len(theta)))
+    for i in range(len(theta)):
+        Si = S[:, i]
+        Js[:, i] = np.dot(adjointM(T), Si)
+        T = np.dot(T, expm(bracket_s(Si) * theta[i]))
+    return Js
+
+def rotz(angle):
+    c, s = np.cos(angle), np.sin(angle)
+    return np.array([[c, -s, 0], [s, c, 0], [0, 0, 1]])
+
+# Initialize plot
+fig, ax = plt.subplots()
+ax.set_xlim(-6, 6)
+ax.set_ylim(-6, 6)
+ax.grid(True)
+line, = ax.plot([], [], 'o-', color=[1, 0.5, 0], linewidth=4)
+plt.ion()
+
+# Initialize parameters
+L = 1
+theta = np.array([np.pi/8] * 5)
+
+S1 = np.array([0, 0, 1, 0, 0, 0])
+S2 = np.array([0, 0, 1, 0, -1 * L, 0])
+S3 = np.array([0, 0, 1, 0, -2 * L, 0])
+S4 = np.array([0, 0, 1, 0, -3 * L, 0])
+S5 = np.array([0, 0, 1, 0, -4 * L, 0])
+
+# Create S_eq by concatenating the individual S vectors horizontally
+S = np.column_stack((S1, S2, S3, S4, S5))
+
+M = np.vstack([np.hstack([np.eye(3), np.array([[5*L, 0, 0]]).T]), [0, 0, 0, 1]])
+M1 = np.vstack([np.hstack([np.eye(3), np.array([[1*L, 0, 0]]).T]), [0, 0, 0, 1]])
+M2 = np.vstack([np.hstack([np.eye(3), np.array([[2*L, 0, 0]]).T]), [0, 0, 0, 1]])
+M3 = np.vstack([np.hstack([np.eye(3), np.array([[3*L, 0, 0]]).T]), [0, 0, 0, 1]])
+M4 = np.vstack([np.hstack([np.eye(3), np.array([[4*L, 0, 0]]).T]), [0, 0, 0, 1]])
+
+# Desired transformation
+T_d = np.vstack([np.hstack([rotz(np.pi/2), np.array([[-2, 4, 0]]).T]), [0, 0, 0, 1]])
+Xd = np.concatenate([r2axisangle(T_d[0:3, 0:3]), T_d[0:3, 3]])
+
+# Initial forward kinematics
+T = fk(M, S, theta)
+X = np.concatenate([r2axisangle(T[0:3, 0:3]), T[0:3, 3]])
+
+# Animation function
+def update(frame):
+    global theta, T, X
+    if np.linalg.norm(Xd - X) > 1e-1:
+        # Calculate joint transformations
+        T1 = fk(M1, S[:, 0:1], theta[0])
+        T2 = fk(M2, S[:, 0:2], [theta[0], theta[1]])
+        T3 = fk(M3, S[:, 0:3], [theta[0], theta[1], theta[2]])
+        T4 = fk(M4, S[:, 0:4], [theta[0], theta[1], theta[2], theta[3]])
+        P_v = np.array([[0, 0]] + [T1[0:2, 3]]+ [T2[0:2, 3]]+ [T3[0:2, 3]]+ [T4[0:2, 3]] + [T[0:2, 3]]).T
+        
+        # Draw the robot
+        line.set_data(P_v[0, :], P_v[1, :])
+        
+        # Update Jacobians and compute delta_theta
+        JS = JacS(S, theta)
+        Jb = np.dot(adjointM(np.linalg.inv(T)), JS)
+        J_geometric = np.block([[T[0:3, 0:3], np.zeros((3, 3))], [np.zeros((3, 3)), T[0:3, 0:3]]]) @ Jb
+        V = Xd - X
+        delta_theta = np.dot(np.linalg.pinv(J_geometric), V)
+        
+        # Update theta
+        theta += 0.1 * delta_theta
+        print(theta)
+        T = fk(M, S, theta)
+        X = np.concatenate([r2axisangle(T[0:3, 0:3]), T[0:3, 3]])
+
+    return line,
+
+# Create and save the animation
+ani = animation.FuncAnimation(fig, update, frames=np.arange(100), interval=200, blit=False)
+
+# Save the animation
+writer = PillowWriter(fps=7)  
+ani.save("Inverse_Kinematics_2.gif", writer=writer)
+```
+
+
+**MATLAB implementation**
+
+<details>
+
+```matlab
+
+close all
+clear
+clc
+
+% create figure
+figure
+axis([-6, 6, -6, 6])
+grid on
+hold on
+
+% save as a video file
+v = VideoWriter('Inverse_Kinematics_2.mp4', 'MPEG-4');
+v.FrameRate = 25;
+open(v);
+
+% initial joint values
+L = 1;
+theta = [pi/8; pi/8; pi/8; pi/8; pi/8];
+
+S1 = [0 0 1 0 0 0]';
+S2 = [0 0 1 0 -1*L 0]';
+S3 = [0 0 1 0 -2*L 0]';
+S4 = [0 0 1 0 -3*L 0]';
+S5 = [0 0 1 0 -4*L 0]';
+
+S_eq = [S1, S2, S3, S4, S5];   
+M = [eye(3), [5*L;0;0]; 0 0 0 1];
+M1 = [eye(3), [1*L;0;0]; 0 0 0 1];
+M2 = [eye(3), [2*L;0;0]; 0 0 0 1];
+M3 = [eye(3), [3*L;0;0]; 0 0 0 1];
+M4 = [eye(3), [4*L;0;0]; 0 0 0 1];
+
+% Given desired Transformation matrices T_d
+T_d = [rotz(pi/4), [-2;4;0]; 0 0 0 1];
+Xd = [r2axisangle(T_d(1:3, 1:3)); T_d(1:3,4)];
+
+% T with initial joint positions
+T = fk(M, S_eq, theta);
+X = [r2axisangle(T(1:3, 1:3)); T(1:3,4)];
+
+while norm(Xd - X) > 1e-2
+
+    p0 = [0; 0]; % plot the robot
+    T1 = fk(M1, S1, theta(1)); % 1. get the position of each link
+    T2 = fk(M2, [S1, S2], [theta(1), theta(2)]);
+    T3 = fk(M3, [S1, S2, S3], [theta(1), theta(2), theta(3)]);
+    T4 = fk(M4, [S1, S2, S3, S4], [theta(1), theta(2), theta(3), theta(4)]);
+    P_v = [p0, T1(1:2, 4), T2(1:2, 4), T3(1:2, 4), T4(1:2, 4), T(1:2, 4)];
+
+    cla; % 2. draw the robot and save the frame
+    plot(P_v(1,:), P_v(2,:), 'o-', 'color',[1, 0.5, 0],'linewidth',4)
+    drawnow
+    frame = getframe(gcf);
+    writeVideo(v, frame); % My Implementation for inverse kinematics calculation below
+
+    JS = JacS(S_eq, theta); % Updated Space Jacobian
+    Jb = adjointM(inv(T))*JS; %Updated Body Jacobian
+    J = [T(1:3, 1:3) zeros(3); zeros(3) T(1:3, 1:3)] * Jb; % Updated Geometric Jacobian
+    V = Xd - X;
+
+    delta_theta = pinv(J)*V +(eye(5) - pinv(J)*J)*[0;0;0;0;0];
+
+    theta = double(theta + 0.1 * delta_theta); % Updating theta until the while loop is satisfied to get the desired joint positions
+    T = fk(M, S_eq, theta);
+    X = [r2axisangle(T(1:3, 1:3)); T(1:3,4)];
+end
+
+close(v);
+close all
+```
+
+</details>
+
+**Result:**
+
+<img src="Inverse_Kinematics_2.gif" alt="Animated GIF" loop width="50%" height="50%">
+
+
+* **Case 3: 𝐿 = 1 and the desired end-effector pose is:**
+
+**$\normalsize T_{sb} = [rotz(0), [3; -1; 0]; 0 \, 0 \, 0 \, 1]$**
+
+```{python}
+import numpy as np
+import matplotlib
+matplotlib.use('Agg')  # Set the backend to a non-interactive backend
+import matplotlib.pyplot as plt
+import matplotlib.animation as animation
+from matplotlib.animation import PillowWriter
+
+# Define the necessary functions
+def bracket3(S):
+    return np.array([[0, -S[2], S[1]], [S[2], 0, -S[0]], [-S[1], S[0], 0]])
+
+def expm(A):
+    return np.linalg.matrix_power(np.eye(A.shape[0]) + A / 16, 16)
+
+def adjointM(T):
+    R = T[0:3, 0:3]
+    p = T[0:3, 3]
+    return np.block([[R, np.zeros((3, 3))], [bracket3(p) @ R, R]])
+
+def r2axisangle(R):
+    if np.linalg.norm(R - np.eye(3)) < 1e-3:
+        return np.array([0, 0, 0])
+    else:
+        trace = np.clip((np.trace(R) - 1) / 2, -1, 1)  # Clip trace to the valid range
+        if trace < -1:
+            trace = -1
+        elif trace > 1:
+            trace = 1
+        theta = np.arccos(0.5*trace)
+        omega_hat = 1 / (2 * np.sin(theta)) * (R - R.T)
+        omega = np.array([omega_hat[2, 1], omega_hat[0, 2], omega_hat[1, 0]])
+        return omega * theta
+
+def bracket_s(s):
+    return np.array([[0, -s[2], s[1], s[3]], [s[2], 0, -s[0], s[4]], [-s[1], s[0], 0, s[5]], [0, 0, 0, 0]])
+
+def fk(M, S, theta):
+    T = np.eye(4)
+    theta = np.atleast_1d(theta)
+    for i in range(len(theta)):
+        T = np.dot(T, expm(bracket_s(S[:, i]) * theta[i]))
+    return np.dot(T, M)
+
+def JacS(S, theta):
+    T = np.eye(4)
+    Js = np.zeros((6, len(theta)))
+    for i in range(len(theta)):
+        Si = S[:, i]
+        Js[:, i] = np.dot(adjointM(T), Si)
+        T = np.dot(T, expm(bracket_s(Si) * theta[i]))
+    return Js
+
+def rotz(angle):
+    c, s = np.cos(angle), np.sin(angle)
+    return np.array([[c, -s, 0], [s, c, 0], [0, 0, 1]])
+
+# Initialize plot
+fig, ax = plt.subplots()
+ax.set_xlim(-6, 6)
+ax.set_ylim(-6, 6)
+ax.grid(True)
+line, = ax.plot([], [], 'o-', color=[1, 0.5, 0], linewidth=4)
+plt.ion()
+
+# Initialize parameters
+L = 1
+theta = np.array([np.pi/8] * 5)
+
+S1 = np.array([0, 0, 1, 0, 0, 0])
+S2 = np.array([0, 0, 1, 0, -1 * L, 0])
+S3 = np.array([0, 0, 1, 0, -2 * L, 0])
+S4 = np.array([0, 0, 1, 0, -3 * L, 0])
+S5 = np.array([0, 0, 1, 0, -4 * L, 0])
+
+# Create S_eq by concatenating the individual S vectors horizontally
+S = np.column_stack((S1, S2, S3, S4, S5))
+
+M = np.vstack([np.hstack([np.eye(3), np.array([[5*L, 0, 0]]).T]), [0, 0, 0, 1]])
+M1 = np.vstack([np.hstack([np.eye(3), np.array([[1*L, 0, 0]]).T]), [0, 0, 0, 1]])
+M2 = np.vstack([np.hstack([np.eye(3), np.array([[2*L, 0, 0]]).T]), [0, 0, 0, 1]])
+M3 = np.vstack([np.hstack([np.eye(3), np.array([[3*L, 0, 0]]).T]), [0, 0, 0, 1]])
+M4 = np.vstack([np.hstack([np.eye(3), np.array([[4*L, 0, 0]]).T]), [0, 0, 0, 1]])
+
+# Desired transformation
+T_d = np.vstack([np.hstack([rotz(0), np.array([[3, -1, 0]]).T]), [0, 0, 0, 1]])
+Xd = np.concatenate([r2axisangle(T_d[0:3, 0:3]), T_d[0:3, 3]])
+
+# Initial forward kinematics
+T = fk(M, S, theta)
+X = np.concatenate([r2axisangle(T[0:3, 0:3]), T[0:3, 3]])
+
+# Animation function
+def update(frame):
+    global theta, T, X
+    if np.linalg.norm(Xd - X) > 1e-1:
+        # Calculate joint transformations
+        T1 = fk(M1, S[:, 0:1], theta[0])
+        T2 = fk(M2, S[:, 0:2], [theta[0], theta[1]])
+        T3 = fk(M3, S[:, 0:3], [theta[0], theta[1], theta[2]])
+        T4 = fk(M4, S[:, 0:4], [theta[0], theta[1], theta[2], theta[3]])
+        P_v = np.array([[0, 0]] + [T1[0:2, 3]]+ [T2[0:2, 3]]+ [T3[0:2, 3]]+ [T4[0:2, 3]] + [T[0:2, 3]]).T
+        
+        # Draw the robot
+        line.set_data(P_v[0, :], P_v[1, :])
+        
+        # Update Jacobians and compute delta_theta
+        JS = JacS(S, theta)
+        Jb = np.dot(adjointM(np.linalg.inv(T)), JS)
+        J_geometric = np.block([[T[0:3, 0:3], np.zeros((3, 3))], [np.zeros((3, 3)), T[0:3, 0:3]]]) @ Jb
+        V = Xd - X
+        delta_theta = np.dot(np.linalg.pinv(J_geometric), V)
+        
+        # Update theta
+        theta += 0.1 * delta_theta
+        print(theta)
+        T = fk(M, S, theta)
+        X = np.concatenate([r2axisangle(T[0:3, 0:3]), T[0:3, 3]])
+
+    return line,
+
+# Create and save the animation
+ani = animation.FuncAnimation(fig, update, frames=np.arange(100), interval=200, blit=False)
+
+# Save the animation
+writer = PillowWriter(fps=7)  
+ani.save("Inverse_Kinematics_3.gif", writer=writer)
+```
+
+
+<details>
+
+```matlab
+
+close all
+clear
+clc
+
+% create figure
+figure
+axis([-6, 6, -6, 6])
+grid on
+hold on
+
+% save as a video file
+v = VideoWriter('Inverse_Kinematics_3.mp4', 'MPEG-4');
+v.FrameRate = 25;
+open(v);
+
+% initial joint values
+L = 1;
+theta = [pi/8; pi/8; pi/8; pi/8; pi/8];
+
+S1 = [0 0 1 0 0 0]';
+S2 = [0 0 1 0 -1*L 0]';
+S3 = [0 0 1 0 -2*L 0]';
+S4 = [0 0 1 0 -3*L 0]';
+S5 = [0 0 1 0 -4*L 0]';
+
+S_eq = [S1, S2, S3, S4, S5];   
+M = [eye(3), [5*L;0;0]; 0 0 0 1];
+M1 = [eye(3), [1*L;0;0]; 0 0 0 1];
+M2 = [eye(3), [2*L;0;0]; 0 0 0 1];
+M3 = [eye(3), [3*L;0;0]; 0 0 0 1];
+M4 = [eye(3), [4*L;0;0]; 0 0 0 1];
+
+% Given desired Transformation matrices T_d
+T_d = [rotz(0), [3;-1;0]; 0 0 0 1];
+Xd = [r2axisangle(T_d(1:3, 1:3)); T_d(1:3,4)];
+
+% T with initial joint positions
+T = fk(M, S_eq, theta);
+X = [r2axisangle(T(1:3, 1:3)); T(1:3,4)];
+
+while norm(Xd - X) > 1e-2
+
+    p0 = [0; 0]; % plot the robot
+    T1 = fk(M1, S1, theta(1)); % 1. get the position of each link
+    T2 = fk(M2, [S1, S2], [theta(1), theta(2)]);
+    T3 = fk(M3, [S1, S2, S3], [theta(1), theta(2), theta(3)]);
+    T4 = fk(M4, [S1, S2, S3, S4], [theta(1), theta(2), theta(3), theta(4)]);
+    P_v = [p0, T1(1:2, 4), T2(1:2, 4), T3(1:2, 4), T4(1:2, 4), T(1:2, 4)];
+
+    cla; % 2. draw the robot and save the frame
+    plot(P_v(1,:), P_v(2,:), 'o-', 'color',[1, 0.5, 0],'linewidth',4)
+    drawnow
+    frame = getframe(gcf);
+    writeVideo(v, frame); % My Implementation for inverse kinematics calculation below
+
+    JS = JacS(S_eq, theta); % Updated Space Jacobian
+    Jb = adjointM(inv(T))*JS; %Updated Body Jacobian
+    J = [T(1:3, 1:3) zeros(3); zeros(3) T(1:3, 1:3)] * Jb; % Updated Geometric Jacobian
+    V = Xd - X;
+
+    delta_theta = pinv(J)*V +(eye(5) - pinv(J)*J)*[0;0;0;0;0];
+
+    theta = double(theta + 0.1 * delta_theta); % Updating theta until the while loop is satisfied to get the desired joint positions
+    T = fk(M, S_eq, theta);
+    X = [r2axisangle(T(1:3, 1:3)); T(1:3,4)];
+end
+
+close(v);
+close all
+```
+</details>
+
+**Result:**
+
+<img src="Inverse_Kinematics_3.gif" alt="Animated GIF" loop width="50%" height="50%">
+
+
+## Jacobian Pseudoinverse and Redundancy
+
+This problem continues exploring the redundant snake robot used simulated above. So far we have left $\normalsize 𝑏 = 0$ in our Jacobian pseudoinverse. More generally, choosing $\normalsize 𝑏$ allows us to set a secondary objective for the inverse kinematics of redundant robots.
+
+Here we establish that numerical inverse kinematics finds a solution for $\normalsize \theta$ such that $\normalsize T_{sb}(\theta)$ equals the desired end-effector pose. But when working with redundant robots, multiple solutions are often possible. Choosing $\normalsize 𝑏$ affects which of these solutions the algorithm selects.
+
+Now I set $\normalsize 𝑏$ as the following vector (and update $\normalsize 𝑏$ as $\normalsize \theta_1$ changes):
+
+b = [[-theta(0) 
+        0 
+        0 
+        0 
+        0]], (6x1) vector
+
+$$\normalsize \theta_d = \left(\begin{array}{cc} 
+-\theta(0)\\
+0\\
+0\\
+0\\
+0\\
+\end{array}\right)
+$$
+
+Which is a $\normalsize (6 * 1) \, vector$
+
+* Equation: $\normalsize \delta\theta = pinv(J)*V + (I - pinv(J)*J)*b$
+
+**Here we change the delta_theta by manipulating the pseudoinverse and introducing the null-space**
+
+Note: $\normalsize 𝑏$ was a zero vector till now for all the three cases, but now we will notice the change for Case 3:
+
+**CASE 3: Modified delta_theta for Redundancy**
+
+```{python}
+import numpy as np
+import matplotlib
+matplotlib.use('Agg')  # Set the backend to a non-interactive backend
+import matplotlib.pyplot as plt
+import matplotlib.animation as animation
+from matplotlib.animation import PillowWriter
+
+# Define the necessary functions
+def bracket3(S):
+    return np.array([[0, -S[2], S[1]], [S[2], 0, -S[0]], [-S[1], S[0], 0]])
+
+def expm(A):
+    return np.linalg.matrix_power(np.eye(A.shape[0]) + A / 16, 16)
+
+def adjointM(T):
+    R = T[0:3, 0:3]
+    p = T[0:3, 3]
+    return np.block([[R, np.zeros((3, 3))], [bracket3(p) @ R, R]])
+
+def r2axisangle(R):
+    if np.linalg.norm(R - np.eye(3)) < 1e-3:
+        return np.array([0, 0, 0])
+    else:
+        trace = np.clip((np.trace(R) - 1) / 2, -1, 1)  # Clip trace to the valid range
+        if trace < -1:
+            trace = -1
+        elif trace > 1:
+            trace = 1
+        theta = np.arccos(0.5*trace)
+        omega_hat = 1 / (2 * np.sin(theta)) * (R - R.T)
+        omega = np.array([omega_hat[2, 1], omega_hat[0, 2], omega_hat[1, 0]])
+        return omega * theta
+
+def bracket_s(s):
+    return np.array([[0, -s[2], s[1], s[3]], [s[2], 0, -s[0], s[4]], [-s[1], s[0], 0, s[5]], [0, 0, 0, 0]])
+
+def fk(M, S, theta):
+    T = np.eye(4)
+    theta = np.atleast_1d(theta)
+    for i in range(len(theta)):
+        T = np.dot(T, expm(bracket_s(S[:, i]) * theta[i]))
+    return np.dot(T, M)
+
+def JacS(S, theta):
+    T = np.eye(4)
+    Js = np.zeros((6, len(theta)))
+    for i in range(len(theta)):
+        Si = S[:, i]
+        Js[:, i] = np.dot(adjointM(T), Si)
+        T = np.dot(T, expm(bracket_s(Si) * theta[i]))
+    return Js
+
+def rotz(angle):
+    c, s = np.cos(angle), np.sin(angle)
+    return np.array([[c, -s, 0], [s, c, 0], [0, 0, 1]])
+
+# Initialize plot
+fig, ax = plt.subplots()
+ax.set_xlim(-6, 6)
+ax.set_ylim(-6, 6)
+ax.grid(True)
+line, = ax.plot([], [], 'o-', color=[1, 0.5, 0], linewidth=4)
+plt.ion()
+
+# Initialize parameters
+L = 1
+theta = np.array([np.pi/8] * 5)
+
+S1 = np.array([0, 0, 1, 0, 0, 0])
+S2 = np.array([0, 0, 1, 0, -1 * L, 0])
+S3 = np.array([0, 0, 1, 0, -2 * L, 0])
+S4 = np.array([0, 0, 1, 0, -3 * L, 0])
+S5 = np.array([0, 0, 1, 0, -4 * L, 0])
+
+# Create S_eq by concatenating the individual S vectors horizontally
+S = np.column_stack((S1, S2, S3, S4, S5))
+
+M = np.vstack([np.hstack([np.eye(3), np.array([[5*L, 0, 0]]).T]), [0, 0, 0, 1]])
+M1 = np.vstack([np.hstack([np.eye(3), np.array([[1*L, 0, 0]]).T]), [0, 0, 0, 1]])
+M2 = np.vstack([np.hstack([np.eye(3), np.array([[2*L, 0, 0]]).T]), [0, 0, 0, 1]])
+M3 = np.vstack([np.hstack([np.eye(3), np.array([[3*L, 0, 0]]).T]), [0, 0, 0, 1]])
+M4 = np.vstack([np.hstack([np.eye(3), np.array([[4*L, 0, 0]]).T]), [0, 0, 0, 1]])
+
+# Desired transformation
+T_d = np.vstack([np.hstack([rotz(0), np.array([[3, -1, 0]]).T]), [0, 0, 0, 1]])
+Xd = np.concatenate([r2axisangle(T_d[0:3, 0:3]), T_d[0:3, 3]])
+
+# Initial forward kinematics
+T = fk(M, S, theta)
+X = np.concatenate([r2axisangle(T[0:3, 0:3]), T[0:3, 3]])
+
+# Animation function
+def update(frame):
+    global theta, T, X
+    if np.linalg.norm(Xd - X) > 1e-1:
+        # Calculate joint transformations
+        T1 = fk(M1, S[:, 0:1], theta[0])
+        T2 = fk(M2, S[:, 0:2], [theta[0], theta[1]])
+        T3 = fk(M3, S[:, 0:3], [theta[0], theta[1], theta[2]])
+        T4 = fk(M4, S[:, 0:4], [theta[0], theta[1], theta[2], theta[3]])
+        P_v = np.array([[0, 0]] + [T1[0:2, 3]]+ [T2[0:2, 3]]+ [T3[0:2, 3]]+ [T4[0:2, 3]] + [T[0:2, 3]]).T
+        
+        # Draw the robot
+        line.set_data(P_v[0, :], P_v[1, :])
+        
+        # Update Jacobians and compute delta_theta
+        JS = JacS(S, theta)
+        Jb = np.dot(adjointM(np.linalg.inv(T)), JS)
+        J_geometric = np.block([[T[0:3, 0:3], np.zeros((3, 3))], [np.zeros((3, 3)), T[0:3, 0:3]]]) @ Jb
+        V = Xd - X
+
+        # [del_theta = pinv(J)*V + (I - pinv(J)*J)*b] <- Updated delta_theta to include the null-space with the specified b vector
+        delta_theta = np.dot(np.linalg.pinv(J_geometric), V) + np.dot((np.eye(5) - np.dot(np.linalg.pinv(J_geometric), J_geometric)), np.array([-theta[0], 0, 0, 0, 0]))
+        
+        # Update theta
+        theta += 0.1 * delta_theta
+        print(theta)
+        T = fk(M, S, theta)
+        X = np.concatenate([r2axisangle(T[0:3, 0:3]), T[0:3, 3]])
+
+    return line,
+
+# Create and save the animation
+ani = animation.FuncAnimation(fig, update, frames=np.arange(100), interval=200, blit=False)
+
+# Save the animation
+writer = PillowWriter(fps=7)  
+ani.save("Inverse_Kinematics_Null.gif", writer=writer)
+```
+
+
+**MATLAB implementation**
+
+<details>
+
+```matlab
+
+close all
+clear
+clc
+
+% create figure
+figure
+axis([-6, 6, -6, 6])
+grid on
+hold on
+
+% save as a video file
+v = VideoWriter('Inverse_Kinematics_3_null_space.mp4', 'MPEG-4');
+v.FrameRate = 25;
+open(v);
+
+% initial joint values
+L = 1;
+theta = [pi/8; pi/8; pi/8; pi/8; pi/8];
+
+S1 = [0 0 1 0 0 0]';
+S2 = [0 0 1 0 -1*L 0]';
+S3 = [0 0 1 0 -2*L 0]';
+S4 = [0 0 1 0 -3*L 0]';
+S5 = [0 0 1 0 -4*L 0]';
+
+S_eq = [S1, S2, S3, S4, S5];   
+M = [eye(3), [5*L;0;0]; 0 0 0 1];
+M1 = [eye(3), [1*L;0;0]; 0 0 0 1];
+M2 = [eye(3), [2*L;0;0]; 0 0 0 1];
+M3 = [eye(3), [3*L;0;0]; 0 0 0 1];
+M4 = [eye(3), [4*L;0;0]; 0 0 0 1];
+
+% Given desired Transformation matrices T_d
+T_d = [rotz(0), [3;-1;0]; 0 0 0 1];
+Xd = [r2axisangle(T_d(1:3, 1:3)); T_d(1:3,4)];
+
+% T with initial joint positions
+T = fk(M, S_eq, theta);
+X = [r2axisangle(T(1:3, 1:3)); T(1:3,4)];
+
+while norm(Xd - X) > 1e-2
+
+    p0 = [0; 0]; % plot the robot
+    T1 = fk(M1, S1, theta(1)); % 1. get the position of each link
+    T2 = fk(M2, [S1, S2], [theta(1), theta(2)]);
+    T3 = fk(M3, [S1, S2, S3], [theta(1), theta(2), theta(3)]);
+    T4 = fk(M4, [S1, S2, S3, S4], [theta(1), theta(2), theta(3), theta(4)]);
+    P_v = [p0, T1(1:2, 4), T2(1:2, 4), T3(1:2, 4), T4(1:2, 4), T(1:2, 4)];
+
+    cla; % 2. draw the robot and save the frame
+    plot(P_v(1,:), P_v(2,:), 'o-', 'color',[1, 0.5, 0],'linewidth',4)
+    drawnow
+    frame = getframe(gcf);
+    writeVideo(v, frame); % My Implementation for inverse kinematics calculation below
+
+    JS = JacS(S_eq, theta); % Updated Space Jacobian
+    Jb = adjointM(inv(T))*JS; %Updated Body Jacobian
+    J = [T(1:3, 1:3) zeros(3); zeros(3) T(1:3, 1:3)] * Jb; % Updated Geometric Jacobian
+    V = Xd - X;
+
+    delta_theta = pinv(J)*V +(eye(5) - pinv(J)*J)*[-theta(1);0;0;0;0];
+
+    theta = double(theta + 0.1 * delta_theta); % Updating theta until the while loop is satisfied to get the desired joint positions
+    T = fk(M, S_eq, theta);
+    X = [r2axisangle(T(1:3, 1:3)); T(1:3,4)];
+end
+
+close(v);
+close all
+```
+
+</details>
+
+**Result:**
+
+<img src="Inverse_Kinematics_Null.gif" alt="Animated GIF" loop width="50%" height="50%">
+
+
+The final joint positions (approximately):
+
+* **Case 3 with $\normalsize 𝑏 = 0$:**
+$$\normalsize \theta = \left(\begin{array}{cc} 
+−1.51\\
+0.29\\
+1.36\\
+0.78\\
+−0.92
+\end{array}\right)
+$$
+
+* **Case 3 with $\normalsize 𝑏 = -\theta(1)$:**
+
+$$\normalsize \theta = \left(\begin{array}{cc} 
+−0.38\\
+−1.40\\
+1.20\\
+1.70\\
+−1.12
+\end{array}\right)
+$$
+
+Comparing these two results, we have that |$\normalsize \theta_1$| is smaller (and $\normalsize \theta_1$ is closer to zero) with the secondary objective:
+
+* **$\normalsize 0.38 < 1.51$**
+
+There are several reasons why we may want to minimize a joint angle:
+
+    • The actuator at that joint moves more slowly than the other actuators.
+
+    • Moving the actuator at that joint consumes more power as compared to the other actuators along the robot arm.
+
+    • We want to avoid colliding with an obstacle, and we need to keep one or more joints at a specific angle to avoid that obstacle
+
+
+```{=html}
+<script>
+const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+</script>
+<style>
+div#quarto-sidebar-glass { display: none !important; }
+ul.navbar-nav.navbar-nav-scroll { -webkit-flex-direction: row !important; }
+/* #quarto-sidebar { padding: 5px; }
+#quarto-sidebar > * { padding: 5px; }
+div.sidebar-menu-container > * { padding: 5px 5px 5px 5px; }
+#quarto-margin-sidebar { padding: 40px; } */
+</style>
+```

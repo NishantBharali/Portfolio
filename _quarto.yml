@@ -88,8 +88,16 @@ website:
           - section: Robotics
             href: blog.html#category=Robotics
             contents:
-              - href: Robotics/Robotics.qmd
-                text: "Robotics"
+              - href: Robotics/Inverse_kinematics.qmd
+                text: "Inverse Kinematics"
+              - href: Robotics/Potential_trajectory.qmd
+                text: "Trajectory Optimization"
+              - href: Robotics/Dynamics.qmd
+                text: "Dynamics"
+              - href: Robotics/Control.qmd
+                text: "Control"
+              - href: Robotics/RRT.qmd
+                text: "RRT"
           - section: Machine Learning
             href: blog.html#category=Machine Learning
             contents:
