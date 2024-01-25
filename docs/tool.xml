@@ -5,20 +5,20 @@
       xmlns:dc="http://purl.org/dc/elements/1.1/" 
       version="2.0">
 <channel>
-<title>Tech Bytes</title>
-<link>https://nishantbharali.github.io/Blog/tool.html</link>
-<atom:link href="https://nishantbharali.github.io/Blog/tool.xml" rel="self" type="application/rss+xml"/>
+<title>Portfolio</title>
+<link>https://www.nishantkb.info/tool.html</link>
+<atom:link href="https://www.nishantkb.info/tool.xml" rel="self" type="application/rss+xml"/>
 <description></description>
 <image>
-<url>https://nishantbharali.github.io/Blog/images/Tools.gif</url>
-<title>Tech Bytes</title>
-<link>https://nishantbharali.github.io/Blog/tool.html</link>
+<url>https://www.nishantkb.info/images/Tools.gif</url>
+<title>Portfolio</title>
+<link>https://www.nishantkb.info/tool.html</link>
 </image>
 <generator>quarto-1.3.450</generator>
 <lastBuildDate>Sat, 24 Jun 2023 04:00:00 GMT</lastBuildDate>
 <item>
   <title>Git</title>
-  <link>https://nishantbharali.github.io/Blog/Tools/git/git.html</link>
+  <link>https://www.nishantkb.info/Tools/git/git.html</link>
   <description><![CDATA[ 
 
 
@@ -377,69 +377,13 @@ div.sidebar-menu-container > * { padding: 5px 5px 5px 5px; }
 
 <a onclick="window.scrollTo(0, 0); return false;" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a> ]]></description>
   <category>Tools/Packages</category>
-  <guid>https://nishantbharali.github.io/Blog/Tools/git/git.html</guid>
+  <guid>https://www.nishantkb.info/Tools/git/git.html</guid>
   <pubDate>Sat, 24 Jun 2023 04:00:00 GMT</pubDate>
-  <media:content url="https://nishantbharali.github.io/Blog/Tools/git/git_gif.gif" medium="image" type="image/gif"/>
-</item>
-<item>
-  <title>Large Language Models</title>
-  <link>https://nishantbharali.github.io/Blog/Tools/llm/llm.html</link>
-  <description><![CDATA[ 
-
-
-
-<section id="exploring-the-frontiers-of-ai-large-language-models" class="level1">
-<h1>Exploring the Frontiers of AI: Large Language Models</h1>
-<p>Large language models (LLMs) like GPT (Generative Pre-trained Transformer) have revolutionized the field of artificial intelligence by providing unprecedented capabilities in natural language processing. These models, trained on vast datasets, can generate text, answer questions, summarize information, and even write code with surprising coherence and relevance.</p>
-<section id="the-power-of-generative-pre-training" class="level2">
-<h2 class="anchored" data-anchor-id="the-power-of-generative-pre-training">The Power of Generative Pre-training</h2>
-<p>LLMs leverage a technique known as generative pre-training, where a model is first trained on a large corpus of text data in an unsupervised manner. This allows the model to learn the nuances of language, including grammar, syntax, and even style. The pre-trained model is then fine-tuned on specific tasks, enabling it to perform a variety of language-based tasks with a high degree of proficiency.</p>
-</section>
-<section id="transformer-architecture-a-paradigm-shift" class="level2">
-<h2 class="anchored" data-anchor-id="transformer-architecture-a-paradigm-shift">Transformer Architecture: A Paradigm Shift</h2>
-<p>The transformer architecture, introduced in the seminal paper “Attention is All You Need,” eschews traditional sequential processing for a parallel approach that uses attention mechanisms. This allows LLMs to weigh the importance of different parts of the input data and has proven to be highly effective for language understanding and generation.</p>
-</section>
-<section id="applications-and-implications" class="level2">
-<h2 class="anchored" data-anchor-id="applications-and-implications">Applications and Implications</h2>
-<p>LLMs are not just academic curiosities; they have practical applications ranging from writing assistance to customer service bots, and they’re integral to search engines and translation services. However, they also raise important questions about ethics and biases in AI, as they often reflect the data they were trained on, which can include biased or inaccurate information.</p>
-</section>
-<section id="the-future-of-llms" class="level2">
-<h2 class="anchored" data-anchor-id="the-future-of-llms">The Future of LLMs</h2>
-<p>As we continue to push the boundaries of what’s possible with LLMs, it’s important to consider the broader implications of this technology. Responsible AI practices, including bias mitigation and transparency, will be crucial in ensuring that the benefits of LLMs are realized while minimizing potential harms.</p>
-<p>LLMs represent a significant milestone in AI, but they are not the final destination. Ongoing research is focused on making these models more efficient, ethical, and capable, ensuring that they serve as valuable tools for progress in various domains of human endeavor.</p>
-</section>
-<section id="conclusion" class="level2">
-<h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
-<p>As we stand on the cusp of a new era in AI, large language models are at the forefront, driving innovation and enabling a deeper, more nuanced interaction between humans and machines. Their continued development will undoubtedly unlock new possibilities, challenge existing paradigms, and inspire future generations of AI research.</p>
-<p><a href="https://en.wikipedia.org/wiki/Large_language_model#:~:text=A%20large%20language%20model%20(LLM)%20is%20a%20type%20of%20language%20model%20notable%20for%20its%20ability%20to%20achieve%20general%2Dpurpose%20language%20understanding%20and%20generation.">Large Language Models</a> (LLMs) are a way to automatically generate text. more informative commit messages based on the currently staged changes.</p>
-<script>
-const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
-const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
-</script>
-<style>
-div#quarto-sidebar-glass { display: none !important; }
-ul.navbar-nav.navbar-nav-scroll { -webkit-flex-direction: row !important; }
-/* #quarto-sidebar { padding: 5px; }
-#quarto-sidebar > * { padding: 5px; }
-div.sidebar-menu-container > * { padding: 5px 5px 5px 5px; }
-#quarto-margin-sidebar { padding: 40px; } */
-</style>
-
-
-</section>
-</section>
-
-<a onclick="window.scrollTo(0, 0); return false;" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a> ]]></description>
-  <category>Tools/Packages</category>
-  <category>Artificial Intelligence</category>
-  <category>Machine Learning</category>
-  <guid>https://nishantbharali.github.io/Blog/Tools/llm/llm.html</guid>
-  <pubDate>Sat, 24 Jun 2023 04:00:00 GMT</pubDate>
-  <media:content url="https://nishantbharali.github.io/Blog/Tools/llm/llmGif.gif" medium="image" type="image/gif"/>
+  <media:content url="https://www.nishantkb.info/Tools/git/git_gif.gif" medium="image" type="image/gif"/>
 </item>
 <item>
   <title>Quarto</title>
-  <link>https://nishantbharali.github.io/Blog/Tools/quarto/quarto.html</link>
+  <link>https://www.nishantkb.info/Tools/quarto/quarto.html</link>
   <description><![CDATA[ 
 
 
@@ -960,9 +904,9 @@ div.sidebar-menu-container > * { padding: 5px 5px 5px 5px; }
 
 <a onclick="window.scrollTo(0, 0); return false;" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a> ]]></description>
   <category>Tools/Packages</category>
-  <guid>https://nishantbharali.github.io/Blog/Tools/quarto/quarto.html</guid>
+  <guid>https://www.nishantkb.info/Tools/quarto/quarto.html</guid>
   <pubDate>Sat, 24 Jun 2023 04:00:00 GMT</pubDate>
-  <media:content url="https://nishantbharali.github.io/Blog/Tools/quarto/horst_many-qmd-to-output.png" medium="image" type="image/png" height="88" width="144"/>
+  <media:content url="https://www.nishantkb.info/Tools/quarto/horst_many-qmd-to-output.png" medium="image" type="image/png" height="88" width="144"/>
 </item>
 </channel>
 </rss>

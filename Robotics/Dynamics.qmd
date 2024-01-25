@@ -1,13 +1,14 @@
 ---
 title: "Robot Dynamics"
+description: "Robot Dynamics encompasses the analysis of forces like Coriolis effects, mass distribution, and gravity on a robot, crucial for designing control strategies. This understanding ensures precise and stable movements in various operational scenarios"
+date: 12-12-2023
 categories: [Robotics]
 image: Dynamics_Pendulum_Cover_GIF.gif
 format:
     html: 
-        code-fold: true
-        code-overflow: scroll
+        code-fold: show
+        code-overflow: wrap
         code-tools: true
-
 ---
 
 ## Robot Dynamics
@@ -29,7 +30,9 @@ We can see the implementations below for the simulation codes I am responsible f
 
 * **Environment 1:** Make a simulation where $\normalsize \tau = [0, 0]^{𝑇}$ and the robot has no friction.
 
-**Python Implementation** 
+### Implementations
+
+#### Python
 
 ```{python}
 import numpy as np
@@ -136,9 +139,10 @@ ani = animation.FuncAnimation(fig, animate, frames=frames, interval=deltaT*1000,
 ani.save('Pendulum_Python_1.gif', writer=PillowWriter(fps=33))
 ```
 
-**MATLAB Implementation**
+#### MATLAB
 
 <details>
+<summary>Code</summary>
 
 ```matlab
 
@@ -236,14 +240,16 @@ close all
 ```
 </details>
 
-**Result**
+#### Result:
 
 <img src="Pendulum_Case_1.gif" alt="Animated GIF" loop width="50%" height="100%">
 
 
 * **Environment 2:** Make a simulation where $\normalsize \tau = [0, 0]^𝑇$ and the robot has viscous friction $\normalsize 𝐵 = 𝐼$.
 
-**Python Implementation**
+### Implementations
+
+#### Python
 
 ```{python}
 import numpy as np
@@ -350,9 +356,10 @@ ani = animation.FuncAnimation(fig, animate, frames=frames, interval=deltaT*1000,
 ani.save('Pendulum_Python_2.gif', writer=PillowWriter(fps=33))
 ```
 
-**MATLAB Implementation**
+#### MATLAB
 
 <details>
+<summary>Code</summary>
 
 ```matlab
 
@@ -449,7 +456,7 @@ close all
 ```
 </details>
 
-**Result:**
+#### Result:
 
 <img src="Pendulum_Case_2.gif" alt="Animated GIF" loop width="50%" height="100%">
 
@@ -457,7 +464,9 @@ close all
 * **Environment 3:** Make a simulation where $\normalsize \tau = [20, 5]^𝑇$ and the robot has viscous friction $\normalsize 𝐵 = 𝐼$.
 
 
-**Python Implementation**
+### Implementations
+
+#### Python
 
 ```{python}
 import numpy as np
@@ -564,9 +573,10 @@ ani = animation.FuncAnimation(fig, animate, frames=frames, interval=deltaT*1000,
 ani.save('Pendulum_Python_3.gif', writer=PillowWriter(fps=33))
 ```
 
-**MATLAB Implementation**
+#### MATLAB
 
 <details>
+<summary>Code</summary>
 
 ```matlab
 
@@ -663,7 +673,7 @@ close all
 ```
 </details>
 
-**Result:**
+#### Result:
 
 <img src="Pendulum_Case_3.gif" alt="Animated GIF" loop width="50%" height="100%">
 

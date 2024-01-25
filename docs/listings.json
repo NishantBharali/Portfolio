@@ -1,11 +1,17 @@
 [
   {
+    "listing": "/Vision.html",
+    "items": [
+      "/CV_Project/CV_project.html"
+    ]
+  },
+  {
     "listing": "/robotics.html",
     "items": [
-      "/Robotics/Control.html",
-      "/Robotics/Dynamics.html",
       "/Robotics/Inverse_kinematics.html",
       "/Robotics/Potential_trajectory.html",
+      "/Robotics/Control.html",
+      "/Robotics/Dynamics.html",
       "/Robotics/RRT.html"
     ]
   },
@@ -22,15 +28,14 @@
     "listing": "/Projects.html",
     "items": [
       "/blog.html",
-      "/tool.html",
-      "/robotics.html"
+      "/robotics.html",
+      "/Vision.html"
     ]
   },
   {
     "listing": "/tool.html",
     "items": [
       "/Tools/git/git.html",
-      "/Tools/llm/llm.html",
       "/Tools/quarto/quarto.html"
     ]
   }

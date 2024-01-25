@@ -1,0 +1,34 @@
+---
+title: "Machine Vision"
+listing:
+  contents:
+    - CV_Project/*.qmd
+  sort: "date desc"
+  type: grid
+  categories: true
+  fields: [image, title, description, file-modified, categories]
+  sort-ui: false
+  filter-ui: true
+  feed: true
+page-layout: full
+title-block-banner: false
+comments: false
+toc-title: "Table of Contents"
+toc-location: right
+image: ../images/CV.gif
+---
+
+```{=html}
+<script>
+const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+</script>
+<style>
+div#quarto-sidebar-glass { display: none !important; }
+ul.navbar-nav.navbar-nav-scroll { -webkit-flex-direction: row !important; }
+/* #quarto-sidebar { padding: 5px; }
+#quarto-sidebar > * { padding: 5px; }
+div.sidebar-menu-container > * { padding: 5px 5px 5px 5px; }
+#quarto-margin-sidebar { padding: 40px; } */
+</style>
+```

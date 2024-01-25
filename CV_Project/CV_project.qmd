@@ -1,0 +1,32 @@
+---
+title: "Fire/Smoke Detection Algorithm using Deep Learning and Machine Vision"
+description: "Focus on the research and output of the analysis made over the comparison of 2 models implemented with different parameters, as well as different practical implementation of UAV-based approach and Ground Based Detection Module using WSN."
+date: 11-05-2023
+categories: [Vision]
+image: CV_cover.gif
+format: html
+---
+
+## Real-time Forest Fire Detection System using Machine Vision and Deep Learning
+
+{{< video https://youtu.be/qy1P9bUI65Y?si=Y4Kbw0vx4BWR_025 >}}
+
+<a href="https://sites.google.com/vt.edu/nishantkb-cv-project/home">Click on this link here to access the report/website</a>
+
+
+
+
+```{=html}
+<script>
+const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+</script>
+<style>
+div#quarto-sidebar-glass { display: none !important; }
+ul.navbar-nav.navbar-nav-scroll { -webkit-flex-direction: row !important; }
+/* #quarto-sidebar { padding: 5px; }
+#quarto-sidebar > * { padding: 5px; }
+div.sidebar-menu-container > * { padding: 5px 5px 5px 5px; }
+#quarto-margin-sidebar { padding: 40px; } */
+</style>
+```

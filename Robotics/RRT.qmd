@@ -1,16 +1,18 @@
 ---
 title: "RRT Algorithm Simulation"
+description: "The Rapidly Exploring Random Trees (RRT) algorithm is a computational method used in motion planning for robots, rapidly exploring the configuration space to generate feasible paths from a start to a goal state. It is particularly effective in navigating complex and high-dimensional spaces"
+date: 12-09-2023
 categories: [Robotics]
 image: RRT_main.gif
 format:
     html: 
-        code-fold: true
-        code-overflow: scroll
+        code-fold: show
+        code-overflow: wrap
         code-tools: true
 
 ---
 
-## RRT Algorithm
+# RRT Algorithm
 
 * **The path plan should actually work on a robot.** If the path plan makes the robot turn at sharp angles but the robot can’t move at sharp angles (like a car), that path plan shouldn’t be allowed.
 
@@ -28,7 +30,9 @@ Implementing the RRT algorithm below. This code should be able to work with an a
 • The bounds of the workspace are $\normalsize 𝑥 ∈ [0, 1], \, 𝑦 ∈ [0, 1]$
 • The motion plan must end within $\normalsize \epsilon = 0.1$  units of the goal
 
-**Code Implementation** 
+### Implementations
+
+#### Python
 
 ```{python}
 import numpy as np
@@ -127,9 +131,10 @@ ani.save(gif_path, writer=writer)
 plt.close()
 ```
 
-**MATLAB Implementation**
+#### MATLAB
 
-<details>
+<details open>
+<summary>Code</summary>
 
 ```matlab
 clear
@@ -242,7 +247,11 @@ Notice that centers is a matrix where each column corresponds to an obstacle cen
  * **Environment 1: One obstacle with $\normalsize center \; 𝑐_1 = [0.55, 0.5]^𝑇 \; and \; radius \; 𝑟_1 = 0.3$.**
 
 
-**RRT Algorithm for 1 Obstacle**
+## RRT Algorithm for 1 Obstacle
+
+### Implementations
+
+#### Python
 
 ```{python}
 import numpy as np
@@ -357,7 +366,11 @@ ani.save("RRT_1_obstacles.gif", writer=writer)
 
 * **Environment 2: One obstacle with $\normalsize center \; 𝑐_1 = [0.5, 0.3]^𝑇 \; and \; radius \; 𝑟_1 = 0.3$. A second obstacle with $\normalsize center \; 𝑐_2 = [0.5, 0.7]^𝑇 \; and \; radius \; 𝑟_2 = 0.2$**
 
-**RRT Algorithm for 2 Obstacles**
+## RRT Algorithm for 2 Obstacles
+
+### Implementations
+
+#### Python
 
 ```{python}
 import numpy as np
@@ -473,7 +486,11 @@ ani.save("RRT_2_obstacles.gif", writer=writer)
 
 Here we are declaring it a Baseline Algorithm for 3 obstacles. Later below we will discuss the differences between a baseline and Goal-bias algorithm and their pros-cons.
 
-**Baseline RRT Algorithm**
+## Baseline RRT Algorithm
+
+### Implementations
+
+#### Python
 
 ```{python}
 import numpy as np
@@ -578,13 +595,12 @@ ani = FuncAnimation(fig, update, frames=N, repeat=False)
 # Save the animation
 writer = PillowWriter(fps=20)
 ani.save("Baseline_RRT.gif", writer=writer)
-
-plt.show()
 ```
 
-**MATLAB Implementation**
+#### MATLAB
 
-<details>
+<details open>
+<summary>Code</summary>
 
 ```{matlab}
 clear
@@ -704,7 +720,9 @@ Thus we write down how many samples it takes on average to find a motion plan. W
 
 Let us check the implementation and results.
 
-**Goal-Bias RRT Implementation**
+### Implementations
+
+#### Python
 
 ```{python}
 import numpy as np
@@ -814,9 +832,10 @@ writer = PillowWriter(fps=20)
 ani.save("Goal_bias_RRT.gif", writer=writer)
 ```
 
-**MATLAB Implementation**
+#### MATLAB
 
-<details>
+<details open>
+<summary>Code</summary>
 
 ```{matlab}
 clear
@@ -960,7 +979,9 @@ On average, the **baseline** required **337** samples to reach a valid motion pl
 
 This is particularly advantageous when the robot is in free space (or has passed the obstacles) and should move directly towards the goal. The code snippet required to implement goal bias is shown below:
 
-**Python version**
+### Implementations
+
+#### Python
 
 ```python
 # Sample random joint position: probability 0.2
@@ -969,9 +990,10 @@ if np.random.rand() < 0.2:
 else:
     theta_rand = np.random.rand(2)
 ```
-**MATLAB version**
+#### MATLAB
 
-<details>
+<details open>
+<summary>Code</summary>
 
 ```matlab
 % sample random joint position: probability 0.2
@@ -986,7 +1008,7 @@ end
 
 
 
-**Sample Efficiency Comparison:**
+# Sample Efficiency Comparison:
 
 • Goal-biased RRT seemed to be more sample-efficient in open or less complex environments because it directs its exploration towards the goal, thereby potentially finding a path with fewer samples.
 
@@ -994,9 +1016,9 @@ end
 
 We need to understand the key differences between the two methods and their impact on sample efficiency:
 
-* Baseline RRT: This approach uniformly samples the entire configuration space without any bias towards the goal. It explores the space in a more scattered manner, which can be beneficial in complex environments with many obstacles. However, it might take more samples to find a path to the goal, especially in large or open spaces, because the sampling is entirely random and not directed towards the goal.
+* **Baseline RRT**: This approach uniformly samples the entire configuration space without any bias towards the goal. It explores the space in a more scattered manner, which can be beneficial in complex environments with many obstacles. However, it might take more samples to find a path to the goal, especially in large or open spaces, because the sampling is entirely random and not directed towards the goal.
     
-* Goal-Biased RRT: In this approach, the algorithm is biased to sample near the goal state more frequently. This bias can significantly reduce the number of samples required to find a path to the goal in many cases, especially in less complex environments or when the goal is not surrounded by obstacles. The downside is that in highly cluttered environments, this bias might lead to more samples being wasted near the goal where paths are infeasible.
+* **Goal-Biased RRT**: In this approach, the algorithm is biased to sample near the goal state more frequently. This bias can significantly reduce the number of samples required to find a path to the goal in many cases, especially in less complex environments or when the goal is not surrounded by obstacles. The downside is that in highly cluttered environments, this bias might lead to more samples being wasted near the goal where paths are infeasible.
 
 
 

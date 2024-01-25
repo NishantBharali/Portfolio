@@ -3,8 +3,8 @@ title: "Projects"
 listing:
   contents:
     - blog.qmd
-    - tool.qmd
     - robotics.qmd
+    - Vision.qmd
   sort: "date desc"
   type: grid
   categories: true

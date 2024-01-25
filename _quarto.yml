@@ -1,59 +1,76 @@
 project:
   type: website
   output-dir: docs
+  resources:
+    - _headers
 
 website:
-  title: Tech Bytes
+  title: Portfolio
   repo-url: https://github.com/NishantBharali/Blog
   repo-actions: [source]
-  site-url: https://nishantbharali.github.io/Blog/
+  site-url: https://www.nishantkb.info/
   favicon: images/image80.webp
   search: 
     location: navbar
     type: overlay
+    limit: 10
     copy-button: true
   back-to-top-navigation: true
   page-footer:
-    left: "Copyright 2023, Nishant Bharali" 
-    right: 
-      - icon: linkedin
-        href: https://www.linkedin.com/in/nishant-kumar-bharali/
-        text: LinkedIn
-      - icon: github
-        href: https://github.com/NishantBharali
-        text: GitHub
-      - icon: stack-overflow
-        href: https://stackoverflow.com/users/18371927/nishant
-        text: Stack Overflow
-      - icon: envelope
-        href: mailto:nishantkb@vt.edu
-        text: Mail
+    border: true
+    left: |
+      Powered by [Quarto](https://quarto.org)
+    center: |
+      &copy; 2024, Nishant Bharali
+    right: |
+      License: [CC BY NC SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0).
+      
+    #   - icon: linkedin
+    #     href: https://www.linkedin.com/in/nishant-kumar-bharali/
+    #     text: LinkedIn
+    #   - icon: github
+    #     href: https://github.com/NishantBharali
+    #     text: GitHub
+    #   - icon: stack-overflow
+    #     href: https://stackoverflow.com/users/18371927/nishant
+    #     text: Stack Overflow
+    #   - icon: envelope
+    #     href: mailto:nishantkb@vt.edu
+    #     text: Mail
   open-graph:
-    site-name: Tech Bytes
+    site-name: Nishant Bharali's Portfolio
   cookie-consent: true
   twitter-card: 
     image: images/Nishant.jpg
     card-style: summary_large_image
     creator: "@NishantBharali"
   navbar:
-    left:
+    right:
       - text: Projects
         menu:
           - text: "Machine Learning"
             href: blog.qmd
-          - text: "Tools"
-            href: tool.qmd
           - text: "Robotics"
             href: robotics.qmd
+          - text: "Machine Vision"
+            href: Vision.qmd
+      - text: About
+        href: about.qmd
+      - text: Tools
+        href: tool.qmd
       - text: Resources
         menu:
           - text: "Nishant's Resources"
             href: resources.qmd
+          - text: Modern Robotics
+            href: https://drive.google.com/file/d/1TjYOeJ2PO4z16hSjQkF8PNFojcGU9IYz/view
+            target: _blank
+          - text: Robot Modelling and Control
+            href: https://drive.google.com/file/d/1lkGRqrfiMyiOY6Ct4ihws7DEymHVjtjC/view
+            target: _blank
           - text: Python for Data Science
             href: https://r4ds.hadley.nz/
             target: _blank
-      - text: About
-        href: about.qmd
       - text: Contact
         menu:
           - icon: linkedin
@@ -72,6 +89,7 @@ website:
             href: mailto:nishantkb@vt.edu
             text: Gmail
           - href: cv/cv.html
+            icon: file-earmark-person-fill
             text: Curriculum Vitae
   
   sidebar:
@@ -86,7 +104,7 @@ website:
         file: Projects.qmd
         contents:
           - section: Robotics
-            href: blog.html#category=Robotics
+            href: robotics.html#category=Robotics
             contents:
               - href: Robotics/Inverse_kinematics.qmd
                 text: "Inverse Kinematics"
@@ -111,21 +129,30 @@ website:
                 text: "Classification"
               - href: posts/Anomaly-Outlier Detection/index.qmd
                 text: "Anamoly"
-          - section: Tools
-            href: blog.html#category=Tools/Packages
+          - section: Machine Vision
+            href: Vision.html#category=Vision
             contents:
-              - href: posts/git/git.qmd
-                text: "Git"
-              - href: posts/llm/llm.qmd
-                text: "LLM"
-              - href: posts/quarto/quarto.qmd
-                text: "Quarto"
+              - href: CV_Project/CV_project.qmd
+                text: "Smoke Detection"
       - text: "About Me"
         file: about.qmd
+      - section: Tools
+        file: tool.qmd
+        contents:
+          - href: Tools/git/git.qmd
+            text: "Git"
+          - href: Tools/quarto/quarto.qmd
+            text: "Quarto"
       - section: "Resources"
         contents:
           - text: "My Resources"
             href: resources.qmd
+          - text: Modern Robotics
+            href: https://drive.google.com/file/d/1TjYOeJ2PO4z16hSjQkF8PNFojcGU9IYz/view
+            target: _blank
+          - text: Robot Modelling and Control
+            href: https://drive.google.com/file/d/1lkGRqrfiMyiOY6Ct4ihws7DEymHVjtjC/view
+            target: _blank
           - text: Python for Data Science
             href: https://r4ds.hadley.nz/
             target: _blank
@@ -137,6 +164,8 @@ format:
       light: [flatly, theme-light.scss]
       dark: [darkly, theme-dark.scss]
     css: styles.css
+    lang: en
+    highlight-style: github-dark
     grid:
       sidebar-width: 150px
       body-width: 1800px
@@ -144,6 +173,17 @@ format:
     fontsize: 1.0em
     code-copy: true
     code-overflow: wrap
+    include-after-body:
+      - text: |
+          <script type="text/javascript">
+          const dateElements = document.querySelectorAll("p.date, div.listing-date");
+          dateElements.forEach((el) => {
+            el.innerHTML = el.innerHTML.replace(
+              /(\d+)(rd|st|th)/g,
+              "$1<sup style='font-size:0.5em;font-style:italic;'>$2</sup>"
+            );
+          });
+          </script>
 
 webr: 
   show-startup-message: false

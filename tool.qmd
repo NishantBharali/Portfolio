@@ -3,7 +3,6 @@ title: "Tools"
 listing:
   contents:
     - Tools/git/git.qmd
-    - Tools/llm/llm.qmd
     - Tools/quarto/quarto.qmd
   sort: "date desc"
   type: grid

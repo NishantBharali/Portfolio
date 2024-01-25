@@ -5,20 +5,20 @@
       xmlns:dc="http://purl.org/dc/elements/1.1/" 
       version="2.0">
 <channel>
-<title>Tech Bytes</title>
-<link>https://nishantbharali.github.io/Blog/Projects.html</link>
-<atom:link href="https://nishantbharali.github.io/Blog/Projects.xml" rel="self" type="application/rss+xml"/>
+<title>Portfolio</title>
+<link>https://www.nishantkb.info/Projects.html</link>
+<atom:link href="https://www.nishantkb.info/Projects.xml" rel="self" type="application/rss+xml"/>
 <description></description>
 <image>
-<url>https://nishantbharali.github.io/Blog/images/Project.gif</url>
-<title>Tech Bytes</title>
-<link>https://nishantbharali.github.io/Blog/Projects.html</link>
+<url>https://www.nishantkb.info/images/Project.gif</url>
+<title>Portfolio</title>
+<link>https://www.nishantkb.info/Projects.html</link>
 </image>
 <generator>quarto-1.3.450</generator>
-<lastBuildDate>Wed, 24 Jan 2024 10:40:35 GMT</lastBuildDate>
+<lastBuildDate>Thu, 25 Jan 2024 08:56:40 GMT</lastBuildDate>
 <item>
   <title>Machine Learning</title>
-  <link>https://nishantbharali.github.io/Blog/blog.html</link>
+  <link>https://www.nishantkb.info/blog.html</link>
   <description><![CDATA[ 
 
 
@@ -51,7 +51,7 @@ div.sidebar-menu-container > * { padding: 5px 5px 5px 5px; }
 <a href="./posts/Anomaly-Outlier Detection/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
-<img src="https://nishantbharali.github.io/Blog/posts/Anomaly-Outlier Detection/Bnip.gif" class="thumbnail-image card-img" style="height: 150px;">
+<img src="https://www.nishantkb.info/posts/Anomaly-Outlier Detection/Bnip.gif" class="thumbnail-image card-img" style="height: 150px;">
 </p>
 <div class="card-body post-contents">
 <h5 class="no-anchor card-title listing-title">
@@ -78,7 +78,7 @@ Detecting anomalies in financial data involves using specialized algorithms to i
 <a href="./posts/Classification/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
-<img src="https://nishantbharali.github.io/Blog/posts/Classification/Rz0T.gif" class="thumbnail-image card-img" style="height: 150px;">
+<img src="https://www.nishantkb.info/posts/Classification/Rz0T.gif" class="thumbnail-image card-img" style="height: 150px;">
 </p>
 <div class="card-body post-contents">
 <h5 class="no-anchor card-title listing-title">
@@ -105,7 +105,7 @@ Implementing advanced classification techniques for precise model prediction ana
 <a href="./posts/Clustering/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
-<img src="https://nishantbharali.github.io/Blog/posts/Clustering/E3K6.gif" class="thumbnail-image card-img" style="height: 150px;">
+<img src="https://www.nishantkb.info/posts/Clustering/E3K6.gif" class="thumbnail-image card-img" style="height: 150px;">
 </p>
 <div class="card-body post-contents">
 <h5 class="no-anchor card-title listing-title">
@@ -132,7 +132,7 @@ Employing sophisticated clustering techniques with retail customer data and comp
 <a href="./posts/Linear and Non Linear Regression/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
-<img src="https://nishantbharali.github.io/Blog/posts/Linear and Non Linear Regression/AU5v.gif" class="thumbnail-image card-img" style="height: 150px;">
+<img src="https://www.nishantkb.info/posts/Linear and Non Linear Regression/AU5v.gif" class="thumbnail-image card-img" style="height: 150px;">
 </p>
 <div class="card-body post-contents">
 <h5 class="no-anchor card-title listing-title">
@@ -160,140 +160,13 @@ A Comprehensive Analysis on Housing Market. Utilizing regression methodologies f
 No matching items
 </div>
 </div><a onclick="window.scrollTo(0, 0); return false;" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a> ]]></description>
-  <guid>https://nishantbharali.github.io/Blog/blog.html</guid>
-  <pubDate>Wed, 24 Jan 2024 10:40:35 GMT</pubDate>
-  <media:content url="https://nishantbharali.github.io/Blog/images/handsOnGif.gif" medium="image" type="image/gif"/>
-</item>
-<item>
-  <title>Tools</title>
-  <link>https://nishantbharali.github.io/Blog/tool.html</link>
-  <description><![CDATA[ 
-
-
-
-<script>
-const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
-const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
-</script>
-<style>
-div#quarto-sidebar-glass { display: none !important; }
-ul.navbar-nav.navbar-nav-scroll { -webkit-flex-direction: row !important; }
-/* #quarto-sidebar { padding: 5px; }
-#quarto-sidebar > * { padding: 5px; }
-div.sidebar-menu-container > * { padding: 5px 5px 5px 5px; }
-#quarto-margin-sidebar { padding: 40px; } */
-</style>
-
-
-
-
-<div class="quarto-listing quarto-listing-container-grid" id="listing-listing">
-<div class="listing-actions-group">
-    <div class="input-group input-group-sm quarto-listing-filter">
-      <span class="input-group-text"><i class="bi bi-search"></i></span>
-      <input type="text" class="search form-control" placeholder="Filter">
-    </div>
-</div>
-<div class="list grid quarto-listing-cols-3">
-<div class="g-col-1" data-index="0" data-categories="Tools/Packages" data-listing-date-sort="1687579200000" data-listing-file-modified-sort="1702713282016" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="9">
-<a href="./Tools/git/git.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img src="https://nishantbharali.github.io/Blog/Tools/git/git_gif.gif" class="thumbnail-image card-img" style="height: 150px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Git
-</h5>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('Tools/Packages'); return false;">
-Tools/Packages
-</div>
-</div>
-<div class="card-text listing-description">
-Diving deep into the Git tool
-</div>
-</div>
-<div class="card-footer">
-<div class="card-file-modified listing-file-modified">
-<p>12/16/23, 2:54:42 AM</p>
-</div>
-</div>
-</div>
-</a>
-</div>
-<div class="g-col-1" data-index="1" data-categories="Tools/Packages,Artificial Intelligence,Machine Learning" data-listing-date-sort="1687579200000" data-listing-file-modified-sort="1702794346538" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3">
-<a href="./Tools/llm/llm.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img src="https://nishantbharali.github.io/Blog/Tools/llm/llmGif.gif" class="thumbnail-image card-img" style="height: 150px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Large Language Models
-</h5>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('Tools/Packages'); return false;">
-Tools/Packages
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Artificial Intelligence'); return false;">
-Artificial Intelligence
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Machine Learning'); return false;">
-Machine Learning
-</div>
-</div>
-<div class="card-text listing-description">
-An in-depth look at how large language models are transforming the landscape of artificial intelligence.
-</div>
-</div>
-<div class="card-footer">
-<div class="card-file-modified listing-file-modified">
-<p>12/17/23, 1:25:46 AM</p>
-</div>
-</div>
-</div>
-</a>
-</div>
-<div class="g-col-1" data-index="2" data-categories="Tools/Packages" data-listing-date-sort="1687579200000" data-listing-file-modified-sort="1702714232949" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="17">
-<a href="./Tools/quarto/quarto.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img src="https://nishantbharali.github.io/Blog/Tools/quarto/horst_many-qmd-to-output.png" class="thumbnail-image card-img" style="height: 150px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Quarto
-</h5>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('Tools/Packages'); return false;">
-Tools/Packages
-</div>
-</div>
-<div class="card-text listing-description">
-Guide to use Quarto to its full potential
-</div>
-</div>
-<div class="card-footer">
-<div class="card-file-modified listing-file-modified">
-<p>12/16/23, 3:10:32 AM</p>
-</div>
-</div>
-</div>
-</a>
-</div>
-</div>
-<div class="listing-no-matching d-none">
-No matching items
-</div>
-</div><a onclick="window.scrollTo(0, 0); return false;" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a> ]]></description>
-  <guid>https://nishantbharali.github.io/Blog/tool.html</guid>
-  <pubDate>Wed, 24 Jan 2024 10:40:35 GMT</pubDate>
-  <media:content url="https://nishantbharali.github.io/Blog/images/Tools.gif" medium="image" type="image/gif"/>
+  <guid>https://www.nishantkb.info/blog.html</guid>
+  <pubDate>Thu, 25 Jan 2024 08:56:40 GMT</pubDate>
+  <media:content url="https://www.nishantkb.info/images/handsOnGif.gif" medium="image" type="image/gif"/>
 </item>
 <item>
   <title>Robotics</title>
-  <link>https://nishantbharali.github.io/Blog/robotics.html</link>
+  <link>https://www.nishantkb.info/robotics.html</link>
   <description><![CDATA[ 
 
 
@@ -322,65 +195,11 @@ div.sidebar-menu-container > * { padding: 5px 5px 5px 5px; }
     </div>
 </div>
 <div class="list grid quarto-listing-cols-3">
-<div class="g-col-1" data-index="0" data-categories="Robotics" data-listing-file-modified-sort="1706091210550" data-listing-reading-time-sort="12">
-<a href="./Robotics/Control.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img src="https://nishantbharali.github.io/Blog/Robotics/Control__Cover_GIF.gif" class="thumbnail-image card-img" style="height: 150px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Robot Control
-</h5>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('Robotics'); return false;">
-Robotics
-</div>
-</div>
-<div class="card-text listing-description">
-<!-- desc(5A0113B34292)[max=175]:Robotics/Control.html -->
-</div>
-</div>
-<div class="card-footer">
-<div class="card-file-modified listing-file-modified">
-<p>1/24/24, 5:13:30 AM</p>
-</div>
-</div>
-</div>
-</a>
-</div>
-<div class="g-col-1" data-index="1" data-categories="Robotics" data-listing-file-modified-sort="1706091333948" data-listing-reading-time-sort="15">
-<a href="./Robotics/Dynamics.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img src="https://nishantbharali.github.io/Blog/Robotics/Dynamics_Pendulum_Cover_GIF.gif" class="thumbnail-image card-img" style="height: 150px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Robot Dynamics
-</h5>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('Robotics'); return false;">
-Robotics
-</div>
-</div>
-<div class="card-text listing-description">
-<!-- desc(5A0113B34292)[max=175]:Robotics/Dynamics.html -->
-</div>
-</div>
-<div class="card-footer">
-<div class="card-file-modified listing-file-modified">
-<p>1/24/24, 5:15:33 AM</p>
-</div>
-</div>
-</div>
-</a>
-</div>
-<div class="g-col-1" data-index="2" data-categories="Robotics" data-listing-file-modified-sort="1706091288015" data-listing-reading-time-sort="27">
+<div class="g-col-1" data-index="0" data-categories="Robotics" data-listing-date-sort="1703394000000" data-listing-file-modified-sort="1706134219631" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="27">
 <a href="./Robotics/Inverse_kinematics.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
-<img src="https://nishantbharali.github.io/Blog/Robotics/Inverse_Kinematics_Cover_GIF.gif" class="thumbnail-image card-img" style="height: 150px;">
+<img src="https://www.nishantkb.info/Robotics/Inverse_Kinematics_Cover_GIF.gif" class="thumbnail-image card-img" style="height: 150px;">
 </p>
 <div class="card-body post-contents">
 <h5 class="no-anchor card-title listing-title">
@@ -392,22 +211,22 @@ Robotics
 </div>
 </div>
 <div class="card-text listing-description">
-<!-- desc(5A0113B34292)[max=175]:Robotics/Inverse_kinematics.html -->
+IKO in robotics is the computational process of determining optimal joint configurations to achieve a desired end-effector pose. It plays a vital role in tasks like motion…
 </div>
 </div>
 <div class="card-footer">
 <div class="card-file-modified listing-file-modified">
-<p>1/24/24, 5:14:48 AM</p>
+<p>1/24/24, 5:10:19 PM</p>
 </div>
 </div>
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="3" data-categories="Robotics" data-listing-file-modified-sort="1706092752528" data-listing-reading-time-sort="12">
+<div class="g-col-1" data-index="1" data-categories="Robotics" data-listing-date-sort="1702962000000" data-listing-file-modified-sort="1706134213167" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="12">
 <a href="./Robotics/Potential_trajectory.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
-<img src="https://nishantbharali.github.io/Blog/Robotics/Trajectory_Cover_GIF.gif" class="thumbnail-image card-img" style="height: 150px;">
+<img src="https://www.nishantkb.info/Robotics/Trajectory_Cover_GIF.gif" class="thumbnail-image card-img" style="height: 150px;">
 </p>
 <div class="card-body post-contents">
 <h5 class="no-anchor card-title listing-title">
@@ -419,22 +238,76 @@ Robotics
 </div>
 </div>
 <div class="card-text listing-description">
-<!-- desc(5A0113B34292)[max=175]:Robotics/Potential_trajectory.html -->
+Motion Planning in robotics focuses on devising efficient paths for a robot from its current state to a goal, while Trajectory Optimization refines these paths for smooth…
 </div>
 </div>
 <div class="card-footer">
 <div class="card-file-modified listing-file-modified">
-<p>1/24/24, 5:39:12 AM</p>
+<p>1/24/24, 5:10:13 PM</p>
 </div>
 </div>
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="4" data-categories="Robotics" data-listing-file-modified-sort="1706091179626" data-listing-reading-time-sort="26">
+<div class="g-col-1" data-index="2" data-categories="Robotics" data-listing-date-sort="1702875600000" data-listing-file-modified-sort="1706159745013" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="12">
+<a href="./Robotics/Control.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img src="https://www.nishantkb.info/Robotics/Control__Cover_GIF.gif" class="thumbnail-image card-img" style="height: 150px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Robot Control
+</h5>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('Robotics'); return false;">
+Robotics
+</div>
+</div>
+<div class="card-text listing-description">
+Robot Control for stability involves algorithms ensuring precise and stable robot motion, for both compliant and rigid body motions, crucial for safe and reliable operation…
+</div>
+</div>
+<div class="card-footer">
+<div class="card-file-modified listing-file-modified">
+<p>1/25/24, 12:15:45 AM</p>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="3" data-categories="Robotics" data-listing-date-sort="1702357200000" data-listing-file-modified-sort="1706164513557" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="15">
+<a href="./Robotics/Dynamics.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img src="https://www.nishantkb.info/Robotics/Dynamics_Pendulum_Cover_GIF.gif" class="thumbnail-image card-img" style="height: 150px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Robot Dynamics
+</h5>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('Robotics'); return false;">
+Robotics
+</div>
+</div>
+<div class="card-text listing-description">
+Robot Dynamics encompasses the analysis of forces like Coriolis effects, mass distribution, and gravity on a robot, crucial for designing control strategies. This…
+</div>
+</div>
+<div class="card-footer">
+<div class="card-file-modified listing-file-modified">
+<p>1/25/24, 1:35:13 AM</p>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="4" data-categories="Robotics" data-listing-date-sort="1702098000000" data-listing-file-modified-sort="1706134207772" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="26">
 <a href="./Robotics/RRT.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
-<img src="https://nishantbharali.github.io/Blog/Robotics/RRT_main.gif" class="thumbnail-image card-img" style="height: 150px;">
+<img src="https://www.nishantkb.info/Robotics/RRT_main.gif" class="thumbnail-image card-img" style="height: 150px;">
 </p>
 <div class="card-body post-contents">
 <h5 class="no-anchor card-title listing-title">
@@ -446,12 +319,12 @@ Robotics
 </div>
 </div>
 <div class="card-text listing-description">
-<!-- desc(5A0113B34292)[max=175]:Robotics/RRT.html -->
+The Rapidly Exploring Random Trees (RRT) algorithm is a computational method used in motion planning for robots, rapidly exploring the configuration space to generate…
 </div>
 </div>
 <div class="card-footer">
 <div class="card-file-modified listing-file-modified">
-<p>1/24/24, 5:12:59 AM</p>
+<p>1/24/24, 5:10:07 PM</p>
 </div>
 </div>
 </div>
@@ -462,9 +335,76 @@ Robotics
 No matching items
 </div>
 </div><a onclick="window.scrollTo(0, 0); return false;" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a> ]]></description>
-  <guid>https://nishantbharali.github.io/Blog/robotics.html</guid>
-  <pubDate>Wed, 24 Jan 2024 10:40:35 GMT</pubDate>
-  <media:content url="https://nishantbharali.github.io/Blog/images/Robotics.gif" medium="image" type="image/gif"/>
+  <guid>https://www.nishantkb.info/robotics.html</guid>
+  <pubDate>Thu, 25 Jan 2024 08:56:40 GMT</pubDate>
+  <media:content url="https://www.nishantkb.info/images/Robotics.gif" medium="image" type="image/gif"/>
+</item>
+<item>
+  <title>Machine Vision</title>
+  <link>https://www.nishantkb.info/Vision.html</link>
+  <description><![CDATA[ 
+
+
+
+<script>
+const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+</script>
+<style>
+div#quarto-sidebar-glass { display: none !important; }
+ul.navbar-nav.navbar-nav-scroll { -webkit-flex-direction: row !important; }
+/* #quarto-sidebar { padding: 5px; }
+#quarto-sidebar > * { padding: 5px; }
+div.sidebar-menu-container > * { padding: 5px 5px 5px 5px; }
+#quarto-margin-sidebar { padding: 40px; } */
+</style>
+
+
+
+
+<div class="quarto-listing quarto-listing-container-grid" id="listing-listing">
+<div class="listing-actions-group">
+    <div class="input-group input-group-sm quarto-listing-filter">
+      <span class="input-group-text"><i class="bi bi-search"></i></span>
+      <input type="text" class="search form-control" placeholder="Filter">
+    </div>
+</div>
+<div class="list grid quarto-listing-cols-3">
+<div class="g-col-1" data-index="0" data-categories="Vision" data-listing-date-sort="1699156800000" data-listing-file-modified-sort="1706168843635" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
+<a href="./CV_Project/CV_project.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img src="https://www.nishantkb.info/CV_Project/CV_cover.gif" class="thumbnail-image card-img" style="height: 150px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Fire/Smoke Detection Algorithm using Deep Learning and Machine Vision
+</h5>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('Vision'); return false;">
+Vision
+</div>
+</div>
+<div class="card-text listing-description">
+Focus on the research and output of the analysis made over the comparison of 2 models implemented with different parameters, as well as different practical implementation of…
+</div>
+</div>
+<div class="card-footer">
+<div class="card-file-modified listing-file-modified">
+<p>1/25/24, 2:47:23 AM</p>
+</div>
+</div>
+</div>
+</a>
+</div>
+</div>
+<div class="listing-no-matching d-none">
+No matching items
+</div>
+</div><a onclick="window.scrollTo(0, 0); return false;" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a> ]]></description>
+  <guid>https://www.nishantkb.info/Vision.html</guid>
+  <pubDate>Thu, 25 Jan 2024 08:56:40 GMT</pubDate>
+  <media:content url="https://www.nishantkb.info/images/CV.gif" medium="image" type="image/gif"/>
 </item>
 </channel>
 </rss>

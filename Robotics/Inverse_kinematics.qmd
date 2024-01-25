@@ -1,11 +1,13 @@
 ---
 title: "Inverse Kinematics Simulation"
+description: "IKO in robotics is the computational process of determining optimal joint configurations to achieve a desired end-effector pose. It plays a vital role in tasks like motion planning and control, enhancing the accuracy of robotic movements"
+date: 12-24-2023
 categories: [Robotics]
 image: Inverse_Kinematics_Cover_GIF.gif 
 format:
     html: 
-        code-fold: true
-        code-overflow: scroll
+        code-fold: show
+        code-overflow: wrap
         code-tools: true
 
 ---
@@ -27,6 +29,9 @@ Leaving $\normalsize 𝑏 = 0$ within the Jacobian pseudoinverse. Implementing t
 
 **$\normalsize T_{sb} = [rotz(\pi/4), [3; 2; 0]; 0 \, 0 \, 0 \, 1]$**
 
+### Implementations
+
+#### Python
 
 ```{python}
 import numpy as np
@@ -155,9 +160,10 @@ ani.save("Inverse_Kinematics_1.gif", writer=writer)
 
 At each iteration we first plot the robot and save a video frame. Then we calculate the Jacobian and perform numerical inverse kinematics. The loop terminates when the actual pose is close to the desired pose.
 
-**MATLAB implementation**
+#### MATLAB
 
 <details>
+<summary>Code</summary>
 
 ```matlab
 
@@ -234,7 +240,7 @@ close all
 
 </details>
 
-**Result:**
+#### Result:
 
 <img src="Inverse_Kinematics_1.gif" alt="Animated GIF" loop width="50%" height="50%">
 
@@ -242,6 +248,10 @@ close all
 * **Case 2: 𝐿 = 1 and the desired end-effector pose is:**
 
 **$\normalsize T_{sb} = [rotz(\pi/2), [-2; 4; 0]; 0 \, 0 \, 0 \, 1]$**
+
+### Implementations
+
+#### Python
 
 ```{python}
 import numpy as np
@@ -368,9 +378,10 @@ ani.save("Inverse_Kinematics_2.gif", writer=writer)
 ```
 
 
-**MATLAB implementation**
+#### MATLAB
 
 <details>
+<summary>Code</summary>
 
 ```matlab
 
@@ -447,7 +458,7 @@ close all
 
 </details>
 
-**Result:**
+#### Result:
 
 <img src="Inverse_Kinematics_2.gif" alt="Animated GIF" loop width="50%" height="50%">
 
@@ -455,6 +466,10 @@ close all
 * **Case 3: 𝐿 = 1 and the desired end-effector pose is:**
 
 **$\normalsize T_{sb} = [rotz(0), [3; -1; 0]; 0 \, 0 \, 0 \, 1]$**
+
+### Implementations
+
+#### Python
 
 ```{python}
 import numpy as np
@@ -586,7 +601,10 @@ ani.save("Inverse_Kinematics_3.gif", writer=writer)
 ```
 
 
+#### MATLAB
+
 <details>
+<summary>Code</summary>
 
 ```matlab
 
@@ -662,7 +680,7 @@ close all
 ```
 </details>
 
-**Result:**
+#### Result:
 
 <img src="Inverse_Kinematics_3.gif" alt="Animated GIF" loop width="50%" height="50%">
 
@@ -675,14 +693,8 @@ Here we establish that numerical inverse kinematics finds a solution for $\norma
 
 Now I set $\normalsize 𝑏$ as the following vector (and update $\normalsize 𝑏$ as $\normalsize \theta_1$ changes):
 
-b = [[-theta(0) 
-        0 
-        0 
-        0 
-        0]], (6x1) vector
-
-$$\normalsize \theta_d = \left(\begin{array}{cc} 
--\theta(0)\\
+$$\normalsize b = \left(\begin{array}{cc} 
+-\theta_1(0)\\
 0\\
 0\\
 0\\
@@ -699,6 +711,10 @@ Which is a $\normalsize (6 * 1) \, vector$
 Note: $\normalsize 𝑏$ was a zero vector till now for all the three cases, but now we will notice the change for Case 3:
 
 **CASE 3: Modified delta_theta for Redundancy**
+
+### Implementations
+
+#### Python
 
 ```{python}
 import numpy as np
@@ -832,9 +848,10 @@ ani.save("Inverse_Kinematics_Null.gif", writer=writer)
 ```
 
 
-**MATLAB implementation**
+#### MATLAB
 
 <details>
+<summary>Code</summary>
 
 ```matlab
 
@@ -911,14 +928,14 @@ close all
 
 </details>
 
-**Result:**
+#### Result:
 
 <img src="Inverse_Kinematics_Null.gif" alt="Animated GIF" loop width="50%" height="50%">
 
 
-The final joint positions (approximately):
+#### The final joint positions (with due approximation):
 
-* **Case 3 with $\normalsize 𝑏 = 0$:**
+* ### Case 3 with $\normalsize 𝑏 = 0$:
 $$\normalsize \theta = \left(\begin{array}{cc} 
 −1.51\\
 0.29\\
@@ -928,8 +945,7 @@ $$\normalsize \theta = \left(\begin{array}{cc}
 \end{array}\right)
 $$
 
-* **Case 3 with $\normalsize 𝑏 = -\theta(1)$:**
-
+* #### Case 3 with $\normalsize 𝑏 = -\theta(1)$:
 $$\normalsize \theta = \left(\begin{array}{cc} 
 −0.38\\
 −1.40\\
@@ -941,7 +957,7 @@ $$
 
 Comparing these two results, we have that |$\normalsize \theta_1$| is smaller (and $\normalsize \theta_1$ is closer to zero) with the secondary objective:
 
-* **$\normalsize 0.38 < 1.51$**
+* ##### $\normalsize 0.38 < 1.51$
 
 There are several reasons why we may want to minimize a joint angle:
 

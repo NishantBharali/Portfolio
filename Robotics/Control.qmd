@@ -1,11 +1,13 @@
 ---
 title: "Robot Control"
+description: "Robot Control for stability involves algorithms ensuring precise and stable robot motion, for both compliant and rigid body motions, crucial for safe and reliable operation in applications like industrial automation and autonomous systems"
+date: 12-18-2023
 categories: [Robotics]
 image: Control__Cover_GIF.gif
 format:
     html: 
-        code-fold: true
-        code-overflow: scroll
+        code-fold: show
+        code-overflow: wrap
         code-tools: true
 
 ---
@@ -19,17 +21,17 @@ Now we are simulating the rigid system and compliant system in Simulink (Matlab)
 One plot should show $\normalsize \theta_𝑑, \, \theta_2$ (for the rigid system) and 𝜃2 (for the compliant system) when $\normalsize 𝑘_𝑝 = 10$. The other plot should show $\normalsize \theta_𝑑, \, \theta_2$ (for the rigid system) and 𝜃2 (for the compliant system) when $\normalsize 𝑘_𝑝 = 110$, including labels and captions.
 
 
-**Simulink model:**
+### Simulink model:
 
 ![](Images/Compliant_Rigid_circuit.png){fig-align="center" width=50%}
 
-**Result:**
+#### Result:
 
-* Closed-loop behavior of both systems when $\normalsize \𝑘_𝑝 = 10$.
+* Closed-loop behavior of both systems when $\normalsize 𝑘_𝑝 = 10$.
 
 ![](Images/Rig_Comp_Kp_10.png){fig-align="center" width=50%}
 
-* Closed-loop behavior of both systems when $\normalsize \𝑘_𝑝 = 110$.
+* Closed-loop behavior of both systems when $\normalsize 𝑘_𝑝 = 110$.
 
 ![](Images/Rig_Comp_Kp_110.png){fig-align="center" width=50%}
 
@@ -45,11 +47,11 @@ Compliance makes it harder to control the system. Our analysis shows that the ad
 ![](Images/Multivariable_Control.png){fig-align="center" width=50%} 
 
 
-In this problem, we will simulate control the robot shown above. We have already obtained the dynamics of this robot which is mentioned in the code below. The robot starts at joint position 𝜃 = 0.
+In this problem, we will simulate control the robot shown above. We have already obtained the dynamics of this robot (which are the mass, coriolis matrices and the gravity vector) which is mentioned in the code below. The robot starts at joint position $\normalsize \theta = 0$.
 
 Here $\normalsize 𝐿 = 1, 𝑚_1 = 𝑚_2 = 𝑚_3 = 1, and \, 𝐼_3 = 0.1.$
 
-Using the given simulation parameters and frame rates as required, we are modifing the code as needed so that the robot reaches for 𝜃𝑑 using multivariable PD control with gravity compensation:
+Using the given simulation parameters and frame rates as required, we are modifing the code as needed so that the robot reaches for $\normalsize \theta_d$ using multivariable PD control with gravity compensation:
 
 $\normalsize \tau = 𝐾_𝑃(\theta_𝑑 − \theta) − 𝐾_𝐷 \dot\theta + 𝑔(\theta)$
 
@@ -62,12 +64,12 @@ $$\normalsize \theta_d = \left(\begin{array}{cc}
 \end{array}\right)
 $$
 
+### Implementation
 
-**MATLAB Implementation**
+<details open>
+<summary>MATLAB Code</summary>
 
-<details>
-
-```matlab
+```matlab 
 
 close all
 clear
@@ -172,7 +174,7 @@ close all
 ```
 </details>
 
-**Result**
+#### Result:
 
 <img src="Multivariable_1.gif" alt="Animated GIF" loop width="50%" height="100%">
 
@@ -193,9 +195,10 @@ $\normalsize K_p = eye(3)*25$
 $\normalsize K_d = eye(3)*25$
 
 
-**MATLAB Implementation**
+### Implementation
 
-<details>
+<details open>
+<summary>MATLAB Code</summary>
 
 ```matlab
 close all
@@ -300,7 +303,7 @@ close all
 ```
 </details>
 
-**Result**
+#### Result:
 
 <img src="Multivariable_2.gif" alt="Animated GIF" loop width="50%" height="100%">
 
@@ -314,9 +317,7 @@ $$\normalsize \theta_d = \left(\begin{array}{cc}
 \end{array}\right)
 $$
 
-$ \theta_d^{.} = [-pi*sin(0.5*pi*t); pi*cos(0.5*pi*t); 0]$
-
-$$\normalsize \theta_d = \left(\begin{array}{cc} 
+$$\normalsize \dot\theta_d = \left(\begin{array}{cc} 
 -\pi\sin(0.5\pi t)\\
 \pi\cos(0.5\pi t)\\
 0
@@ -330,9 +331,10 @@ $\normalsize K_p = eye(3)*25$
 $\normalsize K_d = eye(3)*25$
 
 
-**MATLAB Implementation**
+### Implementation
 
-<details>
+<details open>
+<summary>MATLAB Code</summary>
 
 ```matlab
 close all
@@ -437,9 +439,21 @@ close all
 ```
 </details>
 
-**Result**
+#### Result:
 
 <img src="Multivariable_3.gif" alt="Animated GIF" loop width="50%" height="100%">
+
+
+# Bode Plot Analysis 
+
+## Inverse Estimation
+
+<object data="Bode Plot Analysis" type="application/pdf" width="100%" height="100%">
+    <embed src="Bode_Plot_Analysis.pdf" type="application/pdf">
+        <!-- Fallback content for browsers that don't support embedding PDF files -->
+        <p>It appears you don't have a PDF plugin for this browser. You can <a href="Bode_Plot_Analysis.pdf">click here to download the PDF file.</a></p>
+    </embed>
+</object>
 
 
 
