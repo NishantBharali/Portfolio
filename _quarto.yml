@@ -133,7 +133,7 @@ website:
             href: Vision.html#category=Vision
             contents:
               - href: CV_Project/CV_project.qmd
-                text: "Smoke Detection"
+                text: "Fire Detection"
       - text: "About Me"
         file: about.qmd
       - section: Tools
