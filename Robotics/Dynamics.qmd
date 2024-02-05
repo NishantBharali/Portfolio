@@ -1,7 +1,6 @@
 ---
 title: "Robot Dynamics"
 description: "Robot Dynamics encompasses the analysis of forces like Coriolis effects, mass distribution, and gravity on a robot, crucial for designing control strategies. This understanding ensures precise and stable movements in various operational scenarios"
-date: 12-12-2023
 categories: [Robotics]
 image: Dynamics_Pendulum_Cover_GIF.gif
 format:
@@ -13,22 +12,21 @@ format:
 
 ## Robot Dynamics
 
-![](Images/Pendulum_Simulation_Problem.png){fig-align="center" width=50%}
+![](Images/Pendulum_Simulation_Problem.png){fig-align="center" width="50%"}
 
 Here we will simulate the dynamics of the planar robot shown above. We have the dynamics of this robot mentioned in the code.
 
 Now we combine our simulation with the dynamics we have for the specified robot. We will need to get the (𝑥, 𝑦) position of each link to plot the robot. We are using the given simulation parameters and frame rates.
 
-* Make a simulation where $\normalsize \tau = [0, 0]^{𝑇}$ and the robot has no friction.
-    
-* Make a simulation where $\normalsize \tau = [0, 0]^{𝑇}$ and the robot has viscous friction 𝐵 = 𝐼.
-    
-* Make a simulation where $\normalsize \tau = [20, 5]^{𝑇}$ and the robot has viscous friction 𝐵 = 𝐼.
+-   Make a simulation where $\normalsize \tau = [0, 0]^{𝑇}$ and the robot has no friction.
 
-We can play with the parameters (such as mass, inertia, friction, and 𝜏), and see how these parameters affect the simulation.
-We can see the implementations below for the simulation codes I am responsible for.
+-   Make a simulation where $\normalsize \tau = [0, 0]^{𝑇}$ and the robot has viscous friction 𝐵 = 𝐼.
 
-* **Environment 1:** Make a simulation where $\normalsize \tau = [0, 0]^{𝑇}$ and the robot has no friction.
+-   Make a simulation where $\normalsize \tau = [20, 5]^{𝑇}$ and the robot has viscous friction 𝐵 = 𝐼.
+
+We can play with the parameters (such as mass, inertia, friction, and 𝜏), and see how these parameters affect the simulation. We can see the implementations below for the simulation codes I am responsible for.
+
+-   **Environment 1:** Make a simulation where $\normalsize \tau = [0, 0]^{𝑇}$ and the robot has no friction.
 
 ### Implementations
 
@@ -142,9 +140,10 @@ ani.save('Pendulum_Python_1.gif', writer=PillowWriter(fps=33))
 #### MATLAB
 
 <details>
+
 <summary>Code</summary>
 
-```matlab
+``` matlab
 
 close all
 clear
@@ -238,14 +237,14 @@ end
 close(v);
 close all
 ```
+
 </details>
 
 #### Result:
 
-<img src="Pendulum_Case_1.gif" alt="Animated GIF" loop width="50%" height="100%">
+<img src="Pendulum_Case_1.gif" alt="Animated GIF" width="50%" height="100%"/>
 
-
-* **Environment 2:** Make a simulation where $\normalsize \tau = [0, 0]^𝑇$ and the robot has viscous friction $\normalsize 𝐵 = 𝐼$.
+-   **Environment 2:** Make a simulation where $\normalsize \tau = [0, 0]^𝑇$ and the robot has viscous friction $\normalsize 𝐵 = 𝐼$.
 
 ### Implementations
 
@@ -359,9 +358,10 @@ ani.save('Pendulum_Python_2.gif', writer=PillowWriter(fps=33))
 #### MATLAB
 
 <details>
+
 <summary>Code</summary>
 
-```matlab
+``` matlab
 
 close all
 clear
@@ -452,17 +452,15 @@ end
 
 close(v);
 close all
-
 ```
+
 </details>
 
 #### Result:
 
-<img src="Pendulum_Case_2.gif" alt="Animated GIF" loop width="50%" height="100%">
+<img src="Pendulum_Case_2.gif" alt="Animated GIF" width="50%" height="100%"/>
 
-
-* **Environment 3:** Make a simulation where $\normalsize \tau = [20, 5]^𝑇$ and the robot has viscous friction $\normalsize 𝐵 = 𝐼$.
-
+-   **Environment 3:** Make a simulation where $\normalsize \tau = [20, 5]^𝑇$ and the robot has viscous friction $\normalsize 𝐵 = 𝐼$.
 
 ### Implementations
 
@@ -576,9 +574,10 @@ ani.save('Pendulum_Python_3.gif', writer=PillowWriter(fps=33))
 #### MATLAB
 
 <details>
+
 <summary>Code</summary>
 
-```matlab
+``` matlab
 
 close all
 clear
@@ -671,12 +670,12 @@ end
 close(v);
 close all
 ```
+
 </details>
 
 #### Result:
 
-<img src="Pendulum_Case_3.gif" alt="Animated GIF" loop width="50%" height="100%">
-
+<img src="Pendulum_Case_3.gif" alt="Animated GIF" width="50%" height="100%"/>
 
 ```{=html}
 <script>

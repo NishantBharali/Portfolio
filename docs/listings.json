@@ -8,12 +8,16 @@
   {
     "listing": "/robotics.html",
     "items": [
-      "/Robotics/Inverse_kinematics.html",
-      "/Robotics/Potential_trajectory.html",
       "/Robotics/Control.html",
       "/Robotics/Dynamics.html",
+      "/Robotics/Inverse_kinematics.html",
+      "/Robotics/Potential_trajectory.html",
       "/Robotics/RRT.html"
     ]
+  },
+  {
+    "listing": "/control_systems.html",
+    "items": []
   },
   {
     "listing": "/blog.html",
@@ -28,6 +32,7 @@
     "listing": "/Projects.html",
     "items": [
       "/blog.html",
+      "/control_systems.html",
       "/robotics.html",
       "/Vision.html"
     ]

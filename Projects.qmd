@@ -3,12 +3,13 @@ title: "Projects"
 listing:
   contents:
     - blog.qmd
+    - control_systems.qmd
     - robotics.qmd
     - Vision.qmd
   sort: "date desc"
   type: grid
   categories: true
-  fields: [image, title, description, file-modified, categories]
+  fields: [image, title, description, categories]
   sort-ui: false
   filter-ui: true
   feed: true

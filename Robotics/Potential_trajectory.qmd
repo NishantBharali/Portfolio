@@ -1,7 +1,6 @@
 ---
 title: "Motion Planning & Trajectory Optimization"
 description: "Motion Planning in robotics focuses on devising efficient paths for a robot from its current state to a goal, while Trajectory Optimization refines these paths for smooth and obstacle-free motion, crucial for precise robotic movements in various applications"
-date: 12-19-2023
 categories: [Robotics]
 image: Trajectory_Cover_GIF.gif
 format:

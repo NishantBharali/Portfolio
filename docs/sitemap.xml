@@ -2,98 +2,114 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://www.nishantkb.info/Vision.html</loc>
-    <lastmod>2024-01-25T09:14:55.400Z</lastmod>
+    <lastmod>2024-02-05T23:21:15.564Z</lastmod>
   </url>
   <url>
     <loc>https://www.nishantkb.info/Tools/git/git.html</loc>
-    <lastmod>2024-01-25T09:14:52.555Z</lastmod>
+    <lastmod>2024-02-05T23:21:12.966Z</lastmod>
   </url>
   <url>
     <loc>https://www.nishantkb.info/robotics.html</loc>
-    <lastmod>2024-01-25T09:14:49.902Z</lastmod>
+    <lastmod>2024-02-05T23:21:10.692Z</lastmod>
   </url>
   <url>
     <loc>https://www.nishantkb.info/Robotics/Potential_trajectory.html</loc>
-    <lastmod>2024-01-25T09:14:43.918Z</lastmod>
+    <lastmod>2024-02-05T23:21:04.755Z</lastmod>
   </url>
   <url>
     <loc>https://www.nishantkb.info/Robotics/Inverse_kinematics.html</loc>
-    <lastmod>2024-01-25T09:14:39.793Z</lastmod>
+    <lastmod>2024-02-05T23:21:00.552Z</lastmod>
   </url>
   <url>
     <loc>https://www.nishantkb.info/Robotics/Control.html</loc>
-    <lastmod>2024-01-25T09:14:31.318Z</lastmod>
+    <lastmod>2024-02-05T23:20:51.476Z</lastmod>
   </url>
   <url>
     <loc>https://www.nishantkb.info/resources.html</loc>
-    <lastmod>2024-01-25T09:14:28.651Z</lastmod>
+    <lastmod>2024-02-05T23:20:49.167Z</lastmod>
   </url>
   <url>
     <loc>https://www.nishantkb.info/posts/Random Processes/index.html</loc>
-    <lastmod>2024-01-25T09:14:26.581Z</lastmod>
+    <lastmod>2024-02-05T23:20:47.470Z</lastmod>
   </url>
   <url>
     <loc>https://www.nishantkb.info/posts/Clustering/index.html</loc>
-    <lastmod>2024-01-25T09:14:21.684Z</lastmod>
+    <lastmod>2024-02-05T23:20:42.512Z</lastmod>
   </url>
   <url>
     <loc>https://www.nishantkb.info/posts/Anomaly-Outlier Detection/index.html</loc>
-    <lastmod>2024-01-25T09:14:16.779Z</lastmod>
+    <lastmod>2024-02-05T23:20:37.546Z</lastmod>
   </url>
   <url>
     <loc>https://www.nishantkb.info/CV_Project/CV_project.html</loc>
-    <lastmod>2024-01-25T09:14:12.463Z</lastmod>
+    <lastmod>2024-02-05T23:20:32.849Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.nishantkb.info/control_systems.html</loc>
+    <lastmod>2024-02-05T23:20:02.836Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.nishantkb.info/Control Systems/Full_State_Feedback_Control_Design.html</loc>
+    <lastmod>2024-02-05T23:19:58.341Z</lastmod>
   </url>
   <url>
     <loc>https://www.nishantkb.info/blog.html</loc>
-    <lastmod>2024-01-25T09:13:56.054Z</lastmod>
+    <lastmod>2024-02-05T23:19:54.213Z</lastmod>
   </url>
   <url>
     <loc>https://www.nishantkb.info/about.html</loc>
-    <lastmod>2024-01-25T09:13:54.670Z</lastmod>
+    <lastmod>2024-02-05T23:19:52.980Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.nishantkb.info/Control Systems/Bode_freqresp.html</loc>
+    <lastmod>2024-02-05T23:19:55.449Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.nishantkb.info/Control Systems/Linearized_LTI_Modeling_Feedback_Control.html</loc>
+    <lastmod>2024-02-05T23:20:02.161Z</lastmod>
   </url>
   <url>
     <loc>https://www.nishantkb.info/cv/cv.html</loc>
-    <lastmod>2024-01-25T09:14:11.671Z</lastmod>
+    <lastmod>2024-02-05T23:20:32.235Z</lastmod>
   </url>
   <url>
     <loc>https://www.nishantkb.info/index.html</loc>
-    <lastmod>2024-01-25T09:14:13.346Z</lastmod>
+    <lastmod>2024-02-05T23:20:33.514Z</lastmod>
   </url>
   <url>
     <loc>https://www.nishantkb.info/posts/Classification/index.html</loc>
-    <lastmod>2024-01-25T09:14:19.378Z</lastmod>
+    <lastmod>2024-02-05T23:20:40.234Z</lastmod>
   </url>
   <url>
     <loc>https://www.nishantkb.info/posts/Linear and Non Linear Regression/index.html</loc>
-    <lastmod>2024-01-25T09:14:24.309Z</lastmod>
+    <lastmod>2024-02-05T23:20:45.191Z</lastmod>
   </url>
   <url>
     <loc>https://www.nishantkb.info/Projects.html</loc>
-    <lastmod>2024-01-25T09:14:27.591Z</lastmod>
+    <lastmod>2024-02-05T23:20:48.333Z</lastmod>
   </url>
   <url>
     <loc>https://www.nishantkb.info/Resume/Resume.html</loc>
-    <lastmod>2024-01-25T09:14:29.438Z</lastmod>
+    <lastmod>2024-02-05T23:20:49.719Z</lastmod>
   </url>
   <url>
     <loc>https://www.nishantkb.info/Robotics/Dynamics.html</loc>
-    <lastmod>2024-01-25T09:14:34.985Z</lastmod>
+    <lastmod>2024-02-05T23:20:55.441Z</lastmod>
   </url>
   <url>
     <loc>https://www.nishantkb.info/Robotics/Materials/Materials/Module_1-Basics/Homework/My HW1_Problem_4.html</loc>
-    <lastmod>2024-01-25T09:14:40.574Z</lastmod>
+    <lastmod>2024-02-05T23:21:01.130Z</lastmod>
   </url>
   <url>
     <loc>https://www.nishantkb.info/Robotics/RRT.html</loc>
-    <lastmod>2024-01-25T09:14:48.588Z</lastmod>
+    <lastmod>2024-02-05T23:21:09.682Z</lastmod>
   </url>
   <url>
     <loc>https://www.nishantkb.info/tool.html</loc>
-    <lastmod>2024-01-25T09:14:50.944Z</lastmod>
+    <lastmod>2024-02-05T23:21:11.480Z</lastmod>
   </url>
   <url>
     <loc>https://www.nishantkb.info/Tools/quarto/quarto.html</loc>
-    <lastmod>2024-01-25T09:14:54.497Z</lastmod>
+    <lastmod>2024-02-05T23:21:14.864Z</lastmod>
   </url>
 </urlset>

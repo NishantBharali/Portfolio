@@ -1,7 +1,6 @@
 ---
 title: "Inverse Kinematics Simulation"
 description: "IKO in robotics is the computational process of determining optimal joint configurations to achieve a desired end-effector pose. It plays a vital role in tasks like motion planning and control, enhancing the accuracy of robotic movements"
-date: 12-24-2023
 categories: [Robotics]
 image: Inverse_Kinematics_Cover_GIF.gif 
 format:

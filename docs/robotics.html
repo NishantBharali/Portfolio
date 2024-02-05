@@ -30,7 +30,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./images/image80.webp" rel="icon">
+<link href="./images/NB_logo.webp" rel="icon">
 <script src="site_libs/quarto-listing/list.min.js"></script>
 <script src="site_libs/quarto-listing/quarto-listing.js"></script>
 <script src="site_libs/cookie-consent/cookie-consent.js"></script>
@@ -76,9 +76,9 @@ ul.task-list li input[type="checkbox"] {
     }
 
     const options = {
-      valueNames: ['listing-image','listing-title','listing-description','listing-file-modified','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      valueNames: ['listing-image','listing-title','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
       
-      searchColumns: ["listing-title","listing-author","listing-date","listing-image","listing-description","listing-categories"],
+      searchColumns: ["listing-title","listing-author","listing-image","listing-description","listing-categories"],
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
@@ -150,6 +150,10 @@ cookieconsent.run({
         <li>
     <a class="dropdown-item" href="./blog.html" rel="" target="">
  <span class="dropdown-text">Machine Learning</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./control_systems.html" rel="" target="">
+ <span class="dropdown-text">Control Systems</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="./robotics.html" rel="" target="">
@@ -306,13 +310,42 @@ cookieconsent.run({
   </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="./blog.html#category=Machine Learning" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Machine Learning</span></a>
+            <a href="./control_systems.html#category=Control" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Control System</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Control Systems/Full_State_Feedback_Control_Design.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Control Design II</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Control Systems/Linearized_LTI_Modeling_Feedback_Control.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">LTI Modeling</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Control Systems/Bode_freqresp.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Bode Estimation</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./blog.html#category=Machine Learning" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Machine Learning</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./posts/Random Processes/index.html" class="sidebar-item-text sidebar-link">
@@ -349,11 +382,11 @@ cookieconsent.run({
       <div class="sidebar-item-container"> 
             <a href="./Vision.html#category=Vision" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Machine Vision</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth2 ">  
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./CV_Project/CV_project.html" class="sidebar-item-text sidebar-link">
@@ -374,11 +407,11 @@ cookieconsent.run({
       <div class="sidebar-item-container"> 
             <a href="./tool.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Tools</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./Tools/git/git.html" class="sidebar-item-text sidebar-link">
@@ -395,13 +428,13 @@ cookieconsent.run({
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" aria-expanded="false">
  <span class="menu-text">Resources</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./resources.html" class="sidebar-item-text sidebar-link">
@@ -480,61 +513,7 @@ div.sidebar-menu-container > * { padding: 5px 5px 5px 5px; }
     </div>
 </div>
 <div class="list grid quarto-listing-cols-3">
-<div class="g-col-1" data-index="0" data-categories="Robotics" data-listing-date-sort="1703394000000" data-listing-file-modified-sort="1706134219631" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="27">
-<a href="./Robotics/Inverse_kinematics.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img src="./Robotics/Inverse_Kinematics_Cover_GIF.gif" class="thumbnail-image card-img" style="height: 150px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Inverse Kinematics Simulation
-</h5>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('Robotics'); return false;">
-Robotics
-</div>
-</div>
-<div class="card-text listing-description">
-IKO in robotics is the computational process of determining optimal joint configurations to achieve a desired end-effector pose. It plays a vital role in tasks like motion…
-</div>
-</div>
-<div class="card-footer">
-<div class="card-file-modified listing-file-modified">
-<p>1/24/24, 5:10:19 PM</p>
-</div>
-</div>
-</div>
-</a>
-</div>
-<div class="g-col-1" data-index="1" data-categories="Robotics" data-listing-date-sort="1702962000000" data-listing-file-modified-sort="1706134213167" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="12">
-<a href="./Robotics/Potential_trajectory.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img src="./Robotics/Trajectory_Cover_GIF.gif" class="thumbnail-image card-img" style="height: 150px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Motion Planning &amp; Trajectory Optimization
-</h5>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('Robotics'); return false;">
-Robotics
-</div>
-</div>
-<div class="card-text listing-description">
-Motion Planning in robotics focuses on devising efficient paths for a robot from its current state to a goal, while Trajectory Optimization refines these paths for smooth…
-</div>
-</div>
-<div class="card-footer">
-<div class="card-file-modified listing-file-modified">
-<p>1/24/24, 5:10:13 PM</p>
-</div>
-</div>
-</div>
-</a>
-</div>
-<div class="g-col-1" data-index="2" data-categories="Robotics" data-listing-date-sort="1702875600000" data-listing-file-modified-sort="1706159745013" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="12">
+<div class="g-col-1" data-index="0" data-categories="Robotics" data-listing-file-modified-sort="1707032036822" data-listing-reading-time-sort="12">
 <a href="./Robotics/Control.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -553,15 +532,10 @@ Robotics
 Robot Control for stability involves algorithms ensuring precise and stable robot motion, for both compliant and rigid body motions, crucial for safe and reliable operation…
 </div>
 </div>
-<div class="card-footer">
-<div class="card-file-modified listing-file-modified">
-<p>1/25/24, 12:15:45 AM</p>
-</div>
-</div>
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="3" data-categories="Robotics" data-listing-date-sort="1702357200000" data-listing-file-modified-sort="1706164513557" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="15">
+<div class="g-col-1" data-index="1" data-categories="Robotics" data-listing-file-modified-sort="1707031820855" data-listing-reading-time-sort="15">
 <a href="./Robotics/Dynamics.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -580,15 +554,54 @@ Robotics
 Robot Dynamics encompasses the analysis of forces like Coriolis effects, mass distribution, and gravity on a robot, crucial for designing control strategies. This…
 </div>
 </div>
-<div class="card-footer">
-<div class="card-file-modified listing-file-modified">
-<p>1/25/24, 1:35:13 AM</p>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="2" data-categories="Robotics" data-listing-file-modified-sort="1706518199653" data-listing-reading-time-sort="27">
+<a href="./Robotics/Inverse_kinematics.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img src="./Robotics/Inverse_Kinematics_Cover_GIF.gif" class="thumbnail-image card-img" style="height: 150px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Inverse Kinematics Simulation
+</h5>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('Robotics'); return false;">
+Robotics
+</div>
+</div>
+<div class="card-text listing-description">
+IKO in robotics is the computational process of determining optimal joint configurations to achieve a desired end-effector pose. It plays a vital role in tasks like motion…
 </div>
 </div>
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="4" data-categories="Robotics" data-listing-date-sort="1702098000000" data-listing-file-modified-sort="1706134207772" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="26">
+<div class="g-col-1" data-index="3" data-categories="Robotics" data-listing-file-modified-sort="1706518189190" data-listing-reading-time-sort="12">
+<a href="./Robotics/Potential_trajectory.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img src="./Robotics/Trajectory_Cover_GIF.gif" class="thumbnail-image card-img" style="height: 150px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Motion Planning &amp; Trajectory Optimization
+</h5>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('Robotics'); return false;">
+Robotics
+</div>
+</div>
+<div class="card-text listing-description">
+Motion Planning in robotics focuses on devising efficient paths for a robot from its current state to a goal, while Trajectory Optimization refines these paths for smooth…
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="4" data-categories="Robotics" data-listing-file-modified-sort="1706518181898" data-listing-reading-time-sort="26">
 <a href="./Robotics/RRT.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -605,11 +618,6 @@ Robotics
 </div>
 <div class="card-text listing-description">
 The Rapidly Exploring Random Trees (RRT) algorithm is a computational method used in motion planning for robots, rapidly exploring the configuration space to generate…
-</div>
-</div>
-<div class="card-footer">
-<div class="card-file-modified listing-file-modified">
-<p>1/24/24, 5:10:07 PM</p>
 </div>
 </div>
 </div>

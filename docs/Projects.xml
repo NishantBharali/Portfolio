@@ -15,7 +15,7 @@
 <link>https://www.nishantkb.info/Projects.html</link>
 </image>
 <generator>quarto-1.3.450</generator>
-<lastBuildDate>Thu, 25 Jan 2024 09:14:27 GMT</lastBuildDate>
+<lastBuildDate>Mon, 05 Feb 2024 23:20:48 GMT</lastBuildDate>
 <item>
   <title>Machine Learning</title>
   <link>https://www.nishantkb.info/blog.html</link>
@@ -66,15 +66,10 @@ Machine Learning
 Detecting anomalies in financial data involves using specialized algorithms to identify irregularities, enhancing risk management and fraud prevention
 </div>
 </div>
-<div class="card-footer">
-<div class="card-file-modified listing-file-modified">
-<p>12/17/23, 1:25:00 AM</p>
-</div>
-</div>
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="1" data-categories="Machine Learning" data-listing-date-sort="1700802000000" data-listing-file-modified-sort="1702794307903" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="9">
+<div class="g-col-1" data-index="1" data-categories="Machine Learning" data-listing-date-sort="1700802000000" data-listing-file-modified-sort="1706521494279" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="9">
 <a href="./posts/Classification/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -91,11 +86,6 @@ Machine Learning
 </div>
 <div class="card-text listing-description">
 Implementing advanced classification techniques for precise model prediction analysis to enhance accuracy and efficiency
-</div>
-</div>
-<div class="card-footer">
-<div class="card-file-modified listing-file-modified">
-<p>12/17/23, 1:25:07 AM</p>
 </div>
 </div>
 </div>
@@ -120,11 +110,6 @@ Machine Learning
 Employing sophisticated clustering techniques with retail customer data and comparing further with prediction models
 </div>
 </div>
-<div class="card-footer">
-<div class="card-file-modified listing-file-modified">
-<p>12/17/23, 1:25:20 AM</p>
-</div>
-</div>
 </div>
 </a>
 </div>
@@ -147,11 +132,6 @@ Machine Learning
 A Comprehensive Analysis on Housing Market. Utilizing regression methodologies for the purpose of analyzing trends within the housing market
 </div>
 </div>
-<div class="card-footer">
-<div class="card-file-modified listing-file-modified">
-<p>12/17/23, 1:25:37 AM</p>
-</div>
-</div>
 </div>
 </a>
 </div>
@@ -161,8 +141,49 @@ No matching items
 </div>
 </div><a onclick="window.scrollTo(0, 0); return false;" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a> ]]></description>
   <guid>https://www.nishantkb.info/blog.html</guid>
-  <pubDate>Thu, 25 Jan 2024 09:14:27 GMT</pubDate>
+  <pubDate>Mon, 05 Feb 2024 23:20:48 GMT</pubDate>
   <media:content url="https://www.nishantkb.info/images/handsOnGif.gif" medium="image" type="image/gif"/>
+</item>
+<item>
+  <title>Applied Control Systems</title>
+  <link>https://www.nishantkb.info/control_systems.html</link>
+  <description><![CDATA[ 
+
+
+
+<script>
+const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+</script>
+<style>
+div#quarto-sidebar-glass { display: none !important; }
+ul.navbar-nav.navbar-nav-scroll { -webkit-flex-direction: row !important; }
+/* #quarto-sidebar { padding: 5px; }
+#quarto-sidebar > * { padding: 5px; }
+div.sidebar-menu-container > * { padding: 5px 5px 5px 5px; }
+#quarto-margin-sidebar { padding: 40px; } */
+</style>
+
+
+
+
+<div class="quarto-listing quarto-listing-container-grid" id="listing-listing">
+<div class="listing-actions-group">
+    <div class="input-group input-group-sm quarto-listing-filter">
+      <span class="input-group-text"><i class="bi bi-search"></i></span>
+      <input type="text" class="search form-control" placeholder="Filter">
+    </div>
+</div>
+<div class="list grid quarto-listing-cols-3">
+
+</div>
+<div class="listing-no-matching d-none">
+No matching items
+</div>
+</div><a onclick="window.scrollTo(0, 0); return false;" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a> ]]></description>
+  <guid>https://www.nishantkb.info/control_systems.html</guid>
+  <pubDate>Mon, 05 Feb 2024 23:20:48 GMT</pubDate>
+  <media:content url="https://www.nishantkb.info/images/Robotics.gif" medium="image" type="image/gif"/>
 </item>
 <item>
   <title>Robotics</title>
@@ -195,61 +216,7 @@ div.sidebar-menu-container > * { padding: 5px 5px 5px 5px; }
     </div>
 </div>
 <div class="list grid quarto-listing-cols-3">
-<div class="g-col-1" data-index="0" data-categories="Robotics" data-listing-date-sort="1703394000000" data-listing-file-modified-sort="1706134219631" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="27">
-<a href="./Robotics/Inverse_kinematics.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img src="https://www.nishantkb.info/Robotics/Inverse_Kinematics_Cover_GIF.gif" class="thumbnail-image card-img" style="height: 150px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Inverse Kinematics Simulation
-</h5>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('Robotics'); return false;">
-Robotics
-</div>
-</div>
-<div class="card-text listing-description">
-IKO in robotics is the computational process of determining optimal joint configurations to achieve a desired end-effector pose. It plays a vital role in tasks like motion…
-</div>
-</div>
-<div class="card-footer">
-<div class="card-file-modified listing-file-modified">
-<p>1/24/24, 5:10:19 PM</p>
-</div>
-</div>
-</div>
-</a>
-</div>
-<div class="g-col-1" data-index="1" data-categories="Robotics" data-listing-date-sort="1702962000000" data-listing-file-modified-sort="1706134213167" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="12">
-<a href="./Robotics/Potential_trajectory.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img src="https://www.nishantkb.info/Robotics/Trajectory_Cover_GIF.gif" class="thumbnail-image card-img" style="height: 150px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Motion Planning &amp; Trajectory Optimization
-</h5>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('Robotics'); return false;">
-Robotics
-</div>
-</div>
-<div class="card-text listing-description">
-Motion Planning in robotics focuses on devising efficient paths for a robot from its current state to a goal, while Trajectory Optimization refines these paths for smooth…
-</div>
-</div>
-<div class="card-footer">
-<div class="card-file-modified listing-file-modified">
-<p>1/24/24, 5:10:13 PM</p>
-</div>
-</div>
-</div>
-</a>
-</div>
-<div class="g-col-1" data-index="2" data-categories="Robotics" data-listing-date-sort="1702875600000" data-listing-file-modified-sort="1706159745013" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="12">
+<div class="g-col-1" data-index="0" data-categories="Robotics" data-listing-file-modified-sort="1707032036822" data-listing-reading-time-sort="12">
 <a href="./Robotics/Control.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -268,15 +235,10 @@ Robotics
 Robot Control for stability involves algorithms ensuring precise and stable robot motion, for both compliant and rigid body motions, crucial for safe and reliable operation…
 </div>
 </div>
-<div class="card-footer">
-<div class="card-file-modified listing-file-modified">
-<p>1/25/24, 12:15:45 AM</p>
-</div>
-</div>
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="3" data-categories="Robotics" data-listing-date-sort="1702357200000" data-listing-file-modified-sort="1706164513557" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="15">
+<div class="g-col-1" data-index="1" data-categories="Robotics" data-listing-file-modified-sort="1707031820855" data-listing-reading-time-sort="15">
 <a href="./Robotics/Dynamics.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -295,15 +257,54 @@ Robotics
 Robot Dynamics encompasses the analysis of forces like Coriolis effects, mass distribution, and gravity on a robot, crucial for designing control strategies. This…
 </div>
 </div>
-<div class="card-footer">
-<div class="card-file-modified listing-file-modified">
-<p>1/25/24, 1:35:13 AM</p>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="2" data-categories="Robotics" data-listing-file-modified-sort="1706518199653" data-listing-reading-time-sort="27">
+<a href="./Robotics/Inverse_kinematics.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img src="https://www.nishantkb.info/Robotics/Inverse_Kinematics_Cover_GIF.gif" class="thumbnail-image card-img" style="height: 150px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Inverse Kinematics Simulation
+</h5>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('Robotics'); return false;">
+Robotics
+</div>
+</div>
+<div class="card-text listing-description">
+IKO in robotics is the computational process of determining optimal joint configurations to achieve a desired end-effector pose. It plays a vital role in tasks like motion…
 </div>
 </div>
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="4" data-categories="Robotics" data-listing-date-sort="1702098000000" data-listing-file-modified-sort="1706134207772" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="26">
+<div class="g-col-1" data-index="3" data-categories="Robotics" data-listing-file-modified-sort="1706518189190" data-listing-reading-time-sort="12">
+<a href="./Robotics/Potential_trajectory.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img src="https://www.nishantkb.info/Robotics/Trajectory_Cover_GIF.gif" class="thumbnail-image card-img" style="height: 150px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Motion Planning &amp; Trajectory Optimization
+</h5>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('Robotics'); return false;">
+Robotics
+</div>
+</div>
+<div class="card-text listing-description">
+Motion Planning in robotics focuses on devising efficient paths for a robot from its current state to a goal, while Trajectory Optimization refines these paths for smooth…
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="4" data-categories="Robotics" data-listing-file-modified-sort="1706518181898" data-listing-reading-time-sort="26">
 <a href="./Robotics/RRT.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -322,11 +323,6 @@ Robotics
 The Rapidly Exploring Random Trees (RRT) algorithm is a computational method used in motion planning for robots, rapidly exploring the configuration space to generate…
 </div>
 </div>
-<div class="card-footer">
-<div class="card-file-modified listing-file-modified">
-<p>1/24/24, 5:10:07 PM</p>
-</div>
-</div>
 </div>
 </a>
 </div>
@@ -336,7 +332,7 @@ No matching items
 </div>
 </div><a onclick="window.scrollTo(0, 0); return false;" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a> ]]></description>
   <guid>https://www.nishantkb.info/robotics.html</guid>
-  <pubDate>Thu, 25 Jan 2024 09:14:27 GMT</pubDate>
+  <pubDate>Mon, 05 Feb 2024 23:20:48 GMT</pubDate>
   <media:content url="https://www.nishantkb.info/images/Robotics.gif" medium="image" type="image/gif"/>
 </item>
 <item>
@@ -370,7 +366,7 @@ div.sidebar-menu-container > * { padding: 5px 5px 5px 5px; }
     </div>
 </div>
 <div class="list grid quarto-listing-cols-3">
-<div class="g-col-1" data-index="0" data-categories="Vision" data-listing-date-sort="1699156800000" data-listing-file-modified-sort="1706168843635" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
+<div class="g-col-1" data-index="0" data-categories="Vision" data-listing-file-modified-sort="1706521678650" data-listing-reading-time-sort="1">
 <a href="./CV_Project/CV_project.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -389,11 +385,6 @@ Vision
 Focus on the research and output of the analysis made over the comparison of 2 models implemented with different parameters, as well as different practical implementation of…
 </div>
 </div>
-<div class="card-footer">
-<div class="card-file-modified listing-file-modified">
-<p>1/25/24, 2:47:23 AM</p>
-</div>
-</div>
 </div>
 </a>
 </div>
@@ -403,7 +394,7 @@ No matching items
 </div>
 </div><a onclick="window.scrollTo(0, 0); return false;" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a> ]]></description>
   <guid>https://www.nishantkb.info/Vision.html</guid>
-  <pubDate>Thu, 25 Jan 2024 09:14:27 GMT</pubDate>
+  <pubDate>Mon, 05 Feb 2024 23:20:48 GMT</pubDate>
   <media:content url="https://www.nishantkb.info/images/CV.gif" medium="image" type="image/gif"/>
 </item>
 </channel>

@@ -1,7 +1,6 @@
 ---
 title: "RRT Algorithm Simulation"
 description: "The Rapidly Exploring Random Trees (RRT) algorithm is a computational method used in motion planning for robots, rapidly exploring the configuration space to generate feasible paths from a start to a goal state. It is particularly effective in navigating complex and high-dimensional spaces"
-date: 12-09-2023
 categories: [Robotics]
 image: RRT_main.gif
 format:

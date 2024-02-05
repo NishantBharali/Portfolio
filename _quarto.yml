@@ -9,7 +9,7 @@ website:
   repo-url: https://github.com/NishantBharali/Blog
   repo-actions: [source]
   site-url: https://www.nishantkb.info/
-  favicon: images/image80.webp
+  favicon: images/NB_logo.webp
   search: 
     location: navbar
     type: overlay
@@ -50,6 +50,8 @@ website:
         menu:
           - text: "Machine Learning"
             href: blog.qmd
+          - text: "Control Systems"
+            href: control_systems.qmd
           - text: "Robotics"
             href: robotics.qmd
           - text: "Machine Vision"
@@ -97,6 +99,7 @@ website:
     search: false
     sort: order
     collapse-level: 1
+    overflow-y: auto
     contents:
       - text: "Home"
         file: index.qmd
@@ -116,6 +119,15 @@ website:
                 text: "Control"
               - href: Robotics/RRT.qmd
                 text: "RRT"
+          - section: Control System
+            href: control_systems.html#category=Control
+            contents:
+              - href: Control Systems/Full_State_Feedback_Control_Design.qmd
+                text: "Control Design II"
+              - href: Control Systems/Linearized_LTI_Modeling_Feedback_Control.qmd
+                text: "LTI Modeling"
+              - href: Control Systems/Bode_freqresp.qmd
+                text: "Bode Estimation"
           - section: Machine Learning
             href: blog.html#category=Machine Learning
             contents:
@@ -165,7 +177,6 @@ format:
       dark: [darkly, theme-dark.scss]
     css: styles.css
     lang: en
-    highlight-style: github-dark
     grid:
       sidebar-width: 150px
       body-width: 1800px
