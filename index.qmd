@@ -21,6 +21,9 @@ about:
       text: GitHub
       href: https://github.com/NishantBharali
 comments: false
+format: 
+  html:
+    overflow-y: auto
 toc-title: "Table of Contents"
 toc-location: right
 ---
@@ -31,24 +34,22 @@ toc-location: right
 
 Greetings! My name is Nishant Bharali. <img src="images/wave.gif" width="40px"/>
 
-I'm an engineer with experiences in software modeling, analytics, vehicle controls, machine vision and machine learning. For a living, I get to solve problems with data, currently pursuing my Master's in Computer Engineering. 
+I'm an engineer with experiences in product development, software modeling, analytics, vehicle control and testing, machine vision and machine learning. For a living, I get to solve problems with various kinds of data, currently pursuing my Master's in Computer Engineering. 
 
 **Life is not an experience without obstacles worth thriving against!**
 
 ### Programming
 
-I use Python, Java, MATLAB and C++ to develop and deploy packages, web apps, automation pipelines, machine learning workflows, and websites (this site was built with [Quarto](https://quarto.org/)). My daily toolkit also includes Python.
+I use Python, Java, MATLAB and C++ to develop and deploy packages, web apps, automation pipelines, machine learning workflows, and websites (this site was built with [Quarto](https://quarto.org/)). My daily toolkit usually includes MATLAB (various toolboxes), Simulink and Python currently. I am more inclined toward C++ these days and upskilling myself in the same.
 
-### Web App Development
+### Web Development
 
-My framework of choice for web app development is Java + [Spring](https://spring.io/) + [React](https://react.dev/) + [Jenkins](https://www.jenkins.io/). With Spring, React and Jenkins, I can build enterprise-grade UIs on top of [Bootstrap 5](https://getbootstrap.com/) that can be infinitely styled with HTML, [Sass](https://sass-lang.com/), CSS, JavaScript, and more.
+My framework of choice for web development is [Java](https://www.java.com/en/) + [Spring](https://spring.io/) for the backend + [React](https://react.dev/) + [Redux-Saga Middlware](https://redux-saga.js.org/) for the frontend + [Jenkins](https://www.jenkins.io/) - pipeline staging for deployment and `CI/CD`.
 
-### Data Science Communities
+With Spring, React and Jenkins, I can build enterprise-grade UIs on top of [Bootstrap 5](https://getbootstrap.com/) that can be infinitely styled with HTML, [Sass](https://sass-lang.com/), CSS, JavaScript, and more. These skills have been a bonus in my career as I was exposed to Agile fundamentals in the very beginning of my career as an intern at [Oracle Cerner](https://www.cerner.com/).
 
-There are a plethora of online and in-person data science communities to learn from and share your own experiences. Online communities for open-source languages and data science are incredibly welcoming and below are my favorites:
+### More technical demonstrations can be seen in my work experience and projects.
 
-- [Data Science Hangout](https://www.rstudio.com/data-science-hangout/live-calls/ "Data Science Hangout hosted by RStudio's Rachael Dempsey, Thursdays at 12pm ET")
-- [The Ravit Show](https://theravitshow.com/ "TRS, hosted by Ravit Jain, is a community for data science & AI practitioners")
 
 ```{=html}
 <script>

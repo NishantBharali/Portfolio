@@ -1,8 +1,35 @@
 [
   {
-    "listing": "/Vision.html",
+    "listing": "/tool.html",
     "items": [
-      "/CV_Project/CV_project.html"
+      "/Tools/git/git.html",
+      "/Tools/quarto/quarto.html"
+    ]
+  },
+  {
+    "listing": "/Projects.html",
+    "items": [
+      "/blog.html",
+      "/control_systems.html",
+      "/robotics.html",
+      "/Vision.html"
+    ]
+  },
+  {
+    "listing": "/blog.html",
+    "items": [
+      "/posts/Anomaly-Outlier Detection/index.html",
+      "/posts/Classification/index.html",
+      "/posts/Clustering/index.html",
+      "/posts/Linear and Non Linear Regression/index.html"
+    ]
+  },
+  {
+    "listing": "/control_systems.html",
+    "items": [
+      "/Control Systems/Bode_freqresp.html",
+      "/Control Systems/Full_State_Feedback_Control_Design.html",
+      "/Control Systems/Linearized_LTI_Modeling_Feedback_Control.html"
     ]
   },
   {
@@ -16,32 +43,9 @@
     ]
   },
   {
-    "listing": "/control_systems.html",
-    "items": []
-  },
-  {
-    "listing": "/blog.html",
+    "listing": "/Vision.html",
     "items": [
-      "/posts/Anomaly-Outlier Detection/index.html",
-      "/posts/Classification/index.html",
-      "/posts/Clustering/index.html",
-      "/posts/Linear and Non Linear Regression/index.html"
-    ]
-  },
-  {
-    "listing": "/Projects.html",
-    "items": [
-      "/blog.html",
-      "/control_systems.html",
-      "/robotics.html",
-      "/Vision.html"
-    ]
-  },
-  {
-    "listing": "/tool.html",
-    "items": [
-      "/Tools/git/git.html",
-      "/Tools/quarto/quarto.html"
+      "/CV_Project/CV_project.html"
     ]
   }
 ]

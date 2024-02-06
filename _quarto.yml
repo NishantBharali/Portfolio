@@ -58,11 +58,11 @@ website:
             href: Vision.qmd
       - text: About
         href: about.qmd
-      - text: Tools
-        href: tool.qmd
+      - text: Work Experience
+        href: Work_Experience.qmd
       - text: Resources
         menu:
-          - text: "Nishant's Resources"
+          - text: "My Recommendations"
             href: resources.qmd
           - text: Modern Robotics
             href: https://drive.google.com/file/d/1TjYOeJ2PO4z16hSjQkF8PNFojcGU9IYz/view
@@ -123,7 +123,7 @@ website:
             href: control_systems.html#category=Control
             contents:
               - href: Control Systems/Full_State_Feedback_Control_Design.qmd
-                text: "Control Design II"
+                text: "Control Design"
               - href: Control Systems/Linearized_LTI_Modeling_Feedback_Control.qmd
                 text: "LTI Modeling"
               - href: Control Systems/Bode_freqresp.qmd
@@ -157,7 +157,7 @@ website:
             text: "Quarto"
       - section: "Resources"
         contents:
-          - text: "My Resources"
+          - text: "My Recommendations"
             href: resources.qmd
           - text: Modern Robotics
             href: https://drive.google.com/file/d/1TjYOeJ2PO4z16hSjQkF8PNFojcGU9IYz/view

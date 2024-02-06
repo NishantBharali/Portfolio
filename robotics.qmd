@@ -1,5 +1,6 @@
 ---
 title: "Robotics"
+description: "Simulation-based robot design, robot control and motion planning for redundant serial robots in a manufacturing environment using MATLAB and Simulink. Path planning for Holonomic robots using RRT is accomplished"
 listing:
   contents:
     - Robotics/*.qmd

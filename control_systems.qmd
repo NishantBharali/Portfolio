@@ -1,8 +1,9 @@
 ---
 title: "Applied Control Systems"
+description: "We develop a 2D model for a drone package delivery system, applying state space LTI and feedback control techniques. Our simulation in MATLAB (Control System Toolbox and Simulink) focuses on Optimal LQR control for precise drone landing, strategically placing poles for accuracy, and includes bode plot analysis."
 listing:
   contents:
-    - Control_Systems/*.qmd
+    - Control Systems/*.qmd
   sort: "date desc"
   type: grid
   categories: true
@@ -15,7 +16,7 @@ title-block-banner: false
 comments: false
 toc-title: "Table of Contents"
 toc-location: right
-image: ../images/Robotics.gif
+image: images/Controls_gif.gif
 ---
 
 ```{=html}

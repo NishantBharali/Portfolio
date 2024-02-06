@@ -2,7 +2,7 @@
 title: "Linearized_LTI_Modeling_Feedback_Control"
 description: "The system being modeled and controlled is a drone/aerial package delivery concept. The model is a simplified 2D version of the system dynamics where state space and feedback control techniques are applied. A closed-loop design case study is performed as well"
 categories: [Control]
-image: Dynamics_Pendulum_Cover_GIF.gif
+image: Drone_gif.gif
 format:
     html: 
         code-fold: show

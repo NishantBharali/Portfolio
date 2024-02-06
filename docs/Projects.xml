@@ -15,7 +15,7 @@
 <link>https://www.nishantkb.info/Projects.html</link>
 </image>
 <generator>quarto-1.3.450</generator>
-<lastBuildDate>Mon, 05 Feb 2024 23:20:48 GMT</lastBuildDate>
+<lastBuildDate>Tue, 06 Feb 2024 09:17:26 GMT</lastBuildDate>
 <item>
   <title>Machine Learning</title>
   <link>https://www.nishantkb.info/blog.html</link>
@@ -141,7 +141,7 @@ No matching items
 </div>
 </div><a onclick="window.scrollTo(0, 0); return false;" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a> ]]></description>
   <guid>https://www.nishantkb.info/blog.html</guid>
-  <pubDate>Mon, 05 Feb 2024 23:20:48 GMT</pubDate>
+  <pubDate>Tue, 06 Feb 2024 09:17:26 GMT</pubDate>
   <media:content url="https://www.nishantkb.info/images/handsOnGif.gif" medium="image" type="image/gif"/>
 </item>
 <item>
@@ -175,15 +175,80 @@ div.sidebar-menu-container > * { padding: 5px 5px 5px 5px; }
     </div>
 </div>
 <div class="list grid quarto-listing-cols-3">
-
+<div class="g-col-1" data-index="0" data-categories="Control" data-listing-file-modified-sort="1707199082243" data-listing-reading-time-sort="3">
+<a href="./Control Systems/Bode_freqresp.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img src="https://www.nishantkb.info/Control Systems/Bode_gif.gif" class="thumbnail-image card-img" style="height: 150px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Bode Inverse Estimation
+</h5>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('Control'); return false;">
+Control
+</div>
+</div>
+<div class="card-text listing-description">
+Analysis on Frequency Responses using Transfer Functions of a given Control System. Inverse estimation of zeros and poles of a system through bode plots
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="1" data-categories="Control" data-listing-file-modified-sort="1707198613146" data-listing-reading-time-sort="48">
+<a href="./Control Systems/Full_State_Feedback_Control_Design.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img src="https://www.nishantkb.info/Control Systems/Simulation_animation.gif" class="thumbnail-image card-img" style="height: 150px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Full State Feedback Control Design
+</h5>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('Control'); return false;">
+Control
+</div>
+</div>
+<div class="card-text listing-description">
+Optimal LQR control for drone landing using MATLAB, emphasizing strategic pole placement for precise descent
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="2" data-categories="Control" data-listing-file-modified-sort="1707198995556" data-listing-reading-time-sort="40">
+<a href="./Control Systems/Linearized_LTI_Modeling_Feedback_Control.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img src="https://www.nishantkb.info/Control Systems/Drone_gif.gif" class="thumbnail-image card-img" style="height: 150px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Linearized_LTI_Modeling_Feedback_Control
+</h5>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('Control'); return false;">
+Control
+</div>
+</div>
+<div class="card-text listing-description">
+The system being modeled and controlled is a drone/aerial package delivery concept. The model is a simplified 2D version of the system dynamics where state space and…
+</div>
+</div>
+</div>
+</a>
+</div>
 </div>
 <div class="listing-no-matching d-none">
 No matching items
 </div>
 </div><a onclick="window.scrollTo(0, 0); return false;" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a> ]]></description>
   <guid>https://www.nishantkb.info/control_systems.html</guid>
-  <pubDate>Mon, 05 Feb 2024 23:20:48 GMT</pubDate>
-  <media:content url="https://www.nishantkb.info/images/Robotics.gif" medium="image" type="image/gif"/>
+  <pubDate>Tue, 06 Feb 2024 09:17:26 GMT</pubDate>
+  <media:content url="https://www.nishantkb.info/images/Controls_gif.gif" medium="image" type="image/gif"/>
 </item>
 <item>
   <title>Robotics</title>
@@ -332,7 +397,7 @@ No matching items
 </div>
 </div><a onclick="window.scrollTo(0, 0); return false;" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a> ]]></description>
   <guid>https://www.nishantkb.info/robotics.html</guid>
-  <pubDate>Mon, 05 Feb 2024 23:20:48 GMT</pubDate>
+  <pubDate>Tue, 06 Feb 2024 09:17:26 GMT</pubDate>
   <media:content url="https://www.nishantkb.info/images/Robotics.gif" medium="image" type="image/gif"/>
 </item>
 <item>
@@ -394,7 +459,7 @@ No matching items
 </div>
 </div><a onclick="window.scrollTo(0, 0); return false;" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a> ]]></description>
   <guid>https://www.nishantkb.info/Vision.html</guid>
-  <pubDate>Mon, 05 Feb 2024 23:20:48 GMT</pubDate>
+  <pubDate>Tue, 06 Feb 2024 09:17:26 GMT</pubDate>
   <media:content url="https://www.nishantkb.info/images/CV.gif" medium="image" type="image/gif"/>
 </item>
 </channel>

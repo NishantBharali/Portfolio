@@ -2,7 +2,7 @@
 title: "Bode Inverse Estimation"
 description: "Analysis on Frequency Responses using Transfer Functions of a given Control System. Inverse estimation of zeros and poles of a system through bode plots"
 categories: [Control]
-image: Dynamics_Pendulum_Cover_GIF.gif
+image: Bode_gif.gif
 format:
     html: 
         code-fold: show
