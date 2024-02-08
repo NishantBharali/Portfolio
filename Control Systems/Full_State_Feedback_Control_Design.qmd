@@ -1,5 +1,6 @@
 ---
 title: "Full State Feedback Control Design"
+
 description: "Optimal LQR control for drone landing using MATLAB, emphasizing strategic pole placement for precise descent"
 categories: [Control]
 image: Simulation_animation.gif

@@ -46,9 +46,6 @@ toc: false
 
 </style>
 ```
-<div class="centered-container">
-![The sound of the Gion Shoja bells echoes the impermanence of all things; the color of the sala flowers reveals the truth that the prosperous must decline. However, we humans are the exception.](./images/Nishant_2.jpg){.rounded-img}
-</div>
 
 # PROFESSIONAL
 

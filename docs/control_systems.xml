@@ -15,7 +15,7 @@
 <link>https://www.nishantkb.info/control_systems.html</link>
 </image>
 <generator>quarto-1.3.450</generator>
-<lastBuildDate>Tue, 06 Feb 2024 09:16:42 GMT</lastBuildDate>
+<lastBuildDate>Thu, 08 Feb 2024 08:32:34 GMT</lastBuildDate>
 <item>
   <title>Bode Inverse Estimation</title>
   <link>https://www.nishantkb.info/Control Systems/Bode_freqresp.html</link>
@@ -926,7 +926,7 @@ font-style: inherit;">options</span>)</span></code></pre></div>
 <a onclick="window.scrollTo(0, 0); return false;" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a> ]]></description>
   <category>Control</category>
   <guid>https://www.nishantkb.info/Control Systems/Bode_freqresp.html</guid>
-  <pubDate>Tue, 06 Feb 2024 09:16:42 GMT</pubDate>
+  <pubDate>Thu, 08 Feb 2024 08:32:34 GMT</pubDate>
   <media:content url="https://www.nishantkb.info/Control Systems/Bode_gif.gif" medium="image" type="image/gif"/>
 </item>
 <item>
@@ -3925,11 +3925,11 @@ $\dot{x} \left(0\right)=0$ m/s, $\dot{y} \left(0\right)=0$ m/s, and $\dot{\theta
 <a onclick="window.scrollTo(0, 0); return false;" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a> ]]></description>
   <category>Control</category>
   <guid>https://www.nishantkb.info/Control Systems/Full_State_Feedback_Control_Design.html</guid>
-  <pubDate>Tue, 06 Feb 2024 09:16:42 GMT</pubDate>
+  <pubDate>Thu, 08 Feb 2024 08:32:34 GMT</pubDate>
   <media:content url="https://www.nishantkb.info/Control Systems/Simulation_animation.gif" medium="image" type="image/gif"/>
 </item>
 <item>
-  <title>Linearized_LTI_Modeling_Feedback_Control</title>
+  <title>Linearized LTI Modeling Feedback Control</title>
   <link>https://www.nishantkb.info/Control Systems/Linearized_LTI_Modeling_Feedback_Control.html</link>
   <description><![CDATA[ 
 
@@ -7909,7 +7909,7 @@ font-style: inherit;">end</span></span></code></pre></div>
 <a onclick="window.scrollTo(0, 0); return false;" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a> ]]></description>
   <category>Control</category>
   <guid>https://www.nishantkb.info/Control Systems/Linearized_LTI_Modeling_Feedback_Control.html</guid>
-  <pubDate>Tue, 06 Feb 2024 09:16:42 GMT</pubDate>
+  <pubDate>Thu, 08 Feb 2024 08:32:34 GMT</pubDate>
   <media:content url="https://www.nishantkb.info/Control Systems/Drone_gif.gif" medium="image" type="image/gif"/>
 </item>
 </channel>
