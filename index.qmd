@@ -9,9 +9,9 @@ about:
   links:
     - icon: rss
       text: Projects
-      href: https://nishantbharali.github.io/Blog/Projects.html
+      href: https://www.nishantkb.info/Projects.html
     - icon: file-earmark-person
-      href: https://nishantbharali.github.io/Blog/Resume/Resume.html
+      href: https://www.nishantkb.info/Resume.html
       # https://nishantbharali.github.io/Blog/cv/cv.html
       text: Resume
     - icon: linkedin
