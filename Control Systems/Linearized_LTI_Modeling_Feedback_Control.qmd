@@ -26,7 +26,7 @@ sympref('FloatingPointOutput',true);
 
 A small startup company is exploring an aerial concept for delivering packages (Payload). This concept uses an open-top bin (gray) supported by drone motors and propellors (blue-forward and green-aft).
 
-Prior to developing a full 3D prototype, they have commissioned you to develop and validate a full state feedback control system for a 2D (i.e. planar) version as shown in Figure 1.
+Prior to developing a full 3D prototype, they have commissioned we to develop and validate a full state feedback control system for a 2D (i.e. planar) version as shown in Figure 1.
 
 <img src="Linearized_LTI_Modeling_Feedback_Control_media/image_0.png" alt="image_0.png" width="604"/>
 
@@ -97,7 +97,7 @@ We now want to eliminate the equilibrium forces ${\bar{F} }_1$ and ${\bar{F} }_2
 
      $$ F_2 \left(t\right)={\bar{F} }_2 +u_2 \left(t\right) $$
 
-Substitute these definitions into the equations of motion and eliminate the equilibrium forces. Your new equations of motion must not have any equilibrium forces remaining and must only include the variational force inputs.
+Substitute these definitions into the equations of motion and eliminate the equilibrium forces. Our new equations of motion must not have any equilibrium forces remaining and must only include the variational force inputs.
 
 Using (1.1)
 
@@ -119,7 +119,7 @@ F_bar_2 = $\displaystyle \frac{M\,d_1 \,g}{d_1 +d_2 }$
 
 Using the equations of motion from Problem 2, choose appropriate state variables and define a complete state-space representation for this system.
 
-You must assume that the outputs are $\left(x,y,\theta \right)$ because these can be measured with a GPS sensor, and the inputs must be $\left(u_1 ,u_2 \right)$ .
+We must assume that the outputs are $\left(x,y,\theta \right)$ because these can be measured with a GPS sensor, and the inputs must be $\left(u_1 ,u_2 \right)$ .
 
 Definining the State Variables:
 
@@ -182,7 +182,7 @@ A = $\left\lbrack \begin{array}{cccccc} 0 & 1 & 0 & 0 & 0 & 0\\ 0 & -\frac{\gamm
 
 $$ C=\left\lbrack \begin{array}{cccccc} 1 & 0 & 0 & 0 & 0 & 0\\ 0 & 0 & 1 & 0 & 0 & 0\\ 0 & 0 & 0 & 0 & 1 & 0\\ 0 & 0 & 0 & 0 & 0 & 0\\ 0 & 0 & 0 & 0 & 0 & 0 \end{array}\right\rbrack $$ $$ D=\left\lbrack \begin{array}{cc} 0 & 0\\ 0 & 0\\ 0 & 0\\ 1 & 0\\ 0 & 1 \end{array}\right\rbrack $$ \# Problem 4. Define system parameters as Matlab variables
 
-Up to this point, you have only used algebraic symbols to describe parameters in the state-space model. It is now time to substitute numerical values for these parameters. Define variables in Matlab for the following parameters:
+Up to this point, we have only used algebraic symbols to describe parameters in the state-space model. It is now time to substitute numerical values for these parameters. Define variables in Matlab for the following parameters:
 
          $$ \begin{array}{l} g=9\ldotp 81\;\left(m/s^2 \right)\\ M=10\;\left(\textrm{kg}\right)\;\\ J=5\;\left(\textrm{kg}\;{\;m}^2 \right)\;\\ \alpha =30\;\left(N\;s/m\right)\\ \beta =8\;\left(N\;m\;s/\textrm{rad}\right)\\ \gamma =10\;\left(N\;s/m\right)\\ d_1 =0\ldotp 651\;\left(\textrm{meters}\right)\;\\ d_2 =0\ldotp 449\;\left(\textrm{meters}\right)\;\\ F_{\max } =\pm 2000\;\left(N\right)\;\;\;\;\;\textrm{maximum}\;\textrm{available}\;\textrm{thrust}\;\textrm{on}\;\textrm{either}\;F_1 \;\textrm{or}\;F_2  \end{array} $$
 
@@ -249,7 +249,7 @@ D = double(jacobian(y,u));
 sys = ss(A,B,C,D);
 ```
 
-You must define the 'StateName', 'InputName', and 'OutputName' properties of your LTI state-space object with strings that are representative of the actual states, inputs, and outputs. You may also want to define the StateUnit, InputUnit, and OutputUnit properties as well.
+We must define the 'StateName', 'InputName', and 'OutputName' properties of our LTI state-space object with strings that are representative of the actual states, inputs, and outputs. We may also want to define the StateUnit, InputUnit, and OutputUnit properties as well.
 
 ```matlab
 stateNames = {'X Position', 'X Velocity', 'Y Position', 'Y Velocity', 'Angular Position', 'Angular Velocity'};
@@ -268,7 +268,7 @@ sys.InputUnit = inputUnits;
 sys.OutputUnit = outputUnits;
 ```
 
-Display your final numerical state-space model to the LiveScript and save it to a .mat file for use in the Final Project.
+Then we display our final numerical state-space model to the LiveScript and save it to a .mat file for use in the `Final Project`.
 
 ```matlab
 sys
@@ -322,9 +322,9 @@ save(filename, 'sys');
 
 # Problem 6. Check for minimum realization
 
-Use the <samp>MINREAL()</samp> function to demonstrate that your system is a minimum realization.
+Use the <samp>MINREAL()</samp> function to demonstrate that our system is a minimum realization.
 
-Hint: You have to compare the number of states of your original system to the number of states in the minimum realization.
+Hint: We have to compare the number of states of our original system to the number of states in the minimum realization.
 
 ```matlab
 min_sys = minreal(sys);
@@ -341,7 +341,7 @@ System is minimum realization
 
 # Problem 7. Controllability test
 
-Demonstrate that the open-loop system is completely controllable and explain your result.
+Demonstrate that the open-loop system is completely controllable and explain our result.
 
 ```matlab
 % Check controllability of the State-Space model
@@ -361,7 +361,7 @@ end
 The system is controllable.
 ```
 
-Determine if the system is controllable with only one actuator (you must check both!).
+Determine if the system is controllable with only one actuator (we must check both!).
 
 ```matlab
 % We can slice off the other columns of B to check for one input at a time
@@ -532,12 +532,12 @@ For each design, document the following:
 
 -   5% settling times on each of the output responses
 -   Peak absolute control for each of the control signals
--   Does either of your closed-loop control signals exceed the saturation limits?
--   Why you chose this set of pole locations for the design?
+-   Does either of our closed-loop control signals exceed the saturation limits?
+-   Why did we choose this set of pole locations for the design?
 
-You must use the <samp>PLACE</samp> function for each of your designs to compute the state feedback gains. After computing the state feedback gains, display a table of the closed-loop poles to demonstrate that you successfully placed the poles at the design locations.
+We must use the <samp>PLACE</samp> function for each of our designs to compute the state feedback gains. After computing the state feedback gains, display a table of the closed-loop poles to demonstrate that we successfully placed the poles at the design locations.
 
-Develop a closed-loop LTI model that augments the open-loop output vector with the two control signals, so your closed-loop output equation will have five outputs for plotting.
+Develop a closed-loop LTI model that augments the open-loop output vector with the two control signals, so our closed-loop output equation will have five outputs for plotting.
 
 Use the Matlab <samp>INITIAL</samp> function to compute the initial value response with the same initial condition vector that was used in the open-loop evaluation.
 

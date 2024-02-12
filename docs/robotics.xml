@@ -15,7 +15,7 @@
 <link>https://www.nishantkb.info/robotics.html</link>
 </image>
 <generator>quarto-1.3.450</generator>
-<lastBuildDate>Fri, 09 Feb 2024 20:15:03 GMT</lastBuildDate>
+<lastBuildDate>Mon, 12 Feb 2024 04:16:02 GMT</lastBuildDate>
 <item>
   <title>Robot Control</title>
   <link>https://www.nishantkb.info/Robotics/Control.html</link>
@@ -4084,7 +4084,7 @@ div.sidebar-menu-container > * { padding: 5px 5px 5px 5px; }
 <a onclick="window.scrollTo(0, 0); return false;" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a> ]]></description>
   <category>Robotics</category>
   <guid>https://www.nishantkb.info/Robotics/Control.html</guid>
-  <pubDate>Fri, 09 Feb 2024 20:15:03 GMT</pubDate>
+  <pubDate>Mon, 12 Feb 2024 04:16:02 GMT</pubDate>
   <media:content url="https://www.nishantkb.info/Robotics/Control__Cover_GIF.gif" medium="image" type="image/gif"/>
 </item>
 <item>
@@ -10389,7 +10389,7 @@ div.sidebar-menu-container > * { padding: 5px 5px 5px 5px; }
 <a onclick="window.scrollTo(0, 0); return false;" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a> ]]></description>
   <category>Robotics</category>
   <guid>https://www.nishantkb.info/Robotics/Dynamics.html</guid>
-  <pubDate>Fri, 09 Feb 2024 20:15:03 GMT</pubDate>
+  <pubDate>Mon, 12 Feb 2024 04:16:02 GMT</pubDate>
   <media:content url="https://www.nishantkb.info/Robotics/Dynamics_Pendulum_Cover_GIF.gif" medium="image" type="image/gif"/>
 </item>
 <item>
@@ -19268,7 +19268,7 @@ div.sidebar-menu-container > * { padding: 5px 5px 5px 5px; }
 <a onclick="window.scrollTo(0, 0); return false;" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a> ]]></description>
   <category>Robotics</category>
   <guid>https://www.nishantkb.info/Robotics/Inverse_kinematics.html</guid>
-  <pubDate>Fri, 09 Feb 2024 20:15:03 GMT</pubDate>
+  <pubDate>Mon, 12 Feb 2024 04:16:02 GMT</pubDate>
   <media:content url="https://www.nishantkb.info/Robotics/Inverse_Kinematics_Cover_GIF.gif" medium="image" type="image/gif"/>
 </item>
 <item>
@@ -23695,7 +23695,7 @@ div.sidebar-menu-container > * { padding: 5px 5px 5px 5px; }
 <a onclick="window.scrollTo(0, 0); return false;" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a> ]]></description>
   <category>Robotics</category>
   <guid>https://www.nishantkb.info/Robotics/Potential_trajectory.html</guid>
-  <pubDate>Fri, 09 Feb 2024 20:15:03 GMT</pubDate>
+  <pubDate>Mon, 12 Feb 2024 04:16:02 GMT</pubDate>
   <media:content url="https://www.nishantkb.info/Robotics/Trajectory_Cover_GIF.gif" medium="image" type="image/gif"/>
 </item>
 <item>
@@ -27650,7 +27650,7 @@ div.sidebar-menu-container > * { padding: 5px 5px 5px 5px; }
 <a onclick="window.scrollTo(0, 0); return false;" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a> ]]></description>
   <category>Robotics</category>
   <guid>https://www.nishantkb.info/Robotics/RRT.html</guid>
-  <pubDate>Fri, 09 Feb 2024 20:15:03 GMT</pubDate>
+  <pubDate>Mon, 12 Feb 2024 04:16:02 GMT</pubDate>
   <media:content url="https://www.nishantkb.info/Robotics/RRT_main.gif" medium="image" type="image/gif"/>
 </item>
 </channel>

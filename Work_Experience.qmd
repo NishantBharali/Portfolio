@@ -35,13 +35,14 @@ toc: false
   width: 500px;
   height: 250px;
   object-fit: cover;
+  box-shadow: 0 5px 15px rgba(60, 60, 60, 0.6); /* Added a subtle box shadow */
   transition: transform 0.5s cubic-bezier(0.47, 1.64, 0.41, 0.8), filter 0.5s ease-in-out, box-shadow 0.3s ease-in-out; /* Adding a smooth hover animation */
 }
 
 .straight-img:hover {
   transform: scale(1.03); /* Adjust the scale factor for a subtle zoom effect */
   filter: brightness(0.9) contrast(1.2) saturate(1.1) opacity(0.9); /* Adjust filter properties for a realistic effect */
-  box-shadow: 0 5px 15px rgba(119, 119, 119, 0.955); /* Added a subtle box shadow */
+  box-shadow: 0 5px 15px rgba(60, 60, 60, 0.6); /* Added a subtle box shadow */
 }
 
 </style>

@@ -75,7 +75,7 @@ Continuous-time state-space model.
 Model Properties
 ```
 
-Next, extract the Aol, Bol, Col, and Dol matrices, but do not display these results (because you already displayed them in the previous step).
+Next, extract the Aol, Bol, Col, and Dol matrices, but do not display these results (because we already displayed them in the previous step).
 
 ```matlab
 Aol = OL_sys.A;
@@ -126,7 +126,7 @@ P = 3
 
 # CASE 2. Simulate Closed-Loop Control
 
-You are given the following set of desired closed-loop poles which are known to result in 5% settling times (transient times) that are less than 3 seconds without saturating any of the control signals.
+We are given the following set of desired closed-loop poles which are known to result in 5% settling times (transient times) that are less than 3 seconds without saturating any of the control signals.
 
 ```matlab
 cl_poles = [
@@ -138,7 +138,7 @@ cl_poles = [
     -1.2 + 0i];
 ```
 
-Use the `PLACE` function to compute the full state feedback control gain matrix, and display your result.
+Use the `PLACE` function to compute the full state feedback control gain matrix, and display our result.
 
 ```matlab
 G = place(Aol,Bol,cl_poles)
@@ -163,7 +163,7 @@ theta0 = -0.5;      % radians
 theta0dot = 0.1;    % radians/sec
 ```
 
-Assume that you have access to the full state vector, then construct a closed-loop state-space LTI object using the feedback gains from above.
+Assume that we have access to the full state vector, then construct a closed-loop state-space LTI object using the feedback gains from above.
 
 ```matlab
 Acl = Aol - Bol*G
@@ -192,7 +192,7 @@ Ccl = 3x6
      0     0     0     0     1     0
 ```
 
-You must augment the output equation to output the original outputs as well as the control signals.
+We must augment the output equation to output the original outputs as well as the control signals.
 
 ```matlab
 Ccl = [Ccl; -G]
@@ -292,11 +292,10 @@ set(f,"Position", [0 0 800 800])
 
 ![](Full_State_Feedback_Control_Design_media/figure_0.png)
 
-In addition to the normal five subplot figure, you must also include the animation plot in the LiveScript as documentation of the performance.
+In addition to the normal five subplot figure, we must also include the animation plot in the LiveScript as documentation of the performance.
 
 ```matlab
-
-%als_f23_animate( t_ivr, y_ivr(:,1), y_ivr(:,2), y_ivr(:,3));
+als_f23_animate( t_ivr, y_ivr(:,1), y_ivr(:,2), y_ivr(:,3));
 ```
 
 # CASE 3. Evaluate Observability
@@ -322,7 +321,7 @@ N = 6
 
 Rank of observability matrix is equal to number of states.
 
-Then determine whether this system is completely observable using any subset of outputs. Justify your answers.
+Then we determine whether this system is completely observable using any subset of outputs and justify our answers.
 
 For individual outputs
 
@@ -380,7 +379,7 @@ We can see that the combination of ouput 1 & 2 (x & y), has a obs matrix which i
 
 # CASE 4. Design a Full-Order Luenberger Observer
 
-In this CASE, you will compute the gains for a state estimator using all three outputs. You must first choose appropriate pole locations for the state estimator (observer), and then compute and display the associated feedback gain matrix using the `PLACE` function.
+In this CASE, we will compute the gains for a state estimator using all three outputs. We must first choose appropriate pole locations for the state estimator (observer), and then compute and display the associated feedback gain matrix using the `PLACE` function.
 
 ```matlab
 alpha = 1.5;
@@ -398,7 +397,7 @@ K = 6x3
     1.9765   -0.8166    6.4001
 ```
 
-To document your design, you must generate a plot that includes the open-loop poles from CASE 1, the closed-loop poles from CASE 2, and observer poles from this CASE. Use common markers for each set of poles (i.e. all open-loop poles must use the same marker, etc.) so that it is easy to distinguish the poles on the figure. Include a legend that only has three entries in it (open-loop, closed-loop, observer), corresponding to the three sets of poles. You must use the `SGRID` function (read the Matlab help!!) to generate appropriate grid lines. Annotate your plot with axis labels. Make sure your legend does not cover up any of the poles!
+To document our design, we must generate a plot that includes the open-loop poles from CASE 1, the closed-loop poles from CASE 2, and observer poles from this CASE. Use common markers for each set of poles (i.e. all open-loop poles must use the same marker, etc.) so that it is easy to distinguish the poles on the figure. Include a legend that only has three entries in it (open-loop, closed-loop, observer), corresponding to the three sets of poles. We must use the `SGRID` function (read the Matlab help!!) to generate appropriate grid lines. We will also annotate our plot with axis labels. Making sure our legend does not cover up any of the poles!
 
 ```matlab
 f = figure;
@@ -423,7 +422,7 @@ axis equal
 
 # CASE 5. Simulate Output Feedback Control
 
-For this CASE, you must simulate the complete output feedback control system, which will include the state estimator and full state feedback using the estimated states.
+For this CASE, we must simulate the complete output feedback control system, which will include the state estimator and full state feedback using the estimated states.
 
 Using the equations for obersever followed by controller we can find, (L14/S29)
 
@@ -490,18 +489,24 @@ $$
 Augmenting to get back u to plot,
 
 $$
-\left\lbrack \begin{array}{c}
-y\\
+\begin{bmatrix}
+y \\
 \hat{y} \\
 u
-\end{array}\right\rbrack =\left\lbrack \begin{array}{cc}
-C & -D\;G\\
-0 & C-D\;G\\
+\end{bmatrix}
+=
+\begin{bmatrix}
+C & -DG \\
+0 & C-DG \\
 0 & -G
-\end{array}\right\rbrack
-$$$\left\lbrack \begin{array}{c} x\\ \hat{x} \end{array}\right\rbrack$\$
+\end{bmatrix}
+\begin{bmatrix}
+x \\
+\hat{x}
+\end{bmatrix}
+$$
 
-In order to insure that the estimated states $\hat{\mathbf{x}}$ (and outputs $\hat{\mathbf{y}}$) have converged before control is enabled, you will first need to generate an augmented LTI closed-loop output-feedback control model with the state feedback gain $\mathbf{G}$ set to zero (it is easier to just use $\left(0*\mathbf{G}\right)$ in the matrices). This first LTI object will be used for the first **200 milliseconds** of the response. You must use the same initial states on the plant as defined in CASE 2 above, but the initial observer states must be zero. Your closed-loop state-space output equation must also be augmented to output the following three vectors: $\mathbf{y}$, $\hat{\mathbf{y}}$, and $\mathbf{u}$.
+In order to insure that the estimated states $\hat{\mathbf{x}}$ (and outputs $\hat{\mathbf{y}}$) have converged before control is enabled, we will first need to generate an augmented LTI closed-loop output-feedback control model with the state feedback gain $\mathbf{G}$ set to zero (it is easier to just use $\left(0*\mathbf{G}\right)$ in the matrices). This first LTI object will be used for the first **200 milliseconds** of the response. We must use the same initial states on the plant as defined in CASE 2 above, but the initial observer states must be zero. Our closed-loop state-space output equation must also be augmented to output the following three vectors: $\mathbf{y}$, $\hat{\mathbf{y}}$, and $\mathbf{u}$.
 
 ```matlab
 xinit_OFC = [xinit;zeros(size(xinit))];
@@ -567,7 +572,7 @@ Continuous-time state-space model.
 Model Properties
 ```
 
-Next, you must generate a second augmented LTI closed-loop output-feedback control model that is identical to the first model except that the state-feedback control gains are not zero, i.e. the controller is enabled. This second LTI object will be used for the remainder of the simulation.
+Next, we must generate a second augmented LTI closed-loop output-feedback control model that is identical to the first model except that the state-feedback control gains are not zero, i.e. the controller is enabled. This second LTI object will be used for the remainder of the simulation.
 
 ```matlab
 Aofc = [Aol, -Bol*G;
@@ -617,7 +622,7 @@ Continuous-time state-space model.
 Model Properties
 ```
 
-You are now ready to simulate the closed-loop response, but it must happen in two separate simulation stages. In the first stage, you will use the INITIAL function to simulate for 200 milliseconds. At the end of this first simulation stage, you must capture the final state vector and use it as the initial state vector for the second simulation stage. The total simulation duration should be 4 seconds like above.
+We are now ready to simulate the closed-loop response, but it must happen in two separate simulation stages. In the first stage, we will use the INITIAL function to simulate for 200 milliseconds. At the end of this first simulation stage, we must capture the final state vector and use it as the initial state vector for the second simulation stage. The total simulation duration should be 4 seconds like above.
 
 ```matlab
 t_break = 200e-03; % seconds
@@ -640,7 +645,7 @@ ans = 1.6099
 ans = 2.1822
 ```
 
-Generate the standard annotated plot (three output subplots on the left and two control signal subplots on the right), with appropriate annotations; but you must also plot the estimated output signals on top of the associated actual output signals. It must be clear from your plots that the estimated outputs all start from zero and converge to the actual outputs within 200 milliseconds. Do NOT try to get the observer states to converge too fast because it will be difficult to see the convergence on the plots. If you have done this step correctly, you should see 5% settling times that are comparable to the original design from CASE 2. The 5% settling times on the outputs must all be below 3 seconds, and you must not saturate either of the control signals.
+Generate the standard annotated plot (three output subplots on the left and two control signal subplots on the right), with appropriate annotations; but we must also plot the estimated output signals on top of the associated actual output signals. It must be clear from our plots that the estimated outputs all start from zero and converge to the actual outputs within 200 milliseconds. One must NOT try to get the observer states to converge too fast because it will be difficult to see the convergence on the plots. If we have done this step correctly, we should see 5% settling times that are comparable to the original design from CASE 2. The 5% settling times on the outputs must all be below 3 seconds, and we must not saturate either of the control signals.
 
 ```matlab
 f = figure();
@@ -708,17 +713,17 @@ als_f23_animate( t_ivr, y_ivr(:,1), y_ivr(:,2), y_ivr(:,3));
 
 <img src="Full_State_Feedback_Control_Design_media/Simulation_animation.gif" alt="Animated GIF" width="50%"/>
 
-## For cases 6, 7, and 8, you will design and simulate another Output Feedback Controller (i.e. a state estimator with full state feedback control), but now you must also include Integral Control for reference tracking as defined in the notes.
+## For cases 6, 7, and 8, we will design and simulate another Output Feedback Controller (i.e. a state estimator with full state feedback control), but now we must also include Integral Control for reference tracking as defined in the notes.
 
-\matlabheadingtwo{This closed-loop simulation will require you to redesign the state-feedback control gains $\mathbf{G}$ (you cannot use the gains from CASE 2!); however, you should plan to use the same state estimator gains $\mathbf{K}$you designed in CASE 4.  You are welcome to redesign the state estimater gains (poles), but this is not recommended because it will add unnecessary time to your project completion.}
+\matlabheadingtwo{This closed-loop simulation will require we to redesign the state-feedback control gains $\mathbf{G}$ (we cannot use the gains from CASE 2!); however, we should plan to use the same state estimator gains $\mathbf{K}$we designed in CASE 4.  we are welcome to redesign the state estimater gains (poles), but this is not recommended because it will add unnecessary time to our project completion.}
 
-## You must expect to iterate on CASES 6, 7, and 8 until you achieve one acceptable design.
+## We must expect to iterate on CASES 6, 7, and 8 until we achieve one acceptable design.
 
 # CASE 6. Design an LQI compensator
 
-You must use LQR optimal control to design the state-feedback gains for this simulation. The MathWorks has provided a separate tool called `LQI` for computing the state-feedback gains when you are implementing state feedback with integral control. Note that `LQI` is identical to `LQR` except that `LQI` already knows that you are designing for reference tracking with an integral controller. You can NOT use `LQR` for this design, and you must use `LQI!` You must also use the LTI object for the open-loop system as input to the `LQI` function. Read the online help for `LQI` before starting this CASE!
+We must use LQR optimal control to design the state-feedback gains for this simulation. The MathWorks has provided a separate tool called `LQI` for computing the state-feedback gains when we are implementing state feedback with integral control. Note that `LQI` is identical to `LQR` except that `LQI` already knows that we are designing for reference tracking with an integral controller. We can NOT use `LQR` for this design, and we must use `LQI!` We must also use the LTI object for the open-loop system as input to the `LQI` function. Read the online help for `LQI` before starting this CASE!
 
-First define the LQI cost function weighting matrices $\mathbf{Q}$ and $\mathbf{R}$. Note that `LQI` also accepts a weighting matrix $\mathbf{N}$, which allows cross-weighting between states and controls, but you should NOT use this weighting matrix for this CASE! Make sure you understand the dimensions of each of these weighting matrices.
+First define the LQI cost function weighting matrices $\mathbf{Q}$ and $\mathbf{R}$. Note that `LQI` also accepts a weighting matrix $\mathbf{N}$, which allows cross-weighting between states and controls, but we should NOT use this weighting matrix for this CASE! Make sure we understand the dimensions of each of these weighting matrices.
 
 ```matlab
 Q = diag([1 1 1 1 1 1 1 1 1])
@@ -790,7 +795,7 @@ e = 9x1 complex
 
 # CASE 7. Construct the OFC with Reference Inputs
 
-Generate an augmented state-space system for the closed-loop Output Feedback Controller (state feedback with estimated states) and Reference Tracking. Your complete closed-loop state-space model must have:
+Generate an augmented state-space system for the closed-loop Output Feedback Controller (state feedback with estimated states) and Reference Tracking. Our complete closed-loop state-space model must have:
 
 \item
 
@@ -815,25 +820,25 @@ After generating the closed-loop output feedback control state-space model, comp
 
 # CASE 8. Simulate the Output Feedback Controller with Reference Inputs
 
-For this CASE, you will simulate the closed-loop response of your control system using `LSIM()`; however, you must first generate a suitable reference profile as an input. Before you can generate a reference profile, you need to understand the initial position and the final desired position of the drone. These are new initial conditions, and a very different final position from any closed-loop simulation you have done before.
+For this CASE, we will simulate the closed-loop response of our control system using `LSIM()`; however, we must first generate a suitable reference profile as an input. Before we can generate a reference profile, we need to understand the initial position and the final desired position of the drone. These are new initial conditions, and a very different final position from any closed-loop simulation we have done before.
 
 **Initial Plant Conditions:** The plant (drone) must start with the following initial states:
+         
 
-```         
 $x\left(0\right)=-2$ m, $y\left(0\right)=1$ m, and $\theta \left(0\right)=0$ rad.
 
 $\dot{x} \left(0\right)=0$ m/s, $\dot{y} \left(0\right)=0$ m/s, and $\dot{\theta} \left(0\right)=0$ rad/s.
-```
 
-**Initial Observer Conditions:** You may assume that the initial observer states are identical to the initial plant states.
+
+**Initial Observer Conditions:** We may assume that the initial observer states are identical to the initial plant states.
 
 **Final Plant Conditions:** The plant (drone) must reach the following final states:
 
-```         
+        
 $x\left(0\right)=+2$ m, $y\left(0\right)=0$ m, and $\theta \left(0\right)=0$ rad.
 
 $\dot{x} \left(0\right)=0$ m/s, $\dot{y} \left(0\right)=0$ m/s, and $\dot{\theta} \left(0\right)=0$ rad/s.
-```
+
 
 **Evaluation Criteria:**
 
@@ -849,21 +854,21 @@ $\dot{x} \left(0\right)=0$ m/s, $\dot{y} \left(0\right)=0$ m/s, and $\dot{\theta
 
     \item
 
-    { There is NO formal settling time requirement; however, your actual output responses $\mathbf{y}$ must track the reference responses $\mathbf{r}$reasonably accurately. For example, if your reference profiles have dwell regions, then there should be zero steady-state error after transients have subsided. If your reference profiles have ramp regions, then you should expect to see a steady-state error during the ramp, which looks like a delayed response. How closely you track the references will depend on your choice of weighting coefficients in the Q matrix. Note that a steady-state error during the ramp is perfectly acceptable as long as you choose the reference profile such that the drone does not make contact with the wall! }
+    { There is NO formal settling time requirement; however, our actual output responses $\mathbf{y}$ must track the reference responses $\mathbf{r}$reasonably accurately. For example, if our reference profiles have dwell regions, then there should be zero steady-state error after transients have subsided. If our reference profiles have ramp regions, then we should expect to see a steady-state error during the ramp, which looks like a delayed response. How closely we track the references will depend on our choice of weighting coefficients in the Q matrix. Note that a steady-state error during the ramp is perfectly acceptable as long as we choose the reference profile such that the drone does not make contact with the wall! }
 
--   For this simulation, the observer and the controller must both be enabled at t=0 (i.e. do NOT attempt a two-stage simulation like CASE 5.
+-   For this simulation, the observer and the controller must both be enabled at t=0 (i.e. do NOT attempt a two-stage simulation like CASE 5).
 
--   You MUST use `LSIM` to simulate the closed-loop time response
+-   We MUST use `LSIM` to simulate the closed-loop time response
 
     \item
 
-    { Before constructing the reference profiles, you must first construct a time vector for the simulation. I recommend choosing a uniform step size of $\textrm{ts}=0\ldotp 002$ seconds: }
+    { Before constructing the reference profiles, we must first construct a time vector for the simulation. I recommend choosing a uniform step size of $\textrm{ts}=0\ldotp 002$ seconds: }
 
 $$
 t=\textrm{ts}*\left\lbrack 0:\textrm{round}\left(\frac{\textrm{tfinal}}{\left.\textrm{ts}\right)}\right)\right\rbrack
 $$
 
--   For each time step in the time vector, you must generate a reference vector for each of the outputs. You will need to generate a particular path vs. time profile for the desired x and y position; however, I recommend choosing the following reference profile for the angular position:
+-   For each time step in the time vector, we must generate a reference vector for each of the outputs. We will need to generate a particular path vs. time profile for the desired x and y position; however, I recommend choosing the following reference profile for the angular position:
 
 $$
 \theta_{\textrm{ref}} =\textrm{zeros}\left(\textrm{size}\left(t\right)\right)

@@ -15,7 +15,7 @@
 <link>https://www.nishantkb.info/control_systems.html</link>
 </image>
 <generator>quarto-1.3.450</generator>
-<lastBuildDate>Fri, 09 Feb 2024 20:13:32 GMT</lastBuildDate>
+<lastBuildDate>Mon, 12 Feb 2024 04:14:57 GMT</lastBuildDate>
 <item>
   <title>Bode Inverse Estimation</title>
   <link>https://www.nishantkb.info/Control Systems/Bode_freqresp.html</link>
@@ -926,7 +926,7 @@ font-style: inherit;">options</span>)</span></code></pre></div>
 <a onclick="window.scrollTo(0, 0); return false;" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a> ]]></description>
   <category>Control</category>
   <guid>https://www.nishantkb.info/Control Systems/Bode_freqresp.html</guid>
-  <pubDate>Fri, 09 Feb 2024 20:13:32 GMT</pubDate>
+  <pubDate>Mon, 12 Feb 2024 04:14:57 GMT</pubDate>
   <media:content url="https://www.nishantkb.info/Control Systems/Bode_gif.gif" medium="image" type="image/gif"/>
 </item>
 <item>
@@ -1025,7 +1025,7 @@ font-style: inherit;">OL_sys</span></span></code></pre></div>
  
 Continuous-time state-space model.
 Model Properties</code></pre>
-<p>Next, extract the Aol, Bol, Col, and Dol matrices, but do not display these results (because you already displayed them in the previous step).</p>
+<p>Next, extract the Aol, Bol, Col, and Dol matrices, but do not display these results (because we already displayed them in the previous step).</p>
 <div class="sourceCode" id="cb5" style="background: #f1f3f5;"><pre class="sourceCode matlab code-with-copy"><code class="sourceCode matlab"><span id="cb5-1"><span class="va" style="color: #111111;
 background-color: null;
 font-style: inherit;">Aol</span> <span class="op" style="color: #5E5E5E;
@@ -1132,7 +1132,7 @@ font-style: inherit;">1</span>)</span></code></pre></div>
 </section>
 <section id="case-2.-simulate-closed-loop-control" class="level1">
 <h1>CASE 2. Simulate Closed-Loop Control</h1>
-<p>You are given the following set of desired closed-loop poles which are known to result in 5% settling times (transient times) that are less than 3 seconds without saturating any of the control signals.</p>
+<p>We are given the following set of desired closed-loop poles which are known to result in 5% settling times (transient times) that are less than 3 seconds without saturating any of the control signals.</p>
 <div class="sourceCode" id="cb14" style="background: #f1f3f5;"><pre class="sourceCode matlab code-with-copy"><code class="sourceCode matlab"><span id="cb14-1"><span class="va" style="color: #111111;
 background-color: null;
 font-style: inherit;">cl_poles</span> <span class="op" style="color: #5E5E5E;
@@ -1194,7 +1194,7 @@ background-color: null;
 font-style: inherit;">0i</span>]<span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">;</span></span></code></pre></div>
-<p>Use the <code>PLACE</code> function to compute the full state feedback control gain matrix, and display your result.</p>
+<p>Use the <code>PLACE</code> function to compute the full state feedback control gain matrix, and display our result.</p>
 <div class="sourceCode" id="cb15" style="background: #f1f3f5;"><pre class="sourceCode matlab code-with-copy"><code class="sourceCode matlab"><span id="cb15-1"><span class="va" style="color: #111111;
 background-color: null;
 font-style: inherit;">G</span> <span class="op" style="color: #5E5E5E;
@@ -1288,7 +1288,7 @@ background-color: null;
 font-style: inherit;">;</span>    <span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">% radians/sec</span></span></code></pre></div>
-<p>Assume that you have access to the full state vector, then construct a closed-loop state-space LTI object using the feedback gains from above.</p>
+<p>Assume that we have access to the full state vector, then construct a closed-loop state-space LTI object using the feedback gains from above.</p>
 <div class="sourceCode" id="cb18" style="background: #f1f3f5;"><pre class="sourceCode matlab code-with-copy"><code class="sourceCode matlab"><span id="cb18-1"><span class="va" style="color: #111111;
 background-color: null;
 font-style: inherit;">Acl</span> <span class="op" style="color: #5E5E5E;
@@ -1332,7 +1332,7 @@ font-style: inherit;">G</span></span></code></pre></div>
      1     0     0     0     0     0
      0     0     1     0     0     0
      0     0     0     0     1     0</code></pre>
-<p>You must augment the output equation to output the original outputs as well as the control signals.</p>
+<p>We must augment the output equation to output the original outputs as well as the control signals.</p>
 <div class="sourceCode" id="cb22" style="background: #f1f3f5;"><pre class="sourceCode matlab code-with-copy"><code class="sourceCode matlab"><span id="cb22-1"><span class="va" style="color: #111111;
 background-color: null;
 font-style: inherit;">Ccl</span> <span class="op" style="color: #5E5E5E;
@@ -1982,11 +1982,38 @@ font-style: inherit;">800</span> <span class="fl" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">800</span>])</span></code></pre></div>
 <p><img src="https://www.nishantkb.info/Control Systems/Full_State_Feedback_Control_Design_media/figure_0.png" class="img-fluid"></p>
-<p>In addition to the normal five subplot figure, you must also include the animation plot in the LiveScript as documentation of the performance.</p>
-<div class="sourceCode" id="cb29" style="background: #f1f3f5;"><pre class="sourceCode matlab code-with-copy"><code class="sourceCode matlab"><span id="cb29-1"></span>
-<span id="cb29-2"><span class="co" style="color: #5E5E5E;
+<p>In addition to the normal five subplot figure, we must also include the animation plot in the LiveScript as documentation of the performance.</p>
+<div class="sourceCode" id="cb29" style="background: #f1f3f5;"><pre class="sourceCode matlab code-with-copy"><code class="sourceCode matlab"><span id="cb29-1"><span class="va" style="color: #111111;
 background-color: null;
-font-style: inherit;">%als_f23_animate( t_ivr, y_ivr(:,1), y_ivr(:,2), y_ivr(:,3));</span></span></code></pre></div>
+font-style: inherit;">als_f23_animate</span>( <span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">t_ivr</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">,</span> <span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">y_ivr</span>(<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">:,</span><span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>)<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">,</span> <span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">y_ivr</span>(<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">:,</span><span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span>)<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">,</span> <span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">y_ivr</span>(<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">:,</span><span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">3</span>))<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span></code></pre></div>
 </section>
 <section id="case-3.-evaluate-observability" class="level1">
 <h1>CASE 3. Evaluate Observability</h1>
@@ -2017,7 +2044,7 @@ background-color: null;
 font-style: inherit;">N</span></span></code></pre></div>
 <pre class="text:output"><code>N = 6</code></pre>
 <p>Rank of observability matrix is equal to number of states.</p>
-<p>Then determine whether this system is completely observable using any subset of outputs. Justify your answers.</p>
+<p>Then we determine whether this system is completely observable using any subset of outputs and justify our answers.</p>
 <p>For individual outputs</p>
 <div class="sourceCode" id="cb34" style="background: #f1f3f5;"><pre class="sourceCode matlab code-with-copy"><code class="sourceCode matlab"><span id="cb34-1"><span class="va" style="color: #111111;
 background-color: null;
@@ -2126,7 +2153,7 @@ font-style: inherit;">,:</span>)))</span></code></pre></div>
 </section>
 <section id="case-4.-design-a-full-order-luenberger-observer" class="level1">
 <h1>CASE 4. Design a Full-Order Luenberger Observer</h1>
-<p>In this CASE, you will compute the gains for a state estimator using all three outputs. You must first choose appropriate pole locations for the state estimator (observer), and then compute and display the associated feedback gain matrix using the <code>PLACE</code> function.</p>
+<p>In this CASE, we will compute the gains for a state estimator using all three outputs. We must first choose appropriate pole locations for the state estimator (observer), and then compute and display the associated feedback gain matrix using the <code>PLACE</code> function.</p>
 <div class="sourceCode" id="cb46" style="background: #f1f3f5;"><pre class="sourceCode matlab code-with-copy"><code class="sourceCode matlab"><span id="cb46-1"><span class="va" style="color: #111111;
 background-color: null;
 font-style: inherit;">alpha</span> <span class="op" style="color: #5E5E5E;
@@ -2177,7 +2204,7 @@ font-style: inherit;">.'</span></span></code></pre></div>
    63.5968    2.2363   -0.7294
    -5.7511   40.1340   10.2240
     1.9765   -0.8166    6.4001</code></pre>
-<p>To document your design, you must generate a plot that includes the open-loop poles from CASE 1, the closed-loop poles from CASE 2, and observer poles from this CASE. Use common markers for each set of poles (i.e.&nbsp;all open-loop poles must use the same marker, etc.) so that it is easy to distinguish the poles on the figure. Include a legend that only has three entries in it (open-loop, closed-loop, observer), corresponding to the three sets of poles. You must use the <code>SGRID</code> function (read the Matlab help!!) to generate appropriate grid lines. Annotate your plot with axis labels. Make sure your legend does not cover up any of the poles!</p>
+<p>To document our design, we must generate a plot that includes the open-loop poles from CASE 1, the closed-loop poles from CASE 2, and observer poles from this CASE. Use common markers for each set of poles (i.e.&nbsp;all open-loop poles must use the same marker, etc.) so that it is easy to distinguish the poles on the figure. Include a legend that only has three entries in it (open-loop, closed-loop, observer), corresponding to the three sets of poles. We must use the <code>SGRID</code> function (read the Matlab help!!) to generate appropriate grid lines. We will also annotate our plot with axis labels. Making sure our legend does not cover up any of the poles!</p>
 <div class="sourceCode" id="cb48" style="background: #f1f3f5;"><pre class="sourceCode matlab code-with-copy"><code class="sourceCode matlab"><span id="cb48-1"><span class="va" style="color: #111111;
 background-color: null;
 font-style: inherit;">f</span> <span class="op" style="color: #5E5E5E;
@@ -2482,7 +2509,7 @@ font-style: inherit;">equal</span></span></code></pre></div>
 </section>
 <section id="case-5.-simulate-output-feedback-control" class="level1">
 <h1>CASE 5. Simulate Output Feedback Control</h1>
-<p>For this CASE, you must simulate the complete output feedback control system, which will include the state estimator and full state feedback using the estimated states.</p>
+<p>For this CASE, we must simulate the complete output feedback control system, which will include the state estimator and full state feedback using the estimated states.</p>
 <p>Using the equations for obersever followed by controller we can find, (L14/S29)</p>
 <p><img src="https://latex.codecogs.com/png.latex?%0A%5Cleft%5Clbrack%20%5Cbegin%7Barray%7D%7Bc%7D%0A%5Cdot%7Bx%7D%20%5C%5C%0A%5Cdot%7B%5Chat%7Bx%7D%20%7D%0A%5Cend%7Barray%7D%5Cright%5Crbrack%20=%5Cleft%5Clbrack%20%5Cbegin%7Barray%7D%7Bcc%7D%0AA%20&amp;%20-B%5C;G%5C%5C%0AK%5C;C%20&amp;%20%5Chat%7BA%7D%20-K%5Chat%7BC%7D%20-%5Chat%7BB%5C;%7D%20G-K%5Cleft(D-%5Chat%7BD%7D%20%5Cright)G%0A%5Cend%7Barray%7D%5Cright%5Crbrack%20%5Cleft%5Clbrack%20%5Cbegin%7Barray%7D%7Bc%7D%0Ax%5C%5C%0A%5Chat%7Bx%7D%0A%5Cend%7Barray%7D%5Cright%5Crbrack%0A"></p>
 <p><img src="https://latex.codecogs.com/png.latex?%0A%5Cleft%5Clbrack%20%5Cbegin%7Barray%7D%7Bc%7D%0Ay%5C%5C%0A%5Chat%7By%7D%0A%5Cend%7Barray%7D%5Cright%5Crbrack%20=%5Cleft%5Clbrack%20%5Cbegin%7Barray%7D%7Bcc%7D%0AC%20&amp;%20-D%5C;G%5C%5C%0A0%20&amp;%20%5Chat%7BC%7D%20-%5Chat%7BD%7D%20%5C;G%0A%5Cend%7Barray%7D%5Cright%5Crbrack%20%5Cleft%5Clbrack%20%5Cbegin%7Barray%7D%7Bc%7D%0Ax%5C%5C%0A%5Chat%7Bx%7D%0A%5Cend%7Barray%7D%5Cright%5Crbrack%0A"></p>
@@ -2492,8 +2519,8 @@ font-style: inherit;">equal</span></span></code></pre></div>
 <p><img src="https://latex.codecogs.com/png.latex?%0A%5Cleft%5Clbrack%20%5Cbegin%7Barray%7D%7Bc%7D%0A%5Cdot%7Bx%7D%20%5C%5C%0A%5Cdot%7B%5Chat%7Bx%7D%20%7D%0A%5Cend%7Barray%7D%5Cright%5Crbrack%20=%5Cleft%5Clbrack%20%5Cbegin%7Barray%7D%7Bcc%7D%0AA%20&amp;%20-B%5C;G%5C%5C%0AK%5C;C%20&amp;%20A-K%5C;C-B%5C;G%0A%5Cend%7Barray%7D%5Cright%5Crbrack%20%5Cleft%5Clbrack%20%5Cbegin%7Barray%7D%7Bc%7D%0Ax%5C%5C%0A%5Chat%7Bx%7D%0A%5Cend%7Barray%7D%5Cright%5Crbrack%0A"></p>
 <p><img src="https://latex.codecogs.com/png.latex?%0A%5Cleft%5Clbrack%20%5Cbegin%7Barray%7D%7Bc%7D%0Ay%5C%5C%0A%5Chat%7By%7D%0A%5Cend%7Barray%7D%5Cright%5Crbrack%20=%5Cleft%5Clbrack%20%5Cbegin%7Barray%7D%7Bcc%7D%0AC%20&amp;%20-D%5C;G%5C%5C%0A0%20&amp;%20C-D%5C;G%0A%5Cend%7Barray%7D%5Cright%5Crbrack%20%5Cleft%5Clbrack%20%5Cbegin%7Barray%7D%7Bc%7D%0Ax%5C%5C%0A%5Chat%7Bx%7D%0A%5Cend%7Barray%7D%5Cright%5Crbrack%0A"></p>
 <p>Augmenting to get back u to plot,</p>
-<p><img src="https://latex.codecogs.com/png.latex?%0A%5Cleft%5Clbrack%20%5Cbegin%7Barray%7D%7Bc%7D%0Ay%5C%5C%0A%5Chat%7By%7D%20%5C%5C%0Au%0A%5Cend%7Barray%7D%5Cright%5Crbrack%20=%5Cleft%5Clbrack%20%5Cbegin%7Barray%7D%7Bcc%7D%0AC%20&amp;%20-D%5C;G%5C%5C%0A0%20&amp;%20C-D%5C;G%5C%5C%0A0%20&amp;%20-G%0A%5Cend%7Barray%7D%5Cright%5Crbrack%0A"><img src="https://latex.codecogs.com/png.latex?%5Cleft%5Clbrack%20%5Cbegin%7Barray%7D%7Bc%7D%20x%5C%5C%20%5Chat%7Bx%7D%20%5Cend%7Barray%7D%5Cright%5Crbrack">$</p>
-<p>In order to insure that the estimated states <img src="https://latex.codecogs.com/png.latex?%5Chat%7B%5Cmathbf%7Bx%7D%7D"> (and outputs <img src="https://latex.codecogs.com/png.latex?%5Chat%7B%5Cmathbf%7By%7D%7D">) have converged before control is enabled, you will first need to generate an augmented LTI closed-loop output-feedback control model with the state feedback gain <img src="https://latex.codecogs.com/png.latex?%5Cmathbf%7BG%7D"> set to zero (it is easier to just use <img src="https://latex.codecogs.com/png.latex?%5Cleft(0*%5Cmathbf%7BG%7D%5Cright)"> in the matrices). This first LTI object will be used for the first <strong>200 milliseconds</strong> of the response. You must use the same initial states on the plant as defined in CASE 2 above, but the initial observer states must be zero. Your closed-loop state-space output equation must also be augmented to output the following three vectors: <img src="https://latex.codecogs.com/png.latex?%5Cmathbf%7By%7D">, <img src="https://latex.codecogs.com/png.latex?%5Chat%7B%5Cmathbf%7By%7D%7D">, and <img src="https://latex.codecogs.com/png.latex?%5Cmathbf%7Bu%7D">.</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0A%5Cbegin%7Bbmatrix%7D%0Ay%20%5C%5C%0A%5Chat%7By%7D%20%5C%5C%0Au%0A%5Cend%7Bbmatrix%7D%0A=%0A%5Cbegin%7Bbmatrix%7D%0AC%20&amp;%20-DG%20%5C%5C%0A0%20&amp;%20C-DG%20%5C%5C%0A0%20&amp;%20-G%0A%5Cend%7Bbmatrix%7D%0A%5Cbegin%7Bbmatrix%7D%0Ax%20%5C%5C%0A%5Chat%7Bx%7D%0A%5Cend%7Bbmatrix%7D%0A"></p>
+<p>In order to insure that the estimated states <img src="https://latex.codecogs.com/png.latex?%5Chat%7B%5Cmathbf%7Bx%7D%7D"> (and outputs <img src="https://latex.codecogs.com/png.latex?%5Chat%7B%5Cmathbf%7By%7D%7D">) have converged before control is enabled, we will first need to generate an augmented LTI closed-loop output-feedback control model with the state feedback gain <img src="https://latex.codecogs.com/png.latex?%5Cmathbf%7BG%7D"> set to zero (it is easier to just use <img src="https://latex.codecogs.com/png.latex?%5Cleft(0*%5Cmathbf%7BG%7D%5Cright)"> in the matrices). This first LTI object will be used for the first <strong>200 milliseconds</strong> of the response. We must use the same initial states on the plant as defined in CASE 2 above, but the initial observer states must be zero. Our closed-loop state-space output equation must also be augmented to output the following three vectors: <img src="https://latex.codecogs.com/png.latex?%5Cmathbf%7By%7D">, <img src="https://latex.codecogs.com/png.latex?%5Chat%7B%5Cmathbf%7By%7D%7D">, and <img src="https://latex.codecogs.com/png.latex?%5Cmathbf%7Bu%7D">.</p>
 <div class="sourceCode" id="cb49" style="background: #f1f3f5;"><pre class="sourceCode matlab code-with-copy"><code class="sourceCode matlab"><span id="cb49-1"><span class="va" style="color: #111111;
 background-color: null;
 font-style: inherit;">xinit_OFC</span> <span class="op" style="color: #5E5E5E;
@@ -2742,7 +2769,7 @@ font-style: inherit;">,</span>[])</span></code></pre></div>
  
 Continuous-time state-space model.
 Model Properties</code></pre>
-<p>Next, you must generate a second augmented LTI closed-loop output-feedback control model that is identical to the first model except that the state-feedback control gains are not zero, i.e.&nbsp;the controller is enabled. This second LTI object will be used for the remainder of the simulation.</p>
+<p>Next, we must generate a second augmented LTI closed-loop output-feedback control model that is identical to the first model except that the state-feedback control gains are not zero, i.e.&nbsp;the controller is enabled. This second LTI object will be used for the remainder of the simulation.</p>
 <div class="sourceCode" id="cb51" style="background: #f1f3f5;"><pre class="sourceCode matlab code-with-copy"><code class="sourceCode matlab"><span id="cb51-1"><span class="va" style="color: #111111;
 background-color: null;
 font-style: inherit;">Aofc</span> <span class="op" style="color: #5E5E5E;
@@ -2899,7 +2926,7 @@ font-style: inherit;">,</span>[])</span></code></pre></div>
  
 Continuous-time state-space model.
 Model Properties</code></pre>
-<p>You are now ready to simulate the closed-loop response, but it must happen in two separate simulation stages. In the first stage, you will use the INITIAL function to simulate for 200 milliseconds. At the end of this first simulation stage, you must capture the final state vector and use it as the initial state vector for the second simulation stage. The total simulation duration should be 4 seconds like above.</p>
+<p>We are now ready to simulate the closed-loop response, but it must happen in two separate simulation stages. In the first stage, we will use the INITIAL function to simulate for 200 milliseconds. At the end of this first simulation stage, we must capture the final state vector and use it as the initial state vector for the second simulation stage. The total simulation duration should be 4 seconds like above.</p>
 <div class="sourceCode" id="cb53" style="background: #f1f3f5;"><pre class="sourceCode matlab code-with-copy"><code class="sourceCode matlab"><span id="cb53-1"><span class="va" style="color: #111111;
 background-color: null;
 font-style: inherit;">t_break</span> <span class="op" style="color: #5E5E5E;
@@ -3119,7 +3146,7 @@ font-style: inherit;">TransientTime</span></span></code></pre></div>
 <pre class="text:output"><code>ans = 2.5721
 ans = 1.6099
 ans = 2.1822</code></pre>
-<p>Generate the standard annotated plot (three output subplots on the left and two control signal subplots on the right), with appropriate annotations; but you must also plot the estimated output signals on top of the associated actual output signals. It must be clear from your plots that the estimated outputs all start from zero and converge to the actual outputs within 200 milliseconds. Do NOT try to get the observer states to converge too fast because it will be difficult to see the convergence on the plots. If you have done this step correctly, you should see 5% settling times that are comparable to the original design from CASE 2. The 5% settling times on the outputs must all be below 3 seconds, and you must not saturate either of the control signals.</p>
+<p>Generate the standard annotated plot (three output subplots on the left and two control signal subplots on the right), with appropriate annotations; but we must also plot the estimated output signals on top of the associated actual output signals. It must be clear from our plots that the estimated outputs all start from zero and converge to the actual outputs within 200 milliseconds. One must NOT try to get the observer states to converge too fast because it will be difficult to see the convergence on the plots. If we have done this step correctly, we should see 5% settling times that are comparable to the original design from CASE 2. The 5% settling times on the outputs must all be below 3 seconds, and we must not saturate either of the control signals.</p>
 <div class="sourceCode" id="cb55" style="background: #f1f3f5;"><pre class="sourceCode matlab code-with-copy"><code class="sourceCode matlab"><span id="cb55-1"><span class="va" style="color: #111111;
 background-color: null;
 font-style: inherit;">f</span> <span class="op" style="color: #5E5E5E;
@@ -3683,18 +3710,18 @@ font-style: inherit;">3</span>))<span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">;</span></span></code></pre></div>
 <p><img src="https://www.nishantkb.info/Control Systems/Full_State_Feedback_Control_Design_media/Simulation_animation.gif" alt="Animated GIF" width="50%"></p>
-<section id="for-cases-6-7-and-8-you-will-design-and-simulate-another-output-feedback-controller-i.e.-a-state-estimator-with-full-state-feedback-control-but-now-you-must-also-include-integral-control-for-reference-tracking-as-defined-in-the-notes." class="level2">
-<h2 class="anchored" data-anchor-id="for-cases-6-7-and-8-you-will-design-and-simulate-another-output-feedback-controller-i.e.-a-state-estimator-with-full-state-feedback-control-but-now-you-must-also-include-integral-control-for-reference-tracking-as-defined-in-the-notes.">For cases 6, 7, and 8, you will design and simulate another Output Feedback Controller (i.e.&nbsp;a state estimator with full state feedback control), but now you must also include Integral Control for reference tracking as defined in the notes.</h2>
+<section id="for-cases-6-7-and-8-we-will-design-and-simulate-another-output-feedback-controller-i.e.-a-state-estimator-with-full-state-feedback-control-but-now-we-must-also-include-integral-control-for-reference-tracking-as-defined-in-the-notes." class="level2">
+<h2 class="anchored" data-anchor-id="for-cases-6-7-and-8-we-will-design-and-simulate-another-output-feedback-controller-i.e.-a-state-estimator-with-full-state-feedback-control-but-now-we-must-also-include-integral-control-for-reference-tracking-as-defined-in-the-notes.">For cases 6, 7, and 8, we will design and simulate another Output Feedback Controller (i.e.&nbsp;a state estimator with full state feedback control), but now we must also include Integral Control for reference tracking as defined in the notes.</h2>
 
 </section>
-<section id="you-must-expect-to-iterate-on-cases-6-7-and-8-until-you-achieve-one-acceptable-design." class="level2">
-<h2 class="anchored" data-anchor-id="you-must-expect-to-iterate-on-cases-6-7-and-8-until-you-achieve-one-acceptable-design.">You must expect to iterate on CASES 6, 7, and 8 until you achieve one acceptable design.</h2>
+<section id="we-must-expect-to-iterate-on-cases-6-7-and-8-until-we-achieve-one-acceptable-design." class="level2">
+<h2 class="anchored" data-anchor-id="we-must-expect-to-iterate-on-cases-6-7-and-8-until-we-achieve-one-acceptable-design.">We must expect to iterate on CASES 6, 7, and 8 until we achieve one acceptable design.</h2>
 </section>
 </section>
 <section id="case-6.-design-an-lqi-compensator" class="level1">
 <h1>CASE 6. Design an LQI compensator</h1>
-<p>You must use LQR optimal control to design the state-feedback gains for this simulation. The MathWorks has provided a separate tool called <code>LQI</code> for computing the state-feedback gains when you are implementing state feedback with integral control. Note that <code>LQI</code> is identical to <code>LQR</code> except that <code>LQI</code> already knows that you are designing for reference tracking with an integral controller. You can NOT use <code>LQR</code> for this design, and you must use <code>LQI!</code> You must also use the LTI object for the open-loop system as input to the <code>LQI</code> function. Read the online help for <code>LQI</code> before starting this CASE!</p>
-<p>First define the LQI cost function weighting matrices <img src="https://latex.codecogs.com/png.latex?%5Cmathbf%7BQ%7D"> and <img src="https://latex.codecogs.com/png.latex?%5Cmathbf%7BR%7D">. Note that <code>LQI</code> also accepts a weighting matrix <img src="https://latex.codecogs.com/png.latex?%5Cmathbf%7BN%7D">, which allows cross-weighting between states and controls, but you should NOT use this weighting matrix for this CASE! Make sure you understand the dimensions of each of these weighting matrices.</p>
+<p>We must use LQR optimal control to design the state-feedback gains for this simulation. The MathWorks has provided a separate tool called <code>LQI</code> for computing the state-feedback gains when we are implementing state feedback with integral control. Note that <code>LQI</code> is identical to <code>LQR</code> except that <code>LQI</code> already knows that we are designing for reference tracking with an integral controller. We can NOT use <code>LQR</code> for this design, and we must use <code>LQI!</code> We must also use the LTI object for the open-loop system as input to the <code>LQI</code> function. Read the online help for <code>LQI</code> before starting this CASE!</p>
+<p>First define the LQI cost function weighting matrices <img src="https://latex.codecogs.com/png.latex?%5Cmathbf%7BQ%7D"> and <img src="https://latex.codecogs.com/png.latex?%5Cmathbf%7BR%7D">. Note that <code>LQI</code> also accepts a weighting matrix <img src="https://latex.codecogs.com/png.latex?%5Cmathbf%7BN%7D">, which allows cross-weighting between states and controls, but we should NOT use this weighting matrix for this CASE! Make sure we understand the dimensions of each of these weighting matrices.</p>
 <div class="sourceCode" id="cb57" style="background: #f1f3f5;"><pre class="sourceCode matlab code-with-copy"><code class="sourceCode matlab"><span id="cb57-1"><span class="va" style="color: #111111;
 background-color: null;
 font-style: inherit;">Q</span> <span class="op" style="color: #5E5E5E;
@@ -3871,7 +3898,7 @@ e = 9x1 complex
 </section>
 <section id="case-7.-construct-the-ofc-with-reference-inputs" class="level1">
 <h1>CASE 7. Construct the OFC with Reference Inputs</h1>
-<p>Generate an augmented state-space system for the closed-loop Output Feedback Controller (state feedback with estimated states) and Reference Tracking. Your complete closed-loop state-space model must have:</p>
+<p>Generate an augmented state-space system for the closed-loop Output Feedback Controller (state feedback with estimated states) and Reference Tracking. Our complete closed-loop state-space model must have:</p>
 <p>{ State vector consisting of: <img src="https://latex.codecogs.com/png.latex?%5Cmathbf%7Bx%7D">, <img src="https://latex.codecogs.com/png.latex?%5Chat%7B%5Cmathbf%7Bx%7D%7D">, and <img src="https://latex.codecogs.com/png.latex?%7B%5Cmathbf%7Bx%7D%7D_I"> }</p>
 <p>{ Output vector consisting of: <img src="https://latex.codecogs.com/png.latex?%5Cmathbf%7By%7D">, <img src="https://latex.codecogs.com/png.latex?%5Chat%7B%5Cmathit%7B%5Cmathbf%7By%7D%7D%7D">, and <img src="https://latex.codecogs.com/png.latex?%5Cmathbf%7Bu%7D"> }</p>
 <p>{ Input vector consisting of: <img src="https://latex.codecogs.com/png.latex?%5Cmathbf%7Br%7D"> }</p>
@@ -3881,16 +3908,14 @@ e = 9x1 complex
 </section>
 <section id="case-8.-simulate-the-output-feedback-controller-with-reference-inputs" class="level1">
 <h1>CASE 8. Simulate the Output Feedback Controller with Reference Inputs</h1>
-<p>For this CASE, you will simulate the closed-loop response of your control system using <code>LSIM()</code>; however, you must first generate a suitable reference profile as an input. Before you can generate a reference profile, you need to understand the initial position and the final desired position of the drone. These are new initial conditions, and a very different final position from any closed-loop simulation you have done before.</p>
+<p>For this CASE, we will simulate the closed-loop response of our control system using <code>LSIM()</code>; however, we must first generate a suitable reference profile as an input. Before we can generate a reference profile, we need to understand the initial position and the final desired position of the drone. These are new initial conditions, and a very different final position from any closed-loop simulation we have done before.</p>
 <p><strong>Initial Plant Conditions:</strong> The plant (drone) must start with the following initial states:</p>
-<pre><code>$x\left(0\right)=-2$ m, $y\left(0\right)=1$ m, and $\theta \left(0\right)=0$ rad.
-
-$\dot{x} \left(0\right)=0$ m/s, $\dot{y} \left(0\right)=0$ m/s, and $\dot{\theta} \left(0\right)=0$ rad/s.</code></pre>
-<p><strong>Initial Observer Conditions:</strong> You may assume that the initial observer states are identical to the initial plant states.</p>
+<p><img src="https://latex.codecogs.com/png.latex?x%5Cleft(0%5Cright)=-2"> m, <img src="https://latex.codecogs.com/png.latex?y%5Cleft(0%5Cright)=1"> m, and <img src="https://latex.codecogs.com/png.latex?%5Ctheta%20%5Cleft(0%5Cright)=0"> rad.</p>
+<p><img src="https://latex.codecogs.com/png.latex?%5Cdot%7Bx%7D%20%5Cleft(0%5Cright)=0"> m/s, <img src="https://latex.codecogs.com/png.latex?%5Cdot%7By%7D%20%5Cleft(0%5Cright)=0"> m/s, and <img src="https://latex.codecogs.com/png.latex?%5Cdot%7B%5Ctheta%7D%20%5Cleft(0%5Cright)=0"> rad/s.</p>
+<p><strong>Initial Observer Conditions:</strong> We may assume that the initial observer states are identical to the initial plant states.</p>
 <p><strong>Final Plant Conditions:</strong> The plant (drone) must reach the following final states:</p>
-<pre><code>$x\left(0\right)=+2$ m, $y\left(0\right)=0$ m, and $\theta \left(0\right)=0$ rad.
-
-$\dot{x} \left(0\right)=0$ m/s, $\dot{y} \left(0\right)=0$ m/s, and $\dot{\theta} \left(0\right)=0$ rad/s.</code></pre>
+<p><img src="https://latex.codecogs.com/png.latex?x%5Cleft(0%5Cright)=+2"> m, <img src="https://latex.codecogs.com/png.latex?y%5Cleft(0%5Cright)=0"> m, and <img src="https://latex.codecogs.com/png.latex?%5Ctheta%20%5Cleft(0%5Cright)=0"> rad.</p>
+<p><img src="https://latex.codecogs.com/png.latex?%5Cdot%7Bx%7D%20%5Cleft(0%5Cright)=0"> m/s, <img src="https://latex.codecogs.com/png.latex?%5Cdot%7By%7D%20%5Cleft(0%5Cright)=0"> m/s, and <img src="https://latex.codecogs.com/png.latex?%5Cdot%7B%5Ctheta%7D%20%5Cleft(0%5Cright)=0"> rad/s.</p>
 <p><strong>Evaluation Criteria:</strong></p>
 <ul>
 <li><p>Notice that the final state is on the opposite side of the 1.5m high red wall in the animation! The drone is NOT allowed to make contact with the wall at any point during the simulation.<br>
@@ -3898,14 +3923,14 @@ $\dot{x} \left(0\right)=0$ m/s, $\dot{y} \left(0\right)=0$ m/s, and $\dot{\theta
 <li><p>The drone is NOT allowed to make contact with the ground at any point during the simulation except for the final time where the drone must sit on the ground.</p>
 <p>{ The drone must reach the final state by 30 seconds (<img src="https://latex.codecogs.com/png.latex?%5Ctextrm%7Btfinal%7D%5Cle%2030s">). }</p></li>
 <li><p>The control signals <img src="https://latex.codecogs.com/png.latex?u_1"> and <img src="https://latex.codecogs.com/png.latex?u_2"> must remain within the saturation bounds established in the Midterm Project.</p>
-<p>{ There is NO formal settling time requirement; however, your actual output responses <img src="https://latex.codecogs.com/png.latex?%5Cmathbf%7By%7D"> must track the reference responses <img src="https://latex.codecogs.com/png.latex?%5Cmathbf%7Br%7D">reasonably accurately. For example, if your reference profiles have dwell regions, then there should be zero steady-state error after transients have subsided. If your reference profiles have ramp regions, then you should expect to see a steady-state error during the ramp, which looks like a delayed response. How closely you track the references will depend on your choice of weighting coefficients in the Q matrix. Note that a steady-state error during the ramp is perfectly acceptable as long as you choose the reference profile such that the drone does not make contact with the wall! }</p></li>
-<li><p>For this simulation, the observer and the controller must both be enabled at t=0 (i.e.&nbsp;do NOT attempt a two-stage simulation like CASE 5.</p></li>
-<li><p>You MUST use <code>LSIM</code> to simulate the closed-loop time response</p>
-<p>{ Before constructing the reference profiles, you must first construct a time vector for the simulation. I recommend choosing a uniform step size of <img src="https://latex.codecogs.com/png.latex?%5Ctextrm%7Bts%7D=0%5Cldotp%20002"> seconds: }</p></li>
+<p>{ There is NO formal settling time requirement; however, our actual output responses <img src="https://latex.codecogs.com/png.latex?%5Cmathbf%7By%7D"> must track the reference responses <img src="https://latex.codecogs.com/png.latex?%5Cmathbf%7Br%7D">reasonably accurately. For example, if our reference profiles have dwell regions, then there should be zero steady-state error after transients have subsided. If our reference profiles have ramp regions, then we should expect to see a steady-state error during the ramp, which looks like a delayed response. How closely we track the references will depend on our choice of weighting coefficients in the Q matrix. Note that a steady-state error during the ramp is perfectly acceptable as long as we choose the reference profile such that the drone does not make contact with the wall! }</p></li>
+<li><p>For this simulation, the observer and the controller must both be enabled at t=0 (i.e.&nbsp;do NOT attempt a two-stage simulation like CASE 5).</p></li>
+<li><p>We MUST use <code>LSIM</code> to simulate the closed-loop time response</p>
+<p>{ Before constructing the reference profiles, we must first construct a time vector for the simulation. I recommend choosing a uniform step size of <img src="https://latex.codecogs.com/png.latex?%5Ctextrm%7Bts%7D=0%5Cldotp%20002"> seconds: }</p></li>
 </ul>
 <p><img src="https://latex.codecogs.com/png.latex?%0At=%5Ctextrm%7Bts%7D*%5Cleft%5Clbrack%200:%5Ctextrm%7Bround%7D%5Cleft(%5Cfrac%7B%5Ctextrm%7Btfinal%7D%7D%7B%5Cleft.%5Ctextrm%7Bts%7D%5Cright)%7D%5Cright)%5Cright%5Crbrack%0A"></p>
 <ul>
-<li>For each time step in the time vector, you must generate a reference vector for each of the outputs. You will need to generate a particular path vs.&nbsp;time profile for the desired x and y position; however, I recommend choosing the following reference profile for the angular position:</li>
+<li>For each time step in the time vector, we must generate a reference vector for each of the outputs. We will need to generate a particular path vs.&nbsp;time profile for the desired x and y position; however, I recommend choosing the following reference profile for the angular position:</li>
 </ul>
 <p><img src="https://latex.codecogs.com/png.latex?%0A%5Ctheta_%7B%5Ctextrm%7Bref%7D%7D%20=%5Ctextrm%7Bzeros%7D%5Cleft(%5Ctextrm%7Bsize%7D%5Cleft(t%5Cright)%5Cright)%0A"></p>
 <ul>
@@ -3925,7 +3950,7 @@ $\dot{x} \left(0\right)=0$ m/s, $\dot{y} \left(0\right)=0$ m/s, and $\dot{\theta
 <a onclick="window.scrollTo(0, 0); return false;" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a> ]]></description>
   <category>Control</category>
   <guid>https://www.nishantkb.info/Control Systems/Full_State_Feedback_Control_Design.html</guid>
-  <pubDate>Fri, 09 Feb 2024 20:13:32 GMT</pubDate>
+  <pubDate>Mon, 12 Feb 2024 04:14:57 GMT</pubDate>
   <media:content url="https://www.nishantkb.info/Control Systems/Simulation_animation.gif" medium="image" type="image/gif"/>
 </item>
 <item>
@@ -3981,7 +4006,7 @@ font-style: inherit;">;</span></span></code></pre></div>
 <section id="background" class="level2">
 <h2 class="anchored" data-anchor-id="background">Background</h2>
 <p>A small startup company is exploring an aerial concept for delivering packages (Payload). This concept uses an open-top bin (gray) supported by drone motors and propellors (blue-forward and green-aft).</p>
-<p>Prior to developing a full 3D prototype, they have commissioned you to develop and validate a full state feedback control system for a 2D (i.e.&nbsp;planar) version as shown in Figure 1.</p>
+<p>Prior to developing a full 3D prototype, they have commissioned we to develop and validate a full state feedback control system for a 2D (i.e.&nbsp;planar) version as shown in Figure 1.</p>
 <p><img src="https://www.nishantkb.info/Control Systems/Linearized_LTI_Modeling_Feedback_Control_media/image_0.png" alt="image_0.png" width="604"></p>
 <p><strong>Figure 1. 2D-Coordinate System Definition for Prototype Aerial Package Delivery System</strong></p>
 <p>The following definitions refer to Figure 1:</p>
@@ -4079,7 +4104,7 @@ font-style: inherit;">F_2</span>)</span></code></pre></div>
 <p>We now want to eliminate the equilibrium forces <img src="https://latex.codecogs.com/png.latex?%7B%5Cbar%7BF%7D%20%7D_1"> and <img src="https://latex.codecogs.com/png.latex?%7B%5Cbar%7BF%7D%20%7D_2"> from the equations of motion. To do this, we can introduce what are known as “variational forces”, which are simply zero-mean forces <img src="https://latex.codecogs.com/png.latex?u_1"> and <img src="https://latex.codecogs.com/png.latex?u_2"> which are added to the equilibrium forces to get the total forces:</p>
 <p>&nbsp;&nbsp;&nbsp;&nbsp; <img src="https://latex.codecogs.com/png.latex?%20F_1%20%5Cleft(t%5Cright)=%7B%5Cbar%7BF%7D%20%7D_1%20+u_1%20%5Cleft(t%5Cright)%20"></p>
 <p>&nbsp;&nbsp;&nbsp;&nbsp; <img src="https://latex.codecogs.com/png.latex?%20F_2%20%5Cleft(t%5Cright)=%7B%5Cbar%7BF%7D%20%7D_2%20+u_2%20%5Cleft(t%5Cright)%20"></p>
-<p>Substitute these definitions into the equations of motion and eliminate the equilibrium forces. Your new equations of motion must not have any equilibrium forces remaining and must only include the variational force inputs.</p>
+<p>Substitute these definitions into the equations of motion and eliminate the equilibrium forces. Our new equations of motion must not have any equilibrium forces remaining and must only include the variational force inputs.</p>
 <p>Using (1.1)</p>
 <p><img src="https://latex.codecogs.com/png.latex?%20%5Cbegin%7Barray%7D%7Bl%7D%20F_1%20%5Cleft(t%5Cright)+F_2%20%5Cleft(t%5Cright)=M%5C;g%5C%5C%20%5CRightarrow%20%7B%5Cbar%7BF%7D%20%7D_1%20+u_1%20%5Cleft(t%5Cright)+F_2%20%5Cleft(t%5Cright)+%7B%5Cbar%7BF%7D%20%7D_2%20+u_2%20%5Cleft(t%5Cright)=M%5C;g%20%5Cend%7Barray%7D%20"></p>
 <p>Using (1.2)</p>
@@ -4111,7 +4136,7 @@ font-style: inherit;">F_2</span>])</span></code></pre></div>
 <section id="problem-3.-analytic-state-space-model" class="level1">
 <h1>Problem 3. Analytic State-Space Model</h1>
 <p>Using the equations of motion from Problem 2, choose appropriate state variables and define a complete state-space representation for this system.</p>
-<p>You must assume that the outputs are <img src="https://latex.codecogs.com/png.latex?%5Cleft(x,y,%5Ctheta%20%5Cright)"> because these can be measured with a GPS sensor, and the inputs must be <img src="https://latex.codecogs.com/png.latex?%5Cleft(u_1%20,u_2%20%5Cright)"> .</p>
+<p>We must assume that the outputs are <img src="https://latex.codecogs.com/png.latex?%5Cleft(x,y,%5Ctheta%20%5Cright)"> because these can be measured with a GPS sensor, and the inputs must be <img src="https://latex.codecogs.com/png.latex?%5Cleft(u_1%20,u_2%20%5Cright)"> .</p>
 <p>Definining the State Variables:</p>
 <p>X = <img src="https://latex.codecogs.com/png.latex?%5Cleft%5Clbrack%20%5Cbegin%7Barray%7D%7Bc%7D%20x%5C%5C%20%5Cdot%7Bx%7D%20%5C%5C%20y%5C%5C%20%5Cdot%7By%7D%20%5C%5C%20%5Ctheta%20%5C%5C%20%5Cdot%7B%5Ctheta%7D%20%5Cend%7Barray%7D%5Cright%5Crbrack"> <img src="https://latex.codecogs.com/png.latex?U=%5Cleft%5Clbrack%20%5Cbegin%7Barray%7D%7Bc%7D%20u_1%20%5C%5C%20u_2%20%5Cend%7Barray%7D%5Cright%5Crbrack"> <img src="https://latex.codecogs.com/png.latex?Y=%5Cleft%5Clbrack%20%5Cbegin%7Barray%7D%7Bc%7D%20x%5C%5C%20y%5C%5C%20%5Ctheta%20%5C%5C%20u_1%20%5C%5C%20u_2%20%5Cend%7Barray%7D%5Cright%5Crbrack"></p>
 <p><img src="https://latex.codecogs.com/png.latex?%20M%5Cddot%7B%5Cmathrm%7By%7D%7D%20%5Cleft(t%5Cright)=F_1%20%5Cleft(t%5Cright)+F_2%20%5Cleft(t%5Cright)-%5Calpha%20%5Cdot%7By%7D%20%5Cleft(t%5Cright)-M%5C;g%5C;%20"></p>
@@ -4412,7 +4437,7 @@ font-style: inherit;">;</span></span></code></pre></div>
 <p><img src="https://latex.codecogs.com/png.latex?%20%5Cbegin%7Barray%7D%7Bl%7D%20%5Cdot%7BX%7D%20=AX+BU%5C%5C%20Y=%5Ctextrm%7BCX%7D+%5Ctextrm%7BDU%7D%20%5Cend%7Barray%7D%20"></p>
 <p>A = <img src="https://latex.codecogs.com/png.latex?%5Cleft%5Clbrack%20%5Cbegin%7Barray%7D%7Bcccccc%7D%200%20&amp;%201%20&amp;%200%20&amp;%200%20&amp;%200%20&amp;%200%5C%5C%200%20&amp;%20-%5Cfrac%7B%5Cgamma%20%7D%7BM%7D%20&amp;%200%20&amp;%200%20&amp;%20-g%20&amp;%200%5C%5C%200%20&amp;%200%20&amp;%200%20&amp;%201%20&amp;%200%20&amp;%200%5C%5C%200%20&amp;%200%20&amp;%200%20&amp;%20-%5Cfrac%7B%5Calpha%20%7D%7BM%7D%20&amp;%200%20&amp;%200%5C%5C%200%20&amp;%200%20&amp;%200%20&amp;%200%20&amp;%200%20&amp;%201%5C%5C%200%20&amp;%200%20&amp;%200%20&amp;%200%20&amp;%200%20&amp;%20-%5Cfrac%7B%5Cbeta%20%7D%7BJ%7D%20%5Cend%7Barray%7D%5Cright%5Crbrack"> <img src="https://latex.codecogs.com/png.latex?B=%5Cleft%5Clbrack%20%5Cbegin%7Barray%7D%7Bcc%7D%200%20&amp;%200%5C%5C%200%20&amp;%200%5C%5C%200%20&amp;%200%5C%5C%20%5Cfrac%7B1%7D%7BM%7D%20&amp;%20%5Cfrac%7B1%7D%7BM%7D%5C%5C%200%20&amp;%200%5C%5C%20%5Cfrac%7Bd_1%20%7D%7BJ%7D%20&amp;%20-%5Cfrac%7Bd_2%20%7D%7BJ%7D%20%5Cend%7Barray%7D%5Cright%5Crbrack"></p>
 <p><img src="https://latex.codecogs.com/png.latex?%20C=%5Cleft%5Clbrack%20%5Cbegin%7Barray%7D%7Bcccccc%7D%201%20&amp;%200%20&amp;%200%20&amp;%200%20&amp;%200%20&amp;%200%5C%5C%200%20&amp;%200%20&amp;%201%20&amp;%200%20&amp;%200%20&amp;%200%5C%5C%200%20&amp;%200%20&amp;%200%20&amp;%200%20&amp;%201%20&amp;%200%5C%5C%200%20&amp;%200%20&amp;%200%20&amp;%200%20&amp;%200%20&amp;%200%5C%5C%200%20&amp;%200%20&amp;%200%20&amp;%200%20&amp;%200%20&amp;%200%20%5Cend%7Barray%7D%5Cright%5Crbrack%20"> <img src="https://latex.codecogs.com/png.latex?%20D=%5Cleft%5Clbrack%20%5Cbegin%7Barray%7D%7Bcc%7D%200%20&amp;%200%5C%5C%200%20&amp;%200%5C%5C%200%20&amp;%200%5C%5C%201%20&amp;%200%5C%5C%200%20&amp;%201%20%5Cend%7Barray%7D%5Cright%5Crbrack%20"> # Problem 4. Define system parameters as Matlab variables</p>
-<p>Up to this point, you have only used algebraic symbols to describe parameters in the state-space model. It is now time to substitute numerical values for these parameters. Define variables in Matlab for the following parameters:</p>
+<p>Up to this point, we have only used algebraic symbols to describe parameters in the state-space model. It is now time to substitute numerical values for these parameters. Define variables in Matlab for the following parameters:</p>
 <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <img src="https://latex.codecogs.com/png.latex?%20%5Cbegin%7Barray%7D%7Bl%7D%20g=9%5Cldotp%2081%5C;%5Cleft(m/s%5E2%20%5Cright)%5C%5C%20M=10%5C;%5Cleft(%5Ctextrm%7Bkg%7D%5Cright)%5C;%5C%5C%20J=5%5C;%5Cleft(%5Ctextrm%7Bkg%7D%5C;%7B%5C;m%7D%5E2%20%5Cright)%5C;%5C%5C%20%5Calpha%20=30%5C;%5Cleft(N%5C;s/m%5Cright)%5C%5C%20%5Cbeta%20=8%5C;%5Cleft(N%5C;m%5C;s/%5Ctextrm%7Brad%7D%5Cright)%5C%5C%20%5Cgamma%20=10%5C;%5Cleft(N%5C;s/m%5Cright)%5C%5C%20d_1%20=0%5Cldotp%20651%5C;%5Cleft(%5Ctextrm%7Bmeters%7D%5Cright)%5C;%5C%5C%20d_2%20=0%5Cldotp%20449%5C;%5Cleft(%5Ctextrm%7Bmeters%7D%5Cright)%5C;%5C%5C%20F_%7B%5Cmax%20%7D%20=%5Cpm%202000%5C;%5Cleft(N%5Cright)%5C;%5C;%5C;%5C;%5C;%5Ctextrm%7Bmaximum%7D%5C;%5Ctextrm%7Bavailable%7D%5C;%5Ctextrm%7Bthrust%7D%5C;%5Ctextrm%7Bon%7D%5C;%5Ctextrm%7Beither%7D%5C;F_1%20%5C;%5Ctextrm%7Bor%7D%5C;F_2%20%20%5Cend%7Barray%7D%20"></p>
 <div class="sourceCode" id="cb11" style="background: #f1f3f5;"><pre class="sourceCode matlab code-with-copy"><code class="sourceCode matlab"><span id="cb11-1"><span class="va" style="color: #111111;
 background-color: null;
@@ -4784,7 +4809,7 @@ background-color: null;
 font-style: inherit;">D</span>)<span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">;</span></span></code></pre></div>
-<p>You must define the ‘StateName’, ‘InputName’, and ‘OutputName’ properties of your LTI state-space object with strings that are representative of the actual states, inputs, and outputs. You may also want to define the StateUnit, InputUnit, and OutputUnit properties as well.</p>
+<p>We must define the ‘StateName’, ‘InputName’, and ‘OutputName’ properties of our LTI state-space object with strings that are representative of the actual states, inputs, and outputs. We may also want to define the StateUnit, InputUnit, and OutputUnit properties as well.</p>
 <div class="sourceCode" id="cb18" style="background: #f1f3f5;"><pre class="sourceCode matlab code-with-copy"><code class="sourceCode matlab"><span id="cb18-1"><span class="va" style="color: #111111;
 background-color: null;
 font-style: inherit;">stateNames</span> <span class="op" style="color: #5E5E5E;
@@ -4987,7 +5012,7 @@ background-color: null;
 font-style: inherit;">outputUnits</span><span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">;</span></span></code></pre></div>
-<p>Display your final numerical state-space model to the LiveScript and save it to a .mat file for use in the Final Project.</p>
+<p>Then we display our final numerical state-space model to the LiveScript and save it to a .mat file for use in the <code>Final Project</code>.</p>
 <div class="sourceCode" id="cb19" style="background: #f1f3f5;"><pre class="sourceCode matlab code-with-copy"><code class="sourceCode matlab"><span id="cb19-1"><span class="va" style="color: #111111;
 background-color: null;
 font-style: inherit;">sys</span></span></code></pre></div>
@@ -5052,8 +5077,8 @@ font-style: inherit;">;</span></span></code></pre></div>
 </section>
 <section id="problem-6.-check-for-minimum-realization" class="level1">
 <h1>Problem 6. Check for minimum realization</h1>
-<p>Use the <samp>MINREAL()</samp> function to demonstrate that your system is a minimum realization.</p>
-<p>Hint: You have to compare the number of states of your original system to the number of states in the minimum realization.</p>
+<p>Use the <samp>MINREAL()</samp> function to demonstrate that our system is a minimum realization.</p>
+<p>Hint: We have to compare the number of states of our original system to the number of states in the minimum realization.</p>
 <div class="sourceCode" id="cb22" style="background: #f1f3f5;"><pre class="sourceCode matlab code-with-copy"><code class="sourceCode matlab"><span id="cb22-1"><span class="va" style="color: #111111;
 background-color: null;
 font-style: inherit;">min_sys</span> <span class="op" style="color: #5E5E5E;
@@ -5106,7 +5131,7 @@ font-style: inherit;">end</span> </span></code></pre></div>
 </section>
 <section id="problem-7.-controllability-test" class="level1">
 <h1>Problem 7. Controllability test</h1>
-<p>Demonstrate that the open-loop system is completely controllable and explain your result.</p>
+<p>Demonstrate that the open-loop system is completely controllable and explain our result.</p>
 <div class="sourceCode" id="cb24" style="background: #f1f3f5;"><pre class="sourceCode matlab code-with-copy"><code class="sourceCode matlab"><span id="cb24-1"><span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">% Check controllability of the State-Space model</span></span>
@@ -5183,7 +5208,7 @@ font-style: inherit;">;</span></span>
 background-color: null;
 font-style: inherit;">end</span></span></code></pre></div>
 <pre class="textoutput"><code>The system is controllable.</code></pre>
-<p>Determine if the system is controllable with only one actuator (you must check both!).</p>
+<p>Determine if the system is controllable with only one actuator (we must check both!).</p>
 <div class="sourceCode" id="cb26" style="background: #f1f3f5;"><pre class="sourceCode matlab code-with-copy"><code class="sourceCode matlab"><span id="cb26-1"><span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">% We can slice off the other columns of B to check for one input at a time</span></span>
@@ -6043,11 +6068,11 @@ font-style: inherit;">800</span>])</span></code></pre></div>
 <ul>
 <li>5% settling times on each of the output responses</li>
 <li>Peak absolute control for each of the control signals</li>
-<li>Does either of your closed-loop control signals exceed the saturation limits?</li>
-<li>Why you chose this set of pole locations for the design?</li>
+<li>Does either of our closed-loop control signals exceed the saturation limits?</li>
+<li>Why did we choose this set of pole locations for the design?</li>
 </ul>
-<p>You must use the <samp>PLACE</samp> function for each of your designs to compute the state feedback gains. After computing the state feedback gains, display a table of the closed-loop poles to demonstrate that you successfully placed the poles at the design locations.</p>
-<p>Develop a closed-loop LTI model that augments the open-loop output vector with the two control signals, so your closed-loop output equation will have five outputs for plotting.</p>
+<p>We must use the <samp>PLACE</samp> function for each of our designs to compute the state feedback gains. After computing the state feedback gains, display a table of the closed-loop poles to demonstrate that we successfully placed the poles at the design locations.</p>
+<p>Develop a closed-loop LTI model that augments the open-loop output vector with the two control signals, so our closed-loop output equation will have five outputs for plotting.</p>
 <p>Use the Matlab <samp>INITIAL</samp> function to compute the initial value response with the same initial condition vector that was used in the open-loop evaluation.</p>
 <p>Choose a final time that is fifteen times the largest open-loop time constant. % Annocement says plot at least 4s, prof used 10s</p>
 <p>Plot the initial value response. There must be three subplots on the left of the figure, one for each of the outputs, and two subplots on the right, one for each control signal. All subplots must be properly annotated with axis labels, units, and grid lines. The control output plots must also show the upper and lower saturation constraints for the signals.</p>
@@ -7909,7 +7934,7 @@ font-style: inherit;">end</span></span></code></pre></div>
 <a onclick="window.scrollTo(0, 0); return false;" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a> ]]></description>
   <category>Control</category>
   <guid>https://www.nishantkb.info/Control Systems/Linearized_LTI_Modeling_Feedback_Control.html</guid>
-  <pubDate>Fri, 09 Feb 2024 20:13:32 GMT</pubDate>
+  <pubDate>Mon, 12 Feb 2024 04:14:57 GMT</pubDate>
   <media:content url="https://www.nishantkb.info/Control Systems/Drone_gif.gif" medium="image" type="image/gif"/>
 </item>
 </channel>
